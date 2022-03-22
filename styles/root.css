@@ -1,0 +1,19 @@
+:root {
+  --primary-color: #396079;
+  --secondary-color: #27b4e9;
+  --terciary-color: #9f7312;
+
+  --dark: #282828;
+  --grey: #b5b5b5;
+  --white: #ffffff;
+  --light: #f8f2ed;
+}
+
+button,
+a {
+  --padding-primary: 10px 20px;
+  --padding-link: 0;
+
+  --border-primary: 31px;
+  --border-secondary: 31px;
+}
