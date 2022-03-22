@@ -24,3 +24,10 @@ input {
   --border-primary: 31px;
   --border-secondary: 31px;
 }
+
+textarea {
+  --padding-primary: 10px 20px;
+
+  --border-primary: 12px;
+  --border-secondary: 31px;
+}

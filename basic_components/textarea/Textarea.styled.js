@@ -1,9 +1,11 @@
 import styledComponents from "styled-components";
 
-export const InputContainer = styledComponents.input`
+export const TextareaContainer = styledComponents.textarea`
 font-size:1rem;
 padding: var(--padding-primary);
 width: 100%;
+height: 100%;
+font-family: "Fatface",
 border: 1px solid var(--dark);
 border-radius: var(--border-primary);
 margin-top: 0.5rem;
@@ -13,6 +15,10 @@ margin-top: 0.5rem;
 -ms-user-select: none; /* IE10+/Edge */
 user-select: none; /* Standard */
 
+::-webkit-resizer {
+  display: none;
+}
+
 
 ${(props) => {
   return props.error ? `border-color: #F22727; outline-color: #F22727` : "";
@@ -20,7 +26,7 @@ ${(props) => {
 
 `;
 
-export const InputLabel = styledComponents.label`
+export const TextareaLabel = styledComponents.label`
  font-size:1rem;
  color: var(--dark);
 
