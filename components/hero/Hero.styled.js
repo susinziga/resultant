@@ -1,7 +1,7 @@
 import styledComponents from "styled-components";
 
 export const HeroContainer = styledComponents.div`
-overflow-x:hidden;
+
 position:relative;
 height:100vh;
 padding-top:${(props) => props.menuHeight}px;
