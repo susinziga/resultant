@@ -17,17 +17,41 @@ ${(props) => {
 
 ${(props) => {
   return props.primary
-    ? `background-color:var(--primary-color);
+    ? `background-color:var(--secondary-color);
     color:var(--white);
-    border-radius:var(--border-primary);`
+    border-radius:var(--border-primary);
+    &:hover {
+      background-color: var(--primary-color)
+    }`
     : "";
 }}
 
 ${(props) => {
   return props.secondary
-    ? `background-color:var(--secondary-color);
-      color:var(--white);
-      border-radius:var(--border-secondary);`
+    ? `background-color:var(--white);
+      color:var(--terciary-color);
+      border: 2px solid var(--terciary-color);
+      border-radius:var(--border-secondary);
+      &:hover {
+      background-color: var(--light)
+    }`
     : "";
 }}
+
+${(props) => {
+  return props.terciary
+    ? `background-color:var(--white);
+      color:var(--black);
+      
+      &:hover {
+      color:var(--grey);
+      
+    }`
+    : "";
+}}
+
+`;
+
+export const Arrow = styledComponents.img`
+  
 `;
