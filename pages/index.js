@@ -7,8 +7,11 @@ import Textarea from "../basic_components/textarea/Textarea";
 export default function Home() {
   return (
     <>
-      <div style={{ padding: "100px" }}>
-        <Button primary>GUMP</Button> <Button secondary>GUMP 2</Button>
+      <div style={{ padding: "100px", display: "flex" }}>
+        <Button primary>GUMP</Button> <Button secondary>GUMP2</Button>{" "}
+        <Button terciary arrow>
+          GUMP3
+        </Button>
       </div>
       <div style={{ padding: "20px", width: "30%" }}>
         <Input props={{ label: "Label", placeholder: "Text" }}></Input>
