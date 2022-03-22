@@ -33,7 +33,7 @@ const Hero = () => {
     gsap.from(heroImageAnimation, {
       duration: 2,
       transform: 0,
-      top: "-5%",
+      top: "-10%",
       scale: 1,
       delay: 0.2,
     });
