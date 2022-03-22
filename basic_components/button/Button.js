@@ -2,6 +2,15 @@ import React from "react";
 
 import * as Styled from "./Button.styled";
 
+/*
+  BUTTON COMPONENT 
+
+  props:  primary
+          secondary
+          terciary 
+          arrow
+*/
+
 const Button = (props) => {
   return (
     <div>
