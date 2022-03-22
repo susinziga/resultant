@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 import * as Styled from "./Hero.styled";
 
+import Image from "next/image";
+
 import gsap from "gsap";
 
 import useTranslation from "next-translate/useTranslation";
@@ -9,8 +11,6 @@ import { BodyText3, Header1 } from "../../basic_components/texts/Texts";
 import Button from "../../basic_components/button/Button";
 
 const Hero = () => {
-  const heroImage = "./AboveTheFold/hero2.png";
-
   const heroImageAnimation = useRef(null);
 
   const heroContainerAnimation = useRef(null);
@@ -22,6 +22,8 @@ const Hero = () => {
   const { t, lang } = useTranslation("");
 
   /* CONTENT */
+
+  const heroImage = "./AboveTheFold/hero2.webp";
 
   const hero_title = t("home:hero_title");
 
