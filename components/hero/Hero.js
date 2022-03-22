@@ -34,13 +34,13 @@ const Hero = () => {
       duration: 2,
       transform: 0,
       top: "-5%",
-      scale: 1.1,
+      scale: 1,
       delay: 0.2,
     });
 
     gsap.from(lineAnimation, {
       duration: 2,
-      width: "150%",
+      width: "120%",
       left: "-20%",
       delay: 0.2,
     });
