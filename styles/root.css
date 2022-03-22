@@ -17,3 +17,10 @@ a {
   --border-primary: 31px;
   --border-secondary: 31px;
 }
+
+input {
+  --padding-primary: 10px 20px;
+
+  --border-primary: 31px;
+  --border-secondary: 31px;
+}
