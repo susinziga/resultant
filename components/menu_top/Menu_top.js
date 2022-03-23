@@ -3,8 +3,15 @@ import React, { useState, useRef, useEffect } from "react";
 import * as Styled from "./Menu_top.styled";
 
 import gsap from "gsap";
+import useTranslation from "next-translate/useTranslation";
+
+import Link from "next/link";
+import Button from "../../basic_components/button/Button";
+import Menu_list from "./menu_list/Menu_list";
 
 const Menu_top = () => {
+  const { t, lang } = useTranslation("aboveTheFold");
+
   const letterAnimation = useRef(null);
 
   const LogoAnimation = useRef(null);
@@ -58,6 +65,7 @@ const Menu_top = () => {
             height="300"
           ></object>
         </Styled.LogoContainer>
+        <Menu_list></Menu_list>
       </Styled.MenuContainer>
     </Styled.Fixed>
   );

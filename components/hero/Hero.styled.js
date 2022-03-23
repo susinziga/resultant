@@ -25,8 +25,8 @@ export const HeroTexts = styledComponents.div`
 display:flex;
 flex-direction:column;
 position:absolute;
-top:30%;
-left:45%;
+top:20%;
+left:35%;
 
 > *
 {
@@ -49,4 +49,5 @@ export const WhiteLine = styledComponents.div`
   background-color:#FFF;
   position:relative;
   left:100%;
+  z-index:10;
 `;

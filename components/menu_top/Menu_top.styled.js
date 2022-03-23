@@ -1,12 +1,18 @@
+import Link from "next/link";
 import styledComponents from "styled-components";
 
-export const MenuContainer = styledComponents.div``;
+export const MenuContainer = styledComponents.div`
+display:flex;
+justify-content:space-between;
+width:90%;
+margin:auto;
+`;
 
 export const LogoContainer = styledComponents.div`
     position:relative;
     width:fit-content;
 
-    left:5%;
+    
 
     >object{ 
         position:absolute;
@@ -26,17 +32,6 @@ export const LogoContainer = styledComponents.div`
         //transform: scale(0.5);
 
         transform:scale(22);
-
-    
-
-
-
-        /*  ZAČETNE  */
-
-
-    /*scale 22
-    left: 100%;
-    top: 500%;*/
     }
 
     >img{

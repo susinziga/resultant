@@ -10,7 +10,7 @@ import useTranslation from "next-translate/useTranslation";
 import { BodyText3, Header1 } from "../../basic_components/texts/Texts";
 import Button from "../../basic_components/button/Button";
 
-const Hero = () => {
+const Hero = (props) => {
   const heroImageAnimation = useRef(null);
 
   const heroContainerAnimation = useRef(null);
@@ -19,15 +19,16 @@ const Hero = () => {
 
   const [menuHeight, setMenuHeight] = useState("90px");
 
-  const { t, lang } = useTranslation("");
+  const { t, lang } = useTranslation("aboveTheFold");
 
   /* CONTENT */
 
   const heroImage = "./AboveTheFold/hero2.webp";
 
-  const hero_title = t("home:hero_title");
+  const hero_title = t("hero_title");
 
-  const hero_paragraph = t("home:hero_paragraph");
+  const hero_paragraph = t("hero_paragraph");
+  const hero_paragraph2 = t("hero_paragraph2");
 
   useEffect(() => {
     gsap.from(heroImageAnimation, {
@@ -40,8 +41,8 @@ const Hero = () => {
 
     gsap.from(lineAnimation, {
       duration: 2,
-      width: "120%",
-      left: "-20%",
+      width: "105%",
+      left: "-5%",
       delay: 0.2,
     });
 
@@ -53,6 +54,7 @@ const Hero = () => {
 
   return (
     <Styled.HeroContainer
+      {...props}
       ref={(el) => (heroContainerAnimation = el)}
       menuHeight={menuHeight}
     >
@@ -65,6 +67,9 @@ const Hero = () => {
         </Header1>
         <p>
           <BodyText3 white>{hero_paragraph}</BodyText3>
+        </p>
+        <p>
+          <BodyText3 white>{hero_paragraph2}</BodyText3>
         </p>
         <Button primary>Izvedi več</Button>
         <Styled.WhiteLine ref={(el) => (lineAnimation = el)}></Styled.WhiteLine>

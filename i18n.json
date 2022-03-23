@@ -5,7 +5,7 @@
   "defaultLocale": "sl",
   "localeDetection": false,
     "pages": {
-      "*": ["common"],
+      "*": ["common","aboveTheFold","pillars"],
       "/": ["home"]
      
     }

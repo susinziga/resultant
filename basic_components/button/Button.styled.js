@@ -29,7 +29,7 @@ ${(props) => {
 ${(props) => {
   return props.secondary
     ? `background-color:var(--white);
-      color:var(--terciary-color);
+      color:var(--terciary-color)!important;
       border: 2px solid var(--terciary-color);
       border-radius:var(--border-secondary);
       &:hover {
@@ -40,7 +40,7 @@ ${(props) => {
 
 ${(props) => {
   return props.terciary
-    ? `background-color:var(--white);
+    ? `/*background-color:var(--white);*/
       color:var(--black);
       
       &:hover {

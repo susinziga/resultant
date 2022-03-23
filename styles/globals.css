@@ -12,7 +12,7 @@ html {
   box-sizing: border-box;
   /*font-size: 16px;*/
   font-family: "Neusa";
-  font-size: calc(15px + (19 - 15) * (100vw - 1000px) / (2400 - 1000));
+  font-size: calc(13px + (18 - 13) * (100vw - 1000px) / (1440 - 1000));
 }
 
 *,
@@ -77,6 +77,14 @@ h4 {
 .black {
   color: var(--dark);
 }
+
+a,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
 /*
 @media (max-width: 576px) {
   html {

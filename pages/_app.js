@@ -3,6 +3,7 @@ import Head from "next/head";
 import Menu_top from "../components/menu_top/Menu_top";
 import "../styles/globals.css";
 import "../styles/root.css";
+import "../styles/common.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Menu_top></Menu_top>
       <Component {...pageProps} />
-      <Footer></Footer>
+      {/*<Footer></Footer>*/}
     </div>
   );
 }
