@@ -56,7 +56,9 @@ const Hero = () => {
       ref={(el) => (heroContainerAnimation = el)}
       menuHeight={menuHeight}
     >
-      <img ref={(el) => (heroImageAnimation = el)} src={heroImage}></img>
+      <div ref={(el) => (heroImageAnimation = el)}>
+        <img src={heroImage}></img>
+      </div>
       <Styled.HeroTexts>
         <Header1 white className="white">
           {hero_title}

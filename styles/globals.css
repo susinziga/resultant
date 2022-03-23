@@ -10,8 +10,9 @@
 
 html {
   box-sizing: border-box;
-  font-size: 16px;
+  /*font-size: 16px;*/
   font-family: "Neusa";
+  font-size: calc(15px + (19 - 15) * (100vw - 1000px) / (2400 - 1000));
 }
 
 *,
@@ -53,7 +54,7 @@ h4 {
 }
 /*HEADER 1*/
 h1 {
-  font-size: 6.6rem;
+  font-size: calc(6.6rem);
   line-height: 6rem;
 }
 /*HEADER 2*/
@@ -76,10 +77,39 @@ h4 {
 .black {
   color: var(--dark);
 }
-
-@media (min-width: 992px) {
+/*
+@media (max-width: 576px) {
   html {
-    font-size: 18px;
+    font-size: calc(16px + 0.1vw);
     line-height: 23px;
   }
 }
+
+@media (min-width: 768px) {
+  html {
+    font-size: calc(16px + 0.1vw);
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: calc(16px + 0.1vw);
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: calc(16px + 0.1vw);
+    line-height: 23px;
+  }
+}
+
+@media (min-width: 1600px) {
+  html {
+  
+    font-size: calc(16px + (23 - 16) * (100vw - 1600px) / (2400 - 1600));
+    line-height: 23px;
+  }
+}*/

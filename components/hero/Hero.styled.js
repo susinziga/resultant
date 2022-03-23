@@ -6,12 +6,18 @@ position:relative;
 height:100vh;
 padding-top:${(props) => props.menuHeight}px;
 
->img{
+
+
+div:first-child{
     transform: scale(0.9);
     top:-5%;
     position: relative;
 
     border-radius: 12px;    
+
+    overflow:hidden;
+
+    height:110%;
 }
 `;
 
@@ -24,7 +30,7 @@ left:45%;
 
 > *
 {
-    margin-bottom:4%;
+    margin-bottom:2.5rem;
 }
 
 >h1{
