@@ -14,6 +14,8 @@ border-bottom-left-radius: 31px;
 color: white;
 margin-top: 0.5rem;
 display: flex;
+
+
 `;
 
 export const InputLabel = styledComponents.label`
@@ -53,9 +55,17 @@ border: 2px solid #F8F2ED;
 border-left: 0px;
 color: white;
 
+
+@media only screen and (max-width: 380px) {
+    font-size: 0.8rem;
+    width: 40%;
+}
+
 @media only screen and (min-width: 980px) {
     font-size: 1rem;
 }
+
+
 
 `;
 
