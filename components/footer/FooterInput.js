@@ -2,6 +2,8 @@ import React from "react";
 import styledComponents from "styled-components";
 
 export const InputContainer = styledComponents.input`
+outline: none;
+font-family: "Neusa";
 font-size:1rem;
 padding: var(--padding-primary);
 width: 70%;
@@ -9,18 +11,21 @@ background-color: var(--footer-color);
 border: 2px solid #F8F2ED;
 border-top-left-radius: 31px;
 border-bottom-left-radius: 31px;
-
+color: white;
 margin-top: 0.5rem;
 display: flex;
 `;
 
 export const InputLabel = styledComponents.label`
- font-size:1.2rem;
- 
+font-family: "Neusa";
+ font-size:1rem;
+ font-weight: 300;
  color: #F8F2ED;
+
 `;
 
 export const InputContainerDiv = styledComponents.div`
+
 font-size:1rem;
 padding: var(--padding-primary);
 width: 100%;
@@ -34,6 +39,7 @@ display: flex;
 `;
 
 export const ButtonContainer = styledComponents.button`
+font-family: "Neusa";
 font-size:1rem;
 padding: var(--padding-primary);
 cursor:pointer;
@@ -46,6 +52,10 @@ background-color: var(--footer-color);
 border: 2px solid #F8F2ED;
 border-left: 0px;
 color: white;
+
+@media only screen and (min-width: 980px) {
+    font-size: 1rem;
+}
 
 `;
 

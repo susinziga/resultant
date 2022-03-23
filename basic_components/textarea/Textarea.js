@@ -3,7 +3,7 @@ import React from "react";
 import * as Styled from "./Textarea.styled";
 
 /*
-  INPUT COMPONENT 
+  TEXTAREA COMPONENT 
 
   props:  label --> Naslov inputa
           placeholder ...
