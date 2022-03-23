@@ -3,9 +3,15 @@
   src: url("./fonts/AbrilFatface-Regular.ttf");
 }
 
+@font-face {
+  font-family: "Neusa";
+  src: url("./fonts/NeusaNextStd-Regular.ttf");
+}
+
 html {
   box-sizing: border-box;
   font-size: 16px;
+  font-family: "Neusa";
 }
 
 *,
@@ -37,4 +43,43 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Fatface";
+}
+/*HEADER 1*/
+h1 {
+  font-size: 6.6rem;
+  line-height: 6rem;
+}
+/*HEADER 2*/
+h2 {
+  font-size: 3.5rem;
+}
+/*TITLE 1*/
+h3 {
+  font-size: 2.6rem;
+}
+/*TITLE 2*/
+h4 {
+  font-size: 2rem;
+}
+
+.white {
+  color: white;
+}
+
+.black {
+  color: var(--dark);
+}
+
+@media (min-width: 992px) {
+  html {
+    font-size: 18px;
+    line-height: 23px;
+  }
 }

@@ -9,6 +9,16 @@
   --grey: #b5b5b5;
   --white: #ffffff;
   --light: #f8f2ed;
+
+  /* font sizes */
+
+  --subtitle1: 2.3rem;
+  --subtitle2: 1.9rem;
+
+  --body-text1: 1.8rem;
+  --body-text2: 1.3rem;
+  --body-text3: 1.1rem;
+  --body-text4: 1rem;
 }
 
 button,

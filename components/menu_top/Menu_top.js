@@ -1,17 +1,65 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import * as Styled from "./Menu_top.styled";
 
+import gsap from "gsap";
+
 const Menu_top = () => {
+  const letterAnimation = useRef(null);
+
+  const LogoAnimation = useRef(null);
+
+  const MenuAnimation = useRef(null);
+
+  useEffect(() => {
+    gsap.to(letterAnimation, {
+      duration: 2,
+      top: "-21%",
+      left: "57%",
+      scale: "0.5",
+
+      delay: 0.2,
+    });
+
+    gsap.from(LogoAnimation, {
+      opacity: 0,
+      duration: 0.5,
+
+      delay: 1.8,
+    });
+
+    gsap.to(letterAnimation, {
+      duration: 0.1,
+      opacity: 0,
+
+      delay: 2,
+    });
+
+    gsap.to(MenuAnimation, {
+      backgroundColor: "#FFF",
+      duration: 0.1,
+
+      delay: 2,
+    });
+  }, []);
+
   return (
-    <Styled.MenuContainer>
-      <Styled.LogoContainer>
-        <img src="./Logo/logo.svg"></img>
-        <object data={"./Logo/letter.svg"} width="300" height="300">
-          {" "}
-        </object>
-      </Styled.LogoContainer>
-    </Styled.MenuContainer>
+    <Styled.Fixed
+      className="menu_top_desktop"
+      ref={(el) => (MenuAnimation = el)}
+    >
+      <Styled.MenuContainer>
+        <Styled.LogoContainer>
+          <img ref={(el) => (LogoAnimation = el)} src="./Logo/logo.svg"></img>
+          <object
+            ref={(el) => (letterAnimation = el)}
+            data={"./Logo/letter.svg"}
+            width="300"
+            height="300"
+          ></object>
+        </Styled.LogoContainer>
+      </Styled.MenuContainer>
+    </Styled.Fixed>
   );
 };
 
