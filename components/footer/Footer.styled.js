@@ -7,7 +7,17 @@ export const FooterContainer = styledComponents.div`
     height: 800px;
     padding-top: 65%;
 
-    @media only screen and (min-width: 980px) {
+    @media only screen and (max-width: 350px) {
+        height: 700px;
+        padding-top: 70%;
+    }
+
+    @media only screen and (min-width: 480px) and (max-width: 768px) {
+        height: 900px;
+        padding-top: 65%;
+    }
+
+    @media only screen and (min-width: 992px) {
         height: 580px;
         padding-top: 0;
     }
@@ -31,7 +41,6 @@ export const UpperFooterContainer = styledComponents.div`
     text-align: left;
     padding: 6%;
 
-
     @media only screen and (min-width: 800px) {
         width: 30%;
         height: 50%;
@@ -54,7 +63,7 @@ export const InfoFooterHeading = styledComponents.h2`
     font-weight: bold;
     font-size: 1.5rem;
     
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 992px) {
         padding-bottom: 5%;
     }
 `;
@@ -64,7 +73,7 @@ export const ContactFooterContainer = styledComponents.div`
     display: flex; 
     flex-direction: column; 
 
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 992px) {
         margin-top: 0;
     }
 `;
@@ -83,7 +92,7 @@ export const ContactLink = styledComponents.a`
     font-size: 1rem;
     line-height: 20px;
 
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 992px) {
        
     }
 `;
@@ -93,7 +102,7 @@ export const ContactsFooterContainer = styledComponents.div`
     display: flex; 
     flex-direction: column; 
 
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 992px) {
        
     }
 `;
@@ -116,7 +125,7 @@ export const FooterHeader = styledComponents.h2`
  margin: auto;
 
 
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 992px) {
         font-size: 2rem;
         width: 40%;
         padding-top: 8%;
@@ -136,7 +145,7 @@ export const InputFooterContainer = styledComponents.div`
    margin:auto;
    margin-top: 10%;
 
-   @media only screen and (min-width: 980px) {
+   @media only screen and (min-width: 992px) {
         margin: 0;
         margin-left: 5%;
         width: 35%;
@@ -155,7 +164,7 @@ export const SocialFooterContainer = styledComponents.div`
    display: flex;
    justify-content: space-evenly;
 
-   @media only screen and (min-width: 980px) {
+   @media only screen and (min-width: 992px) {
     margin: 0;
     margin-left: 5%;
     justify-content: flex-start;
@@ -172,7 +181,7 @@ export const SocialLink = styledComponents.a`
     cursor: pointer;
     width: 25%;
 
-    @media only screen and (min-width: 980px) {
+    @media only screen and (min-width: 992px) {
         width: 5%;
     }
 `;
@@ -181,7 +190,7 @@ export const SocialLink = styledComponents.a`
 export const Social = styledComponents.img`
   width: 80%;
 
-  @media only screen and (min-width: 980px) {
+  @media only screen and (min-width: 992px) {
     width: 100%;
   }
 `;
@@ -194,10 +203,10 @@ export const LinkFooterContainer = styledComponents.div`
    flex-direction: column;
    text-align: center;
 
-   @media only screen and (min-width: 980px) {
+   @media only screen and (min-width: 992px) {
         margin-top: 8%;
         flex-direction: row-reverse;
-        width: 60%;
+        width: 70%;
         gap: 3%;
         padding-right: 50px;
    }
@@ -217,7 +226,7 @@ export const Link = styledComponents.a`
   opacity: 0.8;
   cursor: pointer;
 
-  @media only screen and (min-width: 980px) {
+  @media only screen and (min-width: 992px) {
     
   }
   
@@ -226,7 +235,7 @@ export const Link = styledComponents.a`
 export const Combine = styledComponents.div`
   
 
-   @media only screen and (min-width: 980px) {
+   @media only screen and (min-width: 992px) {
         display: flex;
         justify-content: space-between;
    }
