@@ -2,6 +2,10 @@
    
     "menu_item1":"Strokovnost",
     "menu_item2":"Usmerjenost k rezultatom",
-    "menu_item3":"Zanesljivost"
+    "menu_item3":"Zanesljivost",
+    "title_approach": "Naš pristop",
+    "paragraph2_approach": "Naši naročniki od nas pričakujejo rešitev svojih izzivov, vpeljavo kakovostnih HR procesov, usmeritev v boljše delovanje in jasne rezultate našega dela. Trudimo se, da bi izpolnili ta pričakovanja.",
+    "paragraph1_approach": "Pomagamo vam obvladovati poslovne spremembe in bolje upravljati ljudi ter na ta način ustvariti za vas trajno vrednost.",
+    "buttonText_approach": "Izvedi več"
 
 }

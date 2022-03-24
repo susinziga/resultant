@@ -3,7 +3,7 @@ import Pillars_component from "./Pillars_component";
 import * as Styled from "./Pillars_home.styled";
 import useTranslation from "next-translate/useTranslation";
 
-const Pillars_home = () => {
+const Pillars_home = (props) => {
   const { t, lang } = useTranslation();
 
   const pillarsContentTop = [
@@ -18,7 +18,7 @@ const Pillars_home = () => {
   const buttonText = t("common:button_more");
 
   return (
-    <Styled.PillarsContainer>
+    <Styled.PillarsContainer {...props}>
       <Styled.PillarsFlex>
         {pillarsContentTop.map((pillar) => {
           return (

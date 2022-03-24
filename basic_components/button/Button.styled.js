@@ -50,8 +50,22 @@ ${(props) => {
     : "";
 }}
 
+${(props) => {
+  return props.arrow || props.arrowDown
+    ? `padding-right: 10px;
+    }`
+    : "";
+}}
+
 `;
 
 export const Arrow = styledComponents.img`
+  padding-bottom: 3%;
   
+  ${(props) => {
+    return props.down
+      ? `transform: rotate(90deg);
+      `
+      : "";
+  }}
 `;
