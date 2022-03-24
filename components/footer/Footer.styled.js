@@ -43,7 +43,7 @@ export const UpperFooterContainer = styledComponents.div`
 
     @media only screen and (min-width: 800px) {
         width: 30%;
-        height: 50%;
+        height: 55%;
         top: -40px;
         right: 1%; 
         left: none;

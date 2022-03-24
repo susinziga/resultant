@@ -25,7 +25,7 @@ export const ApproachTextContainer = styledComponents.div`
 
     @media screen and (min-width: 1600px){
         width:60%;
-        padding: 5% 13% 0 10%;
+        padding: 3% 10% 0 12%;
     }
   }
 `;

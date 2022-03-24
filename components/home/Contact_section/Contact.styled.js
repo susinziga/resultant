@@ -4,7 +4,7 @@ import { Title2 } from "../../../basic_components/texts/Texts";
 export const ContactContainer = styledComponents.div`
     background: #F6FBFE;
     @media screen and (min-width: 768px){
-        padding: 10% 2%;
+        padding: 8% 2%;
         width: 100%;
         margin: auto;
         display: flex;
