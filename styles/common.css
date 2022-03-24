@@ -1,3 +1,16 @@
 .section {
   margin-bottom: 5rem !important;
 }
+
+.pillarActive {
+  width: 55%;
+  background-color: var(--pillar-color);
+  padding-right: 8% !important;
+}
+.pillarActive * {
+  color: var(--white) !important;
+}
+
+.pillarShrink {
+  padding-right: 2% !important;
+}

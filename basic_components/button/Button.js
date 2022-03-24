@@ -18,8 +18,23 @@ const Button = (props) => {
       <Styled.ButtonContainer {...props}>
         {props.children}
       </Styled.ButtonContainer>
-      {props.arrow ? <Styled.Arrow src="./Logo/Arrow.svg"></Styled.Arrow> : ""}
-      {props.arrowDown ? <Styled.Arrow down src="./Logo/Arrow.svg"></Styled.Arrow> : ""}
+      {props.arrow ? (
+        <Styled.Arrow
+          className={props.className}
+          src="./Logo/Arrow.svg"
+        ></Styled.Arrow>
+      ) : (
+        ""
+      )}
+      {props.arrowDown ? (
+        <Styled.Arrow
+          className={props.className}
+          down
+          src="./Logo/Arrow.svg"
+        ></Styled.Arrow>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

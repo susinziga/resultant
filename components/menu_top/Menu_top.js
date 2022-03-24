@@ -18,46 +18,135 @@ const Menu_top = () => {
 
   const MenuAnimation = useRef(null);
 
+  //-1 začetno
+  //0 na vrhu
+  //1 scroll dol
+  //2 scroll gor
+  const [navState, setNavState] = useState(-1);
+
   useEffect(() => {
-    gsap.to(letterAnimation, {
-      duration: 2,
-      top: "-21%",
-      left: "57%",
-      scale: "0.5",
+    window.addEventListener("scroll", handleScroll);
 
-      delay: 0.2,
-    });
+    if (navState === -1 && window.scrollY <= 10) {
+      gsap.from(letterAnimation, {
+        duration: 2,
+        top: "500%",
+        left: "100%",
+        scale: "22",
 
-    gsap.from(LogoAnimation, {
-      opacity: 0,
-      duration: 0.5,
+        delay: 0.2,
+      });
 
-      delay: 1.8,
-    });
+      gsap.from(LogoAnimation, {
+        opacity: 0,
+        duration: 0.5,
 
-    gsap.to(letterAnimation, {
+        delay: 1.8,
+      });
+
+      /*gsap.to(letterAnimation, {
       duration: 0.1,
       opacity: 0,
 
       delay: 2,
-    });
+    });*/
 
-    gsap.to(MenuAnimation, {
-      backgroundColor: "#FFF",
-      duration: 0.1,
+      gsap.from(MenuAnimation, {
+        backgroundColor: "transparent",
+        duration: 0.1,
 
-      delay: 2,
-    });
+        delay: 2,
+      });
+    }
   }, []);
+
+  useEffect(() => {
+    handleNavStateChange();
+  }, [navState]);
+
+  const handleScroll = () => {
+    if (window.scrollY >= 50) {
+      setNavState(1);
+    } else {
+      setNavState(0);
+    }
+  };
+
+  const handleNavStateChange = () => {
+    console.log("ddd");
+    switch (navState) {
+      case 0: {
+        gsap.to(letterAnimation, {
+          duration: 0.5,
+          top: "-21%",
+          left: "57%",
+          scale: "0.5",
+        });
+
+        gsap.to(LogoAnimation, {
+          duration: 0.1,
+          delay: 0.2,
+
+          opacity: "1",
+        });
+
+        gsap.to(MenuAnimation, {
+          filter: "none",
+          duration: 0.5,
+        });
+
+        gsap.to(".nav_item", {
+          opacity: 1,
+          duration: 0.1,
+        });
+        break;
+      }
+      case 1: {
+        gsap.to(letterAnimation, {
+          duration: 0.5,
+          top: "0%",
+          left: "57%",
+          scale: "0.5",
+        });
+
+        gsap.to(LogoAnimation, {
+          duration: 0.1,
+
+          opacity: "0",
+          delay: 0.1,
+        });
+
+        gsap.to(MenuAnimation, {
+          filter: "drop-shadow(0px 16px 40px rgba(0, 0, 0, 0.2))",
+          duration: 0.5,
+        });
+
+        gsap.to(".nav_item", {
+          opacity: 0,
+          duration: 0.1,
+        });
+
+        break;
+      }
+      case 2: {
+        gsap.to(".nav_item", {
+          opacity: 1,
+          duration: 0.1,
+        });
+
+        break;
+      }
+    }
+  };
 
   return (
     <Styled.Fixed
       className="menu_top_desktop"
       ref={(el) => (MenuAnimation = el)}
     >
-      <Styled.MenuContainer>
+      <Styled.MenuContainer display={navState <= 0}>
         <Styled.LogoContainer>
-          <img ref={(el) => (LogoAnimation = el)} src="./Logo/logo.svg"></img>
+          <img ref={(el) => (LogoAnimation = el)} src="./Logo/logo1.svg"></img>
           <object
             ref={(el) => (letterAnimation = el)}
             data={"./Logo/letter.svg"}

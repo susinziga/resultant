@@ -36,8 +36,8 @@ const References_slider = ({ references }) => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => (swip = swiper)}
       >
-        {references.map((ref) => (
-          <SwiperSlide>
+        {references.map((ref, id) => (
+          <SwiperSlide key={id}>
             <References_item reference={ref}></References_item>
           </SwiperSlide>
         ))}

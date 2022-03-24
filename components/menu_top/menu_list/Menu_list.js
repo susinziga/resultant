@@ -7,22 +7,20 @@ import * as Styled from "./Menu_list.styled";
 const Menu_list = () => {
   const { t, lang } = useTranslation("aboveTheFold");
 
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(3);
 
   return (
     <Styled.MenuList>
-      <Button primary={active === 0} terciary={active !== 0} href="">
+      <Button className="nav_item" terciary>
         {t("nav_item1")}
       </Button>
-      <Button primary={active === 1} terciary={active !== 1} arrowDown>
+      <Button className="nav_item" terciary arrowDown>
         {t("nav_item2")}
       </Button>
-      <Button primary={active === 2} terciary={active !== 2}>
+      <Button className="nav_item" terciary>
         {t("nav_item3")}
       </Button>
-      <Button primary={active === 3} terciary={active !== 3}>
-        {t("nav_item4")}
-      </Button>
+      <Button primary>{t("nav_item4")}</Button>
     </Styled.MenuList>
   );
 };

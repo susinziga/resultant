@@ -35,9 +35,9 @@ const Testimonials_home = (props) => {
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => (swiperInstance = swiper)}
       >
-        {testimonials.map((testimonial) => {
+        {testimonials.map((testimonial, id) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={id}>
               <Testimonial testimonial={testimonial}></Testimonial>
             </SwiperSlide>
           );

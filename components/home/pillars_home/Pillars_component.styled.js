@@ -6,7 +6,7 @@ export const PillarComponentContainer = styledComponents.div`
  border-radius: 12px;
  border: 1px solid var(--pillar-color);
 
- transition: 0.5s width;
+ transition: 0.5s all;
 
  
 
@@ -22,10 +22,8 @@ export const PillarComponentContainer = styledComponents.div`
 
  :hover{
      width:55%;
-     background-color:var(--pillar-color);
-      * {
-         color: var(--white);
-     }
+     
+
  }
 
  > * {
