@@ -20,9 +20,10 @@ const Pillars_home = (props) => {
   return (
     <Styled.PillarsContainer {...props}>
       <Styled.PillarsFlex>
-        {pillarsContentTop.map((pillar) => {
+        {pillarsContentTop.map((pillar, id) => {
           return (
             <Pillars_component
+              key={id}
               title={pillar.title}
               text={pillar.text}
               button={buttonText}
