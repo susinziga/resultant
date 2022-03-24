@@ -18,12 +18,12 @@ export const FooterContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        height: 580px;
+        height: 550px;
         padding-top: 0;
     }
 
     @media only screen and (min-width: 1600px) {
-        height: 650px;
+        height: 750px;
         padding-top: 0;
     }
 `;

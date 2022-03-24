@@ -2,6 +2,14 @@
    
     "menu_item1":"Strokovnost",
     "menu_item2":"Usmerjenost k rezultatom",
-    "menu_item3":"Zanesljivost"
-
+    "menu_item3":"Zanesljivost",
+    "title_approach": "Naš pristop",
+    "paragraph2_approach": "Naši naročniki od nas pričakujejo rešitev svojih izzivov, vpeljavo kakovostnih HR procesov, usmeritev v boljše delovanje in jasne rezultate našega dela. Trudimo se, da bi izpolnili ta pričakovanja.",
+    "paragraph1_approach": "Pomagamo vam obvladovati poslovne spremembe in bolje upravljati ljudi ter na ta način ustvariti za vas trajno vrednost.",
+    "buttonText_approach": "Izvedi več",
+    "counter_title1": "izvedenih projektov razvoja HR procesov pri naših naročnikih",
+    "counter_title2": "izvedenih raziskav notranjega okolja v več kot 200 organizacijah",
+    "counter_title3": "izvedenih projektov razvoja talentov in sistema nasledstev z DNLA Expert System",
+    "title_contact": "Stopite z nami v stik",
+    "paragraph_contact": "V kolikor imate kakršnokoli vprašanje za naš tim vam bomo vedno z veseljem na voljo. Pokličite nas ali nam pošljite elektronsko sporočilo in odgovorili vam bomo v najkrajšem možnem času."
 }

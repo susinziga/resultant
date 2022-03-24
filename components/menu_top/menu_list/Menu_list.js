@@ -14,7 +14,7 @@ const Menu_list = () => {
       <Button primary={active === 0} terciary={active !== 0} href="">
         {t("nav_item1")}
       </Button>
-      <Button primary={active === 1} terciary={active !== 1} arrow>
+      <Button primary={active === 1} terciary={active !== 1} arrowDown>
         {t("nav_item2")}
       </Button>
       <Button primary={active === 2} terciary={active !== 2}>
