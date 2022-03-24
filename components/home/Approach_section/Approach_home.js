@@ -9,7 +9,7 @@ const Approach_component = (props) => {
 
   const title = t("home:title_approach");
   const textUpper = t("home:paragraph1_approach");
-  const textLower = t("home:paragraph2_approach")
+  const textLower = t("home:paragraph2_approach");
   const buttonText = t("common:button_moreMore");
 
   return (<>
