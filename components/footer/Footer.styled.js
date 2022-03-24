@@ -23,7 +23,7 @@ export const FooterContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 1600px) {
-        height: 750px;
+        height: 720px;
         padding-top: 0;
     }
 `;
@@ -66,6 +66,8 @@ export const InfoFooterHeading = styledComponents.h2`
     @media only screen and (min-width: 992px) {
         padding-bottom: 5%;
     }
+
+  
 `;
 
 export const ContactFooterContainer = styledComponents.div`
@@ -135,7 +137,7 @@ export const FooterHeader = styledComponents.h2`
     }
 
     @media only screen and (min-width: 1600px) {
-        font-size: 3rem;
+        font-size: 2rem;
         padding-top: 6%;
     }
 `;
