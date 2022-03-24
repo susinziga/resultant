@@ -1,13 +1,10 @@
 {
- 
   "locales": ["sl", "en"],
- 
+
   "defaultLocale": "sl",
   "localeDetection": false,
-    "pages": {
-      "*": ["common","aboveTheFold","pillars"],
-      "/": ["home"]
-     
-    }
-    
+  "pages": {
+    "*": ["common", "aboveTheFold", "pillars", "testimonials"],
+    "/": ["home"]
   }
+}
