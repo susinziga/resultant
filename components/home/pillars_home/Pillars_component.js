@@ -5,8 +5,6 @@ import * as Styled from "./Pillars_component.styled";
 
 const Pillars_component = ({ title, text, link, button }) => {
   const mouseEnter = (e) => {
-    console.log("ENTER");
-    console.log(e.target);
     let selected = e.target;
     if (!selected.classList.contains("pillarContainer")) {
       selected = selected.parentNode;

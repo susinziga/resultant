@@ -9,7 +9,9 @@ import Link from "next/link";
 import Button from "../../basic_components/button/Button";
 import Menu_list from "./menu_list/Menu_list";
 
-const Menu_top = () => {
+import { useRouter } from "next/router";
+
+const Menu_top = ({}) => {
   const { t, lang } = useTranslation("aboveTheFold");
 
   const letterAnimation = useRef(null);
@@ -18,6 +20,8 @@ const Menu_top = () => {
 
   const MenuAnimation = useRef(null);
 
+  const { asPath, pathname } = useRouter();
+
   //-1 začetno
   //0 na vrhu
   //1 scroll dol
@@ -25,40 +29,42 @@ const Menu_top = () => {
   const [navState, setNavState] = useState(-1);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    if (pathname === "/") {
+      window.addEventListener("scroll", handleScroll);
 
-    /*if (navState === -1 && window.scrollY <= 10) {*/
-    gsap.from(letterAnimation, {
-      duration: 2,
-      top: "500%",
-      left: "30%",
-      scale: "17",
+      /*if (navState === -1 && window.scrollY <= 10) {*/
+      gsap.from(letterAnimation, {
+        duration: 2,
+        top: "500%",
+        left: "30%",
+        scale: "17",
 
-      delay: 1,
-    });
+        delay: 1,
+      });
 
-    gsap.from(LogoAnimation, {
-      opacity: 0,
-      duration: 0.5,
+      gsap.from(LogoAnimation, {
+        opacity: 0,
+        duration: 0.5,
 
-      delay: 2.5,
-    });
+        delay: 2.5,
+      });
 
-    /*gsap.to(letterAnimation, {
+      /*gsap.to(letterAnimation, {
       duration: 0.1,
       opacity: 0,
 
       delay: 2,
     });*/
 
-    gsap.from(MenuAnimation, {
-      backgroundColor: "transparent",
-      duration: 1,
+      gsap.from(MenuAnimation, {
+        backgroundColor: "transparent",
+        duration: 1,
 
-      delay: 2.5,
-    });
+        delay: 2.5,
+      });
 
-    gsap.from(MenuAnimation, { color: "white", duration: 1, delay: 1 });
+      gsap.from(MenuAnimation, { color: "white", duration: 1, delay: 1 });
+    }
     /*}*/
   }, []);
 
@@ -75,7 +81,6 @@ const Menu_top = () => {
   };
 
   const handleNavStateChange = () => {
-    console.log("ddd");
     switch (navState) {
       case 0: {
         gsap.to(letterAnimation, {

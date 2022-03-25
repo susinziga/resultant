@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Title1 } from "../../basic_components/texts/Texts";
 
 export const MenuFixedContainer = styled.div`
+  min-height: 8.4rem;
   width: var(--width-80);
   margin: auto;
 
@@ -28,6 +29,6 @@ export const MenuItem = styled(Title1)`
   }
   ${(props) =>
     props.active
-      ? "font-size:3.5rem;color:var(--dark);width:initial;"
+      ? "font-size:3.5rem;color:var(--dark);width:initial;line-height:4.2rem;"
       : "width:30%;"}
 `;
