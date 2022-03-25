@@ -10,6 +10,8 @@ import useTranslation from "next-translate/useTranslation";
 import { BodyText3, Header1 } from "../../basic_components/texts/Texts";
 import Button from "../../basic_components/button/Button";
 
+import useSize from "../../custom_hooks/useSize";
+
 const Hero = (props) => {
   const heroImageAnimation = useRef(null);
 
@@ -23,6 +25,8 @@ const Hero = (props) => {
 
   const { t, lang } = useTranslation("aboveTheFold");
 
+  const { isDesktop } = useSize();
+
   /* CONTENT */
 
   const heroImage = "./AboveTheFold/hero2.webp";
@@ -33,38 +37,40 @@ const Hero = (props) => {
   const hero_paragraph2 = t("hero_paragraph2");
 
   useEffect(() => {
-    gsap.from(heroImageAnimation, {
-      duration: 2,
-      transform: 0,
-      top: "0",
-      //height: "100vh",
-      scale: 1,
-      delay: 1,
-    });
-    /*gsap.from(heroImageAnimation.childNode, {
+    if (isDesktop()) {
+      gsap.from(heroImageAnimation, {
+        duration: 2,
+        transform: 0,
+        top: "0",
+        //height: "100vh",
+        scale: 1,
+        delay: 1,
+      });
+      /*gsap.from(heroImageAnimation.childNode, {
       height: "100%",
       scale: 1,
       delay: 1,
     });*/
 
-    gsap.from(lineAnimation, {
-      duration: 2,
-      width: "105%",
-      left: "-5%",
-      delay: 1,
-    });
+      gsap.from(lineAnimation, {
+        duration: 2,
+        width: "105%",
+        left: "-5%",
+        delay: 1,
+      });
 
-    gsap.to(heroContainerAnimation, {
-      paddingTop: `calc(${menuHeight} + 1.5rem)`,
-      delay: 1,
-      duration: 2,
-      onComplete: setInitAnimation(false),
-    });
+      gsap.from(heroContainerAnimation, {
+        paddingTop: 0,
+        delay: 1,
+        duration: 2,
+        onComplete: setInitAnimation(false),
+      });
 
-    const menuHeightt =
-      document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
+      const menuHeightt =
+        document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
 
-    setMenuHeight(menuHeightt);
+      setMenuHeight(menuHeightt);
+    }
   }, []);
 
   return (

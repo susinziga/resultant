@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 
 import * as Styled from "./Menu_top.styled";
 
@@ -22,6 +22,19 @@ const Menu_top = ({}) => {
 
   const { asPath, pathname } = useRouter();
 
+  const [size, setSize] = useState([]);
+
+  useLayoutEffect(() => {
+    setSizes();
+    window.addEventListener("resize", setSizes);
+    return () => window.removeEventListener("resize", setSizes);
+  }, []);
+
+  const setSizes = () => {
+    console.log(window.innerHeight);
+    setSize([window.innerWidth, window.innerHeight]);
+  };
+
   //-1 začetno
   //0 na vrhu
   //1 scroll dol
@@ -29,7 +42,7 @@ const Menu_top = ({}) => {
   const [navState, setNavState] = useState(-1);
 
   useEffect(() => {
-    if (pathname === "/") {
+    if (isDesktop() && pathname === "/") {
       window.addEventListener("scroll", handleScroll);
 
       /*if (navState === -1 && window.scrollY <= 10) {*/
@@ -71,6 +84,10 @@ const Menu_top = ({}) => {
   useEffect(() => {
     handleNavStateChange();
   }, [navState]);
+
+  const isDesktop = () => {
+    return window.innerWidth > 599;
+  };
 
   const handleScroll = () => {
     if (window.scrollY >= 50) {
@@ -161,7 +178,13 @@ const Menu_top = ({}) => {
             height="300"
           ></object>
         </Styled.LogoContainer>
-        <Menu_list></Menu_list>
+        {size[0] > 599 ? (
+          <Menu_list></Menu_list>
+        ) : (
+          <a>
+            <img style={{ height: "100%" }} src="./Buttons/Menu.svg"></img>
+          </a>
+        )}
       </Styled.MenuContainer>
     </Styled.Fixed>
   );

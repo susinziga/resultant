@@ -2,10 +2,34 @@ import styledComponents from "styled-components";
 
 export const HeroContainer = styledComponents.div`
 
+
+position:relative;
+height:100vh;
+padding-top:calc(${(props) => props.menuHeight} + 1rem);
+
+
+
+div:first-child{
+    transform: scale(0.9);
+    top:-5%;
+    position: relative;
+
+    border-radius: 12px;    
+
+    overflow:hidden;
+
+    height:110%;
+}
+    >img{
+        //height:100vh;
+    }
+
+@media(min-width:600px){
+
 position:relative;
 height:100vh;
 padding-top:calc(${(props) => props.menuHeight}px + 1.5rem);
-padding-top:0;
+
 
 
 div:first-child{
@@ -21,6 +45,7 @@ div:first-child{
     >img{
         //height:100vh;
     }
+
 }
 `;
 
