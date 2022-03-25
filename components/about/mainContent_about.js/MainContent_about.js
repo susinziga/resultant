@@ -128,7 +128,7 @@ const MainContent_about = (props) => {
         </MainContentNavBar>
         <MainContentContent ref={(el) => (contentAnimation = el)}>
           {
-            selectedMenu == 1 ? <MainContentSlider /> : ""
+            selectedMenu <= 1 ? <MainContentSlider /> : ""
             
           }
           {
