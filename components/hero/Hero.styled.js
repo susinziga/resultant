@@ -5,7 +5,7 @@ export const HeroContainer = styledComponents.div`
 position:relative;
 height:100vh;
 padding-top:calc(${(props) => props.menuHeight}px + 1.5rem);
-
+padding-top:0;
 
 
 div:first-child{
@@ -18,6 +18,9 @@ div:first-child{
     overflow:hidden;
 
     height:110%;
+    >img{
+        //height:100vh;
+    }
 }
 `;
 
