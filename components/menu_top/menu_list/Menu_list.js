@@ -11,7 +11,7 @@ const Menu_list = () => {
 
   return (
     <Styled.MenuList>
-      <Button className="nav_item" terciary>
+      <Button href="/about" className="nav_item" terciary>
         {t("nav_item1")}
       </Button>
       <Button className="nav_item" terciary arrowDown>

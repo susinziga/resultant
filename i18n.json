@@ -5,6 +5,7 @@
   "localeDetection": false,
   "pages": {
     "*": ["common", "aboveTheFold", "pillars", "testimonials"],
-    "/": ["home"]
+    "/": ["home"],
+    "/about": ["about"]
   }
 }
