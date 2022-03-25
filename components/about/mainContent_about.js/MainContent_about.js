@@ -18,6 +18,7 @@ const MainContent_about = (props) => {
     const lineAnimation = useRef(null);
     const navAnimation = useRef(null);
     const contentAnimation = useRef(null);
+    const sliderAnimation = useRef(null);
 
   const { t, lang } = useTranslation();
 
@@ -40,6 +41,7 @@ const MainContent_about = (props) => {
       window.addEventListener("wheel", handleWheel);
     }
   }, [centered]);
+
   let selected = 1;
   const handleWheel = (e) => {
     console.log(e.deltaY);
@@ -85,7 +87,6 @@ const MainContent_about = (props) => {
   }
 }
 
-
   const handleScroll = (e) => {
     let contentPosition = contentRef.current.getBoundingClientRect().y;
     console.log(contentPosition);
@@ -94,17 +95,20 @@ const MainContent_about = (props) => {
             duration: 2.5,
             width: 0,
         });
-        gsap.to(navAnimation, {
+        gsap.to(navAnimation, {   
             duration: 2,
-            width: "30%",
             paddingLeft: "5%",
+            width: "30%",
             fontSize: "3rem"
         });
         gsap.to(contentAnimation, {
-            duration: 2,
-            width: "65%",
+           
             paddingTop: "12%",
+            width: "65%",
+            duration: 2,
+           
         });
+     
         setInitial(false);
         setTransition(true);
         disableBodyScroll(document.getElementsByTagName("body")[0]);
@@ -124,7 +128,11 @@ const MainContent_about = (props) => {
         </MainContentNavBar>
         <MainContentContent ref={(el) => (contentAnimation = el)}>
           {
-            selectedMenu == 1 ? <MainContentSlider/> : ""
+            selectedMenu == 1 ? <MainContentSlider /> : ""
+            
+          }
+          {
+            selectedMenu == 2 ? "" : ""
           }
 
         </MainContentContent>
