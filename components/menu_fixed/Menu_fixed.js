@@ -15,44 +15,95 @@ const Menu_fixed = (props) => {
 
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
-      e.preventDefault();
+      console.log("adasdasd");
       handleScroll(e, contentRef);
     });
-
-    /*window.addEventListener("scroll", (e) => {
-      e.preventDefault();
-    });*/
-    disableBodyScroll(document.getElementsByTagName("body")[0]);
   }, []);
-
   /*useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      e.preventDefault();
+    });
+  }, []);*/
+
+  useEffect(() => {
     if (centered) {
-      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+      window.addEventListener("wheel", handleWheel);
     }
   }, [centered]);
-*/
+
+  let lastY = 0;
+  let direction = "not yet";
   const handleScroll = (e) => {
     console.log("SCROLL_HANDLE_MENU");
 
     let contentPosition = contentRef.current.getBoundingClientRect();
     let windowHeight = window.innerHeight;
+
     if (!centered) {
       if (
-        windowHeight / 2 - 50 > contentPosition.y &&
-        windowHeight / 2 - 100 < contentPosition.y
+        windowHeight / 2 - 60 > contentPosition.y &&
+        windowHeight / 2 - 80 < contentPosition.y
       ) {
         setCentered(true);
+        disableBodyScroll(document.getElementsByTagName("body")[0]);
       } else {
-        setCentered(false);
       }
     } else {
     }
   };
+
+  const handleWheel = (e) => {
+    let selected = 0;
+    if (e.deltaY > 0) {
+      setMenuSelected((prev) => {
+        if (prev < 2) {
+          selected = prev + 1;
+          return prev + 1;
+        } else {
+          selected = prev;
+          return prev;
+        }
+      });
+      direction = "down";
+    } else {
+      setMenuSelected((prev) => {
+        if (prev > 0) {
+          selected = prev - 1;
+          return prev - 1;
+        } else {
+          selected = prev;
+          return prev;
+        }
+      });
+      direction = "up";
+    }
+
+    console.log(selected);
+    if (selected === 0 && direction === "up") {
+      enableBodyScroll(document.getElementsByTagName("body")[0]);
+      window.scrollBy(0, -50);
+      setCentered(false);
+      window.removeEventListener("wheel", handleWheel);
+    }
+
+    if (selected === 2 && direction === "down") {
+      enableBodyScroll(document.getElementsByTagName("body")[0]);
+      window.scrollBy(0, 50);
+      setCentered(false);
+      window.removeEventListener("wheel", handleWheel);
+    }
+  };
   return (
     <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
-      <Styled.MenuItem active>{t("menu_item1")}</Styled.MenuItem>
-      <Styled.MenuItem>{t("menu_item2")}</Styled.MenuItem>
-      <Styled.MenuItem>{t("menu_item3")}</Styled.MenuItem>
+      <Styled.MenuItem active={menuSelected === 0}>
+        {t("menu_item1")}
+      </Styled.MenuItem>
+      <Styled.MenuItem active={menuSelected === 1}>
+        {t("menu_item2")}
+      </Styled.MenuItem>
+      <Styled.MenuItem active={menuSelected === 2}>
+        {t("menu_item3")}
+      </Styled.MenuItem>
     </Styled.MenuFixedContainer>
   );
 };
