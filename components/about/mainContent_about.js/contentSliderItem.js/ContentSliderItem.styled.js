@@ -3,10 +3,13 @@ import { BodyText4, Title2 } from "../../../../basic_components/texts/Texts";
 
 export const ReferencesItemContainer = styledComponents.div`
 
-    width: 70%;
+    width: 75%;
+    margin-left: 2%;
+  
     border: 1px solid black;
     border-radius: 12px;
-    padding: 10%;
+    padding: 8%;
+    min-height: 160px;
     
   
     ${(props) => {
