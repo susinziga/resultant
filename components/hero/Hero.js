@@ -19,6 +19,8 @@ const Hero = (props) => {
 
   const [menuHeight, setMenuHeight] = useState("90px");
 
+  const [initAnimation, setInitAnimation] = useState(true);
+
   const { t, lang } = useTranslation("aboveTheFold");
 
   /* CONTENT */
@@ -34,16 +36,29 @@ const Hero = (props) => {
     gsap.from(heroImageAnimation, {
       duration: 2,
       transform: 0,
-      top: "-10%",
+      top: "0",
+      //height: "100vh",
       scale: 1,
-      delay: 0.2,
+      delay: 1,
     });
+    /*gsap.from(heroImageAnimation.childNode, {
+      height: "100%",
+      scale: 1,
+      delay: 1,
+    });*/
 
     gsap.from(lineAnimation, {
       duration: 2,
       width: "105%",
       left: "-5%",
-      delay: 0.2,
+      delay: 1,
+    });
+
+    gsap.to(heroContainerAnimation, {
+      paddingTop: `calc(${menuHeight} + 1.5rem)`,
+      delay: 1,
+      duration: 2,
+      onComplete: setInitAnimation(false),
     });
 
     const menuHeightt =

@@ -27,37 +27,39 @@ const Menu_top = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    if (navState === -1 && window.scrollY <= 10) {
-      gsap.from(letterAnimation, {
-        duration: 2,
-        top: "500%",
-        left: "100%",
-        scale: "22",
+    /*if (navState === -1 && window.scrollY <= 10) {*/
+    gsap.from(letterAnimation, {
+      duration: 2,
+      top: "500%",
+      left: "30%",
+      scale: "17",
 
-        delay: 0.2,
-      });
+      delay: 1,
+    });
 
-      gsap.from(LogoAnimation, {
-        opacity: 0,
-        duration: 0.5,
+    gsap.from(LogoAnimation, {
+      opacity: 0,
+      duration: 0.5,
 
-        delay: 1.8,
-      });
+      delay: 2.5,
+    });
 
-      /*gsap.to(letterAnimation, {
+    /*gsap.to(letterAnimation, {
       duration: 0.1,
       opacity: 0,
 
       delay: 2,
     });*/
 
-      gsap.from(MenuAnimation, {
-        backgroundColor: "transparent",
-        duration: 0.1,
+    gsap.from(MenuAnimation, {
+      backgroundColor: "transparent",
+      duration: 1,
 
-        delay: 2,
-      });
-    }
+      delay: 2.5,
+    });
+
+    gsap.from(MenuAnimation, { color: "white", duration: 1, delay: 1 });
+    /*}*/
   }, []);
 
   useEffect(() => {

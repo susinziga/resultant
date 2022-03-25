@@ -1,12 +1,48 @@
 import useTranslation from "next-translate/useTranslation";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import * as Styled from "./Menu_fixed.styled";
 
 const Menu_fixed = (props) => {
   const { t, lang } = useTranslation("home");
+  const contentRef = useRef(null);
+
+  const [centered, setCentered] = useState(false);
+
+  const [menuSelected, setMenuSelected] = useState(0);
+
+  useEffect(() => {
+    console.log(contentRef);
+    window.addEventListener("scroll", (e, contentRef) => {
+      handleScroll(e, contentRef);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (centered) {
+      document.getElementsByTagName("body")[0].style.overflow = "hidden";
+    }
+  }, [centered]);
+  let scrolled = false;
+  const handleScroll = (e) => {
+    console.log("SCROLL_HANDLE_MENU");
+
+    let contentPosition = contentRef.current.getBoundingClientRect();
+    let windowHeight = window.innerHeight;
+    if (!centered) {
+      if (
+        windowHeight / 2 - 50 > contentPosition.y &&
+        windowHeight / 2 - 100 < contentPosition.y
+      ) {
+        setCentered(true);
+      } else {
+        setCentered(false);
+      }
+    } else {
+    }
+  };
   return (
-    <Styled.MenuFixedContainer {...props}>
+    <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
       <Styled.MenuItem active>{t("menu_item1")}</Styled.MenuItem>
       <Styled.MenuItem>{t("menu_item2")}</Styled.MenuItem>
       <Styled.MenuItem>{t("menu_item3")}</Styled.MenuItem>
