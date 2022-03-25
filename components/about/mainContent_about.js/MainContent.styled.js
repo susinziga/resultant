@@ -61,11 +61,13 @@ export const MainContentHeading = styledComponents(Header2)`
       }}
 
       ${(props) => {
-        return props.selected
-          ? ` font-size: 4rem !important;
+        return props.selected 
+          ? ` font-size: 3.5rem !important;
               color: black;  
               padding: 0;
               opacity: 1;
+              transition: font-size 1s;
+              transition: color 1s;
           `
           : "";
       }}

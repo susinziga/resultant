@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MainContentContainer, MainContentContent, MainContentHeading, MainContentLine, MainContentNavBar } from './MainContent.styled';
 import useTranslation from "next-translate/useTranslation";
+import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
 
 import gsap from "gsap";
+import MainContentSlider from './MainContentSlider_about.js/MainContentSlider';
 
 
 const MainContent_about = (props) => {
@@ -10,8 +12,9 @@ const MainContent_about = (props) => {
     const [selected2, setSelected2] = useState(false);
     const [selected3, setSelected3] = useState(false);
     const [selected4, setSelected4] = useState(false);
-    const [transition, setTransition] = useState(false)
-    const [initial, setInitial] = useState(true)
+    const [transition, setTransition] = useState(false);
+    const [initial, setInitial] = useState(true);
+    const [selectedMenu, setSelectedMenu] = useState(1);
     const lineAnimation = useRef(null);
     const navAnimation = useRef(null);
     const contentAnimation = useRef(null);
@@ -32,6 +35,56 @@ const MainContent_about = (props) => {
     });
   }, []);
 
+  useEffect(() => {
+    if (centered) {
+      window.addEventListener("wheel", handleWheel);
+    }
+  }, [centered]);
+  let selected = 1;
+  const handleWheel = (e) => {
+    console.log(e.deltaY);
+    if (e.deltaY > 0) {
+      selected++;
+      console.log(selected);
+      setSelectedMenu(selected);
+    } else {
+      selected--;
+      setSelectedMenu(selected);
+    }
+
+    if(selected == 1) {
+      setSelected1(true);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(false);
+      
+    } else if (selected == 2) {
+      setSelected1(false);
+      setSelected2(true);
+      setSelected3(false);
+      setSelected4(false);
+  
+    } else if (selected == 3) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(true);
+      setSelected4(false);
+
+    } else if (selected == 4) {
+      setSelected1(false);
+      setSelected2(false);
+      setSelected3(false);
+      setSelected4(true);
+  } else if(selected > 4) {
+    selected = 4; 
+  }
+
+  if(selected == 0){
+    enableBodyScroll(document.getElementsByTagName("body")[0]);
+    
+  }
+}
+
 
   const handleScroll = (e) => {
     let contentPosition = contentRef.current.getBoundingClientRect().y;
@@ -43,16 +96,19 @@ const MainContent_about = (props) => {
         });
         gsap.to(navAnimation, {
             duration: 2,
-            width: "40%",
+            width: "30%",
             paddingLeft: "5%",
             fontSize: "3rem"
         });
         gsap.to(contentAnimation, {
             duration: 2,
-            width: "60%",
+            width: "65%",
+            paddingTop: "12%",
         });
         setInitial(false);
-       setTransition(true);
+        setTransition(true);
+        disableBodyScroll(document.getElementsByTagName("body")[0]);
+        setCentered(true);
     };
   }
 
@@ -66,7 +122,12 @@ const MainContent_about = (props) => {
             <MainContentHeading selected={selected3} transition={transition}>{navItem3}</MainContentHeading>
             <MainContentHeading selected={selected4} transition={transition}>{navItem4}</MainContentHeading>
         </MainContentNavBar>
-        <MainContentContent ref={(el) => (contentAnimation = el)}></MainContentContent>
+        <MainContentContent ref={(el) => (contentAnimation = el)}>
+          {
+            selectedMenu == 1 ? <MainContentSlider/> : ""
+          }
+
+        </MainContentContent>
     </MainContentContainer>
   </>
   )
