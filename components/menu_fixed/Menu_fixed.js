@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 import * as Styled from "./Menu_fixed.styled";
 
+import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
+
 const Menu_fixed = (props) => {
   const { t, lang } = useTranslation("home");
   const contentRef = useRef(null);
@@ -12,18 +14,23 @@ const Menu_fixed = (props) => {
   const [menuSelected, setMenuSelected] = useState(0);
 
   useEffect(() => {
-    console.log(contentRef);
-    window.addEventListener("scroll", (e, contentRef) => {
+    window.addEventListener("scroll", (e) => {
+      e.preventDefault();
       handleScroll(e, contentRef);
     });
+
+    /*window.addEventListener("scroll", (e) => {
+      e.preventDefault();
+    });*/
+    disableBodyScroll(document.getElementsByTagName("body")[0]);
   }, []);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (centered) {
       document.getElementsByTagName("body")[0].style.overflow = "hidden";
     }
   }, [centered]);
-  let scrolled = false;
+*/
   const handleScroll = (e) => {
     console.log("SCROLL_HANDLE_MENU");
 
