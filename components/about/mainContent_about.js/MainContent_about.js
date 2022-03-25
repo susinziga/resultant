@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MainContentContainer, MainContentHeading, MainContentLine, MainContentNavBar } from './MainContent.styled';
+import { MainContentContainer, MainContentContent, MainContentHeading, MainContentLine, MainContentNavBar } from './MainContent.styled';
 import useTranslation from "next-translate/useTranslation";
 
 import gsap from "gsap";
@@ -10,7 +10,11 @@ const MainContent_about = (props) => {
     const [selected2, setSelected2] = useState(false);
     const [selected3, setSelected3] = useState(false);
     const [selected4, setSelected4] = useState(false);
+    const [transition, setTransition] = useState(false)
+    const [initial, setInitial] = useState(true)
     const lineAnimation = useRef(null);
+    const navAnimation = useRef(null);
+    const contentAnimation = useRef(null);
 
   const { t, lang } = useTranslation();
 
@@ -31,26 +35,38 @@ const MainContent_about = (props) => {
 
   const handleScroll = (e) => {
     let contentPosition = contentRef.current.getBoundingClientRect().y;
-    if(contentPosition === 0){
+    console.log(contentPosition);
+    if(contentPosition < 1){
         gsap.to(lineAnimation, {
-            duration: 0.5,
+            duration: 2.5,
             width: 0,
-          });
+        });
+        gsap.to(navAnimation, {
+            duration: 2,
+            width: "40%",
+            paddingLeft: "5%",
+            fontSize: "3rem"
+        });
+        gsap.to(contentAnimation, {
+            duration: 2,
+            width: "60%",
+        });
+        setInitial(false);
+       setTransition(true);
     };
-    
-     
   }
- 
+
 
   return (<>
-    <MainContentContainer {...props} ref={contentRef} onScroll={handleScroll}>
-        <MainContentNavBar>
-            <MainContentHeading selected={selected1}>{navItem1}</MainContentHeading>
+    <MainContentContainer {...props} ref={contentRef} transition={transition}  onScroll={handleScroll}>
+        <MainContentNavBar ref={(el) => (navAnimation = el)}>
+            <MainContentHeading initial={initial} selected={selected1} transition={transition}>{navItem1}</MainContentHeading>
             <MainContentLine  ref={(el) => (lineAnimation = el)}></MainContentLine>
-            <MainContentHeading selected={selected2}>{navItem2}</MainContentHeading>
-            <MainContentHeading selected={selected3}>{navItem3}</MainContentHeading>
-            <MainContentHeading selected={selected4}>{navItem4}</MainContentHeading>
+            <MainContentHeading selected={selected2} transition={transition}>{navItem2}</MainContentHeading>
+            <MainContentHeading selected={selected3} transition={transition}>{navItem3}</MainContentHeading>
+            <MainContentHeading selected={selected4} transition={transition}>{navItem4}</MainContentHeading>
         </MainContentNavBar>
+        <MainContentContent ref={(el) => (contentAnimation = el)}></MainContentContent>
     </MainContentContainer>
   </>
   )

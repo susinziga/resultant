@@ -5,9 +5,18 @@ import { Header2} from "../../../basic_components/texts/Texts";
 export const MainContentContainer = styledComponents.div`
     width:100%;
     height: 100vh;
-    background: var(--footer-color);
+   
     display: flex;
+    transition: background-color 1s;
+    
 
+    ${(props) => {
+        return props.transition
+          ? ` background-color:white;
+          `
+          : `background-color: var(--footer-color);
+            `;
+      }}
     @media screen and (min-width: 768px){
         
     }
@@ -26,11 +35,35 @@ export const MainContentNavBar = styledComponents.div`
 export const MainContentHeading = styledComponents(Header2)`
     color: #CACFD2;
     opacity: 0.8;
+    
+    transition: font-size 2s;
+    transition: color 2s;
 
+   
     ${(props) => {
+        return props.initial
+          ? ` font-size: 4.5rem !important;
+              color: white !important;  
+              padding: 0;
+              opacity: 1;
+          `
+          : "";
+      }}
+
+      
+    ${(props) => {
+        return props.transition
+          ? ` font-size: 2.5rem !important; 
+              padding: 0;
+              opacity: 0.8;
+          `
+          : "";
+      }}
+
+      ${(props) => {
         return props.selected
-          ? ` font-size: 4.5rem;
-              color: white;  
+          ? ` font-size: 4rem !important;
+              color: black;  
               padding: 0;
               opacity: 1;
           `
