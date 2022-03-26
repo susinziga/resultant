@@ -5,12 +5,17 @@ import {Container } from "./MainContentSlider.styled";
 import { useSwiper } from "swiper/react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, {
+    Mousewheel,Pagination
+  } from 'swiper';
 
 // Import Swiper styles
 import "swiper/css";
 import References_item from "../../../references/references_item/References_item";
 import { useRef, useState } from "react";
 import Content_item from "../contentSliderItem.js/ContentSliderItem";
+
+SwiperCore.use([Mousewheel,Pagination]);
 
 const MainContentSlider = () => {
 
@@ -44,6 +49,8 @@ const MainContentSlider = () => {
         slidesPerView={1}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => (swip = swiper)}
+        mousewheel={true}
+        direction={"horizontal"}
       >
         {items.map((ref, id) => (
           <SwiperSlide key={id}>

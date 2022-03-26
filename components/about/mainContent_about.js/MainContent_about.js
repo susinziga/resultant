@@ -15,6 +15,8 @@ const MainContent_about = (props) => {
     const [transition, setTransition] = useState(false);
     const [initial, setInitial] = useState(true);
     const [selectedMenu, setSelectedMenu] = useState(1);
+    const [menu, setMenu] = useState(1)
+    const [location, setLocation] = useState("")
     const lineAnimation = useRef(null);
     const navAnimation = useRef(null);
     const contentAnimation = useRef(null);
@@ -43,16 +45,27 @@ const MainContent_about = (props) => {
   }, [centered]);
 
   let selected = 1;
+  let counter = 1;
+
+
   const handleWheel = (e) => {
-    console.log(e.deltaY);
+    
     if (e.deltaY > 0) {
       selected++;
-      console.log(selected);
+      counter++;
       setSelectedMenu(selected);
     } else {
       selected--;
+      counter--;
       setSelectedMenu(selected);
     }
+
+    if(counter < 6 ){
+      selected = 1;
+    } 
+    console.log(selectedMenu)
+    console.log(selected);
+    console.log(counter);
 
     if(selected == 1) {
       setSelected1(true);
@@ -81,30 +94,34 @@ const MainContent_about = (props) => {
     selected = 4; 
   }
 
-  if(selected == 0){
+  if(counter <= 0){
     enableBodyScroll(document.getElementsByTagName("body")[0]);
     
   }
 }
 
+
+  const handleEnd = () => {}
+
   const handleScroll = (e) => {
     let contentPosition = contentRef.current.getBoundingClientRect().y;
     console.log(contentPosition);
     if(contentPosition < 1){
+        counter=0;
         gsap.to(lineAnimation, {
             duration: 2.5,
             width: 0,
         });
         gsap.to(navAnimation, {   
-            duration: 2,
-            paddingLeft: "5%",
             width: "30%",
-            fontSize: "3rem"
+            paddingLeft: "0.1%",
+            duration: 2,
+            
+            fontSize: "3rem",
         });
         gsap.to(contentAnimation, {
-           
-            paddingTop: "12%",
-            width: "65%",
+            paddingTop: "15%",
+            width: "70%",
             duration: 2,
            
         });
@@ -128,7 +145,7 @@ const MainContent_about = (props) => {
         </MainContentNavBar>
         <MainContentContent ref={(el) => (contentAnimation = el)}>
           {
-            selectedMenu <= 1 ? <MainContentSlider /> : ""
+            selectedMenu == 1 ? <MainContentSlider handleEnd={handleEnd}/> : ""
             
           }
           {
