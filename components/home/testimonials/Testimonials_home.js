@@ -20,10 +20,10 @@ const Testimonials_home = (props) => {
       role: t("testimonial1_role"),
     },
     {
-      title: t("testimonial1_title"),
-      text: t("testimonial1_text"),
-      name: t("testimonial1_name"),
-      role: t("testimonial1_role"),
+      title: t("testimonial2_title"),
+      text: t("testimonial2_text"),
+      name: t("testimonial2_name"),
+      role: t("testimonial2_role"),
     },
   ];
   return (

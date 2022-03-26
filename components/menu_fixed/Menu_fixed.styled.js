@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Title1 } from "../../basic_components/texts/Texts";
 
 export const MenuFixedContainer = styled.div`
+  min-height: 8.4rem;
   width: var(--width-80);
   margin: auto;
 
@@ -14,6 +15,7 @@ export const MenuFixedContainer = styled.div`
 `;
 
 export const MenuItem = styled(Title1)`
+  padding-bottom: 1rem;
   color: var(--light-grey);
   //width: 30%;
 
@@ -22,12 +24,17 @@ export const MenuItem = styled(Title1)`
   }
   :nth-child(2) {
     text-align: center;
+    width: 40%;
   }
   :nth-child(3) {
-    text-align: left;
+    text-align: right;
   }
   ${(props) =>
     props.active
-      ? "font-size:3.5rem;color:var(--dark);width:initial;"
+      ? `font-size:3.5rem;
+      color:var(--dark);
+      width:initial;
+      line-height:4.2rem;
+      border-bottom:1px solid var(--dark);`
       : "width:30%;"}
 `;

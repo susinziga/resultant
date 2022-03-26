@@ -3,7 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 
 import * as Styled from "./Menu_fixed.styled";
 
-import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
+import disableScroll from "disable-scroll";
+import { Waypoint } from "react-waypoint";
 
 const Menu_fixed = (props) => {
   const { t, lang } = useTranslation("home");
@@ -15,7 +16,6 @@ const Menu_fixed = (props) => {
 
   useEffect(() => {
     window.addEventListener("scroll", (e) => {
-      console.log("adasdasd");
       handleScroll(e, contentRef);
     });
   }, []);
@@ -27,14 +27,12 @@ const Menu_fixed = (props) => {
 
   useEffect(() => {
     if (centered) {
-      window.addEventListener("wheel", handleWheel);
     }
   }, [centered]);
 
-  let lastY = 0;
   let direction = "not yet";
   const handleScroll = (e) => {
-    console.log("SCROLL_HANDLE_MENU");
+    //console.log("SCROLL_HANDLE_MENU");
 
     let contentPosition = contentRef.current.getBoundingClientRect();
     let windowHeight = window.innerHeight;
@@ -44,8 +42,15 @@ const Menu_fixed = (props) => {
         windowHeight / 2 - 60 > contentPosition.y &&
         windowHeight / 2 - 80 < contentPosition.y
       ) {
+        window.addEventListener("wheel", handleWheel);
         setCentered(true);
-        disableBodyScroll(document.getElementsByTagName("body")[0]);
+        disableScroll.on(null, {
+          authorizedInInputs: [32, 37, 38, 39, 40],
+          disableKeys: true,
+          disableScroll: true,
+          disableWheel: false,
+          keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40],
+        });
       } else {
       }
     } else {
@@ -56,7 +61,7 @@ const Menu_fixed = (props) => {
     let selected = 0;
     if (e.deltaY > 0) {
       setMenuSelected((prev) => {
-        if (prev < 2) {
+        if (prev < 14) {
           selected = prev + 1;
           return prev + 1;
         } else {
@@ -78,33 +83,52 @@ const Menu_fixed = (props) => {
       direction = "up";
     }
 
-    console.log(selected);
     if (selected === 0 && direction === "up") {
-      enableBodyScroll(document.getElementsByTagName("body")[0]);
+      //enableBodyScroll(document.getElementsByTagName("body")[0]);
       window.scrollBy(0, -50);
-      setCentered(false);
+
+      disableScroll.off();
       window.removeEventListener("wheel", handleWheel);
     }
 
-    if (selected === 2 && direction === "down") {
-      enableBodyScroll(document.getElementsByTagName("body")[0]);
+    if (selected === 14 && direction === "down") {
+      //enableBodyScroll(document.getElementsByTagName("body")[0]);
       window.scrollBy(0, 50);
-      setCentered(false);
+      disableScroll.off();
       window.removeEventListener("wheel", handleWheel);
     }
   };
   return (
-    <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
-      <Styled.MenuItem active={menuSelected === 0}>
-        {t("menu_item1")}
-      </Styled.MenuItem>
-      <Styled.MenuItem active={menuSelected === 1}>
-        {t("menu_item2")}
-      </Styled.MenuItem>
-      <Styled.MenuItem active={menuSelected === 2}>
-        {t("menu_item3")}
-      </Styled.MenuItem>
-    </Styled.MenuFixedContainer>
+    <Waypoint
+      /*onEnter={({}) => {
+        window.addEventListener("wheel", handleWheel);
+        //setCentered(true);
+        disableScroll.on(null, {
+          authorizedInInputs: [32, 37, 38, 39, 40],
+          disableKeys: true,
+          disableScroll: true,
+          disableWheel: false,
+          keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40],
+        });
+      }}
+      onLeave={() => console.log("LEFT")}*/
+
+      topOffset={0}
+      bottomOffset={700}
+      //debug={true}
+    >
+      <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
+        <Styled.MenuItem active={menuSelected < 5}>
+          {t("menu_item1")}
+        </Styled.MenuItem>
+        <Styled.MenuItem active={menuSelected >= 5 && menuSelected <= 10}>
+          {t("menu_item2")}
+        </Styled.MenuItem>
+        <Styled.MenuItem active={menuSelected > 10}>
+          {t("menu_item3")}
+        </Styled.MenuItem>
+      </Styled.MenuFixedContainer>
+    </Waypoint>
   );
 };
 
