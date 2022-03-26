@@ -1,3 +1,5 @@
+import React from "react";
+
 import Hero from "../components/hero/Hero";
 import Approach_component from "../components/home/Approach_section/Approach_home";
 import Pillars_home from "../components/home/pillars_home/Pillars_home";

@@ -32,16 +32,14 @@ const Menu_fixed = (props) => {
 
   let direction = "not yet";
   const handleScroll = (e) => {
+    console.log(isInView());
     //console.log("SCROLL_HANDLE_MENU");
 
     let contentPosition = contentRef.current.getBoundingClientRect();
     let windowHeight = window.innerHeight;
 
     if (!centered) {
-      if (
-        windowHeight / 2 - 60 > contentPosition.y &&
-        windowHeight / 2 - 80 < contentPosition.y
-      ) {
+      if (isInView()) {
         window.addEventListener("wheel", handleWheel);
         setCentered(true);
         disableScroll.on(null, {
@@ -56,6 +54,16 @@ const Menu_fixed = (props) => {
     } else {
     }
   };
+  function isInView() {
+    let position = contentRef.current.getBoundingClientRect();
+
+    if (
+      position.top >= window.innerHeight / 2 - position.height &&
+      position.bottom <= window.innerHeight / 2 + position.height
+    )
+      return true;
+    return false;
+  }
 
   const handleWheel = (e) => {
     let selected = 0;
@@ -99,36 +107,17 @@ const Menu_fixed = (props) => {
     }
   };
   return (
-    <Waypoint
-      /*onEnter={({}) => {
-        window.addEventListener("wheel", handleWheel);
-        //setCentered(true);
-        disableScroll.on(null, {
-          authorizedInInputs: [32, 37, 38, 39, 40],
-          disableKeys: true,
-          disableScroll: true,
-          disableWheel: false,
-          keyboardKeys: [32, 33, 34, 35, 36, 37, 38, 39, 40],
-        });
-      }}
-      onLeave={() => console.log("LEFT")}*/
-
-      topOffset={0}
-      bottomOffset={700}
-      //debug={true}
-    >
-      <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
-        <Styled.MenuItem active={menuSelected < 5}>
-          {t("menu_item1")}
-        </Styled.MenuItem>
-        <Styled.MenuItem active={menuSelected >= 5 && menuSelected <= 10}>
-          {t("menu_item2")}
-        </Styled.MenuItem>
-        <Styled.MenuItem active={menuSelected > 10}>
-          {t("menu_item3")}
-        </Styled.MenuItem>
-      </Styled.MenuFixedContainer>
-    </Waypoint>
+    <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
+      <Styled.MenuItem active={menuSelected < 5}>
+        {t("menu_item1")}
+      </Styled.MenuItem>
+      <Styled.MenuItem active={menuSelected >= 5 && menuSelected <= 10}>
+        {t("menu_item2")}
+      </Styled.MenuItem>
+      <Styled.MenuItem active={menuSelected > 10}>
+        {t("menu_item3")}
+      </Styled.MenuItem>
+    </Styled.MenuFixedContainer>
   );
 };
 

@@ -5,7 +5,7 @@ export const HeroContainer = styledComponents.div`
 
 position:relative;
 height:100vh;
-padding-top:calc(${(props) => props.menuHeight} + 1rem);
+padding-top:calc(${(props) => props.menuHeight}px + 1rem);
 
 
 
