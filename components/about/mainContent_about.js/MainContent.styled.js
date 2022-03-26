@@ -5,8 +5,9 @@ import { Header2} from "../../../basic_components/texts/Texts";
 export const MainContentContainer = styledComponents.div`
     width:100%;
     height: 100vh;
-   
     display: flex;
+    padding-left: 5%;
+    
     transition: background-color 1s;
     
 

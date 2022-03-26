@@ -113,14 +113,15 @@ const MainContent_about = (props) => {
             width: 0,
         });
         gsap.to(navAnimation, {   
-            duration: 2,
-            paddingLeft: "5%",
             width: "30%",
-            fontSize: "3rem"
+            paddingLeft: "0.1%",
+            duration: 2,
+            
+            fontSize: "3rem",
         });
         gsap.to(contentAnimation, {
-            paddingTop: "12%",
-            width: "65%",
+            paddingTop: "15%",
+            width: "70%",
             duration: 2,
            
         });
