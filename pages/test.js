@@ -1,104 +1,11 @@
-import React from "react";
+import About_about from "../components/about/About_section.js/About_about";
+import MainContent_about from "../components/about/mainContent_about.js/MainContent_about";
 
-const test = () => {
-  React.useEffect(() => {
-    (function () {
-      init();
-
-      var g_containerInViewport;
-      function init() {
-        setStickyContainersSize();
-        bindEvents();
-      }
-
-      function bindEvents() {
-        window.addEventListener("wheel", wheelHandler);
-      }
-
-      function setStickyContainersSize() {
-        document
-          .querySelectorAll(".sticky-container")
-          .forEach(function (container) {
-            const stikyContainerHeight =
-              container.querySelector("main").offsetWidth + window.innerHeight;
-            container.setAttribute(
-              "style",
-              "height: " + stikyContainerHeight + "px"
-            );
-          });
-      }
-
-      function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-          rect.top <= 0 && rect.bottom > document.documentElement.clientHeight
-        );
-      }
-
-      function wheelHandler(evt) {
-        const containerInViewPort = Array.from(
-          document.querySelectorAll(".sticky-container")
-        ).filter(function (container) {
-          return isElementInViewport(container);
-        })[0];
-
-        if (!containerInViewPort) {
-          return;
-        }
-
-        var isPlaceHolderBelowTop =
-          containerInViewPort.offsetTop < document.documentElement.scrollTop;
-        var isPlaceHolderBelowBottom =
-          containerInViewPort.offsetTop + containerInViewPort.offsetHeight >
-          document.documentElement.scrollTop;
-        let g_canScrollHorizontally =
-          isPlaceHolderBelowTop && isPlaceHolderBelowBottom;
-
-        if (g_canScrollHorizontally) {
-          containerInViewPort.querySelector("main").scrollLeft += evt.deltaY;
-        }
-      }
-    })();
-  }, []);
-
+export default function test() {
   return (
     <>
-      <div class="vertical-section">Content above</div>
-      <div class="sticky-container">
-        <main>
-          <section>
-            <h1>Beep</h1>
-          </section>
-          <section>
-            <h1>Boop</h1>
-          </section>
-          <section>
-            <h1>Boooom</h1>
-          </section>
-          <section>
-            <h1>The End</h1>
-          </section>
-        </main>
-      </div>
-      <div class="vertical-section">Content Below</div>
-      <div class="sticky-container">
-        <main>
-          <section>
-            <h1>Beep</h1>
-          </section>
-          <section>
-            <h1>Boop</h1>
-          </section>
-          <section>
-            <h1>Boooom</h1>
-          </section>
-          <section>
-            <h1>The End</h1>
-          </section>
-        </main>
-      </div>
+      <About_about className="section"></About_about>
+      <MainContent_about></MainContent_about>
     </>
   );
-};
-
-export default test;
+}

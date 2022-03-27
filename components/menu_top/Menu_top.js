@@ -53,6 +53,7 @@ const Menu_top = ({}) => {
         scale: "17",
 
         delay: 1,
+        pin: true,
       });
 
       gsap.from(LogoAnimation, {
