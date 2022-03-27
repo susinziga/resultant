@@ -20,7 +20,7 @@ const Menu_list = () => {
       <Button className="nav_item" terciary>
         {t("nav_item3")}
       </Button>
-      <Button primary>{t("nav_item4")}</Button>
+      <Button href="/contact" primary>{t("nav_item4")}</Button>
     </Styled.MenuList>
   );
 };

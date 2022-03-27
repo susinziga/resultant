@@ -68,7 +68,7 @@ const MainContent_about = (props) => {
         fontSize: "3rem",
       });
       gsap.to(contentAnimation, {
-        paddingTop: "16%",
+        paddingTop: "15%",
         width: "70%",
         duration: 2,
       });
