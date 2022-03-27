@@ -2,9 +2,7 @@ import React from "react";
 
 import { Container } from "./MainContentSlider.styled";
 
-import { useSwiper } from "swiper/react";
-
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import SwiperCore, { Mousewheel, Pagination } from "swiper";
 
 // Import Swiper styles
@@ -12,10 +10,16 @@ import "swiper/css";
 import References_item from "../../../references/references_item/References_item";
 import { useRef, useState, useEffect } from "react";
 import Content_item from "../contentSliderItem.js/ContentSliderItem";
+import useEventListener from "../../../../custom_hooks/useEventListener";
 
 SwiperCore.use([Mousewheel, Pagination]);
 
-const MainContentSlider = ({ nextSection, prevSection }) => {
+const MainContentSlider = ({
+  nextSection,
+  prevSection,
+  isActive,
+  initSlide = 0,
+}) => {
   const items = [
     {
       name: "1. Poglobljena analiza stanja",
@@ -39,8 +43,7 @@ const MainContentSlider = ({ nextSection, prevSection }) => {
     },
   ];
 
-  const swiperInstance = useSwiper();
-  const [swip, setSwip] = useState();
+  let swip = useSwiper();
 
   useEffect(() => {
     window.addEventListener("wheel", handleWheel);
@@ -48,41 +51,38 @@ const MainContentSlider = ({ nextSection, prevSection }) => {
     return () => {
       return window.removeEventListener("wheel", handleWheel);
     };
-  }, []);
+  }, [isActive]);
 
   const handleWheel = (e) => {
-    if (e.deltaY > 0) {
-      console.log(swip.isEnd);
-      if (swip.isEnd) {
-        console.log("here");
-        nextSection();
-      } else swip.slideNext();
-    } else {
-      swip.slidePrev();
+    console.log(isActive);
+    if (isActive) {
+      if (e.deltaY > 0) {
+        if (swip.isEnd) {
+          nextSection(e);
+        } else swip.slideNext(500);
+      } else {
+        if (swip.isBeginning) {
+          prevSection(e);
+        } else swip.slidePrev(500);
+      }
     }
   };
 
-  const slide = (nr) => {
-    for (let index = 0; index < nr; index++) {
-      swip.slideNext(1500);
-    }
-  };
-
-  const slideBack = (nr) => {
-    for (let index = 0; index < nr; index++) {
-      swip.slidePrev(2000);
-    }
+  const setInstance = (instance) => {
+    swip = instance;
   };
 
   return (
     <Container>
       <Swiper
-        spaceBetween={0}
+        spaceBetween={50}
         slidesPerView={1}
-        onSlideChange={() => console.log("slide change")}
+        initialSlide={initSlide}
         onSwiper={(swiper) => (swip = swiper)}
         direction={"horizontal"}
+        className="mySwiper"
       >
+        <SwiperInstance setInstance={setInstance}></SwiperInstance>
         {items.map((ref, id) => (
           <SwiperSlide key={id}>
             {({ isActive }) => (
@@ -93,6 +93,12 @@ const MainContentSlider = ({ nextSection, prevSection }) => {
       </Swiper>
     </Container>
   );
+};
+
+const SwiperInstance = ({ setInstance }) => {
+  let swiperInstance = useSwiper();
+  setInstance(swiperInstance);
+  return <></>;
 };
 
 export default MainContentSlider;

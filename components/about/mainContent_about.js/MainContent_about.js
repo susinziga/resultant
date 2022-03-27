@@ -13,15 +13,9 @@ import gsap from "gsap";
 import MainContentSlider from "./MainContentSlider_about.js/MainContentSlider";
 
 const MainContent_about = (props) => {
-  const [selected1, setSelected1] = useState(true);
-  const [selected2, setSelected2] = useState(false);
-  const [selected3, setSelected3] = useState(false);
-  const [selected4, setSelected4] = useState(false);
   const [transition, setTransition] = useState(false);
   const [initial, setInitial] = useState(true);
   const [selectedMenu, setSelectedMenu] = useState(1);
-  const [menu, setMenu] = useState(1);
-  const [location, setLocation] = useState("");
   const lineAnimation = useRef(null);
   const navAnimation = useRef(null);
   const contentAnimation = useRef(null);
@@ -74,7 +68,7 @@ const MainContent_about = (props) => {
         fontSize: "3rem",
       });
       gsap.to(contentAnimation, {
-        paddingTop: "14%",
+        paddingTop: "16%",
         width: "70%",
         duration: 2,
       });
