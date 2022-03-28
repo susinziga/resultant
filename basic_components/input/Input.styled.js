@@ -7,6 +7,8 @@ width: 100%;
 border: 1px solid var(--dark);
 border-radius: var(--border-primary);
 margin-top: 0.5rem;
+border-color: black; 
+outline-color: var(--secondary-color);
 
 -webkit-user-select: none; /* Safari */        
 -moz-user-select: none; /* Firefox */
