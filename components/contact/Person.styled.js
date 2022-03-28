@@ -24,20 +24,17 @@ export const Heading = styledComponents(Title1)`
     font-family: "Neusa";
     font-weight: bold;
     font-size: 3.5rem;
-
-
 `
 
 
 export const SubHeading = styledComponents(Title2)`
     font-family: "Neusa";
     font-weight: 300;
-
-
 `
 
 export const ContactContainer = styledComponents.div`
-    margin: 10% 0; 
+    margin: 10% 0;
+    margin-bottom: 20%; 
 `;
 
 
@@ -54,6 +51,28 @@ export const ContactLink = styledComponents.a`
     font-family: "Neusa";
     font-weight: 300;
     font-size: 1.5rem;
-    
+`;
+
+export const ContactFirmContainer = styledComponents.div`
+    margin-bottom: 10%;
+`;
+
+export const InfoFooterHeading = styledComponents.h2` 
+    font-family: "Neusa";
+    font-weight: bold;
+    font-size: 2.5rem;
+`;
+
+export const ContactFooterContainer = styledComponents.div`
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const Contact = styledComponents.label`
+    margin-top: 1%;
+    font-family: "Neusa";
+    font-weight: 300;
+    font-size: 1.5rem;
 `;
 

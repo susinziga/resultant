@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, ImageContainer, InfoContainer, PersonContainer, SubHeading, ContactIconContainer, ContactIcon, ContactLink, ContactContainer } from './Person.styled';
+import { Heading, ImageContainer, InfoContainer, PersonContainer, SubHeading, ContactIconContainer, ContactIcon, ContactLink, ContactContainer, ContactFirmContainer, InfoFooterHeading, ContactFooterContainer, Contact } from './Person.styled';
 
 const Person_contact = () => {
   return (
@@ -19,10 +19,15 @@ const Person_contact = () => {
                 <ContactLink href="mailto:roman.klaric@resultant.si">roman.klaric@resultant.si</ContactLink>
            </ContactIconContainer>
         </ContactContainer>
+        <ContactFirmContainer>
+          <InfoFooterHeading>Resultant d.o.o.</InfoFooterHeading>
+          <ContactFooterContainer>
+            <Contact>Franca Pirca 8</Contact>
+            <Contact>Kamnik 1241</Contact>
+          </ContactFooterContainer>
+        </ContactFirmContainer>
+
       </InfoContainer>
-   
-
-
     </PersonContainer>
     </>
   )
