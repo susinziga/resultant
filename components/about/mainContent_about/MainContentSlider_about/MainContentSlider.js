@@ -7,9 +7,9 @@ import SwiperCore, { Mousewheel, Pagination } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
-import References_item from "../../../references/references_item/References_item";
+//import References_item from "../../../references/references_item/References_item";
 import { useRef, useState, useEffect } from "react";
-import Content_item from "../contentSliderItem.js/ContentSliderItem";
+import Content_item from "../contentSliderItem/ContentSliderItem";
 import useEventListener from "../../../../custom_hooks/useEventListener";
 
 SwiperCore.use([Mousewheel, Pagination]);
