@@ -17,6 +17,14 @@ export const MainContentContainer = styledComponents.div`
         : `background-color: var(--footer-color);
             `;
     }}
+
+    ${(props) => {
+      return props.second
+        ? ` 
+              background-color: #F9F4F0;  
+              `
+        : "";
+    }}
     @media screen and (min-width: 768px){
         
     }
@@ -39,11 +47,12 @@ export const MainContentHeading = styledComponents(Header2)`
     
     transition: font-size 2s;
     transition: color 2s;
+    transition:background-color 1s;
 
       ${(props) => {
         return props.selected
           ? ` font-size: 3.5rem ;
-              color: black;  
+              color: black!important;  
               padding: 0;
               opacity: 1;
               transition: font-size 1s;
@@ -68,6 +77,15 @@ export const MainContentHeading = styledComponents(Header2)`
                 padding: 0;
                 opacity: 1;
             `
+          : "";
+      }}
+
+      ${(props) => {
+        return props.second
+          ? ` 
+          transition:color 1s;
+                color: #E2CAB6;  
+                `
           : "";
       }}
     @media screen and (min-width: 768px){

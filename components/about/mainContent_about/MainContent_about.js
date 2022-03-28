@@ -14,6 +14,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
 import MainContentSlider from "./MainContentSlider_about/MainContentSlider";
 import TeamSlider from "./teamSlider/TeamSlider";
+import PartnersSlider from "./partnersSlider/PartnersSlider";
 
 const MainContent_about = (props) => {
   const [transition, setTransition] = useState(false);
@@ -87,32 +88,58 @@ const MainContent_about = (props) => {
     });
   }, []);
 
+  /* useEffect(() => {
+    if (selectedMenu === 2) {
+      gsap.to(contentRef.current, {
+        backgroundColor: "#F9F4F0",
+        duration: 1,
+      });
+      gsap.to(contentRef.current, {
+        backgroundColor: "#F9F4F0",
+        duration: 1,
+      });
+    }
+  }, [selectedMenu]);*/
+
   useEffect(() => {
     if (isContainerActive) {
       disableBodyScroll(document.getElementsByTagName("body")[0], {
         reserveScrollBarGap: true,
       });
+      setTimeout(() => {
+        contentRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }, 200);
     } else {
       enableBodyScroll(document.getElementsByTagName("body")[0]);
     }
   }, [isContainerActive]);
-
-  let selected = 1;
 
   const nextSection = (e = 0) => {
     console.log("NEXT");
     let tempS = selectedMenu;
     tempS++;
 
-    setSelectedMenu(tempS);
+    gsap.to(document.getElementById("about_content").children[0], {
+      marginTop: "-50%",
+      duration: 0.2,
+      onComplete: (t) => {
+        setSelectedMenu(tempS);
+
+        gsap.from(document.getElementById("about_content").children[0], {
+          marginTop: "50%",
+          duration: 0.2,
+        });
+      },
+    });
   };
 
   const prevSection = (e) => {
     let tempS = selectedMenu;
     console.log("PREV");
     tempS--;
-    console.log(tempS);
-
     if (tempS < 1) {
       window.scrollBy({
         top: e.deltaY,
@@ -124,7 +151,18 @@ const MainContent_about = (props) => {
         return !prevState;
       });
     }
-    setSelectedMenu(tempS);
+    gsap.to(document.getElementById("about_content").children[0], {
+      marginTop: "50%",
+      duration: 0.2,
+      onComplete: (t) => {
+        setSelectedMenu(tempS);
+
+        gsap.from(document.getElementById("about_content").children[0], {
+          marginTop: "-50%",
+          duration: 0.2,
+        });
+      },
+    });
   };
 
   const forceSetSelected = (id) => {
@@ -138,6 +176,7 @@ const MainContent_about = (props) => {
         ref={contentRef}
         transition={transition}
         id="haha"
+        second={selectedMenu === 2}
       >
         <MainContentNavBar ref={(el) => (navAnimation = el)}>
           <a onClick={() => forceSetSelected(1)}>
@@ -145,6 +184,7 @@ const MainContent_about = (props) => {
               initial={initial}
               selected={selectedMenu <= 1}
               transition={transition}
+              second={selectedMenu === 2}
             >
               {navItem1}
             </MainContentHeading>
@@ -154,6 +194,7 @@ const MainContent_about = (props) => {
             <MainContentHeading
               selected={selectedMenu === 2}
               transition={transition}
+              second={selectedMenu === 2}
             >
               {navItem2}
             </MainContentHeading>
@@ -162,6 +203,7 @@ const MainContent_about = (props) => {
             <MainContentHeading
               selected={selectedMenu === 3}
               transition={transition}
+              second={selectedMenu === 2}
             >
               {navItem3}
             </MainContentHeading>
@@ -170,12 +212,16 @@ const MainContent_about = (props) => {
             <MainContentHeading
               selected={selectedMenu === 4}
               transition={transition}
+              second={selectedMenu === 2}
             >
               {navItem4}
             </MainContentHeading>
           </a>
         </MainContentNavBar>
-        <MainContentContent ref={(el) => (contentAnimation = el)}>
+        <MainContentContent
+          ref={(el) => (contentAnimation = el)}
+          id="about_content"
+        >
           {selectedMenu <= 1 ? (
             <MainContentSlider
               isActive={isContainerActive}
@@ -191,6 +237,15 @@ const MainContent_about = (props) => {
               nextSection={nextSection}
               prevSection={prevSection}
             ></TeamSlider>
+          ) : (
+            ""
+          )}
+          {selectedMenu == 3 ? (
+            <PartnersSlider
+              isActive={isContainerActive}
+              nextSection={nextSection}
+              prevSection={prevSection}
+            ></PartnersSlider>
           ) : (
             ""
           )}
