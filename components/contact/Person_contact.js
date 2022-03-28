@@ -5,7 +5,7 @@ const Person_contact = () => {
   return (
     <>
     <PersonContainer>
-      <ImageContainer src="./Team/Šef.png"></ImageContainer>
+      <ImageContainer src="./Team/Roman.png"></ImageContainer>
       <InfoContainer>
         <Heading>Roman Klarič</Heading>
         <SubHeading>Direktor in partner</SubHeading>

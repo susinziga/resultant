@@ -20,12 +20,12 @@ const ContactForm_contact = () => {
         {
           inputProps.map((input) => {
             return(
-              <Input props={input} style={{marginBottom: "5%"}}></Input>
+              <Input props={input} style={{marginBottom: "5%", fontSize: "1.5rem"}}></Input>
             )
           })
         }
         <TextareaContainer>
-          <Textarea props={{label: "Sporočilo"}}></Textarea>
+          <Textarea props={{label: "Sporočilo"}}  style={{fontSize: "1.5rem"}}></Textarea>
         </TextareaContainer>
         <ButtonContainer>
           <SubmitButton type="submit" value="Pošlji"></SubmitButton>

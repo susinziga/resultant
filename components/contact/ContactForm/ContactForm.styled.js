@@ -8,7 +8,7 @@ export const ContactContainer = styledComponents.div`
 export const TextareaContainer = styledComponents.div`
     width: 100%;
     margin:auto;
-    height: 100px;
+    height: 150px;
     margin-bottom: 15%;
 `
 

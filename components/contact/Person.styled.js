@@ -9,15 +9,13 @@ export const PersonContainer = styledComponents.div`
 export const ImageContainer = styledComponents.img`
     width: 100%;
     margin-bottom: 10%;
-
-
+    border-radius: 12px;
 `
 
 export const InfoContainer = styledComponents.div`
     width: 90%;
     text-align: left;
     margin-bottom: 10%;
-
 `
 
 export const Heading = styledComponents(Title1)`
@@ -33,7 +31,7 @@ export const SubHeading = styledComponents(Title2)`
 `
 
 export const ContactContainer = styledComponents.div`
-    margin: 10% 0;
+    margin: 8% 0;
     margin-bottom: 20%; 
 `;
 
@@ -45,12 +43,17 @@ export const ContactIconContainer = styledComponents.div`
 export const ContactIcon = styledComponents.img`
     margin-right: 2.5%;
     vertical-align: middle;
+ 
 `;
 
 export const ContactLink = styledComponents.a`
     font-family: "Neusa";
     font-weight: 300;
     font-size: 1.5rem;
+
+    &:hover {
+        color: var(--secondary-color)
+    }
 `;
 
 export const ContactFirmContainer = styledComponents.div`
