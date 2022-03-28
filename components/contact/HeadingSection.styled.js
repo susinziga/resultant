@@ -7,6 +7,17 @@ export const HeadingContainer = styledComponents.div`
     margin: auto;
     padding-top: 25%;
 
+    @media only screen and (min-width: 768px) {
+        padding-top: 20%;
+    }
+
+    @media only screen and (min-width: 992px) {
+        padding-top: 15%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        padding-top: 10%;
+    }
 `;
 
 

@@ -19,13 +19,14 @@ const ContactForm_contact = () => {
         <FormContainer>
         {
           inputProps.map((input) => {
-            return(
-              <Input props={input} style={{marginBottom: "5%", fontSize: "1.5rem"}}></Input>
+            return(<>
+              <Input id="desktop" props={input} style={{marginBottom: "5%", fontSize: "1.5rem"}}></Input>
+              </>
             )
           })
         }
-        <TextareaContainer>
-          <Textarea props={{label: "Sporočilo"}}  style={{fontSize: "1.5rem"}}></Textarea>
+        <TextareaContainer > 
+          <Textarea id="TextDesktop" props={{label: "Sporočilo"}} style={{fontSize: "1.5rem"}}></Textarea>
         </TextareaContainer>
         <ButtonContainer>
           <SubmitButton type="submit" value="Pošlji"></SubmitButton>
