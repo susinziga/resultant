@@ -26,6 +26,8 @@ const TeamSlider = ({ nextSection, prevSection, isActive }) => {
       gsm: t("person1_gsm"),
       email: t("person1_email"),
       text: t("person1_text"),
+      linkedin: t("person1_linkedin"),
+      photo: t("person1_photo"),
     },
     {
       name: t("person2_name"),

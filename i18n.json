@@ -6,7 +6,8 @@
   "pages": {
     "*": ["common", "aboveTheFold", "pillars", "testimonials"],
     "/": ["home"],
-    "/about": ["about","team"],
+    "/about": ["about","team","partners"],
+ 
     "/contact": ["contact"]
   }
 }
