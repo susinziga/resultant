@@ -84,16 +84,13 @@ export const ContactContainer = styledComponents.div`
     margin-bottom: 20%; 
 
     @media only screen and (min-width: 768px) {
-        margin-bottom: 28%; 
+        margin-bottom: 26%; 
     }
 
     @media only screen and (min-width: 992px) {
-        margin-bottom: 20%; 
+        margin-bottom: 22%; 
     }
 
-    @media only screen and (min-width: 1600px) {
-        margin-bottom: 18%; 
-    }
 `;
 
 
