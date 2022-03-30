@@ -77,7 +77,6 @@ export const SubmitButton = styledComponents.input`
         background-color: var(--primary-color)
     }
 
-    
     @media only screen and (min-width: 768px) {
         font-size:1.5rem;
         padding: 2.5% 44%;
@@ -85,7 +84,6 @@ export const SubmitButton = styledComponents.input`
     }
 
     @media only screen and (min-width: 992px) {
-        
         margin-top: 0%;
     }
 

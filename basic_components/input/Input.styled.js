@@ -23,13 +23,15 @@ ${(props) => {
 `;
 
 export const InputLabel = styledComponents.label`
- font-size:1rem;
+ font-size:1.5rem;
  color: var(--dark);
+ font-family: "NeusaThin";
+ font-weight: 100;
 
 `;
 
 export const ActionLabel = styledComponents.label`
- font-size:0.8rem;
+ font-size: 0.8rem;
  
 
     ${(props) => {
