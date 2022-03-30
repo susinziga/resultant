@@ -18,10 +18,11 @@ export const CheckboxLabel = styledComponents.label`
     color: var(--dark);
     font-family: "Neusa";
     font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 70px;
-    margin-left: 5%;
+    font-size: 1.4rem;
+    margin-left: 7%;
+    margin-top: 8.5%;
     width: 70%;
+    
 `;
 
 export const CheckboxContainer1 = styledComponents.span`
@@ -34,7 +35,7 @@ export const CheckboxContainer1 = styledComponents.span`
     }
 
     input[type="checkbox"]:before { 
-       content: ${props => props.content};
+       content: ${(props) => props.content};
        font-family: "Neusa";
        position: relative;
        top: 25%;

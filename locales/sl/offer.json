@@ -4,5 +4,16 @@
     "offer_multipleCheckboxLabel1": "izvedba z vodenimi delavnicami",
     "offer_multipleCheckboxLabel2": "merjenje na daljavo z e-vprašalnikom",
     "offer_multipleCheckboxLabel3": "izvedba s tiskanimi vprašalniki in lastno distribucijo vprašalnika ",
-    "offer_multipleCheckboxLabel4": "kombinacija"
+    "offer_multipleCheckboxLabel4": "kombinacija",
+    "offer_inputProp1": "Ime podjetja",
+    "offer_inputProp2": "Naslov",
+    "offer_inputProp3": "Kontaktna oseba",
+    "offer_inputProp4": "Email naslov kontaktne osebe",
+    "offer_inputProp5": "Tel. stevilka",
+    "offer_secondInputProp1": "Število zaposlenih",
+    "offer_secondInputProp2": "Število vprašalnikov na daljavo(e-vprašalnik)",
+    "offer_secondInputProp3": "Število vprašalnikov v tiskalni obliki",
+    "offer_checkboxProp1": "Ali želite predstavitev rezultatov upravi:",
+    "offer_checkboxProp2": "Ali želite primerjavo rezultatov med vodji in zaposlenimi:",
+    "offer_multipleCheckboxHeading": "Kakšno izvedbo merjenja želite?"
 }

@@ -12,6 +12,7 @@ const MultipleCheckbox = (props) => {
   const label2 = t("offer:offer_multipleCheckboxLabel2");
   const label3 = t("offer:offer_multipleCheckboxLabel3");
   const label4 = t("offer:offer_multipleCheckboxLabel4");
+  const checkboxHeading = t("offer:offer_multipleCheckboxHeading");
 
   const inputProps = [
     {content: "A", label: label1},
@@ -20,20 +21,19 @@ const MultipleCheckbox = (props) => {
     {content: "D", label: label4},
   ]
 
-
   return (
     <>
       <CheckboxContainer >
-          <TopLabel>Kakšno izvedbo merjenja želite?</TopLabel>
+          <TopLabel>{checkboxHeading}</TopLabel>
           <Container>
             {
               inputProps.map((prop) => {
                 return (<>
-                <CheckboxContainer1>
+                <CheckboxContainer1 props={props.content}>
                     <Checkbox
                     type="checkbox"
                     name="Da"
-                    props={prop.content}
+                    
                     ></Checkbox>
                   <CheckboxLabel>{prop.label}</CheckboxLabel>
                 </CheckboxContainer1>
