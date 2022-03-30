@@ -1,8 +1,9 @@
 import React from 'react';
-import { ButtonContainer, OfferContainer, FormContainer, SubmitButton, HeadingLine } from './OfferForm.styled';
+import { ButtonContainer, OfferContainer, FormContainer, SubmitButton, HeadingLine, BackgroundVector } from './OfferForm.styled';
 import Input from '../../../basic_components/input/Input'
-import Textarea from '../../../basic_components/textarea/Textarea';
 import Checkbox from './Checkbox_offer';
+
+import MultipleCheckbox from './MultipleCheckbox_offer';
 
 
 const inputProps1 = [
@@ -32,7 +33,7 @@ const OfferForm_offer = () => {
         {
           inputProps1.map((input) => {
             return(<>
-              <Input id="desktop" props={input} style={{marginBottom: "5%", fontSize: "1.5rem"}}></Input>
+              <Input id="desktop" props={input} style={{marginBottom: "5%", fontSize: "2rem"}}></Input>
               </>
             )
           })
@@ -41,7 +42,7 @@ const OfferForm_offer = () => {
         {
           inputProps2.map((input) => {
             return(<>
-              <Input id="desktop" props={input} style={{marginBottom: "5%", fontSize: "1.5rem"}}></Input>
+              <Input id="desktop" props={input} style={{marginBottom: "5%", fontSize: "2rem"}}></Input>
               </>
             )
           })
@@ -49,6 +50,7 @@ const OfferForm_offer = () => {
         <HeadingLine></HeadingLine>
         {
           checkboxProps.map((checkbox) => {
+           
             return(<>
               <Checkbox props={checkbox}></Checkbox>
               </>
@@ -56,15 +58,11 @@ const OfferForm_offer = () => {
           })
         }
         <HeadingLine></HeadingLine>
-        
-
-        {/*
+        <BackgroundVector src="./offer/backgroundVector.png"></BackgroundVector>
+        <MultipleCheckbox></MultipleCheckbox>
         <ButtonContainer>
           <SubmitButton type="submit" value="Pošlji"></SubmitButton>
         </ButtonContainer>
-      */}
-        
-
         </FormContainer>
       </OfferContainer>
   </>

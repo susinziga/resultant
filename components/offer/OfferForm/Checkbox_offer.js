@@ -2,23 +2,10 @@ import React from "react";
 
 import {CheckboxLabel, CheckboxContainer, Checkbox, CheckboxFlex, Seperator, CheckboxContainer1, CheckboxContainer2} from "./Checkbox.styled";
 
-/*
-  INPUT COMPONENT 
-
-  props:  label --> Naslov inputa
-          placeholder ...
-          required --> dodaj poljuben znak( ponavadi "*")
-          messege --> Podaj le v primeru neke akcije( zraven se se doda styled prop ; success ; error)
-
-  styled-props: error --> doda rdeč outline in error messege spodaj  
-                sucess --> doda poljuben zelen sucess messege
-
-*/
-
-const CheckboxItem = (props) => {
+const CheckboxMultiple = (props) => {
   return (
     <>
-      <CheckboxContainer>
+      <CheckboxContainer >
         <CheckboxLabel>
             {props.props.label}
         </CheckboxLabel>
@@ -42,4 +29,4 @@ const CheckboxItem = (props) => {
   );
 };
 
-export default CheckboxItem;
+export default CheckboxMultiple;

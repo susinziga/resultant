@@ -2,14 +2,14 @@ import styledComponents from "styled-components";
 
 export const CheckboxLabel = styledComponents.label`
     color: var(--dark);
-    font-family: "Neusa";
-    font-size: 1.2rem;
+    font-family: "NeusaThin";
+    font-size: 1.5rem;
 `;
 
 export const Checkbox = styledComponents.input`
     -webkit-appearance: none;
     -moz-appearance: none;
-    margin: 5% 5%;
+    margin: 15% 5%;
     height: 40px;
     width: 40px;
     background-color: #CACFD2;

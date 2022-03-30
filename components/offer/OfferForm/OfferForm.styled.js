@@ -1,8 +1,10 @@
 import styledComponents from "styled-components";
 
 export const OfferContainer = styledComponents.div`
+position: relative;
     width: 90%;
     margin:auto;
+    z-index: 1;
 
     @media only screen and (min-width: 768px) {
         width: 60%;
@@ -105,5 +107,14 @@ export const HeadingLine = styledComponents.div`
         
     }
 `;
+
+export const BackgroundVector = styledComponents.img`
+   position: absolute;
+   top: 62%;
+   right: -10%;
+   z-index: -100;
+`;
+
+
 
 

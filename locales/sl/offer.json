@@ -1,4 +1,8 @@
 {
     "offer_upperHeading": "Pridobite ponudbo",
-    "offer_mainHeading": "Za pripravo informativne, neobvezujoče ponudbe, prosimo izpolnite spodnji obrazec: "
+    "offer_mainHeading": "Za pripravo informativne, neobvezujoče ponudbe, prosimo izpolnite spodnji obrazec: ",
+    "offer_multipleCheckboxLabel1": "izvedba z vodenimi delavnicami",
+    "offer_multipleCheckboxLabel2": "merjenje na daljavo z e-vprašalnikom",
+    "offer_multipleCheckboxLabel3": "izvedba s tiskanimi vprašalniki in lastno distribucijo vprašalnika ",
+    "offer_multipleCheckboxLabel4": "kombinacija"
 }
