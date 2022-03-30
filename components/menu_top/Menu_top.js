@@ -10,6 +10,7 @@ import Button from "../../basic_components/button/Button";
 import Menu_list from "./menu_list/Menu_list";
 
 import { useRouter } from "next/router";
+import useSize from "../../custom_hooks/useSize";
 
 const Menu_top = ({}) => {
   const { t, lang } = useTranslation("aboveTheFold");
@@ -24,9 +25,12 @@ const Menu_top = ({}) => {
 
   const [size, setSize] = useState([]);
 
-  useLayoutEffect(() => {
+  const { isDesktop } = useSize();
+
+  useEffect(() => {
     setSizes();
     window.addEventListener("resize", setSizes);
+    handleNavStateChange();
     return () => window.removeEventListener("resize", setSizes);
   }, []);
 
@@ -42,9 +46,8 @@ const Menu_top = ({}) => {
   const [navState, setNavState] = useState(-1);
 
   useEffect(() => {
-    if (isDesktop() && pathname === "/") {
-      window.addEventListener("scroll", handleScroll);
-
+    window.addEventListener("scroll", handleScroll);
+    if (isDesktop() && pathname === "/" && window.scrollY < 10) {
       /*if (navState === -1 && window.scrollY <= 10) {*/
       gsap.from(letterAnimation, {
         duration: 2,
@@ -86,11 +89,8 @@ const Menu_top = ({}) => {
     handleNavStateChange();
   }, [navState]);
 
-  const isDesktop = () => {
-    return window.innerWidth > 599;
-  };
-
   const handleScroll = () => {
+    console.log("asd");
     if (window.scrollY >= 50) {
       setNavState(1);
     } else {
@@ -179,7 +179,7 @@ const Menu_top = ({}) => {
             height="300"
           ></object>
         </Styled.LogoContainer>
-        {size[0] > 599 ? (
+        {size[0] >= 768 ? (
           <Menu_list></Menu_list>
         ) : (
           <a>

@@ -16,11 +16,11 @@
 
   /* font sizes */
 
-  --subtitle1: 2.3rem;
-  --subtitle2: 1.9rem;
+  --subtitle1: 1.2rem;
+  --subtitle2: 1.1rem;
 
-  --body-text1: 1.8rem;
-  --body-text2: 1.3rem;
+  --body-text1: 1.4rem;
+  --body-text2: 1.1rem;
   --body-text3: 1.1rem;
   --body-text4: 1rem;
 
@@ -28,6 +28,37 @@
   --width-90: 90%;
 }
 
+@media (min-width: 768px) {
+  :root {
+    --primary-color: #396079;
+    --secondary-color: #27b4e9;
+    --terciary-color: #9f7312;
+
+    --pillar-color: #004767;
+
+    --footer-color: #072543;
+    --footer-color2: #cddae4;
+
+    --dark: #282828;
+    --grey: #b5b5b5;
+    --white: #ffffff;
+    --light: #f8f2ed;
+    --light-grey: #cacfd2;
+
+    /* font sizes */
+
+    --subtitle1: 2.3rem;
+    --subtitle2: 1.9rem;
+
+    --body-text1: 1.8rem;
+    --body-text2: 1.3rem;
+    --body-text3: 1.1rem;
+    --body-text4: 1rem;
+
+    --width-80: 80%;
+    --width-90: 90%;
+  }
+}
 button,
 a {
   --padding-primary: 10px 20px;

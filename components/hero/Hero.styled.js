@@ -5,30 +5,36 @@ export const HeroContainer = styledComponents.div`
 
 position:relative;
 height:100vh;
-padding-top:calc(${(props) => props.menuHeight}px + 1rem);
 
 
+padding-top:calc(${(props) => props.menuHeight} - 0.5rem);
 
 div:first-child{
+    width:100%;
+    height:fit-content;
     transform: scale(0.9);
-    top:-5%;
+    
     position: relative;
 
     border-radius: 12px;    
 
     overflow:hidden;
 
-    height:110%;
+    height:fiz-content;
+
+    max-height:100%;
 }
-    >img{
+    img{
         //height:100vh;
+        width:100%;
     }
 
-@media(min-width:600px){
+@media(min-width:768px){
+  
 
 position:relative;
 height:100vh;
-padding-top:calc(${(props) => props.menuHeight}px + 1.5rem);
+//padding-top:calc(${(props) => props.menuHeight}px + 1.5rem);
 
 
 
@@ -44,6 +50,8 @@ div:first-child{
     height:110%;
     >img{
         //height:100vh;
+        //height:100%;
+        //width:auto;
     }
 
 }
@@ -51,22 +59,38 @@ div:first-child{
 
 export const HeroTexts = styledComponents.div`
 display:flex;
-flex-direction:column;
-position:absolute;
-top:20%;
-left:35%;
+    flex-direction:column;
+    position:absolute;
+    top:5%;
+    left:10%;
+    width:80%;
+    > *
+    {
+        margin-bottom:2.5rem;
+    }
 
-> *
-{
-    margin-bottom:2.5rem;
-}
 
->h1{
-    //margin-bottom:6%;
-    width:60%;
+@media(min-width:768px){
+    
+    top:10%;
+    left:30%;
+
+    > *
+    {
+        margin-bottom:2.5rem;
+    }
+
+    >h1{
+        //margin-bottom:6%;
+        width:60%;
+    }
+    >p{
+        width:60%;
+    }
 }
->p{
-    width:60%;
+@media(min-width:992px){
+    top:20%;
+    left:35%;
 }
 `;
 

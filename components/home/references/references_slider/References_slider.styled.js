@@ -7,6 +7,7 @@ export const Container = styledComponents.div`
 export const SliderButtons = styledComponents.div`
 
 
+
     width:var(--width-80);
     margin:auto;
     margin-top:1rem;
@@ -22,4 +23,5 @@ export const SliderButtons = styledComponents.div`
             cursor:pointer;
         }
     }
+
 `;

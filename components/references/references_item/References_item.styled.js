@@ -1,6 +1,8 @@
 import styledComponents from "styled-components";
 
 export const ReferencesItemContainer = styledComponents.div`
+
+
 border: 1px solid ${(props) => props.hex};
 
 border-radius: 12px;

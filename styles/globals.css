@@ -17,7 +17,7 @@ html {
   box-sizing: border-box;
   /*font-size: 16px;*/
   font-family: "Neusa";
-  font-size: calc(13px + (18 - 13) * (100vw - 1000px) / (1800 - 1000));
+  font-size: calc(13px + (18 - 16) * (100vw - 500px) / (1800 - 500));
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */
@@ -61,22 +61,41 @@ h3,
 h4 {
   font-family: "Fatface";
 }
-/*HEADER 1*/
+
 h1 {
-  font-size: 6.6rem;
-  line-height: 6rem;
+  font-size: 4.1rem;
+  line-height: 3.7rem;
 }
 /*HEADER 2*/
 h2 {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 /*TITLE 1*/
 h3 {
-  font-size: 2.6rem;
+  font-size: 2.9rem;
 }
 /*TITLE 2*/
 h4 {
-  font-size: 2rem;
+  font-size: 2.2rem;
+}
+@media (min-width: 768px) {
+  /*HEADER 1*/
+  h1 {
+    font-size: 6.6rem;
+    line-height: 6rem;
+  }
+  /*HEADER 2*/
+  h2 {
+    font-size: 3.5rem;
+  }
+  /*TITLE 1*/
+  h3 {
+    font-size: 2.6rem;
+  }
+  /*TITLE 2*/
+  h4 {
+    font-size: 2rem;
+  }
 }
 span {
   font-family: "NeusaThin";
@@ -98,14 +117,13 @@ a:active {
   text-decoration: none;
 }
 
-/*
-@media (max-width: 576px) {
+/*@media (max-width: 576px) {
   html {
-    font-size: calc(16px + 0.1vw);
+    font-size: 18px;
     line-height: 23px;
   }
-}
-
+}*/
+/*
 @media (min-width: 768px) {
   html {
     font-size: calc(16px + 0.1vw);

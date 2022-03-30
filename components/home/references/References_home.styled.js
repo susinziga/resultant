@@ -9,7 +9,7 @@ export const ReferencesContainer = styledComponents.div`
 `;
 
 export const TitleContainer = styledComponents.div`
-
+margin-bottom:4rem;
     @media(min-width:768px){
         display:flex;
         justify-content:space-between;

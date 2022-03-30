@@ -4,10 +4,14 @@ import { Title2 } from "../../../basic_components/texts/Texts";
 export const CountersContainer = styledComponents.div`
    background-color: var(--pillar-color);
    display: flex;
+   flex-direction:column;
+   padding: 2rem 10rem;
    
        
     @media screen and (min-width: 768px){
         width: 100%;
+        flex-direction:row;
+        padding: 0;
         
    
     }
@@ -31,10 +35,13 @@ export const CounterContainer = styledComponents.div`
     justify-content: center;
     align-items: center;
     text-align: center; 
+    gap:1rem;
+    margin-bottom:1rem;
     
        
     @media screen and (min-width: 768px){
         width: 33.3%;
+        gap:0;
         margin: 2% 0;
 
         >p {

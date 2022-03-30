@@ -1,16 +1,15 @@
 import styledComponents from "styled-components";
 
 export const TestimonialsContainer = styledComponents.div`
-@media(min-width:768px){
-    padding:3rem;
-
-
-    border: 1px solid #282828;
+padding:3rem;
+border: 1px solid #282828;
     box-sizing: border-box;
     border-radius: 12px;
-
     width:var(--width-90);
     margin:auto;
+@media(min-width:768px){
+    
+
 
 
 }
