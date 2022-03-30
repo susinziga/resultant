@@ -5,7 +5,7 @@ font-size:1rem;
 padding: var(--padding-primary);
 width: 100%;
 height: 100%;
-font-family: "Fatface",
+font-family: "NeusaThin",
 border: 1px solid var(--dark);
 border-radius: var(--border-primary);
 margin-top: 0.5rem;
@@ -29,8 +29,9 @@ ${(props) => {
 `;
 
 export const TextareaLabel = styledComponents.label`
- font-size:1rem;
+ font-size:1.5rem;
  color: var(--dark);
+ font-family: "NeusaThin"
 
 `;
 

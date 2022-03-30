@@ -1,41 +1,25 @@
 import styledComponents from "styled-components";
 
 export const OfferContainer = styledComponents.div`
-position: relative;
+    position: relative;
     width: 90%;
-    margin:auto;
+    margin: auto !important;
     z-index: 1;
 
     @media only screen and (min-width: 768px) {
-        width: 60%;
-        margin-top: 0;
-        padding: 0 7.5%;
-        padding-top: 2.5%;
-        
-        #desktop {
-            padding: 8px 20px;
-        }
+        width: 90%;
+       
     }
 
     @media only screen and (min-width: 992px) {
-        width: 60%;
-        margin-top: 0;
-        padding: 0 7.5%;
-        padding-top: 2%;
-
-        #desktop {
-            padding: 10px 20px;
-        }
-        
+        width: 90%;
+      
+       
     }
 
     @media only screen and (min-width: 1600px) {
-        #desktop {
-            padding: 12px 20px;
-        }  
+       
       
-        padding: 0 10%;
-        padding-top: 2%;
     }
    
 `
@@ -62,7 +46,17 @@ export const ButtonContainer = styledComponents.div`
 `
 
 export const FormContainer = styledComponents.form`
-   
+    @media only screen and (min-width: 768px) {
+        width: 70%;
+        margin: auto;
+    }
+
+    @media only screen and (min-width: 992px) {
+        width: 100%;
+        margin-top: 10%;
+    }
+
+  
 `
 export const SubmitButton = styledComponents.input`
     font-size:2rem;
@@ -103,9 +97,18 @@ export const HeadingLine = styledComponents.div`
     border-top: 1px solid #CACFD2;
     margin: 10% 0 15% 0;
 
-    @media screen and (min-width: 768px){
-        
+    @media only screen and (min-width: 768px) {
+        width: 100%;
+        margin: 5% 0 10% 0;
+     
     }
+
+    @media only screen and (min-width: 992px) {
+        width: 100%;
+        margin: 5% 0 10% 0;
+      
+    }
+   
 `;
 
 export const BackgroundVector = styledComponents.img`
@@ -113,6 +116,40 @@ export const BackgroundVector = styledComponents.img`
    top: 62%;
    right: -10%;
    z-index: -100;
+
+   @media only screen and (min-width: 992px) {
+        width: 50%;
+        top: 55%;
+        right: -6%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        width: 45%;
+        top: 55%;
+        right: -6%;
+    }
+`;
+
+
+export const InputsContainer = styledComponents.div`
+    @media only screen and (min-width: 768px) {
+        width: 90%;
+        margin: auto;
+    
+    }
+
+    @media only screen and (min-width: 992px) {
+        width: 60%;
+        margin-bottom: 10%;
+    
+    }
+
+    @media only screen and (min-width: 1600px) {
+        width: 50%;
+        
+    
+    }
+   
 `;
 
 

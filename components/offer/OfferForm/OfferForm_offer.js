@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonContainer, OfferContainer, FormContainer, SubmitButton, HeadingLine, BackgroundVector } from './OfferForm.styled';
+import { ButtonContainer, OfferContainer, FormContainer, SubmitButton, HeadingLine, BackgroundVector, InputsContainer } from './OfferForm.styled';
 import Input from '../../../basic_components/input/Input'
 import Checkbox from './Checkbox_offer';
 
@@ -37,6 +37,8 @@ const OfferForm_offer = () => {
   return (<>
       <OfferContainer>
         <FormContainer>
+          <InputsContainer>
+
         {
           inputProps1.map((input) => {
             return(<>
@@ -45,7 +47,9 @@ const OfferForm_offer = () => {
             )
           })
         }
+        </InputsContainer>
         <HeadingLine></HeadingLine>
+        <InputsContainer>
         {
           inputProps2.map((input) => {
             return(<>
@@ -54,7 +58,9 @@ const OfferForm_offer = () => {
             )
           })
         }
+        </InputsContainer>
         <HeadingLine></HeadingLine>
+        <InputsContainer>
         {
           checkboxProps.map((checkbox) => {
            
@@ -64,12 +70,16 @@ const OfferForm_offer = () => {
             )
           })
         }
+         </InputsContainer>
         <HeadingLine></HeadingLine>
         <BackgroundVector src="./offer/backgroundVector.png"></BackgroundVector>
+        <InputsContainer>
         <MultipleCheckbox></MultipleCheckbox>
+       
         <ButtonContainer>
           <SubmitButton type="submit" value="Pošlji"></SubmitButton>
         </ButtonContainer>
+        </InputsContainer>
         </FormContainer>
       </OfferContainer>
   </>

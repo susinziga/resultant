@@ -22,6 +22,11 @@ export const CheckboxLabel = styledComponents.label`
     margin-left: 7%;
     margin-top: 8.5%;
     width: 70%;
+
+
+    @media only screen and (min-width: 992px) {
+        margin-top: 7.5%;
+    }
     
 `;
 
@@ -61,6 +66,12 @@ export const Checkbox = styledComponents.input`
     border-radius: 20px;
     cursor: pointer;
     line-height: 70px;
+
+    @media only screen and (min-width: 992px) {
+        height: 70px;
+        width: 70px;
+        border-radius: 35px;
+    }
     
     
 `;
