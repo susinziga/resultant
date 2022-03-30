@@ -26,6 +26,7 @@ const useSize = () => {
   }, []); // Empty array ensures that effect is only run on mount
 
   const isDesktop = () => {
+    console.log(windowSize);
     return windowSize.width >= 768;
   };
   return { isDesktop };

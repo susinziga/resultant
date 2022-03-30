@@ -9,6 +9,7 @@ import useSize from "../../custom_hooks/useSize";
 
 const Menu_fixed = (props) => {
   const { t, lang } = useTranslation("home");
+
   const contentRef = useRef(null);
 
   const [centered, setCentered] = useState(false);
@@ -18,12 +19,27 @@ const Menu_fixed = (props) => {
   const { isDesktop } = useSize();
 
   useEffect(() => {
-    isDesktop()
-      ? window.addEventListener("scroll", (e) => {
-          handleScroll(e, contentRef);
-        })
-      : "";
-  }, []);
+    console.log(isDesktop());
+    if (isDesktop()) {
+      window.addEventListener("scroll", (e) => {
+        handleScroll(e, contentRef);
+      });
+    } else {
+      window.removeEventListener("scroll", (e) => {
+        handleScroll(e, contentRef);
+      });
+    }
+  }, [isDesktop()]);
+
+  useEffect(() => {
+    console.log("NULL");
+    if (contentRef == null) {
+      window.removeEventListener("scroll", (e) => {
+        handleScroll(e, contentRef);
+      });
+    }
+  }, [contentRef]);
+
   /*useEffect(() => {
     window.addEventListener("scroll", (e) => {
       e.preventDefault();

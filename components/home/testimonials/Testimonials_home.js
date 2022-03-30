@@ -10,7 +10,7 @@ import Testimonial from "./testimonial/Testimonial";
 import useTranslation from "next-translate/useTranslation";
 
 const Testimonials_home = (props) => {
-  const swiperInstance = useSwiper();
+  let swiperInstance = useSwiper();
   const { t } = useTranslation("testimonials");
   const testimonials = [
     {

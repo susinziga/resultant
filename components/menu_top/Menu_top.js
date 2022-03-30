@@ -83,7 +83,7 @@ const Menu_top = ({}) => {
       gsap.from(MenuAnimation, { color: "white", duration: 1, delay: 1 });
     }
     /*}*/
-  }, []);
+  }, [isDesktop()]);
 
   useEffect(() => {
     handleNavStateChange();

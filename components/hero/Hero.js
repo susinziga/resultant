@@ -68,8 +68,8 @@ const Hero = (props) => {
         delay: 1,
       });
 
-      gsap.to(heroContainerAnimation, {
-        paddingTop: `calc(${parseInt(menuHeightt)}px + 1.5rem`,
+      gsap.from(heroContainerAnimation, {
+        paddingTop: 0,
         delay: 1,
         duration: 2,
         onComplete: setInitAnimation(false),
@@ -77,7 +77,7 @@ const Hero = (props) => {
 
       setMenuHeight(menuHeightt);
     }
-  }, []);
+  }, [isDesktop()]);
 
   return (
     <Styled.HeroContainer
