@@ -26,6 +26,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Menu_top size={size}></Menu_top>
       <Component {...pageProps} />
+      
     </div>
   );
 }

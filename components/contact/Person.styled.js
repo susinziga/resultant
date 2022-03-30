@@ -36,7 +36,7 @@ export const ImageContainer = styledComponents.img`
     }
 
     @media only screen and (min-width: 992px) {
-       width: 70%
+       width: 60%;
     }
 `
 

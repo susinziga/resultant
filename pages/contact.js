@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <>
       <HeadingSection_contact className="section"></HeadingSection_contact>
-      <ContactSeparator>
+      <ContactSeparator className="section">
         <ContactForm_contact className="section"></ContactForm_contact>
         <Person_contact className="section"></Person_contact>
       </ContactSeparator>

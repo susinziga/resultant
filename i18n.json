@@ -8,6 +8,7 @@
     "/": ["home"],
     "/about": ["about","team","partners"],
  
-    "/contact": ["contact"]
+    "/contact": ["contact"],
+    "/offer": ["offer"]
   }
 }

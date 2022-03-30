@@ -22,7 +22,8 @@ ${(props) => {
     color:var(--white);
     border-radius:var(--border-primary);
     &:hover {
-      background-color: var(--primary-color)
+      background-color: var(--primary-color);
+      color: white;
     }`
     : "";
 }}

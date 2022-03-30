@@ -1,6 +1,6 @@
 import styledComponents from "styled-components";
 
-export const ContactContainer = styledComponents.div`
+export const OfferContainer = styledComponents.div`
     width: 90%;
     margin:auto;
 
@@ -94,4 +94,16 @@ export const SubmitButton = styledComponents.input`
     }
 
 `
+
+export const HeadingLine = styledComponents.div`
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid #CACFD2;
+    margin: 10% 0 15% 0;
+
+    @media screen and (min-width: 768px){
+        
+    }
+`;
+
 
