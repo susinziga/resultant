@@ -52,35 +52,26 @@ const Pillars_home = (props) => {
       </Styled.PillarsFlex>
     </Styled.PillarsContainer>
   ) : (
-    <>
-      <Swiper
-        spaceBetween={50}
-        slidesPerView={1}
-        direction={"horizontal"}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          {pillarsContentBot.map((pillar) => {
-            return (
-              <Pillars_sliderItem
-                title={pillar.title}
-                text={pillar.text}
-                button={buttonText}
-              ></Pillars_sliderItem>
-            );
-          })}
-          {pillarsContentBot.map((pillar) => {
-            return (
-              <Pillars_sliderItem
-                title={pillar.title}
-                text={pillar.text}
-                button={buttonText}
-              ></Pillars_sliderItem>
-            );
-          })}
-        </SwiperSlide>
-      </Swiper>
-    </>
+    <Styled.PillarsContainer_mobile {...props}>
+      {pillarsContentBot.map((pillar) => {
+        return (
+          <Pillars_sliderItem
+            title={pillar.title}
+            text={pillar.text}
+            button={buttonText}
+          ></Pillars_sliderItem>
+        );
+      })}
+      {pillarsContentBot.map((pillar) => {
+        return (
+          <Pillars_sliderItem
+            title={pillar.title}
+            text={pillar.text}
+            button={buttonText}
+          ></Pillars_sliderItem>
+        );
+      })}
+    </Styled.PillarsContainer_mobile>
   );
 };
 

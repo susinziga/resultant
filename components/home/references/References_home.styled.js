@@ -9,8 +9,16 @@ export const ReferencesContainer = styledComponents.div`
 `;
 
 export const TitleContainer = styledComponents.div`
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin:auto;
+margin-bottom: 4rem;
 margin-bottom:4rem;
+width:var(--width-90);
+
     @media(min-width:768px){
+        width:100%;
         display:flex;
         justify-content:space-between;
         align-items:center;

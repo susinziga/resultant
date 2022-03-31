@@ -1,14 +1,13 @@
-import About_about from "../components/about/About_section/About_about";
-
-import MainContent_about from "../components/about/mainContent_about/MainContent_about";
+import About_page from "../components/about/About_page";
 
 export default function About() {
   return (
     <>
-      <About_about className="section"></About_about>
+      {/*<About_about className="section"></About_about>
       <MainContent_about></MainContent_about>
 
-      <div style={{ height: "500px", width: "100%" }}></div>
+  <div style={{ height: "500px", width: "100%" }}></div>*/}
+      <About_page></About_page>
     </>
   );
 }
