@@ -5,6 +5,8 @@ font-size:1rem;
 padding: var(--padding-primary);
 cursor:pointer;
 
+display:inline-block;
+
 
 -webkit-user-select: none; /* Safari */        
 -moz-user-select: none; /* Firefox */

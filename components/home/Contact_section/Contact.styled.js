@@ -2,6 +2,7 @@ import styledComponents from "styled-components";
 import { Title2 } from "../../../basic_components/texts/Texts";
 
 export const ContactContainer = styledComponents.div`
+padding:5%;
     background: #F6FBFE;
     @media screen and (min-width: 768px){
         padding: 8% 2%;

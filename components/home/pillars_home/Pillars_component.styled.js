@@ -2,7 +2,9 @@ import styledComponents from "styled-components";
 import { Title2 } from "../../../basic_components/texts/Texts";
 
 export const PillarComponentContainer = styledComponents.div`
- width:49%;
+&.pillarContainer{
+  width:49%;
+}
  border-radius: 12px;
  border: 1px solid var(--pillar-color);
 
@@ -20,9 +22,8 @@ export const PillarComponentContainer = styledComponents.div`
  justify-content:space-between;
 
 
- :hover{
+ &.pillarContainer:hover{
      width:55%;
-     
 
  }
 

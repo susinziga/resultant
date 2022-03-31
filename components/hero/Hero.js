@@ -7,7 +7,12 @@ import Image from "next/image";
 import gsap from "gsap";
 
 import useTranslation from "next-translate/useTranslation";
-import { BodyText3, Header1 } from "../../basic_components/texts/Texts";
+import {
+  BodyText2,
+  BodyText3,
+  Header1,
+  Subtitle1,
+} from "../../basic_components/texts/Texts";
 import Button from "../../basic_components/button/Button";
 
 import useSize from "../../custom_hooks/useSize";
@@ -30,6 +35,7 @@ const Hero = (props) => {
   /* CONTENT */
 
   const heroImage = "./AboveTheFold/hero2.webp";
+  const heroImage_mobile = "./AboveTheFold/hero_mobile.png";
 
   const hero_title = t("hero_title");
 
@@ -38,6 +44,9 @@ const Hero = (props) => {
 
   useEffect(() => {
     if (isDesktop()) {
+      const menuHeightt =
+        document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
+
       gsap.from(heroImageAnimation, {
         duration: 2,
         transform: 0,
@@ -66,12 +75,9 @@ const Hero = (props) => {
         onComplete: setInitAnimation(false),
       });
 
-      const menuHeightt =
-        document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
-
       setMenuHeight(menuHeightt);
     }
-  }, []);
+  }, [isDesktop()]);
 
   return (
     <Styled.HeroContainer
@@ -80,21 +86,42 @@ const Hero = (props) => {
       menuHeight={menuHeight}
     >
       <div ref={(el) => (heroImageAnimation = el)}>
-        <img src={heroImage}></img>
+        <picture>
+          {" "}
+          <source media="(min-width: 768px)" srcSet={heroImage} />
+          <img src={heroImage_mobile}></img>
+        </picture>
+
+        <Styled.HeroTexts>
+          <Header1 white className="white">
+            {hero_title}
+          </Header1>
+          {isDesktop() ? (
+            <>
+              <p>
+                <BodyText2 white>{hero_paragraph}</BodyText2>
+              </p>
+              <p>
+                <BodyText2 white>{hero_paragraph2}</BodyText2>
+              </p>{" "}
+            </>
+          ) : (
+            <>
+              <p>
+                <Subtitle1 white>{hero_paragraph}</Subtitle1>
+              </p>
+              <p>
+                <Subtitle1 white>{hero_paragraph2}</Subtitle1>
+              </p>{" "}
+            </>
+          )}
+
+          <Button primary>Izvedi več</Button>
+          <Styled.WhiteLine
+            ref={(el) => (lineAnimation = el)}
+          ></Styled.WhiteLine>
+        </Styled.HeroTexts>
       </div>
-      <Styled.HeroTexts>
-        <Header1 white className="white">
-          {hero_title}
-        </Header1>
-        <p>
-          <BodyText3 white>{hero_paragraph}</BodyText3>
-        </p>
-        <p>
-          <BodyText3 white>{hero_paragraph2}</BodyText3>
-        </p>
-        <Button primary>Izvedi več</Button>
-        <Styled.WhiteLine ref={(el) => (lineAnimation = el)}></Styled.WhiteLine>
-      </Styled.HeroTexts>
     </Styled.HeroContainer>
   );
 };

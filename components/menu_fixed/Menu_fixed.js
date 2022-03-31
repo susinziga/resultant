@@ -5,20 +5,41 @@ import * as Styled from "./Menu_fixed.styled";
 
 import disableScroll from "disable-scroll";
 import { Waypoint } from "react-waypoint";
+import useSize from "../../custom_hooks/useSize";
 
 const Menu_fixed = (props) => {
   const { t, lang } = useTranslation("home");
+
   const contentRef = useRef(null);
 
   const [centered, setCentered] = useState(false);
 
   const [menuSelected, setMenuSelected] = useState(0);
 
+  const { isDesktop } = useSize();
+
   useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      handleScroll(e, contentRef);
-    });
-  }, []);
+    console.log(isDesktop());
+    if (isDesktop()) {
+      window.addEventListener("scroll", (e) => {
+        handleScroll(e, contentRef);
+      });
+    } else {
+      window.removeEventListener("scroll", (e) => {
+        handleScroll(e, contentRef);
+      });
+    }
+  }, [isDesktop()]);
+
+  useEffect(() => {
+    console.log("NULL");
+    if (contentRef == null) {
+      window.removeEventListener("scroll", (e) => {
+        handleScroll(e, contentRef);
+      });
+    }
+  }, [contentRef]);
+
   /*useEffect(() => {
     window.addEventListener("scroll", (e) => {
       e.preventDefault();
@@ -107,17 +128,25 @@ const Menu_fixed = (props) => {
     }
   };
   return (
-    <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
-      <Styled.MenuItem active={menuSelected < 5}>
-        {t("menu_item1")}
-      </Styled.MenuItem>
-      <Styled.MenuItem active={menuSelected >= 5 && menuSelected <= 10}>
-        {t("menu_item2")}
-      </Styled.MenuItem>
-      <Styled.MenuItem active={menuSelected > 10}>
-        {t("menu_item3")}
-      </Styled.MenuItem>
-    </Styled.MenuFixedContainer>
+    <>
+      {isDesktop() ? (
+        <>
+          <Styled.MenuFixedContainer ref={contentRef} {...props} id="fixedM">
+            <Styled.MenuItem active={menuSelected < 5}>
+              {t("menu_item1")}
+            </Styled.MenuItem>
+            <Styled.MenuItem active={menuSelected >= 5 && menuSelected <= 10}>
+              {t("menu_item2")}
+            </Styled.MenuItem>
+            <Styled.MenuItem active={menuSelected > 10}>
+              {t("menu_item3")}
+            </Styled.MenuItem>
+          </Styled.MenuFixedContainer>
+        </>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 

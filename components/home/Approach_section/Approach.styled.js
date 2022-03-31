@@ -1,9 +1,9 @@
 import styledComponents from "styled-components";
 import { Title2 } from "../../../basic_components/texts/Texts";
 
-
 export const ApproachContainer = styledComponents.div`
-
+width:var(--width-90);
+margin:auto;
     @media screen and (min-width: 768px){
         width:var(--width-90);
         margin: auto;
@@ -30,8 +30,8 @@ export const ApproachTextContainer = styledComponents.div`
   }
 `;
 
-
 export const ApproachHeading = styledComponents(Title2)`
+margin-bottom:2rem;
     @media screen and (min-width: 768px){
         width:var(--width-80);
         margin-bottom: 8%;
@@ -41,6 +41,10 @@ export const ApproachHeading = styledComponents(Title2)`
 `;
 
 export const ApproachImage = styledComponents.img`
-    width:45%;
+width:100%;
+@media(min-width:768px){
+  width:45%;
+}
+    
   }
 `;

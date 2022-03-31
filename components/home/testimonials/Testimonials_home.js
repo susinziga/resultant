@@ -10,7 +10,7 @@ import Testimonial from "./testimonial/Testimonial";
 import useTranslation from "next-translate/useTranslation";
 
 const Testimonials_home = (props) => {
-  const swiperInstance = useSwiper();
+  let swiperInstance = useSwiper();
   const { t } = useTranslation("testimonials");
   const testimonials = [
     {
@@ -26,15 +26,21 @@ const Testimonials_home = (props) => {
       role: t("testimonial2_role"),
     },
   ];
+
+  const setInstance = (instance) => {
+    swiperInstance = instance;
+  };
   return (
     <Styled.TestimonialsContainer {...props}>
       <Swiper
         loop={true}
         spaceBetween={50}
         slidesPerView={1}
+        centeredSlides={true}
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => (swiperInstance = swiper)}
       >
+        <SwiperInstance setInstance={setInstance}></SwiperInstance>
         {testimonials.map((testimonial, id) => {
           return (
             <SwiperSlide key={id}>
@@ -60,6 +66,12 @@ const Testimonials_home = (props) => {
       </Styled.TestimonialsButton>
     </Styled.TestimonialsContainer>
   );
+};
+
+const SwiperInstance = ({ setInstance }) => {
+  let swiperInstance = useSwiper();
+  setInstance(swiperInstance);
+  return <></>;
 };
 
 export default Testimonials_home;
