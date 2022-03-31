@@ -10,11 +10,6 @@ import useTranslation from "next-translate/useTranslation";
 const OfferForm_offer = () => {
   const { t, lang } = useTranslation();
 
-  const label1 =  t("offer:offer_multipleCheckboxLabel1");
-  const label2 = t("offer:offer_multipleCheckboxLabel2");
-  const label3 = t("offer:offer_multipleCheckboxLabel3");
-  const label4 = t("offer:offer_multipleCheckboxLabel4");
-
   const inputProps1 = [
     {label: t("offer:offer_inputProp1")},
     {label:t("offer:offer_inputProp2")},
@@ -75,7 +70,6 @@ const OfferForm_offer = () => {
         <BackgroundVector src="./offer/backgroundVector.png"></BackgroundVector>
         <InputsContainer>
         <MultipleCheckbox></MultipleCheckbox>
-       
         <ButtonContainer>
           <SubmitButton type="submit" value="Pošlji"></SubmitButton>
         </ButtonContainer>

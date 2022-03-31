@@ -9,6 +9,7 @@
     "/about": ["about","team","partners"],
  
     "/contact": ["contact"],
-    "/offer": ["offer"]
+    "/offer": ["offer"],
+    "/service1": ["service1"]
   }
 }
