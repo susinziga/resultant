@@ -23,7 +23,7 @@ const MultipleCheckbox = (props) => {
 
   return (
     <>
-      <CheckboxContainer >
+      <CheckboxContainer>
           <TopLabel>{checkboxHeading}</TopLabel>
           <Container>
             {

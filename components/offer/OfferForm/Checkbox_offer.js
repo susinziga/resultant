@@ -10,6 +10,7 @@ const CheckboxMultiple = (props) => {
             {props.props.label}
         </CheckboxLabel>
         <CheckboxFlex>
+          
           <CheckboxContainer1>
               <Checkbox
                   type="checkbox"
