@@ -81,6 +81,7 @@ const Hero = (props) => {
 
   return (
     <Styled.HeroContainer
+      id="hero"
       {...props}
       ref={(el) => (heroContainerAnimation = el)}
       menuHeight={menuHeight}

@@ -47,7 +47,7 @@ const Menu_top = ({}) => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    if (isDesktop() && pathname === "/" && window.scrollY < 10) {
+    if (isDesktop() && pathname === "/") {
       /*if (navState === -1 && window.scrollY <= 10) {*/
       gsap.from(letterAnimation, {
         duration: 2,
@@ -57,6 +57,10 @@ const Menu_top = ({}) => {
 
         delay: 1,
         pin: true,
+        scrollTrigger: {
+          trigger: document.getElementById("hero"),
+          start: "top top",
+        },
       });
 
       gsap.from(LogoAnimation, {
