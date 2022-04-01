@@ -9,11 +9,11 @@ export const PlanContainer = styledComponents.div`
 
 
     @media only screen and (min-width: 768px) {
-       
+        padding-top: 10%;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        padding-top: 7.5%;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -47,11 +47,29 @@ export const PlanTableHeaderContainer = styledComponents.div`
    
 
     @media only screen and (min-width: 768px) {
-       
+        margin: 0% 0 5% 0;
+        
     }
 
     @media only screen and (min-width: 992px) {
-        
+        margin: 0% 0 5% 0;
+    }
+
+    @media only screen and (min-width: 1600px) {
+       
+    }
+`;
+
+export const FlexContainer = styledComponents.div`
+ 
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    @media only screen and (min-width: 992px) {
+       
     }
 
     @media only screen and (min-width: 1600px) {
@@ -104,11 +122,11 @@ export const PlanTableHeader = styledComponents(Header2)`
 
 
     @media only screen and (min-width: 768px) {
-       
+       font-size: 2.5em;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        font-size: 2.5rem;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -122,10 +140,28 @@ export const ButtonContainer = styledComponents.div`
     width: 100%;
     margin:auto;
     margin-bottom: 15%;
+    
+
+    
+    @media only screen and (min-width: 768px) {
+        width: 33%;
+        margin-bottom: 7.5%;
+        text-align:center;
+    }
+
+    @media only screen and (min-width: 992px) {
+        width: 20%;
+        margin-right: 12%;
+        margin-bottom: 7.5%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+     
+    }
 `
 
 export const SubmitButton = styledComponents.a`
-    font-size:2rem;
+    font-size:1.4rem;
     padding: 5% 15%;
     cursor:pointer;
     border: none;
@@ -141,19 +177,21 @@ export const SubmitButton = styledComponents.a`
     }
 
     @media only screen and (min-width: 768px) {
-        font-size:1.5rem;
-        padding: 2.5% 44%;
-        margin-top: 2.5%;
+        font-size:1rem;
+        padding: 20% 10%;
+        border-radius: 0px;
+       
     }
 
     @media only screen and (min-width: 992px) {
-        margin-top: 0%;
+      
+        padding: 20% 25%;
+        margin: 0;
+     
     }
 
     @media only screen and (min-width: 1600px) {
-        padding: 2% 45%;
-        margin-top: 2%;
-        margin-left: 1%;
+        
     }
 
 `

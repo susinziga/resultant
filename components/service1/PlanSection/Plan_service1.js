@@ -1,12 +1,12 @@
 import React from 'react';
 import useTranslation from "next-translate/useTranslation";
-import { PlanContainer, PlanTableContainer, PlanTableHeader, PlanTableHeaderContainer,  PlanTableHeaderCon, SubmitButton, ButtonContainer } from './Plan.styled';
+import { PlanContainer, PlanTableContainer, PlanTableHeader, PlanTableHeaderContainer,  PlanTableHeaderCon, SubmitButton, ButtonContainer, FlexContainer } from './Plan.styled';
 
 
 import PlanItem_service1 from './PlanTables/PlanItem/PlanItem_service1';
 import QuoteSection2_service1 from '../Quote/QuoteSection2_service';
 
-const Plan_section1 = () => {
+const Plan_section1 = (props) => {
   const { t, lang } = useTranslation();
 
   const heading1 =  t("service1:service1_PlanHeading1");
@@ -34,39 +34,44 @@ const Plan_section1 = () => {
 
   return (
     <>
-        <PlanContainer>
+        <PlanContainer {...props}>
             <PlanTableContainer>
-            <PlanTableHeaderContainer>
-                <PlanTableHeaderCon>
-                    <PlanTableHeader>{heading1}</PlanTableHeader>
-                </PlanTableHeaderCon>
-            </PlanTableHeaderContainer>
-            {
-                Plan1.map((item)=>{
-                    return (
-                        <PlanItem_service1 props={item}></PlanItem_service1>
-                    )
-                })
-            }
+                <PlanTableHeaderContainer>
+                    <PlanTableHeaderCon>
+                        <PlanTableHeader>{heading1}</PlanTableHeader>
+                    </PlanTableHeaderCon>
+                </PlanTableHeaderContainer>
+                <FlexContainer>
+                    {
+                        Plan1.map((item)=>{
+                            return (
+                                <PlanItem_service1 props={item}></PlanItem_service1>
+                            )
+                        })
+                    }
+                </FlexContainer>
+                <PlanTableHeaderContainer>
+                    <PlanTableHeaderCon>
+                        <PlanTableHeader>{heading2}</PlanTableHeader>
+                    </PlanTableHeaderCon>
+                </PlanTableHeaderContainer>
+                <FlexContainer>
+                    {
+                        Plan2.map((item) => {
+                            return(
+                                <PlanItem_service1 props={item}></PlanItem_service1>
+                            )
+                        })
+                    }
+                    <ButtonContainer>
+                        <SubmitButton className='desktop' type="button">Želim pridobiti ponudbo</SubmitButton>
+                    </ButtonContainer>
 
-            <PlanTableHeaderContainer>
-                <PlanTableHeaderCon>
-                    <PlanTableHeader>{heading2}</PlanTableHeader>
-                </PlanTableHeaderCon>
-            </PlanTableHeaderContainer>
-            {
-                Plan2.map((item) => {
-                    return(
-                        <PlanItem_service1 props={item}></PlanItem_service1>
-                    )
-                })
-            }
+                </FlexContainer>
 
-            <ButtonContainer>
-            <SubmitButton type="button">Želim pridobiti ponudbo</SubmitButton>
-            </ButtonContainer>
-
-           
+                <ButtonContainer>
+                    <SubmitButton className='mobile' type="button">Želim pridobiti ponudbo</SubmitButton>
+                </ButtonContainer>
 
             </PlanTableContainer>
            

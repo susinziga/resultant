@@ -1,5 +1,5 @@
 import styledComponents from "styled-components";
-import { BodyText1, Title1} from "../../../basic_components/texts/Texts";
+import { BodyText1, Subtitle1, Title1, Title2} from "../../../basic_components/texts/Texts";
 
 
 export const HeadingContainer = styledComponents.div`
@@ -7,12 +7,15 @@ export const HeadingContainer = styledComponents.div`
     margin: auto;
     padding-top: 25%;
 
+   
+
     @media only screen and (min-width: 768px) {
         padding-top: 20%;
+        
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 15%;
+        padding-top: 10%;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -20,17 +23,97 @@ export const HeadingContainer = styledComponents.div`
     }
 `;
 
+export const Flex = styledComponents.div`
+    
+
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row-reverse;
+        
+    }
+
+    @media only screen and (min-width: 992px) {
+
+    }
+
+    @media only screen and (min-width: 1600px) {
+       
+    }
+`;
+
+export const HeadingSeparator = styledComponents.div`
+    
+
+    @media only screen and (min-width: 768px) {
+        width:55%;
+        margin: 0 0 10% 5%;
+        
+    }
+
+    @media only screen and (min-width: 992px) {
+        margin: 5% 0 10% 5%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        margin: 3.5% 0 10% 2.5%;
+    }
+`;
+
+
+export const ImageSeparator = styledComponents.div`
+
+
+    @media only screen and (min-width: 768px) {
+        width:45%;
+        
+    }
+
+    @media only screen and (min-width: 992px) {
+        
+    }
+
+    @media only screen and (min-width: 1600px) {
+     
+    }
+`;
+
 
 export const HeadingUpperHeading = styledComponents(BodyText1)`
-    font-weight: bold;
-    font-size: 2rem;
-    font-family:"NeusaThin";
 
+    @media only screen and (min-width: 768px) {
+        font-size: 1rem;
+        
+    }
+
+    @media only screen and (min-width: 992px) {
+        font-size: 1.5rem;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        font-size: 1.8rem;
+    }
 `;
 
 export const HeadingHeading = styledComponents(Title1)`
     margin: 10% 0;
-    font-size: 3.5rem;
+    font-size: 2.5rem;
+
+    @media only screen and (min-width: 768px) {
+        margin: 5% 0 5% 0;
+        font-size: 1.8rem;
+            
+    }
+    
+    @media only screen and (min-width: 992px) {
+        font-size: 3rem;
+        margin: 5% 0 5% 0;
+    }
+    
+    @media only screen and (min-width: 1600px) {
+        font-size: 4rem;
+        margin: 0 0 5% 0;
+    }
+ 
 `;
 
 
@@ -44,12 +127,28 @@ export const HeadingLine = styledComponents.div`
     @media screen and (min-width: 768px){
         margin-top: 5%;
     }
+
+    @media screen and (min-width: 992px){
+        margin-top: 10%;
+    }
   
 `;
 
 export const HeaderImage = styledComponents.img`
    
+    @media only screen and (min-width: 768px) {
+           
+            
+    }
 
+    @media only screen and (min-width: 992px) {
+        padding-top: 15%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        padding-top: 5%;
+        width: 80%;
+    }
   
 `;
 

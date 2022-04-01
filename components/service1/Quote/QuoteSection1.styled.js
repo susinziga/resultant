@@ -9,7 +9,7 @@ export const QuoteContainer = styledComponents.div`
 
 
     @media only screen and (min-width: 768px) {
-       
+        padding:5%;
     }
 
     @media only screen and (min-width: 992px) {
@@ -17,7 +17,7 @@ export const QuoteContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        padding:2.5%;
     }
 `;
 
@@ -27,7 +27,7 @@ export const QuoteImageContainer = styledComponents.div`
     margin: 5% 0;
 
     @media only screen and (min-width: 768px) {
-       
+        padding-right: 8%;
     }
 
     @media only screen and (min-width: 992px) {
@@ -35,7 +35,7 @@ export const QuoteImageContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        padding-right: 7.5%;
     }
 `;
 
@@ -47,7 +47,7 @@ export const QuoteImage = styledComponents.img`
     
    
     @media only screen and (min-width: 768px) {
-       
+        width: 30%;
     }
 
     @media only screen and (min-width: 992px) {
@@ -55,7 +55,7 @@ export const QuoteImage = styledComponents.img`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        width: 20%;
     }
 `;
 
@@ -73,25 +73,26 @@ export const QuoteTextContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        padding-right: 10%;
     }
 `;
 
 
 export const QuoteText = styledComponents(BodyText1)`
     color: white;
-    font-size: 2rem;
+  
     
 
     @media only screen and (min-width: 768px) {
-       
+       font-size: 1.5rem;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        font-size: 2rem;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        font-size: 2.5rem;
+     
     }
 `;

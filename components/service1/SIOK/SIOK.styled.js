@@ -1,17 +1,17 @@
 import styledComponents from "styled-components";
-import { BodyText1, BodyText2, BodyText3, BodyText4, Title1 } from "../../../basic_components/texts/Texts";
+import { BodyText1, BodyText2, BodyText3, BodyText4, Title1, Title2 } from "../../../basic_components/texts/Texts";
 
 
 export const SIOKContainer = styledComponents.div`
     width: 100%;
     margin: auto;
-    padding: 20% 0;
+    padding: 15% 0;
     text-align: center;
     background: #F6FBFE;
 
 
     @media only screen and (min-width: 768px) {
-       
+        padding:  0;
     }
 
     @media only screen and (min-width: 992px) {
@@ -19,13 +19,13 @@ export const SIOKContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        
     }
 `;
 
 
-export const SIOKTitle = styledComponents(Title1)`
-    margin: 7.5% 0;
+export const SIOKTitle = styledComponents(Title2)`
+    margin: 7.5% 2%;
     font-family: "Neusa";
     font-weight: bold;
 
@@ -48,15 +48,16 @@ export const SIOKImage = styledComponents.img`
     width: 90%;
 
     @media only screen and (min-width: 768px) {
-       
+       padding: 7.5% 0 5% 0;
+       width: 80%;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        width: 75%;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        width: 65%;
     }
 `;
 
@@ -86,7 +87,7 @@ export const SIOKTextContainer = styledComponents.div`
 
 export const SIOKParagraph = styledComponents(BodyText1)`
     color: white;
-    font-size: 2rem;
+
     font-weight: bold;
 
     @media only screen and (min-width: 768px) {

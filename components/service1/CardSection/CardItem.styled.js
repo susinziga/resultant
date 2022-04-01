@@ -1,5 +1,5 @@
 import styledComponents from "styled-components";
-import { Header2, BodyText1 } from "../../../basic_components/texts/Texts";
+import { Header2, BodyText1, Title1, Title2 } from "../../../basic_components/texts/Texts";
 
 export const CardItemContainer = styledComponents.div`
     width: 90%;
@@ -11,7 +11,9 @@ export const CardItemContainer = styledComponents.div`
 
 
     @media only screen and (min-width: 768px) {
-       
+        width: 95%;
+        padding: 8%;
+        min-height: auto;
     }
 
     @media only screen and (min-width: 992px) {
@@ -23,37 +25,43 @@ export const CardItemContainer = styledComponents.div`
     }
 `;
 
+
+
+
 export const Text = styledComponents(BodyText1)`
-    font-size: 2rem;
+    
     font-weight: bold;
     
 
     @media only screen and (min-width: 768px) {
-       
+       font-size: 1.4rem;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        font-size: 1.5rem;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        font-size: 1.8rem;
     }
 `;
 
-export const Heading = styledComponents(Header2)`
-    font-size: 2.5rem;
+export const Heading = styledComponents(Title2)`
+    
     margin-bottom: 10%;
 
     @media only screen and (min-width: 768px) {
-       
+        margin-bottom: 5%;
+        font-size: 2rem;
     }
 
     @media only screen and (min-width: 992px) {
-        
+      
+        font-size: 2rem;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+     
+        font-size: 2.5rem;
     }
 `;

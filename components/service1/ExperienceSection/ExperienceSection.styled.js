@@ -1,5 +1,5 @@
 import styledComponents from "styled-components";
-import { Title1 } from "../../../basic_components/texts/Texts";
+import { Subtitle2, Title1, Title2 } from "../../../basic_components/texts/Texts";
 
 export const ExperienceContainer = styledComponents.div`
     width: 90%;
@@ -7,7 +7,7 @@ export const ExperienceContainer = styledComponents.div`
 
 
     @media only screen and (min-width: 768px) {
-        
+        padding-top: 5%; 
     }
 
     @media only screen and (min-width: 992px) {
@@ -19,15 +19,11 @@ export const ExperienceContainer = styledComponents.div`
     }
 `
 
-export const ExperienceTitle = styledComponents(Title1)`
-    margin: 20% 0 10% 0;
-    font-family: "Neusa";
-    font-weight: bold;
-    font-size: 3rem;
 
-
+export const FlexDesktop = styledComponents.div`
+  
     @media only screen and (min-width: 768px) {
-       
+        display: flex;
     }
 
     @media only screen and (min-width: 992px) {
@@ -35,10 +31,67 @@ export const ExperienceTitle = styledComponents(Title1)`
     }
 
     @media only screen and (min-width: 1600px) {
+    
+    }
+`
+
+export const ExperienceTitle = styledComponents(Title2)`
+    margin: 20% 0 10% 0;
+    font-family: "Neusa";
+    font-weight: bold;
+
+    @media only screen and (min-width: 768px) {
+        margin: 0;
+        width:60%;
+        padding-right: 20%;
+        font-size: 1.4rem;
+       
+    }
+
+    @media only screen and (min-width: 992px) {
+        font-size: 2rem;
+    }
+
+    @media only screen and (min-width: 1600px) {
        
     }
 `;
 
+export const DesktopTitle = styledComponents(Title2)`
+
+    @media only screen and (min-width: 768px) {
+        font-family: "Neusa";
+        font-weight: bold;
+        width:100%;
+        font-size: 1.4rem;
+    }
+
+    @media only screen and (min-width: 992px) {
+        font-size: 2rem;
+    }
+
+    @media only screen and (min-width: 1600px) {
+       
+    }
+`;
+
+export const FlexDesktopText = styledComponents.div`
+  
+    @media only screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+    }
+
+    @media only screen and (min-width: 992px) {
+        
+    }
+
+    @media only screen and (min-width: 1600px) {
+    
+    
+    }
+`
 
 export const List = styledComponents.ul`
     width: 100%;
@@ -46,7 +99,7 @@ export const List = styledComponents.ul`
     padding-left: 5%;
 
     @media only screen and (min-width: 768px) {
-       
+        width:100%;
     }
 
     @media only screen and (min-width: 992px) {
@@ -56,18 +109,18 @@ export const List = styledComponents.ul`
     @media only screen and (min-width: 1600px) {
        
     }
-`;
+`
 
 export const Bullet = styledComponents.li`
     margin: 7.5% 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
 
     @media only screen and (min-width: 768px) {
-       
+        font-size: 1.2rem;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        font-size: 1.4rem;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -76,7 +129,7 @@ export const Bullet = styledComponents.li`
 `;
 
 export const Button = styledComponents.a`
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     width: 90%;
     
     @media only screen and (min-width: 768px) {
@@ -107,11 +160,14 @@ export const ButtonContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 768px) {
-        
+        margin: 0;
+        margin: 10% 0;
+        width: 80%;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        margin: 5% 0;
+        width: 65%;
     }
 
     @media only screen and (min-width: 1600px) {
