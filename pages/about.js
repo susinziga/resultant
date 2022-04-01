@@ -1,5 +1,4 @@
 import About_page from "../components/about/About_page";
-import MainContent_about from "../components/about_old/mainContent_about/MainContent_about";
 import { AboutContextProvider } from "../context/aboutContext";
 
 export default function About() {
