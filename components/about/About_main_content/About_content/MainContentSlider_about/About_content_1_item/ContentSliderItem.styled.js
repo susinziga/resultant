@@ -1,5 +1,8 @@
 import styledComponents from "styled-components";
-import { BodyText4, Title2 } from "../../../../basic_components/texts/Texts";
+import {
+  BodyText4,
+  Title2,
+} from "../../../../../../basic_components/texts/Texts";
 
 export const ReferencesItemContainer = styledComponents.div`
 
@@ -13,13 +16,13 @@ export const ReferencesItemContainer = styledComponents.div`
     
   
     ${(props) => {
-        return props.isActive
-          ? ` 
+      return props.isActive
+        ? ` 
             background-color: var(--pillar-color);
             transition: background 0.5s ease;
           `
-          : "";
-      }}
+        : "";
+    }}
 
 
 `;
@@ -31,13 +34,13 @@ export const Heading = styledComponents(Title2)`
 
     
     ${(props) => {
-        return props.isActive
-          ? ` 
+      return props.isActive
+        ? ` 
            color: white;
            transition: color 0.5s ease;
           `
-          : "";
-      }}
+        : "";
+    }}
 
 
 
@@ -46,13 +49,13 @@ export const Heading = styledComponents(Title2)`
 export const Text = styledComponents(BodyText4)`
 
 ${(props) => {
-    return props.isActive
-      ? ` 
+  return props.isActive
+    ? ` 
        color: white;
        transition: color 0.5s ease;
       `
-      : "";
-  }}
+    : "";
+}}
     
 
 

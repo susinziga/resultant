@@ -6,10 +6,12 @@ flex-direction:row;
 
 //border:1px solid black;
 width:80%;
+margin:auto;
 
 gap:10rem;
 
 >img{
+    width:40%;
     height:100%;
     border-radius: 12px;
 
@@ -23,6 +25,7 @@ export const TeamSliderFlex = styledComponents.div`
     display:flex;
     flex-direction:column;
     width:35%;
+    justify-content:center;
 
     
 >*:nth-child(2),

@@ -2,27 +2,32 @@ import styledComponents from "styled-components";
 import { Header2 } from "../../../../basic_components/texts/Texts";
 
 export const About_sidebar_container = styledComponents.div`
-    width:fit-content;
+    width:100%;
     padding:4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background: "#004767";
+    font-size:3rem;
 `;
 
 export const Sidebar_title = styledComponents(Header2)`
-    color: #CACFD2;
+    color:#CACFD2;
+    
     opacity: 0.8;
     
     transition: font-size 2s;
     transition: color 2s;
     transition:background-color 1s;
+    margin-left:20%:
+    font-size:5rem;
 
     white-space: nowrap;
 
       ${(props) => {
         return props.selected
-          ? ` font-size: 3.5rem ;
-              color: black!important;  
+          ? ` font-size: 4rem!important ;
+              color: black;  
               padding: 0;
               opacity: 1;
               transition: font-size 1s;

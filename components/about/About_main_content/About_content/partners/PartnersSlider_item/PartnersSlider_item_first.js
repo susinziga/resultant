@@ -1,21 +1,18 @@
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
-import {
-  BodyText1,
-  BodyText4,
-} from "../../../../../basic_components/texts/Texts";
+import { BodyText1 } from "../../../../../../basic_components/texts/Texts";
 import { FirstSlideContainer } from "./PartnersSlider_item.styled";
 
-const PartnersSlider_item_first = () => {
+const Partners_quote_content = () => {
   const { t } = useTranslation("partners");
   return (
     <FirstSlideContainer>
       <div>
-        <img src="./Icons/quote.png"></img>
+        <img src="./Icons/quote.png" className="quote"></img>
       </div>
       <BodyText1>{t("partners_intro")}</BodyText1>
     </FirstSlideContainer>
   );
 };
 
-export default PartnersSlider_item_first;
+export default Partners_quote_content;

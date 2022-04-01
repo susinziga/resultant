@@ -1,5 +1,6 @@
 import React from "react";
-import { BodyText4 } from "../../../../basic_components/texts/Texts";
+import { BodyText4 } from "../../../../../basic_components/texts/Texts";
+
 import * as Styled from "./TeamSliderItem.styled";
 
 const TeamSliderItem = ({ item }) => {

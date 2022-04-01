@@ -17,7 +17,7 @@ html {
   box-sizing: border-box;
   /*font-size: 16px;*/
   font-family: "Neusa";
-  font-size: calc(13px + (18 - 16) * (100vw - 500px) / (1800 - 500));
+  font-size: calc(16px + (18 - 16) * (100vw - 500px) / (1800 - 500));
   -webkit-user-select: none; /* Safari */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* IE10+/Edge */

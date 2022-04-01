@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import { Container } from "./MainContentSlider.styled";
 
@@ -9,17 +9,15 @@ import SwiperCore, { Mousewheel, Pagination } from "swiper";
 import "swiper/css";
 //import References_item from "../../../references/references_item/References_item";
 import { useRef, useState, useEffect } from "react";
-import Content_item from "../contentSliderItem/ContentSliderItem";
-import useEventListener from "../../../../custom_hooks/useEventListener";
+import Content_item from "./About_content_1_item/ContentSliderItem";
+import { AboutContext } from "../../../../../context/aboutContext";
 
 SwiperCore.use([Mousewheel, Pagination]);
 
-const MainContentSlider = ({
-  nextSection,
-  prevSection,
-  isActive,
-  initSlide = 0,
-}) => {
+const About_content_1 = ({ isActive, initSlide = 0 }) => {
+  const { contentSwiperActive, setContentSwiperActive } =
+    useContext(AboutContext);
+  let swip = useSwiper();
   const items = [
     {
       name: "1. Poglobljena analiza stanja",
@@ -43,29 +41,46 @@ const MainContentSlider = ({
     },
   ];
 
-  let swip = useSwiper();
-
   useEffect(() => {
-    window.addEventListener("wheel", handleWheel);
-
+    window.addEventListener("wheel", preventDefault, { passive: false });
     return () => {
-      return window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("wheel", preventDefault, {
+        passive: false,
+      });
     };
   }, [isActive]);
 
-  const handleWheel = (e) => {
-    console.log(isActive);
+  let isScrolling = Date.now();
+
+  const preventDefault = (e) => {
+    console.log(Date.now());
+    console.log(isScrolling);
     if (isActive) {
-      if (e.deltaY > 0) {
-        if (swip.isEnd) {
-          nextSection(e);
-        } else swip.slideNext(500);
-      } else {
-        if (swip.isBeginning) {
-          prevSection(e);
-        } else swip.slidePrev(500);
+      e.preventDefault();
+      if (Date.now() - 500 > isScrolling) {
+        console.log(isActive);
+
+        if (e.deltaY < 0) {
+          if (swip.isBeginning) {
+            window.scrollBy(0, e.deltaY);
+          } else swip.slidePrev();
+        }
+        if (e.deltaY > 0) {
+          if (swip.isEnd) {
+            /*document
+              .getElementById("content_box")
+              .scrollIntoView();*/
+            document
+              .getElementById("team")
+              .scrollIntoView({ behavior: "smooth" });
+            setContentSwiperActive((prev) => prev + 1);
+          } else swip.slideNext();
+        }
+
+        isScrolling = Date.now();
       }
     }
+    // window.scrollBy(0, e.deltaY);
   };
 
   const setInstance = (instance) => {
@@ -75,10 +90,11 @@ const MainContentSlider = ({
   return (
     <Container>
       <Swiper
+        onScroll={true}
         spaceBetween={50}
-        slidesPerView={1}
+        slidesPerView={1.5}
         initialSlide={initSlide}
-        onSwiper={(swiper) => (swip = swiper)}
+        centeredSlides={true}
         direction={"horizontal"}
         className="mySwiper"
       >
@@ -101,4 +117,4 @@ const SwiperInstance = ({ setInstance }) => {
   return <></>;
 };
 
-export default MainContentSlider;
+export default About_content_1;
