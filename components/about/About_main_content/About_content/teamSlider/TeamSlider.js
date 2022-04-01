@@ -41,7 +41,7 @@ const TeamSlider = ({ nextSection, prevSection, isActive }) => {
               .getElementById("approach")
               .scrollIntoView({ behavior: "smooth" });
             setContentSwiperActive((prev) => prev - 1);
-          } else swip.slidePrev();
+          } else swip.slidePrev(1000);
         }
         if (e.deltaY > 0) {
           if (swip.isEnd) {
@@ -50,7 +50,7 @@ const TeamSlider = ({ nextSection, prevSection, isActive }) => {
               .getElementById("partners")
               .scrollIntoView({ behavior: "smooth" });
             setContentSwiperActive((prev) => prev + 1);
-          } else swip.slideNext();
+          } else swip.slideNext(1000);
         }
 
         isScrolling = Date.now();

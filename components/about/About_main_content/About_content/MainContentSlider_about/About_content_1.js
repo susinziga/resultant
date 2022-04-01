@@ -63,7 +63,7 @@ const About_content_1 = ({ isActive, initSlide = 0 }) => {
         if (e.deltaY < 0) {
           if (swip.isBeginning) {
             window.scrollBy(0, e.deltaY);
-          } else swip.slidePrev();
+          } else swip.slidePrev(1500);
         }
         if (e.deltaY > 0) {
           if (swip.isEnd) {
@@ -74,7 +74,7 @@ const About_content_1 = ({ isActive, initSlide = 0 }) => {
               .getElementById("team")
               .scrollIntoView({ behavior: "smooth" });
             setContentSwiperActive((prev) => prev + 1);
-          } else swip.slideNext();
+          } else swip.slideNext(1500);
         }
 
         isScrolling = Date.now();

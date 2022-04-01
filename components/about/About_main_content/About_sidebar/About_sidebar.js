@@ -24,28 +24,13 @@ const About_sidebar = ({ initAnim }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    /* gsap.to(lineAnimation, {
-      duration: 2.5,
-      width: 0,
-      scrollTrigger: { trigger: contentRef.current, start: "top-=10% top" },
-    });*/
-    /*gsap.to(contentAnimation, {
-      paddingTop: "15%",
-      width: "70%",
-      duration: 2,
-      scrollTrigger: { trigger: contentRef.current, start: "top-=10% top" },
-      onComplete: () => {},
-    });*/
-  }, []);
-
-  useEffect(() => {
     if (initAnim === true) {
       console.log("ANIMATION");
       gsap.to(
         navAnimation.current,
 
         {
-          width: "30%",
+          width: "35%",
           duration: 2,
         }
       );
