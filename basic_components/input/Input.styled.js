@@ -23,7 +23,7 @@ ${(props) => {
 `;
 
 export const InputLabel = styledComponents.label`
- font-size:1.5rem;
+ font-size:1.3rem;
  color: var(--dark);
  font-family: "NeusaThin";
  font-weight: 100;

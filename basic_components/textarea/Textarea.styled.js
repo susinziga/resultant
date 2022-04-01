@@ -29,7 +29,7 @@ ${(props) => {
 `;
 
 export const TextareaLabel = styledComponents.label`
- font-size:1.5rem;
+ font-size:1.3rem;
  color: var(--dark);
  font-family: "NeusaThin"
 

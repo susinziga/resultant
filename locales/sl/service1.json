@@ -31,6 +31,7 @@
     "service1_SIOKparagraph": "Barvne kode znotraj stolpca prikazujejo relativna razmerja med ocenami",
     "service1_SIOKImageSub": "* Vse prikazane številke so simbolične.",
     "service1_experienceHeading": "Boljša kot je izkušnja zaposlenih, višja bo njihova zavzetost.",
+    "service1_expirienceSubHeading_Desktop": "Kako graditi izkušnjo zaposlenih?",
     "service1_experienceBullet1": "Navdušujte vaše zaposlene z vašim poslanstvom in vizijo.",
     "service1_experienceBullet2": "Stalno razvijajte voditeljske sposobnosti.",
     "service1_experienceBullet3": "Ustvarite odlične komunikacijske navade.",
@@ -39,5 +40,18 @@
     "service1_experienceBullet6": "Razvijate fleksibilna in inovativna delovna okolja.",
     "service1_experienceBullet7": "Omogočite vašim zaposlenim odlične možnosti za karierno rast.",
     "service1_experienceBullet8": "Stalno skrbite za dobro počutje vaših zaposlenih.",
-    "service1_button": "Kaj vam prinaša visoka zavzetost zaposlenih?"
+    "service1_button": "Kaj vam prinaša visoka zavzetost zaposlenih?",
+    "service1_cardHeading1": "Zavzeti zaposleni so vaši najboljši prodajalci.",
+    "service1_cardHeading2": "Zaposleni so vaši najboljši ambasadorji blagovne znamke.",
+    "service1_cardText1": "Zadovoljstvo strank in njihova izkušnja z vašim podjetjem se začne pri zavzetih in zadovoljnih zaposlenih. Boljša kot je njihova izkušnja s podjetjem, bolj bodo prenašali to zadovoljstvo na kupce in ostale deležnike. Poleg tega se bodo razvijali tudi boljši odnosi med zaposlenimi in strankami.</br> </br> Če želite povečati prodajo in razviti vrhunske odnose z vašimi strankami, vlagajte v programe, ki povečujejo zavzetost vaših sodelavcev.",
+    "service1_cardText2": "Zavzeti zaposleni svoje podjetje visoko cenijo, zato so lahko njegovi najbolj naravni in vplivni ambasadorji. bO podjetju običajno govorijo pozitivno ter s tem promovirajo blagovno znamko dobrega delodajalca. Posledično v podjetje prihajajo najboljši kadri, znižujejo se stroški v procesu zaposlovanja, prav tako pa se zmanjšuje tudi stopnja fluktuacije.",
+    "service1_contactHeader": "Pošljite podrobnejše informacije",
+    "service1_buttonText1": "Pridobi",
+    "service1_newsHeader1": "Kako do večje zavzetosti vaših zaposlenih?",
+    "service1_newsHeader2": "Spremljanje in spreminjanje organizacijske klime in kulture",
+    "service1_newsHeader3": "Visoka zavzetost sodelavcev prinaša organizaciji veliko prednost",
+    "service1_newsText1": "Številne raziskave, ki proučujejo vpliv zavzetosti zaposlenih na ohranjanje ključnih kadrov, zvestobo kupcev, produktivnost in profitabilnost ter istočasno svarijo o ogromnih denarnih izgubah v primeru povečevanja...",
+    "service1_newsText2": "Cilj vsake organizacije bi moral biti ustvarjanje trajnostnega delovnega okolja, v katerem se zaposleni počutijo vključene, zveste in zadovoljne...",
+    "service1_newsText3": "Boljša učinkovitost timov, povečana produktivnost zaposlenih, manjša fluktuacija, doseganje ciljev oddelka in pridobivanje najboljših talentov, so »sanje« in cilj večine organizacij..."
+
 }
