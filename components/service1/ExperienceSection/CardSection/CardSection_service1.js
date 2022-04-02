@@ -4,7 +4,7 @@ import { CardItemContainer, Heading, Image, Text, TextContainer } from './CardSe
 const CardSection_service1 = (props) => {
   return (
     <>
-        <CardItemContainer color={props.props.color}>
+        <CardItemContainer color={props.props.color} inversed={props.props.inversed}>
             <TextContainer>
                 <Heading>{props.props.heading}</Heading>
                 <Text dangerouslySetInnerHTML={{__html:props.props.text}}></Text>

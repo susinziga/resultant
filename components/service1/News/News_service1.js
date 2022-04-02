@@ -16,7 +16,7 @@ const News_service1 = (props) => {
 
   return (
     <>
-        <div {...props}>
+        <div {...props} style={{width: "95%", margin: "auto"}}>
           <CardSlider news={news} ></CardSlider>
         </div>
     </>

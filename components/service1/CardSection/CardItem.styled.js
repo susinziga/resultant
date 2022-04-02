@@ -34,15 +34,15 @@ export const Text = styledComponents(BodyText1)`
     
 
     @media only screen and (min-width: 768px) {
-       font-size: 1.4rem;
+       font-size: 1.2rem;
     }
 
     @media only screen and (min-width: 992px) {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 
     @media only screen and (min-width: 1600px) {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
     }
 `;
 
@@ -51,17 +51,16 @@ export const Heading = styledComponents(Title2)`
     margin-bottom: 10%;
 
     @media only screen and (min-width: 768px) {
-        margin-bottom: 5%;
-        font-size: 2rem;
+        margin-bottom: 10%;
+        font-size: 1.5rem;
     }
 
     @media only screen and (min-width: 992px) {
-      
-        font-size: 2rem;
+        margin-bottom: 5%;
+        font-size: 1.8rem;
     }
 
     @media only screen and (min-width: 1600px) {
-     
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 `;

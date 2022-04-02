@@ -4,6 +4,7 @@ import { Subtitle2, Title1, Title2 } from "../../../basic_components/texts/Texts
 export const ExperienceContainer = styledComponents.div`
     width: 90%;
     margin:auto;
+    position: relative;
 
 
     @media only screen and (min-width: 768px) {
@@ -18,6 +19,8 @@ export const ExperienceContainer = styledComponents.div`
     
     }
 `
+
+
 
 
 export const FlexDesktop = styledComponents.div`
@@ -44,12 +47,12 @@ export const ExperienceTitle = styledComponents(Title2)`
         margin: 0;
         width:60%;
         padding-right: 20%;
-        font-size: 1.4rem;
+        font-size: 1rem;
        
     }
 
     @media only screen and (min-width: 992px) {
-        font-size: 2rem;
+        font-size:1.6rem;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -63,11 +66,11 @@ export const DesktopTitle = styledComponents(Title2)`
         font-family: "Neusa";
         font-weight: bold;
         width:100%;
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
 
     @media only screen and (min-width: 992px) {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -116,11 +119,11 @@ export const Bullet = styledComponents.li`
     font-size: 1.5rem;
 
     @media only screen and (min-width: 768px) {
-        font-size: 1.2rem;
+        font-size: 0.8rem;
     }
 
     @media only screen and (min-width: 992px) {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -133,7 +136,7 @@ export const Button = styledComponents.a`
     width: 90%;
     
     @media only screen and (min-width: 768px) {
-       
+        font-size: 1rem;
     }
 
     @media only screen and (min-width: 992px) {
@@ -192,3 +195,26 @@ export const ArrowContainer = styledComponents.img`
     
     }
 `
+
+export const BackgroundVector = styledComponents.img`
+   position: absolute;
+   top: 0;
+   left: 8%;
+   z-index: -100;
+   width: 70%;
+   top:-18%;
+  
+   
+
+   @media only screen and (min-width: 992px) {
+        
+        width: 60%;
+        top:-18%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        left: 15%;
+        width: 50%;
+        top:-18%;
+    }
+`;

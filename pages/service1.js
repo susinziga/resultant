@@ -21,7 +21,7 @@ const service1 = () => {
       <SIOK_service1 className="section"></SIOK_service1>
       <ExperienceSection_section1 className="section "></ExperienceSection_section1>
       <Contact_service1 className="section"></Contact_service1>
-      <News_service1  className="section mobile"></News_service1>
+      <News_service1  ></News_service1>
     </>
   )
 }

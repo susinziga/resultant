@@ -7,7 +7,7 @@ const Contact_service1 = (props) => {
   return (
     <>  
         <ContactContainer {...props}>
-            <HeadingLine></HeadingLine>
+            <HeadingLine className='mobile'></HeadingLine>
             <ContactForm_service1></ContactForm_service1>
         </ContactContainer>
     </>

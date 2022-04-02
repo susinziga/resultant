@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonContainer, ContactContainer, ContactHeader, FormContainer, SubmitButton, TextareaContainer } from './ContactForm.styled';
+import { ButtonContainer, ContactContainer, ContactHeader, FormContainer, SubmitButton, TextareaContainer, HeadingLine, HeaderContainer, InputContainer } from './ContactForm.styled';
 import Input from '../../../../basic_components/input/Input';
 import Textarea from '../../../../basic_components/textarea/Textarea';
 import Button from '../../../../basic_components/button/Button';
@@ -24,12 +24,17 @@ const ContactForm_service1 = () => {
   
   return (<>
       <ContactContainer>
-          <ContactHeader>{title}</ContactHeader>
+          <HeaderContainer>
+              <ContactHeader>{title}</ContactHeader>
+              <HeadingLine className='desktop'></HeadingLine>
+          </HeaderContainer>
         <FormContainer>
         {
           inputProps.map((input) => {
             return(<>
+         
               <Input id="desktop" props={input} style={{marginBottom: "5%", fontSize: "1.5rem"}}></Input>
+              
               </>
             )
           })

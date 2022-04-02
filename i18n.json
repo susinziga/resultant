@@ -10,6 +10,8 @@
 
     "/contact": ["contact"],
     "/offer": ["offer"],
-    "/service1": ["service1"]
+    "/service1": ["service1"],
+    "/support": ["support"],
+    "/privacy": ["privacy"]
   }
 }
