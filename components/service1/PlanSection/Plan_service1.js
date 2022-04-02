@@ -1,6 +1,6 @@
 import React from 'react';
 import useTranslation from "next-translate/useTranslation";
-import { PlanContainer, PlanTableContainer, PlanTableHeader, PlanTableHeaderContainer,  PlanTableHeaderCon, SubmitButton, ButtonContainer, FlexContainer } from './Plan.styled';
+import { PlanContainer, PlanTableContainer, PlanTableHeader, PlanTableHeaderContainer,  PlanTableHeaderCon, SubmitButton, ButtonContainer, FlexContainer, BackgroundVector } from './Plan.styled';
 
 
 import PlanItem_service1 from './PlanTables/PlanItem/PlanItem_service1';
@@ -35,6 +35,9 @@ const Plan_section1 = (props) => {
   return (
     <>
         <PlanContainer {...props}>
+            <BackgroundVector className="desktop" src="./offer/backgroundVector.png"></BackgroundVector>
+            <BackgroundVector className="mobile" src="./Service1/VectorA_mobile.png"></BackgroundVector>
+            
             <PlanTableContainer>
                 <PlanTableHeaderContainer>
                     <PlanTableHeaderCon>

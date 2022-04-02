@@ -5,10 +5,11 @@ import styledComponents from "styled-components";
 export const ContactContainer = styledComponents.div`
     width: 90%;
     margin: auto;
-    padding-top: 10%;
+    
 
     @media only screen and (min-width: 768px) {
         padding-top: 0%;
+        
     }
 
     @media only screen and (min-width: 992px) {

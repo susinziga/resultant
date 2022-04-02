@@ -4,6 +4,7 @@ import { Header2 } from "../../../basic_components/texts/Texts";
 
 
 export const PlanContainer = styledComponents.div`
+    position: relative;
     width: 100%;
     margin: auto;
 
@@ -122,7 +123,7 @@ export const PlanTableHeader = styledComponents(Header2)`
 
 
     @media only screen and (min-width: 768px) {
-       font-size: 2.5em;
+       font-size: 2rem;
     }
 
     @media only screen and (min-width: 992px) {
@@ -195,4 +196,30 @@ export const SubmitButton = styledComponents.a`
     }
 
 `
+
+
+export const BackgroundVector = styledComponents.img`
+   position: absolute;
+   z-index: -100;
+   width: 100%;
+   right: 0;
+   top: -5%;
+  
+   @media only screen and (min-width: 768px) {
+        width: 50%;
+        top: -10%;
+        right: 0;
+    }
+   
+
+   @media only screen and (min-width: 992px) {
+        width: 45%;
+        top:-10%;
+    }
+
+    @media only screen and (min-width: 1600px) {
+        width: 40%;
+        top:-10%;
+    }
+`;
 

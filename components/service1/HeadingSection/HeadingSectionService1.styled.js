@@ -90,7 +90,7 @@ export const HeadingUpperHeading = styledComponents(BodyText1)`
     }
 
     @media only screen and (min-width: 1600px) {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 `;
 
@@ -100,17 +100,17 @@ export const HeadingHeading = styledComponents(Title1)`
 
     @media only screen and (min-width: 768px) {
         margin: 5% 0 5% 0;
-        font-size: 1.8rem;
+        font-size: 1.5rem;
             
     }
     
     @media only screen and (min-width: 992px) {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin: 5% 0 5% 0;
     }
     
     @media only screen and (min-width: 1600px) {
-        font-size: 4rem;
+        font-size: 3.5rem;
         margin: 0 0 5% 0;
     }
  

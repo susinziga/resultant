@@ -38,7 +38,7 @@ export const PlanText = styledComponents(BodyText1)`
     }
 
     @media only screen and (min-width: 1600px) {
-        font-size:1.5rem;
+        font-size:1.35rem;
     }
 `;
 
@@ -48,13 +48,13 @@ export const PlanTextContainer = styledComponents.div`
 
     @media only screen and (min-width: 768px) {
         width: 100%;
-        height: 50px;
+        height: 80px;
        
     }
 
     @media only screen and (min-width: 992px) {
         width: 100%;
-        height: 35px;
+        height: 50px;
         padding-right: 10%;
     }
 

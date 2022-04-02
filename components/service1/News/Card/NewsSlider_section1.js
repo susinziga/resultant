@@ -38,6 +38,7 @@ const CardSlider = ({ news }) => {
           0: { slidesPerView: 1.5, centeredSlides: true },
           768: {
             slidesPerView: 3,
+           
           },
         }}
         loop={true}
