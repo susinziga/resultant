@@ -26,4 +26,19 @@ export const About_main_content_container = styledComponents.div`
             color:white;
         }`
         : ""}
+
+
+        ${(props) =>
+          props.active === 4
+            ? `background-color:var(--blue);
+              span{
+              color:white;
+              }
+              .quote{
+                  filter:invert(1);
+              }
+              h2:nth-child(4){
+                  color:white;
+              }`
+            : ""}
 `;

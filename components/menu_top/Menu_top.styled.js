@@ -31,7 +31,7 @@ width:fit-content;
 
     z-index:100;
 
-    left: 57%;
+     left: 57%;
     //left:100%;
     width: fit-content;
     transform: scale(0.5);

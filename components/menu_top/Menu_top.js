@@ -44,10 +44,11 @@ const Menu_top = ({}) => {
   //1 scroll dol
   //2 scroll gor
   const [navState, setNavState] = useState(-1);
+  useEffect(() => {}, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    if (isDesktop() && pathname === "/") {
+    if (isDesktop() && pathname === "/" && window.scrollY <= 10) {
       /*if (navState === -1 && window.scrollY <= 10) {*/
       gsap.from(letterAnimation, {
         duration: 2,
@@ -62,7 +63,6 @@ const Menu_top = ({}) => {
           start: "top top",
         },
       });
-
       gsap.from(LogoAnimation, {
         opacity: 0,
         duration: 0.5,
