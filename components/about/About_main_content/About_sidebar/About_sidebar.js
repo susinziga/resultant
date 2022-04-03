@@ -40,17 +40,21 @@ const About_sidebar = ({ initAnim }) => {
 
         {
           background: "transparent",
-
-          duration: 0.5,
-          delay: 1.5,
+          duration: 1,
+          delay: 1,
         }
       );
 
       gsap.to(".sidebar", {
-        marginLeft: "0%",
-        fontSize: "3rem",
-        color: "white;",
-        duration: 2,
+        opacity: 1,
+        duration: 0.5,
+        delay: 1.5,
+      });
+
+      gsap.to(".sidebarFake", {
+        opacity: 0,
+        duration: 0.5,
+        delay: 1.5,
       });
     }
   }, [initAnim]);
@@ -86,6 +90,22 @@ const About_sidebar = ({ initAnim }) => {
       >
         {navItem4}
       </Styled.Sidebar_title>
+
+      <Styled.AnimationContainer>
+        <Styled.Sidebar_title className="sidebarFake">
+          {navItem1}
+        </Styled.Sidebar_title>
+
+        <Styled.Sidebar_title className="sidebarFake">
+          {navItem2}
+        </Styled.Sidebar_title>
+        <Styled.Sidebar_title className="sidebarFake">
+          {navItem3}
+        </Styled.Sidebar_title>
+        <Styled.Sidebar_title className="sidebarFake">
+          {navItem4}
+        </Styled.Sidebar_title>
+      </Styled.AnimationContainer>
     </Styled.About_sidebar_container>
   );
 };

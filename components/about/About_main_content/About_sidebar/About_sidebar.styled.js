@@ -7,20 +7,21 @@ export const About_sidebar_container = styledComponents.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: "#004767";
+    background: var(--blue);
     font-size:3rem;
 `;
 
 export const Sidebar_title = styledComponents(Header2)`
     color:#CACFD2;
-    
+
     opacity: 0.8;
     
     transition: font-size 2s;
     transition: color 2s;
     transition:background-color 1s;
-    margin-left:20%:
-    font-size:5rem;
+    margin-left:0:
+    font-size:3rem;
+    opacity:0;
 
     white-space: nowrap;
 
@@ -29,7 +30,7 @@ export const Sidebar_title = styledComponents(Header2)`
           ? ` font-size: 4rem!important ;
               color: black;  
               padding: 0;
-              opacity: 1;
+            
               transition: font-size 1s;
               transition: color 1s;
           `
@@ -40,8 +41,7 @@ export const Sidebar_title = styledComponents(Header2)`
         return props.transition
           ? ` font-size: 2.5rem ; 
                 padding: 0;
-                opacity: 0.8;
-            `
+                opacity: 0.8;`
           : "";
       }}
 
@@ -63,8 +63,27 @@ export const Sidebar_title = styledComponents(Header2)`
                 `
           : "";
       }}
+
+      &.sidebarFake {
+        opacity:1;
+      }
     @media screen and (min-width: 768px){
        
     }
   
+`;
+
+export const AnimationContainer = styledComponents.div`
+    position:absolute;
+    transform:translate(50%,10%);
+
+
+
+    *{
+      font-size:4.5rem;
+    }
+    *:nth-child(1){
+      font-size:6rem;
+      color:white;
+    }
 `;

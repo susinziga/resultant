@@ -14,3 +14,7 @@
 .pillarShrink {
   padding-right: 2% !important;
 }
+
+#content_box {
+  transform: translateX(100%);
+}

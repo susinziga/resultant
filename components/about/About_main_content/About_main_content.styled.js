@@ -9,6 +9,8 @@ export const About_main_content_container = styledComponents.div`
 
     transition:1s all;
 
+    overflow-x:hidden;
+
     
   
     

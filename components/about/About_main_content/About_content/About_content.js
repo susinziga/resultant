@@ -28,6 +28,12 @@ const About_content = ({ initAnim, isActive }) => {
           duration: 2,
         }
       );
+
+      gsap.to(document.getElementById("content_box"), {
+        transform: "translateX(0)",
+        duration: 2,
+        delay: 2,
+      });
     }
   }, [initAnim]);
 
