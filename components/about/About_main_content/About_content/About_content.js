@@ -20,19 +20,10 @@ const About_content = ({ initAnim, isActive }) => {
 
   useEffect(() => {
     if (initAnim === true) {
-      gsap.to(
-        contentAnimation.current,
-
-        {
-          width: "100%",
-          duration: 2,
-        }
-      );
-
       gsap.to(document.getElementById("content_box"), {
         transform: "translateX(0)",
-        duration: 2,
-        delay: 2,
+        duration: 1,
+        delay: 1.5,
       });
     }
   }, [initAnim]);

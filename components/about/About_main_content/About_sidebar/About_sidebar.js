@@ -26,14 +26,6 @@ const About_sidebar = ({ initAnim }) => {
   useEffect(() => {
     if (initAnim === true) {
       console.log("ANIMATION");
-      gsap.to(
-        navAnimation.current,
-
-        {
-          width: "35%",
-          duration: 2,
-        }
-      );
 
       gsap.to(
         navAnimation.current,
@@ -46,22 +38,19 @@ const About_sidebar = ({ initAnim }) => {
       );
 
       gsap.to(".sidebar", {
+        transform: " scale(1) translateX(0) ",
+        lineHeight: "4.5rem",
         opacity: 1,
-        duration: 0.5,
-        delay: 1.5,
-      });
-
-      gsap.to(".sidebarFake", {
-        opacity: 0,
-        duration: 0.5,
-        delay: 1.5,
+        duration: 2,
+        delay: 0,
       });
     }
   }, [initAnim]);
 
   return (
-    <Styled.About_sidebar_container ref={navAnimation}>
+    <Styled.About_sidebar_container ref={navAnimation} initAnim={initAnim}>
       <Styled.Sidebar_title
+        initAnim={!initAnim}
         onClick={() => setContentSwiperActive(0)}
         className="sidebar"
         selected={contentSwiperActive === 0}
@@ -90,22 +79,6 @@ const About_sidebar = ({ initAnim }) => {
       >
         {navItem4}
       </Styled.Sidebar_title>
-
-      <Styled.AnimationContainer>
-        <Styled.Sidebar_title className="sidebarFake">
-          {navItem1}
-        </Styled.Sidebar_title>
-
-        <Styled.Sidebar_title className="sidebarFake">
-          {navItem2}
-        </Styled.Sidebar_title>
-        <Styled.Sidebar_title className="sidebarFake">
-          {navItem3}
-        </Styled.Sidebar_title>
-        <Styled.Sidebar_title className="sidebarFake">
-          {navItem4}
-        </Styled.Sidebar_title>
-      </Styled.AnimationContainer>
     </Styled.About_sidebar_container>
   );
 };

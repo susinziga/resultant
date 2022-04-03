@@ -6,7 +6,7 @@ export const About_content_container = styledComponents.div`
 
     height:100%;
    
-    width:0%;
+    width:100%;
 
     /*scroll-snap-type:y mandatory;*/
     overflow-y:scroll;

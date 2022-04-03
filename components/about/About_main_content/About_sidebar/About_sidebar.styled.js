@@ -2,13 +2,27 @@ import styledComponents from "styled-components";
 import { Header2 } from "../../../../basic_components/texts/Texts";
 
 export const About_sidebar_container = styledComponents.div`
-    width:100%;
+    width:35%;
     padding:4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--blue);
+    /*background: var(--blue);*/
     font-size:3rem;
+
+    :after{
+      transition:2s all;
+      content:" ";
+      background:var(--blue);
+      position:absolute;
+      top:100%;
+      left:0;
+      height:100vh;
+      width:100vw;
+      z-index:-1;
+      ${(props) => (props.initAnim ? "height:0;" : "")}
+
+    }
 `;
 
 export const Sidebar_title = styledComponents(Header2)`
@@ -19,15 +33,19 @@ export const Sidebar_title = styledComponents(Header2)`
     transition: font-size 2s;
     transition: color 2s;
     transition:background-color 1s;
+
+    transform: scale(1.3) translateX(50%);
+    line-height:6rem;
     margin-left:0:
     font-size:3rem;
-    opacity:0;
+    
 
     white-space: nowrap;
 
+
       ${(props) => {
         return props.selected
-          ? ` font-size: 4rem!important ;
+          ? ` font-size: 4rem ;
               color: black;  
               padding: 0;
             
@@ -54,7 +72,7 @@ export const Sidebar_title = styledComponents(Header2)`
             `
           : "";
       }}
-
+      ${(props) => (props.initAnim ? "color:white;" : "")}
       ${(props) => {
         return props.second
           ? ` 
@@ -64,9 +82,7 @@ export const Sidebar_title = styledComponents(Header2)`
           : "";
       }}
 
-      &.sidebarFake {
-        opacity:1;
-      }
+      
     @media screen and (min-width: 768px){
        
     }
@@ -81,6 +97,7 @@ export const AnimationContainer = styledComponents.div`
 
     *{
       font-size:4.5rem;
+      
     }
     *:nth-child(1){
       font-size:6rem;
