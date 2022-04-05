@@ -1,11 +1,15 @@
 {
     "about_upperHeading":"O nas",
-    "about_mainHeading":"Ekipa",
-    "about_paragraph":"Razvijamo sodobne HR rešitve, ki pomagajo našim naročnikom zgraditi učinkovite procese in povečati organizacijsko uspešnost.",
+    "about_mainHeading":"Spoznajte nas",
+    "about_paragraph":"Poslovni odnos gradimo na trdnem partnerstvu in se v celoti posvečamo vašim izzivom. Pri sodelovanju sta nam še posebej pomembni vrednoti iskrenost in poslovna etika.",
     "nav_item1": "Naš pristop",
     "nav_item2": "Ekipa",
     "nav_item3": "Partnerji",
-    "nav_item4": "Reference"
+    "nav_item4": "Reference",
+
+    "bottom_header":"Stopite v stik z nami",
+    "bottom_text":"V kolikor imate kakršnokoli vprašanje za naš tim, smo vam vedno na voljo. Odgovorili vam bomo v najkrajšem možnem času.",
+    "bottom_button":"Kontaktirajte nas"
 
 
 }

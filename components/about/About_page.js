@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 import { AboutContext } from "../../context/aboutContext";
+import About_bottom from "./About_bottom/About_bottom";
 
 const About_page = () => {
   const [sectionActive, setSectionActive] = useState(0);
@@ -63,10 +64,8 @@ const About_page = () => {
         initAnim={initAnimation}
         isActive={containerActive === 1}
       ></About_main_content>
-      <div
-        className="panel"
-        style={{ width: "100%", height: "100vh", backgroundColor: "green" }}
-      ></div>
+
+      <About_bottom className="panel"></About_bottom>
     </Styled.About_page_container>
   );
 };

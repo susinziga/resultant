@@ -94,4 +94,5 @@ position:fixed;
 background:#FFF;
 z-index:1000;
 width:100%;
+top:0;
 `;
