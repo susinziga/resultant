@@ -4,13 +4,11 @@ import Button from "../../../basic_components/button/Button";
 
 import * as Styled from "./Menu_list.styled";
 
-const Menu_list = () => {
+const Menu_list = ({ state }) => {
   const { t, lang } = useTranslation("aboveTheFold");
 
-  const [active, setActive] = useState(3);
-
   return (
-    <Styled.MenuList>
+    <Styled.MenuList state={state}>
       <Button href="/about" className="nav_item" terciary>
         {t("nav_item1")}
       </Button>
@@ -20,7 +18,9 @@ const Menu_list = () => {
       <Button className="nav_item" terciary>
         {t("nav_item3")}
       </Button>
-      <Button href="/contact" primary>{t("nav_item4")}</Button>
+      <Button href="/contact" primary>
+        {t("nav_item4")}
+      </Button>
     </Styled.MenuList>
   );
 };

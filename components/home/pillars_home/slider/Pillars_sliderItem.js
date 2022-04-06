@@ -11,7 +11,9 @@ const Pillars_sliderItem = ({ title, text, link, button }) => {
       <p>
         <BodyText4>{text}</BodyText4>
       </p>
-      <Button secondary>{button}</Button>
+      <Button href={link} secondary>
+        {button}
+      </Button>
     </Styled.PillarComponentContainer>
   );
 };

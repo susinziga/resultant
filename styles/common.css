@@ -3,12 +3,25 @@
 }
 
 .pillarActive {
-  width: 55%;
+  width: 55% !important;
   background-color: var(--pillar-color);
   padding-right: 8% !important;
 }
+
+.pillarActive .button_pillar {
+  color: #fff !important;
+  background-color: transparent !important;
+  border-color: #fff !important;
+}
 .pillarActive * {
   color: var(--white) !important;
+}
+.pillar_logo {
+  opacity: 0;
+}
+
+.pillarActive .pillar_logo {
+  opacity: 1;
 }
 
 .pillarShrink {

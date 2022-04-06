@@ -78,7 +78,7 @@ export const AboutHeadingContainer = styledComponents.div`
     width: 100%;
     
     @media screen and (min-width: 768px){
-        width: 60%;
+       
     }
   
 `;

@@ -35,7 +35,7 @@ margin-bottom:2rem;
     @media screen and (min-width: 768px){
         width:var(--width-80);
         margin-bottom: 8%;
-        padding-left: 2%;
+       
     } 
   }
 `;

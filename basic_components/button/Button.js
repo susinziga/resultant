@@ -21,7 +21,7 @@ const Button = (props) => {
       {props.arrow ? (
         <Styled.Arrow
           className={props.className}
-          src="./Logo/Arrow.svg"
+          src="/Logo/Arrow.svg"
         ></Styled.Arrow>
       ) : (
         ""
@@ -30,7 +30,7 @@ const Button = (props) => {
         <Styled.Arrow
           className={props.className}
           down
-          src="./Logo/Arrow.svg"
+          src="/Logo/Arrow.svg"
         ></Styled.Arrow>
       ) : (
         ""

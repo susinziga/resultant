@@ -10,7 +10,7 @@
 
     "/contact": ["contact"],
     "/offer": ["offer"],
-    "/service1": ["service1"],
+    "/storitve/siok": ["service1"],
     "/support": ["support"],
     "/privacy": ["privacy"]
   }
