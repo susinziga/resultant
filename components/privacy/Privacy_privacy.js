@@ -39,12 +39,11 @@ const Privacy_privacy = () => {
                {
                    defaultProps.map((prop) => {
                        return(
-                       <DefaultSection_privacy props={prop}></DefaultSection_privacy>
+                         <DefaultSection_privacy props={prop}></DefaultSection_privacy>
                        )
                    })
                }
             </PrivacySubContainer1>
-
         </PrivacyContainer>
     </>
   )
