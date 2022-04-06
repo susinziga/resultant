@@ -30,12 +30,12 @@ const Menu_top = ({}) => {
   useEffect(() => {
     setSizes();
     window.addEventListener("resize", setSizes);
+
     handleNavStateChange();
     return () => window.removeEventListener("resize", setSizes);
   }, []);
 
   const setSizes = () => {
-    console.log(window.innerHeight);
     setSize([window.innerWidth, window.innerHeight]);
   };
 
@@ -44,11 +44,19 @@ const Menu_top = ({}) => {
   //1 scroll dol
   //2 scroll gor
   const [navState, setNavState] = useState(-1);
+  useEffect(() => {}, []);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    if (isDesktop() && pathname === "/") {
+    window.addEventListener("wheel", handleScroll);
+    if (isDesktop() && pathname === "/" && window.scrollY <= 10) {
       /*if (navState === -1 && window.scrollY <= 10) {*/
+      /*window.addEventListener(
+        "wheel",
+        (e) => {
+          e.preventDefault();
+        },
+        { passive: false }
+      );*/
       gsap.from(letterAnimation, {
         duration: 2,
         top: "500%",
@@ -61,8 +69,14 @@ const Menu_top = ({}) => {
           trigger: document.getElementById("hero"),
           start: "top top",
         },
+        /*onComplete: window.removeEventListener(
+          "wheel",
+          (e) => {
+            e.preventDefault();
+          },
+          { passive: false }
+        ),*/
       });
-
       gsap.from(LogoAnimation, {
         opacity: 0,
         duration: 0.5,
@@ -93,10 +107,13 @@ const Menu_top = ({}) => {
     handleNavStateChange();
   }, [navState]);
 
-  const handleScroll = () => {
-    console.log("asd");
+  const handleScroll = (e) => {
     if (window.scrollY >= 50) {
-      setNavState(1);
+      if (e.deltaY > 0) {
+        setNavState(1);
+      } else {
+        setNavState(2);
+      }
     } else {
       setNavState(0);
     }
@@ -175,19 +192,22 @@ const Menu_top = ({}) => {
     >
       <Styled.MenuContainer display={navState <= 0}>
         <Styled.LogoContainer>
-          <img ref={(el) => (LogoAnimation = el)} src="./Logo/logo1.svg"></img>
+          {" "}
+          <a href="/"></a>
+          <img ref={(el) => (LogoAnimation = el)} src="/Logo/logo1.svg"></img>
           <object
             ref={(el) => (letterAnimation = el)}
-            data={"./Logo/letter.svg"}
+            data={"/Logo/letter.svg"}
             width="300"
             height="300"
           ></object>
         </Styled.LogoContainer>
+
         {size[0] >= 768 ? (
-          <Menu_list></Menu_list>
+          <Menu_list state={navState}></Menu_list>
         ) : (
           <a>
-            <img style={{ height: "100%" }} src="./Buttons/Menu.svg"></img>
+            <img style={{ height: "100%" }} src="/Buttons/Menu.svg"></img>
           </a>
         )}
       </Styled.MenuContainer>

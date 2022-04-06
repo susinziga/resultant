@@ -26,38 +26,31 @@ const About_sidebar = ({ initAnim }) => {
   useEffect(() => {
     if (initAnim === true) {
       console.log("ANIMATION");
-      gsap.to(
-        navAnimation.current,
-
-        {
-          width: "35%",
-          duration: 2,
-        }
-      );
 
       gsap.to(
         navAnimation.current,
 
         {
           background: "transparent",
-
-          duration: 0.5,
-          delay: 1.5,
+          duration: 1,
+          delay: 1,
         }
       );
 
       gsap.to(".sidebar", {
-        marginLeft: "0%",
-        fontSize: "3rem",
-        color: "white;",
+        transform: " scale(1) translateX(0) ",
+        lineHeight: "4.5rem",
+        opacity: 1,
         duration: 2,
+        delay: 0,
       });
     }
   }, [initAnim]);
 
   return (
-    <Styled.About_sidebar_container ref={navAnimation}>
+    <Styled.About_sidebar_container ref={navAnimation} initAnim={initAnim}>
       <Styled.Sidebar_title
+        initAnim={!initAnim}
         onClick={() => setContentSwiperActive(0)}
         className="sidebar"
         selected={contentSwiperActive === 0}

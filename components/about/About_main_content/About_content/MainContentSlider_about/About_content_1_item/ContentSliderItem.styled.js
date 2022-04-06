@@ -6,13 +6,19 @@ import {
 
 export const ReferencesItemContainer = styledComponents.div`
 
-    width: 75%;
+    width: 85%;
     margin-left: 2%;
   
     border: 1px solid black;
     border-radius: 12px;
     padding: 8%;
-    min-height: 160px;
+
+    min-height:18.5rem;
+  
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     
   
     ${(props) => {
@@ -23,6 +29,10 @@ export const ReferencesItemContainer = styledComponents.div`
           `
         : "";
     }}
+
+    @media(min-width:768px){
+      min-height: 11rem;
+    }
 
 
 `;
@@ -48,6 +58,9 @@ export const Heading = styledComponents(Title2)`
 
 export const Text = styledComponents(BodyText4)`
 
+
+
+
 ${(props) => {
   return props.isActive
     ? ` 
@@ -56,7 +69,24 @@ ${(props) => {
       `
     : "";
 }}
+
+
     
+
+
+`;
+
+export const ButtonsContainer = styledComponents.div`
+display:flex;
+@media(min-width:768px){
+  position:relative;
+  gap:1rem;
+  width:fit-content;
+  left:15%;
+  margin-top:2rem;
+}
+
+
 
 
 `;

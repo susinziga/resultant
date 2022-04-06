@@ -13,8 +13,18 @@ const Pillars_home = (props) => {
   const { t, lang } = useTranslation();
 
   const pillarsContentTop = [
-    { title: t("pillars:pillar1_title"), text: t("pillars:pillar1_excerpt") },
-    { title: t("pillars:pillar2_title"), text: t("pillars:pillar2_excerpt") },
+    {
+      title: t("pillars:pillar1_title"),
+      text: t("pillars:pillar1_excerpt"),
+      link: "/storitve/siok",
+      logo: "/Pillars/siok.png",
+    },
+    {
+      title: t("pillars:pillar2_title"),
+      text: t("pillars:pillar2_excerpt"),
+      link: "/storitve/siok",
+      logo: "/Pillars/dnla.png",
+    },
   ];
   const pillarsContentBot = [
     { title: t("pillars:pillar3_title"), text: t("pillars:pillar3_excerpt") },
@@ -35,6 +45,8 @@ const Pillars_home = (props) => {
               title={pillar.title}
               text={pillar.text}
               button={buttonText}
+              link={pillar.link}
+              logo={pillar.logo}
             ></Pillars_component>
           );
         })}

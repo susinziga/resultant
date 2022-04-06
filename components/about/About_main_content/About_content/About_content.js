@@ -12,26 +12,26 @@ import Partners_quote from "./partners/Partners_quote";
 import Partners_content from "./partners/Partners_content";
 import References_quote from "./references/References_quote";
 import References_content from "./references/References_content";
+import useTranslation from "next-translate/useTranslation";
 
 const About_content = ({ initAnim, isActive }) => {
   const contentAnimation = useRef(null);
 
-  const { contentSwiperActive } = useContext(AboutContext);
+  const { t } = useTranslation("about");
+
+  const nav_items = [t("nav_item1")];
 
   useEffect(() => {
-    if (initAnim === true) {
-      gsap.to(
-        contentAnimation.current,
-
-        {
-          width: "100%",
-          duration: 2,
-        }
-      );
+    if (initAnim) {
+      gsap.to(document.getElementById("content_box"), {
+        transform: "translateX(0)",
+        duration: 1,
+        delay: 1,
+      });
     }
   }, [initAnim]);
 
-  useEffect(() => {
+  /*useEffect(() => {
     switch (contentSwiperActive) {
       case 0:
         document
@@ -62,7 +62,7 @@ const About_content = ({ initAnim, isActive }) => {
           .scrollIntoView({ behavior: "smooth" });
         break;
     }
-  }, [contentSwiperActive]);
+  }, [contentSwiperActive]);*/
 
   return (
     <Styled.About_content_container ref={contentAnimation} id="content_box">
@@ -70,6 +70,7 @@ const About_content = ({ initAnim, isActive }) => {
         <About_content_1
           isActive={isActive && contentSwiperActive === 0}
           className="content_panel"
+          title={nav_items[0]}
         ></About_content_1>
       </div>
       <div id="team">
@@ -78,7 +79,7 @@ const About_content = ({ initAnim, isActive }) => {
           className="content_panel"
         ></TeamSlider>
       </div>
-      <div id="partners">
+      {/*<div id="partners">
         <Partners_quote
           isActive={isActive && contentSwiperActive === 2}
           className="content_panel"
@@ -101,7 +102,7 @@ const About_content = ({ initAnim, isActive }) => {
           isActive={isActive && contentSwiperActive === 5}
           className="content_panel"
         ></References_content>
-      </div>
+  </div>*/}
     </Styled.About_content_container>
   );
 };

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Title1 } from "../../basic_components/texts/Texts";
 
 export const MenuFixedContainer = styled.div`
-  min-height: 8.4rem;
+  min-height: 8rem;
   width: var(--width-80);
   margin: auto;
 
@@ -17,14 +17,14 @@ export const MenuFixedContainer = styled.div`
 export const MenuItem = styled(Title1)`
   padding-bottom: 1rem;
   color: var(--light-grey);
-  //width: 30%;
+
+  line-height: "4.2rem";
 
   :nth-child(1) {
     text-align: left;
   }
   :nth-child(2) {
     text-align: center;
-    width: 40%;
   }
   :nth-child(3) {
     text-align: right;

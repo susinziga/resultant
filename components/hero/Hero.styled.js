@@ -27,6 +27,7 @@ div:first-child{
     img{
         //height:100vh;
         width:100%;
+        border-radius:12px;
     }
 
 @media(min-width:768px){
@@ -63,7 +64,7 @@ display:flex;
     position:absolute;
     top:5%;
     left:10%;
-    width:80%;
+    width:95%;
     > *
     {
         margin-bottom:2.5rem;
@@ -88,7 +89,7 @@ display:flex;
         width:60%;
     }
 }
-@media(min-width:992px){
+@media(min-width:1300px){
     top:20%;
     left:35%;
 }
@@ -96,7 +97,7 @@ display:flex;
 
 export const WhiteLine = styledComponents.div`
 
-  height: 10px;
+  height: 2px;
   width: 0%;
   background-color:#FFF;
   position:relative;

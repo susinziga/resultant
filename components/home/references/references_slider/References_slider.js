@@ -9,7 +9,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import References_item from "../../../references/references_item/References_item";
-import { useRef, useState } from "react";
 
 const References_slider = ({ references }) => {
   let swip = useSwiper();
@@ -18,19 +17,12 @@ const References_slider = ({ references }) => {
     swip = instance;
   };
 
-  const slide = (nr) => {
-    swip.slideNext(500);
-    swip.slideNext(500);
-    /*for (let index = 0; index < nr; index++) {
-      console.log("a");
-      swip.slideNext(100);
-    }*/
+  const slide = () => {
+    swip.slideNext(6000);
   };
 
-  const slideBack = (nr) => {
-    for (let index = 0; index < nr; index++) {
-      swip.slidePrev(100);
-    }
+  const slideBack = () => {
+    swip.slidePrev(1000);
   };
 
   return (
@@ -40,6 +32,7 @@ const References_slider = ({ references }) => {
           0: { slidesPerView: 1.5, centeredSlides: true },
           768: {
             slidesPerView: 7,
+            slidesPerGroup: 7,
           },
         }}
         loop={true}
@@ -56,15 +49,15 @@ const References_slider = ({ references }) => {
       </Swiper>
       <Styled.SliderButtons>
         <img
-          src="./Buttons/arrow_next.svg"
+          src="/Buttons/arrow_next.svg"
           onClick={() => {
-            slide(7);
+            slide();
           }}
         ></img>
         <img
-          src="./Buttons/arrow_prev.svg"
+          src="/Buttons/arrow_prev.svg"
           onClick={() => {
-            slideBack(7);
+            slideBack();
           }}
         ></img>
       </Styled.SliderButtons>

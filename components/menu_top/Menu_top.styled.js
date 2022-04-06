@@ -11,6 +11,10 @@ padding: ${(props) => (props.display ? "0.5rem 0" : "0")} ;
 
 transition: 0.5s padding;
 
+:hover .nav_item{
+opacity:1!important;
+}
+
 
 
 
@@ -19,7 +23,12 @@ transition: 0.5s padding;
 export const LogoContainer = styledComponents.div`
 position:relative;
 width:fit-content;
+>a{
+    position:absolute;
+    top:0;bottom:0;left:0;right:0;
+}
 >object{ 
+    pointer-events:none;
     position:absolute;
 
     top:-21%;
@@ -31,7 +40,7 @@ width:fit-content;
 
     z-index:100;
 
-    left: 57%;
+     left: 57%;
     //left:100%;
     width: fit-content;
     transform: scale(0.5);
@@ -43,7 +52,7 @@ width:fit-content;
    
 }
 
->img{
+img{
     
     height:65px;
    
@@ -78,7 +87,7 @@ width:fit-content;
        
     }
 
-    >img{
+    img{
         
         height:90px;
        
@@ -94,4 +103,5 @@ position:fixed;
 background:#FFF;
 z-index:1000;
 width:100%;
+top:0;
 `;
