@@ -9,18 +9,24 @@ export const About_sidebar_container = styledComponents.div`
     justify-content: center;
     /*background: var(--blue);*/
     font-size:3rem;
+    height:100vh;
+
+    position:sticky;
+    top:0;
 
     :after{
       transition:2s all;
       content:" ";
       background:var(--blue);
       position:absolute;
-      top:100%;
+      top:0;
       left:0;
       height:100vh;
       width:100vw;
       z-index:-1;
       ${(props) => (props.initAnim ? "height:0;" : "")}
+   
+    
 
     }
 `;

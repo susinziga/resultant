@@ -16,7 +16,7 @@ const About_page = () => {
   const { containerActive, setContainerActive } = useContext(AboutContext);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    /*gsap.registerPlugin(ScrollTrigger);
     gsap.registerPlugin(ScrollToPlugin);
     let panels = gsap.utils.toArray(".panel"),
       scrollTween;
@@ -47,7 +47,7 @@ const About_page = () => {
       start: 0,
       end: "max",
       snap: 1 / (panels.length - 1),
-    });
+    });*/
   }, []);
 
   useEffect(() => {
@@ -62,6 +62,7 @@ const About_page = () => {
       <About_main_content
         className="panel"
         initAnim={initAnimation}
+        setInit={setInitAnimation}
         isActive={containerActive === 1}
       ></About_main_content>
 

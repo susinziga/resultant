@@ -49,13 +49,13 @@ const References_slider = ({ references }) => {
       </Swiper>
       <Styled.SliderButtons>
         <img
-          src="./Buttons/arrow_next.svg"
+          src="/Buttons/arrow_next.svg"
           onClick={() => {
             slide();
           }}
         ></img>
         <img
-          src="./Buttons/arrow_prev.svg"
+          src="/Buttons/arrow_prev.svg"
           onClick={() => {
             slideBack();
           }}

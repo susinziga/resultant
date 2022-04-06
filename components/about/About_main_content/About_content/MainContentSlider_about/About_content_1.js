@@ -11,13 +11,18 @@ import "swiper/css";
 import { useRef, useState, useEffect } from "react";
 import Content_item from "./About_content_1_item/ContentSliderItem";
 import { AboutContext } from "../../../../../context/aboutContext";
+import { ButtonsContainer } from "./About_content_1_item/ContentSliderItem.styled";
+import { Title2 } from "../../../../../basic_components/texts/Texts";
+import useSize from "../../../../../custom_hooks/useSize";
 
 SwiperCore.use([Mousewheel, Pagination]);
 
-const About_content_1 = ({ isActive, initSlide = 0 }) => {
+const About_content_1 = ({ isActive, initSlide = 0, title }) => {
   const { contentSwiperActive, setContentSwiperActive } =
     useContext(AboutContext);
   let swip = useSwiper();
+
+  const { isDesktop } = useSize();
   const items = [
     {
       name: "1. Poglobljena analiza stanja",
@@ -40,15 +45,6 @@ const About_content_1 = ({ isActive, initSlide = 0 }) => {
       desc: "Po zaključenem procesu izvedemo monitoring delovanja novega procesa. V večini primerov ponovno izvedemo merjenje obstoječega stanja notranjega okolja in spremljamo trende v organizacijski klimi. Po potrebi izvedemo nadgradnjo vpeljane nove rešitve. Ob tem stalno in sistemsko podpiramo interne skrbnike novo implementiranih rešitev do zaključene vpeljave v prakso.",
     },
   ];
-
-  useEffect(() => {
-    window.addEventListener("wheel", preventDefault, { passive: false });
-    return () => {
-      window.removeEventListener("wheel", preventDefault, {
-        passive: false,
-      });
-    };
-  }, [isActive]);
 
   let isScrolling = Date.now();
 
@@ -89,6 +85,19 @@ const About_content_1 = ({ isActive, initSlide = 0 }) => {
 
   return (
     <Container>
+      {isDesktop() ? (
+        ""
+      ) : (
+        <Title2
+          style={{
+            width: "var(--width-90)",
+            margin: "auto",
+            marginBottom: "2rem",
+          }}
+        >
+          {title}
+        </Title2>
+      )}
       <Swiper
         onScroll={true}
         spaceBetween={50}
@@ -97,6 +106,7 @@ const About_content_1 = ({ isActive, initSlide = 0 }) => {
         centeredSlides={true}
         direction={"horizontal"}
         className="mySwiper"
+        autoHeight={true}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>
         {items.map((ref, id) => (
@@ -107,6 +117,29 @@ const About_content_1 = ({ isActive, initSlide = 0 }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {isDesktop() ? (
+        <ButtonsContainer>
+          <img
+            width="50"
+            src="./Buttons/arrow_prev.svg"
+            onClick={() => {
+              swip.slidePrev(1000);
+            }}
+            className="cursor"
+          ></img>
+          <img
+            width="50"
+            src="./Buttons/arrow_next.svg"
+            onClick={() => {
+              swip.slideNext(1000);
+            }}
+            className="cursor"
+          ></img>
+        </ButtonsContainer>
+      ) : (
+        ""
+      )}
     </Container>
   );
 };

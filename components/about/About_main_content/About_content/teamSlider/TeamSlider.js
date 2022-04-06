@@ -109,16 +109,11 @@ const TeamSlider = ({ nextSection, prevSection, isActive }) => {
   };
   return (
     <Styled.TeamComponentContainer>
-      <Swiper direction={"horizontal"} slidesPerView={1}>
-        <SwiperInstance setInstance={setInstance}></SwiperInstance>
-        {items.map((item, id) => (
-          <SwiperSlide key={id}>
-            <TeamSliderItem item={item}></TeamSliderItem>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <img></img>
+      {items.map((item, id) => (
+        <SwiperSlide key={id}>
+          <TeamSliderItem item={item}></TeamSliderItem>
+        </SwiperSlide>
+      ))}
     </Styled.TeamComponentContainer>
   );
 };

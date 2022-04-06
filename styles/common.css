@@ -31,3 +31,9 @@
 #content_box {
   transform: translateX(100%);
 }
+
+.cursor {
+  cursor: pointer;
+}
+.swiper-slide {
+}

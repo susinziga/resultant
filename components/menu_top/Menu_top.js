@@ -36,7 +36,6 @@ const Menu_top = ({}) => {
   }, []);
 
   const setSizes = () => {
-    console.log(window.innerHeight);
     setSize([window.innerWidth, window.innerHeight]);
   };
 
@@ -109,7 +108,6 @@ const Menu_top = ({}) => {
   }, [navState]);
 
   const handleScroll = (e) => {
-    console.log("asd");
     if (window.scrollY >= 50) {
       if (e.deltaY > 0) {
         setNavState(1);
@@ -122,8 +120,6 @@ const Menu_top = ({}) => {
   };
 
   const handleNavStateChange = () => {
-    console.log("STATE CHANGE");
-    console.log(navState);
     switch (navState) {
       case 0: {
         gsap.to(letterAnimation, {
