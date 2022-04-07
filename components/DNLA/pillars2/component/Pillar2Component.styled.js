@@ -8,18 +8,18 @@ export const PillarComponentContainer = styledComponents.div`
 
         @media (min-width:768px) {
             width:32%;
-            max-height: 325px;
+            max-height: 450px;
 
         }
 
         @media (min-width:992px) {
     
-            max-height: 360px;
+            max-height: 450px;
         }
 
         @media (min-width:1600px) {
 
-            max-height: 400px;
+            max-height: 550px;
         }
     }
 
@@ -33,7 +33,9 @@ export const PillarComponentContainer = styledComponents.div`
     flex-direction:column;
 
 
-
+    p {
+        max-height: 50%;
+    }
 
    
 
@@ -50,7 +52,7 @@ export const PillarComponentTitle = styledComponents(Title2)`
   }
 
   @media (min-width:992px) {
-    font-size: 1.4rem; 
+    font-size: 1.5rem; 
   
   }
 `;
@@ -63,25 +65,39 @@ export const PillarOuter = styledComponents.a`
     right:0;
 `;
 
-export const LogoContainer = styledComponents.div`
-    width: 100%;
-    text-align:right;
-`;
+
 
 export const PillarText = styledComponents(BodyText4)`
-
+   
     font-size: 1.1rem;
     @media (min-width:768px) {
         font-size: 0.8rem;
-       
+        
     }
 
     @media (min-width:992px) {
-    font-size: 1.2rem; 
-   
+        font-size: 1rem; 
+       
+    
     }
     @media (min-width:1600px) {
 
         font-size: 1.3rem; 
+    }
+`;
+
+export const ButtonContainer = styledComponents.div`
+    @media (min-width:768px) {
+        margin-top: 45%;
+    }
+
+    @media (min-width:992px) {
+        margin-top: 20%;
+    
+
+    }
+    @media (min-width:1600px) {
+
+        margin-top: 25%;
     }
 `;

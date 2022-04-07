@@ -6,11 +6,12 @@ export const FooterContainer = styledComponents.div`
     background-color: var(--footer-color);
     height: 800px;
     padding-top: 65%;
-    margin-top: 10%;
+    margin-top: 20%;
 
     @media only screen and (max-width: 350px) {
         height: 700px;
         padding-top: 70%;
+        
     }
 
     @media only screen and (min-width: 480px) and (max-width: 768px) {

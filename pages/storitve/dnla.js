@@ -5,6 +5,11 @@ import CardSection from '../../components/service1/CardSection/CardTable_service
 import useTranslation from "next-translate/useTranslation";
 import Plan from '../../components/service1/PlanSection/Plan_service1';
 import Pillars1 from '../../components/DNLA/pillars1/Pillars1_dnla';
+import ToolsHeading_dnla from '../../components/DNLA/toolsHeading/ToolsHeading_dnla';
+import Pillars2_dnla from '../../components/DNLA/pillars2/Pillars2_dnla';
+import BulletSection_dnla from '../../components/DNLA/BulletSection/BulletSection_dnla';
+import CardSection_dnla from '../../components/DNLA/cardSection/CardSection_dnla';
+import ContactForm_dnla from '../../components/DNLA/contact/ContactForm_dnla';
 
 const dnla = () => {
   const { t, lang } = useTranslation();
@@ -44,9 +49,12 @@ const dnla = () => {
     <CardSection className="section" cardProps1={cardProps1} cardProps2={cardProps2} plan2={[]} button={true}></CardSection>
     <Plan plan1={Plan1} heading1={heading1} className="section"></Plan>
     <Pillars1 className="section"></Pillars1>
-
-
+    <ToolsHeading_dnla className="section"></ToolsHeading_dnla>
+    <Pillars2_dnla className="section"></Pillars2_dnla>
+    <BulletSection_dnla className="section"></BulletSection_dnla>
     <Quote props={quote2} className="section"></Quote>
+    <CardSection_dnla className="section"></CardSection_dnla>
+    <ContactForm_dnla className="section"></ContactForm_dnla>
     
     </>
   )
