@@ -20,7 +20,7 @@ export const CardContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        
+        flex-direction: row-reverse;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -37,7 +37,7 @@ export const CardImage = styledComponents.img`
     }
 
     @media only screen and (min-width: 992px) {
-        
+        width: 30%;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -82,7 +82,7 @@ export const Text = styledComponents(BodyText2)`
     }
 
     @media only screen and (min-width: 992px) {
-        
+      
     }
 
     @media only screen and (min-width: 1600px) {

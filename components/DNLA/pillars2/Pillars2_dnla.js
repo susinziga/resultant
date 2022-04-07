@@ -18,6 +18,8 @@ const Pillars2_dnla = (props) => {
       { title: t("dnla:dnla_pillar2Title3"), text: t("dnla:dnla_pillar2Text3"), button: t("dnla:dnla_pillar2Button")},
     ];
 
+    
+
   const { isDesktop } = useSize();
 
   return isDesktop() ? (
@@ -31,6 +33,7 @@ const Pillars2_dnla = (props) => {
               title={pillar.title}
               text={pillar.text}
               button={pillar.button}
+
             ></Pillars_component>
           );
         })}

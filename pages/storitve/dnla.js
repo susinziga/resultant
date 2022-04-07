@@ -9,6 +9,7 @@ import ToolsHeading_dnla from '../../components/DNLA/toolsHeading/ToolsHeading_d
 import Pillars2_dnla from '../../components/DNLA/pillars2/Pillars2_dnla';
 import BulletSection_dnla from '../../components/DNLA/BulletSection/BulletSection_dnla';
 import CardSection_dnla from '../../components/DNLA/cardSection/CardSection_dnla';
+import ContactForm_dnla from '../../components/DNLA/contact/ContactForm_dnla';
 
 const dnla = () => {
   const { t, lang } = useTranslation();
@@ -53,6 +54,7 @@ const dnla = () => {
     <BulletSection_dnla className="section"></BulletSection_dnla>
     <Quote props={quote2} className="section"></Quote>
     <CardSection_dnla className="section"></CardSection_dnla>
+    <ContactForm_dnla className="section"></ContactForm_dnla>
     
     </>
   )

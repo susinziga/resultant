@@ -68,7 +68,7 @@ export const PillarOuter = styledComponents.a`
 
 
 export const PillarText = styledComponents(BodyText4)`
-
+   
     font-size: 1.1rem;
     @media (min-width:768px) {
         font-size: 0.8rem;

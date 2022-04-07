@@ -16,7 +16,7 @@ const Card2_dnla = () => {
           
             <TextContainer>
              <Text dangerouslySetInnerHTML={{__html: text}}></Text>
-               
+               sdfsdf
             </TextContainer>
             <CardImage className='mobile' src="/DNLA/cardSectionImage2_mobile.png"></CardImage>
             <CardImage className='desktop' src="/DNLA/cardSectionImage2_desktop.png"></CardImage>
