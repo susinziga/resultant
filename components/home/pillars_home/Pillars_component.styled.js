@@ -5,6 +5,7 @@ export const PillarComponentContainer = styledComponents.div`
 &.pillarContainer{
   width:49%;
 }
+position:relative;
 
  border-radius: 12px;
  border: 1px solid var(--pillar-color);

@@ -22,7 +22,7 @@ const Pillars_home = (props) => {
     {
       title: t("pillars:pillar2_title"),
       text: t("pillars:pillar2_excerpt"),
-      link: "/storitve/siok",
+      link: "/storitve/dnla",
       logo: "/Pillars/dnla.png",
     },
   ];
