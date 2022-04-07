@@ -13,7 +13,8 @@ export const CardItemContainer = styledComponents.div`
     @media only screen and (min-width: 768px) {
         width: 95%;
         padding: 8%;
-        min-height: auto;
+        min-height: 320px;
+        margin: 0;
     }
 
     @media only screen and (min-width: 992px) {
