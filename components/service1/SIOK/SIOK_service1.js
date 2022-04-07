@@ -23,10 +23,10 @@ const SIOK_service1 = (props) => {
       <SIOKContainer {...props}>
         <SIOKImage
           className="desktop"
-          src="/Service1/SiOKgraf1_desktop.png"
+          src="/Service1/SIOKgraf1_desktop.png"
         ></SIOKImage>
         <SIOKTitle className="mobile">{header1}</SIOKTitle>
-        <SIOKImage className="mobile" src="/Service1/SiOKgraf.png"></SIOKImage>
+        <SIOKImage className="mobile" src="/Service1/SIOKgraf.png"></SIOKImage>
         <SIOKTitle className="mobile">{header2}</SIOKTitle>
         <SIOKTextContainer className="mobile">
           <SIOKParagraph>{paragraph}</SIOKParagraph>
@@ -34,13 +34,13 @@ const SIOK_service1 = (props) => {
         <SIOKImageContainer className="mobile">
           <SIOKImage
             className="mobile"
-            src="/Service1/SiOKgraf2.png"
+            src="/Service1/SIOKgraf2.png"
           ></SIOKImage>
           <SIOKImageText className="mobile">{imageText}</SIOKImageText>
         </SIOKImageContainer>
         <SIOKImage
           className="desktop"
-          src="/Service1/SiOKgraf2_desktop.png"
+          src="/Service1/SIOKgraf2_desktop.png"
         ></SIOKImage>
       </SIOKContainer>
     </>

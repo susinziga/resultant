@@ -1,20 +1,28 @@
-import React from 'react'
-import { PlanItemContainer, PlanNumber, PlanNumberContainer, PlanText, PlanTextContainer, PlanUnderlineContainer } from './PlanItem.styled';
+import React from "react";
+import {
+  PlanItemContainer,
+  PlanNumber,
+  PlanNumberContainer,
+  PlanText,
+  PlanTextContainer,
+  PlanUnderlineContainer,
+} from "./PlanItem.styled";
 
-const PlanItem_service1 = ({props}) => {
+const PlanItem_service1 = ({ props }) => {
+  console.log(props);
   return (
     <>
-    <PlanItemContainer>
+      <PlanItemContainer>
         <PlanTextContainer>
-            <PlanText>{props.text}</PlanText>
+          <PlanText>{props.text}</PlanText>
         </PlanTextContainer>
         <PlanNumberContainer>
-            <PlanUnderlineContainer></PlanUnderlineContainer>
-            <PlanNumber>{props.number}</PlanNumber>
+          <PlanUnderlineContainer></PlanUnderlineContainer>
+          <PlanNumber>{props.number}</PlanNumber>
         </PlanNumberContainer>
-    </PlanItemContainer>
+      </PlanItemContainer>
     </>
-  )
-}
+  );
+};
 
 export default PlanItem_service1;

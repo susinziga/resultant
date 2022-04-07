@@ -39,10 +39,9 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {/*plan1 ??
-              [].map((item) => {
-                return <PlanItem_service1 props={item}></PlanItem_service1>;
-              })*/}
+            {plan1.map((item) => {
+              return <PlanItem_service1 props={item}></PlanItem_service1>;
+            })}
           </FlexContainer>
           <PlanTableHeaderContainer>
             <PlanTableHeaderCon>
@@ -51,10 +50,9 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
           </PlanTableHeaderContainer>
 
           <FlexContainer>
-            {/*plan2 ??
-              [].map((item) => {
-                return <PlanItem_service1 props={item}></PlanItem_service1>;
-              })*/}
+            {plan2.map((item) => {
+              return <PlanItem_service1 props={item}></PlanItem_service1>;
+            })}
             <ButtonContainer props={button}>
               <SubmitButton className="desktop" type="button">
                 Želim pridobiti ponudbo
