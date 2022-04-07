@@ -1,6 +1,14 @@
-import React from 'react';
+import React from "react";
 import useTranslation from "next-translate/useTranslation";
-import { SIOKImage, SIOKTitle, SIOKContainer, SIOKTextContainer, SIOKParagraph, SIOKImageText, SIOKImageContainer } from './SIOK.styled';
+import {
+  SIOKImage,
+  SIOKTitle,
+  SIOKContainer,
+  SIOKTextContainer,
+  SIOKParagraph,
+  SIOKImageText,
+  SIOKImageContainer,
+} from "./SIOK.styled";
 
 const SIOK_service1 = (props) => {
   const { t, lang } = useTranslation();
@@ -12,22 +20,31 @@ const SIOK_service1 = (props) => {
 
   return (
     <>
-    <SIOKContainer {...props}>
-        <SIOKImage className="desktop" src="./Service1/SiOKgraf1_desktop.png"></SIOKImage>
+      <SIOKContainer {...props}>
+        <SIOKImage
+          className="desktop"
+          src="/Service1/SiOKgraf1_desktop.png"
+        ></SIOKImage>
         <SIOKTitle className="mobile">{header1}</SIOKTitle>
-        <SIOKImage className="mobile" src="./Service1/SiOKgraf.png"></SIOKImage>
+        <SIOKImage className="mobile" src="/Service1/SiOKgraf.png"></SIOKImage>
         <SIOKTitle className="mobile">{header2}</SIOKTitle>
         <SIOKTextContainer className="mobile">
-            <SIOKParagraph>{paragraph}</SIOKParagraph>
+          <SIOKParagraph>{paragraph}</SIOKParagraph>
         </SIOKTextContainer>
         <SIOKImageContainer className="mobile">
-            <SIOKImage className="mobile" src="./Service1/SiOKgraf2.png"></SIOKImage>
-            <SIOKImageText className="mobile">{imageText}</SIOKImageText>
+          <SIOKImage
+            className="mobile"
+            src="/Service1/SiOKgraf2.png"
+          ></SIOKImage>
+          <SIOKImageText className="mobile">{imageText}</SIOKImageText>
         </SIOKImageContainer>
-        <SIOKImage className='desktop' src="./Service1/SiOKgraf2_desktop.png"></SIOKImage>
-    </SIOKContainer>
+        <SIOKImage
+          className="desktop"
+          src="/Service1/SiOKgraf2_desktop.png"
+        ></SIOKImage>
+      </SIOKContainer>
     </>
-  )
-}
+  );
+};
 
 export default SIOK_service1;

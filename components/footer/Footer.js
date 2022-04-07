@@ -14,12 +14,12 @@ const Footer = () => {
           </Styled.ContactFooterContainer>
           <Styled.ContactsFooterContainer>
             <Styled.ContactIconContainer>
-                <Styled.ContactIcon src="./Footer/-call.png"></Styled.ContactIcon>
-                <Styled.ContactLink>041 231 831</Styled.ContactLink>
+              <Styled.ContactIcon src="/Footer/-call.png"></Styled.ContactIcon>
+              <Styled.ContactLink>041 231 831</Styled.ContactLink>
             </Styled.ContactIconContainer>
             <Styled.ContactIconContainer>
-                <Styled.ContactIcon src="./Footer/-email.png"></Styled.ContactIcon>
-                <Styled.ContactLink>roman.klaric@resultant.si</Styled.ContactLink>
+              <Styled.ContactIcon src="/Footer/-email.png"></Styled.ContactIcon>
+              <Styled.ContactLink>roman.klaric@resultant.si</Styled.ContactLink>
             </Styled.ContactIconContainer>
           </Styled.ContactsFooterContainer>
         </Styled.UpperFooterContainer>
@@ -31,32 +31,32 @@ const Footer = () => {
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
         <Styled.Combine>
-            <Styled.SocialFooterContainer>
+          <Styled.SocialFooterContainer>
             <Styled.SocialLink>
-                <Styled.Social
-                src="./Footer/linkedin.png"
+              <Styled.Social
+                src="/Footer/linkedin.png"
                 alt="linkedin"
-                ></Styled.Social>
+              ></Styled.Social>
             </Styled.SocialLink>
             <Styled.SocialLink>
-                <Styled.Social
-                src="./Footer/facebook.png"
+              <Styled.Social
+                src="/Footer/facebook.png"
                 alt="facebook"
-                ></Styled.Social>
+              ></Styled.Social>
             </Styled.SocialLink>
             <Styled.SocialLink>
-                <Styled.Social
-                src="./Footer/twitter.png"
+              <Styled.Social
+                src="/Footer/twitter.png"
                 alt="twitter"
-                ></Styled.Social>
+              ></Styled.Social>
             </Styled.SocialLink>
-            </Styled.SocialFooterContainer>
-            <Styled.LinkFooterContainer>
+          </Styled.SocialFooterContainer>
+          <Styled.LinkFooterContainer>
             <Styled.Link>Piškotki</Styled.Link>
             <Styled.Link>Podpora strankam</Styled.Link>
             <Styled.Link>Pravilnik o zasebnosti</Styled.Link>
             <Styled.Link>&copy; 2022 Agencija Statera</Styled.Link>
-            </Styled.LinkFooterContainer>
+          </Styled.LinkFooterContainer>
         </Styled.Combine>
       </Styled.FooterContainer>
     </div>
