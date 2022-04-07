@@ -53,7 +53,7 @@ ul {
 img {
   max-width: 100%;
   height: auto;
-  box-shadow: 0px 16px 20px rgba(0, 71, 103, 0.12);
+  /*box-shadow: 0px 16px 20px rgba(0, 71, 103, 0.12);*/
   border-radius: 12px;
 }
 
