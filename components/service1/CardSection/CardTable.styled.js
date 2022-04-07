@@ -34,7 +34,7 @@ export const CardItemContainer1 = styledComponents.div`
     @media only screen and (min-width: 768px) {
         display:flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 2rem;
         width: 50%;
         margin-left: auto;
     }
@@ -49,12 +49,15 @@ export const CardItemContainer1 = styledComponents.div`
 `;
 
 export const CardItemContainer2 = styledComponents.div`
-  
+    display:flex;
+    flex-direction: column;
+    gap: 4rem;
 
     @media only screen and (min-width: 768px) {
         width: 50%;
         justify-content: flex-start; 
         padding-top: 12%;
+        gap: 2rem;
     }
 
     @media only screen and (min-width: 992px) {

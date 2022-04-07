@@ -12,6 +12,7 @@
     "/offer": ["offer"],
     "/storitve/siok": ["service1"],
     "/support": ["support"],
-    "/privacy": ["privacy"]
+    "/privacy": ["privacy"],
+    "/storitve/dnla": ["dnla"]
   }
 }

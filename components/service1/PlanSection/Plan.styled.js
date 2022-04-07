@@ -142,6 +142,12 @@ export const ButtonContainer = styledComponents.div`
     margin:auto;
     margin-bottom: 15%;
     
+    ${(props) => {
+        return props.button
+          ? ``
+          
+          : `display: none;`;
+      }}
 
     
     @media only screen and (min-width: 768px) {
