@@ -25,6 +25,7 @@ const About_sidebar = ({ initAnim }) => {
 
   useEffect(() => {
     if (initAnim === true) {
+      document.getElementsByTagName("body")[0].classList.add("is-loading");
       console.log("ANIMATION");
 
       gsap.to(
@@ -43,6 +44,11 @@ const About_sidebar = ({ initAnim }) => {
         opacity: 1,
         duration: 2,
         delay: 0,
+        onComplete: () => {
+          document
+            .getElementsByTagName("body")[0]
+            .classList.remove("is-loading");
+        },
       });
     }
   }, [initAnim]);
@@ -51,7 +57,12 @@ const About_sidebar = ({ initAnim }) => {
     <Styled.About_sidebar_container ref={navAnimation} initAnim={initAnim}>
       <Styled.Sidebar_title
         initAnim={!initAnim}
-        onClick={() => setContentSwiperActive(0)}
+        onClick={() => {
+          setContentSwiperActive(0);
+          document
+            .getElementById("approach")
+            .scrollIntoView({ behavior: "smooth" });
+        }}
         className="sidebar"
         selected={contentSwiperActive === 0}
       >
@@ -59,21 +70,36 @@ const About_sidebar = ({ initAnim }) => {
       </Styled.Sidebar_title>
 
       <Styled.Sidebar_title
-        onClick={() => setContentSwiperActive(1)}
+        onClick={() => {
+          setContentSwiperActive(1);
+          document
+            .getElementById("team")
+            .scrollIntoView({ behavior: "smooth" });
+        }}
         className="sidebar"
         selected={contentSwiperActive === 1}
       >
         {navItem2}
       </Styled.Sidebar_title>
       <Styled.Sidebar_title
-        onClick={() => setContentSwiperActive(2)}
+        onClick={() => {
+          setContentSwiperActive(2);
+          document
+            .getElementById("partners")
+            .scrollIntoView({ behavior: "smooth" });
+        }}
         className="sidebar"
         selected={contentSwiperActive === 2 || contentSwiperActive === 3}
       >
         {navItem3}
       </Styled.Sidebar_title>
       <Styled.Sidebar_title
-        onClick={() => setContentSwiperActive(4)}
+        onClick={() => {
+          setContentSwiperActive(4);
+          document
+            .getElementById("references")
+            .scrollIntoView({ behavior: "smooth" });
+        }}
         className="sidebar"
         selected={contentSwiperActive === 4 || contentSwiperActive === 5}
       >

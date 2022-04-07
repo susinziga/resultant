@@ -9,6 +9,8 @@ export const About_main_content_container = styledComponents.div`
 
     transition:1s all;
 
+    overflow-x:hidden;
+
 
 
     
@@ -18,7 +20,7 @@ export const About_main_content_container = styledComponents.div`
     ${(props) =>
       props.active === 2
         ? `background-color:var(--blue);
-        span{
+        span,h4{
         color:white;
         }
         .quote{
@@ -33,7 +35,7 @@ export const About_main_content_container = styledComponents.div`
         ${(props) =>
           props.active === 4
             ? `background-color:var(--blue);
-              span{
+              span,h4{
               color:white;
               }
               .quote{

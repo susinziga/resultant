@@ -194,13 +194,25 @@ const Menu_top = ({}) => {
         <Styled.LogoContainer>
           {" "}
           <a href="/"></a>
-          <img ref={(el) => (LogoAnimation = el)} src="/Logo/logo1.svg"></img>
-          <object
+          <img
+            id="logo"
+            ref={(el) => (LogoAnimation = el)}
+            src="/Logo/logo1.svg"
+          ></img>
+          {/*<object
+            type="application/x-shockwave-flash"
             ref={(el) => (letterAnimation = el)}
             data={"/Logo/letter.svg"}
             width="300"
             height="300"
-          ></object>
+  ></object>*/}
+          <img
+            id="letter"
+            ref={(el) => (letterAnimation = el)}
+            width="300"
+            height="300"
+            src="/Logo/letter.svg"
+          ></img>
         </Styled.LogoContainer>
 
         {size[0] >= 768 ? (

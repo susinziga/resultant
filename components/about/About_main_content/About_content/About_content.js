@@ -19,7 +19,12 @@ const About_content = ({ initAnim, isActive }) => {
 
   const { t } = useTranslation("about");
 
-  const nav_items = [t("nav_item1")];
+  const nav_items = [
+    t("nav_item1"),
+    t("nav_item2"),
+    t("nav_item3"),
+    t("nav_item4"),
+  ];
 
   useEffect(() => {
     if (initAnim) {
@@ -27,6 +32,12 @@ const About_content = ({ initAnim, isActive }) => {
         transform: "translateX(0)",
         duration: 1,
         delay: 1,
+      });
+      gsap.to(document.getElementById("about_box"), {
+        overflowX: "unset",
+
+        duration: 0,
+        delay: 2,
       });
     }
   }, [initAnim]);
@@ -66,38 +77,43 @@ const About_content = ({ initAnim, isActive }) => {
 
   return (
     <Styled.About_content_container ref={contentAnimation} id="content_box">
-      <div id="approach">
+      <div id="approach" className="section2">
         <About_content_1
           isActive={isActive && contentSwiperActive === 0}
           className="content_panel"
           title={nav_items[0]}
         ></About_content_1>
       </div>
-      <div id="team">
+      <div id="team" className="section2">
         <TeamSlider
           isActive={isActive && contentSwiperActive === 1}
           className="content_panel"
+          title={nav_items[1]}
         ></TeamSlider>
       </div>
-      {/*<div id="partners">
+      <div id="partners" className="section2">
         <Partners_quote
           isActive={isActive && contentSwiperActive === 2}
           className="content_panel"
+          title={nav_items[2]}
         ></Partners_quote>
-      </div>
-      <div id="partners2">
         <Partners_content
           isActive={isActive && contentSwiperActive === 3}
           className="content_panel"
         ></Partners_content>
       </div>
+
       <div id="references">
         <References_quote
           isActive={isActive && contentSwiperActive === 4}
           className="content_panel"
         ></References_quote>
+        <References_content
+          isActive={isActive && contentSwiperActive === 5}
+          className="content_panel"
+        ></References_content>
       </div>
-      <div id="references2">
+      {/*<div id="references2">
         <References_content
           isActive={isActive && contentSwiperActive === 5}
           className="content_panel"

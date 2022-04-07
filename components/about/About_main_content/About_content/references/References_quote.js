@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from "react";
+import { Waypoint } from "react-waypoint";
 import { AboutContext } from "../../../../../context/aboutContext";
 import { CenterContent } from "../About_content.styled";
 import References_quote_content from "./References_quote_item";
@@ -44,9 +45,22 @@ const References_quote = ({ isActive }) => {
   };
 
   return (
-    <CenterContent>
-      <References_quote_content></References_quote_content>
-    </CenterContent>
+    <Waypoint
+      scrollableAncestor={"window"}
+      topOffset="30%"
+      bottomOffset={"50%"}
+      onEnter={() => {
+        setContentSwiperActive(4);
+      }}
+      onLeave={(a) => {
+        if ((a.currentPosition = "above")) setContentSwiperActive(5);
+        if ((a.currentPosition = "below")) setContentSwiperActive(3);
+      }}
+    >
+      <div id="test">
+        <References_quote_content></References_quote_content>
+      </div>
+    </Waypoint>
   );
 };
 

@@ -2,6 +2,10 @@
   margin-bottom: 5rem !important;
 }
 
+.section2 {
+  margin-bottom: 15rem !important;
+}
+
 .pillarActive {
   width: 55% !important;
   background-color: var(--pillar-color);
@@ -36,4 +40,9 @@
   cursor: pointer;
 }
 .swiper-slide {
+}
+
+
+.is-loading{
+  overflow-y: hidden;
 }

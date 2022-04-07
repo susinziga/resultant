@@ -1,13 +1,18 @@
 import React, { useContext, useEffect } from "react";
+import { Waypoint } from "react-waypoint";
 import styledComponents from "styled-components";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import { AboutContext } from "../../../../../context/aboutContext";
+import useSize from "../../../../../custom_hooks/useSize";
+import References_item from "../../../../references/references_item/References_item";
 import { CenterContent } from "../About_content.styled";
 import References_slider_item from "./References_slider_item/References_slider_item";
 
 const References_content = ({ isActive }) => {
   const { contentSwiperActive, setContentSwiperActive } =
     useContext(AboutContext);
+
+  const { isDesktop } = useSize();
 
   const references = [
     [
@@ -109,26 +114,52 @@ const References_content = ({ isActive }) => {
   };
 
   return (
-    <Container>
-      <Swiper>
-        {references.map((ref, id) => {
-          return (
-            <SwiperSlide>
-              <References_slider_item
-                references={ref}
-                key={id}
-              ></References_slider_item>
-            </SwiperSlide>
-          );
-        })}
-      </Swiper>
-    </Container>
+    <Waypoint
+      scrollableAncestor={"window"}
+      topOffset="10%"
+      bottomOffset={"10%"}
+      onEnter={() => {
+        setContentSwiperActive(5);
+      }}
+    >
+      <Container>
+        {isDesktop() ? (
+          <Swiper slidesPerView={1}>
+            {references.map((ref, id) => {
+              return (
+                <SwiperSlide>
+                  <References_slider_item
+                    references={ref}
+                    key={id}
+                  ></References_slider_item>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        ) : (
+          <Swiper slidesPerView={1.5} centeredSlides="true" loop={true}>
+            {references.map((ref, id) => {
+              return ref.map((ref1) => {
+                console.log(ref1);
+                return (
+                  <SwiperSlide>
+                    <References_item reference={ref1}></References_item>
+                  </SwiperSlide>
+                );
+              });
+            })}
+          </Swiper>
+        )}
+      </Container>
+    </Waypoint>
   );
 };
 
-const Container = styledComponents(CenterContent)`
+const Container = styledComponents.div`
+margin-top:15rem;
     width:70%;
     margin-left:15%;
+    margin-bottom:10rem;
 `;
 
 export default References_content;

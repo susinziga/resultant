@@ -6,6 +6,8 @@ export const About_bottomContainer = styledComponents.div`
     width:90%;
     margin:auto;
 
+    text-align:center;
+
     display:flex;
     flex-direction:column;
     justify-content:space-around;
@@ -38,4 +40,8 @@ export const Content = styledComponents.div`
   gap:2rem;
   justify-content:center;
   align-items:center;
+
+  >h2{
+      font-size:1.9rem;
+  }
 `;

@@ -7,17 +7,17 @@ import {
 } from "../../../basic_components/texts/Texts";
 
 export const AboutContainer = styledComponents.div`
-    height: 100vh;
+    
 
     display:flex;
     flex-direction:column-reverse;
 
-    padding-top: 10%;
+    padding-top: 20%;
     gap:2rem;
    
 
     @media screen and (min-width: 768px){
-
+        height: 100vh;
         width:90%;
         margin:auto;
         padding-top: 10%;

@@ -64,7 +64,7 @@ display:flex;
     position:absolute;
     top:5%;
     left:10%;
-    width:95%;
+    width:85%;
     > *
     {
         margin-bottom:2.5rem;
@@ -90,7 +90,7 @@ display:flex;
     }
 }
 @media(min-width:1300px){
-    top:20%;
+    top:10%;
     left:35%;
 }
 `;

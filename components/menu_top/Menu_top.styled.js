@@ -27,7 +27,7 @@ width:fit-content;
     position:absolute;
     top:0;bottom:0;left:0;right:0;
 }
->object{ 
+#letter{ 
     pointer-events:none;
     position:absolute;
 
@@ -52,7 +52,7 @@ width:fit-content;
    
 }
 
-img{
+#logo{
     
     height:65px;
    
@@ -87,7 +87,31 @@ img{
        
     }
 
-    img{
+    #letter{ 
+        position:absolute;
+  
+        top:-21%;
+        //top:500%;
+        bottom:0;
+        right:0;
+
+        height:100%;
+
+        z-index:100;
+  
+        left: 58%;
+        //left:100%;
+        width: fit-content;
+        transform: scale(0.5);
+
+        //transform:scale(22);
+
+        //transition:1s top;
+
+       
+    }
+
+    #logo{
         
         height:90px;
        

@@ -14,6 +14,7 @@ import { AboutContext } from "../../../../../context/aboutContext";
 import { ButtonsContainer } from "./About_content_1_item/ContentSliderItem.styled";
 import { Title2 } from "../../../../../basic_components/texts/Texts";
 import useSize from "../../../../../custom_hooks/useSize";
+import { Waypoint } from "react-waypoint";
 
 SwiperCore.use([Mousewheel, Pagination]);
 
@@ -84,63 +85,75 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
   };
 
   return (
-    <Container>
-      {isDesktop() ? (
-        ""
-      ) : (
-        <Title2
-          style={{
-            width: "var(--width-90)",
-            margin: "auto",
-            marginBottom: "2rem",
-          }}
+    <Waypoint
+      scrollableAncestor={"window"}
+      topOffset={"0%"}
+      bottomOffset="50%"
+      onEnter={() => {
+        setContentSwiperActive(0);
+      }}
+    >
+      <Container>
+        {isDesktop() ? (
+          ""
+        ) : (
+          <Title2
+            style={{
+              width: "var(--width-90)",
+              margin: "auto",
+              marginBottom: "2rem",
+            }}
+          >
+            {title}
+          </Title2>
+        )}
+        <Swiper
+          onScroll={true}
+          spaceBetween={50}
+          slidesPerView={1.5}
+          initialSlide={initSlide}
+          centeredSlides={true}
+          direction={"horizontal"}
+          className="mySwiper"
+          autoHeight={true}
         >
-          {title}
-        </Title2>
-      )}
-      <Swiper
-        onScroll={true}
-        spaceBetween={50}
-        slidesPerView={1.5}
-        initialSlide={initSlide}
-        centeredSlides={true}
-        direction={"horizontal"}
-        className="mySwiper"
-        autoHeight={true}
-      >
-        <SwiperInstance setInstance={setInstance}></SwiperInstance>
-        {items.map((ref, id) => (
-          <SwiperSlide key={id}>
-            {({ isActive }) => (
-              <Content_item reference={ref} isActive={isActive}></Content_item>
-            )}
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          <SwiperInstance setInstance={setInstance}></SwiperInstance>
+          {items.map((ref, id) => (
+            <SwiperSlide key={id}>
+              {({ isActive }) => (
+                <Content_item
+                  reference={ref}
+                  isActive={isActive}
+                ></Content_item>
+              )}
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
-      {isDesktop() ? (
-        <ButtonsContainer>
-          <img
-            width="50"
-            src="./Buttons/arrow_prev.svg"
-            onClick={() => {
-              swip.slidePrev(1000);
-            }}
-            className="cursor"
-          ></img>
-          <img
-            width="50"
-            src="./Buttons/arrow_next.svg"
-            onClick={() => {
-              swip.slideNext(1000);
-            }}
-            className="cursor"
-          ></img>
-        </ButtonsContainer>
-      ) : (
-        ""
-      )}
-    </Container>
+        {isDesktop() ? (
+          <ButtonsContainer>
+            <img
+              width="50"
+              src="./Buttons/arrow_prev.svg"
+              onClick={() => {
+                swip.slidePrev(1000);
+              }}
+              className="cursor"
+            ></img>
+            <img
+              width="50"
+              src="./Buttons/arrow_next.svg"
+              onClick={() => {
+                swip.slideNext(1000);
+              }}
+              className="cursor"
+            ></img>
+          </ButtonsContainer>
+        ) : (
+          ""
+        )}
+      </Container>
+    </Waypoint>
   );
 };
 

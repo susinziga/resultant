@@ -31,7 +31,8 @@ export const ReferencesItemContainer = styledComponents.div`
     }}
 
     @media(min-width:768px){
-      min-height: 11rem;
+      min-height: 10.5rem;
+      max-height:10.5rem;
     }
 
 

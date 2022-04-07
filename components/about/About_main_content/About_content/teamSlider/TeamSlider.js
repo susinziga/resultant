@@ -6,11 +6,17 @@ import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import useTranslation from "next-translate/useTranslation";
 import TeamSliderItem from "./TeamSliderItem";
 import { AboutContext } from "../../../../../context/aboutContext";
+import { Title2 } from "../../../../../basic_components/texts/Texts";
 
-const TeamSlider = ({ nextSection, prevSection, isActive }) => {
+import useSize from "../../../../../custom_hooks/useSize";
+import { Waypoint } from "react-waypoint";
+
+const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
   const { t } = useTranslation("team");
 
   let swip = useSwiper();
+
+  const { isDesktop } = useSize();
 
   const { contentSwiperActive, setContentSwiperActive } =
     useContext(AboutContext);
@@ -108,13 +114,31 @@ const TeamSlider = ({ nextSection, prevSection, isActive }) => {
     swip = instance;
   };
   return (
-    <Styled.TeamComponentContainer>
-      {items.map((item, id) => (
-        <SwiperSlide key={id}>
+    <Waypoint
+      scrollableAncestor="window"
+      topOffset="30%"
+      bottomOffset="40%"
+      onEnter={() => setContentSwiperActive(1)}
+    >
+      <Styled.TeamComponentContainer>
+        {isDesktop() ? (
+          ""
+        ) : (
+          <Title2
+            style={{
+              width: "var(--width-90)",
+              margin: "auto",
+              marginBottom: "2rem",
+            }}
+          >
+            {title}
+          </Title2>
+        )}
+        {items.map((item, id) => (
           <TeamSliderItem item={item}></TeamSliderItem>
-        </SwiperSlide>
-      ))}
-    </Styled.TeamComponentContainer>
+        ))}
+      </Styled.TeamComponentContainer>
+    </Waypoint>
   );
 };
 

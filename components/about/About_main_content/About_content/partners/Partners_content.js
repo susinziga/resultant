@@ -1,8 +1,8 @@
 import useTranslation from "next-translate/useTranslation";
 import React, { useContext, useEffect } from "react";
+import { Waypoint } from "react-waypoint";
 import { BodyText4 } from "../../../../../basic_components/texts/Texts";
 import { AboutContext } from "../../../../../context/aboutContext";
-import { CenterContent } from "../About_content.styled";
 
 import * as Styled from "./Partners_content.styled";
 
@@ -57,11 +57,21 @@ const Partners_content = ({ isActive }) => {
   };
 
   return (
-    <Styled.Partners_container>
-      {partners.map((partner, id) => {
-        return <Partner_item key={id} partner={partner}></Partner_item>;
-      })}
-    </Styled.Partners_container>
+    <Waypoint
+      scrollableAncestor={"window"}
+      topOffset="40%"
+      bottomOffset={"30%"}
+      onEnter={() => {
+        /*setContentSwiperActive(3);
+        console.log("enter");*/
+      }}
+    >
+      <Styled.Partners_container>
+        {partners.map((partner, id) => {
+          return <Partner_item key={id} partner={partner}></Partner_item>;
+        })}
+      </Styled.Partners_container>
+    </Waypoint>
   );
 };
 

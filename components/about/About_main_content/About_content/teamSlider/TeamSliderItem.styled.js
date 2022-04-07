@@ -2,21 +2,34 @@ import styledComponents from "styled-components";
 
 export const TeamSliderItemContainer = styledComponents.div`
 display:flex;
-flex-direction:row;
+flex-direction:column-reverse;
 
 //border:1px solid black;
 width:80%;
 margin:auto;
 
-gap:10rem;
+gap:4rem;
 
 >img{
-    width:40%;
+    width:100%;
     height:100%;
     border-radius: 12px;
 
     box-shadow:0px 16px 40px rgba(0, 71, 103, 0.12);
+  
+    }
+
+
+@media(min-width:768px){
+    flex-direction:row;
+    gap:10rem;
+    >img{
+    width:40%;
+    height:100%;
+   
+
     margin-top:2rem;
+    }
 }
 
 `;
@@ -24,7 +37,7 @@ gap:10rem;
 export const TeamSliderFlex = styledComponents.div`
     display:flex;
     flex-direction:column;
-    width:35%;
+    width:100%;
     justify-content:center;
 
     
@@ -32,6 +45,13 @@ export const TeamSliderFlex = styledComponents.div`
 >*:nth-child(3),
 >*:nth-child(4){
     margin-bottom:2rem;
+}
+
+@media(min-width:768px){
+   
+    width:35%;
+    justify-content:center;
+
 }
 `;
 

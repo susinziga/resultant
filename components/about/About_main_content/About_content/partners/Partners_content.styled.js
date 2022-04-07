@@ -5,13 +5,20 @@ export const Partners_item_container = styledComponents.div`
 
 display:flex;
 flex-direction:column;
+
+img{
+    width:35%;
+}
+
+gap:2rem;
+
 @media(min-width:768px){
    
     max-height:5rem;
-    width:80%;
+    width:90%;
  
     justify-content:center;
-    margin:auto;
+  margin:auto;
     flex-direction:row;
     align-items:center;
     >span{
@@ -20,6 +27,7 @@ flex-direction:column;
     }
     img{
         height:100%;
+        width:unset;
         max-height:5rem;
     }
     >div{
@@ -28,8 +36,17 @@ flex-direction:column;
 }
 `;
 
-export const Partners_container = styledComponents(CenterContent)`
+export const Partners_container = styledComponents.div`
+
     display:flex;
     flex-direction:column;
-    gap:3rem;
+    gap:5rem;
+    width:var(--width-90);
+    margin:auto;
+    margin-top:12rem;
+    @media(min-width:768px){
+        width:100%;
+    }
+
+   
     `;
