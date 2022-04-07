@@ -17,6 +17,8 @@ import QuoteSection2_service1 from "../Quote/QuoteSection2_service";
 
 const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
   const { t, lang } = useTranslation();
+  const p1 = plan1 ?? [];
+  const p2 = plan2 ?? [];
 
   console.log(plan1);
 
@@ -39,7 +41,7 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {plan1.map((item) => {
+            {p1.map((item) => {
               return <PlanItem_service1 props={item}></PlanItem_service1>;
             })}
           </FlexContainer>
@@ -50,10 +52,10 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
           </PlanTableHeaderContainer>
 
           <FlexContainer>
-            {plan2.map((item) => {
+            {p2.map((item) => {
               return <PlanItem_service1 props={item}></PlanItem_service1>;
             })}
-            <ButtonContainer props={button}>
+            <ButtonContainer props={button} button={p2.length > 0}>
               <SubmitButton className="desktop" type="button">
                 Želim pridobiti ponudbo
               </SubmitButton>
