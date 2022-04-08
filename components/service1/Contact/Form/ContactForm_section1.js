@@ -6,8 +6,8 @@ import Button from '../../../../basic_components/button/Button';
 import useTranslation from "next-translate/useTranslation";
 
 const inputProps = [
-  {label: "Ime"},
-  {label: "Priimek"},
+  {label: "Ime", required: "*"},
+  {label: "Priimek", required: "*"},
   {label: "Tel. številka"},
   {label: "Email", required: "*"},
   {label: "Ime organizacije"}
@@ -40,7 +40,7 @@ const ContactForm_service1 = () => {
           })
         }
         <TextareaContainer > 
-          <Textarea id="TextDesktop" props={{label: "Kako ste izvedeli za nas?"}} style={{fontSize: "1.5rem"}}></Textarea>
+          <Textarea id="TextDesktop" props={{label: "Prostor za vaše sporočilo", required: "*"}} style={{fontSize: "1.5rem"}}></Textarea>
         </TextareaContainer>
         <ButtonContainer>
           <SubmitButton type="submit" value={button}></SubmitButton>
