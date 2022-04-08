@@ -29,7 +29,7 @@ const Counter_home = (props) => {
                         </div>
                     </Waypoint>
                 </h2>
-                <p style={{marginBottom: "10%"}}>
+                <p >
                     <BodyText4 style={{color: "white"}}>{title1}</BodyText4>
                 </p>
             </CounterContainer>
@@ -41,11 +41,11 @@ const Counter_home = (props) => {
                         </div>
                     </Waypoint>
                 </h2>
-                <p style={{marginBottom: "10%"}}>
+                <p >
                     <BodyText4 style={{color: "white"}}>{title2}</BodyText4>
                 </p>
             </CounterContainer>
-            <CounterContainer style={{marginTop: "3.8%"}}>
+            <CounterContainer >
                 <h2 style={{color: "white"}}>
                     <Waypoint onEnter={onVWEnter}>
                         <div>
@@ -53,7 +53,7 @@ const Counter_home = (props) => {
                         </div>
                     </Waypoint>
                 </h2>
-                <p style={{marginBottom: "12%", paddingTop: "2%"}}>
+                <p >
                     <BodyText4 style={{color: "white"}}>{title3}</BodyText4>
                 </p>
             </CounterContainer>

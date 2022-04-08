@@ -86,7 +86,7 @@ export const Heading = styledComponents(Title2)`
 
     @media only screen and (min-width: 992px) {
         
-        font-size: 1.6rem;
+        font-size: 1.8rem;
     }
 
     @media only screen and (min-width: 1600px) {

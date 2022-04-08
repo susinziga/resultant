@@ -5,18 +5,18 @@ const Person_contact = () => {
   return (
     <>
     <PersonContainer>
-      <ImageContainer  className="mobile" src="./Team/Roman.png"></ImageContainer>
-      <ImageContainer  className="desktop" src="./Team/Roman_desktop.png"></ImageContainer>
+      <ImageContainer  className="mobile" src="/Team/Roman.png"></ImageContainer>
+      <ImageContainer  className="desktop" src="/Team/Roman_desktop.png"></ImageContainer>
       <InfoContainer>
         <Heading>Roman Klarič</Heading>
         <SubHeading>Direktor in partner</SubHeading>
         <ContactContainer>
             <ContactIconContainer>
-                <ContactIcon src="./Footer/-call.png"></ContactIcon>
+                <ContactIcon src="/Footer/-call.png"></ContactIcon>
                 <ContactLink href="tel:041 231 831">041 231 831</ContactLink>
             </ContactIconContainer>
             <ContactIconContainer>
-                <ContactIcon src="./Footer/-email.png"></ContactIcon>
+                <ContactIcon src="/Footer/-email.png"></ContactIcon>
                 <ContactLink href="mailto:roman.klaric@resultant.si">roman.klaric@resultant.si</ContactLink>
            </ContactIconContainer>
         </ContactContainer>

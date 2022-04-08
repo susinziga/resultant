@@ -28,12 +28,13 @@ const Contact_home = (props) => {
           <p style={{ marginBottom: "8%" }}>
             <BodyText2>{text}</BodyText2>
           </p>
+          <Button className='mobile' secondary>{buttonText}</Button>
           {!isDesktop() ? (
             <ContactImage src="./Home/Stik.png"></ContactImage>
           ) : (
             ""
           )}
-          <Button secondary>{buttonText}</Button>
+          <Button className='desktop' secondary>{buttonText}</Button>
         </ContactTextContainer>
       </ContactContainer>
     </>

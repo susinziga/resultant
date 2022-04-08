@@ -208,16 +208,15 @@ export const LinkFooterContainer = styledComponents.div`
    text-align: center;
 
    @media only screen and (min-width: 992px) {
-        margin-top: 8%;
+        margin: 0;
         flex-direction: row-reverse;
         width: 70%;
         gap: 3%;
-        padding-right: 50px;
+      
    }
 
    @media only screen and (min-width: 1600px) {
-        margin-top: 6%;
-        padding-right: 10%;
+      
     }
 
 `;
@@ -240,7 +239,9 @@ export const Combine = styledComponents.div`
   
 
    @media only screen and (min-width: 992px) {
+        margin-top: 10%;
         display: flex;
         justify-content: space-between;
+        justify-content: center;
    }
 `;

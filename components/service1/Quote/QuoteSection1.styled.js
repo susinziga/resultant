@@ -47,7 +47,7 @@ export const QuoteImage = styledComponents.img`
     
    
     @media only screen and (min-width: 768px) {
-        width: 30%;
+        width: 20%;
     }
 
     @media only screen and (min-width: 992px) {
@@ -55,7 +55,7 @@ export const QuoteImage = styledComponents.img`
     }
 
     @media only screen and (min-width: 1600px) {
-        width: 20%;
+        
     }
 `;
 

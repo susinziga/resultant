@@ -19,32 +19,58 @@ margin:auto;
 export const ApproachTextContainer = styledComponents.div`
    
     @media screen and (min-width: 768px){
-        width:60%;
+      
+        width:50%;
         padding: 6% 12% 0 10%;
     }
 
+    @media screen and (min-width: 992px){
+      width:60%;
+      padding: 0% 12% 0 10%;
+  }
+
     @media screen and (min-width: 1600px){
         width:60%;
-        padding: 3% 10% 0 12%;
+        padding: 5% 10% 0 12%;
     }
   }
 `;
 
 export const ApproachHeading = styledComponents(Title2)`
-margin-bottom:2rem;
+  margin-bottom:2rem;
     @media screen and (min-width: 768px){
-        width:var(--width-80);
-        margin-bottom: 8%;
+       
        
     } 
+
+    
+    @media(min-width:992px){
+      width:var(--width-80);
+      margin-bottom: 8%;
+    }
+
+    @media(min-width:1600px){
+     
+    }
   }
 `;
 
 export const ApproachImage = styledComponents.img`
-width:100%;
-@media(min-width:768px){
-  width:45%;
-}
+  width:100%;
+  margin-top: 10%;
+    @media(min-width:768px){
+      width:50%;
+      height: 100%;
+      margin-top:0;
+    }
+
+    @media(min-width:992px){
+      width:45%;
+    }
+
+    @media(min-width:1600px){
+     
+    }
     
-  }
+  
 `;

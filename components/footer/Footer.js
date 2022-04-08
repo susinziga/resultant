@@ -31,31 +31,14 @@ const Footer = () => {
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
         <Styled.Combine>
-          <Styled.SocialFooterContainer>
-            <Styled.SocialLink>
-              <Styled.Social
-                src="/Footer/linkedin.png"
-                alt="linkedin"
-              ></Styled.Social>
-            </Styled.SocialLink>
-            <Styled.SocialLink>
-              <Styled.Social
-                src="/Footer/facebook.png"
-                alt="facebook"
-              ></Styled.Social>
-            </Styled.SocialLink>
-            <Styled.SocialLink>
-              <Styled.Social
-                src="/Footer/twitter.png"
-                alt="twitter"
-              ></Styled.Social>
-            </Styled.SocialLink>
-          </Styled.SocialFooterContainer>
+          <Styled.Link className="desktop">Izdelala Agencija Statera</Styled.Link>
           <Styled.LinkFooterContainer>
             <Styled.Link>Piškotki</Styled.Link>
             <Styled.Link>Podpora strankam</Styled.Link>
             <Styled.Link>Pravilnik o zasebnosti</Styled.Link>
-            <Styled.Link>&copy; 2022 Agencija Statera</Styled.Link>
+            <Styled.Link className="mobile">Izdelala Agencija Statera</Styled.Link>
+            <Styled.Link>&copy; 2022 Resultant | Vse pravice pridržane</Styled.Link>
+            
           </Styled.LinkFooterContainer>
         </Styled.Combine>
       </Styled.FooterContainer>

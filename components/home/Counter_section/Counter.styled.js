@@ -5,19 +5,21 @@ export const CountersContainer = styledComponents.div`
    background-color: var(--pillar-color);
    display: flex;
    flex-direction:column;
-   padding: 2rem 10rem;
+   padding: 2rem 5rem;
    
        
     @media screen and (min-width: 768px){
         width: 100%;
         flex-direction:row;
         padding: 0;
+        justify-content: center;
         
    
     }
 
     @media screen and (min-width: 1600px){
         width: 100%;
+        justify-content: center;
         
     }
   
@@ -37,20 +39,43 @@ export const CounterContainer = styledComponents.div`
     text-align: center; 
     gap:1rem;
     margin-bottom:1rem;
+
+    >p {
+        padding: 0 0%;
+    }
     
        
     @media screen and (min-width: 768px){
         width: 33.3%;
+        margin: 4% 0 5% 0; 
         gap:0;
-        margin: 2% 0;
+        
 
         >p {
-            padding: 0 18%;
+            padding: 0 10%;
+        }
+
+       
+    }
+
+    @media screen and (min-width: 992px){
+        width: 33.3%;
+        margin: 5% 0 6% 0; 
+        gap:0;
+        
+
+        >p {
+            padding: 0 12%;
         }
     }
 
     @media screen and (min-width: 1600px){
-        width: 33.3%;        
+        width: 33.3%;    
+        
+        
+        >p {
+            padding: 0 15%;
+        }
     }
 
     > h2 *{
