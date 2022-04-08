@@ -24,7 +24,7 @@ const About_about = (props) => {
 
   return (
     <>
-      <AboutContainer {...props}>
+      <AboutContainer {...props} className="section">
         <ImageContainer>
           <AboutImage src={image}></AboutImage>
         </ImageContainer>

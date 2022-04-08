@@ -9,6 +9,8 @@ const Mobile_menu = ({ menu_opened }) => {
 
   const [opened, setOpened] = useState(false);
 
+  const [subMenuOpened, setSubMenuOpened] = useState(false);
+
   const [animation, setAnimation] = useState(null);
 
   useEffect(() => {
@@ -30,8 +32,9 @@ const Mobile_menu = ({ menu_opened }) => {
 
       animation.play();
     } else {
+      setSubMenuOpened(false);
       setOpened(menu_opened);
-      console.log("here");
+
       console.log(animation);
       animation.reverse();
     }
@@ -51,10 +54,17 @@ const Mobile_menu = ({ menu_opened }) => {
         <Button href="/about" className="nav_item mobile_nav2" terciary>
           {t("nav_item1")}
         </Button>
-        <Button className="nav_item drop-button mobile_nav3" terciary arrowDown>
+        <Button
+          className="nav_item drop-button mobile_nav3"
+          terciary
+          arrowDown
+          onClick={() => {
+            setSubMenuOpened((prev) => !prev);
+          }}
+        >
           {t("nav_item2")}
         </Button>
-
+        <Mobile_menu_dropdown opened={subMenuOpened}></Mobile_menu_dropdown>
         <Button className="nav_item mobile_nav4" terciary>
           {t("nav_item3")}
         </Button>
@@ -68,6 +78,7 @@ const Mobile_menu = ({ menu_opened }) => {
 
 import styled from "styled-components";
 import useTranslation from "next-translate/useTranslation";
+import Mobile_menu_dropdown from "./Mobile_menu_dropdown";
 
 const Container = styled.div`
   /*transition: 2s all;
@@ -95,9 +106,6 @@ const Container = styled.div`
 
   gap: 1rem;
 
-  a {
-    font-size: 2.5rem;
-  }
   a.contact {
     font-size: 1.7rem;
   }
@@ -115,6 +123,7 @@ const Container = styled.div`
   .mobile_nav4,
   .mobile_nav5 {
     transform: translateX(-100%);
+    font-size: 2.5rem;
   }
 `;
 

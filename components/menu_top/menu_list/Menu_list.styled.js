@@ -6,6 +6,8 @@ export const MenuList = styledComponents.div`
 
     gap:0.1rem;
 
+    position:relative;
+
     @media (min-width: 992px) {
    gap:1rem;
     }
