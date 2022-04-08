@@ -9,6 +9,9 @@ const Menu_list = ({ state }) => {
 
   return (
     <Styled.MenuList state={state}>
+      <Button href="/" className="nav_item" terciary>
+        {t("nav_item0")}
+      </Button>
       <Button href="/about" className="nav_item" terciary>
         {t("nav_item1")}
       </Button>

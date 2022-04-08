@@ -48,7 +48,15 @@ const Menu_top = ({}) => {
 
   useEffect(() => {
     window.addEventListener("wheel", handleScroll);
-    if (isDesktop() && pathname === "/" && window.scrollY <= 10) {
+
+    if (
+      sessionStorage.getItem("animation") !== "true" &&
+      isDesktop() &&
+      pathname === "/" &&
+      window.scrollY <= 10
+    ) {
+      document.getElementsByTagName("body")[0].classList.add("is-loading");
+      sessionStorage.setItem("animation", "true");
       /*if (navState === -1 && window.scrollY <= 10) {*/
       /*window.addEventListener(
         "wheel",
@@ -68,6 +76,11 @@ const Menu_top = ({}) => {
         scrollTrigger: {
           trigger: document.getElementById("hero"),
           start: "top top",
+        },
+        onComplete: () => {
+          document
+            .getElementsByTagName("body")[0]
+            .classList.remove("is-loading");
         },
         /*onComplete: window.removeEventListener(
           "wheel",
@@ -206,13 +219,15 @@ const Menu_top = ({}) => {
             width="300"
             height="300"
   ></object>*/}
-          <img
-            id="letter"
-            ref={(el) => (letterAnimation = el)}
-            width="300"
-            height="300"
-            src="/Logo/letter.svg"
-          ></img>
+          <a href="/">
+            <img
+              id="letter"
+              ref={(el) => (letterAnimation = el)}
+              width="300"
+              height="300"
+              src="/Logo/letter.svg"
+            ></img>
+          </a>
         </Styled.LogoContainer>
 
         {size[0] >= 768 ? (

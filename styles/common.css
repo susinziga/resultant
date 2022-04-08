@@ -8,7 +8,7 @@
 
 .pillarActive {
   width: 55% !important;
-  background-color: var(--pillar-color);
+  background-color: var(--pillar-color)!important;
   padding-right: 8% !important;
 }
 

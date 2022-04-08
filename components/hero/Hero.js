@@ -43,7 +43,12 @@ const Hero = (props) => {
   const hero_paragraph2 = t("hero_paragraph2");
 
   useEffect(() => {
-    if (isDesktop()) {
+    if (
+      sessionStorage.getItem("animation2") !== "true" &&
+      isDesktop() &&
+      window.scrollY <= 10
+    ) {
+      sessionStorage.setItem("animation2", "true");
       const menuHeightt =
         document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
 
@@ -117,7 +122,18 @@ const Hero = (props) => {
             </>
           )}
 
-          <Button primary>Izvedi več</Button>
+          <Button
+            primary
+            onClick={() => {
+              window.scrollTo({
+                top: window.innerHeight - 100,
+                left: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Izvedi več
+          </Button>
           <Styled.WhiteLine
             ref={(el) => (lineAnimation = el)}
           ></Styled.WhiteLine>
