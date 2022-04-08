@@ -1,0 +1,96 @@
+import useTranslation from "next-translate/useTranslation";
+import React from "react";
+
+const Menu_dropdown = () => {
+  const { t } = useTranslation("pillars");
+
+  React.useEffect(() => {
+    window.onclick = function (event) {
+      if (!event.target.matches(".drop-button")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  }, []);
+
+  const pillars = [
+    {
+      title: t("pillar1_title"),
+      link: "/storitve/siok",
+    },
+    {
+      title: t("pillar2_title"),
+      link: "/storitve/dnla",
+    },
+    {
+      title: t("pillar3_title"),
+      link: "",
+    },
+    {
+      title: t("pillar4_title"),
+      link: "",
+    },
+  ];
+
+  return (
+    <>
+      <Container className="dropdown-content drop-button" id="ddown">
+        {pillars.map(({ title, link }, id) => {
+          return (
+            <a href={link}>
+              <Dropdown_item key={id}>{title}</Dropdown_item>
+            </a>
+          );
+        })}
+      </Container>
+    </>
+  );
+};
+import styled from "styled-components";
+import { BodyText4 } from "../../../basic_components/texts/Texts";
+const Container = styled.div`
+  display: none;
+
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  padding-right: 6rem;
+  background-color: var(--blue);
+  border-radius: 12px;
+  position: absolute;
+  left: -50%;
+  bottom: 0;
+  transform: translateY(100%);
+
+  &.show {
+    display: flex;
+  }
+
+  @media (min-width: 768px) {
+    left: -30%;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  @media (min-width: 992px) {
+    left: -50%;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+`;
+const Dropdown_item = styled(BodyText4)`
+  display: block;
+  color: #fff;
+
+  :hover {
+    color: #27b4e9;
+  }
+`;
+
+export default Menu_dropdown;

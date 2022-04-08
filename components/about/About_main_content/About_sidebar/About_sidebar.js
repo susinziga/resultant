@@ -72,9 +72,13 @@ const About_sidebar = ({ initAnim }) => {
       <Styled.Sidebar_title
         onClick={() => {
           setContentSwiperActive(1);
-          document
-            .getElementById("team")
-            .scrollIntoView({ behavior: "smooth" });
+          window.scrollBy({
+            top:
+              document.getElementById("team").getBoundingClientRect().top -
+              window.innerHeight / 5,
+
+            behavior: "smooth",
+          });
         }}
         className="sidebar"
         selected={contentSwiperActive === 1}
@@ -84,9 +88,13 @@ const About_sidebar = ({ initAnim }) => {
       <Styled.Sidebar_title
         onClick={() => {
           setContentSwiperActive(2);
-          document
-            .getElementById("partners")
-            .scrollIntoView({ behavior: "smooth" });
+          window.scrollBy({
+            top:
+              document.getElementById("partners").getBoundingClientRect().top -
+              window.innerHeight / 5,
+
+            behavior: "smooth",
+          });
         }}
         className="sidebar"
         selected={contentSwiperActive === 2 || contentSwiperActive === 3}
@@ -96,9 +104,14 @@ const About_sidebar = ({ initAnim }) => {
       <Styled.Sidebar_title
         onClick={() => {
           setContentSwiperActive(4);
-          document
-            .getElementById("references")
-            .scrollIntoView({ behavior: "smooth" });
+          window.scrollBy({
+            top:
+              document.getElementById("references").getBoundingClientRect()
+                .top -
+              window.innerHeight / 5,
+
+            behavior: "smooth",
+          });
         }}
         className="sidebar"
         selected={contentSwiperActive === 4 || contentSwiperActive === 5}

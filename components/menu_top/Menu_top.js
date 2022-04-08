@@ -11,6 +11,7 @@ import Menu_list from "./menu_list/Menu_list";
 
 import { useRouter } from "next/router";
 import useSize from "../../custom_hooks/useSize";
+import Mobile_menu from "./mobile_menu/Mobile_menu";
 
 const Menu_top = ({}) => {
   const { t, lang } = useTranslation("aboveTheFold");
@@ -26,6 +27,8 @@ const Menu_top = ({}) => {
   const [size, setSize] = useState([]);
 
   const { isDesktop } = useSize();
+
+  const [menu_opened, setMenu_opened] = useState(false);
 
   useEffect(() => {
     setSizes();
@@ -233,9 +236,17 @@ const Menu_top = ({}) => {
         {size[0] >= 768 ? (
           <Menu_list state={navState}></Menu_list>
         ) : (
-          <a>
-            <img style={{ height: "100%" }} src="/Buttons/Menu.svg"></img>
-          </a>
+          <>
+            <a
+              style={{ zIndex: "999999" }}
+              onClick={() => {
+                setMenu_opened((prev) => !prev);
+              }}
+            >
+              <img style={{ height: "100%" }} src="/Buttons/Menu.svg"></img>
+            </a>
+            <Mobile_menu menu_opened={menu_opened}></Mobile_menu>
+          </>
         )}
       </Styled.MenuContainer>
     </Styled.Fixed>

@@ -5,6 +5,8 @@ export const FirstSlideContainer = styledComponents.div`
     margin:auto;
     display:flex;
     gap:3rem;
+    padding:3rem;
+    border-radius:12px;
 
     >div{
         width:25%;
@@ -26,4 +28,33 @@ export const FirstSlideContainer = styledComponents.div`
 
         
     }
+
+    ${(props) =>
+      props.active === 2
+        ? `background-color:var(--blue);
+          span,h4{
+          color:white;
+          }
+          .quote{
+              filter:invert(1);
+          }
+          h2:nth-child(3){
+              color:white;
+          }`
+        : ""}
+  
+  
+          ${(props) =>
+            props.active === 4
+              ? `background-color:var(--blue);
+                span,h4{
+                color:white;
+                }
+                .quote{
+                    filter:invert(1);
+                }
+                h2:nth-child(4){
+                    color:white;
+                }`
+              : ""}
 `;

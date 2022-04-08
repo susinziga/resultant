@@ -21,11 +21,7 @@
   background: #555;
 }
 
-html,
-body {
-  margin: 0;
-  font-family: sans-serif;
-}
+
 
 .vertical-section {
   height: 100vh;

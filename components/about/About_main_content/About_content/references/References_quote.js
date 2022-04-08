@@ -47,18 +47,21 @@ const References_quote = ({ isActive }) => {
   return (
     <Waypoint
       scrollableAncestor={"window"}
-      topOffset="30%"
+      topOffset="10%"
       bottomOffset={"50%"}
       onEnter={() => {
         setContentSwiperActive(4);
       }}
       onLeave={(a) => {
-        if ((a.currentPosition = "above")) setContentSwiperActive(5);
-        if ((a.currentPosition = "below")) setContentSwiperActive(3);
+        console.log(a);
+        if (a.currentPosition == "above") setContentSwiperActive(5);
+        if (a.currentPosition == "below") setContentSwiperActive(3);
       }}
     >
       <div id="test">
-        <References_quote_content></References_quote_content>
+        <References_quote_content
+          active={contentSwiperActive}
+        ></References_quote_content>
       </div>
     </Waypoint>
   );

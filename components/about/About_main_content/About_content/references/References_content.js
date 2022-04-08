@@ -119,7 +119,7 @@ const References_content = ({ isActive }) => {
       topOffset="10%"
       bottomOffset={"10%"}
       onEnter={() => {
-        setContentSwiperActive(5);
+        /*setContentSwiperActive(5);*/
       }}
     >
       <Container>

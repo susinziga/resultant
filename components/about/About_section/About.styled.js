@@ -86,7 +86,7 @@ export const AboutHeadingContainer = styledComponents.div`
 export const AboutText = styledComponents(BodyText3)`
     width:100%;
     @media screen and (min-width: 768px){
-        
+        font-size:1.5rem;
     }
   
 `;
