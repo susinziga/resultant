@@ -16,6 +16,7 @@ const Mobile_menu = ({ menu_opened }) => {
   useEffect(() => {
     let tl = gsap.timeline({ paused: true });
     tl.to(".mobile_nav_menu", { transform: "translateX(0)" });
+    tl.to("#hamburger_icon", { filter: "invert(1)", duration: 0.5 }, 0.1);
     tl.to(".mobile_nav1", { transform: "translateX(0)" }, 0.1);
     tl.to(".mobile_nav2", { transform: "translateX(0)" }, 0.2);
     tl.to(".mobile_nav3", { transform: "translateX(0)" }, 0.3);

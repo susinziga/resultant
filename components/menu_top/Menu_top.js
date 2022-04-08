@@ -243,7 +243,11 @@ const Menu_top = ({}) => {
                 setMenu_opened((prev) => !prev);
               }}
             >
-              <img style={{ height: "100%" }} src="/Buttons/Menu.svg"></img>
+              <img
+                style={{ height: "100%" }}
+                src="/Buttons/Menu.svg"
+                id="hamburger_icon"
+              ></img>
             </a>
             <Mobile_menu menu_opened={menu_opened}></Mobile_menu>
           </>
