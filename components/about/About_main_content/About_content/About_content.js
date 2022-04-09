@@ -49,22 +49,18 @@ const About_content = ({ initAnim, isActive }) => {
 
   useEffect(() => {
     if (initAnim) {
-      {
-        isDesktop()
-          ? () => {
-              gsap.to(document.getElementById("content_box"), {
-                transform: "translateX(0)",
-                duration: 1,
-                delay: 1,
-              });
-              gsap.to(document.getElementById("about_box"), {
-                overflowX: "unset",
+      if (isDesktop()) {
+        gsap.to(document.getElementById("content_box"), {
+          transform: "translateX(0)",
+          duration: 1,
+          delay: 1,
+        });
+        gsap.to(document.getElementById("about_box"), {
+          overflowX: "unset",
 
-                duration: 0,
-                delay: 2,
-              });
-            }
-          : "";
+          duration: 0,
+          delay: 2,
+        });
       }
     }
   }, [initAnim]);

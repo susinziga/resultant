@@ -27,65 +27,55 @@ const About_sidebar = ({ initAnim }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    {
-      !isDesktop()
-        ? () => {
-            gsap.to(
-              navAnimation.current,
+    if (!isDesktop()) {
+      gsap.to(
+        navAnimation.current,
 
-              {
-                background: "transparent",
-                duration: 0,
-                delay: 0,
-              }
-            );
+        {
+          background: "transparent",
+          duration: 0,
+          delay: 0,
+        }
+      );
 
-            gsap.to(".sidebar", {
-              transform: " scale(1) translateX(0) ",
-              lineHeight: "4.5rem",
-              opacity: 1,
-              duration: 0,
-              delay: 0,
-            });
-          }
-        : "";
+      gsap.to(".sidebar", {
+        transform: " scale(1) translateX(0) ",
+        lineHeight: "4.5rem",
+        opacity: 1,
+        duration: 0,
+        delay: 0,
+      });
     }
   }, []);
 
   useEffect(() => {
     if (initAnim === true) {
-      {
-        isDesktop
-          ? () => {
-              document
-                .getElementsByTagName("body")[0]
-                .classList.add("is-loading");
-              console.log("ANIMATION");
+      if (isDesktop()) {
+        document.getElementsByTagName("body")[0].classList.add("is-loading");
+        console.log("ANIMATION");
 
-              gsap.to(
-                navAnimation.current,
+        gsap.to(
+          navAnimation.current,
 
-                {
-                  background: "transparent",
-                  duration: 1,
-                  delay: 1,
-                }
-              );
+          {
+            background: "transparent",
+            duration: 1,
+            delay: 1,
+          }
+        );
 
-              gsap.to(".sidebar", {
-                transform: " scale(1) translateX(0) ",
-                lineHeight: "4.5rem",
-                opacity: 1,
-                duration: 2,
-                delay: 0,
-                onComplete: () => {
-                  document
-                    .getElementsByTagName("body")[0]
-                    .classList.remove("is-loading");
-                },
-              });
-            }
-          : "";
+        gsap.to(".sidebar", {
+          transform: " scale(1) translateX(0) ",
+          lineHeight: "4.5rem",
+          opacity: 1,
+          duration: 2,
+          delay: 0,
+          onComplete: () => {
+            document
+              .getElementsByTagName("body")[0]
+              .classList.remove("is-loading");
+          },
+        });
       }
     }
   }, [initAnim]);
