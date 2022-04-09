@@ -4,18 +4,20 @@ export const FirstSlideContainer = styled.div`
   width: var(--width-90);
   margin: auto;
   display: flex;
-  gap: 3rem;
-  padding: 3rem;
+  gap: 1rem;
+  padding: 3rem 1.5rem;
   border-radius: 12px;
 
   > div {
-    width: 25%;
+    width: 20%;
   }
   > span {
-    width: 75%;
+    width: 80%;
   }
 
   @media (min-width: 768px) {
+    gap: 3rem;
+    padding: 3rem;
     > div {
       width: 20%;
     }
