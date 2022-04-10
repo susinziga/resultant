@@ -13,6 +13,7 @@ const Pillars_dnla = (props) => {
   const { t, lang } = useTranslation();
 
     const heading = t("dnla:dnla_pillarHeading");
+    const button = t("dnla:dnla_buttonTextPillar");
   const pillarsContentBot = [
     { title: t("dnla:dnla_pillarTitle1"), text: t("dnla:dnla_pillarText1") },
     { title: t("dnla:dnla_pillarTitle2"), text: t("dnla:dnla_pillarText2") },
@@ -67,7 +68,7 @@ const Pillars_dnla = (props) => {
         </Styled.PillarsFlex2>
         </Styled.PillarsFlex>
         <Styled.ButtonContainer>
-          <Button primary style={{padding: "20px 80px", fontSize: "1.4rem"}}>Želim preveriti ponudbo</Button>
+          <Button primary style={{padding: "20px 80px", fontSize: "1.4rem"}}>{button}</Button>
       </Styled.ButtonContainer>
     </Styled.PillarsContainer>
   ) : (
@@ -85,7 +86,7 @@ const Pillars_dnla = (props) => {
         );
       })}
       <Styled.ButtonContainer>
-          <Button primary style={{padding: "15px 50px"}}>Želim preveriti ponudbo</Button>
+          <Button primary style={{padding: "15px 50px"}}>{button}</Button>
       </Styled.ButtonContainer>
     </Styled.PillarsContainer_mobile>
   );

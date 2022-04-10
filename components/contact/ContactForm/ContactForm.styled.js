@@ -5,7 +5,7 @@ export const ContactContainer = styledComponents.div`
     margin:auto;
 
     @media only screen and (min-width: 768px) {
-        width: 60%;
+        width: 55%;
         margin-top: 0;
         padding: 0 7.5%;
         padding-top: 2.5%;
@@ -45,11 +45,12 @@ export const TextareaContainer = styledComponents.div`
     margin-bottom: 15%;
 
     @media only screen and (min-width: 768px) {
-      height: 100px;
+      height: 120px;
     }
 
     @media only screen and (min-width: 1600px) {
-        height: 250px;
+        margin-bottom: 10%;
+        height: 200px;
     }
 `
 
@@ -64,7 +65,7 @@ export const FormContainer = styledComponents.form`
 `
 export const SubmitButton = styledComponents.input`
     font-size:2rem;
-    padding: 3% 45%;
+    padding: 2.5% 40%;
     cursor:pointer;
     border: none;
     margin: auto;
@@ -79,12 +80,13 @@ export const SubmitButton = styledComponents.input`
 
     @media only screen and (min-width: 768px) {
         font-size:1.5rem;
-        padding: 2.5% 44%;
+        padding: 2.5% 40%;
         margin-top: 2.5%;
     }
 
     @media only screen and (min-width: 992px) {
         margin-top: 0%;
+        padding: 2.5% 44%;
     }
 
     @media only screen and (min-width: 1600px) {

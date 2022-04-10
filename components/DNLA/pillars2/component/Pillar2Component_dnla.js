@@ -50,7 +50,7 @@ const Pillars2_component = ({ title, text, button }) => {
         <Styled.PillarText>{text}</Styled.PillarText>
       </p>
       <Styled.ButtonContainer>
-        <Button secondary>{button}</Button>
+        {/*<Button secondary>{button}</Button>*/}
       </Styled.ButtonContainer>
     </Styled.PillarComponentContainer>
   );

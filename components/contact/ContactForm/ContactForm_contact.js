@@ -20,7 +20,7 @@ const ContactForm_contact = () => {
         {
           inputProps.map((input) => {
             return(<>
-              <Input id="desktop" props={input} style={{marginBottom: "5%", fontSize: "1.5rem"}}></Input>
+              <Input id="desktop" props={input} style={{marginBottom: "3%", fontSize: "1.2rem"}}></Input>
               </>
             )
           })
