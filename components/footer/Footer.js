@@ -19,7 +19,7 @@ const Footer = () => {
             </Styled.ContactIconContainer>
             <Styled.ContactIconContainer>
               <Styled.ContactIcon src="/Footer/-email.png"></Styled.ContactIcon>
-              <Styled.ContactLink>roman.klaric@resultant.si</Styled.ContactLink>
+              <Styled.ContactLink>info@resultant.si</Styled.ContactLink>
             </Styled.ContactIconContainer>
           </Styled.ContactsFooterContainer>
         </Styled.UpperFooterContainer>
@@ -31,14 +31,19 @@ const Footer = () => {
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
         <Styled.Combine>
-          <Styled.Link className="desktop">Izdelala Agencija Statera</Styled.Link>
+          <Styled.Link className="desktop">
+            Izdelala Agencija Statera
+          </Styled.Link>
           <Styled.LinkFooterContainer>
             <Styled.Link>Piškotki</Styled.Link>
             <Styled.Link>Podpora strankam</Styled.Link>
             <Styled.Link>Pravilnik o zasebnosti</Styled.Link>
-            <Styled.Link className="mobile">Izdelala Agencija Statera</Styled.Link>
-            <Styled.Link>&copy; 2022 Resultant | Vse pravice pridržane</Styled.Link>
-            
+            <Styled.Link className="mobile">
+              Izdelala Agencija Statera
+            </Styled.Link>
+            <Styled.Link>
+              &copy; 2022 Resultant | Vse pravice pridržane
+            </Styled.Link>
           </Styled.LinkFooterContainer>
         </Styled.Combine>
       </Styled.FooterContainer>

@@ -5,7 +5,7 @@ display:flex;
 flex-direction:column-reverse;
 
 //border:1px solid black;
-width:80%;
+width:90%;
 margin:auto;
 
 gap:4rem;
@@ -22,7 +22,7 @@ gap:4rem;
 
 @media(min-width:768px){
     flex-direction:row;
-    gap:10rem;
+    gap:8rem;
     >img{
     width:40%;
     height:100%;
@@ -49,7 +49,7 @@ export const TeamSliderFlex = styledComponents.div`
 
 @media(min-width:768px){
    
-    width:35%;
+    width:60%;
     justify-content:center;
 
 }

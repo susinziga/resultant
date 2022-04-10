@@ -8,7 +8,7 @@ import {
 
 export const AboutContainer = styledComponents.div`
     
-
+height:fit-content;
     display:flex;
     flex-direction:column-reverse;
 

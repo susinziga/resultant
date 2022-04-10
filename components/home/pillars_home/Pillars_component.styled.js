@@ -14,7 +14,7 @@ export const PillarComponentContainer = styled.div`
 
   margin: 0.5%;
 
-  padding: 5%;
+  padding: 2% 5%;
 
   display: flex;
   flex-direction: column;

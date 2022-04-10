@@ -66,9 +66,9 @@ const Mobile_menu = ({ menu_opened }) => {
           {t("nav_item2")}
         </Button>
         <Mobile_menu_dropdown opened={subMenuOpened}></Mobile_menu_dropdown>
-        <Button className="nav_item mobile_nav4" terciary>
+        {/*<Button className="nav_item mobile_nav4" terciary>
           {t("nav_item3")}
-        </Button>
+        </Button>*/}
         <Button href="/contact" primary className="contact mobile_nav5">
           {t("nav_item4")}
         </Button>

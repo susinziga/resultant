@@ -9,6 +9,8 @@ import {
 } from "./Approach.styled";
 import useTranslation from "next-translate/useTranslation";
 
+import { useRouter } from "next/router";
+
 const Approach_component = (props) => {
   const { t, lang } = useTranslation();
 
@@ -16,6 +18,8 @@ const Approach_component = (props) => {
   const textUpper = t("home:paragraph1_approach");
   const textLower = t("home:paragraph2_approach");
   const buttonText = t("common:button_moreMore");
+
+  const { locale } = useRouter();
 
   return (
     <>
@@ -28,7 +32,9 @@ const Approach_component = (props) => {
           <p style={{ marginBottom: "8%" }}>
             <BodyText2>{textLower}</BodyText2>
           </p>
-          <Button secondary>{buttonText}</Button>
+          <Button secondary href={"/" + locale + "/about#approach"}>
+            {buttonText}
+          </Button>
         </ApproachTextContainer>
         <ApproachImage src="./Home/homeApproachImage.png"></ApproachImage>
       </ApproachContainer>

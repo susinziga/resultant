@@ -63,3 +63,26 @@
 .is-loading{
   overflow-y: hidden;
 }
+
+
+.drop-button:hover +  #ddown{
+  display:flex;
+}
+
+.drop-button.dropdown-content:hover{
+  display:flex;
+}
+
+.drop-button.par{
+  display:table;
+  height: 100%;
+
+  
+  
+}
+.drop-button.par > *
+{cursor: pointer;}
+.drop-button.par >div{
+display: table-cell;
+vertical-align: middle;
+}

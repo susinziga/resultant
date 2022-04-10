@@ -9,8 +9,10 @@ import {
 } from "./Contact.styled";
 import useTranslation from "next-translate/useTranslation";
 import useSize from "../../../custom_hooks/useSize";
+import { useRouter } from "next/router";
 
 const Contact_home = (props) => {
+  const { locale } = useRouter();
   const { t, lang } = useTranslation();
 
   const title = t("home:title_contact");
@@ -22,19 +24,27 @@ const Contact_home = (props) => {
   return (
     <>
       <ContactContainer {...props}>
-        {isDesktop() ? <ContactImage src="./Home/Stik.png"></ContactImage> : ""}
+        {isDesktop() ? <ContactImage src="/Home/Stik.png"></ContactImage> : ""}
         <ContactTextContainer>
           <ContactHeading>{title}</ContactHeading>
           <p style={{ marginBottom: "8%" }}>
             <BodyText2>{text}</BodyText2>
           </p>
-          <Button className='mobile' secondary>{buttonText}</Button>
+          <Button className="mobile" secondary>
+            {buttonText}
+          </Button>
           {!isDesktop() ? (
-            <ContactImage src="./Home/Stik.png"></ContactImage>
+            <ContactImage src="/Home/Stik.png"></ContactImage>
           ) : (
             ""
           )}
-          <Button className='desktop' secondary>{buttonText}</Button>
+          <Button
+            className="desktop"
+            secondary
+            href={"/" + locale + "/about#team"}
+          >
+            {buttonText}
+          </Button>
         </ContactTextContainer>
       </ContactContainer>
     </>

@@ -7,6 +7,6 @@ display:flex;
 flex-direction:column;
 gap:5rem;
 @media(min-width:768px){
-    gap:3rem;
+    gap:8rem;
 }
 `;

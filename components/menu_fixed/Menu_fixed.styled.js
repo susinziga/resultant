@@ -4,17 +4,18 @@ import { Title1 } from "../../basic_components/texts/Texts";
 
 export const MenuFixedContainer = styled.div`
   min-height: 8rem;
-  width: var(--width-80);
+  width: 70%;
   margin: auto;
 
   display: flex;
 
-  justify-content: space-between;
+  justify-content: space-around;
 
   align-items: center;
 `;
 
 export const MenuItem = styled(Title1)`
+  font-size: 2rem;
   padding-bottom: 1rem;
   color: var(--light-grey);
 

@@ -1,8 +1,13 @@
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
+import { useRouter } from "next/router";
 
 const Menu_dropdown = () => {
   const { t } = useTranslation("pillars");
+
+  const { locale } = useRouter();
+
+  console.log(locale);
 
   React.useEffect(() => {
     window.onclick = function (event) {
@@ -40,10 +45,10 @@ const Menu_dropdown = () => {
 
   return (
     <>
-      <Container className="dropdown-content drop-button" id="ddown">
+      <Container className="dropdown-content drop-button " id="ddown">
         {pillars.map(({ title, link }, id) => {
           return (
-            <a href={link}>
+            <a href={"/" + locale + link}>
               <Dropdown_item key={id}>{title}</Dropdown_item>
             </a>
           );
@@ -65,7 +70,7 @@ const Container = styled.div`
   border-radius: 12px;
   position: absolute;
   left: -50%;
-  bottom: 0;
+  bottom: 5%;
   transform: translateY(100%);
 
   &.show {
@@ -74,13 +79,13 @@ const Container = styled.div`
 
   @media (min-width: 768px) {
     left: -30%;
-    bottom: 0;
+    bottom: 5%;
     transform: translateY(100%);
   }
 
   @media (min-width: 992px) {
     left: -50%;
-    bottom: 0;
+    bottom: 5%;
     transform: translateY(100%);
   }
 `;

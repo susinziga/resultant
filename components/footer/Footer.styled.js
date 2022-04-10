@@ -6,7 +6,7 @@ export const FooterContainer = styledComponents.div`
     background-color: var(--footer-color);
     height: 800px;
     padding-top: 65%;
-    margin-top: 20%;
+    margin-top: 10%;
 
     @media only screen and (max-width: 350px) {
         height: 700px;
@@ -189,7 +189,6 @@ export const SocialLink = styledComponents.a`
         width: 5%;
     }
 `;
-
 
 export const Social = styledComponents.img`
   width: 80%;

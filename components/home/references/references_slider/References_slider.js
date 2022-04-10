@@ -18,7 +18,7 @@ const References_slider = ({ references }) => {
   };
 
   const slide = () => {
-    swip.slideNext(6000);
+    swip.slideNext(3000);
   };
 
   const slideBack = () => {
@@ -29,7 +29,7 @@ const References_slider = ({ references }) => {
     <Styled.Container>
       <Swiper
         breakpoints={{
-          0: { slidesPerView: 1.5, centeredSlides: true },
+          0: { slidesPerView: 1.5, slidesPerGroup: 1, centeredSlides: true },
           768: {
             slidesPerView: 7,
             slidesPerGroup: 7,
@@ -37,8 +37,6 @@ const References_slider = ({ references }) => {
         }}
         loop={true}
         spaceBetween={50}
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => (swip = swiper)}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>
         {references.map((ref, id) => (

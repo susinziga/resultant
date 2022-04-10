@@ -14,7 +14,7 @@ import * as Styled from "./Button.styled";
 
 const Button = (props) => {
   return (
-    <div>
+    <div {...props}>
       <Styled.ButtonContainer {...props}>
         {props.children}
       </Styled.ButtonContainer>

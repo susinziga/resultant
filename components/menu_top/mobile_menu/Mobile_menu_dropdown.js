@@ -1,9 +1,12 @@
 import useTranslation from "next-translate/useTranslation";
 import React from "react";
 import { BodyText4 } from "../../../basic_components/texts/Texts";
+import { useRouter } from "next/router";
 
 const Mobile_menu_dropdown = ({ opened }) => {
   const { t } = useTranslation("pillars");
+
+  const { locale } = useRouter();
 
   const pillars = [
     {
@@ -29,7 +32,7 @@ const Mobile_menu_dropdown = ({ opened }) => {
       <Container opened={opened}>
         {pillars.map(({ title, link }, id) => {
           return (
-            <a href={link} key={id}>
+            <a href={"/" + locale + link} key={id}>
               <Dropdown_item>{title}</Dropdown_item>
             </a>
           );

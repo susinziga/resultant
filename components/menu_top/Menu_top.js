@@ -5,8 +5,6 @@ import * as Styled from "./Menu_top.styled";
 import gsap from "gsap";
 import useTranslation from "next-translate/useTranslation";
 
-import Link from "next/link";
-import Button from "../../basic_components/button/Button";
 import Menu_list from "./menu_list/Menu_list";
 
 import { useRouter } from "next/router";
@@ -22,7 +20,7 @@ const Menu_top = ({}) => {
 
   const MenuAnimation = useRef(null);
 
-  const { asPath, pathname } = useRouter();
+  const { asPath, pathname, locale } = useRouter();
 
   const [size, setSize] = useState([]);
 
@@ -209,11 +207,11 @@ const Menu_top = ({}) => {
       <Styled.MenuContainer display={navState <= 0}>
         <Styled.LogoContainer>
           {" "}
-          <a href="/"></a>
+          <a href={"/" + locale}></a>
           <img
             id="logo"
             ref={(el) => (LogoAnimation = el)}
-            src="/Logo/logo1.svg"
+            src={t("logo_link")}
           ></img>
           {/*<object
             type="application/x-shockwave-flash"
@@ -222,7 +220,7 @@ const Menu_top = ({}) => {
             width="300"
             height="300"
   ></object>*/}
-          <a href="/">
+          <a href={"/" + locale}>
             <img
               id="letter"
               ref={(el) => (letterAnimation = el)}
