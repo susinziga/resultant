@@ -10,13 +10,13 @@ export const HeadingContainer = styledComponents.div`
    
 
     @media only screen and (min-width: 768px) {
-        padding-top: 20%;
-        margin-bottom: 10%;
+        padding-top: 15%;
+        margin-bottom: 7.5%;
         
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 10%;
+        padding-top: 7.5%;
     }
 
     @media only screen and (min-width: 1600px) {

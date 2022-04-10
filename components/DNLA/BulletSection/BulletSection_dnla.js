@@ -1,11 +1,9 @@
 import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import {
-  ArrowContainer,
+
   Bullet,
-  Button,
-  ButtonContainer,
-  DesktopTitle,
+ 
   ExperienceContainer,
   ExperienceTitle,
   FlexDesktop,
@@ -51,7 +49,7 @@ const BulletSection_dnla = (props) => {
             <FlexHeadingContainer>
                 <ExperienceTitle>{header}</ExperienceTitle>
                 <ControlContainer>
-                <Subtext>{subheading}</Subtext>
+                  <Subtext style={{fontWeight: "1000 !important"}}>{subheading}</Subtext>
                 </ControlContainer>
             </FlexHeadingContainer>
           <FlexDesktopText>

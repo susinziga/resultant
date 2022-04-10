@@ -16,7 +16,7 @@ export const ToolsContainer = styledComponents.div`
     }
 
     @media (min-width:992px) {
-   
+        margin-bottom: 5%;
    
     }
     @media (min-width:1600px) {

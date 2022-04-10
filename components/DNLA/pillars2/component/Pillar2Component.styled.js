@@ -14,7 +14,7 @@ export const PillarComponentContainer = styledComponents.div`
 
         @media (min-width:992px) {
     
-            max-height: 450px;
+            max-height: 500px;
         }
 
         @media (min-width:1600px) {

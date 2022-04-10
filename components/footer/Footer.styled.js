@@ -22,6 +22,7 @@ export const FooterContainer = styledComponents.div`
     @media only screen and (min-width: 992px) {
         height: 550px;
         padding-top: 0;
+        margin-top: 10%;
     }
 
     @media only screen and (min-width: 1600px) {

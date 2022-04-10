@@ -70,9 +70,10 @@ margin-bottom: 10%;
     
     }
 `
-export const Subtext = styledComponents(BodyText3)`
+export const Subtext = styledComponents.p`
     font-weight: bold !important;
     font-size: 1.2rem;
+    font-family: "Neusa"; 
     
     
     @media only screen and (min-width: 768px) {
@@ -80,7 +81,7 @@ export const Subtext = styledComponents(BodyText3)`
     }
 
     @media only screen and (min-width: 992px) {
-        padding-right: 30%;
+        padding-right: 15%;
         font-size: 1.2rem;
     }
 

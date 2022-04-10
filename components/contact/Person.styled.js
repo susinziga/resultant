@@ -66,6 +66,9 @@ export const Heading = styledComponents(Title1)`
     @media only screen and (min-width: 768px) {
         font-size: 2.5rem;
     }
+    @media only screen and (min-width: 992px) {
+        font-size: 2.5rem;
+    }
 `
 
 
@@ -77,6 +80,7 @@ export const SubHeading = styledComponents(Title2)`
     @media only screen and (min-width: 768px) {
         font-size: 1.5rem;
     }
+
 `
 
 export const ContactContainer = styledComponents.div`
@@ -133,6 +137,14 @@ export const InfoFooterHeading = styledComponents.h2`
     font-family: "Neusa";
     font-weight: bold;
     font-size: 2.5rem;
+
+    @media only screen and (min-width: 768px) {
+        font-size: 2.2rem;
+    }
+
+    @media only screen and (min-width: 992px) {
+        font-size: 2.5rem;
+    }
 `;
 
 export const ContactFooterContainer = styledComponents.div`
