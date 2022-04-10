@@ -20,7 +20,7 @@ const Menu_list = ({ state }) => {
       <Button href={"/" + locale + "/about"} className="nav_item" terciary>
         {t("nav_item1")}
       </Button>
-      <div className="drop-button par">
+      <div className="drop-button par" style={{ marginRight: "1.8rem" }}>
         <Button
           className="nav_item drop-button"
           terciary

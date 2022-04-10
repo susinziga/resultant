@@ -60,6 +60,7 @@ const Mobile_menu = ({ menu_opened }) => {
           terciary
           arrowDown
           onClick={() => {
+            console.log("OPEN");
             setSubMenuOpened((prev) => !prev);
           }}
         >
@@ -125,6 +126,10 @@ const Container = styled.div`
   .mobile_nav5 {
     transform: translateX(-100%);
     font-size: 2.5rem;
+  }
+
+  .mobile_nav3 img {
+    filter: invert(1);
   }
 `;
 

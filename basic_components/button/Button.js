@@ -15,7 +15,7 @@ import * as Styled from "./Button.styled";
 const Button = (props) => {
   return (
     <div {...props}>
-      <Styled.ButtonContainer {...props}>
+      <Styled.ButtonContainer {...props} onClick={() => {}}>
         {props.children}
       </Styled.ButtonContainer>
       {props.arrow ? (
