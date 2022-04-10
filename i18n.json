@@ -13,7 +13,8 @@
     "/storitve/siok": ["service1", "footer"],
     "/support": ["support", "footer"],
     "/privacy": ["privacy", "footer"],
-    "/storitve/dnla": ["dnla", "footer"]
+    "/storitve/dnla": ["dnla", "footer"],
+    "/dnlaArticle1": ["article1"]
     
   }
 }
