@@ -5,9 +5,12 @@ import * as Styled from "./About_sidebar.styled";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
 import { AboutContext } from "../../../../context/aboutContext";
+import useSize from "../../../../custom_hooks/useSize";
 
 const About_sidebar = ({ initAnim }) => {
   const { t, lang } = useTranslation();
+
+  const { isDesktop } = useSize();
 
   const lineAnimation = useRef(null);
   const navAnimation = useRef(null);
@@ -24,17 +27,14 @@ const About_sidebar = ({ initAnim }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    if (initAnim === true) {
-      document.getElementsByTagName("body")[0].classList.add("is-loading");
-      console.log("ANIMATION");
-
+    if (!isDesktop()) {
       gsap.to(
         navAnimation.current,
 
         {
           background: "transparent",
-          duration: 1,
-          delay: 1,
+          duration: 0,
+          delay: 0,
         }
       );
 
@@ -42,14 +42,41 @@ const About_sidebar = ({ initAnim }) => {
         transform: " scale(1) translateX(0) ",
         lineHeight: "4.5rem",
         opacity: 1,
-        duration: 2,
+        duration: 0,
         delay: 0,
-        onComplete: () => {
-          document
-            .getElementsByTagName("body")[0]
-            .classList.remove("is-loading");
-        },
       });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (initAnim === true) {
+      if (isDesktop()) {
+        document.getElementsByTagName("body")[0].classList.add("is-loading");
+        console.log("ANIMATION");
+
+        gsap.to(
+          navAnimation.current,
+
+          {
+            background: "transparent",
+            duration: 1,
+            delay: 1,
+          }
+        );
+
+        gsap.to(".sidebar", {
+          transform: " scale(1) translateX(0) ",
+          lineHeight: "4.5rem",
+          opacity: 1,
+          duration: 2,
+          delay: 0,
+          onComplete: () => {
+            document
+              .getElementsByTagName("body")[0]
+              .classList.remove("is-loading");
+          },
+        });
+      }
     }
   }, [initAnim]);
 
@@ -72,9 +99,13 @@ const About_sidebar = ({ initAnim }) => {
       <Styled.Sidebar_title
         onClick={() => {
           setContentSwiperActive(1);
-          document
-            .getElementById("team")
-            .scrollIntoView({ behavior: "smooth" });
+          window.scrollBy({
+            top:
+              document.getElementById("team").getBoundingClientRect().top -
+              window.innerHeight / 5,
+
+            behavior: "smooth",
+          });
         }}
         className="sidebar"
         selected={contentSwiperActive === 1}
@@ -84,9 +115,13 @@ const About_sidebar = ({ initAnim }) => {
       <Styled.Sidebar_title
         onClick={() => {
           setContentSwiperActive(2);
-          document
-            .getElementById("partners")
-            .scrollIntoView({ behavior: "smooth" });
+          window.scrollBy({
+            top:
+              document.getElementById("partners").getBoundingClientRect().top -
+              window.innerHeight / 5,
+
+            behavior: "smooth",
+          });
         }}
         className="sidebar"
         selected={contentSwiperActive === 2 || contentSwiperActive === 3}
@@ -96,9 +131,14 @@ const About_sidebar = ({ initAnim }) => {
       <Styled.Sidebar_title
         onClick={() => {
           setContentSwiperActive(4);
-          document
-            .getElementById("references")
-            .scrollIntoView({ behavior: "smooth" });
+          window.scrollBy({
+            top:
+              document.getElementById("references").getBoundingClientRect()
+                .top -
+              window.innerHeight / 5,
+
+            behavior: "smooth",
+          });
         }}
         className="sidebar"
         selected={contentSwiperActive === 4 || contentSwiperActive === 5}

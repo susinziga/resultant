@@ -4,7 +4,13 @@ export const MenuList = styledComponents.div`
     display:flex;
     align-items:center;
 
-    gap:1rem;
+    gap:0.1rem;
+
+    position:relative;
+
+    @media (min-width: 992px) {
+   gap:1rem;
+    }
     
    
     

@@ -63,8 +63,8 @@ display:flex;
     flex-direction:column;
     position:absolute;
     top:5%;
-    left:10%;
-    width:85%;
+    left:5%;
+    width:90%;
     > *
     {
         margin-bottom:2.5rem;

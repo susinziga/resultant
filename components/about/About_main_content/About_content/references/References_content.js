@@ -89,13 +89,9 @@ const References_content = ({ isActive }) => {
   let isScrolling = Date.now();
 
   const preventDefault = (e) => {
-    console.log(Date.now());
-    console.log(isScrolling);
     if (isActive) {
       e.preventDefault();
       if (Date.now() - 500 > isScrolling) {
-        console.log(isActive);
-
         if (e.deltaY < 0) {
           /*document.getElementById("content_box").scrollBy(0, e.deltaY);*/
           document
@@ -119,7 +115,7 @@ const References_content = ({ isActive }) => {
       topOffset="10%"
       bottomOffset={"10%"}
       onEnter={() => {
-        setContentSwiperActive(5);
+        /*setContentSwiperActive(5);*/
       }}
     >
       <Container>
@@ -140,7 +136,6 @@ const References_content = ({ isActive }) => {
           <Swiper slidesPerView={1.5} centeredSlides="true" loop={true}>
             {references.map((ref, id) => {
               return ref.map((ref1) => {
-                console.log(ref1);
                 return (
                   <SwiperSlide>
                     <References_item reference={ref1}></References_item>

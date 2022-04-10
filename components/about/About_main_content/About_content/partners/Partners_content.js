@@ -57,21 +57,11 @@ const Partners_content = ({ isActive }) => {
   };
 
   return (
-    <Waypoint
-      scrollableAncestor={"window"}
-      topOffset="40%"
-      bottomOffset={"30%"}
-      onEnter={() => {
-        /*setContentSwiperActive(3);
-        console.log("enter");*/
-      }}
-    >
-      <Styled.Partners_container>
-        {partners.map((partner, id) => {
-          return <Partner_item key={id} partner={partner}></Partner_item>;
-        })}
-      </Styled.Partners_container>
-    </Waypoint>
+    <Styled.Partners_container>
+      {partners.map((partner, id) => {
+        return <Partner_item key={id} partner={partner}></Partner_item>;
+      })}
+    </Styled.Partners_container>
   );
 };
 

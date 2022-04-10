@@ -17,7 +17,7 @@ export const About_main_content_container = styledComponents.div`
   
     
     ${(props) => (props.active === 1 ? "background-color:#F9F4F0;" : "")}
-    ${(props) =>
+    /*${(props) =>
       props.active === 2
         ? `background-color:var(--blue);
         span,h4{
@@ -44,5 +44,5 @@ export const About_main_content_container = styledComponents.div`
               h2:nth-child(4){
                   color:white;
               }`
-            : ""}
+            : ""}*/
 `;

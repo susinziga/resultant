@@ -63,7 +63,9 @@ const Partners_quote = ({ isActive, title }) => {
             {title}
           </Title2>
         )}
-        <Partners_quote_content></Partners_quote_content>
+        <Partners_quote_content
+          active={contentSwiperActive}
+        ></Partners_quote_content>
       </div>
     </Waypoint>
   );

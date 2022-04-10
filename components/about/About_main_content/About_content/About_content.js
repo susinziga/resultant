@@ -13,11 +13,14 @@ import Partners_content from "./partners/Partners_content";
 import References_quote from "./references/References_quote";
 import References_content from "./references/References_content";
 import useTranslation from "next-translate/useTranslation";
+import useSize from "../../../../custom_hooks/useSize";
 
 const About_content = ({ initAnim, isActive }) => {
   const contentAnimation = useRef(null);
 
   const { t } = useTranslation("about");
+
+  const { isDesktop } = useSize();
 
   const nav_items = [
     t("nav_item1"),
@@ -27,18 +30,38 @@ const About_content = ({ initAnim, isActive }) => {
   ];
 
   useEffect(() => {
-    if (initAnim) {
+    console.log(isDesktop());
+
+    if (!isDesktop()) {
       gsap.to(document.getElementById("content_box"), {
         transform: "translateX(0)",
-        duration: 1,
-        delay: 1,
+        duration: 0,
+        delay: 0,
       });
       gsap.to(document.getElementById("about_box"), {
         overflowX: "unset",
 
         duration: 0,
-        delay: 2,
+        delay: 0,
       });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (initAnim) {
+      if (isDesktop()) {
+        gsap.to(document.getElementById("content_box"), {
+          transform: "translateX(0)",
+          duration: 1,
+          delay: 1,
+        });
+        gsap.to(document.getElementById("about_box"), {
+          overflowX: "unset",
+
+          duration: 0,
+          delay: 2,
+        });
+      }
     }
   }, [initAnim]);
 
