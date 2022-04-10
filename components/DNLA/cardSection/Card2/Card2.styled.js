@@ -5,7 +5,7 @@ import { BodyText1, BodyText2, Title2 } from "../../../../basic_components/texts
 export const CardContainer = styledComponents.div`
     width: 100%;
     margin: auto;
-    display: flex:
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     color: white;
@@ -16,11 +16,11 @@ export const CardContainer = styledComponents.div`
     border-radius: 12px;
 
     @media only screen and (min-width: 768px) {
-       
+        flex-direction: row;
     }
 
     @media only screen and (min-width: 992px) {
-        flex-direction: row-reverse;
+      
     }
 
     @media only screen and (min-width: 1600px) {
@@ -33,15 +33,16 @@ export const CardImage = styledComponents.img`
     
 
     @media only screen and (min-width: 768px) {
-       
+        width: 40%;
     }
 
     @media only screen and (min-width: 992px) {
-        width: 30%;
+        width: 40%;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        width: 25%;
+        height: 60%;
     }
 
 `
@@ -61,15 +62,19 @@ export const TextContainer = styledComponents.div`
     
 
     @media only screen and (min-width: 768px) {
-       
+        padding: 7.5% 5%;
+        margin-bottom: 0%;
+        margin: 0% auto;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        padding: 7.5% 5%;
+        margin-bottom: 0%;
+        margin: 0% auto;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        padding: 7% 5%;
     }
 
 `

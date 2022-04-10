@@ -6,6 +6,7 @@ export const CardSectionContainer = styledComponents.div`
     margin: auto;
     display: flex:
     flex-direction: column;
+    gap: 10%;
  
     margin-top: 15%;
 
@@ -14,7 +15,7 @@ export const CardSectionContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        
+        margin-top: 10%;
     }
 
     @media only screen and (min-width: 1600px) {

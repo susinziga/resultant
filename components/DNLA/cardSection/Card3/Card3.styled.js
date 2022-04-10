@@ -93,7 +93,8 @@ export const CardHeading = styledComponents(Title2)`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        margin-bottom: 5%;
+        font-size: 1.8rem;
     }
 
 `
@@ -130,6 +131,6 @@ export const Text = styledComponents(BodyText3)`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+       font-size: 1.2rem;
     }
 `;

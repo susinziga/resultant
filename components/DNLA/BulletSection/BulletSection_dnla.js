@@ -49,7 +49,7 @@ const BulletSection_dnla = (props) => {
             <FlexHeadingContainer>
                 <ExperienceTitle>{header}</ExperienceTitle>
                 <ControlContainer>
-                  <Subtext style={{fontWeight: "1000 !important"}}>{subheading}</Subtext>
+                  <Subtext>{subheading}</Subtext>
                 </ControlContainer>
             </FlexHeadingContainer>
           <FlexDesktopText>
