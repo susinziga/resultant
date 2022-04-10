@@ -112,7 +112,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           spaceBetween={50}
           slidesPerView={1.5}
           initialSlide={initSlide}
-          centeredSlides={true}
+          centeredSlides={false}
           direction={"horizontal"}
           className="mySwiper"
           autoHeight={true}

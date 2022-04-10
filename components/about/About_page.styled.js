@@ -5,7 +5,7 @@ export const About_page_container = styledComponents.div`
     overflow: hidden auto;
     max-height:100vh;*/
 
-    padding-top:10%;
+   
 
     >div{
         /*scroll-snap-align:start;*/

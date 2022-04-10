@@ -2,7 +2,6 @@ import styledComponents from "styled-components";
 
 import { Header2 } from "../../../basic_components/texts/Texts";
 
-
 export const PlanContainer = styledComponents.div`
     position: relative;
     width: 100%;
@@ -99,7 +98,6 @@ export const PlanTableLine = styledComponents.div`
     }
 `;
 
-
 export const PlanTableHeaderCon = styledComponents.div`
     width: 100%;
     
@@ -116,7 +114,6 @@ export const PlanTableHeaderCon = styledComponents.div`
        
     }
 `;
-
 
 export const PlanTableHeader = styledComponents(Header2)`
     
@@ -143,11 +140,8 @@ export const ButtonContainer = styledComponents.div`
     margin-bottom: 15%;
     
     ${(props) => {
-        return props.button
-          ? ``
-          
-          : `display: none;`;
-      }}
+      return props.button ? `` : `display: none;`;
+    }}
 
     
     @media only screen and (min-width: 768px) {
@@ -165,13 +159,14 @@ export const ButtonContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
      
     }
-`
+`;
 
 export const SubmitButton = styledComponents.a`
-    font-size:1.4rem;
-    padding: 5% 15%;
+    font-size:1.2rem;
+    padding: 10px 20px;
     cursor:pointer;
     border: none;
+    border-radius:31px;
     margin: auto;
     margin: 5% 0;
 
@@ -185,14 +180,14 @@ export const SubmitButton = styledComponents.a`
 
     @media only screen and (min-width: 768px) {
         font-size:1rem;
-        padding: 20% 10%;
-        border-radius: 0px;
+        padding: 10px 20px;
+       
        
     }
 
     @media only screen and (min-width: 992px) {
       
-        padding: 20% 25%;
+        padding: 10px 20px;
         margin: 0;
      
     }
@@ -201,8 +196,7 @@ export const SubmitButton = styledComponents.a`
         
     }
 
-`
-
+`;
 
 export const BackgroundVector = styledComponents.img`
    position: absolute;
@@ -228,4 +222,3 @@ export const BackgroundVector = styledComponents.img`
         top:-10%;
     }
 `;
-

@@ -1,6 +1,10 @@
 import styledComponents from "styled-components";
-import { BodyText1, Subtitle1, Title1, Title2} from "../../../basic_components/texts/Texts";
-
+import {
+  BodyText1,
+  Subtitle1,
+  Title1,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 
 export const HeadingContainer = styledComponents.div`
     width: 90%;
@@ -20,7 +24,7 @@ export const HeadingContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 1600px) {
-        padding-top: 10%;
+        padding-top: 5%;
     }
 `;
 
@@ -60,7 +64,6 @@ export const HeadingSeparator = styledComponents.div`
     }
 `;
 
-
 export const ImageSeparator = styledComponents.div`
 
 
@@ -77,7 +80,6 @@ export const ImageSeparator = styledComponents.div`
      
     }
 `;
-
 
 export const HeadingUpperHeading = styledComponents(BodyText1)`
 
@@ -117,8 +119,6 @@ export const HeadingHeading = styledComponents(Title1)`
  
 `;
 
-
-
 export const HeadingLine = styledComponents.div`
     height: 1px;
     width: 100%;
@@ -152,5 +152,3 @@ export const HeaderImage = styledComponents.img`
     }
   
 `;
-
-

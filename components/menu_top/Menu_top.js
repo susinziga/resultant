@@ -5,8 +5,6 @@ import * as Styled from "./Menu_top.styled";
 import gsap from "gsap";
 import useTranslation from "next-translate/useTranslation";
 
-import Link from "next/link";
-import Button from "../../basic_components/button/Button";
 import Menu_list from "./menu_list/Menu_list";
 
 import { useRouter } from "next/router";
@@ -22,7 +20,7 @@ const Menu_top = ({}) => {
 
   const MenuAnimation = useRef(null);
 
-  const { asPath, pathname } = useRouter();
+  const { asPath, pathname, locale } = useRouter();
 
   const [size, setSize] = useState([]);
 
@@ -49,9 +47,9 @@ const Menu_top = ({}) => {
   const [navState, setNavState] = useState(-1);
   useEffect(() => {}, []);
 
-  useEffect(() => {
-    window.addEventListener("wheel", handleScroll);
+  const [first, setFirst] = useState(false);
 
+  useEffect(() => {
     if (
       sessionStorage.getItem("animation") !== "true" &&
       isDesktop() &&
@@ -70,9 +68,9 @@ const Menu_top = ({}) => {
       );*/
       gsap.from(letterAnimation, {
         duration: 2,
-        top: "500%",
-        left: "30%",
-        scale: "17",
+        top: "900%",
+        left: "-700%",
+        scale: "35",
 
         delay: 1,
         pin: true,
@@ -85,13 +83,6 @@ const Menu_top = ({}) => {
             .getElementsByTagName("body")[0]
             .classList.remove("is-loading");
         },
-        /*onComplete: window.removeEventListener(
-          "wheel",
-          (e) => {
-            e.preventDefault();
-          },
-          { passive: false }
-        ),*/
       });
       gsap.from(LogoAnimation, {
         opacity: 0,
@@ -100,23 +91,26 @@ const Menu_top = ({}) => {
         delay: 2.5,
       });
 
-      /*gsap.to(letterAnimation, {
-      duration: 0.1,
-      opacity: 0,
-
-      delay: 2,
-    });*/
-
       gsap.from(MenuAnimation, {
         backgroundColor: "transparent",
         duration: 1,
 
         delay: 2.5,
+        onComplete: () => {
+          console.log("add event");
+          window.addEventListener("wheel", handleScroll);
+        },
       });
 
       gsap.from(MenuAnimation, { color: "white", duration: 1, delay: 1 });
+    } else {
+      if (first === true) {
+        window.addEventListener("wheel", handleScroll);
+      }
     }
+
     /*}*/
+    setFirst(true);
   }, [isDesktop()]);
 
   useEffect(() => {
@@ -124,6 +118,7 @@ const Menu_top = ({}) => {
   }, [navState]);
 
   const handleScroll = (e) => {
+    console.log("SKROLL");
     if (window.scrollY >= 50) {
       if (e.deltaY > 0) {
         setNavState(1);
@@ -140,9 +135,9 @@ const Menu_top = ({}) => {
       case 0: {
         gsap.to(letterAnimation, {
           duration: 0.5,
-          top: "-21%",
-          left: "57%",
-          scale: "0.5",
+          top: "0",
+          left: "0",
+          scale: "1",
         });
 
         gsap.to(LogoAnimation, {
@@ -166,15 +161,15 @@ const Menu_top = ({}) => {
       case 1: {
         gsap.to(letterAnimation, {
           duration: 0.5,
-          top: "0%",
-          left: "57%",
-          scale: "0.5",
+          top: "20%",
+          left: "0",
+          scale: "1",
         });
 
         gsap.to(LogoAnimation, {
           duration: 0.1,
 
-          opacity: "0",
+          opacity: 0,
           delay: 0.1,
         });
 
@@ -208,12 +203,11 @@ const Menu_top = ({}) => {
     >
       <Styled.MenuContainer display={navState <= 0}>
         <Styled.LogoContainer>
-          {" "}
-          <a href="/"></a>
+          <a href={"/" + locale}></a>
           <img
             id="logo"
             ref={(el) => (LogoAnimation = el)}
-            src="/Logo/logo1.svg"
+            src={t("logo_link")}
           ></img>
           {/*<object
             type="application/x-shockwave-flash"
@@ -222,13 +216,11 @@ const Menu_top = ({}) => {
             width="300"
             height="300"
   ></object>*/}
-          <a href="/">
+          <a href={"/" + locale}>
             <img
               id="letter"
               ref={(el) => (letterAnimation = el)}
-              width="300"
-              height="300"
-              src="/Logo/letter.svg"
+              src="/Logo/letter_.png"
             ></img>
           </a>
         </Styled.LogoContainer>

@@ -25,6 +25,24 @@ const Testimonials_home = (props) => {
       name: t("testimonial2_name"),
       role: t("testimonial2_role"),
     },
+    {
+      title: t("testimonial3_title"),
+      text: t("testimonial3_text"),
+      name: t("testimonial3_name"),
+      role: t("testimonial3_role"),
+    },
+    {
+      title: t("testimonial4_title"),
+      text: t("testimonial4_text"),
+      name: t("testimonial4_name"),
+      role: t("testimonial4_role"),
+    },
+    {
+      title: t("testimonial5_title"),
+      text: t("testimonial5_text"),
+      name: t("testimonial5_name"),
+      role: t("testimonial5_role"),
+    },
   ];
 
   const setInstance = (instance) => {

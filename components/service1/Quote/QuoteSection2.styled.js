@@ -38,7 +38,6 @@ export const QuoteImageContainer = styledComponents.div`
     }
 `;
 
-
 export const QuoteImage = styledComponents.img`
     width: 80%;
     float: right;
@@ -58,7 +57,6 @@ export const QuoteImage = styledComponents.img`
     }
 `;
 
-
 export const QuoteTextContainer = styledComponents.div`
     width: 65%;
     margin: 5% 0;
@@ -76,7 +74,6 @@ export const QuoteTextContainer = styledComponents.div`
     }
 `;
 
-
 export const QuoteText = styledComponents(BodyText1)`
     color: white;
     
@@ -91,7 +88,7 @@ export const QuoteText = styledComponents(BodyText1)`
      }
  
      @media only screen and (min-width: 1600px) {
-         font-size: 2.5rem;
+         font-size: 1.8rem;
       
      }
 `;

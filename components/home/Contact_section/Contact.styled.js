@@ -67,7 +67,7 @@ export const ContactImage = styledComponents.img`
   
 
   @media screen and (min-width: 768px){
-    width:45%;
+    width:35%;
   } 
 
   @media screen and (min-width: 992px){

@@ -20,24 +20,24 @@ const Menu_fixed = (props) => {
         <>
           <Waypoint
             onEnter={() => {
-              var tl = gsap.timeline({ delay: 1 });
+              var tl = gsap.timeline({ delay: 0.2 });
               tl.to(animationContainer.current.children[0], {
                 transform: "scale(1.1)",
                 color: "var(--dark)",
                 lineHeight: "4.2rem",
-                duration: 1,
+                duration: 0.5,
               });
               tl.to(animationContainer.current.children[1], {
                 transform: "scale(1.1)",
                 color: "var(--dark)",
 
-                duration: 1,
+                duration: 0.5,
               });
               tl.to(animationContainer.current.children[2], {
                 transform: "scale(1.1)",
                 color: "var(--dark)",
                 lineHeight: "4.2rem",
-                duration: 1,
+                duration: 0.5,
               });
             }}
           >

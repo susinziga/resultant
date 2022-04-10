@@ -59,13 +59,13 @@ export const ApproachImage = styledComponents.img`
   width:100%;
   margin-top: 10%;
     @media(min-width:768px){
-      width:50%;
+      width:40%;
       height: 100%;
       margin-top:0;
     }
 
     @media(min-width:992px){
-      width:45%;
+      width:35%;
     }
 
     @media(min-width:1600px){

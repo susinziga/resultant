@@ -5,7 +5,7 @@
   "person1_email": "roman.klaric@resultant.si",
   "person1_text": "Svetuje upravam in vodstvom podjetji pri oblikovanju sodobnih kadrovskih procesov, skladnih z njihovo poslovno strategijo. Deluje kot strateški svetovalec in individualni coach. Pri svojem delu se še posebej posveča procesom razvoja talentov in sistemom nasledstev. Od leta 2009 izvaja coaching program z uporabo DNLA Expert System. Je tudi en izmed soavtorjev I4F, modela analize organizacijske kulture in modela kompetenc za uspešno delovanje v digitalnem poslovnem okolju.",
   "person1_linkedin": "",
-  "person1_photo": "./Team/Roman.png",
+  "person1_photo": "/Team/Roman.png",
 
   "person2_name": "Primož Bitenc",
   "person2_role": "Prokurist in partner",
@@ -13,7 +13,7 @@
   "person2_email": "primoz.bitenc@resultant.si",
   "person2_text": "Strokovnjak za organizacijsko klimo, organizacijsko kulturo in zavzetost zaposlenih. Svetuje podjetjem v javnem in zasebnem sektorju pri preobrazbi organizacijske kulture in nadgradnji HR procesov. Deluje kot svetovalec, moderator in individualni coach z uporabo DNLA programov. Je tudi eden izmed soavtorjev I4F, modela analize organizacijske kulture za poslovanje v digitalni ekonomiji.",
   "person2_linkedin": "",
-  "person2_photo": "./Team/primoz.png",
+  "person2_photo": "/Team/primoz.png",
 
   "person3_name": "Enej Klarič",
   "person3_role": "Analitika in podpora",
@@ -21,5 +21,5 @@
   "person3_email": "enej.klaric@resultant.si",
   "person3_text": "V podjetju Resultant je aktiven od leta 2019. Zadolžen je za komunikacijo med potencialnimi strankami in našimi svetovalci, sodeluje pri pripravi analiz, poročil raziskav in testiranj ter deluje kot asistent na delavnicah in v procesih ocenjevanja potenciala in kompetenc.",
   "person3_linkedin": "",
-  "person3_photo": "./Team/enej.png"
+  "person3_photo": "/Team/enej.png"
 }

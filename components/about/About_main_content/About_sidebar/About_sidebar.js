@@ -26,7 +26,7 @@ const About_sidebar = ({ initAnim }) => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (!isDesktop()) {
       gsap.to(
         navAnimation.current,
@@ -78,7 +78,7 @@ const About_sidebar = ({ initAnim }) => {
         });
       }
     }
-  }, [initAnim]);
+  }, [initAnim]);*/
 
   return (
     <Styled.About_sidebar_container ref={navAnimation} initAnim={initAnim}>

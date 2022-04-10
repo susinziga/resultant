@@ -2,19 +2,19 @@ import styledComponents from "styled-components";
 import { Header2 } from "../../../../basic_components/texts/Texts";
 
 export const About_sidebar_container = styledComponents.div`
-    width:35%;
+    width:30%;
     padding:4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /*background: var(--blue);*/
+    background: transparent
     font-size:3rem;
     height:100vh;
 
     position:sticky;
     top:0;
 
-    :after{
+   /* :after{
       transition:2s all;
       content:" ";
       background:var(--blue);
@@ -24,7 +24,7 @@ export const About_sidebar_container = styledComponents.div`
       height:100vh;
       width:100vw;
       z-index:-1;
-      ${(props) => (props.initAnim ? "height:0;" : "")}
+      ${(props) => (props.initAnim ? "height:0;" : "")}*/
    
     
 
@@ -40,7 +40,7 @@ export const Sidebar_title = styledComponents(Header2)`
     transition: color 2s;
     transition:background-color 1s;
 
-    transform: scale(1.3) translateX(50%);
+   /* transform: scale(1.3) translateX(50%);*/
     line-height:6rem;
     margin-left:0:
     font-size:3rem;
@@ -78,7 +78,7 @@ export const Sidebar_title = styledComponents(Header2)`
             `
           : "";
       }}
-      ${(props) => (props.initAnim ? "color:white;" : "")}
+     
       ${(props) => {
         return props.second
           ? ` 
