@@ -29,7 +29,7 @@ export const LogoContainer = styled.div`
     pointer-events: none;
     position: absolute;
 
-    top: -21%;
+    top: 0;
     //top:500%;
     bottom: 0;
     right: 0;
@@ -37,11 +37,11 @@ export const LogoContainer = styled.div`
     height: 100%;
 
     z-index: 100;
-
-    left: 57%;
+    height: 65px;
+    left: 0;
     //left:100%;
     width: fit-content;
-    transform: scale(0.5);
+    transform: scale(1);
 
     //transform:scale(22);
 
@@ -80,19 +80,19 @@ export const LogoContainer = styled.div`
     #letter {
       position: absolute;
 
-      top: -21%;
+      top: 0;
       //top:500%;
       bottom: 0;
       right: 0;
 
-      height: 100%;
+      height: 65px;
 
       z-index: 100;
 
-      left: 58%;
+      left: 0;
       //left:100%;
       width: fit-content;
-      transform: scale(0.5);
+      transform: scale(1);
 
       //transform:scale(22);
 
@@ -100,7 +100,8 @@ export const LogoContainer = styled.div`
     }
 
     @media (min-width: 992px) {
-      #logo {
+      #logo,
+      #letter {
         height: 90px;
       }
     }
