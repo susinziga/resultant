@@ -1,8 +1,17 @@
 import React from "react";
 import * as Styled from "./Footer.styled";
 import FooterInput from "./FooterInput";
-
+import useTranslation from "next-translate/useTranslation";
 const Footer = () => {
+  const { t, lang } = useTranslation();
+
+  const header = t("footer:footer_heading");
+  const madeBy = t("footer:footer_madeBy");
+  const cookies = t("footer:footer_cookies");
+  const support = t("footer:footer_support");
+  const privicy = t("footer:footer_privicy");
+  const rights = t("footer:footer_rights");
+
   return (
     <div>
       <Styled.FooterContainer>
@@ -25,24 +34,24 @@ const Footer = () => {
         </Styled.UpperFooterContainer>
 
         <Styled.FooterHeader>
-          Najnovejše novice in prispevki ekipe Resultant.
+         {header}
         </Styled.FooterHeader>
         <Styled.InputFooterContainer>
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
         <Styled.Combine>
           <Styled.Link className="desktop">
-            Izdelala Agencija Statera
+            {madeBy}
           </Styled.Link>
           <Styled.LinkFooterContainer>
-            <Styled.Link>Piškotki</Styled.Link>
-            <Styled.Link>Podpora strankam</Styled.Link>
-            <Styled.Link>Pravilnik o zasebnosti</Styled.Link>
+            <Styled.Link>{cookies}</Styled.Link>
+            <Styled.Link>{support}</Styled.Link>
+            <Styled.Link>{privicy}</Styled.Link>
             <Styled.Link className="mobile">
-              Izdelala Agencija Statera
+              {madeBy}
             </Styled.Link>
             <Styled.Link>
-              &copy; 2022 Resultant | Vse pravice pridržane
+              &copy; {rights}
             </Styled.Link>
           </Styled.LinkFooterContainer>
         </Styled.Combine>

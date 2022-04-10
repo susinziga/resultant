@@ -5,17 +5,18 @@ import { BodyText1, Title2 } from "../../../../basic_components/texts/Texts";
 export const CardContainer = styledComponents.div`
     width: 100%;
     margin: auto;
-    display: flex:
+    display: flex;
     flex-direction: column;
     gap: 1rem;
     color: white;
+    margin-bottom: 10%;
     
     background: #316888;
     border: 0px solid #316888;
     border-radius: 12px;
 
     @media only screen and (min-width: 768px) {
-       
+       flex-direction: row !important;
     }
 
     @media only screen and (min-width: 992px) {
@@ -32,7 +33,8 @@ export const CardImage = styledComponents.img`
 
 
     @media only screen and (min-width: 768px) {
-       
+       width: 40%;
+       height: 100%;
     }
 
     @media only screen and (min-width: 992px) {
@@ -59,15 +61,19 @@ export const TextContainer = styledComponents.div`
     
 
     @media only screen and (min-width: 768px) {
-       
+        margin: 3% auto;
+        padding-bottom: 0%;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        margin: 3% auto;
+        padding-bottom: 0%;
+        padding-left:5%;
+    
     }
 
     @media only screen and (min-width: 1600px) {
-       
+       padding-left: 5%;
     }
 
 `
@@ -79,15 +85,18 @@ export const CardHeading = styledComponents(Title2)`
     margin-bottom: 5%;
 
     @media only screen and (min-width: 768px) {
-       
+        margin-bottom: 2%;
+        font-size: 0.8rem;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        margin-bottom: 2%;
+        font-size: 1.2rem;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        margin-bottom: 2%;
+        font-size: 1.8rem;
     }
 
 `
@@ -101,7 +110,7 @@ export const CardTitle = styledComponents(BodyText1)`
     
 
     @media only screen and (min-width: 768px) {
-       
+        font-size: 0.8rem;
     }
 
     @media only screen and (min-width: 992px) {
@@ -109,7 +118,7 @@ export const CardTitle = styledComponents(BodyText1)`
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        font-size: 1.5rem;
     }
 
 `
@@ -122,11 +131,13 @@ export const List = styledComponents.ul`
  
 
     @media only screen and (min-width: 768px) {
-        width:100%;
+        padding-top: 1%;
+        padding: 3% 2.5%;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        padding-top: 1%;
+        padding: 4% 2.5%;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -139,15 +150,18 @@ export const Bullet = styledComponents.li`
     font-size: 0.8rem;
 
     @media only screen and (min-width: 768px) {
-        font-size: 0.8rem;
+        margin: 1% 0;
+        font-size: 0.6rem;
     }
 
     @media only screen and (min-width: 992px) {
-        font-size: 1.2rem;
+        margin: 1% 0;
+        font-size: 0.8rem;
     }
 
     @media only screen and (min-width: 1600px) {
-       
+        margin: 1% 0;
+        font-size: 1.2rem;
     }
 `;
 
