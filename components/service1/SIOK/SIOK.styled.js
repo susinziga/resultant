@@ -1,6 +1,12 @@
 import styledComponents from "styled-components";
-import { BodyText1, BodyText2, BodyText3, BodyText4, Title1, Title2 } from "../../../basic_components/texts/Texts";
-
+import {
+  BodyText1,
+  BodyText2,
+  BodyText3,
+  BodyText4,
+  Title1,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 
 export const SIOKContainer = styledComponents.div`
     width: 100%;
@@ -8,6 +14,8 @@ export const SIOKContainer = styledComponents.div`
     padding: 15% 0;
     text-align: center;
     background: #F6FBFE;
+
+    position:relative;
 
 
     @media only screen and (min-width: 768px) {
@@ -22,7 +30,6 @@ export const SIOKContainer = styledComponents.div`
         
     }
 `;
-
 
 export const SIOKTitle = styledComponents(Title2)`
     margin: 7.5% 2%;
@@ -49,15 +56,15 @@ export const SIOKImage = styledComponents.img`
 
     @media only screen and (min-width: 768px) {
        padding: 7.5% 0 5% 0;
-       width: 80%;
+       width: 65%;
     }
 
     @media only screen and (min-width: 992px) {
-        width: 75%;
+        width: 60%;
     }
 
     @media only screen and (min-width: 1600px) {
-        width: 65%;
+        width: 55%;
     }
 `;
 
@@ -83,7 +90,6 @@ export const SIOKTextContainer = styledComponents.div`
        
     }
 `;
-
 
 export const SIOKParagraph = styledComponents(BodyText1)`
     color: white;
@@ -119,7 +125,6 @@ export const SIOKImageText = styledComponents(BodyText3)`
        
     }
 `;
-
 
 export const SIOKImageContainer = styledComponents.div`
     width: 90%;

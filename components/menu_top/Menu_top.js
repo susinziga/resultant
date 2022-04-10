@@ -206,7 +206,6 @@ const Menu_top = ({}) => {
     >
       <Styled.MenuContainer display={navState <= 0}>
         <Styled.LogoContainer>
-          {" "}
           <a href={"/" + locale}></a>
           <img
             id="logo"
@@ -226,7 +225,7 @@ const Menu_top = ({}) => {
               ref={(el) => (letterAnimation = el)}
               width="300"
               height="300"
-              src="/Logo/letter.svg"
+              src="/Logo/letter_.png"
             ></img>
           </a>
         </Styled.LogoContainer>

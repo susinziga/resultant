@@ -23,8 +23,10 @@ const SIOK_service1 = (props) => {
       <SIOKContainer {...props}>
         <SIOKImage
           className="desktop"
-          src="/Service1/SIOKgraf1_desktop.png"
+          src="/Service1/SIOKgraf1_desktop1.png"
         ></SIOKImage>
+        <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop>
+
         <SIOKTitle className="mobile">{header1}</SIOKTitle>
         <SIOKImage className="mobile" src="/Service1/SIOKgraf.png"></SIOKImage>
         <SIOKTitle className="mobile">{header2}</SIOKTitle>
@@ -46,5 +48,10 @@ const SIOK_service1 = (props) => {
     </>
   );
 };
+
+import styled from "styled-components";
+const SIOKTitle_desktop = styled.h1`
+  display: none !important;
+`;
 
 export default SIOK_service1;

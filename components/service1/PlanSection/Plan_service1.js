@@ -55,14 +55,33 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
             {p2.map((item) => {
               return <PlanItem_service1 props={item}></PlanItem_service1>;
             })}
-            <ButtonContainer props={button} button={p2.length > 0}>
+            <ButtonContainer
+              props={button}
+              button={p2.length > 0}
+              onClick={() => {
+                window.scrollBy({
+                  top: document.getElementById("forma").getBoundingClientRect()
+                    .top,
+                  behavior: "smooth",
+                });
+              }}
+            >
               <SubmitButton className="desktop" type="button">
                 Želim pridobiti ponudbo
               </SubmitButton>
             </ButtonContainer>
           </FlexContainer>
 
-          <ButtonContainer props={button}>
+          <ButtonContainer
+            props={button}
+            onClick={() => {
+              window.scrollBy({
+                top: document.getElementById("forma").getBoundingClientRect()
+                  .top,
+                behavior: "smooth",
+              });
+            }}
+          >
             <SubmitButton className="mobile" type="button">
               Želim pridobiti ponudbo
             </SubmitButton>
