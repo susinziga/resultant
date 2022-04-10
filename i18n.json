@@ -4,15 +4,16 @@
   "defaultLocale": "sl",
   "localeDetection": false,
   "pages": {
-    "*": ["common", "aboveTheFold", "pillars", "testimonials"],
-    "/": ["home"],
-    "/about": ["about", "team", "partners", "references"],
+    "*": ["common", "aboveTheFold", "pillars", "testimonials", "footer"],
+    "/": ["home", "footer"],
+    "/about": ["about", "team", "partners", "references", "footer"],
 
-    "/contact": ["contact"],
-    "/offer": ["offer"],
-    "/storitve/siok": ["service1"],
-    "/support": ["support"],
-    "/privacy": ["privacy"],
-    "/storitve/dnla": ["dnla"]
+    "/contact": ["contact", "footer"],
+    "/offer": ["offer", "footer"],
+    "/storitve/siok": ["service1", "footer"],
+    "/support": ["support", "footer"],
+    "/privacy": ["privacy", "footer"],
+    "/storitve/dnla": ["dnla", "footer"]
+    
   }
 }
