@@ -1,8 +1,10 @@
 import React from "react";
 import * as Styled from "./Pillar2Component.styled";
 import Button from "../../../../basic_components/button/Button";
+import { useRouter } from "next/router";
 
-const Pillars2_component = ({ title, text, button }) => {
+const Pillars2_component = ({ title, text, button, link }) => {
+  const { locale } = useRouter();
   const mouseEnter = (e) => {
     let selected = e.target;
     if (!selected.classList.contains("pillarContainer")) {
@@ -44,13 +46,15 @@ const Pillars2_component = ({ title, text, button }) => {
       onMouseLeave={mouseLeave}
       className="pillarContainer"
     >
-      <Styled.PillarOuter ></Styled.PillarOuter>
+      <Styled.PillarOuter></Styled.PillarOuter>
       <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
       <p>
         <Styled.PillarText>{text}</Styled.PillarText>
       </p>
       <Styled.ButtonContainer>
-        {/*<Button secondary>{button}</Button>*/}
+        <Button secondary href={"/" + locale + link}>
+          {button}
+        </Button>
       </Styled.ButtonContainer>
     </Styled.PillarComponentContainer>
   );

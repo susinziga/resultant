@@ -17,16 +17,19 @@ const Pillars2_dnla = (props) => {
       title: t("dnla:dnla_pillar2Title1"),
       text: t("dnla:dnla_pillar2Text1"),
       button: t("dnla:dnla_pillar2Button"),
+      link: "/services/dnla/management-potential",
     },
     {
       title: t("dnla:dnla_pillar2Title2"),
       text: t("dnla:dnla_pillar2Text2"),
       button: t("dnla:dnla_pillar2Button"),
+      link: "/services/dnla/social-competencies",
     },
     {
       title: t("dnla:dnla_pillar2Title3"),
       text: t("dnla:dnla_pillar2Text3"),
       button: t("dnla:dnla_pillar2Button"),
+      link: "/services/dnla/sales-potential",
     },
   ];
 
@@ -41,6 +44,7 @@ const Pillars2_dnla = (props) => {
               title={pillar.title}
               text={pillar.text}
               button={pillar.button}
+              link={pillar.link}
             ></Pillars_component>
           );
         })}
