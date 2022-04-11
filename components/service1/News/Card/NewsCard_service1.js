@@ -8,19 +8,24 @@ import {
   NewsText,
 } from "./NewsCard.styled";
 
+import { useRouter } from "next/router";
+
 const NewsCard_service1 = ({ news, isActive }) => {
+  const { locale } = useRouter();
   const { heading, text, image } = news;
   return (
     <>
-      <NewsContainer isActive>
-        <NewsImage src={image}></NewsImage>
-        <NewsTextContainer>
-          <NewsHeading>{heading}</NewsHeading>
-          <NewsText>
-            <BodyText2>{text}</BodyText2>
-          </NewsText>
-        </NewsTextContainer>
-      </NewsContainer>
+      <a href={"/" + locale + "/coming-soon"}>
+        <NewsContainer isActive>
+          <NewsImage src={image}></NewsImage>
+          <NewsTextContainer>
+            <NewsHeading>{heading}</NewsHeading>
+            <NewsText>
+              <BodyText2>{text}</BodyText2>
+            </NewsText>
+          </NewsTextContainer>
+        </NewsContainer>
+      </a>
     </>
   );
 };

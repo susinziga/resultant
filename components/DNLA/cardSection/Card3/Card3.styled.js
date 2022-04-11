@@ -20,7 +20,7 @@ export const CardContainer = styledComponents.div`
 
     @media only screen and (min-width: 768px) {
         flex-direction: row;
-        border-radius: 20px;
+        border-radius: 30px;
     }
 
     @media only screen and (min-width: 992px) {
@@ -34,10 +34,10 @@ export const CardContainer = styledComponents.div`
 `;
 
 export const CardImage = styledComponents.img`
-
+height:100%;
 
     @media only screen and (min-width: 768px) {
-       width:50%;
+    
     }
 
     @media only screen and (min-width: 992px) {

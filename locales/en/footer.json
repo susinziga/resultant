@@ -1,14 +1,9 @@
 {
-
-    "footer_heading":"Najnovejše novice in prispevki ekipe Resultant.",
-    "footer_madeBy": "Izdelala Agencija Statera",
-    "footer_cookies": "Piškotki",
-    "footer_support": "Podpora strankam",
-    "footer_privicy": "Pravilnik o zasebnosti",
-    "footer_rights": "2022 Resultant | Vse pravice pridržane"
-    
-
-
-
-
-}
+        "footer_heading":"Latest news and contributions from the Resultant team.",
+        "footer_madeBy": "Made by Agencija Statera",
+        "footer_cookies": "Cookies",
+        "footer_support": "Customer support",
+        "footer_privicy": "Privacy Policy",
+        "footer_rights": "2022 Resultant | All rights reserved"
+        
+    }

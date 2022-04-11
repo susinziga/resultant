@@ -18,7 +18,7 @@ const Footer = () => {
 
   return (
     <div>
-      <Styled.FooterContainer>
+      <Styled.FooterContainer className="footer">
         <Styled.UpperFooterContainer>
           <Styled.InfoFooterHeading>Resultant d.o.o.</Styled.InfoFooterHeading>
           <Styled.ContactFooterContainer>
