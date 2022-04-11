@@ -8,10 +8,17 @@ import "../styles/root.css";
 import "../styles/common.css";
 import "../styles/scrollbar.css";
 
+import TagManager from "react-gtm-module";
+
+const tagManagerArgs = {
+  gtmId: "GTM-TJL8898",
+};
+
 function MyApp({ Component, pageProps }) {
   const [size, setSize] = useState([]);
 
   useEffect(() => {
+    TagManager.initialize(tagManagerArgs);
     window.addEventListener("resize", setSizes);
     return () => window.removeEventListener("resize", setSizes);
   }, []);

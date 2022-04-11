@@ -14,17 +14,33 @@ import Input from "../../../basic_components/input/Input";
 import Textarea from "../../../basic_components/textarea/Textarea";
 import Button from "../../../basic_components/button/Button";
 import useTranslation from "next-translate/useTranslation";
+import { useRouter } from "next/router";
 
-const inputProps = [
-  { label: "Ime" },
-  { label: "Priimek" },
-  { label: "Tel. številka" },
-  { label: "Email", required: "*" },
-  { label: "Ime organizacije" },
-];
+const inputProps = {
+  sl: [
+    { label: "Ime" },
+    { label: "Priimek" },
+    { label: "Tel. številka" },
+    { label: "Email", required: "*" },
+    { label: "Ime organizacije" },
+  ],
+  en: [
+    { label: "Name" },
+    { label: "Last name" },
+    { label: "Gsm" },
+    { label: "Email", required: "*" },
+    { label: "Company name" },
+  ],
+};
+
+const textField = {
+  si: "Kako ste izvedeli za nas?",
+  en: "How did u learn about us?",
+};
 
 const ContactForm_dnla = (props) => {
   const { t, lang } = useTranslation();
+  const { locale } = useRouter();
 
   const title = t("dnla:dnla_contactHeading");
   const button = t("dnla:dnla_buttonText");
@@ -38,7 +54,7 @@ const ContactForm_dnla = (props) => {
           ></ContactHeader>
         </HeaderContainer>
         <FormContainer>
-          {inputProps.map((input) => {
+          {inputProps[locale].map((input) => {
             return (
               <>
                 <Input
@@ -52,7 +68,7 @@ const ContactForm_dnla = (props) => {
           <TextareaContainer>
             <Textarea
               id="TextDesktop"
-              props={{ label: "Kako ste izvedeli za nas?" }}
+              props={{ label: textField[locale] }}
               style={{ fontSize: "1.5rem" }}
             ></Textarea>
           </TextareaContainer>

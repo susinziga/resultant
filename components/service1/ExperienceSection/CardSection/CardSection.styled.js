@@ -1,5 +1,10 @@
 import styledComponents from "styled-components";
-import { Header2, BodyText1, Title1, Title2 } from "../../../../basic_components/texts/Texts";
+import {
+  Header2,
+  BodyText1,
+  Title1,
+  Title2,
+} from "../../../../basic_components/texts/Texts";
 
 export const CardItemContainer = styledComponents.div`
     width: 100%;
@@ -16,11 +21,10 @@ export const CardItemContainer = styledComponents.div`
        display: flex;
        flex-direction: row-reverse;
        ${(props) =>
-        props.inversed 
-          ? `flex-direction: row  !important;
+         props.inversed
+           ? `flex-direction: row  !important;
                     `
-          : ""
-        }
+           : ""}
         margin: 5% auto;
     }
 
@@ -94,7 +98,6 @@ export const Heading = styledComponents(Title2)`
         font-size: 2.5rem;
     }
 `;
-
 
 export const Image = styledComponents.img`
     width: 100%;

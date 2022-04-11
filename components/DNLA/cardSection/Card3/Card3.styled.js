@@ -34,7 +34,7 @@ export const CardContainer = styledComponents.div`
 `;
 
 export const CardImage = styledComponents.img`
-height:100%;
+height:500%;
 
     @media only screen and (min-width: 768px) {
     
@@ -56,8 +56,8 @@ export const TextContainer = styledComponents.div`
     display: flex:
     flex-direction: column;
     gap: 1rem;
-    margin: 5% auto;
-    margin-bottom: 10%;
+   
+  
     padding-bottom: 5%;
     
     
@@ -65,13 +65,13 @@ export const TextContainer = styledComponents.div`
 
     @media only screen and (min-width: 768px) {
         padding-bottom: 0%;
-        margin-bottom: 5%;
+    
         padding: 0 5% 0 5%;
     }
 
     @media only screen and (min-width: 992px) {
         padding-bottom: 0%;
-        margin-bottom: 5%;
+      
         padding: 0 5% 0 5%;
     }
 

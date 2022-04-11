@@ -32,6 +32,7 @@ export const FooterContainer = styledComponents.div`
 `;
 
 export const UpperFooterContainer = styledComponents.div`
+z-index:999999;
     width: 90%;
     height: 30%;
     background-color: var(--footer-color2);
