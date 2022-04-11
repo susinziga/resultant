@@ -52,7 +52,7 @@ const Pillars2_component = ({ title, text, button, link }) => {
         <Styled.PillarText>{text}</Styled.PillarText>
       </p>
       <Styled.ButtonContainer>
-        <Button secondary href={"/" + locale + link}>
+        <Button secondary href={"/" + locale + link} target="_blank">
           {button}
         </Button>
       </Styled.ButtonContainer>

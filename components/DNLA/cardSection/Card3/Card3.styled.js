@@ -34,8 +34,8 @@ export const CardContainer = styledComponents.div`
 `;
 
 export const CardImage = styledComponents.img`
-height:500%;
 
+width:50%;
     @media only screen and (min-width: 768px) {
     
     }
