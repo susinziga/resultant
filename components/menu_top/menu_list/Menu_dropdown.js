@@ -35,11 +35,11 @@ const Menu_dropdown = () => {
     },
     {
       title: t("pillar3_title"),
-      link: "",
+      link: "/coming-soon",
     },
     {
       title: t("pillar4_title"),
-      link: "",
+      link: "/coming-soon",
     },
   ];
 

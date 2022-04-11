@@ -11,19 +11,19 @@ const Mobile_menu_dropdown = ({ opened }) => {
   const pillars = [
     {
       title: t("pillar1_title"),
-      link: "/storitve/siok",
+      link: "/services/siok",
     },
     {
       title: t("pillar2_title"),
-      link: "/storitve/dnla",
+      link: "/services/dnla",
     },
     {
       title: t("pillar3_title"),
-      link: "",
+      link: "/coming-soon",
     },
     {
       title: t("pillar4_title"),
-      link: "",
+      link: "/coming-soon",
     },
   ];
 
