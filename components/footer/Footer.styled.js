@@ -7,6 +7,7 @@ export const FooterContainer = styledComponents.div`
     height: 800px;
     padding-top: 65%;
     margin-top: 10%;
+    z-index:999;
 
     @media only screen and (max-width: 350px) {
         height: 700px;
