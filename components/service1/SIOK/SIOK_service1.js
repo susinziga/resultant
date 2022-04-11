@@ -10,8 +10,12 @@ import {
   SIOKImageContainer,
 } from "./SIOK.styled";
 
+import { useRouter } from "next/router";
+
 const SIOK_service1 = (props) => {
   const { t, lang } = useTranslation();
+
+  const { locale } = useRouter();
 
   const header1 = t("service1:service1_SIOKheading1");
   const header2 = t("service1:service1_SIOKheading2");
@@ -23,7 +27,7 @@ const SIOK_service1 = (props) => {
       <SIOKContainer {...props}>
         <SIOKImage
           className="desktop"
-          src="/Service1/SIOKgraf1_desktop1.png"
+          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".png"}
         ></SIOKImage>
         <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop>
 
@@ -42,7 +46,7 @@ const SIOK_service1 = (props) => {
         </SIOKImageContainer>
         <SIOKImage
           className="desktop"
-          src="/Service1/SIOKgraf2_desktop.png"
+          src={"/Service1/SIOKgraf2_desktop_" + locale + ".png"}
         ></SIOKImage>
       </SIOKContainer>
     </>

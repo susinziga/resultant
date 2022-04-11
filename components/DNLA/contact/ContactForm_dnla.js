@@ -35,7 +35,7 @@ const inputProps = {
 
 const textField = {
   si: "Kako ste izvedeli za nas?",
-  en: "How did u learn about us?",
+  en: "Your message",
 };
 
 const ContactForm_dnla = (props) => {

@@ -1,14 +1,26 @@
 import React from "react";
 import Header from "../../components/DNLA/subpages/Header";
+
+import { useRouter } from "next/router";
+
 const index = () => {
+  const { locale } = useRouter();
+
+  const header = {
+    sl: "Pozdravljeni, to stran pravkar izdelujemo. Bi želeli biti obveščeni, ko se stran objavi?",
+    en: "Hello, this page is currently under construction.Would you like to be informed when the site is published?",
+  };
+
+  const subscribe = { sl: "Naroči se", en: "Subscribe" };
+
   return (
     <>
-      <Header title="Pozdravljeni, to stran pravkar izdelujemo. Bi želeli biti obveščeni, ko se stran objavi?"></Header>
+      <Header title={header[locale]}></Header>
       <Container>
         <InputLabel>Email *</InputLabel>
         <InputContainerDiv>
           <InputContainer></InputContainer>
-          <ButtonContainer>Naroči se</ButtonContainer>
+          <ButtonContainer>{subscribe[locale]}</ButtonContainer>
         </InputContainerDiv>
       </Container>
     </>

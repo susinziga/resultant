@@ -30,8 +30,16 @@ const Pillars_home = (props) => {
     },
   ];
   const pillarsContentBot = [
-    { title: t("pillars:pillar3_title"), text: t("pillars:pillar3_excerpt") },
-    { title: t("pillars:pillar4_title"), text: t("pillars:pillar4_excerpt") },
+    {
+      title: t("pillars:pillar3_title"),
+      text: t("pillars:pillar3_excerpt"),
+      link: "/coming-soon",
+    },
+    {
+      title: t("pillars:pillar4_title"),
+      text: t("pillars:pillar4_excerpt"),
+      link: "/coming-soon",
+    },
   ];
 
   const buttonText = t("common:button_more");
@@ -61,6 +69,7 @@ const Pillars_home = (props) => {
               title={pillar.title}
               text={pillar.text}
               button={buttonText}
+              link={"/" + locale + pillar.link}
             ></Pillars_component>
           );
         })}
@@ -74,6 +83,7 @@ const Pillars_home = (props) => {
             title={pillar.title}
             text={pillar.text}
             button={buttonText}
+            link={"/" + locale + pillar.link}
           ></Pillars_sliderItem>
         );
       })}
@@ -83,6 +93,7 @@ const Pillars_home = (props) => {
             title={pillar.title}
             text={pillar.text}
             button={buttonText}
+            link={"/" + locale + pillar.link}
           ></Pillars_sliderItem>
         );
       })}

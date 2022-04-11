@@ -15,8 +15,12 @@ import {
 } from "./ExperienceSection.styled";
 import CardSection_service1 from "./CardSection/CardSection_service1";
 
+import { useRouter } from "next/router";
+
 const ExperienceSection_service1 = (props) => {
   const { t, lang } = useTranslation();
+
+  const { locale } = useRouter();
 
   const header = t("service1:service1_experienceHeading");
   const subheading = t("service1:service1_expirienceSubHeading_Desktop");
@@ -67,7 +71,7 @@ const ExperienceSection_service1 = (props) => {
               })}
             </List>
             <ButtonContainer className="desktop">
-              <Button href="">{button}</Button>
+              <Button href={"/" + locale + "/coming-soon"}>{button}</Button>
               <ArrowContainer src="/Service1/Caret_Right.png"></ArrowContainer>
             </ButtonContainer>
           </FlexDesktopText>

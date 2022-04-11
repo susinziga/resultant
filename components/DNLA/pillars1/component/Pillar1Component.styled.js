@@ -3,23 +3,21 @@ import { BodyText4, Title2 } from "../../../../basic_components/texts/Texts";
 
 export const PillarComponentContainer = styledComponents.div`
     &.pillarContainer{
-        min-height: 200px;
+        
            
 
         @media (min-width:768px) {
             width:32%;
-            max-height: 325px;
+          
 
         }
 
         @media (min-width:992px) {
     
-            max-height: 360px;
         }
 
         @media (min-width:1600px) {
 
-            max-height: 400px;
         }
     }
 
@@ -83,5 +81,7 @@ export const PillarText = styledComponents(BodyText4)`
     @media (min-width:1600px) {
 
         font-size: 1.3rem; 
+
+        
     }
 `;

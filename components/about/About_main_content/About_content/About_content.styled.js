@@ -26,7 +26,7 @@ export const About_content_container = styledComponents.div`
         >div:nth-child(1){
       
             width:100%;
-            height:70vh;
+            height:90vh;
         
         }
     }

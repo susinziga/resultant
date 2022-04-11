@@ -45,12 +45,24 @@ const Pillars_component = ({ title, text, link }) => {
     >
       <Styled.PillarOuter href={link}></Styled.PillarOuter>
       <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
-      <p>
+      <TextContainer>
         <Styled.PillarText>{text}</Styled.PillarText>
-      </p>
-    
+      </TextContainer>
     </Styled.PillarComponentContainer>
   );
 };
+
+import styled from "styled-components";
+const TextContainer = styled.p`
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+    height: 15rem;
+  }
+  @media (min-width: 1600px) {
+    height: 10rem;
+  }
+`;
 
 export default Pillars_component;

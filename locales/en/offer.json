@@ -1,6 +1,6 @@
 {
     "offer_upperHeading": "Get an offer",
-    "offer_mainHeading": "o prepare an informative, non-binding offer, please fill out the form below: ",
+    "offer_mainHeading": "To prepare an informative, non-binding offer, please fill out the form below: ",
     "offer_multipleCheckboxLabel1": "implementation with guided workshops",
     "offer_multipleCheckboxLabel2": "remote measurement with e-questionnaire",
     "offer_multipleCheckboxLabel3": "implementation with printed questionnaires and own distribution of the questionnaire ",
@@ -15,5 +15,10 @@
     "offer_secondInputProp3": "Number of questionnaires in print",
     "offer_checkboxProp1": "Do you wish us to provide feedback on the results?",
     "offer_checkboxProp2": "Do you want us to provide a customized analysis with a participant comparison?",
-    "offer_multipleCheckboxHeading": "What kind of measurement do you want?"
+    "offer_multipleCheckboxHeading": "What kind of measurement do you want?",
+
+
+
+
+    "offer_dnla":""
 }

@@ -15,12 +15,18 @@ import {
 import PlanItem_service1 from "./PlanTables/PlanItem/PlanItem_service1";
 import QuoteSection2_service1 from "../Quote/QuoteSection2_service";
 
+import { useRouter } from "next/router";
+
 const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
   const { t, lang } = useTranslation();
   const p1 = plan1 ?? [];
   const p2 = plan2 ?? [];
+  const { locale } = useRouter();
 
-  console.log(plan1);
+  const getOffer = {
+    sl: "Želim pridobiti ponudbo",
+    en: "I'd like to recieve an offer",
+  };
 
   return (
     <>
@@ -66,8 +72,12 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
                 });
               }}
             >
-              <SubmitButton className="desktop" type="button">
-                Želim pridobiti ponudbo
+              <SubmitButton
+                className="desktop"
+                type="button"
+                href={"/" + locale + "/offer"}
+              >
+                {getOffer[locale]}
               </SubmitButton>
             </ButtonContainer>
           </FlexContainer>
@@ -82,8 +92,12 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
               });
             }}
           >
-            <SubmitButton className="mobile" type="button">
-              Želim pridobiti ponudbo
+            <SubmitButton
+              className="mobile"
+              type="button"
+              href={"/" + locale + "/offer"}
+            >
+              {getOffer[locale]}
             </SubmitButton>
           </ButtonContainer>
         </PlanTableContainer>

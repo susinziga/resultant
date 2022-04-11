@@ -10,9 +10,12 @@ import QuoteSection2_service1 from "../../components/service1/Quote/QuoteSection
 import SIOK_service1 from "../../components/service1/SIOK/SIOK_service1";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const service1 = () => {
   const { t, lang } = useTranslation();
+
+  const { locale } = useRouter();
   const HeadingSection = {
     upperTitle: t("service1:service1_Heading"),
     paragraph: t("service1:service1_mainParagraph"),
@@ -92,7 +95,11 @@ const service1 = () => {
       <SIOK_service1 className="section"></SIOK_service1>
       <ExperienceSection_section1 className="section "></ExperienceSection_section1>
       <Contact_service1 className="section"></Contact_service1>
-      <News_service1></News_service1>
+      {locale === "sl" ? (
+        <News_service1></News_service1>
+      ) : (
+        <News_service1></News_service1>
+      )}
     </>
   );
 };

@@ -19,7 +19,7 @@
     "dnla_PlanCard5":"Integration of the results into other related HR processes.",
     "dnla_PlanCard6":"Individual coaching on talent and succession planning using DNLA data.",
     "dnla_pillarTitle1":"Low management costs",
-    "dnla_pillarTitle2":"Reduction of the possible errors when assessing the potential / competencies of the candidate",
+    "dnla_pillarTitle2":"Error reduction in the evaluation of candidates",
     "dnla_pillarTitle3":"Simple process of development planning",
     "dnla_pillarTitle4":"Identifying key challenges",
     "dnla_pillarTitle5":"Developing internal mentors, trainers and coaches",
@@ -60,10 +60,22 @@
     "dnla_card1bullet4":"Developing teams and teamwork",
     "dnla_card1bullet5":"Training and personal development programmes",
     "dnla_card1bullet6":"Mentoring system",
-    "dnla_card2text":"",
+    "dnla_card2text":"Slovenia is only a very small country compared to other European nations. However, on the 'DNLA map' Slovenia is very large and much more important than other countries. This is also thanks to our partners Roman Klarič and Primož Bitenc. We have been working very successfully with both of them for many years in numerous projects. Together we have supported many companies and people in their development. We highly appreciate Roman and Primož professionally and with their qualities as consultants. In addition, the collaboration is also very enjoyable on a human level. </br> </br> With the relaunch and the new company 'Resultant', the next chapter of a joint success story now begins. We are very much looking forward to this and wish everyone and the entire company 'Resultant' a lot of success and good and valuable projects. </br> </br>Kindly yours, </br> </br>Klaus Haddick </br><span style='font-weight: 300'>Managing Director</span> </br> <span style='font-weight: 300'>and Owner DNLA GmbH</span> ",
     "dnla_card3text":"In an interview, the Sales Manager of DNLA GmbH explains how their tools can help your employees and managers develop their potential.",
     "dnla_card3heading":"Five questions to Alexander Tychy about the development of potential with DNLA",
     "dnla_contactHeading":"Give us a call or fill in the contact form below.",
-    "dnla_buttonText":"Read more",
-    "dnla_buttonTextPillar":"Get the offer"
+    "dnla_buttonText":"Send",
+    "dnla_buttonTextPillar":"Get the offer",
+
+
+
+    "first":"The total number of employees you want to measure with DNLA tools:",
+    "second":"How many supervisors?",
+    "third":"If YES is clicked, the question follows: How many salesmen?",
+
+    "offer_checkboxProp1":"Will your supervisors also participate in the measurement?",
+    "offer_checkboxProp2":"Will sales staff be involved in the measurement?",
+
+    "offer_checkboxProp3":"Do you wish us to provide feedback on the results?",
+    "offer_checkboxProp4":"Do you want us to provide a customized analysis with a participant comparison?"
 }

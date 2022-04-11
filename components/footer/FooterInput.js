@@ -1,6 +1,8 @@
 import React from "react";
 import styledComponents from "styled-components";
 
+import { useRouter } from "next/router";
+
 export const InputContainer = styledComponents.input`
 outline: none;
 font-family: "Neusa";
@@ -70,12 +72,16 @@ color: white;
 `;
 
 const FooterInput = () => {
+  const { locale } = useRouter();
+
+  const button = { sl: "Naroči se", en: "Subscribe" };
+
   return (
     <>
       <InputLabel>Email *</InputLabel>
       <InputContainerDiv>
         <InputContainer></InputContainer>
-        <ButtonContainer>Naroči se</ButtonContainer>
+        <ButtonContainer>{button[locale]}</ButtonContainer>
       </InputContainerDiv>
     </>
   );

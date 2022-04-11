@@ -69,10 +69,10 @@ const OfferForm_offer = () => {
           </InputsContainer>
           <HeadingLine></HeadingLine>
           <InputsContainer>
-            {checkboxProps.map((checkbox) => {
+            {checkboxProps.map((checkbox, id) => {
               return (
                 <>
-                  <Checkbox props={checkbox}></Checkbox>
+                  <Checkbox props={checkbox} group={id}></Checkbox>
                 </>
               );
             })}

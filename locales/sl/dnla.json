@@ -65,5 +65,17 @@
     "dnla_card3text": "Vodja prodaje podjetja DNLA GmbH v intervjuju pojasnjuje, kako so njihova orodja lahko v pomoč zaposlenim in vodstvu pri razvoju njihovega potenciala.",
     "dnla_card3heading": "Pet vprašanj za Alexandra Tychy-ja o razvoju potenciala z DNLA orodji",
     "dnla_contactHeading": "Tudi v vašem podjetju razmišljate o uporabi DNLA sistemov? Preizkusite njihovo učinkovitost in natančnost <span style='color: #27B4E9;'>brezplačno!</span>",
-    "dnla_buttonText": "Pošlji"
+    "dnla_buttonText": "Pošlji",
+
+
+    
+    "first":"Skupno število oseb, ki jih želite meriti z DNLA orodji",
+    "second":"Koliko vodij?",
+    "third":"Koliko prodajalcev?",
+
+    "offer_checkboxProp1":"Ali bodo v merjenju sodelovali tudi vaši vodje?",
+    "offer_checkboxProp2":"Ali bodo v merjenju sodelovalo tudi prodajno osebje?",
+
+    "offer_checkboxProp3":"Želite, da se osebam poda povratna informacija o rezultatih:",
+    "offer_checkboxProp4":"Ali v ponudbo vključimo za vas prilagojeno analizo s primerjavo udeležencev?"
 }
