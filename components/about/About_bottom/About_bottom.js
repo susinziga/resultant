@@ -8,9 +8,12 @@ import {
 
 import { BodyText1, BodyText2 } from "../../../basic_components/texts/Texts";
 import Button from "../../../basic_components/button/Button";
+import { useRouter } from "next/router";
 
 const About_bottom = (props) => {
   const { t } = useTranslation("about");
+
+  const { locale } = useRouter();
 
   const bot_header = t("bottom_header");
   const bot_text = t("bottom_text");
@@ -22,7 +25,9 @@ const About_bottom = (props) => {
       <Content>
         <h2>{bot_header}</h2>
         <BodyText2>{bot_text}</BodyText2>
-        <Button secondary>{bot_button}</Button>
+        <Button secondary href={"/" + locale + "/contact"}>
+          {bot_button}
+        </Button>
       </Content>
     </About_bottomContainer>
   );

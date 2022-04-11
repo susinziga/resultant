@@ -8,7 +8,7 @@ const References_quote_content = ({ active }) => {
   return (
     <FirstSlideContainer active={active}>
       <div>
-        <img src="./Icons/quote.png" className="quote"></img>
+        <img src="/Icons/quote.png" className="quote"></img>
       </div>
       <BodyText1>{t("references_intro")}</BodyText1>
     </FirstSlideContainer>

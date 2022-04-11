@@ -1,7 +1,7 @@
 import styledComponents from "styled-components";
 
 export const About_bottomContainer = styledComponents.div`
-    height:100vh;
+    height:70vh;
     padding-top:1%;
     width:90%;
     margin:auto;
@@ -32,7 +32,7 @@ export const Content = styledComponents.div`
   box-sizing: border-box;
   border-radius: 12px;
   width:100%;
-  margin: auto;
+  margin: 0 auto;
 
   display:flex;
   flex-direction:column;

@@ -80,11 +80,11 @@ export const QuoteText = styledComponents(BodyText1)`
     
 
     @media only screen and (min-width: 768px) {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
      }
  
      @media only screen and (min-width: 992px) {
-         font-size: 2rem;
+         font-size: 1.4rem;
      }
  
      @media only screen and (min-width: 1600px) {

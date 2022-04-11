@@ -26,32 +26,15 @@ export const FirstSlideContainer = styled.div`
     }
   }
   transition: 1s all;
-
-  ${(props) =>
-    props.active === 2
-      ? `background-color:var(--blue);
-          span,h4{
-          color:white;
-          }
-          .quote{
-              filter:invert(1);
-          }
-          h2:nth-child(3){
-              color:white;
-          }`
-      : ""}
-
-  ${(props) =>
-    props.active === 4
-      ? `background-color:var(--blue);
-                span,h4{
-                color:white;
-                }
-                .quote{
-                    filter:invert(1);
-                }
-                h2:nth-child(4){
-                    color:white;
-                }`
-      : ""}
+  background-color: var(--blue);
+  span,
+  h4 {
+    color: white;
+  }
+  .quote {
+    filter: invert(1);
+  }
+  h2:nth-child(3) {
+    color: white;
+  }
 `;

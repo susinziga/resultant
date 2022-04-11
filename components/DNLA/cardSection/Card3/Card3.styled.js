@@ -1,6 +1,9 @@
 import styledComponents from "styled-components";
-import { BodyText1, BodyText3, Title2 } from "../../../../basic_components/texts/Texts";
-
+import {
+  BodyText1,
+  BodyText3,
+  Title2,
+} from "../../../../basic_components/texts/Texts";
 
 export const CardContainer = styledComponents.div`
     width: 100%;
@@ -28,7 +31,7 @@ export const CardContainer = styledComponents.div`
        
     }
 
-`
+`;
 
 export const CardImage = styledComponents.img`
 
@@ -38,14 +41,14 @@ export const CardImage = styledComponents.img`
     }
 
     @media only screen and (min-width: 992px) {
-        width:45%;
+     
     }
 
     @media only screen and (min-width: 1600px) {
        
     }
 
-`
+`;
 
 export const TextContainer = styledComponents.div`
     width: 80%;
@@ -76,8 +79,7 @@ export const TextContainer = styledComponents.div`
        
     }
 
-`
-
+`;
 
 export const CardHeading = styledComponents(Title2)`
     font-size: 1.2rem;
@@ -97,8 +99,7 @@ export const CardHeading = styledComponents(Title2)`
         font-size: 1.8rem;
     }
 
-`
-
+`;
 
 export const ButtonContainer = styledComponents.div`
  

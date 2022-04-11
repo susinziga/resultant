@@ -10,7 +10,7 @@ const TeamSliderItem = ({ item }) => {
         <Styled.FirstRowFlex>
           <Styled.TeamSlider_name>{item.name}</Styled.TeamSlider_name>
           <a href={item.linkedin}>
-            <img src="./Icons/Linkedin.png"></img>
+            <img src="/Icons/Linkedin.png"></img>
           </a>
         </Styled.FirstRowFlex>
         <Styled.TeamSlider_role>{item.role}</Styled.TeamSlider_role>

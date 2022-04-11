@@ -100,7 +100,7 @@ const About_content = ({ initAnim, isActive }) => {
 
   return (
     <Styled.About_content_container ref={contentAnimation} id="content_box">
-      <div id="approach" className="section2">
+      <div id="approach" className="">
         <About_content_1
           isActive={isActive && contentSwiperActive === 0}
           className="content_panel"

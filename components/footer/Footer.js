@@ -2,6 +2,8 @@ import React from "react";
 import * as Styled from "./Footer.styled";
 import FooterInput from "./FooterInput";
 import useTranslation from "next-translate/useTranslation";
+
+import { useRouter } from "next/router";
 const Footer = () => {
   const { t, lang } = useTranslation();
 
@@ -11,6 +13,8 @@ const Footer = () => {
   const support = t("footer:footer_support");
   const privicy = t("footer:footer_privicy");
   const rights = t("footer:footer_rights");
+
+  const { locale } = useRouter();
 
   return (
     <div>
@@ -33,26 +37,22 @@ const Footer = () => {
           </Styled.ContactsFooterContainer>
         </Styled.UpperFooterContainer>
 
-        <Styled.FooterHeader>
-         {header}
-        </Styled.FooterHeader>
+        <Styled.FooterHeader>{header}</Styled.FooterHeader>
         <Styled.InputFooterContainer>
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
         <Styled.Combine>
-          <Styled.Link className="desktop">
-            {madeBy}
-          </Styled.Link>
+          <Styled.Link className="desktop">{madeBy}</Styled.Link>
           <Styled.LinkFooterContainer>
             <Styled.Link>{cookies}</Styled.Link>
-            <Styled.Link>{support}</Styled.Link>
-            <Styled.Link>{privicy}</Styled.Link>
-            <Styled.Link className="mobile">
-              {madeBy}
+            <Styled.Link href={"/" + locale + "/support"}>
+              {support}
             </Styled.Link>
-            <Styled.Link>
-              &copy; {rights}
+            <Styled.Link href={"/" + locale + "/privacy"}>
+              {privicy}
             </Styled.Link>
+            <Styled.Link className="mobile">{madeBy}</Styled.Link>
+            <Styled.Link>&copy; {rights}</Styled.Link>
           </Styled.LinkFooterContainer>
         </Styled.Combine>
       </Styled.FooterContainer>

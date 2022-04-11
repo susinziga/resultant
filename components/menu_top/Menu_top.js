@@ -118,7 +118,6 @@ const Menu_top = ({}) => {
   }, [navState]);
 
   const handleScroll = (e) => {
-    console.log("SKROLL");
     if (window.scrollY >= 50) {
       if (e.deltaY > 0) {
         setNavState(1);

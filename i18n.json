@@ -10,11 +10,12 @@
 
     "/contact": ["contact", "footer"],
     "/offer": ["offer", "footer"],
-    "/storitve/siok": ["service1", "footer"],
+    "/services/siok": ["service1", "footer"],
     "/support": ["support", "footer"],
     "/privacy": ["privacy", "footer"],
-    "/storitve/dnla": ["dnla", "footer"],
+    "/services/dnla": ["dnla", "footer"],
     "/dnlaArticle1": ["article1"]
+
     
   }
 }

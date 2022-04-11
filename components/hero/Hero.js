@@ -16,6 +16,8 @@ import {
 import Button from "../../basic_components/button/Button";
 
 import useSize from "../../custom_hooks/useSize";
+import { useRouter } from "next/router";
+import LanguagePicker from "./LanguagePicker";
 
 const Hero = (props) => {
   const heroImageAnimation = useRef(null);
@@ -28,19 +30,19 @@ const Hero = (props) => {
 
   const [initAnimation, setInitAnimation] = useState(true);
 
-  const { t, lang } = useTranslation("aboveTheFold");
+  const { t, lang } = useTranslation();
 
   const { isDesktop } = useSize();
 
   /* CONTENT */
 
-  const heroImage = "./AboveTheFold/hero2.webp";
-  const heroImage_mobile = "./AboveTheFold/hero_mobile.png";
+  const heroImage = "/AboveTheFold/hero2.webp";
+  const heroImage_mobile = "/AboveTheFold/hero_mobile.png";
 
-  const hero_title = t("hero_title");
+  const hero_title = t("aboveTheFold:hero_title");
 
-  const hero_paragraph = t("hero_paragraph");
-  const hero_paragraph2 = t("hero_paragraph2");
+  const hero_paragraph = t("aboveTheFold:hero_paragraph");
+  const hero_paragraph2 = t("aboveTheFold:hero_paragraph2");
 
   useEffect(() => {
     if (
@@ -132,12 +134,13 @@ const Hero = (props) => {
               });
             }}
           >
-            Izvedi več
+            {t("common:button_moreMore")}
           </Button>
           <Styled.WhiteLine
             ref={(el) => (lineAnimation = el)}
           ></Styled.WhiteLine>
         </Styled.HeroTexts>
+        <LanguagePicker></LanguagePicker>
       </div>
     </Styled.HeroContainer>
   );

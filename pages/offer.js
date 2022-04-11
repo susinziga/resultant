@@ -4,7 +4,7 @@ import HeadingSection_offer from "../components/offer/HeadingSection_offer";
 export default function Offer() {
   return (
     <>
-      <HeadingSection_offer className="section"></HeadingSection_offer>
+      <HeadingSection_offer></HeadingSection_offer>
       <OfferForm_offer className="section"></OfferForm_offer>
     </>
   );

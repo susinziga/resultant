@@ -22,7 +22,7 @@ export const OfferContainer = styledComponents.div`
       
     }
    
-`
+`;
 
 export const TextareaContainer = styledComponents.div`
     width: 100%;
@@ -37,15 +37,16 @@ export const TextareaContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
         height: 250px;
     }
-`
+`;
 
 export const ButtonContainer = styledComponents.div`
     width: 100%;
     margin:auto;
     margin-bottom: 15%;
-`
+`;
 
 export const FormContainer = styledComponents.form`
+transform:scale(0.9);
     @media only screen and (min-width: 768px) {
         width: 70%;
         margin: auto;
@@ -53,11 +54,11 @@ export const FormContainer = styledComponents.form`
 
     @media only screen and (min-width: 992px) {
         width: 100%;
-        margin-top: 10%;
+       
     }
 
   
-`
+`;
 export const SubmitButton = styledComponents.input`
     font-size:2rem;
     padding: 3% 45%;
@@ -89,7 +90,7 @@ export const SubmitButton = styledComponents.input`
         margin-left: 1%;
     }
 
-`
+`;
 
 export const HeadingLine = styledComponents.div`
     height: 1px;
@@ -99,13 +100,13 @@ export const HeadingLine = styledComponents.div`
 
     @media only screen and (min-width: 768px) {
         width: 100%;
-        margin: 5% 0 10% 0;
+        margin: 2% 0 4% 0;
      
     }
 
     @media only screen and (min-width: 992px) {
         width: 100%;
-        margin: 5% 0 10% 0;
+        margin:  2% 0 4% 0;
       
     }
    
@@ -125,11 +126,10 @@ export const BackgroundVector = styledComponents.img`
 
     @media only screen and (min-width: 1600px) {
         width: 45%;
-        top: 55%;
-        right: -6%;
+        top: 40%;
+        right: -16%;
     }
 `;
-
 
 export const InputsContainer = styledComponents.div`
     @media only screen and (min-width: 768px) {
@@ -140,7 +140,7 @@ export const InputsContainer = styledComponents.div`
 
     @media only screen and (min-width: 992px) {
         width: 60%;
-        margin-bottom: 10%;
+        margin-bottom: 2%;
     
     }
 
@@ -151,7 +151,3 @@ export const InputsContainer = styledComponents.div`
     }
    
 `;
-
-
-
-

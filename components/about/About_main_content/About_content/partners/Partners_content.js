@@ -1,7 +1,10 @@
 import useTranslation from "next-translate/useTranslation";
 import React, { useContext, useEffect } from "react";
 import { Waypoint } from "react-waypoint";
-import { BodyText4 } from "../../../../../basic_components/texts/Texts";
+import {
+  BodyText3,
+  BodyText4,
+} from "../../../../../basic_components/texts/Texts";
 import { AboutContext } from "../../../../../context/aboutContext";
 
 import * as Styled from "./Partners_content.styled";
@@ -72,7 +75,7 @@ const Partner_item = ({ partner }) => {
         <div>
           <img src={partner.link}></img>
         </div>
-        <BodyText4>{partner.text}</BodyText4>
+        <BodyText3>{partner.text}</BodyText3>
       </Styled.Partners_item_container>
     </>
   );

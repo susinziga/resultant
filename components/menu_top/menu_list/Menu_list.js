@@ -14,7 +14,7 @@ const Menu_list = ({ state }) => {
 
   return (
     <Styled.MenuList state={state}>
-      <Button href="/" className="nav_item" terciary>
+      <Button href={"/" + locale} className="nav_item" terciary>
         {t("nav_item0")}
       </Button>
       <Button href={"/" + locale + "/about"} className="nav_item" terciary>
@@ -36,7 +36,7 @@ const Menu_list = ({ state }) => {
       {/*<Button className="nav_item" terciary>
         {t("nav_item3")}
         </Button>*/}
-      <Button href="/contact" primary>
+      <Button href={"/" + locale + "/contact"} primary>
         {t("nav_item4")}
       </Button>
     </Styled.MenuList>

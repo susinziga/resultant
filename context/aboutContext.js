@@ -6,7 +6,19 @@ const AboutContext = createContext();
 const AboutContextProvider = ({ children }) => {
   const [containerActive, setContainerActive] = useState(0);
 
-  const [contentSwiperActive, setContentSwiperActive] = useState(0);
+  const [cd, setCd] = useState(false);
+
+  const setContentSwiperActive = (newstate, delay) => {
+    console.log(cd);
+    if (!cd) setContentSwiperActives(newstate);
+    if (typeof delay !== "undefined") {
+      setCd(true);
+
+      setTimeout(() => setCd(false), 500);
+    }
+  };
+
+  const [contentSwiperActive, setContentSwiperActives] = useState(0);
 
   return (
     // the Provider gives access to the context to its children

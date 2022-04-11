@@ -55,7 +55,7 @@ const ExperienceSection_service1 = (props) => {
       <ExperienceContainer {...props}>
         <BackgroundVector
           className="desktop"
-          src="./Service1/VectorA.png"
+          src="/Service1/VectorA.png"
         ></BackgroundVector>
         <FlexDesktop>
           <ExperienceTitle>{header}</ExperienceTitle>

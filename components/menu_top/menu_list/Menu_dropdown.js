@@ -27,11 +27,11 @@ const Menu_dropdown = () => {
   const pillars = [
     {
       title: t("pillar1_title"),
-      link: "/storitve/siok",
+      link: "/services/siok",
     },
     {
       title: t("pillar2_title"),
-      link: "/storitve/dnla",
+      link: "/services/dnla",
     },
     {
       title: t("pillar3_title"),

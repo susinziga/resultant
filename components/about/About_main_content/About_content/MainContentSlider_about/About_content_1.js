@@ -134,7 +134,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           <ButtonsContainer>
             <img
               width="50"
-              src="./Buttons/arrow_prev.svg"
+              src="/Buttons/arrow_prev.svg"
               onClick={() => {
                 swip.slidePrev(1000);
               }}
@@ -142,7 +142,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
             ></img>
             <img
               width="50"
-              src="./Buttons/arrow_next.svg"
+              src="/Buttons/arrow_next.svg"
               onClick={() => {
                 swip.slideNext(1000);
               }}

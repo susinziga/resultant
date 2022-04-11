@@ -20,7 +20,7 @@ export const ContactContainer = styledComponents.div`
   
     }
    
-`
+`;
 
 export const HeaderContainer = styledComponents.div`
     
@@ -40,9 +40,7 @@ export const HeaderContainer = styledComponents.div`
   
     }
    
-`
-
-
+`;
 
 export const TextareaContainer = styledComponents.div`
     width: 100%;
@@ -62,10 +60,7 @@ export const TextareaContainer = styledComponents.div`
         margin-bottom: 10%;
         height: 250px;
     }
-`
-
-
-
+`;
 
 export const ContactHeader = styledComponents(Title2)`
     font-family: "Neusa";
@@ -85,11 +80,11 @@ export const ContactHeader = styledComponents(Title2)`
 
 
     @media only screen and (min-width: 1600px) {
-        height: 200px;
+       
         font-size: 2.5rem;
         margin:5% 0 0% 0;
     }
-`
+`;
 
 export const ButtonContainer = styledComponents.div`
     width: 100%;
@@ -97,9 +92,11 @@ export const ButtonContainer = styledComponents.div`
     margin-bottom: 15%;
 
    
-`
+`;
 
 export const FormContainer = styledComponents.form`
+
+transform:scale(0.9);
 
 
     @media only screen and (min-width: 768px) {
@@ -115,7 +112,7 @@ export const FormContainer = styledComponents.form`
     @media only screen and (min-width: 1600px) {
         width: 50%;
     }
-`
+`;
 export const SubmitButton = styledComponents.input`
     font-size:1.5rem;
     padding: 3% 41.5%;
@@ -149,7 +146,7 @@ export const SubmitButton = styledComponents.input`
         margin-left: 1%;
     }
 
-`
+`;
 
 export const HeadingLine = styledComponents.div`
     height: 1px;
@@ -174,4 +171,3 @@ export const HeadingLine = styledComponents.div`
 
   
 `;
-

@@ -85,7 +85,7 @@ const About_sidebar = ({ initAnim }) => {
       <Styled.Sidebar_title
         initAnim={!initAnim}
         onClick={() => {
-          setContentSwiperActive(0);
+          setContentSwiperActive(0, 1);
           document
             .getElementById("approach")
             .scrollIntoView({ behavior: "smooth" });
@@ -98,7 +98,7 @@ const About_sidebar = ({ initAnim }) => {
 
       <Styled.Sidebar_title
         onClick={() => {
-          setContentSwiperActive(1);
+          setContentSwiperActive(1, 1);
           window.scrollBy({
             top:
               document.getElementById("team").getBoundingClientRect().top -
@@ -114,7 +114,7 @@ const About_sidebar = ({ initAnim }) => {
       </Styled.Sidebar_title>
       <Styled.Sidebar_title
         onClick={() => {
-          setContentSwiperActive(2);
+          setContentSwiperActive(2, 1);
           window.scrollBy({
             top:
               document.getElementById("partners").getBoundingClientRect().top -
@@ -130,7 +130,7 @@ const About_sidebar = ({ initAnim }) => {
       </Styled.Sidebar_title>
       <Styled.Sidebar_title
         onClick={() => {
-          setContentSwiperActive(4);
+          setContentSwiperActive(4, 1);
           window.scrollBy({
             top:
               document.getElementById("references").getBoundingClientRect()

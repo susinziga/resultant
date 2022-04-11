@@ -56,15 +56,15 @@ export const SIOKImage = styledComponents.img`
 
     @media only screen and (min-width: 768px) {
        padding: 7.5% 0 5% 0;
-       width: 65%;
+       width: 51%;
     }
 
     @media only screen and (min-width: 992px) {
-        width: 60%;
+        width: 51%;
     }
 
     @media only screen and (min-width: 1600px) {
-        width: 55%;
+        width: 51%;
     }
 `;
 

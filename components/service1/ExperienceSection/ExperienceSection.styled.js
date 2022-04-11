@@ -1,5 +1,9 @@
 import styledComponents from "styled-components";
-import { Subtitle2, Title1, Title2 } from "../../../basic_components/texts/Texts";
+import {
+  Subtitle2,
+  Title1,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 
 export const ExperienceContainer = styledComponents.div`
     width: 90%;
@@ -18,10 +22,7 @@ export const ExperienceContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
-
-
-
+`;
 
 export const FlexDesktop = styledComponents.div`
   
@@ -36,9 +37,9 @@ export const FlexDesktop = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
+`;
 
-export const ExperienceTitle = styledComponents(Title2)`
+export const ExperienceTitle = styledComponents(Title1)`
     margin: 20% 0 10% 0;
     font-family: "Neusa";
     font-weight: bold;
@@ -47,12 +48,12 @@ export const ExperienceTitle = styledComponents(Title2)`
         margin: 0;
         width:60%;
         padding-right: 20%;
-        font-size: 1rem;
+
        
     }
 
     @media only screen and (min-width: 992px) {
-        font-size:1.6rem;
+   
     }
 
     @media only screen and (min-width: 1600px) {
@@ -94,7 +95,7 @@ export const FlexDesktopText = styledComponents.div`
     
     
     }
-`
+`;
 
 export const List = styledComponents.ul`
     width: 100%;
@@ -112,7 +113,7 @@ export const List = styledComponents.ul`
     @media only screen and (min-width: 1600px) {
        
     }
-`
+`;
 
 export const Bullet = styledComponents.li`
     margin: 7.5% 0;
@@ -149,6 +150,7 @@ export const Button = styledComponents.a`
 `;
 
 export const ButtonContainer = styledComponents.div`
+white-space: nowrap;
     width: 55%;
     margin:auto;
     text-align: left;
@@ -176,7 +178,7 @@ export const ButtonContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
+`;
 
 export const ArrowContainer = styledComponents.img`
     &:hover {
@@ -194,11 +196,11 @@ export const ArrowContainer = styledComponents.img`
     @media only screen and (min-width: 1600px) {
     
     }
-`
+`;
 
 export const BackgroundVector = styledComponents.img`
    position: absolute;
-   top: 0;
+   top: 10%;
    left: 8%;
    z-index: -100;
    width: 70%;
@@ -213,7 +215,7 @@ export const BackgroundVector = styledComponents.img`
     }
 
     @media only screen and (min-width: 1600px) {
-        left: 15%;
+        left: 0%;
         width: 50%;
         top:-18%;
     }

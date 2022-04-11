@@ -3,26 +3,29 @@ import Pillars_component from "./Pillars_component";
 import * as Styled from "./Pillars_home.styled";
 import useTranslation from "next-translate/useTranslation";
 import useSize from "../../../custom_hooks/useSize";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import SwiperCore, { Mousewheel, Pagination } from "swiper";
+
 import Pillars_sliderItem from "./slider/Pillars_sliderItem";
+
+import { useRouter } from "next/router";
 
 import "swiper/css";
 
 const Pillars_home = (props) => {
   const { t, lang } = useTranslation();
 
+  const { locale } = useRouter();
+
   const pillarsContentTop = [
     {
       title: t("pillars:pillar1_title"),
       text: t("pillars:pillar1_excerpt"),
-      link: "/storitve/siok",
+      link: "/services/siok",
       logo: "/Pillars/siok.png",
     },
     {
       title: t("pillars:pillar2_title"),
       text: t("pillars:pillar2_excerpt"),
-      link: "/storitve/dnla",
+      link: "/services/dnla",
       logo: "/Pillars/dnla.png",
     },
   ];
@@ -45,7 +48,7 @@ const Pillars_home = (props) => {
               title={pillar.title}
               text={pillar.text}
               button={buttonText}
-              link={pillar.link}
+              link={"/" + locale + pillar.link}
               logo={pillar.logo}
             ></Pillars_component>
           );
