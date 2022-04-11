@@ -30,7 +30,8 @@ const OfferDNLA = () => {
   ];
 
   return (
-    <OfferContainer>
+    <>
+      {/* <OfferContainer>
       <FormContainer>
         <InputsContainer>
           {inputProps1.map((input) => {
@@ -69,7 +70,8 @@ const OfferDNLA = () => {
           <Button primary></Button>
         </InputsContainer>
       </FormContainer>
-    </OfferContainer>
+        </OfferContainer>*/}
+    </>
   );
 };
 
