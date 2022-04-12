@@ -72,7 +72,7 @@ const Pillars_dnla = (props) => {
         <Button
           primary
           style={{ padding: "20px 80px", fontSize: "1.4rem" }}
-          href={"/" + locale + "/offer"}
+          href={"/" + locale + "/offer-dnla"}
         >
           {button}
         </Button>

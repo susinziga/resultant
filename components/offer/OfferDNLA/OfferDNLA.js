@@ -1,13 +1,23 @@
 import useTranslation from "next-translate/useTranslation";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import Input from "../../../basic_components/input/Input";
 import Checkbox from "../OfferForm/Checkbox_offer";
 
-import { Button } from "../../../basic_components/button/Button";
+import Button from "../../../basic_components/button/Button";
+import { useForm } from "../../../custom_hooks/useForm";
+
+import { ButtonContainer, SubmitButton } from "../OfferForm/OfferForm.styled";
 
 const OfferDNLA = () => {
   const { t } = useTranslation();
+
+  const { formData, handleFormChange, sendMail } = useForm();
+
+  useEffect(() => {
+    handleFormChange("subject", "DNLA Povpraševanje");
+  }, []);
+
   const inputProps1 = [
     { label: t("offer:offer_inputProp1") },
     { label: t("offer:offer_inputProp2") },
@@ -31,46 +41,100 @@ const OfferDNLA = () => {
 
   return (
     <>
-      {/* <OfferContainer>
-      <FormContainer>
-        <InputsContainer>
-          {inputProps1.map((input) => {
-            return (
-              <>
-                <Input
-                  id="desktop"
-                  props={input}
-                  style={{ marginBottom: "2%" }}
-                ></Input>
-              </>
-            );
-          })}
-        </InputsContainer>
-        <hr></hr>
-        <InputsContainer>
-          <Input
-            id="desktop"
-            props={otherInputs[0]}
-            style={{ marginBottom: "2%" }}
-          ></Input>
-          <Checkbox props={checkboxProps[0]} group={"leaders"}></Checkbox>
-          <Input
-            id="desktop"
-            props={otherInputs[1]}
-            style={{ marginBottom: "2%" }}
-          ></Input>
-          <Checkbox props={checkboxProps[1]} group={"sales"}></Checkbox>
-          <Input
-            id="desktop"
-            props={otherInputs[2]}
-            style={{ marginBottom: "2%" }}
-          ></Input>
-          <Checkbox props={checkboxProps[3]} group={"feedback"}></Checkbox>
-          <Checkbox props={checkboxProps[4]} group={"analise"}></Checkbox>
-          <Button primary></Button>
-        </InputsContainer>
-      </FormContainer>
-        </OfferContainer>*/}
+      <OfferContainer>
+        <FormContainer>
+          <InputsContainer>
+            {inputProps1.map((input) => {
+              return (
+                <>
+                  <Input
+                    id="desktop"
+                    props={input}
+                    style={{ marginBottom: "2%" }}
+                    onChange={(e) => {
+                      handleFormChange(input.label, e.target.value);
+                    }}
+                  ></Input>
+                </>
+              );
+            })}
+          </InputsContainer>
+          <hr></hr>
+
+          <InputsContainer>
+            <Input
+              id="desktop"
+              props={otherInputs[0]}
+              style={{ marginBottom: "2%" }}
+              onChange={(e) => {
+                handleFormChange(otherInputs[0].label, e.target.value);
+              }}
+            ></Input>
+            <Checkbox
+              props={checkboxProps[0]}
+              group={"leaders"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[0].label, value);
+              }}
+            ></Checkbox>
+            <Input
+              id="desktop"
+              props={otherInputs[1]}
+              style={{ marginBottom: "2%" }}
+              onChange={(e) => {
+                handleFormChange(otherInputs[1].label, e.target.value);
+              }}
+            ></Input>
+            <Checkbox
+              props={checkboxProps[1]}
+              group={"sales"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[1].label, value);
+              }}
+            ></Checkbox>
+            <Input
+              id="desktop"
+              props={otherInputs[2]}
+              style={{ marginBottom: "2%" }}
+              onChange={(e) => {
+                handleFormChange(otherInputs[2].label, e.target.value);
+              }}
+            ></Input>
+            <Checkbox
+              props={checkboxProps[2]}
+              group={"feedback"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[2].label, value);
+              }}
+            ></Checkbox>
+            <Checkbox
+              props={checkboxProps[3]}
+              group={"analise"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[3].label, value);
+              }}
+            ></Checkbox>
+            {/*<Button
+              primary
+              onClick={(id, value) => {
+                console.log("asd");
+                sendMail();
+              }}
+            >
+              Pošlji
+            </Button>*/}
+            <ButtonContainer>
+              <SubmitButton
+                onClick={(id, value) => {
+                  sendMail();
+                }}
+              >
+                Pošlji
+              </SubmitButton>
+            </ButtonContainer>
+          </InputsContainer>
+        </FormContainer>
+      </OfferContainer>
     </>
   );
 };

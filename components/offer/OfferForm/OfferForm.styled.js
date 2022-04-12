@@ -59,7 +59,7 @@ transform:scale(0.9);
 
   
 `;
-export const SubmitButton = styledComponents.input`
+export const SubmitButton = styledComponents.a`
     font-size:2rem;
     padding: 3% 45%;
     cursor:pointer;

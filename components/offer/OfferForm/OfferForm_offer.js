@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   ButtonContainer,
   OfferContainer,
@@ -14,8 +14,16 @@ import Checkbox from "./Checkbox_offer";
 import MultipleCheckbox from "./MultipleCheckbox_offer";
 import useTranslation from "next-translate/useTranslation";
 
+import { useForm } from "../../../custom_hooks/useForm";
+
 const OfferForm_offer = () => {
   const { t, lang } = useTranslation();
+
+  const { formData, handleFormChange, sendMail } = useForm();
+
+  useEffect(() => {
+    handleFormChange("subject", "SiOK Povpraševanje");
+  }, []);
 
   const inputProps1 = [
     { label: t("offer:offer_inputProp1") },
@@ -41,13 +49,17 @@ const OfferForm_offer = () => {
       <OfferContainer>
         <FormContainer>
           <InputsContainer>
-            {inputProps1.map((input) => {
+            {inputProps1.map((input, id) => {
               return (
                 <>
                   <Input
+                    key={id}
                     id="desktop"
                     props={input}
                     style={{ marginBottom: "2%" }}
+                    onChange={(e) => {
+                      handleFormChange(input.label, e.target.value);
+                    }}
                   ></Input>
                 </>
               );
@@ -62,6 +74,9 @@ const OfferForm_offer = () => {
                     id="desktop"
                     props={input}
                     style={{ marginBottom: "2%" }}
+                    onChange={(e) => {
+                      handleFormChange(input.label, e.target.value);
+                    }}
                   ></Input>
                 </>
               );
@@ -72,7 +87,13 @@ const OfferForm_offer = () => {
             {checkboxProps.map((checkbox, id) => {
               return (
                 <>
-                  <Checkbox props={checkbox} group={id}></Checkbox>
+                  <Checkbox
+                    props={checkbox}
+                    group={id}
+                    onChange={(value) => {
+                      handleFormChange(checkbox.label, value);
+                    }}
+                  ></Checkbox>
                 </>
               );
             })}
@@ -80,9 +101,21 @@ const OfferForm_offer = () => {
           <HeadingLine></HeadingLine>
           <BackgroundVector src="/offer/backgroundVector.png"></BackgroundVector>
           <InputsContainer>
-            <MultipleCheckbox></MultipleCheckbox>
+            <MultipleCheckbox
+              onChange={(id, value) => {
+                console.log(id, value);
+                handleFormChange(id, value);
+              }}
+            ></MultipleCheckbox>
             <ButtonContainer>
-              <SubmitButton type="submit" value="Pošlji"></SubmitButton>
+              <SubmitButton
+                onClick={(id, value) => {
+                  console.log("asd");
+                  sendMail();
+                }}
+              >
+                Pošlji
+              </SubmitButton>
             </ButtonContainer>
           </InputsContainer>
         </FormContainer>

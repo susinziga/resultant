@@ -19,6 +19,8 @@ const CheckboxMultiple = (props) => {
         element.checked = false;
       }
     });
+
+    props.onChange(e.target.value);
   };
 
   return (
