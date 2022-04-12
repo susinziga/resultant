@@ -74,14 +74,28 @@ color: white;
 const FooterInput = () => {
   const { locale } = useRouter();
 
+  const [email, setEmail] = React.useState("");
+
   const button = { sl: "Naroči se", en: "Subscribe" };
+  const sendMail = () => {
+    fetch("/api/hello", {
+      method: "POST",
+      body: JSON.stringify({ email: email }),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
 
   return (
     <>
       <InputLabel>Email *</InputLabel>
       <InputContainerDiv>
-        <InputContainer></InputContainer>
-        <ButtonContainer>{button[locale]}</ButtonContainer>
+        <InputContainer
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        ></InputContainer>
+        <ButtonContainer onClick={sendMail}>{button[locale]}</ButtonContainer>
       </InputContainerDiv>
     </>
   );
