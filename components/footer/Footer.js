@@ -42,7 +42,7 @@ const Footer = () => {
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
         <Styled.Combine>
-          <Styled.Link className="desktop">{madeBy}</Styled.Link>
+          {/* <Styled.Link className="desktop">{madeBy}</Styled.Link> */}
           <Styled.LinkFooterContainer>
             <Styled.Link>{cookies}</Styled.Link>
             <Styled.Link href={"/" + locale + "/support"}>
@@ -51,8 +51,9 @@ const Footer = () => {
             <Styled.Link href={"/" + locale + "/privacy"}>
               {privicy}
             </Styled.Link>
-            <Styled.Link className="mobile">{madeBy}</Styled.Link>
             <Styled.Link>&copy; {rights}</Styled.Link>
+            {/* <Styled.Link className="mobile">{madeBy}</Styled.Link> */}
+            <Styled.Link>{madeBy}</Styled.Link>
           </Styled.LinkFooterContainer>
         </Styled.Combine>
       </Styled.FooterContainer>
