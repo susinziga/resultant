@@ -5,6 +5,7 @@ export const HeroWrapper = styled.div`
   margin: auto;
   flex-direction: column;
   margin-top: 3rem;
+  margin-bottom: 20%;
   gap: 2rem;
 
   > img {
