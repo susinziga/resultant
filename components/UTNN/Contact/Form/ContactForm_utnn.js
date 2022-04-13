@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   ButtonContainer,
   ContactContainer,
@@ -15,6 +15,8 @@ import Textarea from "../../../../basic_components/textarea/Textarea";
 import Button from "../../../../basic_components/button/Button";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+
+import { useForm } from "../../../../custom_hooks/useForm";
 
 const inputProps = {
   sl: [
@@ -45,6 +47,15 @@ const ContactForm_dnla = (props) => {
   const title = t("utnn:utnn_contactHeading");
   const button = t("utnn:utnn_buttonText");
 
+  const { formData, handleFormChange, sendMail } = useForm();
+
+  useEffect(() => {
+    handleFormChange(
+      "subject",
+      "Upravljanje Talentov in Nasledstveno Nacrtovanje Povpraševanje"
+    );
+  }, []);
+
   return (
     <>
       <ContactContainer {...props}>
@@ -54,13 +65,17 @@ const ContactForm_dnla = (props) => {
           ></ContactHeader>
         </HeaderContainer>
         <FormContainer>
-          {inputProps[locale].map((input) => {
+          {inputProps[locale].map((input, id) => {
             return (
               <>
                 <Input
+                  key={id}
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
+                  onChange={(e) => {
+                    handleFormChange(input.label, e.target.value);
+                  }}
                 ></Input>
               </>
             );
@@ -70,10 +85,19 @@ const ContactForm_dnla = (props) => {
               id="TextDesktop"
               props={{ label: textField[locale] }}
               style={{ fontSize: "1.5rem" }}
+              onChange={(e) => {
+                handleFormChange("Vsebina", e.target.value);
+              }}
             ></Textarea>
           </TextareaContainer>
           <ButtonContainer>
-            <SubmitButton type="submit" value={button}></SubmitButton>
+            <SubmitButton
+              onClick={(id, value) => {
+                sendMail();
+              }}
+              value={"Pošlji"}
+              type={"submit"}
+            ></SubmitButton>
           </ButtonContainer>
         </FormContainer>
       </ContactContainer>
