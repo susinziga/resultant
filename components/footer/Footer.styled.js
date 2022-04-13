@@ -4,9 +4,10 @@ export const FooterContainer = styledComponents.div`
     position:relative;
     width: 100%;
     background-color: var(--footer-color);
-    height: 800px;
+    // height: 800px;
     padding-top: 65%;
     margin-top: 10%;
+    padding-bottom: 5%;
     z-index:999;
 
     @media only screen and (max-width: 350px) {
@@ -16,18 +17,18 @@ export const FooterContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 480px) and (max-width: 768px) {
-        height: 900px;
+        // height: 900px;
         padding-top: 65%;
     }
 
     @media only screen and (min-width: 992px) {
-        height: 550px;
+        // height: 550px;
         padding-top: 0;
         margin-top: 10%;
     }
 
     @media only screen and (min-width: 1600px) {
-        height: 720px;
+        // height: 720px;
         padding-top: 0;
     }
 `;
@@ -35,7 +36,7 @@ export const FooterContainer = styledComponents.div`
 export const UpperFooterContainer = styledComponents.div`
 z-index:999999;
     width: 90%;
-    height: 30%;
+    min-height: 30%;
     background-color: var(--footer-color2);
     border-radius: 12px;
     margin: auto;
@@ -209,7 +210,7 @@ export const LinkFooterContainer = styledComponents.div`
    flex-direction: column;
    text-align: center;
 
-   @media only screen and (min-width: 992px) {
+   @media only screen and (min-width: 768px) {
         margin: 0;
         flex-direction: row-reverse;
         width: 70%;
@@ -240,7 +241,7 @@ export const Link = styledComponents.a`
 export const Combine = styledComponents.div`
   
 
-   @media only screen and (min-width: 992px) {
+   @media only screen and (min-width: 768px) {
         margin-top: 10%;
         display: flex;
         justify-content: space-between;
