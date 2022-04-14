@@ -1,5 +1,4 @@
 import React from "react";
-import useTranslation from "next-translate/useTranslation";
 import {
   CardContainer,
   CardImage,
@@ -8,14 +7,12 @@ import {
   CardContent,
   CardButton,
   CardButtonArrowWrapper,
-} from "./Card.styled";
+} from "./BigCard.styled";
 
 const BigCard = (props) => {
-  const { t, lang } = useTranslation();
-
   return (
     <>
-      <CardContainer flipX={props.flipX}>
+      <CardContainer flipX={props.flipX} margin={props.margin}>
         <CardImage
           flipX={props.flipX}
           className="desktop"
@@ -26,6 +23,7 @@ const BigCard = (props) => {
           {!props.mobileImgOnBottom && (
             <CardImage
               className="mobile"
+              margin={props.margin}
               src={props.img + "_mobile.png"}
             ></CardImage>
           )}

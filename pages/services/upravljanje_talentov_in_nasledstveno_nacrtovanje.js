@@ -5,8 +5,8 @@ import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSec
 import Quote from "../../components/service1/Quote/QuoteSection1_service1";
 import CardSection from "../../components/service1/CardSection/CardTable_service1";
 import Plan from "../../components/service1/PlanSection/Plan_service1";
-import BigCardsSection from "../../components/UTNN/cardSection/cardSection_utnn";
-import BigCard from "../../components/UTNN/CardSection/Card/Card_utnn";
+import BigCardsSection from "../../components/UTNN/cardSection/BigCardsSection";
+import BigCard from "../../components/UTNN/CardSection/Card/BigCard";
 import Contact_utnn from "../../components/UTNN/Contact/Contact_utnn";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 

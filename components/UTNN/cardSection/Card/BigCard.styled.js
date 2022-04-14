@@ -15,14 +15,20 @@ export const CardContainer = styled.div`
     margin-bottom: 3%;
     flex-direction: row;
     padding-left: 0px;
-    padding-right: 70px;
+    padding-right: 5%;
 
     ${(props) =>
       props.flipX &&
       `
         flex-direction: row-reverse;
         padding-right: 0px;
-        padding-left: 70px;
+        padding-left: 5%;
+    `}
+
+    ${(props) =>
+      props.margin &&
+      `
+        padding-right: 5%;
     `}
   }
 
@@ -37,6 +43,13 @@ export const CardImage = styled.img`
   width: 100%;
   margin: 0px;
   /* padding: 5% 0px; */
+
+  ${(props) =>
+    props.margin &&
+    `
+        margin-top: 5%;
+        margin-bottom: 10%;
+    `}
 
   @media only screen and (min-width: 768px) {
     width: 50%;

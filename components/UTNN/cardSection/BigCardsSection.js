@@ -1,7 +1,7 @@
 import React from "react";
 import useTranslation from "next-translate/useTranslation";
 
-import { CardSectionContainer } from "./cardSection.styled";
+import { CardSectionContainer } from "./BigCardsSection.styled";
 
 const BigCardsSection = ({ cards }, props) => {
   const { t, lang } = useTranslation();

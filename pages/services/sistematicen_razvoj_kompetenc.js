@@ -5,8 +5,8 @@ import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSec
 import Quote from "../../components/service1/Quote/QuoteSection1_service1";
 import CardSection from "../../components/service1/CardSection/CardTable_service1";
 import Plan from "../../components/service1/PlanSection/Plan_service1";
-import BigCardsSection from "../../components/UTNN/cardSection/cardSection_utnn";
-import BigCard from "../../components/UTNN/CardSection/Card/Card_utnn";
+import BigCardsSection from "../../components/UTNN/cardSection/BigCardsSection";
+import BigCard from "../../components/UTNN/cardSection/Card/BigCard";
 import Contact_srk from "../../components/SRK/Contact/Contact_srk";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 
@@ -71,6 +71,7 @@ const sistematicen_razvoj_kompetenc = () => {
     <BigCard
       key={0}
       flipX
+      margin
       heading={t("srk:srk_bigCard1Heading")}
       content={t("srk:srk_bigCard1Content")}
       img={"/SRK/bigCard1img"}

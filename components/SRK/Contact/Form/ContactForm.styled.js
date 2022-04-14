@@ -33,7 +33,7 @@ export const HeaderLineWrapperRight = styledComponents.div`
     `;
 
 export const HeaderLine = styledComponents.div`
-    border: 1px solid #282828;
+    border-top: 1px solid #282828;
     width: 100%;
     position: absolute;
     top: 50%;

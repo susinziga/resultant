@@ -15,6 +15,7 @@ import Textarea from "../../../basic_components/textarea/Textarea";
 import Button from "../../../basic_components/button/Button";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import * as Styled from "../../../basic_components/input/Input.styled";
 
 const inputProps = {
   sl: [
@@ -33,9 +34,14 @@ const inputProps = {
   ],
 };
 
+const textAreaLabel = {
+  sl: "Kako ste izvedeli za nas?",
+  en: "How did you find out about us?",
+};
+
 const textField = {
   si: "Kako ste izvedeli za nas?",
-  en: "Your message",
+  en: "How did you find out about us?",
 };
 
 const ContactForm_dnla = (props) => {
@@ -66,6 +72,7 @@ const ContactForm_dnla = (props) => {
             );
           })}
           <TextareaContainer>
+            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
               props={{ label: textField[locale] }}

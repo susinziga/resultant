@@ -7,6 +7,8 @@ import {
   SubmitButton,
   TextareaContainer,
   HeadingLine,
+  HeaderLine,
+  HeaderLineWrapperRight,
   HeaderContainer,
   InputContainer,
 } from "./ContactForm.styled";
@@ -15,6 +17,8 @@ import Textarea from "../../../../basic_components/textarea/Textarea";
 import Button from "../../../../basic_components/button/Button";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import * as Styled from "../../../../basic_components/input/Input.styled";
+
 const inputProps = {
   sl: [
     { label: "Ime" },
@@ -32,9 +36,14 @@ const inputProps = {
   ],
 };
 
+const textAreaLabel = {
+  sl: "Kako ste izvedeli za nas?",
+  en: "How did you find out about us?",
+};
+
 const textField = {
   si: "Kako ste izvedeli za nas?",
-  en: "Your message",
+  en: "How did you find out about us?",
 };
 
 const ContactForm_service1 = () => {
@@ -49,7 +58,10 @@ const ContactForm_service1 = () => {
       <ContactContainer>
         <HeaderContainer>
           <ContactHeader>{title}</ContactHeader>
-          <HeadingLine className="desktop"></HeadingLine>
+          {/* <HeadingLine className="desktop"></HeadingLine> */}
+          <HeaderLineWrapperRight className="desktop">
+            <HeaderLine></HeaderLine>
+          </HeaderLineWrapperRight>
         </HeaderContainer>
         <FormContainer>
           {inputProps[locale].map((input) => {
@@ -64,6 +76,7 @@ const ContactForm_service1 = () => {
             );
           })}
           <TextareaContainer>
+            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
               props={{ label: textField[locale], required: "*" }}

@@ -9,6 +9,8 @@ import {
   HeadingLine,
   HeaderContainer,
   InputContainer,
+  HeaderLine,
+  HeaderLineWrapperRight,
 } from "./ContactForm.styled";
 import Input from "../../../../basic_components/input/Input";
 import Textarea from "../../../../basic_components/textarea/Textarea";
@@ -69,6 +71,9 @@ const ContactForm_dnla = (props) => {
           <ContactHeader
             dangerouslySetInnerHTML={{ __html: title }}
           ></ContactHeader>
+          <HeaderLineWrapperRight className="desktop">
+            <HeaderLine></HeaderLine>
+          </HeaderLineWrapperRight>
         </HeaderContainer>
         <FormContainer>
           {inputProps[locale].map((input, id) => {
