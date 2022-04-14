@@ -15,6 +15,7 @@ import Textarea from "../../../basic_components/textarea/Textarea";
 import Button from "../../../basic_components/button/Button";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import { useForm } from "../../../custom_hooks/useForm";
 
 const inputProps = {
   sl: [
@@ -34,7 +35,7 @@ const inputProps = {
 };
 
 const textField = {
-  si: "Kako ste izvedeli za nas?",
+  sl: "Kako ste izvedeli za nas?",
   en: "Your message",
 };
 
@@ -44,6 +45,12 @@ const ContactForm_dnla = (props) => {
 
   const title = t("dnla:dnla_contactHeading");
   const button = t("dnla:dnla_buttonText");
+
+  const { formData, handleFormChange, sendMail } = useForm();
+
+  useEffect(() => {
+    handleFormChange("subject", "Forma");
+  }, []);
 
   return (
     <>

@@ -30,21 +30,41 @@ export const Blog_author_container = styled.div`
   align-items: baseline;
 
   @media (min-width: 768px) {
-    width: 60%;
+    width: 55%;
     gap: 2rem;
     height: fit-content;
     flex-direction: column-reverse;
   }
 `;
+export const Blog_authors = styled.div`
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+`;
 export const Blog_author = styled(BodyText3)`
-  width: 65%;
+  width: fit-content;
+  display: inline-block;
+`;
+
+export const Blog_author_images = styled.div`
+  filter: grayscale(1);
+
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row-reverse;
+    width: 45%;
+    text-align: end;
+  }
 `;
 export const Blog_author_image = styled.img`
-  width: 30%;
+  width: 33%;
   border-radius: 12px;
   filter: grayscale(1);
   @media (min-width: 768px) {
-    width: 20%;
+    width: 33%;
   }
 `;
 

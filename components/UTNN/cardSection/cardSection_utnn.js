@@ -14,11 +14,13 @@ const CardSection_utnn = (props) => {
           heading={t("utnn:utnn_bigArticle1Heading")}
           content={t("utnn:utnn_bigArticle1Content")}
           img={"/UTNN/card1img"}
+          href="/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/upravljanje_talentov_in_njihovih_karier"
         ></Card_utnn>
         <Card_utnn
           heading={t("utnn:utnn_bigArticle2Heading")}
           content={t("utnn:utnn_bigArticle2Content")}
           img={"/UTNN/card2img"}
+          href="/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/nasledstveno_nacrtovanje"
         ></Card_utnn>
       </CardSectionContainer>
     </>

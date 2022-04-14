@@ -4,7 +4,7 @@
   "defaultLocale": "sl",
   "localeDetection": false,
   "pages": {
-    "*": ["common", "aboveTheFold", "pillars", "testimonials", "footer","subpages","dnla","offer", "utnn"],
+    "*": ["common", "aboveTheFold", "pillars", "testimonials", "footer","subpages","dnla","offer", "utnn","team"],
     "/": ["home", "footer"],
     "/about": ["about", "team", "partners", "references", "footer"],
 
@@ -16,6 +16,5 @@
     "/services/dnla": ["dnla", "footer"],
     "/dnlaArticle1": ["article1"]
 
-    
   }
 }

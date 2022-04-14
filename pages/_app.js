@@ -7,6 +7,7 @@ import "../styles/globals.css";
 import "../styles/root.css";
 import "../styles/common.css";
 import "../styles/scrollbar.css";
+import styled from "styled-components";
 
 import TagManager from "react-gtm-module";
 
@@ -16,8 +17,12 @@ const tagManagerArgs = {
 
 function MyApp({ Component, pageProps }) {
   const [size, setSize] = useState([]);
+  const [menu, setMenu] = useState("90px");
 
   useEffect(() => {
+    const menuTemp =
+      document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
+    setMenu(menuTemp);
     TagManager.initialize(tagManagerArgs);
     window.addEventListener("resize", setSizes);
     return () => window.removeEventListener("resize", setSizes);
@@ -32,10 +37,16 @@ function MyApp({ Component, pageProps }) {
         <title>Resultant</title>
       </Head>
       <Menu_top size={size}></Menu_top>
-      <Component {...pageProps} />
+      <Body_content id="__body" menu={menu}>
+        <Component {...pageProps} />
+      </Body_content>
       <Footer></Footer>
     </div>
   );
 }
+
+const Body_content = styled.div`
+  padding-top: calc(${(props) => props.menu}px + 2rem);
+`;
 
 export default MyApp;

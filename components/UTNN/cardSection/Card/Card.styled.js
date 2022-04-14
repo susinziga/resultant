@@ -61,7 +61,8 @@ export const CardContent = styled(BodyText1)`
   font-weight: 300;
 `;
 
-export const CardButton = styled.button`
+export const CardButton = styled.a`
+  width: fit-content;
   display: block;
   margin-top: 5%;
   border: none;

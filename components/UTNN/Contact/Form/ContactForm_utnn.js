@@ -9,6 +9,7 @@ import {
   HeadingLine,
   HeaderContainer,
   InputContainer,
+  InputLabel,
 } from "./ContactForm.styled";
 import Input from "../../../../basic_components/input/Input";
 import Textarea from "../../../../basic_components/textarea/Textarea";
@@ -36,7 +37,7 @@ const inputProps = {
 };
 
 const textField = {
-  si: "Kako ste izvedeli za nas?",
+  sl: "Kako ste izvedeli za nas? ",
   en: "Your message",
 };
 

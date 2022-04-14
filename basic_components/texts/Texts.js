@@ -20,7 +20,7 @@ ${(props) => (props.bold ? "font-weight:bold;" : "")}
 ${(props) => (props.white ? "color:var(--white);" : "color:var(--dark);")}
 `;
 
-export const Subtitle1 = styledComponents.title`
+export const Subtitle1 = styledComponents.label`
 display:inline-block;
 
 @media(min-width:768px){
@@ -35,7 +35,7 @@ ${(props) => (props.white ? "color:var(--white);" : "color:var(--dark);")}
 font-size:var(--subtitle1);
 `;
 
-export const Subtitle2 = styledComponents.title`
+export const Subtitle2 = styledComponents.label`
 ${(props) => (props.bold ? "font-weight:bold;" : "")}
 ${(props) => (props.white ? "color:var(--white);" : "color:var(--dark);")}
 
