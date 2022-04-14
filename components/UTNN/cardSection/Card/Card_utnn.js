@@ -10,16 +10,12 @@ import {
   CardButtonArrowWrapper,
 } from "./Card.styled";
 
-const Card_utnn = (props) => {
+const BigCard = (props) => {
   const { t, lang } = useTranslation();
 
   return (
     <>
       <CardContainer flipX={props.flipX}>
-        <CardImage
-          className="mobile"
-          src={props.img + "_mobile.png"}
-        ></CardImage>
         <CardImage
           flipX={props.flipX}
           className="desktop"
@@ -27,6 +23,12 @@ const Card_utnn = (props) => {
         ></CardImage>
         <TextContainer>
           <CardHeading>{props.heading}</CardHeading>
+          {!props.mobileImgOnBottom && (
+            <CardImage
+              className="mobile"
+              src={props.img + "_mobile.png"}
+            ></CardImage>
+          )}
           <CardContent>{props.content}</CardContent>
           <CardButton>
             Izvedi več
@@ -34,10 +36,16 @@ const Card_utnn = (props) => {
               <img width={5} src="/UTNN/button_arrow_right.png"></img>
             </CardButtonArrowWrapper>
           </CardButton>
+          {props.mobileImgOnBottom && (
+            <CardImage
+              className="mobile"
+              src={props.img + "_mobile.png"}
+            ></CardImage>
+          )}
         </TextContainer>
       </CardContainer>
     </>
   );
 };
 
-export default Card_utnn;
+export default BigCard;

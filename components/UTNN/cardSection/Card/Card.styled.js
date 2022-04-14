@@ -7,11 +7,12 @@ export const CardContainer = styled.div`
   justify-content: center;
   align-items: center;
 
-  margin-bottom: 5%;
+  margin-bottom: 15%;
   padding-right: 5%;
   padding-left: 5%;
 
   @media only screen and (min-width: 768px) {
+    margin-bottom: 3%;
     flex-direction: row;
     padding-left: 0px;
     padding-right: 70px;
@@ -35,6 +36,7 @@ export const CardContainer = styled.div`
 export const CardImage = styled.img`
   width: 100%;
   margin: 0px;
+  /* padding: 5% 0px; */
 
   @media only screen and (min-width: 768px) {
     width: 50%;
@@ -54,11 +56,29 @@ export const TextContainer = styled.div``;
 
 export const CardHeading = styled(Title2)`
   margin-bottom: 5%;
+
+  font-size: 2rem;
+
+  @media only screen and (min-width: 992px) {
+    font-size: 1.7rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 2rem;
+  }
 `;
 
 export const CardContent = styled(BodyText1)`
-  font-size: 24px;
+  font-size: 1.4rem;
   font-weight: 300;
+
+  @media only screen and (min-width: 992px) {
+    font-size: 1.2rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 1.4rem;
+  }
 `;
 
 export const CardButton = styled.button`

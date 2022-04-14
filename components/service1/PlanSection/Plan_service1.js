@@ -22,7 +22,16 @@ import QuoteSection2_service1 from "../Quote/QuoteSection2_service";
 import { useRouter } from "next/router";
 
 const Plan_section1 = (
-  { heading1, heading2, plan1, plan2, button, hideButton },
+  {
+    heading1,
+    heading2,
+    plan1,
+    plan2,
+    button,
+    hideButton,
+    Plan1CardStyle,
+    Plan2CardStyle,
+  },
   props
 ) => {
   const { t, lang } = useTranslation();
@@ -58,13 +67,20 @@ const Plan_section1 = (
           </PlanTableHeaderContainer>
           <FlexContainer>
             {p1.map((item) => {
-              return <PlanItem_service1 props={item}></PlanItem_service1>;
+              return (
+                <PlanItem_service1
+                  props={{ ...item, CardStyle: Plan1CardStyle }}
+                ></PlanItem_service1>
+              );
             })}
           </FlexContainer>
 
           <PlanTableHeaderContainer>
             <PlanTableHeaderCon>
-              <PlanTableHeaderLineWrapperLeft className="desktop">
+              <PlanTableHeaderLineWrapperLeft
+                show={p2.length > 0}
+                className="desktop"
+              >
                 <PlanTableHeaderLine></PlanTableHeaderLine>
               </PlanTableHeaderLineWrapperLeft>
               <PlanTableHeaderSecond>{heading2}</PlanTableHeaderSecond>
@@ -72,7 +88,11 @@ const Plan_section1 = (
           </PlanTableHeaderContainer>
           <FlexContainer>
             {p2.map((item) => {
-              return <PlanItem_service1 props={item}></PlanItem_service1>;
+              return (
+                <PlanItem_service1
+                  props={{ ...item, CardStyle: Plan2CardStyle }}
+                ></PlanItem_service1>
+              );
             })}
             <ButtonContainer
               props={button}

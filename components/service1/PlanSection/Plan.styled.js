@@ -13,7 +13,7 @@ export const PlanContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 7.5%;
+        padding-top: 15%;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -62,6 +62,8 @@ export const PlanTableHeaderContainer = styledComponents.div`
 
 export const FlexContainer = styledComponents.div`
  
+    margin-bottom: 10%;
+
     @media only screen and (min-width: 768px) {
         display: flex;
         flex-direction: row;
@@ -104,6 +106,11 @@ export const PlanTableHeaderLineWrapperLeft = styledComponents.div`
     flex: 1;
     position: relative;
     margin-right: 10%;
+    min-width: 200px;
+
+    ${(props) => {
+      return props.show ? `` : `display: none !important;`;
+    }}
     `;
 
 export const PlanTableHeaderLineWrapperRight = styledComponents.div`
@@ -112,6 +119,7 @@ export const PlanTableHeaderLineWrapperRight = styledComponents.div`
     flex: 1;
     position: relative;
     margin-left: 10%;
+    min-width: 200px;
     `;
 
 export const PlanTableHeaderLine = styledComponents.div`
@@ -158,10 +166,9 @@ export const PlanTableHeaderFirst = styledComponents(Header2)`
 `;
 
 export const PlanTableHeaderSecond = styledComponents(Header2)`
-    text-align: right;
-
     @media only screen and (min-width: 768px) {
-       font-size: 2rem;
+        text-align: right;
+        font-size: 2rem;
     }
 
     @media only screen and (min-width: 992px) {
