@@ -110,6 +110,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
         heading1={planHeading1}
         plan2={Plan2}
         heading2={planHeading2}
+        hideButton={true}
         className="section"
       ></Plan>
       <CardSection_utnn className="section"></CardSection_utnn>

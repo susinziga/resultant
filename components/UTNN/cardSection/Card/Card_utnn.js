@@ -29,7 +29,7 @@ const Card_utnn = (props) => {
           <CardHeading>{props.heading}</CardHeading>
           <CardContent>{props.content}</CardContent>
           <CardButton>
-            Želim vedeti več{" "}
+            Izvedi več
             <CardButtonArrowWrapper>
               <img width={5} src="/UTNN/button_arrow_right.png"></img>
             </CardButtonArrowWrapper>
