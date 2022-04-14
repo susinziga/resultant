@@ -4,7 +4,7 @@
   "defaultLocale": "sl",
   "localeDetection": false,
   "pages": {
-    "*": ["common", "aboveTheFold", "pillars", "testimonials", "footer","subpages","dnla","offer", "utnn","team"],
+    "*": ["common", "aboveTheFold", "pillars", "testimonials", "footer","subpages","dnla","offer", "utnn","team","srk"],
     "/": ["home", "footer"],
     "/about": ["about", "team", "partners", "references", "footer"],
 

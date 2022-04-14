@@ -1,5 +1,4 @@
 import React from "react";
-import useTranslation from "next-translate/useTranslation";
 import {
   CardContainer,
   CardImage,
@@ -8,18 +7,12 @@ import {
   CardContent,
   CardButton,
   CardButtonArrowWrapper,
-} from "./Card.styled";
+} from "./BigCard.styled";
 
-const Card_utnn = (props) => {
-  const { t, lang } = useTranslation();
-
+const BigCard = (props) => {
   return (
     <>
-      <CardContainer flipX={props.flipX}>
-        <CardImage
-          className="mobile"
-          src={props.img + "_mobile.png"}
-        ></CardImage>
+      <CardContainer flipX={props.flipX} margin={props.margin}>
         <CardImage
           flipX={props.flipX}
           className="desktop"
@@ -27,17 +20,30 @@ const Card_utnn = (props) => {
         ></CardImage>
         <TextContainer>
           <CardHeading>{props.heading}</CardHeading>
+          {!props.mobileImgOnBottom && (
+            <CardImage
+              className="mobile"
+              margin={props.margin}
+              src={props.img + "_mobile.png"}
+            ></CardImage>
+          )}
           <CardContent>{props.content}</CardContent>
           <CardButton href={props.href}>
-            Želim vedeti več{" "}
+            Izvedi več
             <CardButtonArrowWrapper>
               <img width={5} src="/UTNN/button_arrow_right.png"></img>
             </CardButtonArrowWrapper>
           </CardButton>
+          {props.mobileImgOnBottom && (
+            <CardImage
+              className="mobile"
+              src={props.img + "_mobile.png"}
+            ></CardImage>
+          )}
         </TextContainer>
       </CardContainer>
     </>
   );
 };
 
-export default Card_utnn;
+export default BigCard;

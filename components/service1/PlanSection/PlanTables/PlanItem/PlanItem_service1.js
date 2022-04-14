@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  PlanCardText,
   PlanItemContainer,
   PlanNumber,
   PlanNumberContainer,
@@ -12,14 +13,22 @@ const PlanItem_service1 = ({ props }) => {
   console.log(props);
   return (
     <>
-      <PlanItemContainer>
-        <PlanTextContainer>
-          <PlanText>{props.text}</PlanText>
+      <PlanItemContainer active={props.active} CardStyle={props.CardStyle}>
+        <PlanTextContainer CardStyle={props.CardStyle}>
+          {props.CardStyle ? (
+            <PlanCardText active={props.active}>{props.text}</PlanCardText>
+          ) : (
+            <PlanText>{props.text}</PlanText>
+          )}
         </PlanTextContainer>
-        <PlanNumberContainer>
-          <PlanUnderlineContainer></PlanUnderlineContainer>
-          <PlanNumber>{props.number}</PlanNumber>
-        </PlanNumberContainer>
+        {props.CardStyle ? (
+          <></>
+        ) : (
+          <PlanNumberContainer>
+            <PlanUnderlineContainer></PlanUnderlineContainer>
+            <PlanNumber>{props.number}</PlanNumber>
+          </PlanNumberContainer>
+        )}
       </PlanItemContainer>
     </>
   );

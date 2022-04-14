@@ -5,7 +5,8 @@ import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSec
 import Quote from "../../components/service1/Quote/QuoteSection1_service1";
 import CardSection from "../../components/service1/CardSection/CardTable_service1";
 import Plan from "../../components/service1/PlanSection/Plan_service1";
-import CardSection_utnn from "../../components/UTNN/cardSection/cardSection_utnn";
+import BigCardsSection from "../../components/UTNN/cardSection/BigCardsSection";
+import BigCard from "../../components/UTNN/CardSection/Card/BigCard";
 import Contact_utnn from "../../components/UTNN/Contact/Contact_utnn";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 
@@ -86,6 +87,22 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
     image: "/UTNN/article3_desktop.png",
   };
 
+  const bigCards = [
+    <BigCard
+      flipX
+      heading={t("utnn:utnn_bigArticle1Heading")}
+      content={t("utnn:utnn_bigArticle1Content")}
+      img={"/UTNN/card1img"}
+      mobileImgOnBottom
+    ></BigCard>,
+    <BigCard
+      heading={t("utnn:utnn_bigArticle2Heading")}
+      content={t("utnn:utnn_bigArticle2Content")}
+      img={"/UTNN/card2img"}
+      mobileImgOnBottom
+    ></BigCard>,
+  ];
+
   return (
     <>
       <Head>
@@ -110,9 +127,10 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
         heading1={planHeading1}
         plan2={Plan2}
         heading2={planHeading2}
+        hideButton={true}
         className="section"
       ></Plan>
-      <CardSection_utnn className="section"></CardSection_utnn>
+      <BigCardsSection className="section" cards={bigCards}></BigCardsSection>
       <Contact_utnn className="section"></Contact_utnn>
       <CardSlider
         news={[articleCard1, articleCard2, articleCard3]}

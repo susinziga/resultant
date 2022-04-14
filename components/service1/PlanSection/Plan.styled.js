@@ -13,7 +13,7 @@ export const PlanContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 7.5%;
+        padding-top: 15%;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -62,6 +62,8 @@ export const PlanTableHeaderContainer = styledComponents.div`
 
 export const FlexContainer = styledComponents.div`
  
+    margin-bottom: 10%;
+
     @media only screen and (min-width: 768px) {
         display: flex;
         flex-direction: row;
@@ -98,8 +100,40 @@ export const PlanTableLine = styledComponents.div`
     }
 `;
 
+export const PlanTableHeaderLineWrapperLeft = styledComponents.div`
+    width: 100%;
+    display: flex;
+    flex: 1;
+    position: relative;
+    margin-right: 10%;
+    min-width: 200px;
+
+    ${(props) => {
+      return props.show ? `` : `display: none !important;`;
+    }}
+    `;
+
+export const PlanTableHeaderLineWrapperRight = styledComponents.div`
+    width: 100%;
+    display: flex;
+    flex: 1;
+    position: relative;
+    margin-left: 10%;
+    min-width: 200px;
+    `;
+
+export const PlanTableHeaderLine = styledComponents.div`
+    border-top: 1px solid #282828;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+`;
+
 export const PlanTableHeaderCon = styledComponents.div`
     width: 100%;
+    position: relative;
+    display: flex;
     
 
     @media only screen and (min-width: 768px) {
@@ -115,12 +149,26 @@ export const PlanTableHeaderCon = styledComponents.div`
     }
 `;
 
-export const PlanTableHeader = styledComponents(Header2)`
-    
-
+export const PlanTableHeaderFirst = styledComponents(Header2)`
+    text-align: left;
 
     @media only screen and (min-width: 768px) {
        font-size: 2rem;
+    }
+
+    @media only screen and (min-width: 992px) {
+        font-size: 2.5rem;
+    }
+
+    @media only screen and (min-width: 1600px) {
+       
+    }
+`;
+
+export const PlanTableHeaderSecond = styledComponents(Header2)`
+    @media only screen and (min-width: 768px) {
+        text-align: right;
+        font-size: 2rem;
     }
 
     @media only screen and (min-width: 992px) {

@@ -3,13 +3,17 @@ import useTranslation from "next-translate/useTranslation";
 import {
   PlanContainer,
   PlanTableContainer,
-  PlanTableHeader,
+  PlanTableHeaderFirst,
+  PlanTableHeaderSecond,
   PlanTableHeaderContainer,
   PlanTableHeaderCon,
   SubmitButton,
   ButtonContainer,
   FlexContainer,
   BackgroundVector,
+  PlanTableHeaderLineWrapperLeft,
+  PlanTableHeaderLineWrapperRight,
+  PlanTableHeaderLine,
 } from "./Plan.styled";
 
 import PlanItem_service1 from "./PlanTables/PlanItem/PlanItem_service1";
@@ -17,7 +21,19 @@ import QuoteSection2_service1 from "../Quote/QuoteSection2_service";
 
 import { useRouter } from "next/router";
 
-const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
+const Plan_section1 = (
+  {
+    heading1,
+    heading2,
+    plan1,
+    plan2,
+    button,
+    hideButton,
+    Plan1CardStyle,
+    Plan2CardStyle,
+  },
+  props
+) => {
   const { t, lang } = useTranslation();
   const p1 = plan1 ?? [];
   const p2 = plan2 ?? [];
@@ -43,27 +59,44 @@ const Plan_section1 = ({ heading1, heading2, plan1, plan2, button }, props) => {
         <PlanTableContainer>
           <PlanTableHeaderContainer>
             <PlanTableHeaderCon>
-              <PlanTableHeader>{heading1}</PlanTableHeader>
+              <PlanTableHeaderFirst>{heading1}</PlanTableHeaderFirst>
+              <PlanTableHeaderLineWrapperRight className="desktop">
+                <PlanTableHeaderLine></PlanTableHeaderLine>
+              </PlanTableHeaderLineWrapperRight>
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
             {p1.map((item) => {
-              return <PlanItem_service1 props={item}></PlanItem_service1>;
+              return (
+                <PlanItem_service1
+                  props={{ ...item, CardStyle: Plan1CardStyle }}
+                ></PlanItem_service1>
+              );
             })}
           </FlexContainer>
+
           <PlanTableHeaderContainer>
             <PlanTableHeaderCon>
-              <PlanTableHeader>{heading2}</PlanTableHeader>
+              <PlanTableHeaderLineWrapperLeft
+                show={p2.length > 0}
+                className="desktop"
+              >
+                <PlanTableHeaderLine></PlanTableHeaderLine>
+              </PlanTableHeaderLineWrapperLeft>
+              <PlanTableHeaderSecond>{heading2}</PlanTableHeaderSecond>
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
-
           <FlexContainer>
             {p2.map((item) => {
-              return <PlanItem_service1 props={item}></PlanItem_service1>;
+              return (
+                <PlanItem_service1
+                  props={{ ...item, CardStyle: Plan2CardStyle }}
+                ></PlanItem_service1>
+              );
             })}
             <ButtonContainer
               props={button}
-              button={p2.length > 0}
+              button={!hideButton && p2.length > 0}
               onClick={() => {
                 window.scrollBy({
                   top: document.getElementById("forma").getBoundingClientRect()

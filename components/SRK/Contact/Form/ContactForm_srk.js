@@ -9,9 +9,8 @@ import {
   HeadingLine,
   HeaderContainer,
   InputContainer,
-  InputLabel,
-  HeaderLine,
   HeaderLineWrapperRight,
+  HeaderLine,
 } from "./ContactForm.styled";
 import Input from "../../../../basic_components/input/Input";
 import Textarea from "../../../../basic_components/textarea/Textarea";
@@ -45,24 +44,21 @@ const textAreaLabel = {
 };
 
 const textField = {
-  sl: "Kako ste izvedeli za nas?",
+  si: "Kako ste izvedeli za nas?",
   en: "How did you find out about us?",
 };
 
-const ContactForm_dnla = (props) => {
+const ContactForm_srk = (props) => {
   const { t, lang } = useTranslation();
   const { locale } = useRouter();
 
-  const title = t("utnn:utnn_contactHeading");
-  const button = t("utnn:utnn_buttonText");
+  const title = t("srk:srk_contactHeading");
+  const button = t("srk:srk_contactButtonText");
 
   const { formData, handleFormChange, sendMail } = useForm();
 
   useEffect(() => {
-    handleFormChange(
-      "subject",
-      "Upravljanje Talentov in Nasledstveno Nacrtovanje Povpraševanje"
-    );
+    handleFormChange("subject", "Sistematičen razvoj kompetenc Povpraševanje");
   }, []);
 
   return (
@@ -108,7 +104,7 @@ const ContactForm_dnla = (props) => {
               onClick={(id, value) => {
                 sendMail();
               }}
-              value={"Pošlji"}
+              value={button}
               type={"submit"}
             ></SubmitButton>
           </ButtonContainer>
@@ -118,4 +114,4 @@ const ContactForm_dnla = (props) => {
   );
 };
 
-export default ContactForm_dnla;
+export default ContactForm_srk;

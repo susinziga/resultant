@@ -9,7 +9,9 @@ import {
 } from "./NewsCard.styled";
 
 import { useRouter } from "next/router";
+import Button from "../../../../basic_components/button/Button";
 
+// TODO: add button to the bottom
 const NewsCard_service1 = ({ news, isActive }) => {
   const { locale } = useRouter();
   const { heading, text, image } = news;

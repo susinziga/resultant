@@ -165,25 +165,26 @@ export const SubmitButton = styledComponents.input`
 
 `;
 
-// export const HeadingLine = styledComponents.div`
-//     height: 1px;
-//     width: 100%;
-//     border-top: 1px solid black;
-//     margin: 10% 0;
+export const HeadingLine = styledComponents.div`
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid black;
+    margin: 10% 0;
 
-//     @media screen and (min-width: 768px){
-//        margin:7% 0 0 0;
-//        margin-left: 5%;
-//        padding-bottom: 10px;
-//        width: 30%;
-//     }
+    @media screen and (min-width: 768px){
+       margin:7% 0 0 0;
+       margin-left: 5%;
+       padding-bottom: 10px;
+       width: 30%;
+    }
 
-//     @media only screen and (min-width: 992px) {
-//         width: 50%;
-//     }
+    @media only screen and (min-width: 992px) {
+        width: 50%;
+    }
 
-//     @media only screen and (min-width: 1600px) {
-//         width: 55%;
-//     }
+    @media only screen and (min-width: 1600px) {
+        width: 55%;
+    }
 
-// `;
+  
+`;
