@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import { BodyText1 } from "../../../basic_components/texts/Texts";
+
+export const HeadText = styled(BodyText1)`
+  display: block;
+  padding-bottom: 3%;
+  font-weight: bold;
+`;
 
 export const HeroWrapper = styled.div`
   display: flex;

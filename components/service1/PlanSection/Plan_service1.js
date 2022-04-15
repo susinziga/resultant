@@ -47,14 +47,18 @@ const Plan_section1 = (
   return (
     <>
       <PlanContainer {...props}>
-        <BackgroundVector
-          className="desktop"
-          src="/offer/backgroundVector.png"
-        ></BackgroundVector>
-        <BackgroundVector
-          className="mobile"
-          src="/Service1/VectorA_mobile.png"
-        ></BackgroundVector>
+        {p2.length > 0 && (
+          <>
+            <BackgroundVector
+              className="desktop"
+              src="/offer/backgroundVector.png"
+            ></BackgroundVector>
+            <BackgroundVector
+              className="mobile"
+              src="/Service1/VectorA_mobile.png"
+            ></BackgroundVector>
+          </>
+        )}
 
         <PlanTableContainer>
           <PlanTableHeaderContainer>
