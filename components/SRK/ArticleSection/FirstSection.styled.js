@@ -9,6 +9,10 @@ import {
 
 export const FirstSectionWrapper = styled.div`
   margin-bottom: 15%;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 8%;
+  }
 `;
 
 export const PaddingX = styled.div`
@@ -18,6 +22,7 @@ export const PaddingX = styled.div`
 export const ImageHeader = styled(Subtitle2)`
   display: block !important;
   margin-bottom: 2%;
+  font-size: 2rem;
 `;
 
 export const ImageDescription = styled(BodyText3)``;
@@ -42,5 +47,10 @@ export const RowHeader = styled(Subtitle2).attrs({ bold: true })`
 export const RowText = styled(BodyText3)``;
 export const OrderedList = styled.ol`
   list-style: decimal;
-  margin-left: 3%;
+  margin-left: 25px;
+  margin-bottom: 5%;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;

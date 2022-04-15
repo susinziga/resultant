@@ -94,12 +94,18 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       content={t("utnn:utnn_bigArticle1Content")}
       img={"/UTNN/card1img"}
       mobileImgOnBottom
+      href={
+        "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/upravljanje_talentov_in_njihovih_karier"
+      }
     ></BigCard>,
     <BigCard
       heading={t("utnn:utnn_bigArticle2Heading")}
       content={t("utnn:utnn_bigArticle2Content")}
       img={"/UTNN/card2img"}
       mobileImgOnBottom
+      href={
+        "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/nasledstveno_nacrtovanje"
+      }
     ></BigCard>,
   ];
 

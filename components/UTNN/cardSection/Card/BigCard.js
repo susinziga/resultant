@@ -28,12 +28,14 @@ const BigCard = (props) => {
             ></CardImage>
           )}
           <CardContent>{props.content}</CardContent>
-          <CardButton>
-            Izvedi več
-            <CardButtonArrowWrapper>
-              <img width={5} src="/UTNN/button_arrow_right.png"></img>
-            </CardButtonArrowWrapper>
-          </CardButton>
+          <a href={props.href}>
+            <CardButton>
+              Izvedi več
+              <CardButtonArrowWrapper>
+                <img width={5} src="/UTNN/button_arrow_right.png"></img>
+              </CardButtonArrowWrapper>
+            </CardButton>
+          </a>
           {props.mobileImgOnBottom && (
             <CardImage
               className="mobile"

@@ -75,12 +75,18 @@ const sistematicen_razvoj_kompetenc = () => {
       heading={t("srk:srk_bigCard1Heading")}
       content={t("srk:srk_bigCard1Content")}
       img={"/SRK/bigCard1img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/modeli_kompetenc_so_temelj_za_vecino_kadrovskih_procesov"
+      }
     ></BigCard>,
     <BigCard
       key={1}
       heading={t("srk:srk_bigCard2Heading")}
       content={t("srk:srk_bigCard2Content")}
       img={"/SRK/bigCard2img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev"
+      }
     ></BigCard>,
     <BigCard
       key={2}
@@ -88,12 +94,18 @@ const sistematicen_razvoj_kompetenc = () => {
       heading={t("srk:srk_bigCard3Heading")}
       content={t("srk:srk_bigCard3Content")}
       img={"/SRK/bigCard3img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/kaj_je_povratna_informacija_po_metodi_360"
+      }
     ></BigCard>,
     <BigCard
       key={3}
       heading={t("srk:srk_bigCard4Heading")}
       content={t("srk:srk_bigCard4Content")}
       img={"/SRK/bigCard4img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/ucinkovita_360_povratna_informacija_je_celovit_proces_razvoja_zaposlenih_s_pomocjo_360_metode"
+      }
     ></BigCard>,
   ];
 

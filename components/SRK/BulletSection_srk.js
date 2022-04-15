@@ -13,36 +13,39 @@ import {
   Subtext,
   ControlContainer,
 } from "./BulletSection.styled";
+import {
+  BodyText2,
+  BodyText3,
+  Subtitle2,
+} from "../../basic_components/texts/Texts";
+import styled from "styled-components";
 
 const BulletSection_srk = (props) => {
   const { t, lang } = useTranslation();
 
   const header = t("srk:kurkvs_bulletLeftHeader");
   const bulletProps = [
-    { bullet: t("srk:kurkvs_bullet1") },
-    { bullet: t("srk:kurkvs_bullet2") },
-    { bullet: t("srk:kurkvs_bullet3") },
-    { bullet: t("srk:kurkvs_bullet4") },
+    { title: t("srk:kurkvs_bullet1title"), text: t("srk:kurkvs_bullet1text") },
+    { title: t("srk:kurkvs_bullet2title"), text: t("srk:kurkvs_bullet2text") },
+    { title: t("srk:kurkvs_bullet3title"), text: t("srk:kurkvs_bullet3text") },
+    { title: t("srk:kurkvs_bullet4title"), text: t("srk:kurkvs_bullet4text") },
   ];
 
   return (
     <>
       <ExperienceContainer {...props}>
-        {/* <BackgroundVector
-          className="desktop"
-          src="/Service1/VectorA.png"
-        ></BackgroundVector> */}
         <FlexDesktop>
           <FlexHeadingContainer>
             <ExperienceTitle>{header}</ExperienceTitle>
           </FlexHeadingContainer>
           <FlexDesktopText>
             <List>
-              {bulletProps.map((bullet) => {
+              {bulletProps.map(({ title, text }) => {
                 return (
-                  <Bullet
-                    dangerouslySetInnerHTML={{ __html: bullet.bullet }}
-                  ></Bullet>
+                  <Bullet>
+                    <BulletTitle>{title}</BulletTitle>
+                    <BodyText3> - {text}</BodyText3>
+                  </Bullet>
                 );
               })}
             </List>
@@ -52,5 +55,11 @@ const BulletSection_srk = (props) => {
     </>
   );
 };
+
+export const BulletTitle = styled(BodyText3)`
+  display: inline-block;
+  font-weight: bold;
+  font-family: "Neusa";
+`;
 
 export default BulletSection_srk;

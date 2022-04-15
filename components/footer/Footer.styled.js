@@ -232,6 +232,10 @@ export const Link = styledComponents.a`
   opacity: 0.8;
   cursor: pointer;
 
+  &:hover {
+      color: var(--secondary-color);
+  }
+
   @media only screen and (min-width: 992px) {
     
   }

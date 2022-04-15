@@ -18,7 +18,12 @@ export const List = styled.ul`
 
 export const Header = styled(Subtitle2)`
   display: block !important;
-  margin-bottom: 2%;
+  font-size: 2rem;
+  margin-bottom: 10%;
+
+  @media only screen and (min-width: 768px) {
+    margin-bottom: 2%;
+  }
 `;
 
 export const Bold = styled(BodyText3).attrs({ bold: true })`

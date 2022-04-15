@@ -17,18 +17,18 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
       ></BodyText3>
       <SecondTextHeading>{t("srk:kpim_secondTextHeading")}</SecondTextHeading>
       <List>
-        <li>
+        <ListItem>
           <BodyText3>{t("srk:kpim_listItem1")}</BodyText3>
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <BodyText3>{t("srk:kpim_listItem2")}</BodyText3>
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <BodyText3>{t("srk:kpim_listItem3")}</BodyText3>
-        </li>
-        <li>
+        </ListItem>
+        <ListItem>
           <BodyText3>{t("srk:kpim_listItem4")}</BodyText3>
-        </li>
+        </ListItem>
       </List>
       <BodyText3>{t("srk:kpim_secondTextBottom")}</BodyText3>
     </>
@@ -56,13 +56,32 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
 
 export const SecondTextHeading = styled(Subtitle2)`
   display: block;
-  padding-top: 10%;
-  padding-bottom: 5%;
+  padding-top: 20%;
+  padding-bottom: 8%;
+  font-size: 2rem;
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 2%;
+    padding-top: 5%;
+  }
 `;
 
 export const List = styled.ul`
   list-style: disc;
   padding-left: 3%;
+  padding-bottom: 5%;
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 1%;
+  }
+`;
+
+export const ListItem = styled.li`
+  padding: 1% 0;
+
+  @media only screen and (min-width: 768px) {
+    padding: 0.25% 0;
+  }
 `;
 
 export default kaj_je_povratna_informacija_po_metodi_360;
