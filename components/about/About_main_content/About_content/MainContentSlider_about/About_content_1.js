@@ -143,6 +143,12 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           direction={"horizontal"}
           className="mySwiper"
           autoHeight={true}
+          breakpoints={{
+            0: { centeredSlides: true },
+            768: {
+              centeredSlides: false,
+            },
+          }}
         >
           <SwiperInstance setInstance={setInstance}></SwiperInstance>
           {items[locale].map((ref, id) => (

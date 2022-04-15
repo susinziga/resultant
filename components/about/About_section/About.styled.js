@@ -12,15 +12,15 @@ height:fit-content;
     display:flex;
     flex-direction:column-reverse;
 
-    padding-top: 20%;
+  
     gap:2rem;
    
 
     @media screen and (min-width: 768px){
-        height: 100vh;
+        height: fit-content;
         width:90%;
         margin:auto;
-        padding-top: 10%;
+      
         flex-direction:row;
         gap:10rem;
     }

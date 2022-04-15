@@ -11,6 +11,8 @@ import styled from "styled-components";
 
 import TagManager from "react-gtm-module";
 
+import { useRouter } from "next/router";
+
 const tagManagerArgs = {
   gtmId: "GTM-TJL8898",
 };
@@ -18,10 +20,14 @@ const tagManagerArgs = {
 function MyApp({ Component, pageProps }) {
   const [size, setSize] = useState([]);
   const [menu, setMenu] = useState("90px");
-
+  const { pathname } = useRouter();
   useEffect(() => {
-    const menuTemp =
-      document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
+    let menuTemp = "-";
+    if (pathname !== "/") {
+      menuTemp =
+        document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
+    }
+
     setMenu(menuTemp);
     TagManager.initialize(tagManagerArgs);
     window.addEventListener("resize", setSizes);

@@ -79,6 +79,7 @@ ${(props) => {
 
 export const ButtonsContainer = styledComponents.div`
 display:flex;
+z-index: 99999;
 @media(min-width:768px){
   position:relative;
   gap:1rem;
