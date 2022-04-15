@@ -19,16 +19,9 @@ const tagManagerArgs = {
 
 function MyApp({ Component, pageProps }) {
   const [size, setSize] = useState([]);
-  const [menu, setMenu] = useState("90px");
+
   const { pathname } = useRouter();
   useEffect(() => {
-    let menuTemp = "-";
-    if (pathname !== "/") {
-      menuTemp =
-        document.getElementsByClassName("menu_top_desktop")[0].offsetHeight;
-    }
-
-    setMenu(menuTemp);
     TagManager.initialize(tagManagerArgs);
     window.addEventListener("resize", setSizes);
     return () => window.removeEventListener("resize", setSizes);
@@ -43,7 +36,7 @@ function MyApp({ Component, pageProps }) {
         <title>Resultant</title>
       </Head>
       <Menu_top size={size}></Menu_top>
-      <Body_content id="__body" menu={menu}>
+      <Body_content id="__body" path={pathname}>
         <Component {...pageProps} />
       </Body_content>
       <Footer></Footer>
@@ -52,7 +45,13 @@ function MyApp({ Component, pageProps }) {
 }
 
 const Body_content = styled.div`
-  padding-top: calc(${(props) => props.menu}px + 2rem);
+  padding-top: 95px;
+
+  @media (min-width: 992px) {
+    padding-top: 130px;
+  }
+
+  ${(props) => (props.path === "/" ? "padding-top:0!important;" : "")}
 `;
 
 export default MyApp;

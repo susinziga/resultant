@@ -33,13 +33,9 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
   let isScrolling = Date.now();
 
   const preventDefault = (e) => {
-    console.log(Date.now());
-    console.log(isScrolling);
     if (isActive) {
       e.preventDefault();
       if (Date.now() - 500 > isScrolling) {
-        console.log(isActive);
-
         if (e.deltaY < 0) {
           if (swip.isBeginning) {
             /*document.getElementById("content_box").scrollBy(0, e.deltaY);*/
@@ -94,21 +90,6 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
       photo: t("person3_photo"),
     },
   ];
-
-  const handleWheel = (e) => {
-    console.log(isActive);
-    if (isActive) {
-      if (e.deltaY > 0) {
-        if (swip.isEnd) {
-          nextSection(e);
-        } else swip.slideNext(500);
-      } else {
-        if (swip.isBeginning) {
-          prevSection(e);
-        } else swip.slidePrev(500);
-      }
-    }
-  };
 
   const setInstance = (instance) => {
     swip = instance;

@@ -29,6 +29,13 @@ export const About_sidebar_container = styledComponents.div`
     
 
     }
+
+  @media(min-width:768px){
+    width:40%;
+  }
+  @media(min-width:1200px){
+    width:30%;
+  }
 `;
 
 export const Sidebar_title = styledComponents(Header2)`

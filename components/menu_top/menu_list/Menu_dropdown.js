@@ -7,8 +7,6 @@ const Menu_dropdown = () => {
 
   const { locale } = useRouter();
 
-  console.log(locale);
-
   React.useEffect(() => {
     window.onclick = function (event) {
       if (!event.target.matches(".drop-button")) {
