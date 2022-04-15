@@ -25,6 +25,16 @@ export const Container_border = styled.div`
   border-radius: 12px;
   padding: 4rem 1.5rem;
   text-align: center;
+
+  ul {
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 0.8rem;
+    margin-left: 1.5rem;
+  }
+
   @media (min-width: 768px) {
     padding: 5rem 7rem;
   }
