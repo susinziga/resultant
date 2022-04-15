@@ -1,5 +1,6 @@
 import React from "react";
 import styledComponents from "styled-components";
+import Share from "./content_components/Share";
 import Blog_Header from "./header/Blog_header";
 import Blog_image_excerpt from "./image_excerpt/Blog_image_excerpt";
 
@@ -12,6 +13,7 @@ const Blog_page = (props) => {
       <Blog_image_excerpt image={image} excerpt={excerpt}></Blog_image_excerpt>
 
       {props.children}
+      <Share></Share>
     </Container>
   );
 };

@@ -12,9 +12,13 @@ const Image = ({ src, label }) => {
 };
 
 const Container = styled.div`
-  width: 70%;
+  width: 100%;
   margin: auto;
   text-align: center;
+
+  @media (min-width: 768px) {
+    width: 70%;
+  }
 `;
 const Label = styled.label`
   font-size: 0.9rem;
