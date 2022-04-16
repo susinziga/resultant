@@ -77,7 +77,7 @@ const Pillars_home = (props) => {
     </Styled.PillarsContainer>
   ) : (
     <Styled.PillarsContainer_mobile {...props}>
-      {pillarsContentBot.map((pillar) => {
+      {pillarsContentTop.map((pillar) => {
         return (
           <Pillars_sliderItem
             title={pillar.title}

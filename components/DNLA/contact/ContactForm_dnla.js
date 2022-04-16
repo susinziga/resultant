@@ -36,13 +36,8 @@ const inputProps = {
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
-};
-
-const textField = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_dnla = (props) => {
@@ -74,6 +69,9 @@ const ContactForm_dnla = (props) => {
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
+                  onChange={(e) => {
+                    handleFormChange(input.label, e.target.value);
+                  }}
                 ></Input>
               </>
             );
@@ -82,12 +80,21 @@ const ContactForm_dnla = (props) => {
             <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
-              props={{ label: textField[locale] }}
+              props={{ label: textAreaLabel[locale] }}
               style={{ fontSize: "1.5rem" }}
+              onChange={(e) => {
+                handleFormChange(textAreaLabel[locale], e.target.value);
+              }}
             ></Textarea>
           </TextareaContainer>
           <ButtonContainer>
-            <SubmitButton type="submit" value={button}></SubmitButton>
+            <SubmitButton
+              onClick={(id, value) => {
+                sendMail();
+              }}
+              value={button}
+              type={"submit"}
+            ></SubmitButton>
           </ButtonContainer>
         </FormContainer>
       </ContactContainer>

@@ -6,15 +6,16 @@ import {
   NewsImage,
   NewsTextContainer,
   NewsText,
+  NewsButton,
 } from "./NewsCard.styled";
 
 import { useRouter } from "next/router";
 import Button from "../../../../basic_components/button/Button";
 
-// TODO: add button to the bottom
 const NewsCard_service1 = ({ news, isActive }) => {
   const { locale } = useRouter();
   const { heading, text, image } = news;
+
   return (
     <>
       <a href={"/" + locale + "/coming-soon"}>
@@ -22,10 +23,9 @@ const NewsCard_service1 = ({ news, isActive }) => {
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
-            <NewsText>
-              <BodyText2>{text}</BodyText2>
-            </NewsText>
+            <NewsText>{text}</NewsText>
           </NewsTextContainer>
+          <NewsButton>Preberi več {">"}</NewsButton>
         </NewsContainer>
       </a>
     </>

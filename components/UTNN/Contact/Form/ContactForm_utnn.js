@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   ButtonContainer,
   ContactContainer,
@@ -40,13 +40,8 @@ const inputProps = {
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
-};
-
-const textField = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_dnla = (props) => {
@@ -96,10 +91,10 @@ const ContactForm_dnla = (props) => {
             <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
-              props={{ label: textField[locale] }}
+              props={{ label: textAreaLabel[locale] }}
               style={{ fontSize: "1.5rem" }}
               onChange={(e) => {
-                handleFormChange("Kako ste izvedeli za nas?", e.target.value);
+                handleFormChange(textAreaLabel[locale], e.target.value);
               }}
             ></Textarea>
           </TextareaContainer>
@@ -108,7 +103,7 @@ const ContactForm_dnla = (props) => {
               onClick={(id, value) => {
                 sendMail();
               }}
-              value={"Pošlji"}
+              value={button}
               type={"submit"}
             ></SubmitButton>
           </ButtonContainer>

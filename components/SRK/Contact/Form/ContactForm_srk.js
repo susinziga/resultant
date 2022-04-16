@@ -39,13 +39,13 @@ const inputProps = {
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const textField = {
-  si: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  si: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_srk = (props) => {
@@ -95,7 +95,7 @@ const ContactForm_srk = (props) => {
               props={{ label: textField[locale] }}
               style={{ fontSize: "1.5rem" }}
               onChange={(e) => {
-                handleFormChange("Kako ste izvedeli za nas?", e.target.value);
+                handleFormChange(textAreaLabel[locale], e.target.value);
               }}
             ></Textarea>
           </TextareaContainer>

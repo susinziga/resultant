@@ -250,6 +250,10 @@ export const Footer_item = styledComponents.label`
   opacity: 0.8;
 
 
+  &:hover {
+      color: var(--secondary-color);
+  }
+
   @media only screen and (min-width: 992px) {
     
   }

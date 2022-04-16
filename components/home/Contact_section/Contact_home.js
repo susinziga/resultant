@@ -30,7 +30,11 @@ const Contact_home = (props) => {
           <p style={{ marginBottom: "8%" }}>
             <BodyText2>{text}</BodyText2>
           </p>
-          <Button className="mobile" secondary>
+          <Button
+            className="mobile"
+            secondary
+            href={"/" + locale + "/about#team"}
+          >
             {buttonText}
           </Button>
           {!isDesktop() ? (
