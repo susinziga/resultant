@@ -58,6 +58,7 @@ const Pillars2_dnla = (props) => {
             title={pillar.title}
             text={pillar.text}
             button={pillar.button}
+            link={pillar.link}
           ></Pillars_mobile>
         );
       })}

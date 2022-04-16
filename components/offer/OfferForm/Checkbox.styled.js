@@ -21,23 +21,27 @@ export const Checkbox = styledComponents.input`
     -webkit-appearance: none;
     -moz-appearance: none;
     margin: 15% 5%;
-    height: 40px;
-    width: 40px;
+    // height: 40px;
+    // width: 40px;
     background-color: #CACFD2;
-    border-radius: 20px;
+    // border-radius: 20px;
     cursor: pointer;
 
+    height: 70px;
+    width: 70px;
+    border-radius: 35px;
+
     @media only screen and (min-width: 768px) {
-        height: 50px;
-        width: 50px;
-        border-radius: 25px;
+        // height: 50px;
+        // width: 50px;
+        // border-radius: 25px;
      
     }
 
     @media only screen and (min-width: 992px) {
-        height: 70px;
-        width: 70px;
-        border-radius: 35px;
+        // height: 70px;
+        // width: 70px;
+        // border-radius: 35px;
       
     }
 
@@ -139,5 +143,3 @@ export const Seperator = styledComponents.div`
     font-size: 2rem;
 
 `;
-
-

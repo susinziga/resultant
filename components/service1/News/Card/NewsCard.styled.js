@@ -34,7 +34,7 @@ export const NewsText = styled(BodyText2)`
 `;
 
 export const NewsHeading = styled(Title2)`
-  font-size: 1rem;
+  font-size: 1.2rem;
   width: 100%;
   transition: all 0.25s ease;
 
