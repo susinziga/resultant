@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   ButtonContainer,
   ContactContainer,
@@ -16,6 +16,8 @@ import Button from "../../../basic_components/button/Button";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import * as Styled from "../../../basic_components/input/Input.styled";
+
+import { useForm } from "../../../custom_hooks/useForm";
 
 const inputProps = {
   sl: [
@@ -35,13 +37,13 @@ const inputProps = {
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const textField = {
-  si: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  si: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_dnla = (props) => {
@@ -50,6 +52,12 @@ const ContactForm_dnla = (props) => {
 
   const title = t("dnla:dnla_contactHeading");
   const button = t("dnla:dnla_buttonText");
+
+  const { formData, handleFormChange, sendMail } = useForm();
+
+  useEffect(() => {
+    handleFormChange("subject", "DNLA");
+  }, []);
 
   return (
     <>
@@ -67,6 +75,9 @@ const ContactForm_dnla = (props) => {
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
+                  onChange={(e) => {
+                    handleFormChange(input.label, e.target.value);
+                  }}
                 ></Input>
               </>
             );
@@ -77,10 +88,19 @@ const ContactForm_dnla = (props) => {
               id="TextDesktop"
               props={{ label: textField[locale] }}
               style={{ fontSize: "1.5rem" }}
+              onChange={(e) => {
+                handleFormChange(textAreaLabel[locale], e.target.value);
+              }}
             ></Textarea>
           </TextareaContainer>
           <ButtonContainer>
-            <SubmitButton type="submit" value={button}></SubmitButton>
+            <SubmitButton
+              onClick={(id, value) => {
+                sendMail();
+              }}
+              value={button}
+              type={"submit"}
+            ></SubmitButton>
           </ButtonContainer>
         </FormContainer>
       </ContactContainer>

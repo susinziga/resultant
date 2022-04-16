@@ -93,20 +93,3 @@ export const CardContent = styled(BodyText1)`
     font-size: 1.4rem;
   }
 `;
-
-export const CardButton = styled.button`
-  display: block;
-  margin-top: 5%;
-  border: none;
-  border-bottom: 2px solid #9f7312;
-  background: none;
-  color: #282828;
-  padding-bottom: 10px;
-  font-family: "NeusaThin";
-  cursor: pointer;
-`;
-
-export const CardButtonArrowWrapper = styled.span`
-  padding-left: 15px;
-  padding-right: 5px;
-`;

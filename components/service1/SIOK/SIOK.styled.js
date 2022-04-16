@@ -4,6 +4,7 @@ import {
   BodyText2,
   BodyText3,
   BodyText4,
+  Subtitle2,
   Title1,
   Title2,
 } from "../../../basic_components/texts/Texts";
@@ -55,16 +56,16 @@ export const SIOKImage = styledComponents.img`
     width: 90%;
 
     @media only screen and (min-width: 768px) {
-       padding: 7.5% 0 5% 0;
-       width: 51%;
-    }
+       padding: 7.5% 0 0% 0;
+    //    width: 51%;
+    width: 70%;
+}
 
     @media only screen and (min-width: 992px) {
-        width: 51%;
+        // width: 51%;
     }
 
     @media only screen and (min-width: 1600px) {
-        width: 51%;
     }
 `;
 
@@ -124,6 +125,16 @@ export const SIOKImageText = styledComponents(BodyText3)`
     @media only screen and (min-width: 1600px) {
        
     }
+`;
+
+export const SIOKGraf2Heading = styledComponents(Subtitle2)`
+    display: block;
+    padding-top: 5%;
+`;
+
+export const SIOKGraf2Sub = styledComponents(BodyText4)`
+    display: block;
+    padding-bottom: 5%;
 `;
 
 export const SIOKImageContainer = styledComponents.div`

@@ -5,9 +5,8 @@ import {
   TextContainer,
   CardHeading,
   CardContent,
-  CardButton,
-  CardButtonArrowWrapper,
 } from "./BigCard.styled";
+import CardButton from "./CardButton";
 
 const BigCard = (props) => {
   return (
@@ -29,12 +28,7 @@ const BigCard = (props) => {
           )}
           <CardContent>{props.content}</CardContent>
           <a href={props.href}>
-            <CardButton>
-              Izvedi več
-              <CardButtonArrowWrapper>
-                <img width={5} src="/UTNN/button_arrow_right.png"></img>
-              </CardButtonArrowWrapper>
-            </CardButton>
+            <CardButton text={props.buttonText} />
           </a>
           {props.mobileImgOnBottom && (
             <CardImage

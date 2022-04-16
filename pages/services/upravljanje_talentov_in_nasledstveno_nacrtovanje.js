@@ -97,6 +97,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       href={
         "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/upravljanje_talentov_in_njihovih_karier"
       }
+      buttonText={t("common:button_moreMore")}
     ></BigCard>,
     <BigCard
       heading={t("utnn:utnn_bigArticle2Heading")}
@@ -106,6 +107,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       href={
         "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/nasledstveno_nacrtovanje"
       }
+      buttonText={t("common:button_moreMore")}
     ></BigCard>,
   ];
 
