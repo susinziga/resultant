@@ -8,7 +8,6 @@ export const PillarComponentContainer = styled.div`
   position: relative;
 
   border-radius: 12px;
-  border: 1px solid var(--pillar-color);
 
   transition: 0.5s all;
 
@@ -20,7 +19,7 @@ export const PillarComponentContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  background-color: #cfedfc;
+  background-color: #f9f4f0;
 
   /*&.pillarContainer:hover{
      width:55%;
@@ -29,6 +28,10 @@ export const PillarComponentContainer = styled.div`
 
   > * {
     margin-bottom: 1rem;
+  }
+
+  a {
+    background: transparent;
   }
 `;
 

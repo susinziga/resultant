@@ -232,6 +232,24 @@ export const Link = styledComponents.a`
   opacity: 0.8;
   cursor: pointer;
 
+  :hover{
+      color:var(--secondary-color);
+  }
+
+  @media only screen and (min-width: 992px) {
+    
+  }
+  
+`;
+
+export const Footer_item = styledComponents.label`
+  font-family: "Neusa";
+  font-size: 1rem;
+  color: #F8F2ED;
+  margin-bottom: 5%;
+  opacity: 0.8;
+
+
   @media only screen and (min-width: 992px) {
     
   }

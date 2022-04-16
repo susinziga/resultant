@@ -3,7 +3,7 @@ import { Title2 } from "../../../basic_components/texts/Texts";
 
 export const BulletContainer = styledComponents.div`
     width: 80%;
-    margin: 10% auto;
+    margin: 3% auto;
     
     @media only screen and (min-width: 768px) {
         width: 70%;
@@ -16,7 +16,7 @@ export const BulletContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
+`;
 
 export const DefaultContainer = styledComponents.div`
     width: 80%;
@@ -33,7 +33,7 @@ export const DefaultContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
+`;
 
 export const BulletHeader = styledComponents(Title2)`
     font-family: "Neusa";
@@ -52,8 +52,7 @@ export const BulletHeader = styledComponents(Title2)`
         font-size: 2rem;
     }
 
-`
-
+`;
 
 export const BulletList = styledComponents.ul`
     padding-left: 5%;
@@ -70,7 +69,7 @@ export const BulletList = styledComponents.ul`
     
     }
 
-`
+`;
 export const Bullet = styledComponents.li`
    list-style: disc;
    margin: 8% 0;
@@ -89,4 +88,4 @@ export const Bullet = styledComponents.li`
         font-size: 1.4rem;
     }
 
-`
+`;

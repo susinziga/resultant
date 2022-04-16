@@ -220,7 +220,7 @@ const Menu_top = ({}) => {
             <img
               id="letter"
               ref={(el) => (letterAnimation = el)}
-              src="/Logo/letter_.png"
+              src="/Logo/letter_svg.svg"
             ></img>
           </a>
         </Styled.LogoContainer>
