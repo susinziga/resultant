@@ -20,15 +20,15 @@ import * as Styled from "../../../basic_components/input/Input.styled";
 
 const inputProps = {
   sl: [
-    { label: "Ime" },
-    { label: "Priimek" },
+    { label: "Ime", required: "*" },
+    { label: "Priimek", required: "*" },
     { label: "Tel. številka" },
     { label: "Email", required: "*" },
     { label: "Ime organizacije" },
   ],
   en: [
-    { label: "Name" },
-    { label: "Last name" },
+    { label: "Name", required: "*" },
+    { label: "Last name", required: "*" },
     { label: "Gsm" },
     { label: "Email", required: "*" },
     { label: "Company name" },
