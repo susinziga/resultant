@@ -104,8 +104,12 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
       bottomOffset="40%"
       onEnter={() => setContentSwiperActive(1)}
       onLeave={(a) => {
-        /* if ((a.currentPosition = "above")) setContentSwiperActive(2);
-        if ((a.currentPosition = "below")) setContentSwiperActive(0);*/
+        if (a.currentPosition == "above") {
+          setContentSwiperActive(2);
+        }
+        if (a.currentPosition == "below") {
+          setContentSwiperActive(0);
+        }
       }}
     >
       <Styled.TeamComponentContainer>

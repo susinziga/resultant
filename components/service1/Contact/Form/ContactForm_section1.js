@@ -44,7 +44,7 @@ const textAreaLabel = {
 };
 
 const textField = {
-  si: "Prostor za vaše sporočilo",
+  sl: "Prostor za vaše sporočilo",
   en: "Your message",
 };
 
@@ -87,7 +87,6 @@ const ContactForm_service1 = () => {
             );
           })}
           <TextareaContainer>
-            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
               props={{ label: textField[locale], required: "*" }}

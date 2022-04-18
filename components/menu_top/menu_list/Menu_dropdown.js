@@ -33,11 +33,11 @@ const Menu_dropdown = () => {
     },
     {
       title: t("pillar3_title"),
-      link: "/coming-soon",
+      link: "/services/sistematicen_razvoj_kompetenc",
     },
     {
       title: t("pillar4_title"),
-      link: "/coming-soon",
+      link: "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje",
     },
   ];
 

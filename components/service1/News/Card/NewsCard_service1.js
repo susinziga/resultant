@@ -14,20 +14,21 @@ import Button from "../../../../basic_components/button/Button";
 
 const NewsCard_service1 = ({ news, isActive }) => {
   const { locale } = useRouter();
-  const { heading, text, image } = news;
+  let { heading, text, image, link, id } = news;
 
   return (
     <>
-      <a href={"/" + locale + "/coming-soon"}>
-        <NewsContainer isActive>
-          <NewsImage src={image}></NewsImage>
-          <NewsTextContainer>
-            <NewsHeading>{heading}</NewsHeading>
-            <NewsText>{text}</NewsText>
-          </NewsTextContainer>
-          <NewsButton>Preberi več {">"}</NewsButton>
-        </NewsContainer>
-      </a>
+      <NewsContainer isActive>
+        {id}
+        <NewsImage src={image}></NewsImage>
+        <NewsTextContainer>
+          <NewsHeading>{heading}</NewsHeading>
+          <NewsText>{text}</NewsText>
+        </NewsTextContainer>
+        <NewsButton href={"/" + locale + "/clanek/" + link}>
+          Preberi več {">"}
+        </NewsButton>
+      </NewsContainer>
     </>
   );
 };

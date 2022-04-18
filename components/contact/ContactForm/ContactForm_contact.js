@@ -28,7 +28,7 @@ const inputProps = {
   ],
 };
 
-const message = { sl: "Sporočilo", en: "Message" };
+const message = { sl: "Prostor za vaše sporočilo", en: "Your message" };
 
 const send = { sl: "Pošlji", en: "Send" };
 

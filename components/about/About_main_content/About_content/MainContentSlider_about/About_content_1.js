@@ -119,6 +119,14 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
       onEnter={() => {
         setContentSwiperActive(0);
       }}
+      onLeave={(a) => {
+        if (a.currentPosition == "above") {
+          setContentSwiperActive(1);
+        }
+        if (a.currentPosition == "below") {
+          setContentSwiperActive(0);
+        }
+      }}
     >
       <Container>
         {isDesktop() ? (
@@ -145,6 +153,16 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           autoHeight={true}
           slideToClickedSlide={true}
           centeredSlidesBounds={true}
+          breakpoints={{
+            0: {
+              centeredSlidesBounds: false,
+              centeredSlides: true,
+            },
+            768: {
+              centeredSlides: false,
+              centeredSlidesBounds: true,
+            },
+          }}
         >
           <SwiperInstance setInstance={setInstance}></SwiperInstance>
           {items[locale].map((ref, id) => (

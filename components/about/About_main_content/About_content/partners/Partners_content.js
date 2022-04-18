@@ -20,7 +20,11 @@ const Partners_content = ({ isActive }) => {
     { text: t("text2"), link: t("link2"), page: "" },
     { text: t("text3"), link: t("link3"), page: "" },
     { text: t("text4"), link: t("link4"), page: "" },
-    { text: t("text5"), link: t("link5"), page: "www.inspire4future.com" },
+    {
+      text: t("text5"),
+      link: t("link5"),
+      page: "www.inspire4future.com",
+    },
   ];
 
   const { contentSwiperActive, setContentSwiperActive } =
@@ -81,7 +85,10 @@ const Partner_item = ({ partner }) => {
         <div>
           <BodyText3>{partner.text}</BodyText3>
           {partner.page !== "" ? (
-            <Styled.Partner_link href={partner.page} target="_blank">
+            <Styled.Partner_link
+              href={"https://" + partner.page}
+              target="_blank"
+            >
               <BodyText4>{partner.page}</BodyText4>
               <FontAwesomeIcon icon={faChevronRight} />
             </Styled.Partner_link>

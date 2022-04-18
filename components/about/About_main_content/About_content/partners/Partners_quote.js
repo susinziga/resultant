@@ -46,7 +46,12 @@ const Partners_quote = ({ isActive, title }) => {
         setContentSwiperActive(2);
       }}
       onLeave={(a) => {
-        if ((a.currentPosition = "above")) setContentSwiperActive(3);
+        if (a.currentPosition == "above") {
+          setContentSwiperActive(3);
+        }
+        if (a.currentPosition == "below") {
+          setContentSwiperActive(2);
+        }
       }}
     >
       <div>

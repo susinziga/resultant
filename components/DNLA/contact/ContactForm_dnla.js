@@ -77,10 +77,9 @@ const ContactForm_dnla = (props) => {
             );
           })}
           <TextareaContainer>
-            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
-              props={{ label: textAreaLabel[locale] }}
+              props={{ label: textAreaLabel[locale], required: "*" }}
               style={{ fontSize: "1.5rem" }}
               onChange={(e) => {
                 handleFormChange(textAreaLabel[locale], e.target.value);
