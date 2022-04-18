@@ -79,7 +79,11 @@ const ExperienceSection_service1 = (props) => {
             <CardButton
               className="desktop"
               text={button}
-              href={"/" + locale + "/coming-soon"}
+              href={
+                "/" +
+                locale +
+                "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+              }
             ></CardButton>
           </FlexDesktopText>
         </FlexDesktop>
@@ -95,7 +99,9 @@ const ExperienceSection_service1 = (props) => {
         <CardButton
           className="mobile"
           text={button}
-          href={"/" + locale + "/coming-soon"}
+          href={
+            "/" + locale + "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+          }
           centered
         ></CardButton>
 
