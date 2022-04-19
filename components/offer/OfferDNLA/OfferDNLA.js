@@ -8,6 +8,7 @@ import Button from "../../../basic_components/button/Button";
 import { useForm } from "../../../custom_hooks/useForm";
 
 import { ButtonContainer, SubmitButton } from "../OfferForm/OfferForm.styled";
+import { HeadingLine } from "../OfferForm/OfferForm.styled";
 
 const OfferDNLA = () => {
   const { t } = useTranslation();
@@ -59,7 +60,8 @@ const OfferDNLA = () => {
               );
             })}
           </InputsContainer>
-          <hr></hr>
+          {/* <hr></hr> */}
+          <HeadingLine></HeadingLine>
 
           <InputsContainer>
             <Input

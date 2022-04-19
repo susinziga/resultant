@@ -30,7 +30,7 @@ const modeli_kompetenc_so_temelj_za_vecino_kadrovskih_procesov = () => {
       <Hero_utnn
         image={"/SRK/MKTVKP/header_desktop.png"}
         text={t("srk:mktvkp_content")}
-        buttonText={t("srk:mktvkp_button")}
+        // buttonText={t("srk:mktvkp_button")}
       ></Hero_utnn>
       <Plan plan1={Plan1} heading1={planHeading1}></Plan>
     </>

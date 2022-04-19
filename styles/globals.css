@@ -67,7 +67,7 @@ h4 {
 
 h1 {
   font-size: 4.1rem;
-  line-height: 6.5rem;
+  line-height: 4.5rem;
 }
 /*HEADER 2*/
 h2 {
@@ -85,7 +85,7 @@ hr{
   border-color: #000000;
     background: #000000;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   /*HEADER 1*/
   h1 {
     font-size: 6.6rem;

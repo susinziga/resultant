@@ -42,11 +42,11 @@ const kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev = () => {
         className={"section"}
         content={articleContent}
       ></ArticleContent_upijcprzp>
-      <ButtonWrapper>
+      {/* <ButtonWrapper>
         <Button primary href={"/" + locale + "/offer"}>
           Želim pridobiti ponudbo
         </Button>
-      </ButtonWrapper>
+      </ButtonWrapper> */}
     </>
   );
 };

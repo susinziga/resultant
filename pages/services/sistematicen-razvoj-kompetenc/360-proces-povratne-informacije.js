@@ -78,7 +78,7 @@ const ucinkovita_360_povratna_informacija_je_celovit_proces_razvoja_zaposlenih_s
             content={articleContent}
           ></ArticleContent_upijcprzp>
         </ArticleWrapper>
-        <ButtonWrapper>
+        {/* <ButtonWrapper>
           <Button
             // style={{ width: "90%", textAlign: "center" }}
             primary
@@ -86,7 +86,7 @@ const ucinkovita_360_povratna_informacija_je_celovit_proces_razvoja_zaposlenih_s
           >
             Želim pridobiti ponudbo
           </Button>
-        </ButtonWrapper>
+        </ButtonWrapper> */}
       </>
     );
   };

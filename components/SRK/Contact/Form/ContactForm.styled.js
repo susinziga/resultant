@@ -41,7 +41,7 @@ export const HeaderLine = styledComponents.div`
 `;
 
 export const HeaderContainer = styledComponents.div`
-    margin-bottom: 5%;
+    // margin-bottom: 5%;
 
     @media only screen and (min-width: 768px) {
         display: flex;

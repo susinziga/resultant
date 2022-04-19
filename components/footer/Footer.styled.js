@@ -203,6 +203,7 @@ export const LinkFooterContainer = styled.div`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  justify-content: space-between;
 
   @media only screen and (min-width: 768px) {
     margin: 0;
@@ -258,6 +259,7 @@ export const Flex = styled.div`
 
   @media (min-width: 768px) {
     flex-direction: row-reverse;
+
     gap: 3%;
   }
 `;

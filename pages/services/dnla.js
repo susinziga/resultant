@@ -46,7 +46,7 @@ const dnla = () => {
     {
       heading: t("dnla:dnla_card4Heading"),
       text: t("dnla:dnla_card4Text"),
-      color: "#BED6E1",
+      color: "#DCEDFA",
     },
   ];
 

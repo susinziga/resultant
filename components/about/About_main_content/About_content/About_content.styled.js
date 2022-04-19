@@ -20,7 +20,7 @@ export const About_content_container = styledComponents.div`
         /*margin-top:6rem;*/
     }
 
-    @media(min-width:768px){
+    @media(min-width:992px){
         width:60%;
 
         >div:nth-child(1){

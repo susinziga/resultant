@@ -112,7 +112,7 @@ const Plan_section1 = (
               <SubmitButton
                 className="desktop"
                 type="button"
-                href={"/" + locale + "/offer"}
+                href={"/" + locale + "/services/siok/ponudba-siok"}
               >
                 {getOffer[locale]}
               </SubmitButton>
@@ -133,7 +133,7 @@ const Plan_section1 = (
             <SubmitButton
               className="mobile"
               type="button"
-              href={"/" + locale + "/offer"}
+              href={"/" + locale + "/services/siok/ponudba-siok"}
             >
               {getOffer[locale]}
             </SubmitButton>

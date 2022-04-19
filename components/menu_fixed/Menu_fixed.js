@@ -16,7 +16,26 @@ const Menu_fixed = (props) => {
 
   return (
     <>
-      {isDesktop() ? (
+      <Styled.MenuFixedContainer
+        {...props}
+        id="fixedM"
+        ref={animationContainer}
+      >
+        <Styled.MenuItemWrapper>
+          <Styled.MenuItemImg src="/Home/vrednote-strokovnost.png"></Styled.MenuItemImg>
+          <Styled.MenuItem>{t("menu_item1")}</Styled.MenuItem>
+        </Styled.MenuItemWrapper>
+        <Styled.MenuItemWrapper>
+          <Styled.MenuItemImg src="/Home/vrednote-usmerjenost.png"></Styled.MenuItemImg>
+          <Styled.MenuItem>{t("menu_item2")}</Styled.MenuItem>
+        </Styled.MenuItemWrapper>
+        <Styled.MenuItemWrapper>
+          <Styled.MenuItemImg src="/Home/vrednote-zanesljivost.png"></Styled.MenuItemImg>
+          <Styled.MenuItem>{t("menu_item3")}</Styled.MenuItem>
+        </Styled.MenuItemWrapper>
+      </Styled.MenuFixedContainer>
+
+      {/* {isDesktop() ? (
         <>
           <Waypoint
             onEnter={() => {
@@ -86,7 +105,7 @@ const Menu_fixed = (props) => {
             <Styled.MenuItem>{t("menu_item3")}</Styled.MenuItem>
           </Styled.MenuFixedContainer>
         </Waypoint>
-      )}
+      )} */}
     </>
   );
 };

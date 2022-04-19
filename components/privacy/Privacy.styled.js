@@ -4,20 +4,20 @@ import { Title1, Title2 } from "../../basic_components/texts/Texts";
 export const PrivacyContainer = styledComponents.div`
     width: 100%;
     margin: auto;
-    padding-top: 25%;    
+    // padding-top: 25%;    
     @media only screen and (min-width: 768px) {
-        padding-top: 20%;    
+        // padding-top: 20%;    
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 10%;
+        // padding-top: 10%;
     }
 
     @media only screen and (min-width: 1600px) {
         
     }
 
-`
+`;
 
 export const PrivacyLine = styledComponents.div`
     height: 1px;
@@ -29,7 +29,7 @@ export const PrivacyLine = styledComponents.div`
         margin-top: 5%;
     }
   
-`
+`;
 
 export const PrivacyHeading = styledComponents(Title1)`
     font-size: 2rem;
@@ -49,7 +49,6 @@ export const PrivacyHeading = styledComponents(Title1)`
         font-size: 3rem;
     }
 `;
-
 
 export const PrivacySubHeading = styledComponents(Title2)`
     font-size: 1.7rem;
@@ -86,14 +85,14 @@ export const PrivacySubContainer1 = styledComponents.div`
         
     }
 
-`
+`;
 
 export const PrivacySubContainer2 = styledComponents.div`
     width: 90%;
     margin: auto;
 
     @media screen and (min-width: 768px){
-        margin-top: 5%;
+        // margin-top: 5%;
     }
   
-`
+`;

@@ -5,9 +5,8 @@ export const ContactContainer = styledComponents.div`
     width: 90%;
     margin:auto;
 
-    @media only screen and (min-width: 768px) {
-        
-     
+    @media only screen and (min-width: 768px) {        
+        margin-bottom: -4rem !important;
     }
 
     @media only screen and (min-width: 992px) {
@@ -65,10 +64,10 @@ export const TextareaContainer = styledComponents.div`
 export const ContactHeader = styledComponents(Title2)`
     font-family: "Neusa";
     font-weight: bold;
-    margin:10% 0;
+    // margin:10% 0;
 
     @media only screen and (min-width: 768px) {
-      margin:5% 0 2% 0;
+    //   margin:5% 0 2% 0;
       height: 100px;
       font-size: 1.8rem;
      
@@ -82,7 +81,7 @@ export const ContactHeader = styledComponents(Title2)`
     @media only screen and (min-width: 1600px) {
       
         font-size: 2.5rem;
-        margin:5% 0 0% 0;
+        // margin:5% 0 0% 0;
     }
 `;
 

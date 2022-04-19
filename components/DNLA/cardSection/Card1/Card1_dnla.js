@@ -50,7 +50,14 @@ const Card1_dnla = () => {
             })}
           </List>
           <ButtonContainer>
-            <Button secondary href={"/" + locale + "/coming-soon"}>
+            <Button
+              secondary
+              href={
+                "/" +
+                locale +
+                "/clanek/DNLA-sistem-ponuja-celovito-strokovno-podporo-drugim-kadrovskim-procesom"
+              }
+            >
               {button}
             </Button>
           </ButtonContainer>

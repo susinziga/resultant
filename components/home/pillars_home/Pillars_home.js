@@ -33,12 +33,12 @@ const Pillars_home = (props) => {
     {
       title: t("pillars:pillar3_title"),
       text: t("pillars:pillar3_excerpt"),
-      link: "/services/sistematicen_razvoj_kompetenc",
+      link: "/services/sistematicen-razvoj-kompetenc",
     },
     {
       title: t("pillars:pillar4_title"),
       text: t("pillars:pillar4_excerpt"),
-      link: "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje",
+      link: "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje",
     },
   ];
 

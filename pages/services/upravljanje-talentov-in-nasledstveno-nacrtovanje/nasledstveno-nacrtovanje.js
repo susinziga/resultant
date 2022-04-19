@@ -59,7 +59,7 @@ const nasledstveno_nacrtovanje = () => {
         className={"section"}
         text={t("utnn:nn_content")}
         image={"/UTNN/NN/header_desktop.png"}
-        buttonText={t("utnn:nn_button")}
+        // buttonText={t("utnn:nn_button")}
       ></Hero_utnn>
       <ArticleContent_utnk
         className="section"

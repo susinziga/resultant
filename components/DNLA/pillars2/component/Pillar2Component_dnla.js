@@ -46,11 +46,13 @@ const Pillars2_component = ({ title, text, button, link }) => {
       onMouseLeave={mouseLeave}
       className="pillarContainer"
     >
-      <Styled.PillarOuter></Styled.PillarOuter>
-      <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
-      <p>
-        <Styled.PillarText>{text}</Styled.PillarText>
-      </p>
+      <Styled.Flex>
+        <Styled.PillarOuter></Styled.PillarOuter>
+        <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
+        <p>
+          <Styled.PillarText>{text}</Styled.PillarText>
+        </p>
+      </Styled.Flex>
       <Styled.ButtonContainer>
         <Button secondary href={"/" + locale + link} target="_blank">
           {button}

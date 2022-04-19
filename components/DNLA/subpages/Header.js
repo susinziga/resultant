@@ -49,7 +49,7 @@ export const HeadingUpperHeading = styled(BodyText1)`
 `;
 
 export const HeadingHeading = styled(Title1)`
-  margin-top: 5%;
+  /* margin-top: 5%; */
 `;
 
 export const HeadingLine = styled.div`
