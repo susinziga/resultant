@@ -43,11 +43,11 @@ export const HeadingSeparator = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        margin: 5% 0 10% 5%;
+        margin: 0% 0 10% 5%;
     }
 
     @media only screen and (min-width: 1600px) {
-        margin: 3.5% 0 10% 2.5%;
+        margin: 0% 0 10% 2.5%;
     }
 `;
 
@@ -85,18 +85,18 @@ export const HeadingUpperHeading = styledComponents(BodyText1)`
 `;
 
 export const HeadingHeading = styledComponents(Title1)`
-    margin: 10% 0;
+    margin: 0 0 10% 0;
     font-size: 2.5rem;
 
     @media only screen and (min-width: 768px) {
-        margin: 5% 0 5% 0;
+        margin: 0% 0 5% 0;
         font-size: 1.5rem;
             
     }
     
     @media only screen and (min-width: 992px) {
         font-size: 2.5rem;
-        margin: 5% 0 5% 0;
+        margin: 0% 0 5% 0;
     }
     
     @media only screen and (min-width: 1600px) {
@@ -130,11 +130,11 @@ export const HeaderImage = styledComponents.img`
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 15%;
+        
     }
 
     @media only screen and (min-width: 1600px) {
-        padding-top: 5%;
+      
         width: 80%;
     }
   
