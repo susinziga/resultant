@@ -167,6 +167,8 @@ Večja produktivnost in učinkovitost sta ključni prednosti, ki jih organizacij
           izkušnjo naših zaposlenih.
         </BodyText3>
       </Container_border>
+
+      <NewParagraph></NewParagraph>
     </Blog_page>
   );
 };
