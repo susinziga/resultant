@@ -19,7 +19,7 @@ const NewsCard_service1 = ({ news, isActive }) => {
   return (
     <>
       <NewsContainer isActive>
-        {id}
+        {/* {id} */}
         <NewsImage src={image}></NewsImage>
         <NewsTextContainer>
           <NewsHeading>{heading}</NewsHeading>

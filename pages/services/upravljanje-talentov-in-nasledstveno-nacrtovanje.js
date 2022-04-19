@@ -9,6 +9,10 @@ import BigCardsSection from "../../components/UTNN/cardSection/BigCardsSection";
 import BigCard from "../../components/UTNN/cardSection/Card/BigCard";
 import Contact_utnn from "../../components/UTNN/Contact/Contact_utnn";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
+import styled from "styled-components";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
   const { t, lang } = useTranslation();
@@ -44,7 +48,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
     {
       heading: t("utnn:utnn_card4Heading"),
       text: t("utnn:utnn_card4Text"),
-      color: "#BED6E1",
+      color: "#DCEDFA",
     },
   ];
 
@@ -95,7 +99,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       img={"/UTNN/card1img"}
       mobileImgOnBottom
       href={
-        "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/upravljanje_talentov_in_njihovih_karier"
+        "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje/upravljanje-talentov-in-njihovih-karier"
       }
       buttonText={t("common:button_moreMore")}
     ></BigCard>,
@@ -105,7 +109,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       img={"/UTNN/card2img"}
       mobileImgOnBottom
       href={
-        "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje/nasledstveno_nacrtovanje"
+        "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje/nasledstveno-nacrtovanje"
       }
       buttonText={t("common:button_moreMore")}
     ></BigCard>,

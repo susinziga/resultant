@@ -47,7 +47,7 @@ const upravljanje_talentov_in_njihovih_karier = () => {
       <Hero_utnn
         image={"/UTNN/UTNK/header_desktop.png"}
         text={t("utnn:utnk_content")}
-        buttonText={t("utnn:utnk_button")}
+        // buttonText={t("utnn:utnk_button")}
       ></Hero_utnn>
       <ArticleContent_utnk
         className="section"

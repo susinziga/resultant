@@ -33,7 +33,7 @@ const Contact_home = (props) => {
           <Button
             className="mobile"
             secondary
-            href={"/" + locale + "/about#team"}
+            href={"/" + locale + "/o-nas#ekipa"}
           >
             {buttonText}
           </Button>
@@ -45,7 +45,7 @@ const Contact_home = (props) => {
           <Button
             className="desktop"
             secondary
-            href={"/" + locale + "/about#team"}
+            href={"/" + locale + "/o-nas#ekipa"}
           >
             {buttonText}
           </Button>

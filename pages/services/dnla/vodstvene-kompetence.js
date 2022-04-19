@@ -71,7 +71,6 @@ const management_potential = () => {
     t("subpages:management_card3_list1_item6"),
   ];
 
-  // TODO: treba refactorat ker je disgusting
   const submenus = [
     <>
       <Title2>{t("subpages:management_card1_title")}</Title2>

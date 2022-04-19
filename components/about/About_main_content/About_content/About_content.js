@@ -100,21 +100,21 @@ const About_content = ({ initAnim, isActive }) => {
 
   return (
     <Styled.About_content_container ref={contentAnimation} id="content_box">
-      <div id="approach" className="">
+      <div id="pristop" className="">
         <About_content_1
           isActive={isActive && contentSwiperActive === 0}
           className="content_panel"
           title={nav_items[0]}
         ></About_content_1>
       </div>
-      <div id="team" className="section2">
+      <div id="ekipa" className="section2">
         <TeamSlider
           isActive={isActive && contentSwiperActive === 1}
           className="content_panel"
           title={nav_items[1]}
         ></TeamSlider>
       </div>
-      <div id="partners" className="section2">
+      <div id="partnerji" className="section2">
         <Partners_quote
           isActive={isActive && contentSwiperActive === 2}
           className="content_panel"
@@ -126,7 +126,7 @@ const About_content = ({ initAnim, isActive }) => {
         ></Partners_content>
       </div>
 
-      <div id="references">
+      <div id="reference">
         <References_quote
           isActive={isActive && contentSwiperActive === 4}
           className="content_panel"

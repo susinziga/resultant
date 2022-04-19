@@ -6,6 +6,7 @@ export const About_main_content_container = styledComponents.div`
     /*height:100vh;*/
 
     display:flex;
+    justify-content: space-between;
 
     transition:1s all;
 

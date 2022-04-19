@@ -44,7 +44,7 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
       <Hero_utnn
         image={"/SRK/KPIM/header_desktop.png"}
         text={t("srk:kpim_content")}
-        buttonText={t("srk:kpim_button")}
+        // buttonText={t("srk:kpim_button")}
       ></Hero_utnn>
       <ArticleContent_utnk
         className={"section"}

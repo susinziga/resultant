@@ -43,6 +43,7 @@ export const ButtonContainer = styledComponents.div`
     width: 100%;
     margin:auto;
     margin-bottom: 15%;
+    text-align: center;
 `;
 
 export const FormContainer = styledComponents.form`

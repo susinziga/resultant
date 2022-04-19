@@ -7,8 +7,11 @@ import {
   CardContent,
 } from "./BigCard.styled";
 import CardButton from "./CardButton";
+import useTranslation from "next-translate/useTranslation";
 
 const BigCard = (props) => {
+  const { t, lang } = useTranslation();
+
   return (
     <>
       <CardContainer flipX={props.flipX} margin={props.margin}>
@@ -28,7 +31,7 @@ const BigCard = (props) => {
           )}
           <CardContent>{props.content}</CardContent>
           <a href={props.href}>
-            <CardButton text={props.buttonText} />
+            <CardButton text={t("common:button_more")} />
           </a>
           {props.mobileImgOnBottom && (
             <CardImage

@@ -36,7 +36,7 @@ const CardSlider = ({ news }) => {
             slidesPerView: 3,
           },
         }}
-        loop={true}
+        loop={false}
         spaceBetween={30}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>

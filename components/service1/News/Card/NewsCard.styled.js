@@ -28,7 +28,7 @@ export const NewsText = styled(BodyText2)`
   }
 
   @media only screen and (min-width: 1600px) {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     min-height: 8rem;
   }
 `;
@@ -46,12 +46,12 @@ export const NewsHeading = styled(Title2)`
   }
 
   @media (min-width: 992px) {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     min-height: 5rem;
   }
 
   @media (min-width: 1600px) {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 `;
 
@@ -99,7 +99,7 @@ export const NewsContainer = styled.div`
   }
 
   @media only screen and (min-width: 1600px) {
-    min-height: 830px;
+    min-height: 630px;
   }
 `;
 
