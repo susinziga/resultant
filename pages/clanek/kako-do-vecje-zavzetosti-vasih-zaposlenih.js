@@ -215,7 +215,6 @@ večjo uspešnostjo (poslovnimi rezultati)</b>, ki se kaže v:`,
         </Container>
       </Border_shadow>
       <NewParagraph></NewParagraph>
-
       <Plain_text
         dangerouslySetInnerHTML={{
           __html: `Če podjetje želi izboljšati zavzetost in poslovne učinke, je nujno potrebno, da je<b>koncept zavzetosti zaposlenih</b>(in na drugi strani tudi zavzetosti strank oz. kupcev),<b> neposredno in učinkovito povezan s celovitim upravljanjem delovne uspešnosti in z dejavniki upravljanja odnosov s kupci</b>, kajti na ta način tudi vodje pridobijo interes za izvajanje različnih programov spodbujanja zadovoljstva in
@@ -228,9 +227,7 @@ kako bolje upravljati človeške potenciale z namenom doseči njihovo maksimalno
 temveč smo <b>osredotočeni v zagotavljanje kar najvišje izkušnje zaposlenega </b>z organizacijo (t.i. employee experience) <b>oz. v celostni razvoj človeških potencialov </b>(t.i. human experience), o čemer več v kakšni od prihodnjih prispevkov.`,
         }}
       ></Plain_text>
-
       <NewParagraph></NewParagraph>
-
       <Border_shadow>
         <Container>
           <Subtitle2>

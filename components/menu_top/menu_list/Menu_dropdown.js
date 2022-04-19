@@ -33,11 +33,11 @@ const Menu_dropdown = () => {
     },
     {
       title: t("pillar3_title"),
-      link: "/coming-soon",
+      link: "/services/sistematicen_razvoj_kompetenc",
     },
     {
       title: t("pillar4_title"),
-      link: "/coming-soon",
+      link: "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje",
     },
   ];
 
@@ -62,7 +62,7 @@ const Container = styled.div`
 
   flex-direction: column;
   gap: 1rem;
-  padding: 1rem;
+  padding: 2.7rem 2.2rem;
   padding-right: 6rem;
   background-color: var(--blue);
   border-radius: 12px;
@@ -70,6 +70,18 @@ const Container = styled.div`
   left: -50%;
   bottom: 5%;
   transform: translateY(100%);
+
+  :after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    pointer-events: none;
+    top: -12%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+  }
 
   &.show {
     display: flex;

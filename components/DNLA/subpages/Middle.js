@@ -11,11 +11,11 @@ const Middle = ({ text, img, button }) => {
           <p>
             <BodyText2 dangerouslySetInnerHTML={{ __html: text }}></BodyText2>
           </p>
-          <Button primary href={"/" + locale + "/offer"}>
+          <Button primary href={"/" + locale + "/offer-dnla"}>
             {button}
           </Button>
         </Flex>
-      </Container>{" "}
+      </Container>
     </>
   );
 };

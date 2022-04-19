@@ -1,8 +1,10 @@
 {
-  "button_more": "Želim izvedeti več",
+  "button_more": "Izvedi več",
 
   "references": "Reference",
 
   "button_moreMore": "Izvedi več",
-  "button_contact": "Spoznajte nas"
+  "button_contact": "Spoznajte nas",
+
+  "button_readMore" :"Preberi več"
 }

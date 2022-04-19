@@ -33,12 +33,12 @@ const Pillars_home = (props) => {
     {
       title: t("pillars:pillar3_title"),
       text: t("pillars:pillar3_excerpt"),
-      link: "/coming-soon",
+      link: "/services/sistematicen_razvoj_kompetenc",
     },
     {
       title: t("pillars:pillar4_title"),
       text: t("pillars:pillar4_excerpt"),
-      link: "/coming-soon",
+      link: "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje",
     },
   ];
 
@@ -77,7 +77,7 @@ const Pillars_home = (props) => {
     </Styled.PillarsContainer>
   ) : (
     <Styled.PillarsContainer_mobile {...props}>
-      {pillarsContentBot.map((pillar) => {
+      {pillarsContentTop.map((pillar) => {
         return (
           <Pillars_sliderItem
             title={pillar.title}

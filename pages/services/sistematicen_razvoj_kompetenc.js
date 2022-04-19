@@ -75,12 +75,18 @@ const sistematicen_razvoj_kompetenc = () => {
       heading={t("srk:srk_bigCard1Heading")}
       content={t("srk:srk_bigCard1Content")}
       img={"/SRK/bigCard1img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/modeli_kompetenc_so_temelj_za_vecino_kadrovskih_procesov"
+      }
     ></BigCard>,
     <BigCard
       key={1}
       heading={t("srk:srk_bigCard2Heading")}
       content={t("srk:srk_bigCard2Content")}
       img={"/SRK/bigCard2img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev"
+      }
     ></BigCard>,
     <BigCard
       key={2}
@@ -88,30 +94,79 @@ const sistematicen_razvoj_kompetenc = () => {
       heading={t("srk:srk_bigCard3Heading")}
       content={t("srk:srk_bigCard3Content")}
       img={"/SRK/bigCard3img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/kaj_je_povratna_informacija_po_metodi_360"
+      }
     ></BigCard>,
     <BigCard
       key={3}
       heading={t("srk:srk_bigCard4Heading")}
       content={t("srk:srk_bigCard4Content")}
       img={"/SRK/bigCard4img"}
+      href={
+        "/services/sistematicen_razvoj_kompetenc/ucinkovita_360_povratna_informacija_je_celovit_proces_razvoja_zaposlenih_s_pomocjo_360_metode"
+      }
     ></BigCard>,
   ];
 
   const articles = [
     {
+      id: 1,
       heading: t("srk:srk_article1CardHeading"),
       text: t("srk:srk_article1CardContent"),
       image: "/SRK/article1_desktop.png",
+      link: "razvoj-notranjih-trenerjev",
     },
     {
+      id: 2,
       heading: t("srk:srk_article2CardHeading"),
       text: t("srk:srk_article2CardContent"),
       image: "/SRK/article2_desktop.png",
+      link: "DNLA-sistem-ponuja-celovito-strokovno-podporo-drugim-kadrovskim-procesom",
+    },
+
+    {
+      id: 3,
+      heading: t("service1:service1_newsHeader1"),
+      text: t("service1:service1_newsText1"),
+      image: "/Service1/NewsCard1.png",
+      link: "kako-do-vecje-zavzetosti-vasih-zaposlenih",
     },
     {
-      heading: t("srk:srk_article3CardHeading"),
-      text: t("srk:srk_article3CardContent"),
-      image: "/SRK/article3_desktop.png",
+      id: 4,
+      heading: t("service1:service1_newsHeader2"),
+      text: t("service1:service1_newsText2"),
+      image: "/Service1/NewsCard2.png",
+      link: "spremljanje-in-spreminjanje-organizacijske-klime-in-kulture",
+    },
+    {
+      id: 5,
+      heading: t("service1:service1_newsHeader3"),
+      text: t("service1:service1_newsText3"),
+      image: "/Service1/NewsCard3.png",
+      link: "visoka-zavzetost-sodelavcev-prinasa-organizaciji-veliko-prednost",
+    },
+
+    {
+      id: 6,
+      heading: t("utnn:utnn_article1CardHeading"),
+      text: t("utnn:utnn_article1CardContent"),
+      image: "/UTNN/article1_desktop.png",
+      link: "prepoznavanje-talentov",
+    },
+    {
+      id: 7,
+      heading: t("utnn:utnn_article2CardHeading"),
+      text: t("utnn:utnn_article2CardContent"),
+      image: "/UTNN/article2_desktop.png",
+      link: "mlajse-generacije-prevzemajo-kljucne-vloge-v-organizacijah",
+    },
+    {
+      id: 8,
+      heading: t("utnn:utnn_article3CardHeading"),
+      text: t("utnn:utnn_article3CardContent"),
+      image: "/UTNN/article3_desktop.png",
+      link: "zivljenjski-cikel-zaposlenih",
     },
   ];
 

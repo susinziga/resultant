@@ -42,8 +42,8 @@ export const PlanTableContainer = styledComponents.div`
 export const PlanTableHeaderContainer = styledComponents.div`
     width: 100%;
     display: flex;
-    margin: 20% 0;
     align-items: center;
+    margin: 20% 0;
    
 
     @media only screen and (min-width: 768px) {
@@ -52,7 +52,7 @@ export const PlanTableHeaderContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        margin: 0% 0 5% 0;
+        // margin: 0% 0 5% 0;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -62,7 +62,7 @@ export const PlanTableHeaderContainer = styledComponents.div`
 
 export const FlexContainer = styledComponents.div`
  
-    margin-bottom: 10%;
+    // margin-bottom: 10%;
 
     @media only screen and (min-width: 768px) {
         display: flex;

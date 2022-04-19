@@ -23,15 +23,15 @@ import { useForm } from "../../../../custom_hooks/useForm";
 
 const inputProps = {
   sl: [
-    { label: "Ime" },
-    { label: "Priimek" },
+    { label: "Ime", required: "*" },
+    { label: "Priimek", required: "*" },
     { label: "Tel. številka" },
     { label: "Email", required: "*" },
     { label: "Ime organizacije" },
   ],
   en: [
-    { label: "Name" },
-    { label: "Last name" },
+    { label: "Name", required: "*" },
+    { label: "Last name", required: "*" },
     { label: "Gsm" },
     { label: "Email", required: "*" },
     { label: "Company name" },
@@ -39,13 +39,13 @@ const inputProps = {
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const textField = {
-  si: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  si: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_srk = (props) => {
@@ -95,7 +95,7 @@ const ContactForm_srk = (props) => {
               props={{ label: textField[locale] }}
               style={{ fontSize: "1.5rem" }}
               onChange={(e) => {
-                handleFormChange("Kako ste izvedeli za nas?", e.target.value);
+                handleFormChange(textAreaLabel[locale], e.target.value);
               }}
             ></Textarea>
           </TextareaContainer>

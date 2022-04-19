@@ -20,15 +20,15 @@ import * as Styled from "../../../basic_components/input/Input.styled";
 
 const inputProps = {
   sl: [
-    { label: "Ime" },
-    { label: "Priimek" },
+    { label: "Ime", required: "*" },
+    { label: "Priimek", required: "*" },
     { label: "Tel. številka" },
     { label: "Email", required: "*" },
     { label: "Ime organizacije" },
   ],
   en: [
-    { label: "Name" },
-    { label: "Last name" },
+    { label: "Name", required: "*" },
+    { label: "Last name", required: "*" },
     { label: "Gsm" },
     { label: "Email", required: "*" },
     { label: "Company name" },
@@ -36,13 +36,8 @@ const inputProps = {
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
-};
-
-const textField = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_dnla = (props) => {
@@ -74,20 +69,31 @@ const ContactForm_dnla = (props) => {
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
+                  onChange={(e) => {
+                    handleFormChange(input.label, e.target.value);
+                  }}
                 ></Input>
               </>
             );
           })}
           <TextareaContainer>
-            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
-              props={{ label: textField[locale] }}
+              props={{ label: textAreaLabel[locale], required: "*" }}
               style={{ fontSize: "1.5rem" }}
+              onChange={(e) => {
+                handleFormChange(textAreaLabel[locale], e.target.value);
+              }}
             ></Textarea>
           </TextareaContainer>
           <ButtonContainer>
-            <SubmitButton type="submit" value={button}></SubmitButton>
+            <SubmitButton
+              onClick={(id, value) => {
+                sendMail();
+              }}
+              value={button}
+              type={"submit"}
+            ></SubmitButton>
           </ButtonContainer>
         </FormContainer>
       </ContactContainer>

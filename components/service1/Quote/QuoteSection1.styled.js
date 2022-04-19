@@ -5,8 +5,9 @@ export const QuoteContainer = styledComponents.div`
     width: 100%;
     background-color: #004767;
     display: flex;
-    padding:12%;
-
+    justify-content: center;
+    // padding:12%;
+    padding: 12% 0;
 
     @media only screen and (min-width: 768px) {
         padding:5%;
@@ -22,7 +23,7 @@ export const QuoteContainer = styledComponents.div`
 `;
 
 export const QuoteImageContainer = styledComponents.div`
-    width: 35%;
+    // width: 35%;
     padding-right: 10%;
     margin: 5% 0;
 
@@ -40,26 +41,31 @@ export const QuoteImageContainer = styledComponents.div`
 `;
 
 export const QuoteImage = styledComponents.img`
-    width: 80%;
-    float: right;
+    // width: 80%;
+    // float: right;
     color: white;
+    height: auto;
+    width: 60%;
+    float: right;
     
    
     @media only screen and (min-width: 768px) {
-        width: 20%;
+        // width: 80%;
+        width: 40%;
+        float: none;
     }
 
     @media only screen and (min-width: 992px) {
-        
+        width: 60%;
     }
 
     @media only screen and (min-width: 1600px) {
-        
+        width: 80%;
     }
 `;
 
 export const QuoteTextContainer = styledComponents.div`
-    width: 65%;
+    width: 55%;
     margin: 5% 0;
 
     @media only screen and (min-width: 768px) {
@@ -71,7 +77,7 @@ export const QuoteTextContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 1600px) {
-        padding-right: 10%;
+        // padding-right: 10%;
     }
 `;
 

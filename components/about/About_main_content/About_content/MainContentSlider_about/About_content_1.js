@@ -119,6 +119,14 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
       onEnter={() => {
         setContentSwiperActive(0);
       }}
+      onLeave={(a) => {
+        if (a.currentPosition == "above") {
+          setContentSwiperActive(1);
+        }
+        if (a.currentPosition == "below") {
+          setContentSwiperActive(0);
+        }
+      }}
     >
       <Container>
         {isDesktop() ? (
@@ -143,10 +151,16 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           direction={"horizontal"}
           className="mySwiper"
           autoHeight={true}
+          slideToClickedSlide={true}
+          centeredSlidesBounds={true}
           breakpoints={{
-            0: { centeredSlides: true },
+            0: {
+              centeredSlidesBounds: false,
+              centeredSlides: true,
+            },
             768: {
               centeredSlides: false,
+              centeredSlidesBounds: true,
             },
           }}
         >
@@ -166,15 +180,15 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
         {isDesktop() ? (
           <ButtonsContainer>
             <img
-              width="50"
-              src="/Buttons/arrow_prev.svg"
+              width="40"
+              src="/Buttons/arrow_prev2.svg"
               onClick={() => {
                 swip.slidePrev(1000);
               }}
               className="cursor"
             ></img>
             <img
-              width="50"
+              width="40"
               src="/Buttons/arrow_next.svg"
               onClick={() => {
                 swip.slideNext(1000);

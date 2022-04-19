@@ -1,7 +1,11 @@
 import React from "react";
 
 import * as Styled from "./Button.styled";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronRight,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 /*
   BUTTON COMPONENT 
 
@@ -14,28 +18,13 @@ import * as Styled from "./Button.styled";
 
 const Button = (props) => {
   return (
-    <div {...props}>
+    <Styled.Outer {...props}>
       <Styled.ButtonContainer {...props} onClick={() => {}}>
         {props.children}
       </Styled.ButtonContainer>
-      {props.arrow ? (
-        <Styled.Arrow
-          className={props.className}
-          src="/Logo/Arrow.svg"
-        ></Styled.Arrow>
-      ) : (
-        ""
-      )}
-      {props.arrowDown ? (
-        <Styled.Arrow
-          className={props.className}
-          down
-          src="/Logo/Arrow.svg"
-        ></Styled.Arrow>
-      ) : (
-        ""
-      )}
-    </div>
+      {props.arrow ? <FontAwesomeIcon icon={faChevronRight} /> : ""}
+      {props.arrowDown ? <FontAwesomeIcon icon={faChevronDown} /> : ""}
+    </Styled.Outer>
   );
 };
 

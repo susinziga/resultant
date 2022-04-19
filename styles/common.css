@@ -6,7 +6,7 @@
 }
 
 .section2 {
-  margin-bottom: 15rem !important;
+  margin-bottom: 5rem !important;
 }
 
 .pillarActive {
@@ -96,5 +96,11 @@ vertical-align: middle;
   margin-top:3rem;
   @media(min-width:768px){
     margin-top:0;
+  }
+}
+
+@media(min-width:768px){
+  .section2 {
+    margin-bottom: 15rem !important;
   }
 }

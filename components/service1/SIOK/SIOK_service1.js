@@ -8,6 +8,8 @@ import {
   SIOKParagraph,
   SIOKImageText,
   SIOKImageContainer,
+  SIOKGraf2Heading,
+  SIOKGraf2Sub,
 } from "./SIOK.styled";
 
 import { useRouter } from "next/router";
@@ -44,16 +46,21 @@ const SIOK_service1 = (props) => {
           ></SIOKImage>
           <SIOKImageText className="mobile">{imageText}</SIOKImageText>
         </SIOKImageContainer>
+        <SIOKGraf2Heading>
+          V vprašalnik SiOK je vključenih 12 klimatskih kategorij
+        </SIOKGraf2Heading>
         <SIOKImage
           className="desktop"
           src={"/Service1/SIOKgraf2_desktop_" + locale + ".png"}
         ></SIOKImage>
+        <SIOKGraf2Sub>* Vsi prikazani podatki so simbolični.</SIOKGraf2Sub>
       </SIOKContainer>
     </>
   );
 };
 
 import styled from "styled-components";
+import { BodyText4 } from "../../../basic_components/texts/Texts";
 const SIOKTitle_desktop = styled.h1`
   display: none !important;
 `;

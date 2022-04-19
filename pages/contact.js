@@ -6,10 +6,10 @@ import { ContactSeparator } from "../styled/contact.styled";
 export default function Contact() {
   return (
     <>
-      <HeadingSection_contact className="section"></HeadingSection_contact>
-      <ContactSeparator className="section">
-        <ContactForm_contact className="section"></ContactForm_contact>
-        <Person_contact className="section"></Person_contact>
+      <HeadingSection_contact className=""></HeadingSection_contact>
+      <ContactSeparator className="">
+        <ContactForm_contact className=""></ContactForm_contact>
+        <Person_contact className=""></Person_contact>
       </ContactSeparator>
     </>
   );

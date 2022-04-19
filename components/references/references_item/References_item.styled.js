@@ -13,7 +13,7 @@ justify-content:center;
 
 
 
-filter:grayscale(1);
+filter:grayscale(0);
 :hover{
     filter:grayscale(0);
 }

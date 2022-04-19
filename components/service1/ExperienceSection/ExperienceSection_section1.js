@@ -16,6 +16,7 @@ import {
 import CardSection_service1 from "./CardSection/CardSection_service1";
 
 import { useRouter } from "next/router";
+import CardButton from "../../UTNN/cardSection/Card/CardButton";
 
 const ExperienceSection_service1 = (props) => {
   const { t, lang } = useTranslation();
@@ -33,6 +34,7 @@ const ExperienceSection_service1 = (props) => {
     { bullet: t("service1:service1_experienceBullet5") },
     { bullet: t("service1:service1_experienceBullet6") },
     { bullet: t("service1:service1_experienceBullet7") },
+    { bullet: t("service1:service1_experienceBullet8") },
   ];
 
   const Cards = [
@@ -70,13 +72,22 @@ const ExperienceSection_service1 = (props) => {
                 return <Bullet>{bullet.bullet}</Bullet>;
               })}
             </List>
-            <ButtonContainer className="desktop">
+            {/* <ButtonContainer className="desktop">
               <Button href={"/" + locale + "/coming-soon"}>{button}</Button>
               <ArrowContainer src="/Service1/Caret_Right.png"></ArrowContainer>
-            </ButtonContainer>
+            </ButtonContainer> */}
+            <CardButton
+              className="desktop"
+              text={button}
+              href={
+                "/" +
+                locale +
+                "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+              }
+            ></CardButton>
           </FlexDesktopText>
         </FlexDesktop>
-        <ButtonContainer className="mobile">
+        {/* <ButtonContainer className="mobile">
           <Button href="" className="mobile">
             {button}
           </Button>
@@ -84,7 +95,15 @@ const ExperienceSection_service1 = (props) => {
             className="mobile"
             src="/Service1/Caret_Right.png"
           ></ArrowContainer>
-        </ButtonContainer>
+        </ButtonContainer> */}
+        <CardButton
+          className="mobile"
+          text={button}
+          href={
+            "/" + locale + "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+          }
+          centered
+        ></CardButton>
 
         {Cards.map((card) => {
           return <CardSection_service1 props={card}></CardSection_service1>;

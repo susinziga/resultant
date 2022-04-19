@@ -228,9 +228,16 @@ const ButtonsContainer = styled.div`
   @media (min-width: 768px) {
     position: relative;
     gap: 1rem;
-    width: fit-content;
-    left: 60%;
+    width: 100%;
+
+    justify-content: end;
     margin-top: 2rem;
+  }
+  > img {
+    width: 1.5rem;
+    :hover {
+      cursor: pointer;
+    }
   }
 `;
 

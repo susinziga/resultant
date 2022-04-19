@@ -13,7 +13,7 @@ const Testimonial = ({ testimonial }) => {
     <Styled.TestimonialContainer>
       <Title2>{title}</Title2>
       <p>
-        <BodyText3>{text}</BodyText3>
+        <BodyText2>{text}</BodyText2>
       </p>
       <BodyText2>{name}</BodyText2>
       <BodyText3>{role}</BodyText3>

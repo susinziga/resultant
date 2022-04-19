@@ -16,8 +16,6 @@ import {
 import Button from "../../basic_components/button/Button";
 
 import useSize from "../../custom_hooks/useSize";
-import { useRouter } from "next/router";
-import LanguagePicker from "./LanguagePicker";
 
 const Hero = (props) => {
   const heroImageAnimation = useRef(null);
@@ -140,7 +138,6 @@ const Hero = (props) => {
             ref={(el) => (lineAnimation = el)}
           ></Styled.WhiteLine>
         </Styled.HeroTexts>
-        <LanguagePicker></LanguagePicker>
       </div>
     </Styled.HeroContainer>
   );

@@ -10,6 +10,7 @@ import Menu_list from "./menu_list/Menu_list";
 import { useRouter } from "next/router";
 import useSize from "../../custom_hooks/useSize";
 import Mobile_menu from "./mobile_menu/Mobile_menu";
+import LanguagePicker from "./LanguagePicker";
 
 const Menu_top = ({}) => {
   const { t, lang } = useTranslation("aboveTheFold");
@@ -220,13 +221,18 @@ const Menu_top = ({}) => {
             <img
               id="letter"
               ref={(el) => (letterAnimation = el)}
-              src="/Logo/letter_.png"
+              src="/Logo/letter_svg.svg"
             ></img>
           </a>
         </Styled.LogoContainer>
 
         {size[0] >= 768 ? (
-          <Menu_list state={navState}></Menu_list>
+          <Styled.Flex>
+            <Styled.Flex_language className="nav_item">
+              <LanguagePicker></LanguagePicker>
+            </Styled.Flex_language>
+            <Menu_list state={navState}></Menu_list>
+          </Styled.Flex>
         ) : (
           <>
             <a

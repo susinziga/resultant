@@ -39,7 +39,9 @@ export const Blog_author_container = styled.div`
 export const Blog_authors = styled.div`
   display: flex;
   width: 100%;
-  gap: 3rem;
+  gap: 0.5rem;
+
+  align-items: center;
 `;
 export const Blog_author = styled(BodyText3)`
   width: fit-content;
@@ -54,13 +56,15 @@ export const Blog_author_images = styled.div`
   gap: 1rem;
 
   @media (min-width: 768px) {
-    flex-direction: row-reverse;
+    justify-content: end;
+    flex-direction: row;
     width: 45%;
     text-align: end;
   }
 `;
 export const Blog_author_image = styled.img`
   width: 33%;
+  height: fit-content;
   border-radius: 12px;
   filter: grayscale(1);
   @media (min-width: 768px) {

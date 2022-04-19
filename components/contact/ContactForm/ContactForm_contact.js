@@ -13,8 +13,8 @@ import { useRouter } from "next/router";
 
 const inputProps = {
   sl: [
-    { label: "Ime" },
-    { label: "Priimek" },
+    { label: "Ime", required: "*" },
+    { label: "Priimek", required: "*" },
     { label: "Tel. številka" },
     { label: "Email", required: "*" },
     { label: "Ime organizacije" },
@@ -28,7 +28,7 @@ const inputProps = {
   ],
 };
 
-const message = { sl: "Sporočilo", en: "Message" };
+const message = { sl: "Prostor za vaše sporočilo", en: "Your message" };
 
 const send = { sl: "Pošlji", en: "Send" };
 
@@ -52,7 +52,7 @@ const ContactForm_contact = () => {
           <TextareaContainer>
             <Textarea
               id="TextDesktop"
-              props={{ label: message[locale] }}
+              props={{ label: message[locale], required: "*" }}
               style={{ fontSize: "1.5rem" }}
             ></Textarea>
           </TextareaContainer>

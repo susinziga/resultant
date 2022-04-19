@@ -1,25 +1,32 @@
 import styledComponents from "styled-components";
-import { Header1, BodyText2, BodyText3, Header2, BodyText4, BodyText1, Title2 } from "../../basic_components/texts/Texts";
-
+import {
+  Header1,
+  BodyText2,
+  BodyText3,
+  Header2,
+  BodyText4,
+  BodyText1,
+  Title2,
+} from "../../basic_components/texts/Texts";
 
 export const HeadingContainer = styledComponents.div`
     width: 90%;
     margin: auto;
-    padding-top: 25%;
+   
     display: flex; 
     flex-direction: column;
     margin-bottom: 5%;
 
     @media only screen and (min-width: 768px) {
-        padding-top: 20%;
+      
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 15%;
+       
     }
 
     @media only screen and (min-width: 1600px) {
-        padding-top: 10%;
+     
     }
 `;
 
@@ -39,7 +46,6 @@ export const DesktopFlex = styledComponents.div`
         
     }
 `;
-
 
 export const HeadingUpperHeading = styledComponents(Title2)`
     font-size: 2rem;
@@ -75,8 +81,6 @@ export const Paragraph = styledComponents(BodyText2)`
         font-size: 1.5rem;
     }
 `;
-
-
 
 export const HeadingLine = styledComponents.div`
     height: 1px;
