@@ -4,6 +4,7 @@ import { BodyText4, Title2 } from "../../../../basic_components/texts/Texts";
 export const PillarComponentContainer = styledComponents.div`
     &.pillarContainer{
         min-height: 200px;
+        justify-content: space-between;
            
 
         @media (min-width:768px) {
@@ -19,7 +20,7 @@ export const PillarComponentContainer = styledComponents.div`
 
         @media (min-width:1600px) {
 
-            max-height: 550px;
+            max-height: 650px;
         }
     }
 
@@ -45,14 +46,15 @@ export const PillarComponentContainer = styledComponents.div`
 `;
 
 export const PillarComponentTitle = styledComponents(Title2)`
+    margin-bottom: 1rem;
   font-size: 1.4rem;
   @media (min-width:768px) {
-      font-size: 1rem;
+      font-size: 1.4rem;
     
   }
 
   @media (min-width:992px) {
-    font-size: 1.5rem; 
+    font-size: 1.8rem; 
   
   }
 `;
@@ -64,8 +66,6 @@ export const PillarOuter = styledComponents.a`
     left:0;
     right:0;
 `;
-
-
 
 export const PillarText = styledComponents(BodyText4)`
    
@@ -88,16 +88,21 @@ export const PillarText = styledComponents(BodyText4)`
 
 export const ButtonContainer = styledComponents.div`
     @media (min-width:768px) {
-        margin-top: 45%;
+        // margin-top: 45%;
     }
 
     @media (min-width:992px) {
-        margin-top: 20%;
+        // margin-top: 20%;
     
 
     }
     @media (min-width:1600px) {
 
-        margin-top: 25%;
+        // margin-top: 25%;
     }
+`;
+
+export const Flex = styledComponents.div`
+    display:flex;
+    flex-direction:column;
 `;
