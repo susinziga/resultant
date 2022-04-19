@@ -52,4 +52,6 @@ export const PillarOuter = styled.a`
 export const LogoContainer = styled.div`
   width: 100%;
   text-align: right;
+  display: flex;
+  justify-content: space-between;
 `;

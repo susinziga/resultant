@@ -3,12 +3,12 @@ import { Header2, BodyText1 } from "../../../basic_components/texts/Texts";
 
 export const CardTableContainer = styledComponents.div`
     width: 100%;
-    background-color: #F6FBFE;
+    // background-color: #F6FBFE;
     display: flex;
     flex-direction: column;
     gap: 4rem;
     padding: 20% 0;
-   
+   position: relative;
 
 
     @media only screen and (min-width: 768px) {
@@ -68,5 +68,3 @@ export const CardItemContainer2 = styledComponents.div`
         padding-top: 8%;
     }
 `;
-
-

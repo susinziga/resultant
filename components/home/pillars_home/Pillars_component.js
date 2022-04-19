@@ -50,11 +50,12 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
       <p>
         <BodyText4>{text}</BodyText4>
       </p>
-      <Button className="button_pillar" secondary>
-        {button}
-      </Button>
+
       <Styled.LogoContainer>
-        <img src={logo} width="100" className="pillar_logo"></img>
+        <Button className="button_pillar" secondary>
+          {button}
+        </Button>
+        {logo && <img src={logo} width="100" className="pillar_logo"></img>}
       </Styled.LogoContainer>
     </Styled.PillarComponentContainer>
   );
