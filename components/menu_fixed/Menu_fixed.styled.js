@@ -7,6 +7,7 @@ export const MenuFixedContainer = styled.div`
   /* width: 70%; */
   width: 90%;
   margin: auto;
+  align-items: baseline;
 
   display: flex;
   flex-direction: column;
@@ -20,6 +21,7 @@ export const MenuFixedContainer = styled.div`
 `;
 
 export const MenuItemWrapper = styled.div`
+  align-items: baseline;
   display: flex;
   flex-direction: column;
   align-items: center;

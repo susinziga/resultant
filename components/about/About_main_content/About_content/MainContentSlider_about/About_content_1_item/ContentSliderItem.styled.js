@@ -62,6 +62,7 @@ export const ButtonsContainer = styled.div`
   display: flex;
   z-index: 99999;
   width: 100%;
+  padding-right: 5rem;
 
   justify-content: end;
 
