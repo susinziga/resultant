@@ -37,7 +37,14 @@ const Card3_dnla = () => {
           <Text>{text}</Text>
 
           <ButtonContainer>
-            <Button secondary href={"/" + locale + "/coming-soon"}>
+            <Button
+              secondary
+              href={
+                "/" +
+                locale +
+                "/clanek/pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem"
+              }
+            >
               {button}
             </Button>
           </ButtonContainer>

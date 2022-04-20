@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import * as Styled from "./Menu_top.styled";
 
 import gsap from "gsap";
+
 import useTranslation from "next-translate/useTranslation";
 
 import Menu_list from "./menu_list/Menu_list";
@@ -11,6 +12,8 @@ import { useRouter } from "next/router";
 import useSize from "../../custom_hooks/useSize";
 import Mobile_menu from "./mobile_menu/Mobile_menu";
 import LanguagePicker from "./LanguagePicker";
+
+import Image from "next/image";
 
 const Menu_top = ({}) => {
   const { t, lang } = useTranslation("aboveTheFold");

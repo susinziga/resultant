@@ -10,7 +10,7 @@ const CardSection_dnla = (props) => {
       <CardSectionContainer {...props}>
         <Card1_dnla></Card1_dnla>
         <Card2_dnla></Card2_dnla>
-        {/* <Card3_dnla></Card3_dnla> */}
+        <Card3_dnla></Card3_dnla>
       </CardSectionContainer>
     </>
   );
