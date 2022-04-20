@@ -99,17 +99,17 @@ const Hero = (props) => {
         </picture>
 
         <Styled.HeroTexts>
-          <Header1 white className="white">
+          <Styled.HeaderText white className="white">
             {hero_title}
-          </Header1>
+          </Styled.HeaderText>
           {isDesktop() ? (
             <>
-              <p>
+              <Styled.SubTextWrapper>
                 <BodyText2 white>{hero_paragraph}</BodyText2>
-              </p>
-              <p>
+              </Styled.SubTextWrapper>
+              <Styled.SubTextWrapper>
                 <BodyText2 white>{hero_paragraph2}</BodyText2>
-              </p>{" "}
+              </Styled.SubTextWrapper>{" "}
             </>
           ) : (
             <>

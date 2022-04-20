@@ -1,4 +1,5 @@
 import styledComponents from "styled-components";
+import { BodyText2, Header1 } from "../../basic_components/texts/Texts";
 
 export const HeroContainer = styledComponents.div`
 
@@ -59,11 +60,13 @@ div:first-child{
 `;
 
 export const HeroTexts = styledComponents.div`
-display:flex;
+    display:flex;
     flex-direction:column;
     position:absolute;
     top:5%;
     left:5%;
+    // top: 0;
+    // left: 0;
     width:90%;
     > *
     {
@@ -73,8 +76,8 @@ display:flex;
 
 @media(min-width:768px){
     
-    top:10%;
-    left:30%;
+    // top:10%;
+    // left:30%;
 
     > *
     {
@@ -103,4 +106,24 @@ export const WhiteLine = styledComponents.div`
   position:relative;
   left:100%;
   z-index:10;
+`;
+
+export const SubTextWrapper = styledComponents.p`
+    width: 100% !important;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 1300px) {
+        width: 60% !important;
+        margin-bottom: 2.5rem;
+    }
+`;
+
+export const HeaderText = styledComponents(Header1)`
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    
+    @media (min-width: 1300px) {
+        font-size: 6.6rem;
+        line-height: 6rem;
+    }
 `;
