@@ -48,7 +48,7 @@ export const UpperFooterContainer = styled.div`
 
   @media only screen and (min-width: 992px) {
     width: 30%;
-    height: 55%;
+    /* height: 55%; */
     top: -40px;
     right: 1%;
     left: none;
@@ -57,7 +57,7 @@ export const UpperFooterContainer = styled.div`
   }
 
   @media only screen and (min-width: 1600px) {
-    height: 55%;
+    /* height: 55%; */
     padding: 3%;
     top: -50px;
   }
