@@ -19,11 +19,11 @@ const Mobile_menu_dropdown = ({ opened }) => {
     },
     {
       title: t("pillar3_title"),
-      link: "/services/sistematicen_razvoj_kompetenc",
+      link: "/services/sistematicen-razvoj-kompetenc",
     },
     {
       title: t("pillar4_title"),
-      link: "/services/upravljanje_talentov_in_nasledstveno_nacrtovanje",
+      link: "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje",
     },
   ];
 

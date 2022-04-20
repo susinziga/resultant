@@ -52,7 +52,7 @@ const Mobile_menu = ({ menu_opened }) => {
         >
           {t("nav_item0")}
         </Button>
-        <Button href="/about" className="nav_item mobile_nav2" terciary>
+        <Button href="/o-nas" className="nav_item mobile_nav2" terciary>
           {t("nav_item1")}
         </Button>
         <Button
@@ -70,7 +70,7 @@ const Mobile_menu = ({ menu_opened }) => {
         {/*<Button className="nav_item mobile_nav4" terciary>
           {t("nav_item3")}
         </Button>*/}
-        <Button href="/contact" primary className="contact mobile_nav5">
+        <Button href="/kontakt" primary className="contact mobile_nav5">
           {t("nav_item4")}
         </Button>
       </Container>
