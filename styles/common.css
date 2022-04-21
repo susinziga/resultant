@@ -10,15 +10,15 @@
 }
 
 .pillarActive {
-  width: 55% !important;
+  /* width: 55% !important; */
   background-color: var(--pillar-color)!important;
-  padding-right: 8% !important;
+  /* padding-right: 8% !important; */
 }
 
 .pillarActiveDNLA {
-  width: 40% !important;
+  /* width: 40% !important; */
   background-color: var(--pillar-color);
-  padding-right: 8% !important; 
+  /* padding-right: 8% !important;  */
   color: white !important;
 }
 
@@ -45,11 +45,11 @@
 }
 
 .pillarShrink {
-  padding-right: 2% !important;
+  /* padding-right: 2% !important; */
 }
 
 .pillarShrinkDNLA {
-  padding-right: 1% !important;
+  /* padding-right: 1% !important; */
 }
 
 #content_box {
