@@ -29,6 +29,7 @@ const Roman_klaric = () => {
   const about_data = {
     title: t("team:about"),
     about: t("team:person1_about"),
+    img: "/Team/Roman.png",
   };
 
   return (

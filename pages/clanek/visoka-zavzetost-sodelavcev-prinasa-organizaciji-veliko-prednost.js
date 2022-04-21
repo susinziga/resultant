@@ -10,6 +10,7 @@ import NewParagraph, {
   NewRow,
 } from "../../components/blog/content_components/Margin.styled";
 import Plain_text from "../../components/blog/content_components/Plain_text";
+import styled from "styled-components";
 
 const Clanek1 = () => {
   const blog_data = {
@@ -132,32 +133,32 @@ Večja produktivnost in učinkovitost sta ključni prednosti, ki jih organizacij
           izsledke svoje raziskave:
         </Subtitle2>
         <NewRow></NewRow>
-        <ul>
-          <li>
+        <UnorderedList>
+          <ListItem>
             <BodyText3>
               71% zaposlenih bi pristalo na znižanje plače, če bi lahko
               opravljali svojo idelano službo.
             </BodyText3>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <BodyText3>
               47% aktivnih iskalcev zaposlitve je službo zapustilo zaradi
               neustrezne organizacijske kulture.
             </BodyText3>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <BodyText3>
               Samo 12% zaposlenih je bilo zadovoljnih s svojo trenutno poslovno
               vlogo.
             </BodyText3>
-          </li>
-          <li>
+          </ListItem>
+          <ListItem>
             <BodyText3>
               Kar 81% anketirancev je bilo odprtih za nove zaposlitvene
               možnosti.
             </BodyText3>
-          </li>
-        </ul>
+          </ListItem>
+        </UnorderedList>
 
         <NewRow></NewRow>
 
@@ -172,5 +173,19 @@ Večja produktivnost in učinkovitost sta ključni prednosti, ki jih organizacij
     </Blog_page>
   );
 };
+
+export const ListItem = styled.li`
+  text-align: left;
+`;
+
+export const UnorderedList = styled.ul`
+  text-align: left;
+  list-style: disc;
+  padding-left: 0%;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 10%;
+  }
+`;
 
 export default Clanek1;

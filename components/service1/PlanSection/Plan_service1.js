@@ -31,6 +31,7 @@ const Plan_section1 = (
     hideButton,
     Plan1CardStyle,
     Plan2CardStyle,
+    bgImg,
   },
   props
 ) => {
@@ -47,7 +48,7 @@ const Plan_section1 = (
   return (
     <>
       <PlanContainer {...props}>
-        {p2.length > 0 && (
+        {(p2.length > 0 || bgImg) && (
           <>
             <BackgroundVector
               className="desktop"

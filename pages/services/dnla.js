@@ -75,10 +75,9 @@ const dnla = () => {
         className="section"
         cardProps1={cardProps1}
         cardProps2={cardProps2}
-        plan2={[]}
         button={true}
       ></CardSection>
-      <Plan plan1={Plan1} heading1={heading1} className="section"></Plan>
+      <Plan plan1={Plan1} heading1={heading1} bgImg className="section"></Plan>
       <Pillars1 className="section"></Pillars1>
       <ToolsHeading_dnla className="section"></ToolsHeading_dnla>
       <Pillars2_dnla className="section"></Pillars2_dnla>

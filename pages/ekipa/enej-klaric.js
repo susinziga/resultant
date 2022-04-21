@@ -23,6 +23,7 @@ const Enej_klaric = () => {
   const about_data = {
     title: t("team:about"),
     about: t("team:person3_about"),
+    img: "/Team/Enej.png",
   };
 
   return (

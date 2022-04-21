@@ -1,5 +1,11 @@
 import styledComponents from "styled-components";
-import { BodyText2, BodyText3, Subtitle2, Title1, Title2 } from "../../../basic_components/texts/Texts";
+import {
+  BodyText2,
+  BodyText3,
+  Subtitle2,
+  Title1,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 
 export const ExperienceContainer = styledComponents.div`
     width: 90%;
@@ -18,8 +24,7 @@ export const ExperienceContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
-
+`;
 
 export const BulletHeading = styledComponents(BodyText3)`
     font-weight: bold;
@@ -37,8 +42,7 @@ export const BulletHeading = styledComponents(BodyText3)`
     @media only screen and (min-width: 1600px) {
        
     }
-`
-
+`;
 
 export const FlexHeadingContainer = styledComponents.div`
  
@@ -53,8 +57,7 @@ export const FlexHeadingContainer = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
-
+`;
 
 export const ControlContainer = styledComponents.div`
 margin-bottom: 10%;
@@ -69,7 +72,7 @@ margin-bottom: 10%;
     @media only screen and (min-width: 1600px) {
     
     }
-`
+`;
 export const Subtext = styledComponents.p`
     font-weight: bold !important;
     font-size: 1.2rem;
@@ -88,10 +91,7 @@ export const Subtext = styledComponents.p`
     @media only screen and (min-width: 1600px) {
         padding-right: 10%;
     }
-`
-
-
-
+`;
 
 export const FlexDesktop = styledComponents.div`
   
@@ -106,7 +106,7 @@ export const FlexDesktop = styledComponents.div`
     @media only screen and (min-width: 1600px) {
     
     }
-`
+`;
 
 export const ExperienceTitle = styledComponents(Title2)`
     margin: 20% 0 10% 0;
@@ -165,7 +165,7 @@ export const FlexDesktopText = styledComponents.div`
     
     
     }
-`
+`;
 
 export const List = styledComponents.ul`
     width: 100%;
@@ -183,11 +183,12 @@ export const List = styledComponents.ul`
     @media only screen and (min-width: 1600px) {
        
     }
-`
+`;
 
 export const Bullet = styledComponents.li`
-    margin: 7.5% 0;
+    margin: 4% 0;
     font-size: 1.25rem;
+    font-family: "NeusaThin";
 
     @media only screen and (min-width: 768px) {
         font-size: 0.8rem;
@@ -201,7 +202,6 @@ export const Bullet = styledComponents.li`
        
     }
 `;
-
 
 export const BackgroundVector = styledComponents.img`
    position: absolute;

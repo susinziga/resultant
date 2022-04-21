@@ -4,6 +4,7 @@ import { BodyText2, Header1 } from "../../../basic_components/texts/Texts";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 
   > * {
     padding-top: 2rem;
@@ -26,5 +27,20 @@ export const Team_about_content = styled(BodyText2)`
   @media (min-width: 768px) {
     border-top: 1px solid #000000;
     width: 60%;
+  }
+`;
+
+export const Team_about_image = styled.img`
+  display: block;
+  border-top: none;
+  padding: 0;
+  width: 60%;
+  margin: 0 auto;
+  height: auto;
+  object-fit: scale-down;
+  border-radius: 10px;
+
+  @media (min-width: 768px) {
+    width: 20%;
   }
 `;

@@ -36,8 +36,12 @@ export const PillarComponentContainer = styled.div`
 `;
 
 export const PillarComponentTitle = styled(Title2)`
+  font-size: 1.5rem;
   @media (min-width: 768px) {
     min-height: 7rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2rem;
   }
 `;
 

@@ -13,6 +13,11 @@ import {
 import Button from "../../../../basic_components/button/Button";
 
 import { useRouter } from "next/router";
+import {
+  BodyText1,
+  BodyText2,
+  BodyText3,
+} from "../../../../basic_components/texts/Texts";
 
 const Card1_dnla = () => {
   const { t, lang } = useTranslation();

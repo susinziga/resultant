@@ -3,7 +3,7 @@ import { Header2, BodyText1 } from "../../../basic_components/texts/Texts";
 
 export const CardTableContainer = styledComponents.div`
     width: 100%;
-    // background-color: #F6FBFE;
+    background-color: #F6FBFE;
     display: flex;
     flex-direction: column;
     gap: 4rem;

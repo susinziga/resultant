@@ -9,7 +9,7 @@ const CardTable_service1 = ({ cardProps1, cardProps2 }, props) => {
   return (
     <>
       <CardTableContainer {...props}>
-        <>
+        {/* <>
           <BackgroundVector
             className="desktop"
             src="/offer/backgroundVector.png"
@@ -18,7 +18,8 @@ const CardTable_service1 = ({ cardProps1, cardProps2 }, props) => {
             className="mobile"
             src="/Service1/VectorA_mobile.png"
           ></BackgroundVector>
-        </>
+        </> */}
+        {/* Zaka je tu sploh bil background logo pozabu sm sma nikjer na figmi ni lol */}
         <CardItemContainer1>
           {cardProps1.map((card) => {
             return <CardItem_service1 props={card}></CardItem_service1>;
