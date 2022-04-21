@@ -76,14 +76,19 @@ const FooterInput = () => {
 
   const [email, setEmail] = React.useState("");
 
+  const [sent, setSent] = React.useState(false);
+
   const button = { sl: "Naroči se", en: "Subscribe" };
+  const buttonTy = { sl: "Uspešno naročeni na novičke", en: "Subscribe" };
   const sendMail = () => {
     fetch("/api/hello", {
       method: "POST",
       body: JSON.stringify({ email: email }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        setSent(true);
+      });
   };
 
   return (
@@ -95,7 +100,9 @@ const FooterInput = () => {
             setEmail(e.target.value);
           }}
         ></InputContainer>
-        <ButtonContainer onClick={sendMail}>{button[locale]}</ButtonContainer>
+        <ButtonContainer onClick={!sent ? sendMail : () => {}}>
+          {!sent ? button[locale] : buttonTy[locale]}
+        </ButtonContainer>
       </InputContainerDiv>
     </>
   );

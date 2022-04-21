@@ -20,7 +20,14 @@ const ClanekTychy = () => {
   const blog_data = {
     title:
       "Pet vprašanj Aleksandru Tychyju o razvoju potenciala z DNLA orodjem",
-    authors: [],
+
+    authors: [
+      {
+        image: "/clanki/tychy/logo.png",
+        name: `G. Tychyja je intervjuvalo podjetje perbit, ki razvija programsko opremo
+    za delo s kadri.`,
+      },
+    ],
     image: "",
     excerpt: `"Za menedžerje je zelo pomembno, da vedo, kako so njihovi zaposleni - ne le v času pandemije Covid-19," pravi Alexander Tychy. Alexander, ki je vodja prodaje družbe DNLA GmbH, pojasnjuje, kako analiza mehkih veščin, ki jo je razvilo njegovo podjetje, podpira zaposlene in vodje. `,
   };
@@ -29,10 +36,7 @@ const ClanekTychy = () => {
     <Blog_page _data={blog_data}>
       <NewParagraph></NewParagraph>
 
-      <Plain_text>
-        G. Tychyja je intervjuvalo podjetje perbit, ki razvija programsko opremo
-        za delo s kadri.
-      </Plain_text>
+      <Image src={"/clanki/tychy/image1.jpg"}></Image>
 
       <NewParagraph></NewParagraph>
 

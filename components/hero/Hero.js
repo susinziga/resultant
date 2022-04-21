@@ -114,10 +114,14 @@ const Hero = (props) => {
           ) : (
             <>
               <p>
-                <Subtitle1 white>{hero_paragraph}</Subtitle1>
+                <Styled.SubTextWrapperMobile white>
+                  {hero_paragraph}
+                </Styled.SubTextWrapperMobile>
               </p>
               <p>
-                <Subtitle1 white>{hero_paragraph2}</Subtitle1>
+                <Styled.SubTextWrapperMobile white>
+                  {hero_paragraph2}
+                </Styled.SubTextWrapperMobile>
               </p>{" "}
             </>
           )}
