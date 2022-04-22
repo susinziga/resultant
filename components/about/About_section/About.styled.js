@@ -41,7 +41,7 @@ export const AboutImage = styled.img`
 `;
 
 export const AboutTextContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: auto;
   margin-bottom: 0;
 
@@ -63,12 +63,20 @@ export const AboutHeading = styled(Header1)`
   @media screen and (min-width: 768px) {
     margin: 5% 0 6% 0;
   }
+
+  @media (max-width: 767px) {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const AboutHeadingContainer = styled.div`
   width: 100%;
 
   @media screen and (min-width: 768px) {
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 0.5rem;
   }
 `;
 

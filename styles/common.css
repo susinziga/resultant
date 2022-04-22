@@ -10,9 +10,9 @@
 }
 
 .pillarActive {
-  /* width: 55% !important; */
+   width: 55% !important; 
   background-color: var(--pillar-color)!important;
-  /* padding-right: 8% !important; */
+   padding-right: 8% !important; 
 }
 
 .pillarActiveDNLA {
@@ -45,7 +45,7 @@
 }
 
 .pillarShrink {
-  /* padding-right: 2% !important; */
+   padding-right: 2% !important; 
 }
 
 .pillarShrinkDNLA {
@@ -102,5 +102,11 @@ vertical-align: middle;
 @media(min-width:768px){
   .section2 {
     margin-bottom: 15rem !important;
+  }
+}
+
+@media (max-width:767px){
+  .sectionMobile{
+    margin-bottom:2rem;
   }
 }

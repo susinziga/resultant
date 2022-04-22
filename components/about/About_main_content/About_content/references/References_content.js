@@ -242,10 +242,16 @@ const ButtonsContainer = styled.div`
 `;
 
 const Container = styledComponents.div`
-margin-top:15rem;
+
+
+margin-top:2rem;
     width:70%;
     margin-left:15%;
     margin-bottom:1rem;
+
+    @media(min-width:768px){
+      margin-top:15rem;
+    }
 `;
 
 export default References_content;

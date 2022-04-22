@@ -1,12 +1,16 @@
 import React, { useEffect, useContext } from "react";
 import { Waypoint } from "react-waypoint";
+import { Title2 } from "../../../../../basic_components/texts/Texts";
 import { AboutContext } from "../../../../../context/aboutContext";
+import useSize from "../../../../../custom_hooks/useSize";
 import { CenterContent } from "../About_content.styled";
 import References_quote_content from "./References_quote_item";
 
-const References_quote = ({ isActive }) => {
+const References_quote = ({ isActive, title }) => {
   const { contentSwiperActive, setContentSwiperActive } =
     useContext(AboutContext);
+
+  const { isDesktop } = useSize();
 
   useEffect(() => {
     window.addEventListener("wheel", preventDefault, { passive: false });
@@ -59,6 +63,19 @@ const References_quote = ({ isActive }) => {
       }}
     >
       <div id="test">
+        {isDesktop() ? (
+          ""
+        ) : (
+          <Title2
+            style={{
+              width: "var(--width-90)",
+              margin: "auto",
+              marginBottom: "4rem",
+            }}
+          >
+            {title}
+          </Title2>
+        )}
         <References_quote_content
           active={contentSwiperActive}
         ></References_quote_content>
