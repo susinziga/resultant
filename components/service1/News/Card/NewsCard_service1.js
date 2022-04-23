@@ -20,11 +20,13 @@ const NewsCard_service1 = ({ news, isActive }) => {
     <>
       <NewsContainer isActive>
         {/* {id} */}
-        <NewsImage src={image}></NewsImage>
-        <NewsTextContainer>
-          <NewsHeading>{heading}</NewsHeading>
-          <NewsText>{text}</NewsText>
-        </NewsTextContainer>
+        <div>
+          <NewsImage src={image}></NewsImage>
+          <NewsTextContainer>
+            <NewsHeading>{heading}</NewsHeading>
+            <NewsText>{text}</NewsText>
+          </NewsTextContainer>
+        </div>
         <NewsButton href={"/" + locale + "/clanek/" + link}>
           Preberi več {">"}
         </NewsButton>
