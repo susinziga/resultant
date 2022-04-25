@@ -1,6 +1,9 @@
 import styledComponents from "styled-components";
-import { BodyText1, BodyText2, Title2 } from "../../../../basic_components/texts/Texts";
-
+import {
+  BodyText1,
+  BodyText2,
+  Title2,
+} from "../../../../basic_components/texts/Texts";
 
 export const CardContainer = styledComponents.div`
     width: 100%;
@@ -16,27 +19,32 @@ export const CardContainer = styledComponents.div`
     border-radius: 12px;
 
     @media only screen and (min-width: 768px) {
-        flex-direction: row;
     }
 
     @media only screen and (min-width: 992px) {
       
     }
 
+    @media only screen and (min-width: 1200px) {
+        flex-direction: row;
+    }
+
     @media only screen and (min-width: 1600px) {
        
     }
 
-`
+`;
 
 export const CardImage = styledComponents.img`
     
+    width: 100%;
 
     @media only screen and (min-width: 768px) {
-        width: 40%;
+        // width: 40%;
     }
 
-    @media only screen and (min-width: 992px) {
+    @media only screen and (min-width: 1200px) {
+        // width: 40%;
         width: 40%;
     }
 
@@ -45,7 +53,7 @@ export const CardImage = styledComponents.img`
         height: 60%;
     }
 
-`
+`;
 
 export const TextContainer = styledComponents.div`
     width: 80%;
@@ -77,7 +85,7 @@ export const TextContainer = styledComponents.div`
         padding: 7% 5%;
     }
 
-`
+`;
 
 export const Text = styledComponents(BodyText2)`
     font-weight: bold;
@@ -94,10 +102,4 @@ export const Text = styledComponents(BodyText2)`
        
     }
 
-`
-
-
-
-
-
-
+`;

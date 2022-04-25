@@ -26,7 +26,7 @@ export const Partners_item_container = styled.div`
     img {
       height: 100%;
       width: unset;
-      max-height: 5rem;
+      /* max-height: 5rem; */
     }
     > div:nth-child(1) {
       width: 30%;
@@ -46,8 +46,9 @@ export const Partners_container = styled.div`
   gap: 5rem;
   width: var(--width-90);
   margin: auto;
-  margin-top: 12rem;
+  margin-top: 4rem;
   @media (min-width: 768px) {
+    margin-top: 12rem;
     width: 100%;
   }
 `;

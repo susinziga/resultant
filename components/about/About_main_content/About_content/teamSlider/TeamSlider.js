@@ -98,39 +98,41 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
     swip = instance;
   };
   return (
-    <Waypoint
-      scrollableAncestor="window"
-      topOffset="30%"
-      bottomOffset="40%"
-      onEnter={() => setContentSwiperActive(1)}
-      onLeave={(a) => {
-        if (a.currentPosition == "above") {
-          setContentSwiperActive(2);
-        }
-        if (a.currentPosition == "below") {
-          setContentSwiperActive(0);
-        }
-      }}
-    >
-      <Styled.TeamComponentContainer>
-        {isDesktop() ? (
-          ""
-        ) : (
-          <Title2
-            style={{
-              width: "var(--width-90)",
-              margin: "auto",
-              marginBottom: "2rem",
-            }}
-          >
-            {title}
-          </Title2>
-        )}
-        {items.map((item, id) => (
-          <TeamSliderItem item={item}></TeamSliderItem>
-        ))}
-      </Styled.TeamComponentContainer>
-    </Waypoint>
+    <>
+      {isDesktop() ? (
+        ""
+      ) : (
+        <Title2
+          style={{
+            width: "var(--width-90)",
+            margin: "auto",
+            marginBottom: "2rem",
+          }}
+        >
+          {title}
+        </Title2>
+      )}
+      <Waypoint
+        scrollableAncestor="window"
+        topOffset="30%"
+        bottomOffset="40%"
+        onEnter={() => setContentSwiperActive(1)}
+        onLeave={(a) => {
+          if (a.currentPosition == "above") {
+            setContentSwiperActive(2);
+          }
+          if (a.currentPosition == "below") {
+            setContentSwiperActive(0);
+          }
+        }}
+      >
+        <Styled.TeamComponentContainer>
+          {items.map((item, id) => (
+            <TeamSliderItem item={item}></TeamSliderItem>
+          ))}
+        </Styled.TeamComponentContainer>
+      </Waypoint>
+    </>
   );
 };
 
