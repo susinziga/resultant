@@ -20,7 +20,7 @@ export const PillarComponentContainer = styled.div`
   transition: 0.5s all;
   margin: 0.5%;
   padding: 3%;
-  padding-bottom: 4%;
+  padding-bottom: 7%;
   display: flex;
   flex-direction: column;
 
@@ -39,7 +39,7 @@ export const PillarComponentTitle = styled(Title2)`
     font-size: 1.2rem;
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 1600px) {
     font-size: 2rem;
   }
 `;

@@ -7,7 +7,7 @@ import {
 
 export const HeroContainer = styled.div`
   position: relative;
-  /* height: 100vh; */
+  height: 100vh;
 
   padding-top: calc(${(props) => props.menuHeight} - 0.5rem);
 
