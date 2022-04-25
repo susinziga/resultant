@@ -13,10 +13,12 @@ const Team_about = (props) => {
         <Styled.Team_about_image src={img}></Styled.Team_about_image>
         <Styled.Team_about_content>{about}</Styled.Team_about_content>
       </Styled.Container>
-      <BulletSection_team
-        bulletHeading={bulletHeading}
-        bullets={bullets}
-      ></BulletSection_team>
+      {bulletHeading == undefined && bullets == undefined ? null : (
+        <BulletSection_team
+          bulletHeading={bulletHeading}
+          bullets={bullets}
+        ></BulletSection_team>
+      )}
     </>
   );
 };
