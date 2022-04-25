@@ -42,7 +42,7 @@ const SIOK_service1 = (props) => {
         <SIOKImageContainer className="mobile">
           <SIOKImage
             className="mobile"
-            src="/Service1/SIOKgraf2.png"
+            src="/Service1/SiOKgraf2.png"
           ></SIOKImage>
           <SIOKImageText className="mobile">{imageText}</SIOKImageText>
         </SIOKImageContainer>
