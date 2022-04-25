@@ -8,15 +8,15 @@ export const PillarComponentContainer = styled.div`
 
     @media (min-width: 768px) {
       width: 32%;
-      max-height: 450px;
+      /* max-height: 450px; */
     }
 
     @media (min-width: 992px) {
-      max-height: 500px;
+      /* max-height: 700px; */
     }
 
     @media (min-width: 1600px) {
-      max-height: 650px;
+      /* max-height: 650px; */
     }
   }
 
@@ -60,6 +60,8 @@ export const PillarOuter = styled.a`
 
 export const PillarText = styled(BodyText4)`
   font-size: 1.1rem;
+  display: block;
+  /* height: calc(1.2rem * 13); */
   @media (min-width: 768px) {
     font-size: 0.8rem;
   }

@@ -16,7 +16,7 @@ export const CardContainer = styledComponents.div`
     
     background: #316888;
     border: 0px solid #316888;
-    border-radius: 12px;
+    border-radius: 22px;
 
     @media only screen and (min-width: 768px) {
         flex-direction: row;
@@ -34,10 +34,14 @@ export const CardContainer = styledComponents.div`
 `;
 
 export const CardImage = styledComponents.img`
+    width:100% !important;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 0px;
 
-width:50%;
     @media only screen and (min-width: 768px) {
-    
+        width: 40% !important;
+        border-bottom-left-radius: 20px;
     }
 
     @media only screen and (min-width: 992px) {
@@ -66,13 +70,15 @@ export const TextContainer = styledComponents.div`
     @media only screen and (min-width: 768px) {
         padding-bottom: 0%;
     
-        padding: 0 5% 0 5%;
+        // padding: 0 5% 0 5%;
+        padding: 2% 5%;
     }
 
     @media only screen and (min-width: 992px) {
         padding-bottom: 0%;
       
-        padding: 0 5% 0 5%;
+        // padding: 0 5% 0 5%;
+        padding: 2% 5%;
     }
 
     @media only screen and (min-width: 1600px) {

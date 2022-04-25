@@ -8,6 +8,7 @@ import useSize from "../../../custom_hooks/useSize";
 import Button from "../../../basic_components/button/Button";
 
 import { useRouter } from "next/router";
+import styled from "styled-components";
 
 import "swiper/css";
 
@@ -92,16 +93,31 @@ const Pillars_dnla = (props) => {
         );
       })}
       <Styled.ButtonContainer>
-        <Button
+        <PillarButton
           primary
-          style={{ padding: "15px 50px" }}
+          // style={{ padding: "15px 50px" }}
           href={"/" + locale + "/services/dnla/ponudba-dnla"}
         >
           {button}
-        </Button>
+        </PillarButton>
       </Styled.ButtonContainer>
     </Styled.PillarsContainer_mobile>
   );
 };
+
+export const PillarButton = styled.a`
+  background-color: var(--secondary-color);
+  padding: 5% 10%;
+  width: 100%;
+  display: block;
+  text-align: center;
+
+  color: var(--white);
+  border-radius: var(--border-primary);
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+`;
 
 export default Pillars_dnla;
