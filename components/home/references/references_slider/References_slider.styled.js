@@ -8,7 +8,7 @@ export const SliderButtons = styledComponents.div`
 
 
 
-    width:var(--width-80);
+    width:var(--width-90);
     margin:auto;
     margin-top:1rem;
     display:flex;

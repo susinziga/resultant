@@ -228,7 +228,10 @@ const ButtonsContainer = styled.div`
   @media (min-width: 768px) {
     position: relative;
     gap: 1rem;
-    width: 100%;
+    width: 90%;
+
+    margin-left: auto;
+    margin-right: auto;
 
     justify-content: end;
     margin-top: 2rem;

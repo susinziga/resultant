@@ -86,8 +86,6 @@ export const LogoContainer = styled.div`
       bottom: 0;
       right: 0;
 
-      height: 65px;
-
       width: 100%;
 
       z-index: 100;
@@ -102,6 +100,12 @@ export const LogoContainer = styled.div`
       //transition:1s top;
     }
 
+    @media (min-width: 768px) {
+      #logo,
+      #letter {
+        height: 80px;
+      }
+    }
     @media (min-width: 992px) {
       #logo,
       #letter {

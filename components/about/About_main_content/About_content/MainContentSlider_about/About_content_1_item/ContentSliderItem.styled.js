@@ -61,14 +61,16 @@ export const Text = styled(BodyText4)`
 export const ButtonsContainer = styled.div`
   display: flex;
   z-index: 99999;
-  width: 100%;
-  padding-right: 5rem;
+  width: 90%;
+
+  margin-left: auto;
+  margin-right: auto;
 
   justify-content: end;
 
   @media (min-width: 768px) {
     position: relative;
-    gap: 0.5rem;
+    gap: 1rem;
 
     margin-top: 2rem;
   }

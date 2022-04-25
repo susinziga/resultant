@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 
 const LanguagePicker = () => {
-  const { locale, locales } = useRouter();
+  const { locale, locales, pathname } = useRouter();
 
   return (
     <>
@@ -20,7 +20,7 @@ const LanguagePicker = () => {
         <Dropdown className="locale_dd">
           {locales.map((loc) => {
             return (
-              <a href={"/" + loc}>
+              <a href={"/" + loc + pathname}>
                 <label>{loc}</label>
               </a>
             );

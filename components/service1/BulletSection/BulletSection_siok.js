@@ -58,7 +58,7 @@ const BulletSection_siok = (props) => {
               href={
                 "/" +
                 locale +
-                "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+                "/clanek/visoka-zavzetost-sodelavcev-prinasa-organizaciji-veliko-prednost"
               }
             ></CardButton>
           </FlexDesktopText>
@@ -67,7 +67,9 @@ const BulletSection_siok = (props) => {
           className="mobile"
           text={button}
           href={
-            "/" + locale + "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+            "/" +
+            locale +
+            "/clanek/visoka-zavzetost-sodelavcev-prinasa-organizaciji-veliko-prednost"
           }
         ></CardButton>
       </ExperienceContainer>
