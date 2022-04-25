@@ -73,6 +73,7 @@ const ContactForm_service1 = () => {
         </HeaderContainer>
         <FormContainer
           onSubmit={(e) => {
+            console.log("send");
             e.preventDefault();
             sendMail();
             let btn = document.getElementById("submit_btn");

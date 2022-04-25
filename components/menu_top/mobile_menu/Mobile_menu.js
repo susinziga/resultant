@@ -60,7 +60,6 @@ const Mobile_menu = ({ menu_opened }) => {
           terciary
           arrowDown
           onClick={() => {
-            console.log("OPEN");
             setSubMenuOpened((prev) => !prev);
           }}
         >
@@ -106,7 +105,7 @@ const Container = styled.div`
 
   color: #fff;
 
-  gap: 1rem;
+  gap: 0.5rem;
 
   a.contact {
     font-size: 1.7rem;
@@ -125,7 +124,14 @@ const Container = styled.div`
   .mobile_nav4,
   .mobile_nav5 {
     transform: translateX(-100%);
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .mobile_nav1,
+  .mobile_nav2,
+  .mobile_nav3,
+  .mobile_nav4 {
+    padding: 0 0.5rem;
   }
 
   .mobile_nav3 img {
