@@ -3,6 +3,7 @@ import styledComponents from "styled-components";
 export const ContactContainer = styledComponents.div`
     width: 90%;
     margin:auto;
+    margin-top: 2rem;
 
     @media only screen and (min-width: 768px) {
         width: 55%;
@@ -36,7 +37,7 @@ export const ContactContainer = styledComponents.div`
         padding-top: 2%;
     }
    
-`
+`;
 
 export const TextareaContainer = styledComponents.div`
     width: 100%;
@@ -52,20 +53,22 @@ export const TextareaContainer = styledComponents.div`
         margin-bottom: 10%;
         height: 200px;
     }
-`
+`;
 
 export const ButtonContainer = styledComponents.div`
     width: 100%;
     margin:auto;
     margin-bottom: 15%;
-`
+`;
 
 export const FormContainer = styledComponents.form`
    
-`
+`;
 export const SubmitButton = styledComponents.input`
     font-size:2rem;
-    padding: 2.5% 40%;
+    // padding: 2.5% 40%;
+    width: 100%;
+    padding: 2% 0%;
     cursor:pointer;
     border: none;
     margin: auto;
@@ -95,5 +98,4 @@ export const SubmitButton = styledComponents.input`
         margin-left: 1%;
     }
 
-`
-
+`;

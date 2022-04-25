@@ -8,6 +8,7 @@ export const QuoteContainer = styledComponents.div`
     justify-content: center;
     // padding:12%;
     padding: 12% 0;
+    margin-top: 12%;
 
     @media only screen and (min-width: 768px) {
         padding:5%;

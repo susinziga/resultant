@@ -113,16 +113,19 @@ const sistematicen_razvoj_kompetenc = () => {
       heading: t("srk:srk_article1CardHeading"),
       text: t("srk:srk_article1CardContent"),
       image: "/SRK/article1_desktop.png",
+      link: "razvoj-notranjih-trenerjev",
     },
     {
       heading: t("srk:srk_article2CardHeading"),
       text: t("srk:srk_article2CardContent"),
       image: "/SRK/article2_desktop.png",
+      link: "DNLA-sistem-ponuja-celovito-strokovno-podporo-drugim-kadrovskim-procesom",
     },
     {
       heading: t("srk:srk_article3CardHeading"),
       text: t("srk:srk_article3CardContent"),
       image: "/SRK/article3_desktop.png",
+      link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
     },
   ];
 

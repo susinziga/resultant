@@ -67,7 +67,12 @@
     "dnla_contactHeading": "Tudi v vašem podjetju razmišljate o uporabi DNLA sistemov? Preizkusite njihovo učinkovitost in natančnost <span style='color: #27B4E9;'>brezplačno!</span>",
     "dnla_buttonText": "Pošlji",
 
-
+    "dnla_article1CardHeading": "Enostavni pristopi razvijanja socialnih kompetenc",
+    "dnla_article1CardContent": "Med izvrstnim naborom DNLA orodij po svoji uporabni vrednosti še posebej izstopa DNLA merjenje socialnih kompetenc. Dobro razvite socialne veščine namreč bistveno povečajo...",
+    "dnla_article2CardHeading": "DNLA sistem ponuja celovito strokovno podporo drugim kadrovskim procesom",
+    "dnla_article2CardContent": "Uporabljate jih lahko pri izboru kadrov, njihovem razvoju, izobraževanju, treningu in usposabljanju ter za učinkovit nadzor nad izobraževanji.",
+    "dnla_article3CardHeading": "Pet vprašanj za Alexandra Tychy-ja o razvoju potenciala z DNLA orodji",
+    "dnla_article3CardContent": "Vodja prodaje podjetja DNLA GmbH v intervjuju pojasnjuje, kako so njihova orodja lahko v pomoč zaposlenim in vodstvu pri razvoju njihovega potenciala.",
     
     "first":"Skupno število oseb, ki jih želite meriti z DNLA orodji",
     "second":"Koliko vodij?",

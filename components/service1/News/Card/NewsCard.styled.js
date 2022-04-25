@@ -12,7 +12,7 @@ import {
 
 export const NewsText = styled(BodyText2)`
   width: 95%;
-  margin: 10% 0;
+  /* margin: 10% 0; */
   font-size: 1rem;
   transition: all 0.25s ease;
   display: block;

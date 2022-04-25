@@ -127,6 +127,7 @@ const OfferDNLA = () => {
             </Button>*/}
             <ButtonContainer>
               <SubmitButton
+                style={{ padding: "2% 0%", width: "100%", display: "block" }}
                 onClick={(id, value) => {
                   sendMail();
                 }}

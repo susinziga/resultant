@@ -109,6 +109,7 @@ const OfferForm_offer = () => {
             ></MultipleCheckbox>
             <ButtonContainer>
               <SubmitButton
+                style={{ padding: "2% 0%", width: "100%", display: "block" }}
                 onClick={(id, value) => {
                   console.log("asd");
                   sendMail();

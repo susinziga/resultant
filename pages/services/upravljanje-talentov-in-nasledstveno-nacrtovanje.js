@@ -77,18 +77,21 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
     heading: t("utnn:utnn_article1CardHeading"),
     text: t("utnn:utnn_article1CardContent"),
     image: "/UTNN/article1_desktop.png",
+    link: "prepoznavanje-talentov",
   };
 
   const articleCard2 = {
     heading: t("utnn:utnn_article2CardHeading"),
     text: t("utnn:utnn_article1CardContent"),
     image: "/UTNN/article2_desktop.png",
+    link: "mlajse-generacije-prevzemajo-kljucne-vloge-v-organizacijah",
   };
 
   const articleCard3 = {
     heading: t("utnn:utnn_article3CardHeading"),
     text: t("utnn:utnn_article3CardContent"),
     image: "/UTNN/article3_desktop.png",
+    link: "zivljenjski-cikel-zaposlenih",
   };
 
   const bigCards = [

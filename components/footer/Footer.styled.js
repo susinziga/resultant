@@ -125,6 +125,15 @@ export const FooterHeader = styled.h2`
   color: white;
   width: 90%;
   margin: auto;
+  margin-top: 3rem;
+
+  @media only screen and (min-width: 500px) {
+    margin-top: 0rem;
+  }
+
+  @media only screen and (min-width: 768px) {
+    margin-top: 0rem;
+  }
 
   @media only screen and (min-width: 992px) {
     font-size: 2rem;
