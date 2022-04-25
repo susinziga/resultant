@@ -145,7 +145,9 @@ export const Bullet = styled.li`
 `;
 
 export const ButtonContainer = styled.div`
+  margin-bottom: 10%;
   @media only screen and (min-width: 768px) {
+    margin-bottom: 0%;
   }
 
   @media only screen and (min-width: 992px) {

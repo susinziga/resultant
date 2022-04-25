@@ -15,12 +15,14 @@ export const NewsText = styled(BodyText2)`
   margin: 10% 0;
   font-size: 1rem;
   transition: all 0.25s ease;
+  display: block;
+  height: calc(1.2rem * 6);
 
   filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));
 
   @media only screen and (min-width: 768px) {
     font-size: 1rem;
-    min-height: 12rem;
+    /* min-height: 12rem; */
   }
 
   @media only screen and (min-width: 992px) {
@@ -29,7 +31,7 @@ export const NewsText = styled(BodyText2)`
 
   @media only screen and (min-width: 1600px) {
     font-size: 1.1rem;
-    min-height: 8rem;
+    /* min-height: 8rem; */
   }
 `;
 
@@ -114,7 +116,7 @@ export const NewsImage = styled.img`
 
 export const NewsTextContainer = styled.div`
   width: 80%;
-  padding: 10% 10%;
+  padding: 10% 0% 0% 10%;
 `;
 
 export const NewsButton = styled.a`
