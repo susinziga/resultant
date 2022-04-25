@@ -30,6 +30,16 @@ const Roman_klaric = () => {
     title: t("team:about"),
     about: t("team:person1_about"),
     img: "/Team/Roman.png",
+    bulletHeading: t("team:bulletHeading"),
+    bullets: [
+      t("team:person1_bullet_1"),
+      t("team:person1_bullet_2"),
+      t("team:person1_bullet_3"),
+      t("team:person1_bullet_4"),
+      t("team:person1_bullet_5"),
+      t("team:person1_bullet_6"),
+      t("team:person1_bullet_7"),
+    ],
   };
 
   return (

@@ -24,6 +24,19 @@ const Primoz_bitenc = () => {
     title: t("team:about"),
     about: t("team:person2_about"),
     img: "/Team/primoz.png",
+    bulletHeading: t("team:bulletHeading"),
+    bullets: [
+      t("team:person2_bullet_1"),
+      t("team:person2_bullet_2"),
+      t("team:person2_bullet_3"),
+      t("team:person2_bullet_4"),
+      t("team:person2_bullet_5"),
+      t("team:person2_bullet_6"),
+      t("team:person2_bullet_7"),
+      t("team:person2_bullet_8"),
+      t("team:person2_bullet_9"),
+      t("team:person2_bullet_10"),
+    ],
   };
 
   return (
