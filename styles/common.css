@@ -94,8 +94,11 @@ vertical-align: middle;
 
 #content_box{
   margin-top:3rem;
-  @media(min-width:768px){
-    margin-top:0;
+}
+
+@media(min-width:768px){
+  #content_box {
+    margin-top:8rem;
   }
 }
 

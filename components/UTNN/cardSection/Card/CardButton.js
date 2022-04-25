@@ -4,7 +4,7 @@ const CardButton = (props) => {
   return (
     <Wrapper centered={props.centered}>
       <CardButtonWrapper {...props} href={props.href}>
-        {props.text}
+        <CardText>{props.text}</CardText>
         <CardButtonArrowWrapper>
           <img width={5} src="/UTNN/button_arrow_right.png"></img>
         </CardButtonArrowWrapper>
@@ -21,6 +21,22 @@ export const Wrapper = styled.div`
     `
         justify-content: center;
     `}
+`;
+
+export const CardText = styled.span`
+  font-size: 1rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 0.7rem;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 1rem;
+  }
 `;
 
 export const CardButtonWrapper = styled.a`

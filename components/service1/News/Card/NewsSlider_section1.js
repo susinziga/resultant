@@ -31,13 +31,14 @@ const CardSlider = ({ news }) => {
     <Styled.Container>
       <Swiper
         breakpoints={{
-          0: { slidesPerView: 1.5, centeredSlides: true },
+          0: { slidesPerView: 1.3, centeredSlides: true },
           768: {
             slidesPerView: 3,
           },
         }}
         loop={false}
-        spaceBetween={30}
+        spaceBetween={10}
+        initialSlide={1}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>
         {news.map((n, id) => (

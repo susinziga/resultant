@@ -1,5 +1,6 @@
 import styledComponents from "styled-components";
 import {
+  BodyText1,
   BodyText2,
   BodyText3,
   Subtitle2,
@@ -26,17 +27,17 @@ export const ExperienceContainer = styledComponents.div`
     }
 `;
 
-export const BulletHeading = styledComponents(BodyText3)`
+export const BulletHeading = styledComponents(BodyText1)`
     font-weight: bold;
     font-family: "Neusa";
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 
     @media only screen and (min-width: 768px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     @media only screen and (min-width: 992px) {
-        font-size: 1.2rem;
+        font-size: 1.8rem;
     }
 
     @media only screen and (min-width: 1600px) {
@@ -76,7 +77,7 @@ margin-bottom: 10%;
 export const Subtext = styledComponents.p`
     font-weight: bold !important;
     font-size: 1.2rem;
-    font-family: "NeusaThin"; 
+    font-family: "Neusa"; 
     
     
     @media only screen and (min-width: 768px) {

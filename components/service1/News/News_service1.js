@@ -29,7 +29,7 @@ const News_service1 = (props) => {
 
   return (
     <>
-      <div {...props} style={{ padding: "0 2.5%" }}>
+      <div {...props} style={{ padding: "0 0%" }}>
         <CardSlider news={news}></CardSlider>
       </div>
     </>

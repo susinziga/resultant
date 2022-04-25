@@ -1,26 +1,20 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
 
-export const About_main_content_container = styledComponents.div`
+export const About_main_content_container = styled.div`
+  /*height:100vh;*/
 
+  display: flex;
+  justify-content: space-between;
 
-    /*height:100vh;*/
+  transition: 1s all;
 
-    display:flex;
-    justify-content: space-between;
+  overflow-x: hidden;
 
-    transition:1s all;
-
-    overflow-x:hidden;
-
-
-
-    
-  
-    
-    ${(props) => (props.active === 1 ? "background-color:#F9F4F0;" : "")}
-    /*${(props) =>
-      props.active === 2
-        ? `background-color:var(--blue);
+  ${(props) => (props.active === 1 ? "background-color:#F9F4F0;" : "")}/*${(
+    props
+  ) =>
+    props.active === 2
+      ? `background-color:var(--blue);
         span,h4{
         color:white;
         }
@@ -30,12 +24,12 @@ export const About_main_content_container = styledComponents.div`
         h2:nth-child(3){
             color:white;
         }`
-        : ""}
+      : ""}
 
 
         ${(props) =>
-          props.active === 4
-            ? `background-color:var(--blue);
+    props.active === 4
+      ? `background-color:var(--blue);
               span,h4{
               color:white;
               }
@@ -45,5 +39,5 @@ export const About_main_content_container = styledComponents.div`
               h2:nth-child(4){
                   color:white;
               }`
-            : ""}*/
+      : ""}*/
 `;

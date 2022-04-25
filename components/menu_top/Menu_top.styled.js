@@ -35,12 +35,13 @@ export const LogoContainer = styled.div`
     right: 0;
 
     height: 100%;
+    width: 100%;
 
     z-index: 100;
     height: 65px;
     left: 0;
     //left:100%;
-    width: fit-content;
+    /* width: fit-content; */
     transform: scale(1);
 
     //transform:scale(22);

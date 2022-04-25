@@ -245,8 +245,8 @@ const Container = styledComponents.div`
 
 
 margin-top:2rem;
-    width:70%;
-    margin-left:15%;
+    width:100%;
+    // margin-left:15%;
     margin-bottom:1rem;
 
     @media(min-width:768px){

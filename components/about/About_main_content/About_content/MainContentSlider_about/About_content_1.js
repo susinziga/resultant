@@ -115,7 +115,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
     <Waypoint
       scrollableAncestor={"window"}
       topOffset={"0%"}
-      bottomOffset="50%"
+      bottomOffset={"0%"}
       onEnter={() => {
         setContentSwiperActive(0);
       }}
@@ -144,13 +144,13 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
         )}
         <Swiper
           onScroll={true}
-          spaceBetween={50}
-          slidesPerView={1.5}
+          spaceBetween={30}
+          slidesPerView={1.3}
           initialSlide={initSlide}
           centeredSlides={false}
           direction={"horizontal"}
           className="mySwiper"
-          autoHeight={true}
+          autoHeight={false}
           slideToClickedSlide={true}
           centeredSlidesBounds={true}
           breakpoints={{

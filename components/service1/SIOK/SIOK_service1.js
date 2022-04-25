@@ -34,7 +34,7 @@ const SIOK_service1 = (props) => {
         <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop>
 
         <SIOKTitle className="mobile">{header1}</SIOKTitle>
-        <SIOKImage className="mobile" src="/Service1/SIOKgraf.png"></SIOKImage>
+        <SIOKImage className="mobile" src="/Service1/SiOKgraf.png"></SIOKImage>
         <SIOKTitle className="mobile">{header2}</SIOKTitle>
         <SIOKTextContainer className="mobile">
           <SIOKParagraph>{paragraph}</SIOKParagraph>

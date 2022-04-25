@@ -26,7 +26,7 @@ const Card3_dnla = () => {
       <CardContainer>
         <CardImage
           className="mobile"
-          src="/DNLA/cardSectionImage3_mobile.png"
+          src="/clanki/tychy/image1.png"
         ></CardImage>
         <CardImage
           className="desktop"

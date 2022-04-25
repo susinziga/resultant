@@ -7,7 +7,7 @@ import {
 
 export const HeroContainer = styled.div`
   position: relative;
-  height: 100vh;
+  /* height: 100vh; */
 
   padding-top: calc(${(props) => props.menuHeight} - 0.5rem);
 
@@ -34,7 +34,7 @@ export const HeroContainer = styled.div`
 
   @media (min-width: 768px) {
     position: relative;
-    height: 100vh;
+    /* height: 100vh; */
     padding-top: calc(${(props) => props.menuHeight} + 1.5rem);
 
     div:first-child {

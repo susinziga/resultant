@@ -13,7 +13,7 @@ export const PlanContainer = styledComponents.div`
     }
 
     @media only screen and (min-width: 992px) {
-        padding-top: 15%;
+        padding-top: 10%;
     }
 
     @media only screen and (min-width: 1600px) {
