@@ -3,7 +3,13 @@
 import axios from "axios";
 
 export default async function handler(req, res) {
+  const { method } = req;
   const { email, items } = JSON.parse(req.body);
+
+  if (method === "OPTIONS") {
+    return res.status(200).send("ok");
+  }
+
   console.log(email);
   const url =
     "https://a.klaviyo.com/api/v2/list/Sz4Mty/members?api_key=pk_3254f58026ed75c8e9f439d68979fff25c";

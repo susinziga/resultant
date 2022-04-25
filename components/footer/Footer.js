@@ -27,14 +27,14 @@ const Footer = () => {
           </Styled.ContactFooterContainer>
           <Styled.ContactsFooterContainer>
             <Styled.ContactIconContainer>
-              <Styled.ContactIcon src="/Footer/-call.png"></Styled.ContactIcon>
               <Styled.ContactLink href="tel:041231831">
+                <Styled.ContactIcon src="/Footer/-call.png"></Styled.ContactIcon>
                 041 231 831
               </Styled.ContactLink>
             </Styled.ContactIconContainer>
             <Styled.ContactIconContainer>
-              <Styled.ContactIcon src="/Footer/-email.png"></Styled.ContactIcon>
               <Styled.ContactLink href="mailto:info@resultant.si">
+                <Styled.ContactIcon src="/Footer/-email.png"></Styled.ContactIcon>
                 info@resultant.si
               </Styled.ContactLink>
             </Styled.ContactIconContainer>

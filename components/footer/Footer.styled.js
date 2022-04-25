@@ -5,7 +5,7 @@ export const FooterContainer = styled.div`
   width: 100%;
   background-color: var(--footer-color);
   // height: 800px;
-  padding-top: 65%;
+  padding-top: 50%;
   margin-top: 10%;
 
   z-index: 999;
