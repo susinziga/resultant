@@ -10,9 +10,11 @@ import BigCard from "../../components/UTNN/cardSection/Card/BigCard";
 import Contact_srk from "../../components/SRK/Contact/Contact_srk";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const sistematicen_razvoj_kompetenc = () => {
   const { t, lang } = useTranslation();
+  const { locale } = useRouter();
 
   const quote1 = t("srk:srk_quoteParagraph");
 
@@ -112,20 +114,20 @@ const sistematicen_razvoj_kompetenc = () => {
     {
       heading: t("srk:srk_article1CardHeading"),
       text: t("srk:srk_article1CardContent"),
-      image: "/SRK/article1_desktop.png",
+      image: "/SRK/article3_desktop.png",
       link: "razvoj-notranjih-trenerjev",
     },
     {
       heading: t("srk:srk_article2CardHeading"),
       text: t("srk:srk_article2CardContent"),
-      image: "/SRK/article2_desktop.png",
-      link: "DNLA-sistem-ponuja-celovito-strokovno-podporo-drugim-kadrovskim-procesom",
+      image: "/SRK/article1_desktop.png",
+      link: "nacrtovanje-razvoja-sodelavcev",
     },
     {
       heading: t("srk:srk_article3CardHeading"),
       text: t("srk:srk_article3CardContent"),
-      image: "/SRK/article3_desktop.png",
-      link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
+      image: "/SRK/article2_desktop.png",
+      link: "hocemo-vecjo-kompetentnost",
     },
   ];
 
@@ -156,7 +158,7 @@ const sistematicen_razvoj_kompetenc = () => {
       ></Plan>
       <BigCardsSection cards={bigCards} className="section"></BigCardsSection>
       <Contact_srk className="section"></Contact_srk>
-      <CardSlider news={articles}></CardSlider>
+      {locale === "sl" ? <CardSlider news={articles}></CardSlider> : <> </>}
     </>
   );
 };

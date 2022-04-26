@@ -12,9 +12,11 @@ import CardSection_dnla from "../../components/DNLA/cardSection/CardSection_dnla
 import ContactForm_dnla from "../../components/DNLA/contact/ContactForm_dnla";
 import Head from "next/head";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
+import { useRouter } from "next/router";
 
 const dnla = () => {
   const { t, lang } = useTranslation();
+  const { locale } = useRouter();
 
   const HeadingSection = {
     upperTitle: t("dnla:dnla_mainHeading"),
@@ -107,9 +109,13 @@ const dnla = () => {
       <Quote props={quote2} className="section"></Quote>
       <CardSection_dnla className="section"></CardSection_dnla>
       <ContactForm_dnla className="section"></ContactForm_dnla>
-      <CardSlider
-        news={[articleCard1, articleCard2, articleCard3]}
-      ></CardSlider>
+      {locale === "sl" ? (
+        <CardSlider
+          news={[articleCard1, articleCard2, articleCard3]}
+        ></CardSlider>
+      ) : (
+        <> </>
+      )}
     </>
   );
 };

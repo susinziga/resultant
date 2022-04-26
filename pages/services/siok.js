@@ -96,11 +96,7 @@ const service1 = () => {
       <SIOK_service1 className="section"></SIOK_service1>
       <BulletSection_siok className="section "></BulletSection_siok>
       <Contact_service1 className="section"></Contact_service1>
-      {locale === "sl" ? (
-        <News_service1></News_service1>
-      ) : (
-        <News_service1></News_service1>
-      )}
+      {locale === "sl" ? <News_service1></News_service1> : <> </>}
     </>
   );
 };

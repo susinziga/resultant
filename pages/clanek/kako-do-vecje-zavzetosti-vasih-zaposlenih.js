@@ -11,7 +11,7 @@ import Plain_text from "../../components/blog/content_components/Plain_text";
 
 const Clanek2 = () => {
   const blog_data = {
-    title: "Visoka zavzetost sodelavcev prinaša organizaciji veliko prednost",
+    title: "Kako do večje zavzetosti vaših zaposlenih?",
     authors: [
       { image: "/Team/primoz.png", name: "Primož Bitenc" },
       { image: "/Team/janez.png", name: "Janez Žezlina" },

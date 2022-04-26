@@ -10,12 +10,14 @@ import BigCard from "../../components/UTNN/cardSection/Card/BigCard";
 import Contact_utnn from "../../components/UTNN/Contact/Contact_utnn";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
   const { t, lang } = useTranslation();
+  const { locale } = useRouter();
 
   const quote1 = t("utnn:utnn_quoteParagraph");
 
@@ -147,9 +149,13 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       ></Plan>
       <BigCardsSection className="section" cards={bigCards}></BigCardsSection>
       <Contact_utnn className="section"></Contact_utnn>
-      <CardSlider
-        news={[articleCard1, articleCard2, articleCard3]}
-      ></CardSlider>
+      {locale === "sl" ? (
+        <CardSlider
+          news={[articleCard1, articleCard2, articleCard3]}
+        ></CardSlider>
+      ) : (
+        <> </>
+      )}
     </>
   );
 };
