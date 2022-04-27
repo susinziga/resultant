@@ -12,6 +12,7 @@ import styled from "styled-components";
 import TagManager from "react-gtm-module";
 
 import { useRouter } from "next/router";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 
 const tagManagerArgs = {
   gtmId: "GTM-TJL8898",
@@ -34,6 +35,25 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
         <title>Resultant</title>
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
+        <link rel="manifest" href="/favicons/site.webmanifest" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicons/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicons/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicons/favicon-16x16.png"
+        />
       </Head>
       <Menu_top size={size}></Menu_top>
       <Body_content id="__body" path={pathname}>
@@ -51,7 +71,7 @@ const Body_content = styled.div`
     padding-top: 130px;
   }
 
-  ${(props) => (props.path === "/" ? "padding-top:0!important;" : "")}
+  ${(props) => (props.path === "/" ? "padding-top:0 !important;" : "")}
 `;
 
 export default MyApp;
