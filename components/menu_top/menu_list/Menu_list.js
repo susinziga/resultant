@@ -36,6 +36,13 @@ const Menu_list = ({ state }) => {
       {/*<Button className="nav_item" terciary>
         {t("nav_item3")}
         </Button>*/}
+      {locale == "sl" ? (
+        <Button href={"/" + locale + "/aktualno"} terciary>
+          Aktualno
+        </Button>
+      ) : (
+        <></>
+      )}
       <Button href={"/" + locale + "/kontakt"} primary>
         {t("nav_item4")}
       </Button>
