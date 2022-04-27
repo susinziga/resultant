@@ -9,6 +9,16 @@ import Menu_fixed from "../components/menu_fixed/Menu_fixed";
 import Footer from "../components/footer/Footer";
 import Counter_home from "../components/home/Counter_section/Counter_home";
 import Contact_home from "../components/home/Contact_section/Contact_home";
+import { fetchAPI, getStrapiURL } from "./api/strapi";
+
+export async function getServerSideProps(context) {
+  const articles = await fetchAPI("/clanki");
+  console.log(articles);
+
+  return {
+    props: { articles },
+  };
+}
 
 export default function Home() {
   return (
