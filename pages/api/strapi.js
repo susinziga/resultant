@@ -1,7 +1,7 @@
 import qs from "qs";
 
 export function getStrapiURL(path = "") {
-  return `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:1337"}${path}`;
+  return `${"https://resultant-strapi.herokuapp.com"}${path}`;
 }
 
 export async function fetchAPI(path, urlParamsObject = {}, options = {}) {
