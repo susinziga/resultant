@@ -16,4 +16,10 @@ module.exports = {
 
 const nextTranslate = require("next-translate");
 
+module.exports = {
+  images: {
+    domains: ["res.cloudinary.com"],
+  },
+};
+
 module.exports = nextTranslate();

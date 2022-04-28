@@ -8,11 +8,10 @@ import {
   Subtitle2,
   Title1,
   Title2,
-} from "../../../../basic_components/texts/Texts";
+} from "../../basic_components/texts/Texts";
 
 export const NewsText = styled(BodyText2)`
   width: 95%;
-  margin: 10% 0;
   font-size: 1rem;
   transition: all 0.25s ease;
   display: block;
@@ -61,8 +60,8 @@ export const NewsContainer = styled.div`
   // background: white;
   background: none;
   position: relative;
-  width: 95%;
-  margin: 20% auto;
+  width: 100%;
+  /* margin: 20% auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,7 +70,7 @@ export const NewsContainer = styled.div`
   border: 1px solid #000000;
   /* box-sizing: border-box; */
   border-radius: 16px;
-  padding-bottom: 5%;
+  /* padding-bottom: 5%; */
 
   ${(props) => {
     return props.isActive
@@ -94,12 +93,12 @@ export const NewsContainer = styled.div`
 
   @media only screen and (min-width: 768px) {
     min-height: 550px;
-    width: 95%;
+    width: 100%;
   }
 
   @media only screen and (min-width: 992px) {
     padding-top: 0;
-    width: 95%;
+    width: 100%;
     min-height: 590px;
   }
 
@@ -109,7 +108,7 @@ export const NewsContainer = styled.div`
 `;
 
 export const NewsImage = styled.img`
-  width: 100%;
+  /* width: 100%; */
 
   /*filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));*/
 `;
@@ -117,6 +116,7 @@ export const NewsImage = styled.img`
 export const NewsTextContainer = styled.div`
   width: 80%;
   padding: 10% 0% 0% 10%;
+  flex: 1;
 `;
 
 export const NewsButton = styled.a`

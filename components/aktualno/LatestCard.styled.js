@@ -8,15 +8,15 @@ import {
   Subtitle2,
   Title1,
   Title2,
-} from "../../../../basic_components/texts/Texts";
+} from "../../basic_components/texts/Texts";
 
 export const NewsText = styled(BodyText2)`
   width: 95%;
-  margin: 10% 0;
   font-size: 1rem;
   transition: all 0.25s ease;
   display: block;
-  height: calc(1.2rem * 6);
+  /* height: calc(1.2rem * 3); */
+  margin: 4% 0%;
 
   filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));
 
@@ -26,7 +26,7 @@ export const NewsText = styled(BodyText2)`
   }
 
   @media only screen and (min-width: 992px) {
-    padding-top: 0;
+    /* padding-top: 0; */
   }
 
   @media only screen and (min-width: 1600px) {
@@ -40,7 +40,7 @@ export const NewsHeading = styled(Title2)`
   width: 100%;
   transition: all 0.25s ease;
 
-  margin: 0 0 10% 0;
+  /* margin: 0 0 10% 0; */
   filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));
 
   @media (min-width: 768px) {
@@ -49,7 +49,7 @@ export const NewsHeading = styled(Title2)`
 
   @media (min-width: 992px) {
     font-size: 1.2rem;
-    min-height: 5rem;
+    /* min-height: 3rem; */
   }
 
   @media (min-width: 1600px) {
@@ -61,8 +61,8 @@ export const NewsContainer = styled.div`
   // background: white;
   background: none;
   position: relative;
-  width: 95%;
-  margin: 20% auto;
+  width: 100%;
+  /* margin: 20% auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -71,7 +71,8 @@ export const NewsContainer = styled.div`
   border: 1px solid #000000;
   /* box-sizing: border-box; */
   border-radius: 16px;
-  padding-bottom: 5%;
+  /* padding-bottom: 5%; */
+  margin-bottom: 2rem;
 
   ${(props) => {
     return props.isActive
@@ -80,7 +81,6 @@ export const NewsContainer = styled.div`
       : "";
   }}
   /* border-radius: 12px; */
-  min-height: 570px;
   transition: all 0.25s ease;
 
   &:hover {
@@ -93,45 +93,49 @@ export const NewsContainer = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    min-height: 550px;
-    width: 95%;
+    width: 100%;
   }
 
   @media only screen and (min-width: 992px) {
     padding-top: 0;
-    width: 95%;
-    min-height: 590px;
+    width: 100%;
   }
 
   @media only screen and (min-width: 1600px) {
-    min-height: 630px;
   }
 `;
 
+export const ContainerInnerWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const NewsImage = styled.img`
-  width: 100%;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
 
   /*filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));*/
 `;
 
 export const NewsTextContainer = styled.div`
   width: 80%;
-  padding: 10% 0% 0% 10%;
+  padding: 2% 0%;
 `;
 
 export const NewsButton = styled.a`
-  padding-bottom: 2%;
-  padding-left: 10%;
+  /* padding-bottom: 2%; */
+  /* padding-left: 10%; */
 
   @media only screen and (min-width: 768px) {
-    padding-bottom: 10%;
-    padding-left: 10%;
+    /* padding-bottom: 10%; */
+    /* padding-left: 10%; */
   }
 
   @media only screen and (min-width: 992px) {
   }
 
   @media only screen and (min-width: 1600px) {
-    padding-bottom: 5%;
+    /* padding-bottom: 5%; */
   }
 `;

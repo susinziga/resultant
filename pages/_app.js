@@ -14,11 +14,15 @@ import TagManager from "react-gtm-module";
 import { useRouter } from "next/router";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
+import React from "react";
+import { ApolloProvider } from "@apollo/client";
+import withData from "../utils/apollo";
+
 const tagManagerArgs = {
   gtmId: "GTM-TJL8898",
 };
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, apollo }) {
   const [size, setSize] = useState([]);
 
   const { pathname } = useRouter();
@@ -57,7 +61,9 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <Menu_top size={size}></Menu_top>
       <Body_content id="__body" path={pathname}>
-        <Component {...pageProps} />
+        <ApolloProvider client={apollo}>
+          <Component {...pageProps} />
+        </ApolloProvider>
       </Body_content>
       <Footer></Footer>
     </div>
@@ -74,4 +80,4 @@ const Body_content = styled.div`
   ${(props) => (props.path === "/" ? "padding-top:0 !important;" : "")}
 `;
 
-export default MyApp;
+export default withData(MyApp);
