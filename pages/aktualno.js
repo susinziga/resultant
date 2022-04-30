@@ -37,9 +37,9 @@ export const getServerSideProps = async () => {
 };
 
 const aktualno = ({ categories, authors }) => {
-  const { filter, state, setFilter, filteredState } = useAktualno();
+  const { filter, state, setFilter, setSortFilter } = useAktualno();
 
-  let items = filteredState();
+  let items = state;
 
   return (
     <>
@@ -78,10 +78,7 @@ const aktualno = ({ categories, authors }) => {
               { id: 1, name: "Najstarejši prvo" },
             ]}
             onValuePicked={(val) => {
-              setFilter({
-                ...filter,
-                sort: val,
-              });
+              setSortFilter(val);
             }}
           ></FilterDropdown>
         </FiltersWrapper>
