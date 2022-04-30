@@ -7,15 +7,40 @@ import {
   DesktopFlex,
 } from "../components/support/Support.styled";
 import { fetchAPI, getArticleFromStrapiData } from "./api/strapi";
-import NewsCard_service1 from "../components/service1/News/Card/NewsCard_service1";
 import styled from "styled-components";
 import ArticleCard from "../components/aktualno/ArticleCard";
 import LatestCard from "../components/aktualno/LatestCard";
-import { BodyText1 } from "../basic_components/texts/Texts";
-import Query from "../components/query";
-import ARTICLES_QUERY from "../apollo/queries/articles/articles";
+import { BodyText2 } from "../basic_components/texts/Texts";
+import FilterDropdown from "../components/aktualno/FilterDropdown";
+import { useAktualno } from "../custom_hooks/useAktualno";
 
-const aktualno = () => {
+export const getServerSideProps = async () => {
+  const categories = await fetchAPI("/kategorije", { populate: "*" });
+  const authors = await fetchAPI("/avtors", { populate: "*" });
+
+  let cats = [];
+  categories.data.forEach((element) =>
+    cats.push({ id: element.id, name: element.attributes.fullName })
+  );
+
+  let auths = [];
+  authors.data.forEach((element) =>
+    auths.push({ id: element.id, name: element.attributes.ime })
+  );
+
+  return {
+    props: {
+      categories: cats,
+      authors: auths,
+    },
+  };
+};
+
+const aktualno = ({ categories, authors }) => {
+  const { filter, state, setFilter, filteredState } = useAktualno();
+
+  let items = filteredState();
+
   return (
     <>
       <HeadingContainer>
@@ -24,53 +49,91 @@ const aktualno = () => {
           <Paragraph>Najnovejše novice in prispevki ekipe Resultant.</Paragraph>
         </DesktopFlex>
         <HeadingLine></HeadingLine>
+        <FiltersWrapper>
+          <FiltersTitle>Razvrsti</FiltersTitle>
+          <FilterDropdown
+            id="Storitve"
+            items={[{ id: -1, name: "Vse" }, ...categories]}
+            onValuePicked={(val) => {
+              setFilter({
+                ...filter,
+                category: val,
+              });
+            }}
+          ></FilterDropdown>
+          <FilterDropdown
+            id="Avtorji"
+            items={[{ id: -1, name: "Vsi" }, ...authors]}
+            onValuePicked={(val) => {
+              setFilter({
+                ...filter,
+                author: val,
+              });
+            }}
+          ></FilterDropdown>
+          <FilterDropdown
+            id="Datum objave"
+            items={[
+              { id: -1, name: "Najnovejši prvo" },
+              { id: 1, name: "Najstarejši prvo" },
+            ]}
+            onValuePicked={(val) => {
+              setFilter({
+                ...filter,
+                sort: val,
+              });
+            }}
+          ></FilterDropdown>
+        </FiltersWrapper>
       </HeadingContainer>
-      <Query query={ARTICLES_QUERY}>
-        {({ data: clanki }) => {
-          {
-            const articles = clanki.clanki.data;
-            console.log(articles);
 
-            return (
-              <CardWrapperParent>
-                <LatestCard
-                  key={articles[0].id}
-                  news={getArticleFromStrapiData(articles[0])}
-                ></LatestCard>
-                <CardWrapper>
-                  {articles.map((article, index) => {
-                    // Skip first since its the latest article
-                    if (index == 0) return;
+      {items.length <= 0 ? (
+        <BodyText2>Ni člankov!</BodyText2>
+      ) : (
+        <CardWrapperParent>
+          <LatestCard
+            key={items[0].id}
+            news={getArticleFromStrapiData(items[0])}
+          ></LatestCard>
+          <CardWrapper>
+            {items.map((article, index) => {
+              // Skip first since its the latest article
+              if (index == 0) return;
 
-                    console.log(article.attributes);
-
-                    return (
-                      <>
-                        <ArticleCard
-                          key={article.id}
-                          news={getArticleFromStrapiData(article)}
-                        ></ArticleCard>
-                        <ArticleCard
-                          news={getArticleFromStrapiData(article)}
-                        ></ArticleCard>
-                        <ArticleCard
-                          news={getArticleFromStrapiData(article)}
-                        ></ArticleCard>
-                        <ArticleCard
-                          news={getArticleFromStrapiData(article)}
-                        ></ArticleCard>
-                      </>
-                    );
-                  })}
-                </CardWrapper>
-              </CardWrapperParent>
-            );
-          }
-        }}
-      </Query>
+              return (
+                <ArticleCard
+                  key={article.id}
+                  news={getArticleFromStrapiData(article)}
+                ></ArticleCard>
+              );
+            })}
+          </CardWrapper>
+        </CardWrapperParent>
+      )}
     </>
   );
 };
+
+export const FiltersWrapper = styled.div`
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    margin-bottom: 0;
+    height: 100px;
+  }
+`;
+
+export const FiltersTitle = styled.div`
+  color: #b5b5b5;
+  font-family: "NeusaThin";
+`;
 
 export const NoArticlesWrapper = styled.div`
   text-align: center;
@@ -79,7 +142,11 @@ export const NoArticlesWrapper = styled.div`
 export const CardWrapperParent = styled.div`
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 20%;
+  margin-bottom: 80%;
+
+  @media (min-width: 768px) {
+    margin-bottom: 20%;
+  }
 `;
 
 export const CardWrapper = styled.div`
@@ -92,6 +159,10 @@ export const CardWrapper = styled.div`
   }
 
   @media only screen and (min-width: 992px) {
+    grid-template-columns: auto 33% 33%;
+  }
+
+  @media only screen and (min-width: 1024px) {
     grid-template-columns: auto 25% 25% 25%;
   }
 `;
