@@ -1,10 +1,18 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 
-const Query = ({ children, id, query }) => {
-  const { data, loading, error } = useQuery(query, { variables: { id: id } });
+const Query = ({
+  children,
+  id,
+  services = [0, 1, 2],
+  authors = [0, 1, 2, 3, 4, 5],
+  query,
+}) => {
+  const { data, loading, error } = useQuery(query, {
+    variables: { id: id, services: services, authors: authors },
+  });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p style={{ textAlign: "center" }}>Nalaganje...</p>;
   if (error) return <p>Error: {JSON.stringify(error)}</p>;
 
   return children({ data });

@@ -25,8 +25,12 @@ const tagManagerArgs = {
 function MyApp({ Component, pageProps, apollo }) {
   const [size, setSize] = useState([]);
 
-  const { pathname } = useRouter();
+  const { pathname, locale } = useRouter();
   useEffect(() => {
+    console.log(pathname);
+    if (pathname == "/aktualno" && locale == "en") {
+      window.location = "/en";
+    }
     TagManager.initialize(tagManagerArgs);
     window.addEventListener("resize", setSizes);
     return () => window.removeEventListener("resize", setSizes);

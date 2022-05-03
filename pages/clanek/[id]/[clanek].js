@@ -2,12 +2,11 @@ import { useRouter } from "next/router";
 import React from "react";
 import ARTICLE_QUERY from "../../../apollo/queries/articles/article";
 import { BodyText3, Subtitle2 } from "../../../basic_components/texts/Texts";
-import Blog_page from "../../../components/blog/Blog_page";
 import Border_shadow from "../../../components/blog/content_components/Border_shadow";
 import Container, {
   Container_border,
-} from "../../../components/blog/content_components/Container.styled";
-import Image from "../../../components/blog/content_components/Image";
+} from "../../../components/aktualno/blog/content_components/Container.styled";
+import Image from "../../../components/aktualno/blog/content_components/Image";
 import NewParagraph, {
   NewRow,
 } from "../../../components/blog/content_components/Margin.styled";
@@ -15,6 +14,9 @@ import Plain_text from "../../../components/blog/content_components/Plain_text";
 import Share from "../../../components/blog/content_components/Share";
 import Query from "../../../components/query";
 import { getStrapiURL } from "../../api/strapi";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import Blog_page from "../../../components/aktualno/blog/Blog_page";
 
 const Clanek = ({ clanek, blog_data }) => {
   const getArticleContentComponent = (item) => {
@@ -23,16 +25,58 @@ const Clanek = ({ clanek, blog_data }) => {
     switch (strapiComponent) {
       case "ComponentClanekVsebinaBulletList":
         return (
-          <ul>
-            {item.Text.split("\n").map((item) => (
-              <li>
-                <BodyText3>{item}</BodyText3>
-              </li>
-            ))}
-          </ul>
+          <>
+            <Container>
+              <Subtitle2>Področja uporabe:</Subtitle2>
+              <NewRow></NewRow>
+              <ul>
+                {item.Text.split("\n").map((item) => (
+                  <li>
+                    <BodyText3>{item}</BodyText3>
+                  </li>
+                ))}
+              </ul>
+            </Container>
+            <NewParagraph></NewParagraph>
+          </>
         );
       case "ComponentClanekVsebinaNormalText":
-        return <p>{item.Text}</p>;
+        return (
+          <>
+            <Container>
+              <BodyText3>{item.Text}</BodyText3>
+            </Container>
+            <NewParagraph></NewParagraph>
+          </>
+        );
+      case "ComponentClanekVsebinaImage":
+        return (
+          <>
+            <Container>
+              <Subtitle2>{item.Naslov}</Subtitle2>
+              <NewRow></NewRow>
+            </Container>
+            <Image src={item.Slika.data.attributes.url}></Image>
+            <NewParagraph></NewParagraph>
+          </>
+        );
+      case "ComponentClanekVsebinaBorderText":
+        return (
+          <>
+            <Container_border style={{ textAlign: "center" }}>
+              <BodyText3>
+                <ReactMarkdown
+                  children={item.Text}
+                  remarkPlugins={[remarkGfm]}
+                  skipHtml={true}
+                ></ReactMarkdown>
+              </BodyText3>
+            </Container_border>
+            <NewParagraph></NewParagraph>
+          </>
+        );
+      case "ComponentClanekVsebinaPresledek":
+        return <div style={{ height: "4rem" }}></div>;
       default:
         return <p>Invalid component ${strapiComponent}</p>;
     }
@@ -50,17 +94,14 @@ const Clanek = ({ clanek, blog_data }) => {
           const authors = article.avtors.data.map((avtor) => {
             return {
               name: avtor.attributes.ime,
-              image:
-                getStrapiURL() + avtor.attributes.slika.data.attributes.url,
+              image: avtor.attributes.slika.data.attributes.url,
             };
           });
-
-          console.log(authors);
 
           const blog_data = {
             title: article.naslov,
             authors: authors,
-            image: getStrapiURL() + article.glavnaSlika.data.attributes.url,
+            image: article.glavnaSlika.data.attributes.url,
             excerpt: article.podnaslov,
           };
 

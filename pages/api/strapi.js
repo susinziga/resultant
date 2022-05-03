@@ -5,8 +5,7 @@ export function getArticleFromStrapiData(article) {
   const link = article.attributes.naslov.replace(" ", "-").toLowerCase();
 
   // Get link to main img
-  const mainImgUrl =
-    getStrapiURL() + article.attributes.glavnaSlika.data.attributes.url;
+  const mainImgUrl = article.attributes.glavnaSlika.data.attributes.url;
 
   return {
     id: article.id,
