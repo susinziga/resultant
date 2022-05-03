@@ -34,6 +34,10 @@ function MyApp({ Component, pageProps }) {
     <div>
       <Head>
         <title>Resultant</title>
+        <meta
+          name="google-site-verification"
+          content="KP9psBhIIYpEO9oTtEiTsSGYBnVVH62t7re2WEVQKdk"
+        />
       </Head>
       <Menu_top size={size}></Menu_top>
       <Body_content id="__body" path={pathname}>
