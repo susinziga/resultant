@@ -20,7 +20,10 @@ const Menu_list = ({ state }) => {
       <Button href={"/" + locale + "/o-nas"} className="nav_item" terciary>
         {t("nav_item1")}
       </Button>
-      <div className="drop-button par" style={{ marginRight: "1.8rem" }}>
+      <div
+        className="drop-button par"
+        style={{ marginRight: locale == "en" ? "1.8rem" : "0" }}
+      >
         <Button
           className="nav_item drop-button"
           terciary
