@@ -39,6 +39,7 @@ const ARTICLE_QUERY = gql`
           dinamicnoPolje {
             __typename
             ... on ComponentClanekVsebinaNormalText {
+              Naslov
               Text
             }
             ... on ComponentClanekVsebinaBulletList {
@@ -58,6 +59,9 @@ const ARTICLE_QUERY = gql`
                   }
                 }
               }
+            }
+            ... on ComponentClanekVsebinaPresledek {
+              NE_IZPOLNI
             }
           }
         }

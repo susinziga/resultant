@@ -1,7 +1,12 @@
 import { useRouter } from "next/router";
 import React from "react";
 import ARTICLE_QUERY from "../../../apollo/queries/articles/article";
-import { BodyText3, Subtitle2 } from "../../../basic_components/texts/Texts";
+import {
+  BodyText3,
+  Subtitle2,
+  Subtitle1,
+  BodyText2,
+} from "../../../basic_components/texts/Texts";
 import Border_shadow from "../../../components/blog/content_components/Border_shadow";
 import Container, {
   Container_border,
@@ -22,12 +27,18 @@ const Clanek = ({ clanek, blog_data }) => {
   const getArticleContentComponent = (item) => {
     const strapiComponent = item.__typename;
 
+    console.log(item);
+
     switch (strapiComponent) {
       case "ComponentClanekVsebinaBulletList":
         return (
           <>
             <Container>
-              <Subtitle2>Področja uporabe:</Subtitle2>
+              <Subtitle1>{item.Naslov}</Subtitle1>
+              <NewRow></NewRow>
+              <BodyText3 style={{ fontWeight: "bold" }}>
+                {item.Podnaslov}
+              </BodyText3>
               <NewRow></NewRow>
               <ul>
                 {item.Text.split("\n").map((item) => (
@@ -44,7 +55,11 @@ const Clanek = ({ clanek, blog_data }) => {
         return (
           <>
             <Container>
-              <BodyText3>{item.Text}</BodyText3>
+              <Subtitle2>{item.Naslov}</Subtitle2>
+              <NewRow />
+              <BodyText3
+                dangerouslySetInnerHTML={{ __html: item.Text }}
+              ></BodyText3>
             </Container>
             <NewParagraph></NewParagraph>
           </>

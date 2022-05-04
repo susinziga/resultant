@@ -23,7 +23,9 @@ const ArticleCard = ({ news }) => {
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
-            <NewsText>{text}</NewsText>
+            <NewsText>
+              {text.length > 100 ? text.substr(0, 100) + "..." : text}
+            </NewsText>
           </NewsTextContainer>
         </div>
         <NewsButton href={"/" + locale + "/clanek/" + id + "/" + link}>
