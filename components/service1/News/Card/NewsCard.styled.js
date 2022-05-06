@@ -35,6 +35,19 @@ export const NewsText = styled(BodyText2)`
   }
 `;
 
+export const NewsAuthorsTextWrapper = styled(BodyText3)`
+  font-weight: bold;
+  font-size: 1.1rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+`;
+
+export const NewsAuthorText = styled.span`
+  transition: all 0.25s ease;
+`;
+
 export const NewsHeading = styled(Title2)`
   font-size: 1.2rem;
   width: 100%;
@@ -90,8 +103,8 @@ export const NewsContainer = styled.a`
     color: white !important;
   }
 
-  &:hover ${NewsHeading}, &:hover ${NewsText} {
-    color: white;
+  &:hover ${NewsHeading}, &:hover ${NewsText}, &:hover ${NewsAuthorText} {
+    color: white !important;
   }
 
   @media only screen and (min-width: 768px) {

@@ -155,15 +155,15 @@ export const CardWrapper = styled.div`
   gap: 1%;
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: auto 33% 33%;
+    grid-template-columns: auto auto auto;
   }
 
   @media only screen and (min-width: 992px) {
-    grid-template-columns: auto 33% 33%;
+    grid-template-columns: auto auto auto;
   }
 
   @media only screen and (min-width: 1024px) {
-    grid-template-columns: auto 25% 25% 25%;
+    grid-template-columns: auto auto auto auto;
   }
 `;
 

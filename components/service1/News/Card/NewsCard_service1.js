@@ -7,6 +7,8 @@ import {
   NewsTextContainer,
   NewsText,
   NewsButton,
+  NewsAuthorsTextWrapper,
+  NewsAuthorText,
 } from "./NewsCard.styled";
 
 import { useRouter } from "next/router";
@@ -14,7 +16,7 @@ import Button from "../../../../basic_components/button/Button";
 
 const NewsCard_service1 = ({ news, isActive }) => {
   const { locale } = useRouter();
-  let { heading, text, image, link, id } = news;
+  let { heading, authors, text, image, link, id } = news;
 
   return (
     <>
@@ -27,15 +29,20 @@ const NewsCard_service1 = ({ news, isActive }) => {
         <div>
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>
+            <NewsAuthorsTextWrapper>
+              {authors.map((author, index) => (
+                <NewsAuthorText>
+                  {author} {index === authors.length - 1 ? "" : "- "}
+                </NewsAuthorText>
+              ))}
+            </NewsAuthorsTextWrapper>
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>
-              {text.length > 150 ? text.substr(0, 150) + "..." : text}
+              {text.length > 110 ? text.substr(0, 110) + "..." : text}
             </NewsText>
           </NewsTextContainer>
         </div>
-        <NewsButton href={"/" + locale + "/clanek/" + link}>
-          Preberi več {">"}
-        </NewsButton>
+        <NewsButton>Preberi več {">"}</NewsButton>
       </NewsContainer>
     </>
   );

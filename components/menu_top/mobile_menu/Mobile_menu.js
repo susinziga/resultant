@@ -6,6 +6,7 @@ import gsap from "gsap";
 
 const Mobile_menu = ({ menu_opened }) => {
   const { t, lang } = useTranslation("aboveTheFold");
+  const { locale } = useRouter();
 
   const [opened, setOpened] = useState(false);
 
@@ -69,6 +70,13 @@ const Mobile_menu = ({ menu_opened }) => {
         {/*<Button className="nav_item mobile_nav4" terciary>
           {t("nav_item3")}
         </Button>*/}
+        {locale == "sl" ? (
+          <Button href="/aktualno" className="nav_item mobile_nav4" terciary>
+            Aktualno
+          </Button>
+        ) : (
+          <></>
+        )}
         <Button href="/kontakt" primary className="contact mobile_nav5">
           {t("nav_item4")}
         </Button>
@@ -80,6 +88,7 @@ const Mobile_menu = ({ menu_opened }) => {
 import styled from "styled-components";
 import useTranslation from "next-translate/useTranslation";
 import Mobile_menu_dropdown from "./Mobile_menu_dropdown";
+import { useRouter } from "next/router";
 
 const Container = styled.div`
   /*transition: 2s all;

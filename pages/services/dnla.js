@@ -78,27 +78,6 @@ const dnla = () => {
     { text: t("dnla:dnla_PlanCard6"), number: "6" },
   ];
 
-  // const articleCard1 = {
-  //   heading: t("dnla:dnla_article1CardHeading"),
-  //   text: t("dnla:dnla_article1CardContent"),
-  //   image: "/DNLA/article1_desktop.png",
-  //   link: "enostavni-pristopi-razvijanja-socialnih-kompetenc",
-  // };
-
-  // const articleCard2 = {
-  //   heading: t("dnla:dnla_article2CardHeading"),
-  //   text: t("dnla:dnla_article1CardContent"),
-  //   image: "/DNLA/article2_desktop.png",
-  //   link: "DNLA-sistem-ponuja-celovito-strokovno-podporo-drugim-kadrovskim-procesom",
-  // };
-
-  // const articleCard3 = {
-  //   heading: t("dnla:dnla_article3CardHeading"),
-  //   text: t("dnla:dnla_article3CardContent"),
-  //   image: "/DNLA/article3_desktop.png",
-  //   link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
-  // };
-
   let articles = [];
   state.forEach((element) => {
     articles.push(getArticleFromStrapiData(element));
@@ -107,6 +86,7 @@ const dnla = () => {
     heading: t("dnla:dnla_article3CardHeading"),
     text: t("dnla:dnla_article3CardContent"),
     image: "/DNLA/article3_desktop.png",
+    authors: [],
     link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
   });
 
