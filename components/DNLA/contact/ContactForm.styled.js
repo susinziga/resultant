@@ -115,39 +115,38 @@ export const FormContainer = styledComponents.form`
     }
 `;
 export const SubmitButton = styledComponents.input`
+font-size:1.5rem;
+padding: 3% 0%;
+
+cursor:pointer;
+border: none;
+margin:auto;
+width:100%;
+
+background-color:var(--secondary-color);
+color:var(--white);
+border-radius:var(--border-primary);
+
+&:hover {
+    background-color: var(--primary-color)
+}
+
+@media only screen and (min-width: 768px) {
     font-size:1.5rem;
-    padding: 3% 40%;
-    margin-top: 5%;
-    margin:auto;
+    padding: 2.5% 0%;
+    margin-top: 2.5%;
+}
+
+@media only screen and (min-width: 992px) {
+    margin-top: 0%;
+    padding: 2.5% 0%;
+}
+
+@media only screen and (min-width: 1600px) {
+    padding: 1.5% 0%;
     
-    cursor:pointer;
-    border: none;
-    margin:auto;
-
-    background-color:var(--secondary-color);
-    color:var(--white);
-    border-radius:var(--border-primary);
-
-    &:hover {
-        background-color: var(--primary-color)
-    }
-
-    @media only screen and (min-width: 768px) {
-        font-size:1.5rem;
-        padding: 2.5% 42%;
-        margin-top: 2.5%;
-    }
-
-    @media only screen and (min-width: 992px) {
-        margin-top: 0%;
-        padding: 2.5% 44%;
-    }
-
-    @media only screen and (min-width: 1600px) {
-        padding: 1.5% 45%;
-        
-        margin-left: 1%;
-    }
+    margin-left: 1%;
+}
 
 `;
 

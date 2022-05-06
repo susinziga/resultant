@@ -14,7 +14,11 @@ const BigCard = (props) => {
 
   return (
     <>
-      <CardContainer flipX={props.flipX} margin={props.margin}>
+      <CardContainer
+        style={{ backgroundColor: props.color, borderRadius: "12px" }}
+        flipX={props.flipX}
+        margin={props.margin}
+      >
         <CardImage
           flipX={props.flipX}
           className="desktop"
@@ -39,13 +43,14 @@ const BigCard = (props) => {
               <CardButton text={props.buttonText} />
             </a>
           )}
-          {props.mobileImgOnBottom && (
-            <CardImage
-              className="mobile"
-              src={props.img + "_mobile.png"}
-            ></CardImage>
-          )}
         </TextContainer>
+        {props.mobileImgOnBottom && (
+          <CardImage
+            mobileImgOnBottom={props.mobileImgOnBottom}
+            className="mobile"
+            src={props.img + "_mobile.png"}
+          ></CardImage>
+        )}
       </CardContainer>
     </>
   );

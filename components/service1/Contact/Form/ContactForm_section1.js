@@ -73,12 +73,11 @@ const ContactForm_service1 = () => {
         </HeaderContainer>
         <FormContainer
           onSubmit={(e) => {
-            console.log("send");
             e.preventDefault();
             sendMail();
             let btn = document.getElementById("submit_btn");
             btn.style.backgroundColor = "#072543";
-            btn.value = "Vaše sporočilo je bilo uspešno poslano!";
+            btn.value = t("contact:contact_sendSuccess");
             btn.disabled = true;
           }}
         >

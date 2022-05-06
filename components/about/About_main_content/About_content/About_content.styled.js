@@ -14,7 +14,7 @@ export const About_content_container = styled.div`
 
   @media (min-width: 992px) {
     width: 60%;
-    margin-top: 30vh !important;
+    padding-top: 30vh !important;
 
     > div:nth-child(1) {
       width: 100%;

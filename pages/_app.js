@@ -17,6 +17,7 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import withData from "../utils/apollo";
+import AktualnoProvider from "../context/aktualnoContext";
 
 const tagManagerArgs = {
   gtmId: "GTM-TJL8898",
@@ -40,37 +41,39 @@ function MyApp({ Component, pageProps, apollo }) {
     setSize([window.innerWidth, window.innerHeight]);
   };
   return (
-    <div>
-      <Head>
-        <title>Resultant</title>
-        <link rel="shortcut icon" href="/favicons/favicon.ico" />
-        <link rel="manifest" href="/favicons/site.webmanifest" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicons/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicons/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicons/favicon-16x16.png"
-        />
-      </Head>
-      <Menu_top size={size}></Menu_top>
-      <Body_content id="__body" path={pathname}>
-        <ApolloProvider client={apollo}>
-          <Component {...pageProps} />
-        </ApolloProvider>
-      </Body_content>
-      <Footer></Footer>
-    </div>
+    <AktualnoProvider>
+      <div>
+        <Head>
+          <title>Resultant</title>
+          <link rel="shortcut icon" href="/favicons/favicon.ico" />
+          <link rel="manifest" href="/favicons/site.webmanifest" />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicons/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicons/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicons/favicon-16x16.png"
+          />
+        </Head>
+        <Menu_top size={size}></Menu_top>
+        <Body_content id="__body" path={pathname}>
+          <ApolloProvider client={apollo}>
+            <Component {...pageProps} />
+          </ApolloProvider>
+        </Body_content>
+        <Footer></Footer>
+      </div>
+    </AktualnoProvider>
   );
 }
 

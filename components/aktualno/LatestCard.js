@@ -19,7 +19,10 @@ const LatestCard = ({ news }) => {
 
   return (
     <>
-      <NewsContainer isActive>
+      <NewsContainer
+        href={"/" + locale + "/clanek/" + id + "/" + link}
+        isActive
+      >
         <ContainerInnerWrapper>
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>

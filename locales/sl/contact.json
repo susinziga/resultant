@@ -1,5 +1,6 @@
 {
-    "contact_upperHeading":"Kontakt",
-    "contact_mainHeading":"Kontaktirajte nas"
+  "contact_upperHeading": "Kontakt",
+  "contact_mainHeading": "Kontaktirajte nas",
 
+  "contact_sendSuccess": "Vaše sporočilo je bilo uspešno poslano!"
 }

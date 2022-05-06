@@ -10,7 +10,6 @@ import {
 } from "./PlanItem.styled";
 
 const PlanItem_service1 = ({ props }) => {
-  console.log(props);
   return (
     <>
       <PlanItemContainer active={props.active} CardStyle={props.CardStyle}>

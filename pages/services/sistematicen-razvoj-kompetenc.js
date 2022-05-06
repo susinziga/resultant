@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
@@ -11,10 +11,23 @@ import Contact_srk from "../../components/SRK/Contact/Contact_srk";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 import styled from "styled-components";
 import { useRouter } from "next/router";
+import { AktualnoContext } from "../../context/aktualnoContext";
+import { getArticleFromStrapiData } from "../api/strapi";
 
 const sistematicen_razvoj_kompetenc = () => {
   const { t, lang } = useTranslation();
   const { locale } = useRouter();
+
+  const { filter, state, setFilter, setSortFilter } =
+    useContext(AktualnoContext);
+
+  useEffect(() => {
+    setFilter({
+      ...filter,
+      category: 3,
+    });
+    setSortFilter(-1);
+  }, []);
 
   const quote1 = t("srk:srk_quoteParagraph");
 
@@ -79,8 +92,11 @@ const sistematicen_razvoj_kompetenc = () => {
       content={t("srk:srk_bigCard1Content")}
       img={"/SRK/bigCard1img"}
       href={
+        "/" +
+        locale +
         "/services/sistematicen-razvoj-kompetenc/modeli-kompetenc-so-temelj-za-vecino-kadrovskih-procesov"
       }
+      buttonText={t("common:button_more")}
     ></BigCard>,
     <BigCard
       key={1}
@@ -88,8 +104,11 @@ const sistematicen_razvoj_kompetenc = () => {
       content={t("srk:srk_bigCard2Content")}
       img={"/SRK/bigCard2img"}
       href={
+        "/" +
+        locale +
         "/services/sistematicen-razvoj-kompetenc/hitre-spremembe-v-danasnjem-poslovnem-okolju-zahtevajo-ucinkovit-razvoj-kompetenc"
       }
+      buttonText={t("common:button_more")}
     ></BigCard>,
     <BigCard
       key={2}
@@ -97,7 +116,8 @@ const sistematicen_razvoj_kompetenc = () => {
       heading={t("srk:srk_bigCard3Heading")}
       content={t("srk:srk_bigCard3Content")}
       img={"/SRK/bigCard3img"}
-      href={"/services/sistematicen-razvoj-kompetenc/metoda-360"}
+      href={"/" + locale + "/services/sistematicen-razvoj-kompetenc/metoda-360"}
+      buttonText={t("common:button_more")}
     ></BigCard>,
     <BigCard
       key={3}
@@ -105,31 +125,18 @@ const sistematicen_razvoj_kompetenc = () => {
       content={t("srk:srk_bigCard4Content")}
       img={"/SRK/bigCard4img"}
       href={
+        "/" +
+        locale +
         "/services/sistematicen-razvoj-kompetenc/360-proces-povratne-informacije"
       }
+      buttonText={t("common:button_more")}
     ></BigCard>,
   ];
 
-  const articles = [
-    {
-      heading: t("srk:srk_article1CardHeading"),
-      text: t("srk:srk_article1CardContent"),
-      image: "/SRK/article3_desktop.png",
-      link: "razvoj-notranjih-trenerjev",
-    },
-    {
-      heading: t("srk:srk_article2CardHeading"),
-      text: t("srk:srk_article2CardContent"),
-      image: "/SRK/article1_desktop.png",
-      link: "nacrtovanje-razvoja-sodelavcev",
-    },
-    {
-      heading: t("srk:srk_article3CardHeading"),
-      text: t("srk:srk_article3CardContent"),
-      image: "/SRK/article2_desktop.png",
-      link: "hocemo-vecjo-kompetentnost",
-    },
-  ];
+  let articles = [];
+  state.forEach((element) => {
+    articles.push(getArticleFromStrapiData(element));
+  });
 
   return (
     <>

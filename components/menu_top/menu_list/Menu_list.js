@@ -40,7 +40,7 @@ const Menu_list = ({ state }) => {
         {t("nav_item3")}
         </Button>*/}
       {locale == "sl" ? (
-        <Button href={"/" + locale + "/aktualno"} terciary>
+        <Button href={"/" + locale + "/aktualno"} className="nav_item" terciary>
           Aktualno
         </Button>
       ) : (

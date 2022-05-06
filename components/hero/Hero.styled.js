@@ -22,7 +22,7 @@ export const HeroContainer = styled.div`
 
     overflow: hidden;
 
-    height: fiz-content;
+    height: fit-content;
 
     max-height: 100%;
   }

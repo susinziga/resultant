@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   HeadingContainer,
   HeadingUpperHeading,
@@ -13,6 +13,7 @@ import LatestCard from "../components/aktualno/LatestCard";
 import { BodyText2 } from "../basic_components/texts/Texts";
 import FilterDropdown from "../components/aktualno/FilterDropdown";
 import { useAktualno } from "../custom_hooks/useAktualno";
+import { AktualnoContext } from "../context/aktualnoContext";
 
 export const getServerSideProps = async () => {
   const categories = await fetchAPI("/kategorije", { populate: "*" });
@@ -28,6 +29,8 @@ export const getServerSideProps = async () => {
     auths.push({ id: element.id, name: element.attributes.ime })
   );
 
+  console.log(cats);
+
   return {
     props: {
       categories: cats,
@@ -37,7 +40,8 @@ export const getServerSideProps = async () => {
 };
 
 const aktualno = ({ categories, authors }) => {
-  const { filter, state, setFilter, setSortFilter } = useAktualno();
+  const { filter, state, setFilter, setSortFilter } =
+    useContext(AktualnoContext);
 
   let items = state;
 
@@ -50,7 +54,6 @@ const aktualno = ({ categories, authors }) => {
         </DesktopFlex>
         <HeadingLine></HeadingLine>
         <FiltersWrapper>
-          <FiltersTitle>Razvrsti</FiltersTitle>
           <FilterDropdown
             id="Storitve"
             items={[{ id: -1, name: "Vse" }, ...categories]}
@@ -74,8 +77,8 @@ const aktualno = ({ categories, authors }) => {
           <FilterDropdown
             id="Datum objave"
             items={[
-              { id: -1, name: "Najnovejši prvo" },
-              { id: 1, name: "Najstarejši prvo" },
+              { id: -1, name: "Od najnovejšega do najstarejšega" },
+              { id: 1, name: "Od najstarejšega do najnovejšega" },
             ]}
             onValuePicked={(val) => {
               setSortFilter(val);

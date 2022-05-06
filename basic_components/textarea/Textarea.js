@@ -24,6 +24,7 @@ const Textfield = (props) => {
       </Styled.TextareaLabel>
       <Styled.TextareaContainer
         {...props}
+        required={props.props.required === "*"}
         placeholder={props.props.placeholder}
       ></Styled.TextareaContainer>
       <Styled.ActionLabel {...props}>{props.props.message}</Styled.ActionLabel>

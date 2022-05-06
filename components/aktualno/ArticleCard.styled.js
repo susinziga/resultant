@@ -37,6 +37,7 @@ export const NewsText = styled(BodyText2)`
 export const NewsHeading = styled(Title2)`
   font-size: 1.2rem;
   width: 100%;
+  cursor: pointer;
   transition: all 0.25s ease;
 
   margin: 0 0 10% 0;
@@ -56,11 +57,12 @@ export const NewsHeading = styled(Title2)`
   }
 `;
 
-export const NewsContainer = styled.div`
+export const NewsContainer = styled.a`
   // background: white;
   background: none;
   position: relative;
   width: 100%;
+  cursor: pointer;
   /* margin: 20% auto; */
   display: flex;
   flex-direction: column;

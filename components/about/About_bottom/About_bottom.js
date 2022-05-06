@@ -25,7 +25,7 @@ const About_bottom = (props) => {
       <Content>
         <h2>{bot_header}</h2>
         <BodyText2>{bot_text}</BodyText2>
-        <Button secondary href={"/" + locale + "/contact"}>
+        <Button secondary href={"/" + locale + "/kontakt"}>
           {bot_button}
         </Button>
       </Content>

@@ -18,13 +18,19 @@ const NewsCard_service1 = ({ news, isActive }) => {
 
   return (
     <>
-      <NewsContainer isActive>
-        {/* {id} */}
+      <NewsContainer
+        href={
+          "/" + locale + "/clanek/" + (id != undefined ? id + "/" : "") + link
+        }
+        isActive
+      >
         <div>
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
-            <NewsText>{text}</NewsText>
+            <NewsText>
+              {text.length > 150 ? text.substr(0, 150) + "..." : text}
+            </NewsText>
           </NewsTextContainer>
         </div>
         <NewsButton href={"/" + locale + "/clanek/" + link}>

@@ -21,33 +21,44 @@ const OfferForm_offer = () => {
 
   const { formData, handleFormChange, sendMail } = useForm();
 
+  const button = t("service1:service1_buttonText1");
+
   useEffect(() => {
     handleFormChange("subject", "SiOK Povpraševanje");
   }, []);
 
   const inputProps1 = [
-    { label: t("offer:offer_inputProp1") },
-    { label: t("offer:offer_inputProp2") },
-    { label: t("offer:offer_inputProp3") },
-    { label: t("offer:offer_inputProp4") },
-    { label: t("offer:offer_inputProp5") },
+    { label: t("offer:offer_inputProp1"), required: "*" },
+    { label: t("offer:offer_inputProp2"), required: "*" },
+    { label: t("offer:offer_inputProp3"), required: "*" },
+    { label: t("offer:offer_inputProp4"), required: "*" },
+    { label: t("offer:offer_inputProp5"), required: "*" },
   ];
 
   const inputProps2 = [
-    { label: t("offer:offer_secondInputProp1") },
-    { label: t("offer:offer_secondInputProp2") },
-    { label: t("offer:offer_secondInputProp3") },
+    { label: t("offer:offer_secondInputProp1"), required: "*" },
+    { label: t("offer:offer_secondInputProp2"), required: "*" },
+    { label: t("offer:offer_secondInputProp3"), required: "*" },
   ];
 
   const checkboxProps = [
-    { label: t("offer:offer_checkboxProp1") },
-    { label: t("offer:offer_checkboxProp2") },
+    { label: t("offer:offer_checkboxProp1"), required: "*" },
+    { label: t("offer:offer_checkboxProp2"), required: "*" },
   ];
 
   return (
     <>
       <OfferContainer>
-        <FormContainer>
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            btn.value = t("contact:contact_sendSuccess");
+            btn.disabled = true;
+          }}
+        >
           <InputsContainer>
             {inputProps1.map((input, id) => {
               return (
@@ -109,14 +120,15 @@ const OfferForm_offer = () => {
             ></MultipleCheckbox>
             <ButtonContainer>
               <SubmitButton
+                id="submit_btn"
                 style={{ padding: "2% 0%", width: "100%", display: "block" }}
-                onClick={(id, value) => {
-                  console.log("asd");
-                  sendMail();
-                }}
-              >
-                Pošlji
-              </SubmitButton>
+                // onClick={(id, value) => {
+                //   console.log("asd");
+                //   sendMail();
+                // }}
+                value={button}
+                type={"submit"}
+              ></SubmitButton>
             </ButtonContainer>
           </InputsContainer>
         </FormContainer>

@@ -18,7 +18,10 @@ const ArticleCard = ({ news }) => {
 
   return (
     <>
-      <NewsContainer isActive>
+      <NewsContainer
+        href={"/" + locale + "/clanek/" + id + "/" + link}
+        isActive
+      >
         <div>
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>

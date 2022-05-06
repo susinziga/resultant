@@ -94,7 +94,7 @@ const Hero = (props) => {
       <div ref={(el) => (heroImageAnimation = el)}>
         <picture>
           {" "}
-          <source media="(min-width: 768px)" srcSet={heroImage} />
+          <source media="(min-width: 1100px)" srcSet={heroImage} />
           <img src={heroImage_mobile}></img>
         </picture>
 

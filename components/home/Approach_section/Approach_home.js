@@ -32,7 +32,7 @@ const Approach_component = (props) => {
           <p style={{ marginBottom: "8%" }}>
             <BodyText2>{textLower}</BodyText2>
           </p>
-          <Button secondary href={"/" + locale + "/o-nas#pristop"}>
+          <Button secondary href={"/" + locale + "/o-nas#content_box"}>
             {buttonText}
           </Button>
         </ApproachTextContainer>

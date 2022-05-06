@@ -20,30 +20,41 @@ const OfferDNLA = () => {
   }, []);
 
   const inputProps1 = [
-    { label: t("offer:offer_inputProp1") },
-    { label: t("offer:offer_inputProp2") },
-    { label: t("offer:offer_inputProp3") },
-    { label: t("offer:offer_inputProp4") },
-    { label: t("offer:offer_inputProp5") },
+    { label: t("offer:offer_inputProp1"), required: "*" },
+    { label: t("offer:offer_inputProp2"), required: "*" },
+    { label: t("offer:offer_inputProp3"), required: "*" },
+    { label: t("offer:offer_inputProp4"), required: "*" },
+    { label: t("offer:offer_inputProp5"), required: "*" },
   ];
 
   const otherInputs = [
-    { label: t("dnla:first") },
-    { label: t("dnla:second") },
-    { label: t("dnla:third") },
+    { label: t("dnla:first"), required: "*" },
+    { label: t("dnla:second"), required: "*" },
+    { label: t("dnla:third"), required: "*" },
   ];
 
   const checkboxProps = [
-    { label: t("dnla:offer_checkboxProp1") },
-    { label: t("dnla:offer_checkboxProp2") },
-    { label: t("dnla:offer_checkboxProp3") },
-    { label: t("dnla:offer_checkboxProp4") },
+    { label: t("dnla:offer_checkboxProp1"), required: "*" },
+    { label: t("dnla:offer_checkboxProp2"), required: "*" },
+    { label: t("dnla:offer_checkboxProp3"), required: "*" },
+    { label: t("dnla:offer_checkboxProp4"), required: "*" },
   ];
+
+  const button = t("service1:service1_buttonText1");
 
   return (
     <>
       <OfferContainer>
-        <FormContainer>
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            btn.value = t("contact:contact_sendSuccess");
+            btn.disabled = true;
+          }}
+        >
           <InputsContainer>
             {inputProps1.map((input) => {
               return (
@@ -127,13 +138,11 @@ const OfferDNLA = () => {
             </Button>*/}
             <ButtonContainer>
               <SubmitButton
+                id="submit_btn"
                 style={{ padding: "2% 0%", width: "100%", display: "block" }}
-                onClick={(id, value) => {
-                  sendMail();
-                }}
-              >
-                Pošlji
-              </SubmitButton>
+                value={button}
+                type={"submit"}
+              ></SubmitButton>
             </ButtonContainer>
           </InputsContainer>
         </FormContainer>

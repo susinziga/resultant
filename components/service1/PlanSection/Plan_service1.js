@@ -102,13 +102,6 @@ const Plan_section1 = (
             <ButtonContainer
               props={button}
               button={!hideButton && p2.length > 0}
-              onClick={() => {
-                window.scrollBy({
-                  top: document.getElementById("forma").getBoundingClientRect()
-                    .top,
-                  behavior: "smooth",
-                });
-              }}
             >
               <SubmitButton
                 className="desktop"

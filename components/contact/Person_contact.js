@@ -21,7 +21,7 @@ const Person_contact = () => {
       <PersonContainer>
         <ImageContainer
           className="mobile"
-          src="/Team/Roman.png"
+          src="/Kontakt/Kontakt.png"
         ></ImageContainer>
         <ImageContainer
           className="desktop"
