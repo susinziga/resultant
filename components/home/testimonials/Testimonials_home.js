@@ -55,7 +55,7 @@ const Testimonials_home = (props) => {
         spaceBetween={50}
         slidesPerView={1}
         centeredSlides={true}
-        onSlideChange={() => console.log("slide change")}
+        // onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => (swiperInstance = swiper)}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>

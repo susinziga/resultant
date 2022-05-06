@@ -143,7 +143,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           </Title2>
         )}
         <Swiper
-          onScroll={true}
+          // onScroll={true}
           spaceBetween={30}
           slidesPerView={1.3}
           initialSlide={initSlide}

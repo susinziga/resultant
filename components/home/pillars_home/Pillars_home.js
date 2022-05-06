@@ -66,6 +66,7 @@ const Pillars_home = (props) => {
         {pillarsContentBot.map((pillar) => {
           return (
             <Pillars_component
+              key={pillar.title}
               title={pillar.title}
               text={pillar.text}
               button={buttonText}
@@ -80,6 +81,7 @@ const Pillars_home = (props) => {
       {pillarsContentTop.map((pillar) => {
         return (
           <Pillars_sliderItem
+            key={pillar.title}
             title={pillar.title}
             text={pillar.text}
             button={buttonText}
@@ -90,6 +92,7 @@ const Pillars_home = (props) => {
       {pillarsContentBot.map((pillar) => {
         return (
           <Pillars_sliderItem
+            key={pillar.title}
             title={pillar.title}
             text={pillar.text}
             button={buttonText}

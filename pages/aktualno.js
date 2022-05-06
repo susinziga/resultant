@@ -29,8 +29,6 @@ export const getServerSideProps = async () => {
     auths.push({ id: element.id, name: element.attributes.ime })
   );
 
-  console.log(cats);
-
   return {
     props: {
       categories: cats,

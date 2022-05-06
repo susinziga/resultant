@@ -33,7 +33,6 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
     let temp = document.getElementsByClassName("pillarContainer");
 
     for (let index = 0; index < temp.length; index++) {
-      console.log(temp[index]);
       temp[index].classList.remove("pillarShrink");
       temp[index].classList.remove("pillarActive");
     }

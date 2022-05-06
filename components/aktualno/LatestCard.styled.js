@@ -144,7 +144,7 @@ export const NewsTextContainer = styled.div`
   }
 `;
 
-export const NewsButton = styled.a`
+export const NewsButton = styled.p`
   /* padding-bottom: 2%; */
   /* padding-left: 10%; */
 

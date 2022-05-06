@@ -167,7 +167,7 @@ const References_content = ({ isActive }) => {
             <SwiperInstance setInstance={setInstance}></SwiperInstance>
             {references.map((ref, id) => {
               return (
-                <SwiperSlide>
+                <SwiperSlide key={id}>
                   <References_slider_item
                     references={ref}
                     key={id}

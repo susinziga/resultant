@@ -5,11 +5,11 @@ import { BodyText4 } from "../../../../../basic_components/texts/Texts";
 import { useRouter } from "next/router";
 import * as Styled from "./TeamSliderItem.styled";
 
-const TeamSliderItem = ({ item }) => {
+const TeamSliderItem = ({ item, id }) => {
   const { t } = useTranslation("");
   const { locale } = useRouter();
   return (
-    <Styled.TeamSliderItemContainer>
+    <Styled.TeamSliderItemContainer id={id}>
       <Styled.TeamSliderFlex>
         <Styled.FirstRowFlex>
           <Styled.TeamSlider_name>{item.name}</Styled.TeamSlider_name>

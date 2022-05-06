@@ -109,6 +109,10 @@ span {
   color: #5c5c5c;
 }
 
+.cookie-notice span, .cookie-modal span {
+  color: white !important;
+}
+
 .white {
   color: white;
 }

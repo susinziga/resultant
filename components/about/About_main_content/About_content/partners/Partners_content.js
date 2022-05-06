@@ -76,7 +76,6 @@ const Partners_content = ({ isActive }) => {
 };
 
 const Partner_item = ({ partner }) => {
-  console.log(partner);
   return (
     <>
       <Styled.Partners_item_container>

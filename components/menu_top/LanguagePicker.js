@@ -20,7 +20,7 @@ const LanguagePicker = () => {
         <Dropdown className="locale_dd">
           {locales.map((loc) => {
             return (
-              <a href={"/" + loc + pathname}>
+              <a key={loc} href={"/" + loc + pathname}>
                 <label>{loc}</label>
               </a>
             );

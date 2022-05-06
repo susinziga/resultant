@@ -31,9 +31,7 @@ const ArticleCard = ({ news }) => {
             </NewsText>
           </NewsTextContainer>
         </div>
-        <NewsButton href={"/" + locale + "/clanek/" + id + "/" + link}>
-          Preberi več {">"}
-        </NewsButton>
+        <NewsButton>Preberi več {">"}</NewsButton>
       </NewsContainer>
     </>
   );

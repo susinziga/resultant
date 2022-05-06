@@ -27,8 +27,6 @@ const Clanek = ({ clanek, blog_data }) => {
   const getArticleContentComponent = (item) => {
     const strapiComponent = item.__typename;
 
-    console.log(item);
-
     switch (strapiComponent) {
       case "ComponentClanekVsebinaBulletList":
         return (
@@ -121,7 +119,7 @@ const Clanek = ({ clanek, blog_data }) => {
           };
 
           return (
-            <Blog_page _data={blog_data}>
+            <Blog_page key={id} _data={blog_data}>
               {article.dinamicnoPolje.map((c) => getArticleContentComponent(c))}
             </Blog_page>
           );

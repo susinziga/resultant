@@ -1,11 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
+  experimental: {
+    // Enables the styled-components SWC transform
+    styledComponents: true,
+  },
 };
 
-/*module.exports = nextConfig;
+module.exports = nextConfig;
 
-module.exports = {
+/*module.exports = {
   i18n: {
     // providing the locales supported by your application
     locales: ["sl", "en"],
@@ -14,12 +21,11 @@ module.exports = {
   },
 };*/
 
-const nextTranslate = require("next-translate");
-
 module.exports = {
   images: {
     domains: ["res.cloudinary.com"],
   },
 };
 
+const nextTranslate = require("next-translate");
 module.exports = nextTranslate();

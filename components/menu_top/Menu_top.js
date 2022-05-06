@@ -205,7 +205,7 @@ const Menu_top = ({}) => {
       className="menu_top_desktop"
       ref={(el) => (MenuAnimation = el)}
     >
-      <Styled.MenuContainer display={navState <= 0}>
+      <Styled.MenuContainer display={(navState <= 0).toString()}>
         <Styled.LogoContainer>
           <a href={"/" + locale}></a>
           <img

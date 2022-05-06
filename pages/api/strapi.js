@@ -1,8 +1,6 @@
 import qs from "qs";
 
 export function getArticleFromStrapiData(article) {
-  console.log(article);
-
   let authors = [];
   article.attributes.avtors.data.forEach((element) => {
     authors.push(element.attributes.ime);

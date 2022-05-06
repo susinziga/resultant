@@ -28,9 +28,7 @@ const LatestCard = ({ news }) => {
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>{text}</NewsText>
-            <NewsButton href={"/" + locale + "/clanek/" + id + "/" + link}>
-              Preberi več {">"}
-            </NewsButton>
+            <NewsButton>Preberi več {">"}</NewsButton>
           </NewsTextContainer>
         </ContainerInnerWrapper>
       </NewsContainer>

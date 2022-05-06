@@ -135,7 +135,7 @@ export const NewsTextContainer = styled.div`
   flex: 1;
 `;
 
-export const NewsButton = styled.a`
+export const NewsButton = styled.p`
   padding-bottom: 5%;
   padding-left: 10%;
 

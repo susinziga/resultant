@@ -128,7 +128,7 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
       >
         <Styled.TeamComponentContainer>
           {items.map((item, id) => (
-            <TeamSliderItem item={item}></TeamSliderItem>
+            <TeamSliderItem id={id} key={id} item={item}></TeamSliderItem>
           ))}
         </Styled.TeamComponentContainer>
       </Waypoint>

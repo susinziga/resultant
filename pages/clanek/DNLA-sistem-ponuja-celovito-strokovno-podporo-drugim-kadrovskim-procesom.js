@@ -61,37 +61,46 @@ const Clanek5 = () => {
       ],
     },
     en: {
-      title: "",
-      excerpt: "",
-      bulletList1Heading: "",
-      bulletList1Bullets: ["", "", "", "", "", ""],
+      title:
+        "DNLA tools cover all areas of work with human resources within a company",
+      excerpt:
+        "They can be used for personnel selection, their development, education and training as well as for an effective control over education. Test results may serve as the basis for strategic guidance of HRM processes.",
+      bulletList1Heading: "Fields of Application:",
+      bulletList1Bullets: [
+        "Attraction and selection",
+        "Talent identification and development",
+        "Succession planning",
+        "Team development and teamwork",
+        "Education and personal development programs",
+        "Mentoring system",
+      ],
       texts1: [
         {
-          title: "",
-          text: "",
+          title: "Attraction and selection",
+          text: "The DNLA system enables a comprehensive analysis of potential in the future employee and accurate selection. After the testing, requirements for the workplace are compared with the development level of candidate’s skills/potentials. At the meeting with the candidate, we are then able to lead a well-structured selection interview. The system also enables a direct comparison of candidates, which is a firm basis for making good hiring decisions and lower costs in practice.",
         },
         {
-          title: "",
-          text: "",
+          title: "Talent identification and development",
+          text: "DNLA system enables quick identification of talents and comparison of individual candidates. DNLA significantly decreases errors in the assessment of potential. When making decisions during programme implementation, you have important information available to rely on instead of assumptions and subjective judgement, which are the most frequent reasons for errors. This is why structured interviews with candidates are a standard, integral part of the DNLA process. Based on information obtained from testing and structured interview, we are able to make a precise prediction of candidate’s performance at the future workplace. Once the talents are identified, we prepare development programs for them. We need to ensure balanced development of individuals, the basis for which is a professional DNLA assessment that gives the same guidelines to all participants in the development process.",
         },
       ],
       imageHeading: "",
       texts2: [
         {
-          title: "",
-          text: "",
+          title: "Succession planning  ",
+          text: "The process of identifying and nurturing workers with high potential to take on major tasks in the future is known as succession planning. The DNLA system allows for the identification of possible successors as well as the assessment of an individual's development needs. The utilization of accurate data allows for an objective evaluation and forecast of the successor's accomplishment. Before assuming a crucial role, an individual's identified development areas can be addressed.",
         },
         {
-          title: "",
-          text: "",
+          title: "Team development and teamwork",
+          text: "DNLA Expert System enables comprehensive assessment of performance of leaders and individual teams, departments or groups. Companies often look for ways to recognise advantages and challenges in work of an individual team, compatibility of the leader with the staff and reasons for lowering group’s performance. With the help of the DNLA system, we can identify critical elements of team work, which slow down group’s performance. Results are presented graphically and show successful and critical points of individual team’s work in order to facilitate the analysis of individual team’s work and quick measures where they are needed.",
         },
         {
-          title: "",
-          text: "",
+          title: "Education and personal development programs",
+          text: "DNLA programms provide basis for a number of trainings. DNLA analysis of potentials enables identification of areas for development, based on which guidelines for individual development are adopted. Development measures are being implemented in various forms: training, coaching, training at work or mentoring. Individual development recommendations, as well as a coaching plan, are generated throughout the measuring process, which is extremely beneficial to training providers. DNLA system enables us to measure easily our ROI in trainings in a way that training benefits are verified by another assessment of development in the potential of each individual. We help all companies and organisations, users of DNLA Expert Systems, to determine the optimal development plan for employees and establish a system for assessment of effects for them.",
         },
         {
-          title: "",
-          text: "",
+          title: "Mentoring system",
+          text: "DNLA systems represent solid basis for development of internal coaches and mentors. DNLA enables simple implementation of development activities, since the system prepares good bases for staff development (development and coaching plans). The DNLA system identifies internal staff with sufficiently developed potential for performing of such an important role of staff development. In many companies, operational leaders were qualified thorough this approach and in this way, development activities were split throughout the entire organisation, which enabled faster implementation of changes.",
         },
       ],
     },
@@ -113,20 +122,20 @@ const Clanek5 = () => {
           <Subtitle2>{data[locale].bulletList1Heading}</Subtitle2>
           <NewRow></NewRow>
           <ul>
-            {data[locale].bulletList1Bullets.map((bullet) => (
-              <li>
+            {data[locale].bulletList1Bullets.map((bullet, index) => (
+              <li key={index}>
                 <BodyText3>{bullet}</BodyText3>
               </li>
             ))}
           </ul>
           <NewParagraph></NewParagraph>
-          {data[locale].texts1.map((text) => (
-            <>
+          {data[locale].texts1.map((text, index) => (
+            <div key={index}>
               <Subtitle2>{text.title}</Subtitle2>
               <NewRow></NewRow>
               <BodyText3>{text.text}</BodyText3>
               <NewParagraph></NewParagraph>
-            </>
+            </div>
           ))}
         </Container>
       </Border_shadow>
@@ -143,13 +152,13 @@ const Clanek5 = () => {
 
       <Border_shadow>
         <Container>
-          {data[locale].texts2.map((text) => (
-            <>
+          {data[locale].texts2.map((text, index) => (
+            <div key={index}>
               <Subtitle2>{text.title}</Subtitle2>
               <NewRow></NewRow>
               <BodyText3>{text.text}</BodyText3>
               <NewParagraph></NewParagraph>
-            </>
+            </div>
           ))}
         </Container>
       </Border_shadow>
