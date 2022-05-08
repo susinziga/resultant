@@ -31,7 +31,7 @@ const NewsCard_service1 = ({ news, isActive }) => {
           <NewsTextContainer>
             <NewsAuthorsTextWrapper>
               {authors.map((author, index) => (
-                <NewsAuthorText>
+                <NewsAuthorText key={index}>
                   {author} {index === authors.length - 1 ? "" : "- "}
                 </NewsAuthorText>
               ))}

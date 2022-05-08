@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 const CardButton = (props) => {
   return (
-    <Wrapper centered={props.centered}>
-      <CardButtonWrapper {...props} href={props.href}>
+    <Wrapper href={props.href} centered={props.centered}>
+      <CardButtonWrapper {...props}>
         <CardText>{props.text}</CardText>
         <CardButtonArrowWrapper>
           <img width={5} src="/UTNN/button_arrow_right.png"></img>
@@ -13,7 +13,7 @@ const CardButton = (props) => {
   );
 };
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   display: flex;
 
   ${(props) =>
@@ -39,7 +39,7 @@ export const CardText = styled.span`
   }
 `;
 
-export const CardButtonWrapper = styled.a`
+export const CardButtonWrapper = styled.p`
   /* display: block; */
   margin-top: 5%;
   border: none;

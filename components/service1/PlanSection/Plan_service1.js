@@ -71,9 +71,10 @@ const Plan_section1 = (
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {p1.map((item) => {
+            {p1.map((item, index) => {
               return (
                 <PlanItem_service1
+                  key={index}
                   props={{ ...item, CardStyle: Plan1CardStyle }}
                 ></PlanItem_service1>
               );
@@ -92,9 +93,10 @@ const Plan_section1 = (
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {p2.map((item) => {
+            {p2.map((item, index) => {
               return (
                 <PlanItem_service1
+                  key={index}
                   props={{ ...item, CardStyle: Plan2CardStyle }}
                 ></PlanItem_service1>
               );

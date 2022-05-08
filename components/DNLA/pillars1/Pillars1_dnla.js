@@ -49,9 +49,10 @@ const Pillars_dnla = (props) => {
       </Styled.HeadingContainer>
       <Styled.PillarsFlex>
         <Styled.PillarsFlex1>
-          {pillarsContentBot.map((pillar) => {
+          {pillarsContentBot.map((pillar, index) => {
             return (
               <Pillars_component
+                key={index}
                 title={pillar.title}
                 text={pillar.text}
               ></Pillars_component>
@@ -59,9 +60,10 @@ const Pillars_dnla = (props) => {
           })}
         </Styled.PillarsFlex1>
         <Styled.PillarsFlex2>
-          {pillarsContentBot2.map((pillar) => {
+          {pillarsContentBot2.map((pillar, index) => {
             return (
               <Pillars_component
+                key={index}
                 title={pillar.title}
                 text={pillar.text}
               ></Pillars_component>
@@ -84,9 +86,10 @@ const Pillars_dnla = (props) => {
       <Styled.HeadingContainer>
         <Styled.Heading>{heading}</Styled.Heading>
       </Styled.HeadingContainer>
-      {pillarsContentBotMobile.map((pillar) => {
+      {pillarsContentBotMobile.map((pillar, index) => {
         return (
           <Pillars_mobile
+            key={index}
             title={pillar.title}
             text={pillar.text}
           ></Pillars_mobile>

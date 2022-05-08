@@ -91,6 +91,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
 
   const bigCards = [
     <BigCard
+      key="1"
       flipX
       heading={t("utnn:utnn_bigArticle1Heading")}
       content={t("utnn:utnn_bigArticle1Content")}
@@ -104,6 +105,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       buttonText={t("common:button_moreMore")}
     ></BigCard>,
     <BigCard
+      key="2"
       heading={t("utnn:utnn_bigArticle2Heading")}
       content={t("utnn:utnn_bigArticle2Content")}
       img={"/UTNN/card2img"}

@@ -138,7 +138,7 @@ export const NewsTextContainer = styled.div`
   padding: 10% 0% 0% 10%;
 `;
 
-export const NewsButton = styled.a`
+export const NewsButton = styled.p`
   padding-bottom: 2%;
   padding-left: 10%;
 

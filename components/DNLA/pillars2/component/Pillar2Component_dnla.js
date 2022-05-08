@@ -34,7 +34,6 @@ const Pillars2_component = ({ title, text, button, link }) => {
     let temp = document.getElementsByClassName("pillarContainer");
 
     for (let index = 0; index < temp.length; index++) {
-      console.log(temp[index]);
       temp[index].classList.remove("pillarShrinkDNLA");
       temp[index].classList.remove("pillarActiveDNLA");
     }

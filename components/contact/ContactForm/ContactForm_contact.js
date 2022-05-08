@@ -58,15 +58,15 @@ const ContactForm_contact = () => {
             btn.disabled = true;
           }}
         >
-          {inputProps[locale].map((input) => {
+          {inputProps[locale].map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <Input
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "3%", fontSize: "1.2rem" }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>

@@ -50,8 +50,8 @@ const Card1_dnla = () => {
           <CardHeading>{heading}</CardHeading>
           <CardTitle>{title}</CardTitle>
           <List>
-            {bullets.map((bullet) => {
-              return <Bullet>{bullet.text}</Bullet>;
+            {bullets.map((bullet, index) => {
+              return <Bullet key={index}>{bullet.text}</Bullet>;
             })}
           </List>
           <ButtonContainer>

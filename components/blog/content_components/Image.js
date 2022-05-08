@@ -2,10 +2,13 @@ import React from "react";
 
 import styled from "styled-components";
 
-const Image = ({ src, label }) => {
+const Image = ({ src, label, className }) => {
   return (
-    <Container>
-      <img src={src}></img>
+    <Container className={className}>
+      <img
+        style={{ width: className == "mobile" ? "80%" : "100%" }}
+        src={src}
+      ></img>
       <Label>{label}</Label>
     </Container>
   );

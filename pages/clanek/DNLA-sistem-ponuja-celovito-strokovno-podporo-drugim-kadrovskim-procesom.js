@@ -146,7 +146,14 @@ const Clanek5 = () => {
         <Subtitle2>{data[locale].imageHeading}</Subtitle2>
         <NewRow></NewRow>
       </Container>
-      <Image src="/clanki/5/image2.png"></Image>
+      <Image
+        className="desktop"
+        src={"/clanki/5/image2_" + locale + "_desktop.png"}
+      ></Image>
+      <Image
+        className="mobile"
+        src={"/clanki/5/image2_" + locale + "_mobile.png"}
+      ></Image>
 
       <NewParagraph></NewParagraph>
 

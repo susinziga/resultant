@@ -87,6 +87,7 @@ const service1 = () => {
 
   const bigCards = [
     <BigCard
+      key="1"
       heading={t("service1:service1_bigCard1Heading")}
       content={t("service1:service1_bigCard1Text")}
       img={"/Service1/bigCard1img"}
@@ -94,6 +95,7 @@ const service1 = () => {
       mobileImgOnBottom
     ></BigCard>,
     <BigCard
+      key="2"
       flipX
       heading={t("service1:service1_bigCard2Heading")}
       content={t("service1:service1_bigCard2Text")}

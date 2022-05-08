@@ -71,9 +71,9 @@ const ContactForm_dnla = (props) => {
             btn.disabled = true;
           }}
         >
-          {inputProps[locale].map((input) => {
+          {inputProps[locale].map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <Input
                   id="desktop"
                   props={input}
@@ -82,7 +82,7 @@ const ContactForm_dnla = (props) => {
                     handleFormChange(input.label, e.target.value);
                   }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>

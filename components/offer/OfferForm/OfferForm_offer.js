@@ -62,9 +62,8 @@ const OfferForm_offer = () => {
           <InputsContainer>
             {inputProps1.map((input, id) => {
               return (
-                <>
+                <div key={id}>
                   <Input
-                    key={id}
                     id="desktop"
                     props={input}
                     style={{ marginBottom: "2%" }}
@@ -72,15 +71,15 @@ const OfferForm_offer = () => {
                       handleFormChange(input.label, e.target.value);
                     }}
                   ></Input>
-                </>
+                </div>
               );
             })}
           </InputsContainer>
           <HeadingLine></HeadingLine>
           <InputsContainer>
-            {inputProps2.map((input) => {
+            {inputProps2.map((input, index) => {
               return (
-                <>
+                <div key={index}>
                   <Input
                     id="desktop"
                     props={input}
@@ -89,7 +88,7 @@ const OfferForm_offer = () => {
                       handleFormChange(input.label, e.target.value);
                     }}
                   ></Input>
-                </>
+                </div>
               );
             })}
           </InputsContainer>
@@ -97,7 +96,7 @@ const OfferForm_offer = () => {
           <InputsContainer>
             {checkboxProps.map((checkbox, id) => {
               return (
-                <>
+                <div key={id}>
                   <Checkbox
                     props={checkbox}
                     group={id}
@@ -105,7 +104,7 @@ const OfferForm_offer = () => {
                       handleFormChange(checkbox.label, value);
                     }}
                   ></Checkbox>
-                </>
+                </div>
               );
             })}
           </InputsContainer>

@@ -83,9 +83,8 @@ const ContactForm_dnla = (props) => {
         >
           {inputProps[locale].map((input, id) => {
             return (
-              <>
+              <div key={id}>
                 <Input
-                  key={id}
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
@@ -93,7 +92,7 @@ const ContactForm_dnla = (props) => {
                     handleFormChange(input.label, e.target.value);
                   }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>
