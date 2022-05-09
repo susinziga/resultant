@@ -26,7 +26,11 @@ export const getServerSideProps = async () => {
 
   let auths = [];
   authors.data.forEach((element) =>
-    auths.push({ id: element.id, name: element.attributes.ime })
+    auths.push({
+      id: element.id,
+      name: element.attributes.ime,
+      resultant: element.attributes.resultant,
+    })
   );
 
   return {
@@ -150,7 +154,7 @@ export const CardWrapperParent = styled.div`
 export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  gap: 1%;
+  gap: 0.6%;
 
   @media only screen and (min-width: 768px) {
     grid-template-columns: auto auto auto;

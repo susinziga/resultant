@@ -31,7 +31,11 @@ const ArticleCard = ({ news }) => {
             </NewsText>
           </NewsTextContainer>
         </div>
-        <NewsButton>Preberi več {">"}</NewsButton>
+        <NewsButton>
+          Preberi več{" "}
+          <span style={{ width: ".25rem", display: "inline-block" }}></span>{" "}
+          {">"}
+        </NewsButton>
       </NewsContainer>
     </>
   );

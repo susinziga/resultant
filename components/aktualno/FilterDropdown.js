@@ -40,10 +40,13 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
             onMouseLeave={() => setIsShown(false)}
           >
             <DropdownList>
-              {items.map(({ name, id }) => {
+              {items.map(({ name, resultant, id }) => {
                 return (
                   <DropdownItem id={id} onClick={(e) => clickedItem(id)}>
                     {name}
+                    {resultant !== undefined && resultant === false && (
+                      <GuestTag>(gost)</GuestTag>
+                    )}
                   </DropdownItem>
                 );
               })}
@@ -51,10 +54,13 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
           </DropdownContainerDesktop>
           <DropdownContainerMobile>
             <DropdownList>
-              {items.map(({ name, id }) => {
+              {items.map(({ name, resultant, id }) => {
                 return (
                   <DropdownItem id={id} onClick={(e) => clickedItem(id)}>
                     {name}
+                    {resultant !== undefined && resultant === false && (
+                      <GuestTag>(gost)</GuestTag>
+                    )}
                   </DropdownItem>
                 );
               })}
@@ -65,6 +71,12 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
     </Wrapper>
   );
 };
+
+const GuestTag = styled.span`
+  color: #27b4e9;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+`;
 
 const DropdownContainerMobile = styled.div`
   display: block !important;

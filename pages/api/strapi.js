@@ -1,9 +1,13 @@
 import qs from "qs";
 
 export function getArticleFromStrapiData(article) {
+  let includesGuest = false;
   let authors = [];
   article.attributes.avtors.data.forEach((element) => {
     authors.push(element.attributes.ime);
+    if (element.attributes.resultant === false) {
+      includesGuest = true;
+    }
   });
 
   // Turn title into link
@@ -19,6 +23,7 @@ export function getArticleFromStrapiData(article) {
     image: mainImgUrl,
     authors: authors,
     link: link,
+    hasGuestAuthor: includesGuest,
   };
 }
 

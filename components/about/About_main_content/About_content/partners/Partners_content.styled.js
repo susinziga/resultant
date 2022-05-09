@@ -6,14 +6,15 @@ export const Partners_item_container = styled.div`
   flex-direction: column;
 
   img {
-    width: 35%;
+    width: 55%;
   }
 
-  gap: 2rem;
+  gap: 0rem;
 
   @media (min-width: 768px) {
     max-height: 5rem;
     width: 90%;
+    gap: 2rem;
 
     justify-content: center;
     margin: auto;

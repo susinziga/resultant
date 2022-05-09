@@ -43,7 +43,7 @@ const FirstSection_kukvs = () => {
           <OrderedList>
             <li>{t("srk:kurkvs_s1_item4Bullet1Text")}</li>
             <li>{t("srk:kurkvs_s1_item4Bullet2Text")}</li>
-            <li>{t("srk:kurkvs_s1_item4Bullet2Text")} </li>
+            <li>{t("srk:kurkvs_s1_item4Bullet3Text")} </li>
           </OrderedList>
           {t("srk:kurkvs_s1_item4Text")}
         </RowText>

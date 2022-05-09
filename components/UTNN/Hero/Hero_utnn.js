@@ -25,7 +25,9 @@ const Hero_utnn = (props) => {
         <HeroImage src={props.image} alt={props.alt} />
         <ContentWrapper>
           {props.headText && <HeadText>{props.headText}</HeadText>}
-          <BodyText2>{t(props.text)}</BodyText2>
+          <BodyText2
+            dangerouslySetInnerHTML={{ __html: t(props.text) }}
+          ></BodyText2>
           <VSpacer />
           {props.buttonText && (
             <Button primary href={"/" + locale + "/offer"}>

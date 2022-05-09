@@ -1,15 +1,14 @@
-{   
-   
-    "menu_item1":"Excellence",
-    "menu_item2":"A focus<br/>on results ",
-    "menu_item3":"Reliability ",
-    "title_approach":"Our approach",
-    "paragraph2_approach":"Our clients expect us to solve business problems, establish effective human resource practices, boost performance, and deliver tangible results. We are working extremely hard to accomplish these objectives.",
-    "paragraph1_approach":"We assist you in managing organizational change in order to create long-term value.",
-    "buttonText_approach":"Read more",
-    "counter_title1":"HR process development projects",
-    "counter_title2":"Surveys of the internal environment in over 200 organizations",
-    "counter_title3":"Talent management and succession planning programs using the DNLA Expert System",
-    "title_contact":"Contact us",
-    "paragraph_contact":"If you have any questions for our team, we are always happy to help. Please contact us by phone or email, and we will get back to you as soon as we can. "
+{
+  "menu_item1": "Excellence",
+  "menu_item2": "A focus<br/>on results ",
+  "menu_item3": "Reliability ",
+  "title_approach": "Our approach",
+  "paragraph2_approach": "Our clients expect us to solve business problems, establish effective human resource practices, boost performance, and deliver tangible results. We are working extremely hard to accomplish these objectives.",
+  "paragraph1_approach": "We assist you in managing organizational change in order to create long-term value.",
+  "buttonText_approach": "Read more",
+  "counter_title1": "HR process development projects",
+  "counter_title2": "Surveys of the internal environment in over 200 organizations together with the OCR company",
+  "counter_title3": "Talent management and succession planning programs using the DNLA Expert System",
+  "title_contact": "Contact us",
+  "paragraph_contact": "If you have any questions for our team, we are always happy to help. Please contact us by phone or email, and we will get back to you as soon as we can. "
 }

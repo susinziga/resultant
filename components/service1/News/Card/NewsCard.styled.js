@@ -10,6 +10,33 @@ import {
   Title2,
 } from "../../../../basic_components/texts/Texts";
 
+export const GuestBadge = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 45px;
+  background-color: #00b4f0;
+  border-radius: 30px;
+  top: -30px;
+  right: -10px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 0.8rem;
+  text-align: center;
+  color: white;
+  font-family: "NeusaThin";
+
+  transition: all 0.25s ease;
+
+  @media (min-width: 1600px) {
+    font-size: 1rem;
+    width: 125px;
+    height: 55px;
+  }
+`;
+
 export const NewsText = styled(BodyText2)`
   width: 95%;
   margin: 10% 0;
@@ -46,6 +73,7 @@ export const NewsAuthorsTextWrapper = styled(BodyText3)`
 
 export const NewsAuthorText = styled.span`
   transition: all 0.25s ease;
+  font-size: 0.9rem;
 `;
 
 export const NewsHeading = styled(Title2)`
@@ -136,6 +164,7 @@ export const NewsImage = styled.img`
 export const NewsTextContainer = styled.div`
   width: 80%;
   padding: 10% 0% 0% 10%;
+  position: relative;
 `;
 
 export const NewsButton = styled.p`

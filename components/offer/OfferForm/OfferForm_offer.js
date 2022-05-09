@@ -20,6 +20,8 @@ const OfferForm_offer = () => {
   const { t, lang } = useTranslation();
 
   const { formData, handleFormChange, sendMail } = useForm();
+  const [clickedSend, setClickedSend] = useState(false);
+  const [isRadioSelected, setIsRadioSelected] = useState(false);
 
   const button = t("service1:service1_buttonText1");
 
@@ -29,16 +31,17 @@ const OfferForm_offer = () => {
 
   const inputProps1 = [
     { label: t("offer:offer_inputProp1"), required: "*" },
-    { label: t("offer:offer_inputProp2"), required: "*" },
+    { label: t("offer:offer_inputProp2") },
     { label: t("offer:offer_inputProp3"), required: "*" },
-    { label: t("offer:offer_inputProp4"), required: "*" },
-    { label: t("offer:offer_inputProp5"), required: "*" },
+    { label: t("offer:offer_inputProp4"), required: "*", type: "email" },
+    { label: t("offer:offer_inputProp5") },
   ];
 
   const inputProps2 = [
-    { label: t("offer:offer_secondInputProp1"), required: "*" },
-    { label: t("offer:offer_secondInputProp2"), required: "*" },
-    { label: t("offer:offer_secondInputProp3"), required: "*" },
+    { label: t("offer:offer_secondInputProp1") },
+    { label: t("offer:offer_secondInputProp2") },
+    { label: t("offer:offer_secondInputProp3") },
+    { label: t("offer:offer_secondInputProp4") },
   ];
 
   const checkboxProps = [
@@ -48,10 +51,35 @@ const OfferForm_offer = () => {
 
   return (
     <>
-      <OfferContainer>
+      <OfferContainer style={{ overflow: "hidden" }}>
         <FormContainer
           onSubmit={(e) => {
             e.preventDefault();
+            setClickedSend(true);
+
+            // Check checkboxes validity
+            let isValid = true;
+            checkboxProps.forEach((prop) => {
+              let isInvalid = formData[prop.label] === undefined;
+              if (isInvalid) {
+                isValid = false;
+              }
+            });
+
+            if (!isValid) {
+              document
+                .querySelector("#checkboxLine")
+                .scrollIntoView({ behavior: "smooth", block: "center" });
+              return;
+            }
+
+            // Check radio buttons validity
+            if (!isRadioSelected) {
+              let target = document.querySelector("#radioLine");
+              target.scrollIntoView({ behavior: "smooth", block: "center" });
+              return;
+            }
+
             sendMail();
             let btn = document.getElementById("submit_btn");
             btn.style.backgroundColor = "#072543";
@@ -92,11 +120,23 @@ const OfferForm_offer = () => {
               );
             })}
           </InputsContainer>
-          <HeadingLine></HeadingLine>
+          <HeadingLine id="checkboxLine"></HeadingLine>
           <InputsContainer>
             {checkboxProps.map((checkbox, id) => {
               return (
                 <div key={id}>
+                  <p
+                    style={{
+                      color: "red",
+                      margin: "0",
+                      visibility:
+                        clickedSend && formData[checkbox.label] === undefined
+                          ? "visible"
+                          : "hidden",
+                    }}
+                  >
+                    {t("common:text_required")}
+                  </p>
                   <Checkbox
                     props={checkbox}
                     group={id}
@@ -104,17 +144,32 @@ const OfferForm_offer = () => {
                       handleFormChange(checkbox.label, value);
                     }}
                   ></Checkbox>
+                  <p style={{ visibility: "hidden" }}>_</p>
                 </div>
               );
             })}
           </InputsContainer>
           <HeadingLine></HeadingLine>
-          <BackgroundVector src="/offer/backgroundVector.png"></BackgroundVector>
+          <BackgroundVector
+            id="radioLine"
+            src="/offer/backgroundVector.png"
+          ></BackgroundVector>
           <InputsContainer>
+            <p
+              style={{
+                color: "red",
+                marginBottom: "1rem",
+                visibility:
+                  clickedSend && !isRadioSelected ? "visible" : "hidden",
+              }}
+            >
+              {t("common:text_required")}
+            </p>
             <MultipleCheckbox
               onChange={(id, value) => {
                 console.log(id, value);
                 handleFormChange(id, value);
+                setIsRadioSelected(true);
               }}
             ></MultipleCheckbox>
             <ButtonContainer>

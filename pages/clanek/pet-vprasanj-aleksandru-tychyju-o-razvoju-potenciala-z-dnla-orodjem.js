@@ -32,14 +32,14 @@ const ClanekTychy = () => {
 
       questions: [
         {
-          question: `Prvo vprašanje: »Gospod Tychy, v času Covid-
+          question: `Prvo vprašanje: “Gospod Tychy, v času Covid-
         19 se mnogo ljudi sooča z velikimi izzivi. Je
         zaradi tega še posebej pomembno skrbeti za
         svoje zaposlene? Kako lahko analiza mehkih
         veščin, kot je DNLA, pripomore k temu, da se
         zaposleni ne počutijo pozabljene s strani
-        delodajalca ter posledično osamljene?`,
-          answer: `Alexander Tychy: Za menedžerje je zelo
+        delodajalca ter posledično osamljene?”`,
+          answer: `Alexander Tychy: “Za menedžerje je zelo
           pomembno, da vedo, kako so njihovi zaposleni
           - ne le v času Covid-19: Ali so nekateri člani
           moje ekipe trenutno pod pritiskom? Kako
@@ -52,21 +52,21 @@ const ClanekTychy = () => {
           vprašalnik, ki je vpet v strukturiran svetovalni proces. Zaposleni dobijo povratne informacije na
           podlagi rezultatov analize, na koncu pa se za vsakogar prilagodi akcijski načrt. To predstavlja tudi nek
           cilj za vodje, da skupaj z zaposlenim poskušajo udejanjati pridobljena priporočila v vsakdanjem
-          delovnem življenju.`,
+          delovnem življenju.”`,
         },
         {
-          question: `Drugo vprašanje: Tu je torej poudarek na posamezniku. Ali obstaja nevarnost, da bi vsak poskušal
-        pustiti čim boljši pečat, morda celo na račun drugih?`,
-          answer: `Alexander Tychy: Ne. Ne gre za nesmiselno potiskanje ljudi naprej. Cilj je, da imajo vsi osnovne
+          question: `Drugo vprašanje: “Tu je torej poudarek na posamezniku. Ali obstaja nevarnost, da bi vsak poskušal
+        pustiti čim boljši pečat, morda celo na račun drugih?”`,
+          answer: `Alexander Tychy: “Ne. Ne gre za nesmiselno potiskanje ljudi naprej. Cilj je, da imajo vsi osnovne
           veščine, ki jih potrebujejo za dobro delo v težkih razmerah – kot so v tem trenutku. Dobro delati
           pomeni skupaj razvijati in izvajati stvari. Danes ni prav nič drugače. DNLA ne daje prednost
           egocentrikom, saj prepozna, kdaj je oseba nagnjena k pretiravanju. Na primer samozavest je odličen
           in pomemben pogoj za dobro delo. Če pa je oseba nagnjena k pretirani samozavesti in aroganci, bo to
           postalo problematično - za osebo, ki jo zadeva, in za njeno okolje. Zato je dobro takšne težnje
-          prepoznati že v zgodnji fazi in se jim znati zoperstaviti.`,
+          prepoznati že v zgodnji fazi in se jim znati zoperstaviti.”`,
         },
         {
-          question: `Tretje vprašanje: Metoda DNLA temelji na seriji raziskav o dejavnikih uspeha na delovnem mestu,
+          question: `Tretje vprašanje: “Metoda DNLA temelji na seriji raziskav o dejavnikih uspeha na delovnem mestu,
         opravljenih na Inštitutu Maxa Plancka v zgodnjih devetdesetih letih. Je še aktualna? Kako dobro se
         &quot;Za menedžerje je zelo pomembno, da vedo, kako so njihovi zaposleni - ne le v času pandemije
         Covid-19,&quot; pravi Alexander Tychy. Alexander, ki je vodja prodaje družbe DNLA GmbH,
@@ -74,19 +74,19 @@ const ClanekTychy = () => {
         vodje.
         
         takšna metoda prilega današnjemu delovnemu svetu, za katerega sta značilni agilnost in hitre
-        spremembe?`,
-          answer: `Alexander Tychy: Orodja za analizo in razvoj DNLA imajo dolgo tradicijo ter s tem tudi izkušnje. Kljub
+        spremembe?”`,
+          answer: `Alexander Tychy: “Orodja za analizo in razvoj DNLA imajo dolgo tradicijo ter s tem tudi izkušnje. Kljub
           temu so še vedno aktualna. To dokazujejo redno izvedene študije in praktične izkušnje. Baza
           podatkov, ki se uporablja za primerjave in izračune, se nenehno posodablja. Postopki DNLA izrecno
           obravnavajo tudi vidik &quot;agilnosti&quot;. Obstaja celo ločen kazalnik, kako dobro se zaposleni obnesejo v
           agilnem kontekstu in v agilnih oblikah sodelovanja. In če pomislite, katere individualne kompetence
           so del koncepta »agilnosti«, potem govorimo o dejavnikih, kot so osebna odgovornost, iniciativnost
-          ali fleksibilnost. Te so bile vedno del DNLA analiz.`,
+          ali fleksibilnost. Te so bile vedno del DNLA analiz.”`,
         },
         {
-          question: `Četrto vprašanje: Ali se lahko orodja DNLA uporabljajo tudi za novince ali so primerna samo za
-        strokovnjake in managerje?`,
-          answer: `Alexander Tychy: Začetki zaposlitve so pomembna tema. Po eni strani mnogi mladi še ne vedo, kaj bi
+          question: `Četrto vprašanje: “Ali se lahko orodja DNLA uporabljajo tudi za novince ali so primerna samo za
+        strokovnjake in managerje?”`,
+          answer: `Alexander Tychy: “Začetki zaposlitve so pomembna tema. Po eni strani mnogi mladi še ne vedo, kaj bi
           radi počeli v svoji karieri in v čem so dobri. Po drugi strani pa podjetjem pogosto primanjkuje
           kvalificiranih kandidatov in pripravnikov. DNLA tu nudi podporo na dva načina: kot način določanja
           položaja mladih, ki razkriva njihove prednosti in razvojne potenciale, in kot vodnik, ki jim pokaže, kaj
@@ -94,12 +94,12 @@ const ClanekTychy = () => {
           Koristi ima tudi delodajalec, saj kandidate že na začetku bolje spozna, podobno kot z vpogledom v
           šolske ocene ali prejete prošnje za delo. S priporočili za napredovanje in individualnimi razvojnimi
           načrti, ki jih ponuja DNLA, lahko delodajalci pomagajo svojim mlajšim zaposlenim, da sledijo svoji poti
-          in uresničijo svoj potencial.`,
+          in uresničijo svoj potencial.”`,
         },
         {
-          question: `Peto vprašanje: Verjetno bi bilo najbolje, če bi vsak zaposleni lahko imel koristi od takšne podpore,
-        če bi to le bilo mogoče. Bi to bilo drago?`,
-          answer: `Alexander Tychy: Da, do neke mere bi bilo drago - a je kasnejša vrednost vložka višja. Poleg tega bi se
+          question: `Peto vprašanje: “Verjetno bi bilo najbolje, če bi vsak zaposleni lahko imel koristi od takšne podpore,
+        če bi to le bilo mogoče. Bi to bilo drago?”`,
+          answer: `Alexander Tychy: “Da, do neke mere bi bilo drago - a je kasnejša vrednost vložka višja. Poleg tega bi se
           moral vsak delodajalec vprašati, koliko truda in denarja bo pozneje potrebno vložiti v popravke, če
           bodo zaposleni v določenih situacijah ostali »sami« in če bodo ukrepali šele potem, ko se izzivi že
           pojavijo. DNLA je tudi osrednja komponenta »HR bilance stanja« - koncepta za kadrovski in
@@ -109,7 +109,7 @@ const ClanekTychy = () => {
           pomaga prepoznati neuspehe vodenja ali problematičen razvoj v organizaciji. Ker kadrovska bilanca
           ni enkratna stvar, ampak stalen proces, se bo iz teh razvojnih procesov v celotni organizaciji
           postopoma pojavila kulturna sprememba v podjetju in vzdušje, ki bo vsem omogočilo razvoj svojega
-          polnega potenciala.`,
+          polnega potenciala.”`,
         },
       ],
       last: `Alexander Tychy je vodja prodaje pri DNLA GmbH. DNLA podpira organizacije, da svoje zaposlene

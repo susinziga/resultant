@@ -18,7 +18,10 @@ const BigCard = (props) => {
         <CardImage
           flipX={props.flipX}
           className="desktop"
-          src={props.img + "_desktop.png"}
+          style={props.imgStyle}
+          src={
+            props.img === undefined ? props.fullImg : props.img + "_desktop.png"
+          }
         ></CardImage>
         <TextContainer>
           <CardHeading
@@ -28,7 +31,12 @@ const BigCard = (props) => {
             <CardImage
               className="mobile"
               margin={props.margin}
-              src={props.img + "_mobile.png"}
+              style={props.mobileImgStyle}
+              src={
+                props.img === undefined
+                  ? props.fullImg
+                  : props.img + "_desktop.png"
+              }
             ></CardImage>
           )}
           <CardContent

@@ -28,7 +28,11 @@ const LatestCard = ({ news }) => {
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>{text}</NewsText>
-            <NewsButton>Preberi več {">"}</NewsButton>
+            <NewsButton>
+              Preberi več{" "}
+              <span style={{ width: ".25rem", display: "inline-block" }}></span>{" "}
+              {">"}
+            </NewsButton>
           </NewsTextContainer>
         </ContainerInnerWrapper>
       </NewsContainer>

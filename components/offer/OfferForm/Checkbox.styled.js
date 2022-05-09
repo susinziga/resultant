@@ -58,7 +58,7 @@ export const Checkbox = styledComponents.input`
 export const CheckboxContainer = styledComponents.div`
     @media only screen and (min-width: 768px) {
         display: flex;
-        margin: 5% 0;
+        margin: 1% 0;
         justify-content: space-evenly;
     }
    

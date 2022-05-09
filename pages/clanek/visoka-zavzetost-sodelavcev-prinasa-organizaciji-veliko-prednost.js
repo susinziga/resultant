@@ -137,7 +137,7 @@ Večja produktivnost in učinkovitost sta ključni prednosti, ki jih organizacij
           <ListItem>
             <BodyText3>
               71% zaposlenih bi pristalo na znižanje plače, če bi lahko
-              opravljali svojo idelano službo.
+              opravljali svojo idealno službo.
             </BodyText3>
           </ListItem>
           <ListItem>

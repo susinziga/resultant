@@ -21,7 +21,7 @@ const Team_cards = (props) => {
         breakpoints={{
           0: { slidesPerView: 1.5, spaceBetween: 50, centeredSlides: true },
           768: {
-            slidesPerView: cards.length,
+            slidesPerView: 2.5,
             spaceBetween: 50,
             centeredSlides: false,
           },

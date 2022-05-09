@@ -91,6 +91,7 @@ const sistematicen_razvoj_kompetenc = () => {
       heading={t("srk:srk_bigCard1Heading")}
       content={t("srk:srk_bigCard1Content")}
       img={"/SRK/bigCard1img"}
+      enImg={""}
       href={
         "/" +
         locale +
@@ -115,7 +116,9 @@ const sistematicen_razvoj_kompetenc = () => {
       flipX
       heading={t("srk:srk_bigCard3Heading")}
       content={t("srk:srk_bigCard3Content")}
-      img={"/SRK/bigCard3img"}
+      imgStyle={{ height: "40rem", marginRight: "50px" }}
+      mobileImgStyle={{ marginBottom: "1rem", marginTop: "1rem" }}
+      fullImg={"/SRK/srk_metoda360_" + locale + ".png"}
       href={"/" + locale + "/services/sistematicen-razvoj-kompetenc/metoda-360"}
       buttonText={t("common:button_more")}
     ></BigCard>,

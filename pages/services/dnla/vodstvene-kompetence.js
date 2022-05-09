@@ -42,6 +42,8 @@ const management_potential = () => {
     t("subpages:management_card1_list2_item6"),
     t("subpages:management_card1_list2_item7"),
     t("subpages:management_card1_list2_item8"),
+    t("subpages:management_card1_list2_item9"),
+    t("subpages:management_card1_list2_item10"),
   ];
 
   const card1_list3items = [

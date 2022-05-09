@@ -103,7 +103,7 @@ const Container = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
-  padding-top: 1rem;
+  padding-top: 8rem;
 
   align-items: center;
   display: flex;

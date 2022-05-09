@@ -26,7 +26,10 @@ const CheckboxMultiple = (props) => {
   return (
     <>
       <CheckboxContainer>
-        <CheckboxLabel>{props.props.label}</CheckboxLabel>
+        <CheckboxLabel>
+          {props.props.label}{" "}
+          <span style={{ color: "red" }}>{props.props.required}</span>
+        </CheckboxLabel>
         <CheckboxFlex>
           <CheckboxContainer1>
             <Checkbox

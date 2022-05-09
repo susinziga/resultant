@@ -229,7 +229,7 @@ const Menu_top = ({}) => {
           </a>
         </Styled.LogoContainer>
 
-        {size[0] >= 768 ? (
+        {size[0] >= 900 ? (
           <Styled.Flex>
             <Styled.Flex_language className="nav_item">
               <LanguagePicker></LanguagePicker>

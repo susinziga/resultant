@@ -33,13 +33,17 @@ export const SIOKContainer = styledComponents.div`
 `;
 
 export const SIOKTitle = styledComponents(Title2)`
-    margin: 7.5% 2%;
+    // margin: 7.5% 2%;
+    margin-top: 5%;
+    margin-bottom: 2%;
     font-family: "Neusa";
     font-weight: bold;
 
+    font-size: 1.2rem;
+    padding: 0% 5%;
 
     @media only screen and (min-width: 768px) {
-       
+       font-size: 2rem;
     }
 
     @media only screen and (min-width: 992px) {
@@ -56,7 +60,7 @@ export const SIOKImage = styledComponents.img`
     width: 90%;
 
     @media only screen and (min-width: 768px) {
-       padding: 7.5% 0 0% 0;
+    //    padding: 7.5% 0 0% 0;
     //    width: 51%;
     width: 70%;
 }

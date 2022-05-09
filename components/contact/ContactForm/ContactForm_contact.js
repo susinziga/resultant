@@ -18,7 +18,7 @@ const inputProps = {
   sl: [
     { label: "Ime", required: "*" },
     { label: "Priimek", required: "*" },
-    { label: "Tel. številka" },
+    { label: "Telefonska številka" },
     { label: "Email", required: "*", type: "email" },
     { label: "Ime organizacije" },
   ],

@@ -53,7 +53,7 @@ const Clanek = ({ clanek, blog_data }) => {
         return (
           <>
             <Container>
-              <Subtitle2>{item.Naslov}</Subtitle2>
+              <Subtitle1>{item.Naslov}</Subtitle1>
               <NewRow />
               <BodyText3
                 dangerouslySetInnerHTML={{ __html: item.Text }}
@@ -108,6 +108,7 @@ const Clanek = ({ clanek, blog_data }) => {
             return {
               name: avtor.attributes.ime,
               image: avtor.attributes.slika.data.attributes.url,
+              resultant: avtor.attributes.resultant,
             };
           });
 

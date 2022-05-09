@@ -64,9 +64,10 @@ export const Blog_author_images = styled.div`
 `;
 export const Blog_author_image = styled.img`
   width: 33%;
-  height: fit-content;
+  height: 100%;
   border-radius: 12px;
   filter: grayscale(1);
+  object-fit: contain;
   @media (min-width: 768px) {
     width: 33%;
   }

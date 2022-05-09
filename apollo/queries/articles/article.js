@@ -26,6 +26,7 @@ const ARTICLE_QUERY = gql`
             data {
               attributes {
                 ime
+                resultant
                 slika {
                   data {
                     attributes {

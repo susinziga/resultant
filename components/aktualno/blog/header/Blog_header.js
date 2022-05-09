@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  BlogAuthorImageWrapper,
   Blog_author,
   Blog_authors,
   Blog_author_container,
@@ -7,6 +8,7 @@ import {
   Blog_author_images,
   Blog_header_container,
   Blog_title,
+  GuestBadge,
   Line,
 } from "./Blog_header.styled";
 
@@ -39,10 +41,13 @@ const Blog_Header = ({ title, authors, image }) => {
       <Blog_author_images>
         {authors.map((author, index) => {
           return (
-            <Blog_author_image
-              key={index}
-              src={author.image}
-            ></Blog_author_image>
+            <BlogAuthorImageWrapper>
+              <Blog_author_image
+                key={index}
+                src={author.image}
+              ></Blog_author_image>
+              {author.resultant === false && <GuestBadge>Gost</GuestBadge>}
+            </BlogAuthorImageWrapper>
           );
         })}
       </Blog_author_images>

@@ -32,7 +32,9 @@ const MultipleCheckbox = (props) => {
   return (
     <>
       <CheckboxContainer>
-        <TopLabel>{checkboxHeading}</TopLabel>
+        <TopLabel>
+          {checkboxHeading} <span style={{ color: "red" }}>*</span>
+        </TopLabel>
         <Container>
           {inputProps.map((prop, index) => {
             return (

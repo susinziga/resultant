@@ -35,8 +35,8 @@ const SIOK_service1 = (props) => {
 
         <SIOKTitle className="mobile">{header1}</SIOKTitle>
         <SIOKImage className="mobile" src="/Service1/SiOKgraf.png"></SIOKImage>
-        <SIOKTitle className="mobile">{header2}</SIOKTitle>
-        <SIOKTextContainer className="mobile">
+        <SIOKTitle>{t("service1:service1_SIOKheading2")}</SIOKTitle>
+        {/* <SIOKTextContainer className="mobile">
           <SIOKParagraph>{paragraph}</SIOKParagraph>
         </SIOKTextContainer>
         <SIOKImageContainer className="mobile">
@@ -45,15 +45,14 @@ const SIOK_service1 = (props) => {
             src="/Service1/SiOKgraf2.png"
           ></SIOKImage>
           <SIOKImageText className="mobile">{imageText}</SIOKImageText>
-        </SIOKImageContainer>
-        <SIOKGraf2Heading>
-          V vprašalnik SiOK je vključenih 12 klimatskih kategorij
-        </SIOKGraf2Heading>
+        </SIOKImageContainer> */}
+        {/* <SIOKGraf2Heading>
+          {t("service1:service1_SIOKheading2")}
+        </SIOKGraf2Heading> */}
         <SIOKImage
-          className="desktop"
           src={"/Service1/SIOKgraf2_desktop_" + locale + ".png"}
         ></SIOKImage>
-        <SIOKGraf2Sub>* Vsi prikazani podatki so simbolični.</SIOKGraf2Sub>
+        <SIOKGraf2Sub>{t("service1:service1_SIOKImageSub")}</SIOKGraf2Sub>
       </SIOKContainer>
     </>
   );
