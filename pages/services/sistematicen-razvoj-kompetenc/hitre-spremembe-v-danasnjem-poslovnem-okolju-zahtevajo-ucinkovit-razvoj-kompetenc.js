@@ -51,11 +51,4 @@ const kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev = () => {
   );
 };
 
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 3% 0%;
-`;
-
 export default kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev;

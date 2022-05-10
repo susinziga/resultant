@@ -90,8 +90,7 @@ const sistematicen_razvoj_kompetenc = () => {
       margin
       heading={t("srk:srk_bigCard1Heading")}
       content={t("srk:srk_bigCard1Content")}
-      img={"/SRK/bigCard1img"}
-      enImg={""}
+      fullImg={"/SRK/bigCard1img_" + locale + ".png"}
       href={
         "/" +
         locale +

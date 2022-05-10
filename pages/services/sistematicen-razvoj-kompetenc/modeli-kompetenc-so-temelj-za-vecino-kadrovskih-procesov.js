@@ -4,9 +4,11 @@ import Head from "next/head";
 import Hero_utnn from "../../../components/UTNN/Hero/Hero_utnn";
 import Plan from "../../../components/service1/PlanSection/Plan_service1";
 import Header from "../../../components/DNLA/subpages/Header";
+import { useRouter } from "next/router";
 
 const modeli_kompetenc_so_temelj_za_vecino_kadrovskih_procesov = () => {
   const { t, lang } = useTranslation();
+  const { locale } = useRouter();
 
   const planHeading1 = t("srk:mktvkp_Plan1Heading");
 
@@ -28,7 +30,7 @@ const modeli_kompetenc_so_temelj_za_vecino_kadrovskih_procesov = () => {
       </Head>
       <Header title={t("srk:mktvkp_heading")}></Header>
       <Hero_utnn
-        image={"/SRK/MKTVKP/header_desktop.png"}
+        image={"/SRK/bigCard1img_" + locale + ".png"}
         text={t("srk:mktvkp_content")}
         // buttonText={t("srk:mktvkp_button")}
       ></Hero_utnn>

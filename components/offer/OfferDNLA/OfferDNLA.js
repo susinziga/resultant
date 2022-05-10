@@ -15,6 +15,9 @@ const OfferDNLA = () => {
 
   const { formData, handleFormChange, sendMail } = useForm();
   const [clickedSend, setClickedSend] = useState(false);
+  const [submitButtonText, setsubmitButtonText] = useState(
+    t("service1:service1_buttonText1")
+  );
 
   useEffect(() => {
     handleFormChange("subject", "DNLA Povpraševanje");
@@ -40,8 +43,6 @@ const OfferDNLA = () => {
     { label: t("dnla:offer_checkboxProp3"), required: "*" },
     { label: t("dnla:offer_checkboxProp4"), required: "*" },
   ];
-
-  const button = t("service1:service1_buttonText1");
 
   return (
     <>
@@ -70,7 +71,7 @@ const OfferDNLA = () => {
             sendMail();
             let btn = document.getElementById("submit_btn");
             btn.style.backgroundColor = "#072543";
-            btn.value = t("contact:contact_sendSuccess");
+            setsubmitButtonText(t("contact:contact_sendSuccess"));
             btn.disabled = true;
           }}
         >
@@ -213,7 +214,7 @@ const OfferDNLA = () => {
               <SubmitButton
                 id="submit_btn"
                 style={{ padding: "2% 0%", width: "100%", display: "block" }}
-                value={button}
+                value={submitButtonText}
                 type={"submit"}
               ></SubmitButton>
             </ButtonContainer>

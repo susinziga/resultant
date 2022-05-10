@@ -101,7 +101,6 @@ const Menu_top = ({}) => {
 
         delay: 2.5,
         onComplete: () => {
-          console.log("add event");
           window.addEventListener("wheel", handleScroll);
         },
       });

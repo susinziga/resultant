@@ -42,7 +42,11 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
             <DropdownList>
               {items.map(({ name, resultant, id }) => {
                 return (
-                  <DropdownItem id={id} onClick={(e) => clickedItem(id)}>
+                  <DropdownItem
+                    key={id}
+                    id={id}
+                    onClick={(e) => clickedItem(id)}
+                  >
                     {name}
                     {resultant !== undefined && resultant === false && (
                       <GuestTag>(gost)</GuestTag>
@@ -56,7 +60,11 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
             <DropdownList>
               {items.map(({ name, resultant, id }) => {
                 return (
-                  <DropdownItem id={id} onClick={(e) => clickedItem(id)}>
+                  <DropdownItem
+                    key={id}
+                    id={id}
+                    onClick={(e) => clickedItem(id)}
+                  >
                     {name}
                     {resultant !== undefined && resultant === false && (
                       <GuestTag>(gost)</GuestTag>

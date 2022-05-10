@@ -22,8 +22,9 @@ const OfferForm_offer = () => {
   const { formData, handleFormChange, sendMail } = useForm();
   const [clickedSend, setClickedSend] = useState(false);
   const [isRadioSelected, setIsRadioSelected] = useState(false);
-
-  const button = t("service1:service1_buttonText1");
+  const [submitButtonText, setsubmitButtonText] = useState(
+    t("service1:service1_buttonText1")
+  );
 
   useEffect(() => {
     handleFormChange("subject", "SiOK Povpraševanje");
@@ -82,8 +83,8 @@ const OfferForm_offer = () => {
 
             sendMail();
             let btn = document.getElementById("submit_btn");
+            setsubmitButtonText(t("contact:contact_sendSuccess"));
             btn.style.backgroundColor = "#072543";
-            btn.value = t("contact:contact_sendSuccess");
             btn.disabled = true;
           }}
         >
@@ -180,7 +181,7 @@ const OfferForm_offer = () => {
                 //   console.log("asd");
                 //   sendMail();
                 // }}
-                value={button}
+                value={submitButtonText}
                 type={"submit"}
               ></SubmitButton>
             </ButtonContainer>

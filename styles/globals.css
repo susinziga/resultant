@@ -177,3 +177,38 @@ a:active {
     line-height: 23px;
   }
 }*/
+
+/* COOKIE CONSENT STYLING */
+.cookie-notice, .cm-modal.cm-klaro {
+  background-color: var(--blue) !important;
+}
+
+.cm-link.cn-learn-more {
+  color: var(--secondary-color) !important;
+}
+
+.cm-btn.cm-btn-danger.cn-decline {
+  background: none !important;
+}
+
+.cm-btn.cm-btn-success {
+  background: var(--secondary-color) !important;
+  border-radius: 20px !important;
+}
+
+.cm-caret a {
+  color: var(--secondary-color) !important;
+}
+
+.klaro .cookie-modal .cm-list-label .slider.round::before, .klaro .context-notice .cm-list-label .slider.round::before, .klaro .cookie-notice .cm-list-label .slider.round::before {
+  background-color: var(--blue) !important;
+}
+
+/* true switch */
+.klaro .cookie-modal .cm-list-input:checked+.cm-list-label .slider, .klaro .context-notice .cm-list-input:checked+.cm-list-label .slider, .klaro .cookie-notice .cm-list-input:checked+.cm-list-label .slider {
+  background-color: var(--secondary-color) !important;
+}
+
+.cm-powered-by a {
+  color: #316888 !important;
+}

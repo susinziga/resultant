@@ -25,7 +25,7 @@ const inputProps = {
   en: [
     { label: "Name", required: "*" },
     { label: "Last name", required: "*" },
-    { label: "Mobile phone number" },
+    { label: "Telephone number" },
     { label: "Email", required: "*", type: "email" },
     { label: "Company name" },
   ],
