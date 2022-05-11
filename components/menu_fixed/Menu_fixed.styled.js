@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { Title1 } from "../../basic_components/texts/Texts";
+import { Title1, Title2 } from "../../basic_components/texts/Texts";
 
 export const MenuFixedContainer = styled.div`
   min-height: 8rem;
@@ -41,7 +41,7 @@ export const MenuItemImg = styled.img`
   }
 `;
 
-export const MenuItem = styled(Title1)`
+export const MenuItem = styled(Title2)`
   font-size: 2rem;
   padding-bottom: 1rem;
   /* color: var(--light-grey); */
