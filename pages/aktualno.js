@@ -94,7 +94,7 @@ const aktualno = ({ categories, authors }) => {
           Ni člankov!
         </BodyText2>
       ) : (
-        <CardWrapperParent>
+        <CardWrapperParent numArticles={items.length}>
           <LatestCard
             key={items[0].id}
             news={getArticleFromStrapiData(items[0])}
@@ -146,17 +146,18 @@ export const NoArticlesWrapper = styled.div`
 export const CardWrapperParent = styled.div`
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 80%;
+  margin-bottom: ${(props) => (props.numArticles * 1.5).toString() + "rem"};
 
   @media (min-width: 768px) {
-    margin-bottom: 20%;
+    /* margin-bottom: 10%; */
+    margin-bottom: ${(props) => (props.numArticles * 1).toString() + "%"};
   }
 `;
 
 export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  gap: 1%;
+  gap: 1.5rem;
 
   @media only screen and (min-width: 768px) {
     grid-template-columns: 32.7% 32.7% 32.7%;

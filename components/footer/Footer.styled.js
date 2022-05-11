@@ -118,7 +118,7 @@ export const ContactIcon = styled.img`
   margin-right: 5%;
 `;
 
-export const FooterHeader = styled.h4`
+export const FooterHeader = styled.h3`
   font-family: "Neusa";
   font-weight: 400;
   position: relative;

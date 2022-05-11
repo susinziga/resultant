@@ -139,10 +139,11 @@ export const Img = styled.img`
   }
 `;
 
-export const RowHeader = styled(Subtitle2).attrs({ bold: true })`
+export const RowHeader = styled(Subtitle2)`
   display: block !important;
   font-size: 1.2rem;
   margin: 7% 0%;
+  font-weight: 500;
 
   @media only screen and (min-width: 768px) {
     margin: 4% 0%;

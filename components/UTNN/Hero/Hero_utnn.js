@@ -26,6 +26,7 @@ const Hero_utnn = (props) => {
         <ContentWrapper>
           {props.headText && <HeadText>{props.headText}</HeadText>}
           <BodyText2
+            light
             dangerouslySetInnerHTML={{ __html: t(props.text) }}
           ></BodyText2>
           <VSpacer />

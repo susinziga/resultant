@@ -26,8 +26,8 @@ export const Header = styled(Subtitle2)`
   }
 `;
 
-export const Bold = styled(BodyText3).attrs({ bold: true })`
-  font-weight: bold;
+export const Bold = styled(BodyText3)`
+  font-weight: 500;
   font-family: "Neusa";
 `;
 

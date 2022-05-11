@@ -240,3 +240,10 @@ a:active {
 }
 
 
+.medium {
+  font-weight: 500;
+}
+
+.regular {
+  font-weight: 400;
+}

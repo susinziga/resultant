@@ -68,8 +68,8 @@ const ClanekTychy = () => {
         {
           question: `Tretje vprašanje: “Metoda DNLA temelji na seriji raziskav o dejavnikih uspeha na delovnem mestu,
         opravljenih na Inštitutu Maxa Plancka v zgodnjih devetdesetih letih. Je še aktualna? Kako dobro se
-        &quot;Za menedžerje je zelo pomembno, da vedo, kako so njihovi zaposleni - ne le v času pandemije
-        Covid-19,&quot; pravi Alexander Tychy. Alexander, ki je vodja prodaje družbe DNLA GmbH,
+        "Za menedžerje je zelo pomembno, da vedo, kako so njihovi zaposleni - ne le v času pandemije
+        Covid-19," pravi Alexander Tychy. Alexander, ki je vodja prodaje družbe DNLA GmbH,
         pojasnjuje, kako analiza mehkih veščin, ki jo je razvilo njegovo podjetje, podpira zaposlene in
         vodje.
         
@@ -78,7 +78,7 @@ const ClanekTychy = () => {
           answer: `Alexander Tychy: “Orodja za analizo in razvoj DNLA imajo dolgo tradicijo ter s tem tudi izkušnje. Kljub
           temu so še vedno aktualna. To dokazujejo redno izvedene študije in praktične izkušnje. Baza
           podatkov, ki se uporablja za primerjave in izračune, se nenehno posodablja. Postopki DNLA izrecno
-          obravnavajo tudi vidik &quot;agilnosti&quot;. Obstaja celo ločen kazalnik, kako dobro se zaposleni obnesejo v
+          obravnavajo tudi vidik "agilnosti". Obstaja celo ločen kazalnik, kako dobro se zaposleni obnesejo v
           agilnem kontekstu in v agilnih oblikah sodelovanja. In če pomislite, katere individualne kompetence
           so del koncepta »agilnosti«, potem govorimo o dejavnikih, kot so osebna odgovornost, iniciativnost
           ali fleksibilnost. Te so bile vedno del DNLA analiz.”`,
@@ -197,8 +197,8 @@ const ClanekTychy = () => {
         But that would probably be far too costly?`,
           answer: `Alexander Tychy: Costly, yes, to some extent - but the effort is worth it. Besides, every employer
         should ask themselves how much effort will have to be made later on to make amends if employees
-        are left &quot;alone&quot; in certain situations and when measures are only taken afterwards when problems
-        arise. DNLA is also a central component of the &quot;HR - balance sheet&quot; - a concept for personnel- and
+        are left "alone" in certain situations and when measures are only taken afterwards when problems
+        arise. DNLA is also a central component of the "HR - balance sheet" - a concept for personnel- and
         organizational development for medium-sized companies. Here, everyone in the company - from the
         apprentices to the board of directors - goes through a DNLA development process. Depending on the
         results of the initial analysis and depending on where in the organization the need for support is
@@ -241,7 +241,7 @@ const ClanekTychy = () => {
       <Border_shadow>
         <Container>
           <BodyText2>
-            <b>{data[locale].questions[0].question}</b>
+            <>{data[locale].questions[0].question}</>
           </BodyText2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[0].answer}</BodyText3>
@@ -249,7 +249,7 @@ const ClanekTychy = () => {
           <NewParagraph></NewParagraph>
 
           <BodyText2>
-            <b>{data[locale].questions[1].question}</b>
+            <>{data[locale].questions[1].question}</>
           </BodyText2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[1].answer}</BodyText3>
@@ -257,7 +257,7 @@ const ClanekTychy = () => {
           <NewParagraph></NewParagraph>
 
           <BodyText2>
-            <b>{data[locale].questions[2].question}</b>
+            <>{data[locale].questions[2].question}</>
           </BodyText2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[2].answer}</BodyText3>
@@ -265,7 +265,7 @@ const ClanekTychy = () => {
           <NewParagraph></NewParagraph>
 
           <BodyText2>
-            <b>{data[locale].questions[3].question}</b>
+            <>{data[locale].questions[3].question}</>
           </BodyText2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[3].answer}</BodyText3>
@@ -273,7 +273,7 @@ const ClanekTychy = () => {
           <NewParagraph></NewParagraph>
 
           <BodyText2>
-            <b>{data[locale].questions[4].question}</b>
+            <>{data[locale].questions[4].question}</>
           </BodyText2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[4].answer}</BodyText3>

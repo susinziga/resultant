@@ -34,7 +34,7 @@ export const NewsText = styled(BodyText2)`
   }
 `;
 
-export const NewsHeading = styled(Title2)`
+export const NewsHeading = styled.h3`
   font-size: 1.2rem;
   width: 100%;
   cursor: pointer;
