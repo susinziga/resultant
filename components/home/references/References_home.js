@@ -6,6 +6,8 @@ import { Header2 } from "../../../basic_components/texts/Texts";
 import useTranslation from "next-translate/useTranslation";
 import References_slider from "./references_slider/References_slider";
 
+import styled from "styled-components";
+
 const References_home = (props) => {
   const { t, lang } = useTranslation("common");
 
@@ -90,8 +92,8 @@ const References_home = (props) => {
   return (
     <Styled.ReferencesContainer {...props}>
       <Styled.TitleContainer>
-        <Header2>{t("references")}</Header2>
-        <Styled.TitleLine></Styled.TitleLine>
+        <h3 style={{ fontSize: "3.5rem" }}>{t("references")}</h3>
+        <Styled.TitleLine className="desktop"></Styled.TitleLine>
       </Styled.TitleContainer>
       <References_slider references={references}></References_slider>
     </Styled.ReferencesContainer>

@@ -57,6 +57,7 @@ const Mobile_menu = ({ menu_opened }) => {
           {t("nav_item1")}
         </Button>
         <Button
+          isParagraph
           className="nav_item drop-button mobile_nav3"
           terciary
           arrowDown

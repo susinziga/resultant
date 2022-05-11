@@ -67,7 +67,7 @@ export const TextareaContainer = styled.div`
   }
 `;
 
-export const ContactHeader = styled(Title2)`
+export const ContactHeader = styled.h3`
   font-family: "Neusa";
   font-weight: 500;
   font-size: 2.2rem;

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Title2 } from "../../../../basic_components/texts/Texts";
 
-export const Title = styled(Title2)`
+export const Title = styled.h3`
   font-size: 2rem;
   @media only screen and (min-width: 768px) {
     font-size: 2.8rem;

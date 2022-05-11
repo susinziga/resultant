@@ -77,7 +77,7 @@ export const NewsAuthorText = styled.span`
   font-size: 0.9rem;
 `;
 
-export const NewsHeading = styled(Title2)`
+export const NewsHeading = styled.h3`
   font-size: 1.2rem;
   width: 100%;
   transition: all 0.25s ease;
