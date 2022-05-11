@@ -29,14 +29,14 @@ const SIOK_service1 = (props) => {
       <SIOKContainer {...props}>
         <SIOKImage
           className="desktop"
-          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".png"}
+          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".webp"}
         ></SIOKImage>
         {/* <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop> */}
 
         {/* <SIOKTitle className="mobile">{header1}</SIOKTitle> */}
         <SIOKImage
           className="mobile"
-          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".png"}
+          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".webp"}
         ></SIOKImage>
         <SIOKTitle>{t("service1:service1_SIOKheading2")}</SIOKTitle>
         {/* <SIOKTextContainer className="mobile">
@@ -45,7 +45,7 @@ const SIOK_service1 = (props) => {
         <SIOKImageContainer className="mobile">
           <SIOKImage
             className="mobile"
-            src="/Service1/SiOKgraf2.png"
+            src="/Service1/SiOKgraf2.webp"
           ></SIOKImage>
           <SIOKImageText className="mobile">{imageText}</SIOKImageText>
         </SIOKImageContainer> */}
@@ -53,7 +53,7 @@ const SIOK_service1 = (props) => {
           {t("service1:service1_SIOKheading2")}
         </SIOKGraf2Heading> */}
         <SIOKImage
-          src={"/Service1/SIOKgraf2_desktop_" + locale + ".png"}
+          src={"/Service1/SIOKgraf2_desktop_" + locale + ".webp"}
         ></SIOKImage>
         <SIOKGraf2Sub>{t("service1:service1_SIOKImageSub")}</SIOKGraf2Sub>
       </SIOKContainer>

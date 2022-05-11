@@ -13,10 +13,10 @@ const Clanek2 = () => {
   const blog_data = {
     title: "Kako do večje zavzetosti vaših zaposlenih?",
     authors: [
-      { image: "/Team/primoz.png", name: "Primož Bitenc" },
-      { image: "/Team/janez.png", name: "Janez Žezlina" },
+      { image: "/Team/primoz.webp", name: "Primož Bitenc" },
+      { image: "/Team/janez.webp", name: "Janez Žezlina" },
     ],
-    image: "/clanki/2/image1.png",
+    image: "/clanki/2/image1.webp",
     excerpt: `Številne raziskave, ki proučujejo vpliv zavzetosti zaposlenih na ohranjanje
       ključnih kadrov, zvestobo kupcev, produktivnost in profitabilnost ter istočasno svarijo o ogromnih
       denarnih izgubah v primeru povečevanja nezavzetosti zaposlenih, dokazujejo, da zavzetost
@@ -243,7 +243,7 @@ Skladno s podatki iz raziskave slovenske organizacijske klime je ta podatek prik
           ></BodyText3>
           <NewParagraph></NewParagraph>
           <Image
-            src="/clanki/1/SiOK 2_graf1.png"
+            src="/clanki/1/SiOK 2_graf1.webp"
             label="Vir: SiOK (slovenska organizacijska klima), vzorec = 18.500 zaposlenih v slovenskih organizacijah iz
 različnih dejavnosti / Resultant d.o.o."
           ></Image>

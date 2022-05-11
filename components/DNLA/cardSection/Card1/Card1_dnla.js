@@ -42,11 +42,11 @@ const Card1_dnla = () => {
         <ImageWrapper>
           <CardImage
             className="mobile"
-            src="/DNLA/cardSectionImage1_mobile.png"
+            src="/DNLA/cardSectionImage1_mobile.webp"
           ></CardImage>
           <CardImage
             className="desktop"
-            src="/DNLA/cardSectionImage1_desktop.png"
+            src="/DNLA/cardSectionImage1_desktop.webp"
           ></CardImage>
         </ImageWrapper>
         <TextContainer>

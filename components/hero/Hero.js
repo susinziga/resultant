@@ -35,7 +35,7 @@ const Hero = (props) => {
   /* CONTENT */
 
   const heroImage = "/AboveTheFold/hero2.webp";
-  const heroImage_mobile = "/AboveTheFold/hero_mobile.png";
+  const heroImage_mobile = "/AboveTheFold/hero_mobile.webp";
 
   const hero_title = t("aboveTheFold:hero_title");
 

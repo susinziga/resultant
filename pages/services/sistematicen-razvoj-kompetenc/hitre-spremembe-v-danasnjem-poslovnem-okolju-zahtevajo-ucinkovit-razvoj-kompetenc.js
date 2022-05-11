@@ -33,7 +33,7 @@ const kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev = () => {
       <Header title={t("srk:kurkvs_heading")}></Header>
       <Hero_utnn
         className={"section"}
-        image={"/SRK/KURKVS/header_desktop.png"}
+        image={"/SRK/KURKVS/header_desktop.webp"}
         text={t("srk:kurkvs_content")}
         headText={t("srk:kurkvs_headText")}
       ></Hero_utnn>

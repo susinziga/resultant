@@ -23,11 +23,11 @@ const FirstSection_kukvs = () => {
 
       <Img
         className="desktop"
-        src={"/SRK/KURKVS/firstSectionImg_desktop.png"}
+        src={"/SRK/KURKVS/firstSectionImg_desktop.webp"}
       ></Img>
       <Img
         className="mobile"
-        src={"/SRK/KURKVS/firstSectionImg_mobile.png"}
+        src={"/SRK/KURKVS/firstSectionImg_mobile.webp"}
       ></Img>
 
       <PaddingX>

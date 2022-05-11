@@ -36,7 +36,7 @@ const Approach_component = (props) => {
             {buttonText}
           </Button>
         </ApproachTextContainer>
-        <ApproachImage src="./Home/homeApproachImage.png"></ApproachImage>
+        <ApproachImage src="./Home/homeApproachImage.webp"></ApproachImage>
       </ApproachContainer>
     </>
   );

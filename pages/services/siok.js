@@ -35,8 +35,8 @@ const service1 = () => {
   const HeadingSection = {
     upperTitle: t("service1:service1_Heading"),
     paragraph: t("service1:service1_mainParagraph"),
-    headerImage1: "/Service1/HeadingPhoto.png",
-    headerImage2: "/Service1/HeadingPhoto_desktop.png",
+    headerImage1: "/Service1/HeadingPhoto.webp",
+    headerImage2: "/Service1/HeadingPhoto_desktop.webp",
   };
 
   const quote1 = t("service1:service1_quoteParagraph");

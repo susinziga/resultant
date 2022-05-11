@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek8 = () => {
   const blog_data = {
     title: "Hočemo večjo kompetentnost! ",
-    authors: [{ image: "/Team/Roman.png", name: "Roman Klarič" }],
-    image: "/clanki/8/image1.png",
+    authors: [{ image: "/Team/Roman.webp", name: "Roman Klarič" }],
+    image: "/clanki/8/image1.webp",
     excerpt: `Rast! Produktivnost! Boljša sposobnost obvladovanja sprememb! Prilagajanje organizacije  na zahtevne pogoje današnjega časa! Vse te besede v zadnjem času dominirajo v večini strokovnih člankov na temo razvoja kompetenc. In zares držijo. Morda je čas, da tudi v vašem podjetju svoj kadrovski fokus usmerite v razvoj sodobnih kompetenc sedanjega časa. Odlični zaposleni se vedno zanimajo za učenje novih stvari in razširitev svojih veščin. Še posebej v tem času, ko se moramo vedno bolj prilagajati zahtevam digitalne ekonomije in njenim značilnostim. Predstavljam vam nekaj idej in pogledov, ki so vam lahko v pomoč.  `,
   };
 

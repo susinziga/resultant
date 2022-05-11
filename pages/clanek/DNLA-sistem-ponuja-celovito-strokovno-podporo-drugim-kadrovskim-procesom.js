@@ -108,8 +108,8 @@ const Clanek5 = () => {
 
   const blog_data = {
     title: data[locale].title,
-    authors: [{ image: "/Team/enej.png", name: "Enej Klarič" }],
-    image: "/clanki/5/image1.png",
+    authors: [{ image: "/Team/enej.webp", name: "Enej Klarič" }],
+    image: "/clanki/5/image1.webp",
     excerpt: data[locale].excerpt,
   };
 
@@ -148,11 +148,11 @@ const Clanek5 = () => {
       </Container>
       <Image
         className="desktop"
-        src={"/clanki/5/image2_" + locale + "_desktop.png"}
+        src={"/clanki/5/image2_" + locale + "_desktop.webp"}
       ></Image>
       <Image
         className="mobile"
-        src={"/clanki/5/image2_" + locale + "_mobile.png"}
+        src={"/clanki/5/image2_" + locale + "_mobile.webp"}
       ></Image>
 
       <NewParagraph></NewParagraph>

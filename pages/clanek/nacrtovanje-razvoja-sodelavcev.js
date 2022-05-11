@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek7 = () => {
   const blog_data = {
     title: "Načrtovanje razvoja sodelavcev",
-    authors: [{ image: "/Team/enej.png", name: "Enej Klarič" }],
-    image: "/clanki/7/image1.png",
+    authors: [{ image: "/Team/enej.webp", name: "Enej Klarič" }],
+    image: "/clanki/7/image1.webp",
     excerpt: `Dober proces razvoja zaposlenih je pomemben dejavnik pri zadržanju naših sodelavcev (retention), vendar le ti želijo sodoben pristop razvoja njihovih veščin. Zato naj bo usposabljanje ciljno usmerjeno in naj vsebuje tudi evaluacijo prenosa novega znanja v prakso. Usposabljanje zaposlenih bi moral iti v smeri razvoja sposobnosti za konkretne veščine in znanja, oblike pa naj bodo prilagojene preferencam vaših sodelavcev in njihovim kariernim ciljem.  `,
   };
 

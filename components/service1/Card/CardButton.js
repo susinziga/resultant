@@ -6,7 +6,7 @@ const CardButton = (props) => {
       <CardButtonWrapper {...props} href={props.href}>
         <CardText>{props.text}</CardText>
         <CardButtonArrowWrapper>
-          <img width={5} src="/UTNN/button_arrow_right.png"></img>
+          <img width={5} src="/UTNN/button_arrow_right.webp"></img>
         </CardButtonArrowWrapper>
       </CardButtonWrapper>
     </Wrapper>

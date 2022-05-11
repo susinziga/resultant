@@ -222,7 +222,7 @@ const ClanekTychy = () => {
 
     authors: [
       {
-        image: "/clanki/tychy/logo.png",
+        image: "/clanki/tychy/logo.webp",
         name: data[locale].author_name,
       },
     ],

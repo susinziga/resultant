@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek3 = () => {
   const blog_data = {
     title: "Spremljanje in spreminjanje organizacijske klime in kulture",
-    authors: [{ image: "/Team/primoz.png", name: "Primož Bitenc" }],
-    image: "/clanki/3/image1.png",
+    authors: [{ image: "/Team/primoz.webp", name: "Primož Bitenc" }],
+    image: "/clanki/3/image1.webp",
     excerpt: `Cilj vsake organizacije bi moral biti ustvarjanje trajnostnega delovnega okolja, v katerem se
       zaposleni počutijo vključene, zveste in zadovoljne. Če zaposleni na svojem delovnem mestu niso
       zadovoljni, lahko postanejo neproduktivni in se po možnosti lahko odločijo za zamenjavo

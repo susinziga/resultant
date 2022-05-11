@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek11 = () => {
   const blog_data = {
     title: "Življenjski cikel zaposlenih",
-    authors: [{ image: "/Team/Roman.png", name: "Roman Klarič" }],
-    image: "/clanki/11/image1.png",
+    authors: [{ image: "/Team/Roman.webp", name: "Roman Klarič" }],
+    image: "/clanki/11/image1.webp",
     excerpt: `Osnovna vloga kadrovske službe je skrb za zaposlene od njihovega vstopa v organizacijo do konca njihove zaposlitve. Ali povedano drugače skrbeti za celoten življenjski cikel zaposlenega na način, da bo to potovanje zaposlenim zagotavljalo odlično osebno izkušnjo. Ob tem pa stalno slediti vrednotam podjetja in podpirati želeno organizacijsko kulturo.   `,
   };
 

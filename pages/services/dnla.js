@@ -35,8 +35,8 @@ const dnla = () => {
   const HeadingSection = {
     upperTitle: t("dnla:dnla_mainHeading"),
     paragraph: t("dnla:dnla_mainParagraph"),
-    headerImage1: "/DNLA/dnlaMainImageMobile.png",
-    headerImage2: "/DNLA/dnlaMainImageDesktop.png",
+    headerImage1: "/DNLA/dnlaMainImageMobile.webp",
+    headerImage2: "/DNLA/dnlaMainImageDesktop.webp",
   };
   const quote1 = t("dnla:dnla_quoteParagraph");
   const quote2 = t("dnla:dnla_quoteParagraph2");
@@ -85,7 +85,7 @@ const dnla = () => {
   articles.push({
     heading: t("dnla:dnla_article3CardHeading"),
     text: t("dnla:dnla_article3CardContent"),
-    image: "/DNLA/article3_desktop.png",
+    image: "/DNLA/article3_desktop.webp",
     authors: [],
     link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
   });

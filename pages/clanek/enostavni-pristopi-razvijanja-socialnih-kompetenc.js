@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek4 = () => {
   const blog_data = {
     title: "Enostavni pristopi razvijanja socialnih kompetenc",
-    authors: [{ image: "/Team/Roman.png", name: "Roman Klarič" }],
-    image: "/clanki/4/image1.png",
+    authors: [{ image: "/Team/Roman.webp", name: "Roman Klarič" }],
+    image: "/clanki/4/image1.webp",
     excerpt: `Med izvrstnim naborom DNLA orodij po svoji uporabni vrednosti še posebej izstopa DNLA merjenje socialnih kompetenc. Dobro razvite socialne veščine namreč bistveno povečajo naše zmožnosti za hitro osvajanje drugih veščin, kot so denimo kompetence vodenja ali prodaje. Pravzaprav tvorijo temelj za njihovo nadgradnjo. Brez dobro razvitih socialnih veščin bomo bistveno težje kakovostno razvili ostale poslovne kompetence.`,
   };
 

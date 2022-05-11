@@ -20,7 +20,9 @@ const BigCard = (props) => {
           className="desktop"
           style={props.imgStyle}
           src={
-            props.img === undefined ? props.fullImg : props.img + "_desktop.png"
+            props.img === undefined
+              ? props.fullImg
+              : props.img + "_desktop.webp"
           }
         ></CardImage>
         <TextContainer>
@@ -35,7 +37,7 @@ const BigCard = (props) => {
               src={
                 props.img === undefined
                   ? props.fullImg
-                  : props.img + "_desktop.png"
+                  : props.img + "_desktop.webp"
               }
             ></CardImage>
           )}
@@ -50,7 +52,7 @@ const BigCard = (props) => {
           {props.mobileImgOnBottom && (
             <CardImage
               className="mobile"
-              src={props.img + "_mobile.png"}
+              src={props.img + "_mobile.webp"}
             ></CardImage>
           )}
         </TextContainer>

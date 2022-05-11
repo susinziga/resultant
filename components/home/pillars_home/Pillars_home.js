@@ -20,13 +20,13 @@ const Pillars_home = (props) => {
       title: t("pillars:pillar1_title"),
       text: t("pillars:pillar1_excerpt"),
       link: "/services/siok",
-      logo: "/Pillars/siok.png",
+      logo: "/Pillars/siok.webp",
     },
     {
       title: t("pillars:pillar2_title"),
       text: t("pillars:pillar2_excerpt"),
       link: "/services/dnla",
-      logo: "/Pillars/dnla.png",
+      logo: "/Pillars/dnla.webp",
     },
   ];
   const pillarsContentBot = [

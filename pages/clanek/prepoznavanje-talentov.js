@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek9 = () => {
   const blog_data = {
     title: "Prepoznavanje talentov ",
-    authors: [{ image: "/Team/janez.png", name: "Janez Žezlina" }],
-    image: "/clanki/9/image1.png",
+    authors: [{ image: "/Team/janez.webp", name: "Janez Žezlina" }],
+    image: "/clanki/9/image1.webp",
     excerpt: `Upravljanje talentov je strategija, s katero si podjetja zagotovijo, da so njihovi ključni, strokovno in osebnostno kompetentni posamezniki, deležni skrbne pozornosti. Najprej jih je treba iskati in najti ter nato pripeljati v podjetje. Nato morajo zanje skrbeti, jih podpirati, motivirati, navduševati. Skratka, treba jih je ceniti in jim to tudi jasno pokazati, zato da ne bodo odšli h konkurenci. V tem prispevku se osredotočam predvsem na začetni del procesa upravljanja s talenti – iskanje oz. prepoznavanje le-teh.`,
   };
 

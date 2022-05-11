@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek10 = () => {
   const blog_data = {
     title: "Mlajše generacije prevzemajo ključne vloge v organizacijah",
-    authors: [{ image: "/Team/enej.png", name: "Enej Klarič" }],
-    image: "/clanki/10/image1.png",
+    authors: [{ image: "/Team/enej.webp", name: "Enej Klarič" }],
+    image: "/clanki/10/image1.webp",
     excerpt: `Eno izmed aktualnejših vprašanj v današnjem  svetu, kjer je vrednota kapitala postala ena izmed glavnih vrednot, je vprašanje post-materializma in z njim povezanih razlik med generacijami. Prišli smo do obdobja, ko večino delovne sile predstavlja generacija Y (rojena med  1981 in 1999, t. i. milenijci) , generacija Z (rojena po letu 1999) pa prihaja na trg delovne sile. `,
   };
 

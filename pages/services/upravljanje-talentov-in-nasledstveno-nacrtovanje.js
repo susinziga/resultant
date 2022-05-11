@@ -38,8 +38,8 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
   const HeadingSection = {
     upperTitle: t("utnn:utnn_mainHeading"),
     paragraph: t("utnn:utnn_mainParagraph"),
-    headerImage1: "/UTNN/utnnMainImageDesktop.png",
-    headerImage2: "/UTNN/utnnMainImageMobile.png",
+    headerImage1: "/UTNN/utnnMainImageDesktop.webp",
+    headerImage2: "/UTNN/utnnMainImageMobile.webp",
   };
 
   const cardProps1 = [

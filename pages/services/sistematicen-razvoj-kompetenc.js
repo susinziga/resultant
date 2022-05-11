@@ -34,8 +34,8 @@ const sistematicen_razvoj_kompetenc = () => {
   const HeadingSection = {
     upperTitle: t("srk:srk_mainHeading"),
     paragraph: t("srk:srk_mainParagraph"),
-    headerImage1: "/SRK/SRKMainImageDesktop.png",
-    headerImage2: "/SRK/SRKMainImageMobile.png",
+    headerImage1: "/SRK/SRKMainImageDesktop.webp",
+    headerImage2: "/SRK/SRKMainImageMobile.webp",
   };
 
   const cardProps1 = [
@@ -90,7 +90,7 @@ const sistematicen_razvoj_kompetenc = () => {
       margin
       heading={t("srk:srk_bigCard1Heading")}
       content={t("srk:srk_bigCard1Content")}
-      fullImg={"/SRK/bigCard1img_" + locale + ".png"}
+      fullImg={"/SRK/bigCard1img_" + locale + ".webp"}
       href={
         "/" +
         locale +
@@ -117,7 +117,7 @@ const sistematicen_razvoj_kompetenc = () => {
       content={t("srk:srk_bigCard3Content")}
       imgStyle={{ height: "40rem", marginRight: "50px" }}
       mobileImgStyle={{ marginBottom: "1rem", marginTop: "1rem" }}
-      fullImg={"/SRK/srk_metoda360_" + locale + ".png"}
+      fullImg={"/SRK/srk_metoda360_" + locale + ".webp"}
       href={"/" + locale + "/services/sistematicen-razvoj-kompetenc/metoda-360"}
       buttonText={t("common:button_more")}
     ></BigCard>,

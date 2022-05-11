@@ -23,7 +23,7 @@ const Primoz_bitenc = () => {
   const about_data = {
     title: t("team:about"),
     about: t("team:person2_about"),
-    img: "/Team/primoz.png",
+    img: "/Team/primoz.webp",
     bulletHeading: t("team:bulletHeading"),
     bullets: [
       t("team:person2_bullet_1"),

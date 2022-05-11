@@ -126,8 +126,8 @@ const Clanek1 = () => {
 
   const blog_data = {
     title: data[locale].title,
-    authors: [{ image: "/Team/Roman.png", name: "Roman Klarič" }],
-    image: "/clanki/1/image1.png",
+    authors: [{ image: "/Team/Roman.webp", name: "Roman Klarič" }],
+    image: "/clanki/1/image1.webp",
     excerpt: data[locale].excerpt,
   };
 

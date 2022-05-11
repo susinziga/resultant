@@ -23,11 +23,11 @@ const ucinkovita_360_povratna_informacija_je_celovit_proces_razvoja_zaposlenih_s
 
         <Img
           className="desktop"
-          src={"/SRK/UPIJCPRZP/img_" + locale + "_desktop.png"}
+          src={"/SRK/UPIJCPRZP/img_" + locale + "_desktop.webp"}
         ></Img>
         <Img
           className="mobile"
-          src={"/SRK/UPIJCPRZP/img_" + locale + "_mobile.png"}
+          src={"/SRK/UPIJCPRZP/img_" + locale + "_mobile.webp"}
         ></Img>
 
         <PaddingX>

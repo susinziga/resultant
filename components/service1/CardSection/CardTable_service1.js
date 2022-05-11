@@ -12,11 +12,11 @@ const CardTable_service1 = ({ cardProps1, cardProps2 }, props) => {
         {/* <>
           <BackgroundVector
             className="desktop"
-            src="/offer/backgroundVector.png"
+            src="/offer/backgroundVector.webp"
           ></BackgroundVector>
           <BackgroundVector
             className="mobile"
-            src="/Service1/VectorA_mobile.png"
+            src="/Service1/VectorA_mobile.webp"
           ></BackgroundVector>
         </> */}
         {/* Zaka je tu sploh bil background logo pozabu sm sma nikjer na figmi ni lol */}

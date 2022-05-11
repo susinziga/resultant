@@ -15,8 +15,8 @@ import Share from "../../components/blog/content_components/Share";
 const Clanek6 = () => {
   const blog_data = {
     title: "Razvoj notranjih trenerjev",
-    authors: [{ image: "/Team/Roman.png", name: "Roman Klarič" }],
-    image: "/clanki/6/image1.png",
+    authors: [{ image: "/Team/Roman.webp", name: "Roman Klarič" }],
+    image: "/clanki/6/image1.webp",
     excerpt: `V današnjem času se pogosto postavljajo vprašanja smiselnosti vzpostavitve notranjega usposabljanja. Notranji trenerji imajo lahko zelo učinkovito vlogo pri razvoju sodelavcev in pri uvajanju kulturoloških sprememb v organizacije. Pogoj za to je njihova primerna usposobljenost ter da je njihov načrt razvijanja kompetenc in veščin usklajen s poslovno strategijo organizacije. `,
   };
 

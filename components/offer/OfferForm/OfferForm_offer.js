@@ -153,7 +153,7 @@ const OfferForm_offer = () => {
           <HeadingLine></HeadingLine>
           <BackgroundVector
             id="radioLine"
-            src="/offer/backgroundVector.png"
+            src="/offer/backgroundVector.webp"
           ></BackgroundVector>
           <InputsContainer>
             <p

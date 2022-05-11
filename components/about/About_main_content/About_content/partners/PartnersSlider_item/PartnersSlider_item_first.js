@@ -8,7 +8,7 @@ const Partners_quote_content = ({ active }) => {
   return (
     <FirstSlideContainer active={active}>
       <div>
-        <img src="/Icons/quote.png" className="quote"></img>
+        <img src="/Icons/quote.webp" className="quote"></img>
       </div>
       <BodyText1>{t("partners_intro")}</BodyText1>
     </FirstSlideContainer>
