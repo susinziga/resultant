@@ -26,7 +26,8 @@ export const GuestBadge = styled.div`
   font-size: 0.8rem;
   text-align: center;
   color: white;
-  font-family: "NeusaThin";
+  font-family: "Neusa";
+  font-weight: 300;
 
   transition: all 0.25s ease;
 

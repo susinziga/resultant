@@ -1,17 +1,42 @@
 @font-face {
   font-family: "Fatface";
   src: url("./fonts/AbrilFatface-Regular.ttf");
+
+  font-weight: normal;
 }
 
 @font-face {
   font-family: "Neusa";
   src: url("./fonts/NeusaNextStd-Regular.ttf");
+
+  font-weight: normal;
 }
 
 @font-face {
+  font-family: "Neusa";
+  src: url("./fonts/new/NeusaNextPro-Medium.ttf");
+
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Neusa";
+  src: url("./fonts/new/NeusaNextPro-Bold.ttf");
+
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Neusa";
+  src: url("./fonts/NeusaNextStd-Light.ttf");
+
+  font-weight: 300;
+}
+
+/* @font-face {
   font-family: "NeusaThin";
   src: url("./fonts/NeusaNextStd-Light.ttf");
-}
+} */
 
 html {
   box-sizing: border-box;
@@ -67,7 +92,7 @@ h4 {
 
 h1 {
   font-size: 4.1rem;
-  line-height: 4.5rem;
+  /* line-height: 4.5rem; */
 }
 /*HEADER 2*/
 h2 {
@@ -89,7 +114,7 @@ hr{
   /*HEADER 1*/
   h1 {
     font-size: 6.6rem;
-    line-height: 6rem;
+    line-height: 3.9rem;
   }
   /*HEADER 2*/
   h2 {
@@ -105,7 +130,8 @@ hr{
   }
 }
 span {
-  font-family: "NeusaThin";
+  font-family: "Neusa";
+  font-weight: lighter;
   color: #5c5c5c;
 }
 
@@ -212,3 +238,5 @@ a:active {
 .cm-powered-by a {
   color: #316888 !important;
 }
+
+

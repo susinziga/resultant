@@ -31,10 +31,13 @@ const SIOK_service1 = (props) => {
           className="desktop"
           src={"/Service1/SIOKgraf1_desktop1_" + locale + ".png"}
         ></SIOKImage>
-        <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop>
+        {/* <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop> */}
 
-        <SIOKTitle className="mobile">{header1}</SIOKTitle>
-        <SIOKImage className="mobile" src="/Service1/SiOKgraf.png"></SIOKImage>
+        {/* <SIOKTitle className="mobile">{header1}</SIOKTitle> */}
+        <SIOKImage
+          className="mobile"
+          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".png"}
+        ></SIOKImage>
         <SIOKTitle>{t("service1:service1_SIOKheading2")}</SIOKTitle>
         {/* <SIOKTextContainer className="mobile">
           <SIOKParagraph>{paragraph}</SIOKParagraph>

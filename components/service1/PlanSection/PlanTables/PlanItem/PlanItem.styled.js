@@ -138,9 +138,10 @@ export const PlanNumberContainer = styled.div`
   }
 `;
 
-export const PlanNumber = styled(Title1)`
+export const PlanNumber = styled.p`
   width: 35%;
   font-family: "Fatface";
+  font-size: 4rem;
 
   @media only screen and (min-width: 768px) {
   }

@@ -134,5 +134,6 @@ export const HeaderText = styled(Header1)`
 `;
 
 export const SubTextWrapperMobile = styled(Subtitle1)`
-  font-family: "NeusaThin";
+  font-family: "Neusa";
+  font-weight: 300;
 `;

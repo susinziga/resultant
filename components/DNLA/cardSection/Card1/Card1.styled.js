@@ -15,6 +15,7 @@ export const CardContainer = styled.div`
   border-radius: 12px;
 
   @media only screen and (min-width: 768px) {
+    padding-right: 2%;
     flex-direction: row !important;
   }
 
@@ -25,10 +26,30 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const CardImage = styled.img`
+export const ImageWrapper = styled.div`
+  /* height: 100%; */
+  width: auto;
+  height: 40%;
+
   @media only screen and (min-width: 768px) {
     width: 40%;
-    height: 100%;
+    height: auto;
+  }
+`;
+
+export const CardImage = styled.img`
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+
+  @media only screen and (min-width: 768px) {
+    /* width: 40%; */
+    /* height: 100%; */
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    border-top-right-radius: 0px;
   }
 
   @media only screen and (min-width: 992px) {
@@ -68,6 +89,8 @@ export const CardHeading = styled(Title2)`
   font-size: 1.2rem;
   color: white !important;
   margin-bottom: 5%;
+  font-family: "Neusa";
+  font-weight: 500;
 
   @media only screen and (min-width: 768px) {
     margin-bottom: 2%;
@@ -88,7 +111,7 @@ export const CardHeading = styled(Title2)`
 export const CardTitle = styled(BodyText1)`
   color: white !important;
   font-size: 1rem;
-  font-weight: bold;
+  font-weight: 400;
   margin-bottom: 5%;
 
   @media only screen and (min-width: 768px) {
@@ -126,7 +149,8 @@ export const List = styled.ul`
 export const Bullet = styled.li`
   margin: 5% 0;
   font-size: 0.8rem;
-  font-family: "NeusaThin";
+  font-family: "Neusa";
+  font-weight: 300;
 
   @media only screen and (min-width: 768px) {
     margin: 1% 0;

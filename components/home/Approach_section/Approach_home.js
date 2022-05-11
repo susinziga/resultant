@@ -26,10 +26,10 @@ const Approach_component = (props) => {
       <ApproachContainer {...props}>
         <ApproachTextContainer>
           <ApproachHeading>{title}</ApproachHeading>
-          <p style={{ marginBottom: "8%" }}>
+          <p style={{ marginBottom: "2rem" }}>
             <BodyText2>{textUpper}</BodyText2>
           </p>
-          <p style={{ marginBottom: "8%" }}>
+          <p style={{ marginBottom: "2rem" }}>
             <BodyText2>{textLower}</BodyText2>
           </p>
           <Button secondary href={"/" + locale + "/o-nas#content_box"}>

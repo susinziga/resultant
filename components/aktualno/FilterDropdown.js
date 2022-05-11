@@ -28,7 +28,7 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
         onMouseLeave={() => !isMobile && setIsShown(false)}
         onClick={() => isMobile && setIsShown(!isShown)}
       >
-        <FixedText>
+        <FixedText isDropdownValueSelected={text !== id}>
           {text.length > 40 ? text.substring(0, 40) + "..." : text}
         </FixedText>
         <FontAwesomeIcon icon={faChevronDown} />
@@ -126,6 +126,7 @@ const DropdownItem = styled.li`
   cursor: pointer;
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  font-weight: 400;
 
   &:last-child {
     margin-bottom: 0;
@@ -159,7 +160,9 @@ const FixedTextWrapper = styled.span`
 `;
 
 const FixedText = styled(BodyText3)`
-  font-weight: bold;
+  font-weight: 400;
+  ${(props) => props.isDropdownValueSelected && `font-weight: 500`};
+
   font-family: "Neusa";
   padding-right: 1rem;
 

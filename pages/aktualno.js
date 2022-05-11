@@ -90,7 +90,9 @@ const aktualno = ({ categories, authors }) => {
       </HeadingContainer>
 
       {items.length <= 0 ? (
-        <BodyText2>Ni člankov!</BodyText2>
+        <BodyText2 style={{ textAlign: "center", display: "block" }}>
+          Ni člankov!
+        </BodyText2>
       ) : (
         <CardWrapperParent>
           <LatestCard

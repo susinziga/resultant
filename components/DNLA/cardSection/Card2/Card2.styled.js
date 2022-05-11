@@ -80,7 +80,7 @@ export const TextContainer = styled.div`
 `;
 
 export const Text = styled(BodyText2)`
-  font-weight: bold;
+  font-weight: 400;
 
   @media only screen and (min-width: 768px) {
   }

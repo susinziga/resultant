@@ -9,6 +9,7 @@ import {
   ListItem,
   Subtitle,
   VSpace,
+  CardHeading,
 } from "../../../components/DNLA/subpages/Submenus.styled";
 
 const sales_potential = () => {
@@ -39,7 +40,7 @@ const sales_potential = () => {
 
   const submenus = [
     <>
-      <Title2>{t("subpages:sales_card1_title")}</Title2>
+      <CardHeading>{t("subpages:sales_card1_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:sales_card1_list1_heading")}</BodyText2>
       <VSpace />
@@ -58,7 +59,7 @@ const sales_potential = () => {
       <BodyText2>{t("subpages:sales_card1_list2_heading")}</BodyText2>
     </>,
     <>
-      <Title2>{t("subpages:sales_card2_title")}</Title2>
+      <CardHeading>{t("subpages:sales_card2_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:sales_card2_list1_heading")}</BodyText2>
       <VSpace />
@@ -75,7 +76,7 @@ const sales_potential = () => {
       </List>
     </>,
     <>
-      <Title2>{t("subpages:sales_card3_title")}</Title2>
+      <CardHeading>{t("subpages:sales_card3_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:sales_card3_list1_heading")}</BodyText2>
       <VSpace />

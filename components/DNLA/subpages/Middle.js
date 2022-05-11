@@ -18,7 +18,10 @@ const Middle = ({ text, img, button }) => {
 
         <Flex>
           <p>
-            <BodyText2 dangerouslySetInnerHTML={{ __html: text }}></BodyText2>
+            <BodyText2
+              light
+              dangerouslySetInnerHTML={{ __html: text }}
+            ></BodyText2>
           </p>
 
           <Button

@@ -109,6 +109,8 @@ export const TextContainer = styled.div`
 
 export const CardHeading = styled(Title2)`
   margin-bottom: 5%;
+  font-family: "Neusa";
+  font-weight: 500;
 
   font-size: 2rem;
 
@@ -123,7 +125,7 @@ export const CardHeading = styled(Title2)`
 
 export const CardContent = styled(BodyText1)`
   font-size: 1rem;
-  font-weight: 300;
+  font-weight: 400;
 
   @media only screen and (min-width: 992px) {
     font-size: 1.1rem;

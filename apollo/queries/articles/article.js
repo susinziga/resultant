@@ -53,6 +53,7 @@ const ARTICLE_QUERY = gql`
             }
             ... on ComponentClanekVsebinaImage {
               Naslov
+              Napis_pod_sliko
               Slika {
                 data {
                   attributes {

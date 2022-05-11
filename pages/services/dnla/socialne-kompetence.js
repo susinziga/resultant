@@ -9,6 +9,7 @@ import {
   ListItem,
   Subtitle,
   VSpace,
+  CardHeading,
 } from "../../../components/DNLA/subpages/Submenus.styled";
 
 const social_competencies = () => {
@@ -56,7 +57,7 @@ const social_competencies = () => {
 
   const submenus = [
     <>
-      <Title2>{t("subpages:social_card1_title")}</Title2>
+      <CardHeading>{t("subpages:social_card1_title")}</CardHeading>
       <VSpace />
       <Subtitle>{t("subpages:social_card1_subtitle")}</Subtitle>
       <VSpace />
@@ -117,7 +118,7 @@ const social_competencies = () => {
       </List>
     </>,
     <>
-      <Title2>{t("subpages:social_card2_title")}</Title2>
+      <CardHeading>{t("subpages:social_card2_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:social_card2_list1_heading")}</BodyText2>
       <VSpace />
@@ -134,7 +135,7 @@ const social_competencies = () => {
       </List>
     </>,
     <>
-      <Title2>{t("subpages:social_card3_title")}</Title2>
+      <CardHeading>{t("subpages:social_card3_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:social_card3_list1_heading")}</BodyText2>
       <VSpace />

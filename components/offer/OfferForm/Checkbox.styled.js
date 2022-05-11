@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export const CheckboxLabel = styled.label`
   color: var(--dark);
-  font-family: "NeusaThin";
+  font-family: "Neusa";
   font-size: 1.5rem;
+  font-weight: 300;
 
   @media only screen and (min-width: 768px) {
     width: 80%;

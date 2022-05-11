@@ -23,7 +23,7 @@ const About_bottom = (props) => {
     <About_bottomContainer {...props}>
       <About_bottomLine></About_bottomLine>
       <Content>
-        <h2>{bot_header}</h2>
+        <h3>{bot_header}</h3>
         <BodyText2>{bot_text}</BodyText2>
         <Button secondary href={"/" + locale + "/kontakt"}>
           {bot_button}

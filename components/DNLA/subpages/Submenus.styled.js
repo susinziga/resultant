@@ -5,6 +5,12 @@ import {
   Title2,
 } from "../../../basic_components/texts/Texts";
 
+export const CardHeading = styled(Title2)`
+  @media screen and (min-width: 768px) {
+    font-size: 2rem;
+  }
+`;
+
 export const Wrapper = styled.div`
   width: 100%;
   display: flex;

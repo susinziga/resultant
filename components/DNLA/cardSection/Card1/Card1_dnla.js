@@ -8,6 +8,7 @@ import {
   CardTitle,
   TextContainer,
   List,
+  ImageWrapper,
   ButtonContainer,
 } from "./Card1.styled";
 import Button from "../../../../basic_components/button/Button";
@@ -38,14 +39,16 @@ const Card1_dnla = () => {
   return (
     <>
       <CardContainer>
-        <CardImage
-          className="mobile"
-          src="/DNLA/cardSectionImage1_mobile.png"
-        ></CardImage>
-        <CardImage
-          className="desktop"
-          src="/DNLA/cardSectionImage1_desktop.png"
-        ></CardImage>
+        <ImageWrapper>
+          <CardImage
+            className="mobile"
+            src="/DNLA/cardSectionImage1_mobile.png"
+          ></CardImage>
+          <CardImage
+            className="desktop"
+            src="/DNLA/cardSectionImage1_desktop.png"
+          ></CardImage>
+        </ImageWrapper>
         <TextContainer>
           <CardHeading>{heading}</CardHeading>
           <CardTitle>{title}</CardTitle>

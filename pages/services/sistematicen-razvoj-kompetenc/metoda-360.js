@@ -30,7 +30,9 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
           <BodyText3>{t("srk:kpim_listItem4")}</BodyText3>
         </ListItem>
       </List>
-      <BodyText3>{t("srk:kpim_secondTextBottom")}</BodyText3>
+      <BodyText3
+        dangerouslySetInnerHTML={{ __html: t("srk:kpim_secondTextBottom") }}
+      ></BodyText3>
     </>
   );
 

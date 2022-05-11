@@ -6,7 +6,7 @@ const Blog_image_excerpt = ({ image, excerpt, excerpt2 }) => {
     <Blog_ie_container>
       <Blog_ie_image src={image}></Blog_ie_image>
       <Blog_ie_excerpt>
-        <BodyText2>{excerpt}</BodyText2>
+        <BodyText2 light>{excerpt}</BodyText2>
       </Blog_ie_excerpt>
     </Blog_ie_container>
   );
