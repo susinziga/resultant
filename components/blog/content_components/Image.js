@@ -5,10 +5,12 @@ import styled from "styled-components";
 const Image = ({ src, label, className }) => {
   return (
     <Container className={className}>
-      <img
-        style={{ width: className == "mobile" ? "80%" : "100%" }}
+      <ImageImage
+        style={{
+          borderRadius: "12px",
+        }}
         src={src}
-      ></img>
+      ></ImageImage>
       <Label>{label}</Label>
     </Container>
   );
@@ -23,6 +25,7 @@ const Container = styled.div`
     width: 70%;
   }
 `;
+const ImageImage = styled.img``;
 const Label = styled.label`
   font-size: 0.9rem;
   font-style: italic;

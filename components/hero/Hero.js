@@ -17,6 +17,8 @@ import Button from "../../basic_components/button/Button";
 
 import useSize from "../../custom_hooks/useSize";
 
+import styled from "styled-components";
+
 const Hero = (props) => {
   const heroImageAnimation = useRef(null);
 
@@ -93,9 +95,22 @@ const Hero = (props) => {
     >
       <div ref={(el) => (heroImageAnimation = el)}>
         <picture>
-          {" "}
-          <source media="(min-width: 1100px)" srcSet={heroImage} />
-          <img src={heroImage_mobile}></img>
+          <DesktopImage>
+            <Image
+              width={1920}
+              height={1080}
+              layout="responsive"
+              src={heroImage}
+            />
+          </DesktopImage>
+          <MobileImage>
+            <Image
+              src={heroImage_mobile}
+              width={650}
+              height={1080}
+              layout="responsive"
+            ></Image>
+          </MobileImage>
         </picture>
 
         <Styled.HeroTexts>
@@ -146,5 +161,23 @@ const Hero = (props) => {
     </Styled.HeroContainer>
   );
 };
+
+export const DesktopImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: none;
+  @media screen and (min-width: 1050px) {
+    display: inline;
+  }
+`;
+
+export const MobileImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: inline;
+  @media screen and (min-width: 1050px) {
+    display: none;
+  }
+`;
 
 export default Hero;
