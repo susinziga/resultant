@@ -6,3 +6,8 @@
   .reactMarkDown p strong {
       font-weight: 400;
   }
+
+  .reactMarkDown li {
+      font-weight: 300;
+      list-style: initial;
+  }

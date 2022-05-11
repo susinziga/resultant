@@ -240,41 +240,41 @@ const ClanekTychy = () => {
 
       <Border_shadow>
         <Container>
-          <BodyText2>
+          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
             <>{data[locale].questions[0].question}</>
-          </BodyText2>
+          </h2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[0].answer}</BodyText3>
 
           <NewParagraph></NewParagraph>
 
-          <BodyText2>
+          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
             <>{data[locale].questions[1].question}</>
-          </BodyText2>
+          </h2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[1].answer}</BodyText3>
 
           <NewParagraph></NewParagraph>
 
-          <BodyText2>
+          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
             <>{data[locale].questions[2].question}</>
-          </BodyText2>
+          </h2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[2].answer}</BodyText3>
 
           <NewParagraph></NewParagraph>
 
-          <BodyText2>
+          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
             <>{data[locale].questions[3].question}</>
-          </BodyText2>
+          </h2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[3].answer}</BodyText3>
 
           <NewParagraph></NewParagraph>
 
-          <BodyText2>
+          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
             <>{data[locale].questions[4].question}</>
-          </BodyText2>
+          </h2>
           <NewRow></NewRow>
           <BodyText3>{data[locale].questions[4].answer}</BodyText3>
 

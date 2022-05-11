@@ -160,7 +160,7 @@ export const CardWrapper = styled.div`
   gap: 1.5rem;
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 32.7% 32.7% 32.7%;
+    grid-template-columns: auto auto auto;
   }
 
   /* @media only screen and (min-width: 992px) {
@@ -168,7 +168,7 @@ export const CardWrapper = styled.div`
   } */
 
   @media only screen and (min-width: 1024px) {
-    grid-template-columns: 24.25% 24.25% 24.25% 24.25%;
+    grid-template-columns: auto auto auto auto;
   }
 `;
 

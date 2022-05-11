@@ -128,7 +128,7 @@ export const PlanTableHeaderCon = styled.div`
   }
 `;
 
-export const PlanTableHeaderFirst = styled.h3`
+export const PlanTableHeaderFirst = styled.h2`
   text-align: left;
 
   @media only screen and (min-width: 768px) {
@@ -143,7 +143,7 @@ export const PlanTableHeaderFirst = styled.h3`
   }
 `;
 
-export const PlanTableHeaderSecond = styled.h3`
+export const PlanTableHeaderSecond = styled.h2`
   @media only screen and (min-width: 768px) {
     text-align: right;
     font-size: 2rem;

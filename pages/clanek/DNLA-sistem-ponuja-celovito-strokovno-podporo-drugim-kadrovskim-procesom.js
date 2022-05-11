@@ -119,7 +119,9 @@ const Clanek5 = () => {
 
       <Border_shadow>
         <Container>
-          <Subtitle2>{data[locale].bulletList1Heading}</Subtitle2>
+          <h2 style={{ fontFamily: "Neusa", fontSize: "2rem" }}>
+            {data[locale].bulletList1Heading}
+          </h2>
           <NewRow></NewRow>
           <ul>
             {data[locale].bulletList1Bullets.map((bullet, index) => (
@@ -131,7 +133,9 @@ const Clanek5 = () => {
           <NewParagraph></NewParagraph>
           {data[locale].texts1.map((text, index) => (
             <div key={index}>
-              <Subtitle2>{text.title}</Subtitle2>
+              <h2 style={{ fontFamily: "Neusa", fontSize: "2rem" }}>
+                {text.title}
+              </h2>
               <NewRow></NewRow>
               <BodyText3>{text.text}</BodyText3>
               <NewParagraph></NewParagraph>
@@ -143,7 +147,9 @@ const Clanek5 = () => {
       <NewParagraph></NewParagraph>
 
       <Container>
-        <Subtitle2>{data[locale].imageHeading}</Subtitle2>
+        <h2 style={{ fontFamily: "Neusa", fontSize: "2rem" }}>
+          {data[locale].imageHeading}
+        </h2>
         <NewRow></NewRow>
       </Container>
       <Image
@@ -161,7 +167,9 @@ const Clanek5 = () => {
         <Container>
           {data[locale].texts2.map((text, index) => (
             <div key={index}>
-              <Subtitle2>{text.title}</Subtitle2>
+              <h2 style={{ fontFamily: "Neusa", fontSize: "2rem" }}>
+                {text.title}
+              </h2>
               <NewRow></NewRow>
               <BodyText3>{text.text}</BodyText3>
               <NewParagraph></NewParagraph>

@@ -3,7 +3,11 @@ import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import Header from "../../../components/DNLA/subpages/Header";
 import styled from "styled-components";
-import { BodyText3, Subtitle2 } from "../../../basic_components/texts/Texts";
+import {
+  BodyText3,
+  Subtitle2,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 import Button from "../../../basic_components/button/Button";
 import { useRouter } from "next/router";
 import ArticleContent_upijcprzp from "../../../components/SRK/ArticleContent_upijcprzp";
@@ -139,11 +143,12 @@ export const Img = styled.img`
   }
 `;
 
-export const RowHeader = styled(Subtitle2)`
+export const RowHeader = styled(Title2)`
   display: block !important;
   font-size: 1.2rem;
   margin: 7% 0%;
   font-weight: 500;
+  font-family: "Neusa";
 
   @media only screen and (min-width: 768px) {
     margin: 4% 0%;

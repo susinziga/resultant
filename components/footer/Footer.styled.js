@@ -63,7 +63,7 @@ export const UpperFooterContainer = styled.div`
   }
 `;
 
-export const InfoFooterHeading = styled.h4`
+export const InfoFooterHeading = styled.h3`
   font-family: "Neusa";
   font-weight: 500;
   font-size: 1.5rem;
@@ -118,7 +118,7 @@ export const ContactIcon = styled.img`
   margin-right: 5%;
 `;
 
-export const FooterHeader = styled.h3`
+export const FooterHeader = styled.h4`
   font-family: "Neusa";
   font-weight: 400;
   position: relative;

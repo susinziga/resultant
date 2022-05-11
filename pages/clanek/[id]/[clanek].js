@@ -6,6 +6,7 @@ import {
   Subtitle2,
   Subtitle1,
   BodyText2,
+  Title2,
 } from "../../../basic_components/texts/Texts";
 import Border_shadow from "../../../components/blog/content_components/Border_shadow";
 import Container, {
@@ -54,7 +55,9 @@ const Clanek = ({ clanek, blog_data }) => {
         return (
           <>
             <Container>
-              <Subtitle1>{item.Naslov}</Subtitle1>
+              <Title2 style={{ fontFamily: "Neusa", fontSize: "2.5rem" }}>
+                {item.Naslov}
+              </Title2>
               <NewRow />
               {/* <BodyText3
                 dangerouslySetInnerHTML={{ __html: item.Text }}

@@ -4,7 +4,11 @@ import Head from "next/head";
 import Header from "../../../components/DNLA/subpages/Header";
 import styled from "styled-components";
 import Hero_utnn from "../../../components/UTNN/Hero/Hero_utnn";
-import { BodyText3, Subtitle2 } from "../../../basic_components/texts/Texts";
+import {
+  BodyText3,
+  Subtitle2,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 import ArticleContent_utnk from "../../../components/UTNN/ArticleContent/ArticleContent";
 
 const kaj_je_povratna_informacija_po_metodi_360 = () => {
@@ -56,11 +60,12 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
   );
 };
 
-export const SecondTextHeading = styled(Subtitle2)`
+export const SecondTextHeading = styled(Title2)`
   display: block;
   padding-top: 20%;
   padding-bottom: 8%;
   font-size: 2rem;
+  font-family: "Neusa";
 
   @media only screen and (min-width: 768px) {
     padding-bottom: 2%;

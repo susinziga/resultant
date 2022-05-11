@@ -140,9 +140,15 @@ const Clanek1 = () => {
         <Container>
           {numberedPoints.map((point, index) => (
             <>
-              <Subtitle2>
+              <h2
+                style={{
+                  fontFamily: "Neusa",
+                  fontWeight: "400",
+                  fontSize: "2rem",
+                }}
+              >
                 {index + 1}. {point[locale].heading}
-              </Subtitle2>
+              </h2>
               <NewParagraph></NewParagraph>
               <BodyText3
                 dangerouslySetInnerHTML={{ __html: point[locale].text }}

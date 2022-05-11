@@ -24,6 +24,7 @@ export const Team_about_title = styled(Header1)`
 `;
 export const Team_about_content = styled(BodyText2)`
   border-top: 0;
+  font-weight: 300;
   @media (min-width: 768px) {
     border-top: 1px solid #000000;
     width: 60%;

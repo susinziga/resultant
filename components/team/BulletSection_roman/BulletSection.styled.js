@@ -111,7 +111,7 @@ export const FlexDesktop = styledComponents.div`
 export const ExperienceTitle = styledComponents(Title2)`
     margin: 20% 0 10% 0;
     font-family: "Neusa";
-    font-weight: bold;
+    font-weight: 400;
 
     @media only screen and (min-width: 768px) {
         margin: 0;
@@ -188,7 +188,7 @@ export const List = styledComponents.ul`
 export const Bullet = styledComponents.li`
     margin: 4% 0;
     font-size: 1.25rem;
-    font-family: "NeusaThin";
+    font-family: "Neusa";
 
     @media only screen and (min-width: 768px) {
         font-size: 0.8rem;
