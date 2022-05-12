@@ -237,7 +237,7 @@ const Menu_top = ({}) => {
           </Styled.Flex>
         ) : (
           <>
-            <a
+            <p
               style={{ zIndex: "999999" }}
               onClick={() => {
                 setMenu_opened((prev) => !prev);
@@ -248,7 +248,7 @@ const Menu_top = ({}) => {
                 src="/Buttons/Menu.svg"
                 id="hamburger_icon"
               ></img>
-            </a>
+            </p>
             <Mobile_menu menu_opened={menu_opened}></Mobile_menu>
           </>
         )}
