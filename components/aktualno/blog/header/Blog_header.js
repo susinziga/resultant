@@ -26,14 +26,14 @@ const Blog_Header = ({ title, authors, image }) => {
               return <Blog_author key={i}>{author.name}</Blog_author>;
             else
               return (
-                <>
-                  <Blog_author key={i}>{author.name}</Blog_author>
+                <div key={i}>
+                  <Blog_author>{author.name}</Blog_author>
                   <FontAwesomeIcon
                     icon={faCircle}
                     fontSize="0.25rem"
                     color="#00B4F0"
                   ></FontAwesomeIcon>
-                </>
+                </div>
               );
           })}
         </Blog_authors>
@@ -41,11 +41,8 @@ const Blog_Header = ({ title, authors, image }) => {
       <Blog_author_images>
         {authors.map((author, index) => {
           return (
-            <BlogAuthorImageWrapper>
-              <Blog_author_image
-                key={index}
-                src={author.image}
-              ></Blog_author_image>
+            <BlogAuthorImageWrapper key={index}>
+              <Blog_author_image src={author.image}></Blog_author_image>
               {author.resultant === false && <GuestBadge>Gost</GuestBadge>}
             </BlogAuthorImageWrapper>
           );

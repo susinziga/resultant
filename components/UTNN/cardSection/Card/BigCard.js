@@ -45,9 +45,9 @@ const BigCard = (props) => {
             dangerouslySetInnerHTML={{ __html: props.content }}
           ></CardContent>
           {props.buttonText && (
-            <a href={props.href}>
-              <CardButton text={props.buttonText} />
-            </a>
+            <div>
+              <CardButton href={props.href} text={props.buttonText} />
+            </div>
           )}
           {props.mobileImgOnBottom && (
             <CardImage

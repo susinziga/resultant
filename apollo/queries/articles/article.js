@@ -1,4 +1,5 @@
 import gql from "graphql-tag";
+import { BULLET_LIST_FIELDS } from "../../fragments";
 
 const ARTICLE_QUERY = gql`
   query clanek($id: ID!) {

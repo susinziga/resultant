@@ -1,15 +1,18 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 const CardButton = (props) => {
   return (
-    <Wrapper href={props.href} centered={props.centered}>
-      <CardButtonWrapper {...props}>
-        <CardText>{props.text}</CardText>
-        <CardButtonArrowWrapper>
-          <img width={5} src="/UTNN/button_arrow_right.webp"></img>
-        </CardButtonArrowWrapper>
-      </CardButtonWrapper>
-    </Wrapper>
+    <Link href={props.href}>
+      <Wrapper centered={props.centered}>
+        <CardButtonWrapper {...props}>
+          <CardText>{props.text}</CardText>
+          <CardButtonArrowWrapper>
+            <img width={5} src="/UTNN/button_arrow_right.webp"></img>
+          </CardButtonArrowWrapper>
+        </CardButtonWrapper>
+      </Wrapper>
+    </Link>
   );
 };
 

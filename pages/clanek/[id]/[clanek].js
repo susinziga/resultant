@@ -26,13 +26,13 @@ import Blog_page from "../../../components/aktualno/blog/Blog_page";
 import mkstyle from "./markdown-styles.module.css";
 
 const Clanek = ({ clanek, blog_data }) => {
-  const getArticleContentComponent = (item) => {
+  const getArticleContentComponent = (item, index) => {
     const strapiComponent = item.__typename;
 
     switch (strapiComponent) {
       case "ComponentClanekVsebinaBulletList":
         return (
-          <>
+          <div key={index}>
             <Container>
               <Subtitle1 medium>{item.Naslov}</Subtitle1>
               <NewRow></NewRow>
@@ -49,11 +49,11 @@ const Clanek = ({ clanek, blog_data }) => {
               </ul>
             </Container>
             <NewParagraph></NewParagraph>
-          </>
+          </div>
         );
       case "ComponentClanekVsebinaNormalText":
         return (
-          <>
+          <div key={index}>
             <Container>
               <Title2 style={{ fontFamily: "Neusa", fontSize: "2.5rem" }}>
                 {item.Naslov}
@@ -72,11 +72,11 @@ const Clanek = ({ clanek, blog_data }) => {
               </BodyText3>
             </Container>
             <NewParagraph></NewParagraph>
-          </>
+          </div>
         );
       case "ComponentClanekVsebinaImage":
         return (
-          <>
+          <div key={index}>
             <Container>
               <Subtitle2>{item.Naslov}</Subtitle2>
               <NewRow></NewRow>
@@ -95,11 +95,11 @@ const Clanek = ({ clanek, blog_data }) => {
               {item.Napis_pod_sliko}
             </p>
             <NewParagraph></NewParagraph>
-          </>
+          </div>
         );
       case "ComponentClanekVsebinaBorderText":
         return (
-          <>
+          <div key={index}>
             <Container_border style={{ textAlign: "center" }}>
               <BodyText3>
                 <ReactMarkdown
@@ -111,12 +111,12 @@ const Clanek = ({ clanek, blog_data }) => {
               </BodyText3>
             </Container_border>
             <NewParagraph></NewParagraph>
-          </>
+          </div>
         );
       case "ComponentClanekVsebinaPresledek":
-        return <div style={{ height: "4rem" }}></div>;
+        return <div key={index} style={{ height: "4rem" }}></div>;
       default:
-        return <p>Invalid component ${strapiComponent}</p>;
+        return <p key={index}>Invalid component ${strapiComponent}</p>;
     }
   };
 
@@ -146,7 +146,9 @@ const Clanek = ({ clanek, blog_data }) => {
 
           return (
             <Blog_page key={id} _data={blog_data}>
-              {article.dinamicnoPolje.map((c) => getArticleContentComponent(c))}
+              {article.dinamicnoPolje.map((c, i) =>
+                getArticleContentComponent(c, i)
+              )}
             </Blog_page>
           );
         }

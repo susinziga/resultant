@@ -14,19 +14,19 @@ import {
 
 import { useRouter } from "next/router";
 import Button from "../../../../basic_components/button/Button";
+import Link from "next/link";
 
 const NewsCard_service1 = ({ news, isActive }) => {
   const { locale } = useRouter();
   let { heading, hasGuestAuthor, text, image, link, id } = news;
 
   return (
-    <>
-      <NewsContainer
-        href={
-          "/" + locale + "/clanek/" + (id != undefined ? id + "/" : "") + link
-        }
-        isActive
-      >
+    <Link
+      href={
+        "/" + locale + "/clanek/" + (id != undefined ? id + "/" : "") + link
+      }
+    >
+      <NewsContainer>
         <div>
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>
@@ -50,7 +50,7 @@ const NewsCard_service1 = ({ news, isActive }) => {
           {">"}
         </NewsButton>
       </NewsContainer>
-    </>
+    </Link>
   );
 };
 
