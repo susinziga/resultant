@@ -18,6 +18,7 @@ import Plain_text from "../../components/blog/content_components/Plain_text";
 import Share from "../../components/blog/content_components/Share";
 
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const ClanekTychy = () => {
   const { locale } = useRouter();
@@ -231,64 +232,73 @@ const ClanekTychy = () => {
   };
 
   return (
-    <Blog_page _data={blog_data}>
-      <NewParagraph></NewParagraph>
+    <>
+      <Head>
+        <title>Alexander Tichy o razvoju potenciala | DNLA | Resultant </title>
+        <meta
+          name="description"
+          content="Alexander Tychy, vodja prodaje družbe DNLA GmbH, pojasnjuje, kako analiza mehkih veščin, ki jo je razvilo njegovo podjetje, podpira zaposlene in vodje."
+        />
+      </Head>
+      <Blog_page _data={blog_data}>
+        <NewParagraph></NewParagraph>
 
-      <Image src={"/clanki/tychy/_image1.jpg"}></Image>
+        <Image src={"/clanki/tychy/_image1.jpg"}></Image>
 
-      <NewParagraph></NewParagraph>
+        <NewParagraph></NewParagraph>
 
-      <Border_shadow>
-        <Container>
-          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
-            <>{data[locale].questions[0].question}</>
-          </h2>
-          <NewRow></NewRow>
-          <BodyText3>{data[locale].questions[0].answer}</BodyText3>
+        <Border_shadow>
+          <Container>
+            <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
+              <>{data[locale].questions[0].question}</>
+            </h2>
+            <NewRow></NewRow>
+            <BodyText3>{data[locale].questions[0].answer}</BodyText3>
 
-          <NewParagraph></NewParagraph>
+            <NewParagraph></NewParagraph>
 
-          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
-            <>{data[locale].questions[1].question}</>
-          </h2>
-          <NewRow></NewRow>
-          <BodyText3>{data[locale].questions[1].answer}</BodyText3>
+            <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
+              <>{data[locale].questions[1].question}</>
+            </h2>
+            <NewRow></NewRow>
+            <BodyText3>{data[locale].questions[1].answer}</BodyText3>
 
-          <NewParagraph></NewParagraph>
+            <NewParagraph></NewParagraph>
 
-          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
-            <>{data[locale].questions[2].question}</>
-          </h2>
-          <NewRow></NewRow>
-          <BodyText3>{data[locale].questions[2].answer}</BodyText3>
+            <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
+              <>{data[locale].questions[2].question}</>
+            </h2>
+            <NewRow></NewRow>
+            <BodyText3>{data[locale].questions[2].answer}</BodyText3>
 
-          <NewParagraph></NewParagraph>
+            <NewParagraph></NewParagraph>
 
-          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
-            <>{data[locale].questions[3].question}</>
-          </h2>
-          <NewRow></NewRow>
-          <BodyText3>{data[locale].questions[3].answer}</BodyText3>
+            <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
+              <>{data[locale].questions[3].question}</>
+            </h2>
+            <NewRow></NewRow>
+            <BodyText3>{data[locale].questions[3].answer}</BodyText3>
 
-          <NewParagraph></NewParagraph>
+            <NewParagraph></NewParagraph>
 
-          <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
-            <>{data[locale].questions[4].question}</>
-          </h2>
-          <NewRow></NewRow>
-          <BodyText3>{data[locale].questions[4].answer}</BodyText3>
+            <h2 style={{ fontFamily: "Neusa", fontSize: "1.25rem" }}>
+              <>{data[locale].questions[4].question}</>
+            </h2>
+            <NewRow></NewRow>
+            <BodyText3>{data[locale].questions[4].answer}</BodyText3>
 
-          <NewParagraph></NewParagraph>
-        </Container>
-      </Border_shadow>
+            <NewParagraph></NewParagraph>
+          </Container>
+        </Border_shadow>
 
-      <NewParagraph></NewParagraph>
+        <NewParagraph></NewParagraph>
 
-      <Plain_text>{data[locale].last}</Plain_text>
+        <Plain_text>{data[locale].last}</Plain_text>
 
-      <NewParagraph></NewParagraph>
-      <NewParagraph></NewParagraph>
-    </Blog_page>
+        <NewParagraph></NewParagraph>
+        <NewParagraph></NewParagraph>
+      </Blog_page>
+    </>
   );
 };
 

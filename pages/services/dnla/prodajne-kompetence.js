@@ -11,6 +11,7 @@ import {
   VSpace,
   CardHeading,
 } from "../../../components/DNLA/subpages/Submenus.styled";
+import Head from "next/head";
 
 const sales_potential = () => {
   const { t } = useTranslation();
@@ -40,6 +41,13 @@ const sales_potential = () => {
 
   const submenus = [
     <>
+      <Head>
+        <title>Prodajne kompetence | DNLA | Resultant </title>
+        <meta
+          name="description"
+          content="Analiza 6 ključnih faktorjev, pomembnih v prodajnem procesu. To so vzpostavljanje kontakta, pozornost, analiza, ponudba, preverjanje in sklenitev dogovorov.  "
+        />
+      </Head>
       <CardHeading>{t("subpages:sales_card1_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:sales_card1_list1_heading")}</BodyText2>

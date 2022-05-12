@@ -11,6 +11,7 @@ import {
   VSpace,
   CardHeading,
 } from "../../../components/DNLA/subpages/Submenus.styled";
+import Head from "next/head";
 
 const social_competencies = () => {
   const { t } = useTranslation();
@@ -57,6 +58,13 @@ const social_competencies = () => {
 
   const submenus = [
     <>
+      <Head>
+        <title>Socialne kompetence | DNLA | Resultant </title>
+        <meta
+          name="description"
+          content="Analiza 17 ključnih faktorjev uspeha, razdeljenih na štiri področja. To so volja do uspeha, odpornost na stres, dinamika doseganja ciljev in medsebojni odnosi."
+        />
+      </Head>
       <CardHeading>{t("subpages:social_card1_title")}</CardHeading>
       <VSpace />
       <Subtitle>{t("subpages:social_card1_subtitle")}</Subtitle>

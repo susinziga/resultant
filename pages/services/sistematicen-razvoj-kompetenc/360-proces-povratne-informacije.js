@@ -19,6 +19,13 @@ const ucinkovita_360_povratna_informacija_je_celovit_proces_razvoja_zaposlenih_s
 
     const articleContent = (
       <>
+        <Head>
+          <title>360° proces povratne informacije | Resultant</title>
+          <meta
+            name="description"
+            content="Učinkovita 360° povratna informacija ni le poročilo posameznikovega merjenja. Postopek se začne s strategijo organizacije in konča z razvojem zaposlenih."
+          />
+        </Head>
         <PaddingX>
           <ImageDescription>
             {t("srk:upijcprzp_imageDescription")}

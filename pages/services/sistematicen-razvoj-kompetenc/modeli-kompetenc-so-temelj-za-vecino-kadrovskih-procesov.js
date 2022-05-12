@@ -25,8 +25,12 @@ const modeli_kompetenc_so_temelj_za_vecino_kadrovskih_procesov = () => {
     <>
       <Head>
         <title>
-          Resultant - Modeli kompetenc so temelj za večino kadrovskih procesov
+          Modeli kompetenc so temelj za večino HR procesov | Resultant
         </title>
+        <meta
+          name="description"
+          content='Sodoben model kompetenc je osnova za učinkovito upravljanje in razvoj zaposlenih. Služi kot "središče" vseh ostalih kadrovskih procesov.'
+        />
       </Head>
       <Header title={t("srk:mktvkp_heading")}></Header>
       <Hero_utnn

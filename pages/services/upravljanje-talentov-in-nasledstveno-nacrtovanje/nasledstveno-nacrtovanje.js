@@ -5,6 +5,7 @@ import ArticleContent_utnk from "../../../components/UTNN/ArticleContent/Article
 import ArticleItemList from "../../../components/UTNN/ArticleItemList/ArticleItemList";
 import ArticleTextBlock from "../../../components/UTNN/ArticleBlock/ArticleTextBlock";
 import Hero_utnn from "../../../components/UTNN/Hero/Hero_utnn";
+import Head from "next/head";
 
 const nasledstveno_nacrtovanje = () => {
   const { t, lang } = useTranslation();
@@ -54,6 +55,13 @@ const nasledstveno_nacrtovanje = () => {
 
   return (
     <>
+      <Head>
+        <title>Nasledstveno načrtovanje | Resultant</title>
+        <meta
+          name="description"
+          content="Načrtovanje naslednikov za pomembne poslovne vloge postaja vse bolj pomemben proces, ki organizacijam pomaga ohranjati visoko konkurenčnost."
+        />
+      </Head>
       <Header title={t("utnn:nn_heading")}></Header>
       <Hero_utnn
         className={"section"}

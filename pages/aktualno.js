@@ -14,6 +14,7 @@ import { BodyText2 } from "../basic_components/texts/Texts";
 import FilterDropdown from "../components/aktualno/FilterDropdown";
 import { useAktualno } from "../custom_hooks/useAktualno";
 import { AktualnoContext } from "../context/aktualnoContext";
+import Head from "next/head";
 
 export const getServerSideProps = async () => {
   const categories = await fetchAPI("/kategorije", { populate: "*" });
@@ -49,6 +50,13 @@ const aktualno = ({ categories, authors }) => {
 
   return (
     <>
+      <Head>
+        <title>Preberite najnovejše novice in prispevke | Resultant</title>
+        <meta
+          name="description"
+          content="Kakšno je delo kadrovskega svetovalca pri podjetju Resultant? Preberite najnovejše novice in prispevke, če želite pridobiti poglobljeno znanje."
+        />
+      </Head>
       <HeadingContainer>
         <DesktopFlex>
           <HeadingUpperHeading>Aktualno</HeadingUpperHeading>

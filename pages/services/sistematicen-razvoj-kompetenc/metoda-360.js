@@ -16,6 +16,13 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
 
   const articleContent = (
     <>
+      <Head>
+        <title>Metoda 360° | Resultant</title>
+        <meta
+          name="description"
+          content="Metoda 360° omogoča zbiranje povratnih informacij o uspešnosti zaposlenih in razvitosti njihovih poslovnih vedenj. Nudimo kakovostno informacijsko podporo."
+        />
+      </Head>
       <BodyText3
         dangerouslySetInnerHTML={{ __html: t("srk:kpim_topText") }}
       ></BodyText3>

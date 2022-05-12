@@ -143,7 +143,11 @@ const sistematicen_razvoj_kompetenc = () => {
   return (
     <>
       <Head>
-        <title>Resultant - Sistematičen razvoj kompetenc</title>
+        <title>Sistematičen razvoj kompetenc | Resultant</title>
+        <meta
+          name="description"
+          content="Temeljna vrednost vsake organizacije je potencial zaposlenih. Z razvojem kompetenc podjetje bolje obvladuje spremembe in zagotavlja inovativno okolje."
+        />
       </Head>
       <HeadingSection1
         className="section"

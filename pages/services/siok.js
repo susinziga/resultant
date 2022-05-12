@@ -113,7 +113,11 @@ const service1 = () => {
   return (
     <>
       <Head>
-        <title>Resultant - SiOK</title>
+        <title>SiOK | Slovenska organizacijska klima | Resultant</title>
+        <meta
+          name="description"
+          content="Slovenska organizacijska klima - analiza notranjega okolja v organizaciji in primerjava z aktualnim slovenskim povprečjem. Zavzeti zaposleni so ključ do uspeha."
+        />
       </Head>
       <HeadingSection_service1
         className="section"

@@ -5,10 +5,8 @@ import {
   BodyText3,
   Subtitle2,
   Subtitle1,
-  BodyText2,
   Title2,
 } from "../../../basic_components/texts/Texts";
-import Border_shadow from "../../../components/blog/content_components/Border_shadow";
 import Container, {
   Container_border,
 } from "../../../components/aktualno/blog/content_components/Container.styled";
@@ -16,14 +14,12 @@ import Image from "../../../components/aktualno/blog/content_components/Image";
 import NewParagraph, {
   NewRow,
 } from "../../../components/blog/content_components/Margin.styled";
-import Plain_text from "../../../components/blog/content_components/Plain_text";
-import Share from "../../../components/blog/content_components/Share";
 import Query from "../../../components/query";
-import { getStrapiURL } from "../../api/strapi";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Blog_page from "../../../components/aktualno/blog/Blog_page";
 import mkstyle from "./markdown-styles.module.css";
+import Head from "next/head";
 
 const Clanek = ({ clanek, blog_data }) => {
   const getArticleContentComponent = (item, index) => {
@@ -59,9 +55,6 @@ const Clanek = ({ clanek, blog_data }) => {
                 {item.Naslov}
               </Title2>
               <NewRow />
-              {/* <BodyText3
-                dangerouslySetInnerHTML={{ __html: item.Text }}
-              ></BodyText3> */}
               <BodyText3>
                 <ReactMarkdown
                   children={item.Text}
@@ -75,13 +68,17 @@ const Clanek = ({ clanek, blog_data }) => {
           </div>
         );
       case "ComponentClanekVsebinaImage":
+        console.log(item.Slika.data.attributes);
         return (
           <div key={index}>
             <Container>
               <Subtitle2>{item.Naslov}</Subtitle2>
               <NewRow></NewRow>
             </Container>
-            <Image src={item.Slika.data.attributes.url}></Image>
+            <Image
+              src={item.Slika.data.attributes.url}
+              alt={item.Slika.data.attributes.alternativeText}
+            ></Image>
             <p
               style={{
                 fontWeight: 300,
@@ -141,15 +138,22 @@ const Clanek = ({ clanek, blog_data }) => {
             title: article.naslov,
             authors: authors,
             image: article.glavnaSlika.data.attributes.url,
+            imageAlt: article.glavnaSlika.data.attributes.alternativeText,
             excerpt: article.podnaslov,
           };
 
           return (
-            <Blog_page key={id} _data={blog_data}>
-              {article.dinamicnoPolje.map((c, i) =>
-                getArticleContentComponent(c, i)
-              )}
-            </Blog_page>
+            <>
+              <Head>
+                <title>{article.Meta_Title}</title>
+                <meta name="description" content={article.Meta_Description} />
+              </Head>
+              <Blog_page key={id} _data={blog_data}>
+                {article.dinamicnoPolje.map((c, i) =>
+                  getArticleContentComponent(c, i)
+                )}
+              </Blog_page>
+            </>
           );
         }
       }}

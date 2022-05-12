@@ -93,7 +93,13 @@ const dnla = () => {
   return (
     <>
       <Head>
-        <title>Resultant - DNLA</title>
+        <title>
+          Odkrijte naravne sposobnosti zaposlenih | DNLA | Resultant
+        </title>
+        <meta
+          name="description"
+          content="DNLA Expert System - digitalno orodje za merjenje in razvoj potenciala zaposlenih na področju socialnih kompetenc, vodenja in prodaje. Spoznajte orodje."
+        />
       </Head>
       <HeadingSection1
         className="section"

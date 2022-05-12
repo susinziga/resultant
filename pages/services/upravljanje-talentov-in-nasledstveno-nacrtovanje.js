@@ -128,8 +128,12 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
     <>
       <Head>
         <title>
-          Resultant - Upravljanje Talentov in Nasledstveno Nacrtovanje
+          Upravljanje talentov in nasledstveno načrtovanje | Resultant
         </title>
+        <meta
+          name="description"
+          content="S pravilnim procesom načrtovanja nasledstev natančno prepoznate ključna delovna mesta v organizaciji ter pravočasno razvijate potencialne naslednike."
+        />
       </Head>
       <HeadingSection1
         className="section"

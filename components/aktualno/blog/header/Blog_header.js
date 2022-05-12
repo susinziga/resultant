@@ -42,7 +42,10 @@ const Blog_Header = ({ title, authors, image }) => {
         {authors.map((author, index) => {
           return (
             <BlogAuthorImageWrapper key={index}>
-              <Blog_author_image src={author.image}></Blog_author_image>
+              <Blog_author_image
+                src={author.image}
+                alt={author.name}
+              ></Blog_author_image>
               {author.resultant === false && <GuestBadge>Gost</GuestBadge>}
             </BlogAuthorImageWrapper>
           );

@@ -9,10 +9,13 @@ const ARTICLE_QUERY = gql`
         attributes {
           naslov
           podnaslov
+          Meta_Title
+          Meta_Description
           glavnaSlika {
             data {
               attributes {
                 url
+                alternativeText
               }
             }
           }
@@ -59,6 +62,7 @@ const ARTICLE_QUERY = gql`
                 data {
                   attributes {
                     url
+                    alternativeText
                   }
                 }
               }

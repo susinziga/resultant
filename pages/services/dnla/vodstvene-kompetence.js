@@ -20,6 +20,7 @@ import {
   CardHeading,
 } from "../../../components/DNLA/subpages/Submenus.styled";
 import styled from "styled-components";
+import Head from "next/head";
 
 const management_potential = () => {
   const { t } = useTranslation();
@@ -77,6 +78,13 @@ const management_potential = () => {
 
   const submenus = [
     <>
+      <Head>
+        <title>Vodstvene kompetence | DNLA | Resultant </title>
+        <meta
+          name="description"
+          content="Analiza 25 ključnih faktorjev vodenja, razdeljenih na tri glavna področja. To so vodstvene lastnosti, sodelovanje in soglasje ter podjetniška mentaliteta."
+        />
+      </Head>
       <CardHeading>{t("subpages:management_card1_title")}</CardHeading>
       <VSpace />
       <Subtitle>{t("subpages:management_card1_subtitle")}</Subtitle>

@@ -5,6 +5,7 @@ import ArticleContent_utnk from "../../../components/UTNN/ArticleContent/Article
 import ArticleItemList from "../../../components/UTNN/ArticleItemList/ArticleItemList";
 import ArticleTextBlock from "../../../components/UTNN/ArticleBlock/ArticleTextBlock";
 import Hero_utnn from "../../../components/UTNN/Hero/Hero_utnn";
+import Head from "next/head";
 
 const upravljanje_talentov_in_njihovih_karier = () => {
   const { t, lang } = useTranslation();
@@ -43,6 +44,13 @@ const upravljanje_talentov_in_njihovih_karier = () => {
 
   return (
     <>
+      <Head>
+        <title>Upravljanje talentov in njihovih karier | Resultant</title>
+        <meta
+          name="description"
+          content="Današnji poslovni svet je izjemno kompleksen. Prihaja do hitrih in korenitih sprememb v poslovanju. Zato je proces prepoznavanja in upravljanja talentov nujen."
+        />
+      </Head>
       <Header title={t("utnn:utnk_heading")}></Header>
       <Hero_utnn
         image={"/UTNN/UTNK/header_desktop.webp"}

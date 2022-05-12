@@ -25,10 +25,11 @@ const kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev = () => {
   return (
     <>
       <Head>
-        <title>
-          Resultant - Kako učinkovito razvijati kompetence in veščine
-          sodelavcev?
-        </title>
+        <title>Poslovno okolje se hitro spreminja | Resultant</title>
+        <meta
+          name="description"
+          content="V hitro spreminjajočem se poslovnem okolju ustrezen razvoj kompetenc ustvarja vrednost za organizacijo, njene kupce in ostale deležnike poslovnega okolja."
+        />
       </Head>
       <Header title={t("srk:kurkvs_heading")}></Header>
       <Hero_utnn
