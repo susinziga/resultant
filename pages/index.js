@@ -1,4 +1,4 @@
-import React from "react";
+import React, { lazy } from "react";
 
 import Hero from "../components/hero/Hero";
 import Approach_component from "../components/home/Approach_section/Approach_home";
