@@ -100,6 +100,7 @@ const Hero = (props) => {
               width={1920}
               height={1080}
               layout="responsive"
+              sizes="100vw"
               src={heroImage}
             />
           </DesktopImage>
@@ -109,6 +110,7 @@ const Hero = (props) => {
               width={650}
               height={1080}
               layout="responsive"
+              sizes="50vw"
             ></Image>
           </MobileImage>
         </picture>

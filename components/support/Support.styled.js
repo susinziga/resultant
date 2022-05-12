@@ -62,10 +62,11 @@ export const Paragraph = styled(Title2)`
   margin-top: 5%;
   font-family: "Neusa";
   font-size: 1.5rem;
+  font-weight: 300;
 
   @media only screen and (min-width: 768px) {
     width: 50%;
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   @media only screen and (min-width: 992px) {

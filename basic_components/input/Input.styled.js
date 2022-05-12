@@ -10,11 +10,6 @@ export const InputContainer = styled.input`
   border-color: black;
   outline-color: var(--secondary-color);
 
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
-
   ${(props) => {
     return props.error ? `border-color: #F22727; outline-color: #F22727` : "";
   }}
