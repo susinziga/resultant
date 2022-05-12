@@ -15,7 +15,7 @@ import Button from "../../basic_components/button/Button";
 
 const LatestCard = ({ news }) => {
   const { locale } = useRouter();
-  let { heading, text, image, link, id } = news;
+  let { heading, text, image, link, id, imageAlt } = news;
 
   return (
     <>
@@ -24,7 +24,7 @@ const LatestCard = ({ news }) => {
         isActive
       >
         <ContainerInnerWrapper>
-          <NewsImage src={image}></NewsImage>
+          <NewsImage alt={imageAlt} src={image}></NewsImage>
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>{text}</NewsText>

@@ -14,7 +14,7 @@ import Button from "../../basic_components/button/Button";
 
 const ArticleCard = ({ news }) => {
   const { locale } = useRouter();
-  let { heading, text, image, link, id } = news;
+  let { heading, text, image, link, id, imageAlt } = news;
 
   return (
     <>
@@ -23,7 +23,7 @@ const ArticleCard = ({ news }) => {
         isActive
       >
         <div>
-          <NewsImage src={image}></NewsImage>
+          <NewsImage src={image} alt={imageAlt}></NewsImage>
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>

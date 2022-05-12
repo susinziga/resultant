@@ -24,6 +24,7 @@ export function getArticleFromStrapiData(article) {
     authors: authors,
     link: link,
     hasGuestAuthor: includesGuest,
+    imageAlt: article.attributes.glavnaSlika.data.attributes.alternativeText,
   };
 }
 
