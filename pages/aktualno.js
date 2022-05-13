@@ -165,18 +165,18 @@ export const CardWrapperParent = styled.div`
 export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  gap: 1.5rem;
+  gap: 1vw;
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 29.11vw 29.11vw 29.11vw;
   }
 
   /* @media only screen and (min-width: 992px) {
-    grid-template-columns: 32.33% 32.33% 32.33%;
+    grid-template-columns: 29.11vw 29.11vw 29.11vw;
   } */
 
-  @media only screen and (min-width: 1024px) {
-    grid-template-columns: auto auto auto auto;
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: 21.66vw 21.66vw 21.66vw 21.66vw;
   }
 `;
 

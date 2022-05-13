@@ -53,8 +53,9 @@ function MyApp({ Component, pageProps, apollo }) {
         },
         sl: {
           consentModal: {
-            title: "Podrobnosti piškotkov",
-            description: "neki tu ka te jas vem",
+            title: "O piškotkih",
+            description:
+              "Piškotki so majhne datoteke, ki jih naložimo na vaš računalnik, z namenom izboljšanja uporabniške izkušnje. Piškotki niso škodljivi in so vedno časovno omejeni.",
           },
           purposeItem: {
             service: "storitev",
@@ -64,19 +65,20 @@ function MyApp({ Component, pageProps, apollo }) {
           },
           googleAnalytics: {
             title: "Google Analitika",
-            description: "Analitika je usluga, ki je izdelana za najboljše.",
+            description: "Statistika ogledov spletne strani",
           },
           purposes: {
             analytics: "Analitika",
           },
           consentNotice: {
-            description: "Sporočanje o uporabi piškotkov",
-            learnMore: "Več o analitiki",
+            description:
+              "Ta stran uporablja piškotke za izboljšanje uporabniške izkušnje.",
+            learnMore: "Več o piškotkih",
           },
           decline: "Prekliči",
           ok: "Potrdi",
           acceptSelected: "Potrdi izbrane",
-          poweredBy: "Poganja Unreal Engine 5",
+          poweredBy: " ",
         },
       },
       apps: [
@@ -85,6 +87,7 @@ function MyApp({ Component, pageProps, apollo }) {
           purposes: ["analytics"],
         },
       ],
+      default: true,
     };
 
     window.klaro = klaro;
@@ -102,6 +105,16 @@ function MyApp({ Component, pageProps, apollo }) {
       <div>
         <Head>
           <title>Resultant</title>
+          <meta property="og:title" content="Resultant" />
+          <meta property="og:url" content="https://www.resultant.si/" />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:description"
+            content="Razvijamo sodobne HR rešitve, gradimo učinkovite procese in povečujemo organizacijsko uspešnost. Zaupa nam več kot 150 podjetij. Želite razvoj?"
+          />
+          <meta property="og:image" content="/Logo/logo_sl.webp" />
+          <meta property="og:locale" content="sl_SI" />
+          <meta property="og:locale:alternate" content="en_US" />
           <link rel="shortcut icon" href="/favicons/favicon.ico" />
           <link rel="manifest" href="/favicons/site.webmanifest" />
           <link

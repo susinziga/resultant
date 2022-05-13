@@ -50,7 +50,9 @@ const Footer = () => {
           <Styled.LinkFooterContainer>
             {/*<Styled.Link>{cookies}</Styled.Link>*/}
             <Styled.Flex>
-              <Styled.Footer_item>{cookies}</Styled.Footer_item>
+              <Styled.Link href={"/" + locale + "/piskotki"}>
+                {cookies}
+              </Styled.Link>
               <Styled.Link href={"/" + locale + "/podpora-strankam"}>
                 {support}
               </Styled.Link>

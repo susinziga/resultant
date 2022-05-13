@@ -244,6 +244,10 @@ a:active {
   color: #316888 !important;
 }
 
+#klaro > div > div > div > div > div > button.cm-btn.cm-btn-danger.cn-decline {
+  font-size: .65rem;
+}
+
 
 .medium {
   font-weight: 500;

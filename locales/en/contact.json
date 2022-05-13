@@ -2,5 +2,6 @@
   "contact_upperHeading": "Contact",
   "contact_mainHeading": "Contact us",
 
-  "contact_sendSuccess": "Your message was sent!"
+  "contact_sendSuccess": "Your message was sent!",
+  "contact_footerSuccess": "Thanks!"
 }

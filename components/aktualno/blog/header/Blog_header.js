@@ -32,6 +32,7 @@ const Blog_Header = ({ title, authors, image }) => {
                     icon={faCircle}
                     fontSize="0.25rem"
                     color="#00B4F0"
+                    style={{ verticalAlign: ".875em", marginLeft: ".5rem" }}
                   ></FontAwesomeIcon>
                 </div>
               );

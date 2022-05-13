@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 const Mobile_menu = ({ menu_opened }) => {
   const { t, lang } = useTranslation("aboveTheFold");
-  const { locale } = useRouter();
+  const { locale, locales, pathname } = useRouter();
 
   const [opened, setOpened] = useState(false);
 
@@ -81,6 +81,22 @@ const Mobile_menu = ({ menu_opened }) => {
         <Button href="/kontakt" primary className="contact mobile_nav5">
           {t("nav_item4")}
         </Button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            width: "20%",
+            marginTop: "4rem",
+          }}
+        >
+          {locales.map((loc) => {
+            return (
+              <a key={loc} href={"/" + loc + pathname}>
+                <label style={{ fontSize: "1.5rem" }}>{loc}</label>
+              </a>
+            );
+          })}
+        </div>
       </Container>
     </>
   );

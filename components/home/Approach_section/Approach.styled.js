@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components";
 import { Title2 } from "../../../basic_components/texts/Texts";
 
@@ -52,7 +53,7 @@ export const ApproachHeading = styled(Title2)`
   }
 `;
 
-export const ApproachImage = styled.img`
+export const ApproachImage = styled(Image)`
   width: 100%;
   margin-top: 10%;
   @media (min-width: 1024px) {

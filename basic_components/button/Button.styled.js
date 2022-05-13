@@ -99,7 +99,7 @@ export const ButtonContainer = styled.a`
 
 ${(props) => {
     return props.secondary
-      ? `background-color:var(--white);
+      ? `
       color:var(--terciary-color)!important;
       border: 2px solid var(--terciary-color);
       border-radius:var(--border-secondary);

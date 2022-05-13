@@ -121,7 +121,7 @@ export const NewsImage = styled.img`
   height: 100%;
   min-height: 400px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 15px;
   padding-bottom: 5%;
 
   /*filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));*/

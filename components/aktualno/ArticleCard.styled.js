@@ -113,8 +113,8 @@ export const NewsImage = styled.img`
   /* width: 100%; */
 
   /*filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));*/
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   object-fit: cover;
   height: 120px;
   width: 100%;

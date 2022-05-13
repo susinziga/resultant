@@ -147,6 +147,17 @@ const Clanek = ({ clanek, blog_data }) => {
               <Head>
                 <title>{article.Meta_Title}</title>
                 <meta name="description" content={article.Meta_Description} />
+                <meta property="og:title" content={article.Meta_Title} />
+                <meta property="og:url" content={router.asPath} />
+                <meta property="og:type" content="article" />
+                <meta
+                  property="og:description"
+                  content={article.Meta_Description}
+                />
+                <meta
+                  property="og:image"
+                  content={article.glavnaSlika.data.attributes.url}
+                />
               </Head>
               <Blog_page key={id} _data={blog_data}>
                 {article.dinamicnoPolje.map((c, i) =>

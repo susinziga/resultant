@@ -74,7 +74,7 @@ export const Paragraph = styled(Title2)`
   }
 
   @media only screen and (min-width: 1600px) {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 `;
 

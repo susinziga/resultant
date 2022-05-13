@@ -20,7 +20,9 @@
     "apollo-link-http": "^1.5.17",
     "axios": "^0.26.1",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "compression-webpack-plugin": "^9.2.0",
     "disable-scroll": "^0.6.0",
+    "file-loader": "^6.2.0",
     "graphql": "^16.4.0",
     "graphql-tag": "^2.12.6",
     "gsap": "file:gsap-bonus.tgz",
@@ -46,7 +48,8 @@
     "remark-gfm": "^3.0.1",
     "sharp": "^0.30.4",
     "styled-components": "^5.3.3",
-    "swiper": "^8.0.7"
+    "swiper": "^8.0.7",
+    "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "eslint": "8.11.0",
