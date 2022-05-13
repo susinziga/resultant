@@ -8,6 +8,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import NewsCard_service1 from "./NewsCard_service1";
+import Query from "../../../query";
+import ARTICLE_QUERY from "../../../../apollo/queries/articles/article";
+import ARTICLES_QUERY from "../../../../apollo/queries/articles/articles";
 
 const CardSlider = ({ news }) => {
   let swip = useSwiper();

@@ -87,7 +87,7 @@ const About_sidebar = ({ initAnim }) => {
         onClick={() => {
           setContentSwiperActive(0, 1);
           document
-            .getElementById("approach")
+            .getElementById("content_box")
             .scrollIntoView({ behavior: "smooth" });
         }}
         className="sidebar"
@@ -101,7 +101,7 @@ const About_sidebar = ({ initAnim }) => {
           setContentSwiperActive(1, 1);
           window.scrollBy({
             top:
-              document.getElementById("team").getBoundingClientRect().top -
+              document.getElementById("ekipa").getBoundingClientRect().top -
               window.innerHeight / 5,
 
             behavior: "smooth",
@@ -117,7 +117,7 @@ const About_sidebar = ({ initAnim }) => {
           setContentSwiperActive(2, 1);
           window.scrollBy({
             top:
-              document.getElementById("partners").getBoundingClientRect().top -
+              document.getElementById("partnerji").getBoundingClientRect().top -
               window.innerHeight / 5,
 
             behavior: "smooth",
@@ -133,8 +133,7 @@ const About_sidebar = ({ initAnim }) => {
           setContentSwiperActive(4, 1);
           window.scrollBy({
             top:
-              document.getElementById("references").getBoundingClientRect()
-                .top -
+              document.getElementById("reference").getBoundingClientRect().top -
               window.innerHeight / 5,
 
             behavior: "smooth",

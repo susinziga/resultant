@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import styled from "styled-components";
 import Team_cards from "../../components/team/team_cards/Team_cards";
 import Team_about from "../../components/team/team_about/Team_about";
+import Head from "next/head";
 const Primoz_bitenc = () => {
   const { t } = useTranslation("");
 
@@ -23,7 +24,7 @@ const Primoz_bitenc = () => {
   const about_data = {
     title: t("team:about"),
     about: t("team:person2_about"),
-    img: "/Team/primoz.png",
+    img: "/Team/primoz.webp",
     bulletHeading: t("team:bulletHeading"),
     bullets: [
       t("team:person2_bullet_1"),
@@ -41,6 +42,13 @@ const Primoz_bitenc = () => {
 
   return (
     <>
+      <Head>
+        <title>Primož Bitenc | Prokurist in partner | Resultant</title>
+        <meta
+          name="description"
+          content="Primož Bitenc - Raziskave notranjega okolja z metodo SiOK, razvoj talentov in njihovega potenciala z orodjem DNLA, analiza organizacijske kulture."
+        />
+      </Head>
       <Outer>
         <Team_header _data={header_data} className="section_team"></Team_header>
         <Team_cards _data={cards_data} className="section_team"></Team_cards>

@@ -1,8 +1,17 @@
 import qs from "qs";
 
 export function getArticleFromStrapiData(article) {
+  let includesGuest = false;
+  let authors = [];
+  article.attributes.avtors.data.forEach((element) => {
+    authors.push(element.attributes.ime);
+    if (element.attributes.resultant === false) {
+      includesGuest = true;
+    }
+  });
+
   // Turn title into link
-  const link = article.attributes.naslov.replace(" ", "-").toLowerCase();
+  const link = article.attributes.naslov.replaceAll(" ", "-").toLowerCase();
 
   // Get link to main img
   const mainImgUrl = article.attributes.glavnaSlika.data.attributes.url;
@@ -12,7 +21,10 @@ export function getArticleFromStrapiData(article) {
     heading: article.attributes.naslov,
     text: article.attributes.podnaslov,
     image: mainImgUrl,
+    authors: authors,
     link: link,
+    hasGuestAuthor: includesGuest,
+    imageAlt: article.attributes.glavnaSlika.data.attributes.alternativeText,
   };
 }
 

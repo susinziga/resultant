@@ -25,7 +25,7 @@ const inputProps = {
   sl: [
     { label: "Ime", required: "*" },
     { label: "Priimek", required: "*" },
-    { label: "Tel. številka" },
+    { label: "Telefonska številka" },
     { label: "Email", required: "*", type: "email" },
     { label: "Ime organizacije" },
   ],
@@ -73,18 +73,17 @@ const ContactForm_service1 = () => {
         </HeaderContainer>
         <FormContainer
           onSubmit={(e) => {
-            console.log("send");
             e.preventDefault();
             sendMail();
             let btn = document.getElementById("submit_btn");
             btn.style.backgroundColor = "#072543";
-            btn.value = "Vaše sporočilo je bilo uspešno poslano!";
+            btn.value = t("contact:contact_sendSuccess");
             btn.disabled = true;
           }}
         >
-          {inputProps[locale].map((input) => {
+          {inputProps[locale].map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <Input
                   id="desktop"
                   props={input}
@@ -93,7 +92,7 @@ const ContactForm_service1 = () => {
                     handleFormChange(input.label, e.target.value);
                   }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>

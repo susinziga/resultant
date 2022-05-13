@@ -66,7 +66,7 @@ export const PlanCardText = styled(BodyText3)`
   }
 
   @media only screen and (min-width: 992px) {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   @media only screen and (min-width: 1600px) {
@@ -138,9 +138,10 @@ export const PlanNumberContainer = styled.div`
   }
 `;
 
-export const PlanNumber = styled(Title1)`
+export const PlanNumber = styled.p`
   width: 35%;
   font-family: "Fatface";
+  font-size: 4rem;
 
   @media only screen and (min-width: 768px) {
   }

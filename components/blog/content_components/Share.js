@@ -37,16 +37,16 @@ const Share = () => {
         <br></br>
         <SocialContainer>
           <LinkedinShareButton url={link}>
-            <img src="/Icons/linkedin-blue.png"></img>
+            <img src="/Icons/linkedin-blue.webp"></img>
           </LinkedinShareButton>
           <TwitterShareButton url={link}>
-            <img src="/Icons/twitter-blue.png"></img>
+            <img src="/Icons/twitter-blue.webp"></img>
           </TwitterShareButton>
           <FacebookShareButton url={link}>
-            <img src="/Icons/fb-blue.png"></img>
+            <img src="/Icons/fb-blue.webp"></img>
           </FacebookShareButton>
           <EmailShareButton url={link}>
-            <img src="/Icons/email-blue.png"></img>
+            <img src="/Icons/email-blue.webp"></img>
           </EmailShareButton>
         </SocialContainer>
       </Container>{" "}

@@ -4,7 +4,11 @@ import Head from "next/head";
 import Header from "../../../components/DNLA/subpages/Header";
 import styled from "styled-components";
 import Hero_utnn from "../../../components/UTNN/Hero/Hero_utnn";
-import { BodyText3, Subtitle2 } from "../../../basic_components/texts/Texts";
+import {
+  BodyText3,
+  Subtitle2,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 import ArticleContent_utnk from "../../../components/UTNN/ArticleContent/ArticleContent";
 
 const kaj_je_povratna_informacija_po_metodi_360 = () => {
@@ -12,6 +16,13 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
 
   const articleContent = (
     <>
+      <Head>
+        <title>Metoda 360° | Resultant</title>
+        <meta
+          name="description"
+          content="Metoda 360° omogoča zbiranje povratnih informacij o uspešnosti zaposlenih in razvitosti njihovih poslovnih vedenj. Nudimo kakovostno informacijsko podporo."
+        />
+      </Head>
       <BodyText3
         dangerouslySetInnerHTML={{ __html: t("srk:kpim_topText") }}
       ></BodyText3>
@@ -30,7 +41,9 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
           <BodyText3>{t("srk:kpim_listItem4")}</BodyText3>
         </ListItem>
       </List>
-      <BodyText3>{t("srk:kpim_secondTextBottom")}</BodyText3>
+      <BodyText3
+        dangerouslySetInnerHTML={{ __html: t("srk:kpim_secondTextBottom") }}
+      ></BodyText3>
     </>
   );
 
@@ -42,7 +55,7 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
 
       <Header title={t("srk:kpim_heading")}></Header>
       <Hero_utnn
-        image={"/SRK/KPIM/header_desktop.png"}
+        image={"/SRK/KPIM/header_desktop.webp"}
         text={t("srk:kpim_content")}
         // buttonText={t("srk:kpim_button")}
       ></Hero_utnn>
@@ -54,11 +67,12 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
   );
 };
 
-export const SecondTextHeading = styled(Subtitle2)`
+export const SecondTextHeading = styled(Title2)`
   display: block;
   padding-top: 20%;
   padding-bottom: 8%;
   font-size: 2rem;
+  font-family: "Neusa";
 
   @media only screen and (min-width: 768px) {
     padding-bottom: 2%;

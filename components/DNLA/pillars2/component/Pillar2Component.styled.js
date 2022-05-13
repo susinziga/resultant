@@ -38,7 +38,7 @@ export const PillarComponentContainer = styled.div`
   }
 `;
 
-export const PillarComponentTitle = styled(Title2)`
+export const PillarComponentTitle = styled.h3`
   margin-bottom: 1rem;
   font-size: 1.4rem;
   @media (min-width: 768px) {

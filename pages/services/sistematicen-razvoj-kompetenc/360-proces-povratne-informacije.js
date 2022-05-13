@@ -3,7 +3,11 @@ import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import Header from "../../../components/DNLA/subpages/Header";
 import styled from "styled-components";
-import { BodyText3, Subtitle2 } from "../../../basic_components/texts/Texts";
+import {
+  BodyText3,
+  Subtitle2,
+  Title2,
+} from "../../../basic_components/texts/Texts";
 import Button from "../../../basic_components/button/Button";
 import { useRouter } from "next/router";
 import ArticleContent_upijcprzp from "../../../components/SRK/ArticleContent_upijcprzp";
@@ -15,14 +19,27 @@ const ucinkovita_360_povratna_informacija_je_celovit_proces_razvoja_zaposlenih_s
 
     const articleContent = (
       <>
+        <Head>
+          <title>360° proces povratne informacije | Resultant</title>
+          <meta
+            name="description"
+            content="Učinkovita 360° povratna informacija ni le poročilo posameznikovega merjenja. Postopek se začne s strategijo organizacije in konča z razvojem zaposlenih."
+          />
+        </Head>
         <PaddingX>
           <ImageDescription>
             {t("srk:upijcprzp_imageDescription")}
           </ImageDescription>
         </PaddingX>
 
-        <Img className="desktop" src={"/SRK/UPIJCPRZP/img_desktop.png"}></Img>
-        <Img className="mobile" src={"/SRK/UPIJCPRZP/img_mobile.png"}></Img>
+        <Img
+          className="desktop"
+          src={"/SRK/UPIJCPRZP/img_" + locale + "_desktop.webp"}
+        ></Img>
+        <Img
+          className="mobile"
+          src={"/SRK/UPIJCPRZP/img_" + locale + "_mobile.webp"}
+        ></Img>
 
         <PaddingX>
           <RowHeader>{t("srk:upijcprzp_item1Heading")}</RowHeader>
@@ -133,10 +150,12 @@ export const Img = styled.img`
   }
 `;
 
-export const RowHeader = styled(Subtitle2).attrs({ bold: true })`
+export const RowHeader = styled(Title2)`
   display: block !important;
   font-size: 1.2rem;
   margin: 7% 0%;
+  font-weight: 500;
+  font-family: "Neusa";
 
   @media only screen and (min-width: 768px) {
     margin: 4% 0%;

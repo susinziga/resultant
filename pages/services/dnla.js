@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
 import Quote from "../../components/service1/Quote/QuoteSection1_service1";
 import CardSection from "../../components/service1/CardSection/CardTable_service1";
@@ -14,15 +14,29 @@ import Head from "next/head";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 import { useRouter } from "next/router";
 
+import { AktualnoContext } from "../../context/aktualnoContext";
+import { getArticleFromStrapiData } from "../api/strapi";
+
 const dnla = () => {
   const { t, lang } = useTranslation();
   const { locale } = useRouter();
 
+  const { filter, state, setFilter, setSortFilter } =
+    useContext(AktualnoContext);
+
+  useEffect(() => {
+    setFilter({
+      ...filter,
+      category: 2,
+    });
+    setSortFilter(-1);
+  }, []);
+
   const HeadingSection = {
     upperTitle: t("dnla:dnla_mainHeading"),
     paragraph: t("dnla:dnla_mainParagraph"),
-    headerImage1: "/DNLA/dnlaMainImageMobile.png",
-    headerImage2: "/DNLA/dnlaMainImageDesktop.png",
+    headerImage1: "/DNLA/dnlaMainImageMobile.webp",
+    headerImage2: "/DNLA/dnlaMainImageDesktop.webp",
   };
   const quote1 = t("dnla:dnla_quoteParagraph");
   const quote2 = t("dnla:dnla_quoteParagraph2");
@@ -64,31 +78,28 @@ const dnla = () => {
     { text: t("dnla:dnla_PlanCard6"), number: "6" },
   ];
 
-  const articleCard1 = {
-    heading: t("dnla:dnla_article1CardHeading"),
-    text: t("dnla:dnla_article1CardContent"),
-    image: "/DNLA/article1_desktop.png",
-    link: "enostavni-pristopi-razvijanja-socialnih-kompetenc",
-  };
-
-  const articleCard2 = {
-    heading: t("dnla:dnla_article2CardHeading"),
-    text: t("dnla:dnla_article1CardContent"),
-    image: "/DNLA/article2_desktop.png",
-    link: "DNLA-sistem-ponuja-celovito-strokovno-podporo-drugim-kadrovskim-procesom",
-  };
-
-  const articleCard3 = {
+  let articles = [];
+  state.forEach((element) => {
+    articles.push(getArticleFromStrapiData(element));
+  });
+  articles.push({
     heading: t("dnla:dnla_article3CardHeading"),
     text: t("dnla:dnla_article3CardContent"),
-    image: "/DNLA/article3_desktop.png",
+    image: "/DNLA/article3_desktop.webp",
+    authors: [],
     link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
-  };
+  });
 
   return (
     <>
       <Head>
-        <title>Resultant - DNLA</title>
+        <title>
+          Odkrijte naravne sposobnosti zaposlenih | DNLA | Resultant
+        </title>
+        <meta
+          name="description"
+          content="DNLA Expert System - digitalno orodje za merjenje in razvoj potenciala zaposlenih na področju socialnih kompetenc, vodenja in prodaje. Spoznajte orodje."
+        />
       </Head>
       <HeadingSection1
         className="section"
@@ -109,13 +120,7 @@ const dnla = () => {
       <Quote props={quote2} className="section"></Quote>
       <CardSection_dnla className="section"></CardSection_dnla>
       <ContactForm_dnla className="section"></ContactForm_dnla>
-      {locale === "sl" ? (
-        <CardSlider
-          news={[articleCard1, articleCard2, articleCard3]}
-        ></CardSlider>
-      ) : (
-        <> </>
-      )}
+      {locale === "sl" ? <CardSlider news={articles}></CardSlider> : <> </>}
     </>
   );
 };

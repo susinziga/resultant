@@ -101,7 +101,6 @@ const Menu_top = ({}) => {
 
         delay: 2.5,
         onComplete: () => {
-          console.log("add event");
           window.addEventListener("wheel", handleScroll);
         },
       });
@@ -205,7 +204,7 @@ const Menu_top = ({}) => {
       className="menu_top_desktop"
       ref={(el) => (MenuAnimation = el)}
     >
-      <Styled.MenuContainer display={navState <= 0}>
+      <Styled.MenuContainer display={(navState <= 0).toString()}>
         <Styled.LogoContainer>
           <a href={"/" + locale}></a>
           <img
@@ -229,7 +228,7 @@ const Menu_top = ({}) => {
           </a>
         </Styled.LogoContainer>
 
-        {size[0] >= 768 ? (
+        {size[0] >= 900 ? (
           <Styled.Flex>
             <Styled.Flex_language className="nav_item">
               <LanguagePicker></LanguagePicker>
@@ -238,7 +237,7 @@ const Menu_top = ({}) => {
           </Styled.Flex>
         ) : (
           <>
-            <a
+            <p
               style={{ zIndex: "999999" }}
               onClick={() => {
                 setMenu_opened((prev) => !prev);
@@ -249,7 +248,7 @@ const Menu_top = ({}) => {
                 src="/Buttons/Menu.svg"
                 id="hamburger_icon"
               ></img>
-            </a>
+            </p>
             <Mobile_menu menu_opened={menu_opened}></Mobile_menu>
           </>
         )}

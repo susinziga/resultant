@@ -39,7 +39,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
       },
       {
         name: "3. Implementacija nove rešitve",
-        desc: "Skupaj z osebjem naročnika izvedemo implementacija rešitev in želenih izboljšav v poslovni proces naročnika. Naš pristop zagotavlja individualno obravnavo posebnosti in izzivov vsakega naročnika, na osnovi katerih pripravimo inovativne pristope in po meri naročnika ustvarjene rešitve",
+        desc: "Skupaj z osebjem naročnika izvedemo implementacijo rešitev in želenih izboljšav v poslovni proces naročnika. Naš pristop zagotavlja individualno obravnavo posebnosti in izzivov vsakega naročnika, na osnovi katerih pripravimo inovativne pristope in po meri naročnika ustvarjene rešitve",
       },
       {
         name: "4. Usposabljanje vodij ",
@@ -143,7 +143,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           </Title2>
         )}
         <Swiper
-          onScroll={true}
+          // onScroll={true}
           spaceBetween={30}
           slidesPerView={1.3}
           initialSlide={initSlide}

@@ -86,7 +86,11 @@ const Partner_item = ({ partner }) => {
           <BodyText3>{partner.text}</BodyText3>
           {partner.page !== "" ? (
             <Styled.Partner_link
-              href={"https://" + partner.page}
+              href={
+                "https://" +
+                partner.page +
+                (partner.page === "www.inspire4future.com" ? "/en/domov" : "")
+              }
               target="_blank"
             >
               <BodyText4>{partner.page}</BodyText4>

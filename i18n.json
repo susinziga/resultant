@@ -4,6 +4,29 @@
   "defaultLocale": "sl",
   "localeDetection": false,
   "pages": {
-    "*": ["home", "common", "aboveTheFold", "pillars", "testimonials", "footer","subpages","dnla","offer", "utnn","team","srk","service1", "privacy", "article1", "support", "contact", "about", "team", "partners", "references"]
+    "*": [
+      "home",
+      "common",
+      "aboveTheFold",
+      "pillars",
+      "cookies",
+      "testimonials",
+      "footer",
+      "subpages",
+      "dnla",
+      "offer",
+      "utnn",
+      "team",
+      "srk",
+      "service1",
+      "privacy",
+      "article1",
+      "support",
+      "contact",
+      "about",
+      "team",
+      "partners",
+      "references"
+    ]
   }
 }

@@ -46,7 +46,7 @@ const Menu_dropdown = () => {
       <Container className="dropdown-content drop-button " id="ddown">
         {pillars.map(({ title, link }, id) => {
           return (
-            <a href={"/" + locale + link}>
+            <a key={id} href={"/" + locale + link}>
               <Dropdown_item key={id}>{title}</Dropdown_item>
             </a>
           );

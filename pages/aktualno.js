@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   HeadingContainer,
   HeadingUpperHeading,
@@ -13,6 +13,8 @@ import LatestCard from "../components/aktualno/LatestCard";
 import { BodyText2 } from "../basic_components/texts/Texts";
 import FilterDropdown from "../components/aktualno/FilterDropdown";
 import { useAktualno } from "../custom_hooks/useAktualno";
+import { AktualnoContext } from "../context/aktualnoContext";
+import Head from "next/head";
 
 export const getServerSideProps = async () => {
   const categories = await fetchAPI("/kategorije", { populate: "*" });
@@ -25,7 +27,11 @@ export const getServerSideProps = async () => {
 
   let auths = [];
   authors.data.forEach((element) =>
-    auths.push({ id: element.id, name: element.attributes.ime })
+    auths.push({
+      id: element.id,
+      name: element.attributes.ime,
+      resultant: element.attributes.resultant,
+    })
   );
 
   return {
@@ -37,12 +43,20 @@ export const getServerSideProps = async () => {
 };
 
 const aktualno = ({ categories, authors }) => {
-  const { filter, state, setFilter, setSortFilter } = useAktualno();
+  const { filter, state, setFilter, setSortFilter } =
+    useContext(AktualnoContext);
 
   let items = state;
 
   return (
     <>
+      <Head>
+        <title>Preberite najnovejše novice in prispevke | Resultant</title>
+        <meta
+          name="description"
+          content="Kakšno je delo kadrovskega svetovalca pri podjetju Resultant? Preberite najnovejše novice in prispevke, če želite pridobiti poglobljeno znanje."
+        />
+      </Head>
       <HeadingContainer>
         <DesktopFlex>
           <HeadingUpperHeading>Aktualno</HeadingUpperHeading>
@@ -50,7 +64,6 @@ const aktualno = ({ categories, authors }) => {
         </DesktopFlex>
         <HeadingLine></HeadingLine>
         <FiltersWrapper>
-          <FiltersTitle>Razvrsti</FiltersTitle>
           <FilterDropdown
             id="Storitve"
             items={[{ id: -1, name: "Vse" }, ...categories]}
@@ -74,8 +87,8 @@ const aktualno = ({ categories, authors }) => {
           <FilterDropdown
             id="Datum objave"
             items={[
-              { id: -1, name: "Najnovejši prvo" },
-              { id: 1, name: "Najstarejši prvo" },
+              { id: -1, name: "Od najnovejšega do najstarejšega" },
+              { id: 1, name: "Od najstarejšega do najnovejšega" },
             ]}
             onValuePicked={(val) => {
               setSortFilter(val);
@@ -85,9 +98,11 @@ const aktualno = ({ categories, authors }) => {
       </HeadingContainer>
 
       {items.length <= 0 ? (
-        <BodyText2>Ni člankov!</BodyText2>
+        <BodyText2 style={{ textAlign: "center", display: "block" }}>
+          Ni člankov!
+        </BodyText2>
       ) : (
-        <CardWrapperParent>
+        <CardWrapperParent numArticles={items.length}>
           <LatestCard
             key={items[0].id}
             news={getArticleFromStrapiData(items[0])}
@@ -139,28 +154,29 @@ export const NoArticlesWrapper = styled.div`
 export const CardWrapperParent = styled.div`
   width: 90%;
   margin: 0 auto;
-  margin-bottom: 80%;
+  margin-bottom: ${(props) => (props.numArticles * 1.5).toString() + "rem"};
 
   @media (min-width: 768px) {
-    margin-bottom: 20%;
+    /* margin-bottom: 10%; */
+    margin-bottom: ${(props) => (props.numArticles * 1).toString() + "%"};
   }
 `;
 
 export const CardWrapper = styled.div`
   display: grid;
   grid-template-columns: 100%;
-  gap: 1%;
+  gap: 1vw;
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: auto 33% 33%;
+    grid-template-columns: 29.11vw 29.11vw 29.11vw;
   }
 
-  @media only screen and (min-width: 992px) {
-    grid-template-columns: auto 33% 33%;
-  }
+  /* @media only screen and (min-width: 992px) {
+    grid-template-columns: 29.11vw 29.11vw 29.11vw;
+  } */
 
-  @media only screen and (min-width: 1024px) {
-    grid-template-columns: auto 25% 25% 25%;
+  @media only screen and (min-width: 1200px) {
+    grid-template-columns: 21.66vw 21.66vw 21.66vw 21.66vw;
   }
 `;
 

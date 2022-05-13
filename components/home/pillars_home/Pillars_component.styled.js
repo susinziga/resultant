@@ -13,7 +13,7 @@ export const PillarComponentContainer = styled.div`
 
   margin: 0.5%;
 
-  padding: 2% 5%;
+  padding: 5% 7%;
 
   display: flex;
   flex-direction: column;
@@ -32,6 +32,10 @@ export const PillarComponentContainer = styled.div`
 
   a {
     background: transparent;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: 2% 5%;
   }
 `;
 

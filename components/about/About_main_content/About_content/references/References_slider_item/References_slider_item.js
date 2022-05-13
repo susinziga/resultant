@@ -6,7 +6,7 @@ const References_slider_item = ({ references }) => {
   return (
     <Container>
       {references.map((ref, id) => (
-        <Item reference={ref}></Item>
+        <Item key={id} reference={ref}></Item>
       ))}
     </Container>
   );

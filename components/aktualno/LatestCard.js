@@ -15,18 +15,23 @@ import Button from "../../basic_components/button/Button";
 
 const LatestCard = ({ news }) => {
   const { locale } = useRouter();
-  let { heading, text, image, link, id } = news;
+  let { heading, text, image, link, id, imageAlt } = news;
 
   return (
     <>
-      <NewsContainer isActive>
+      <NewsContainer
+        href={"/" + locale + "/clanek/" + id + "/" + link}
+        isActive
+      >
         <ContainerInnerWrapper>
-          <NewsImage src={image}></NewsImage>
+          <NewsImage alt={imageAlt} src={image}></NewsImage>
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>{text}</NewsText>
-            <NewsButton href={"/" + locale + "/clanek/" + id + "/" + link}>
-              Preberi več {">"}
+            <NewsButton>
+              Preberi več{" "}
+              <span style={{ width: ".25rem", display: "inline-block" }}></span>{" "}
+              {">"}
             </NewsButton>
           </NewsTextContainer>
         </ContainerInnerWrapper>

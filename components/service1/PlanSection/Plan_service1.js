@@ -52,11 +52,11 @@ const Plan_section1 = (
           <>
             <BackgroundVector
               className="desktop"
-              src="/offer/backgroundVector.png"
+              src="/offer/backgroundVector.webp"
             ></BackgroundVector>
             <BackgroundVector
               className="mobile"
-              src="/Service1/VectorA_mobile.png"
+              src="/Service1/VectorA_mobile.webp"
             ></BackgroundVector>
           </>
         )}
@@ -71,9 +71,10 @@ const Plan_section1 = (
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {p1.map((item) => {
+            {p1.map((item, index) => {
               return (
                 <PlanItem_service1
+                  key={index}
                   props={{ ...item, CardStyle: Plan1CardStyle }}
                 ></PlanItem_service1>
               );
@@ -92,9 +93,10 @@ const Plan_section1 = (
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {p2.map((item) => {
+            {p2.map((item, index) => {
               return (
                 <PlanItem_service1
+                  key={index}
                   props={{ ...item, CardStyle: Plan2CardStyle }}
                 ></PlanItem_service1>
               );
@@ -102,13 +104,6 @@ const Plan_section1 = (
             <ButtonContainer
               props={button}
               button={!hideButton && p2.length > 0}
-              onClick={() => {
-                window.scrollBy({
-                  top: document.getElementById("forma").getBoundingClientRect()
-                    .top,
-                  behavior: "smooth",
-                });
-              }}
             >
               <SubmitButton
                 className="desktop"

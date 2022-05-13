@@ -25,15 +25,15 @@ const inputProps = {
   sl: [
     { label: "Ime", required: "*" },
     { label: "Priimek", required: "*" },
-    { label: "Tel. številka" },
-    { label: "Email", required: "*" },
+    { label: "Telefonska številka" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Ime organizacije" },
   ],
   en: [
     { label: "Name", required: "*" },
     { label: "Last name", required: "*" },
     { label: "Gsm" },
-    { label: "Email", required: "*" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Company name" },
   ],
 };
@@ -44,7 +44,7 @@ const textAreaLabel = {
 };
 
 const textField = {
-  si: "Prostor za vaše sporočilo",
+  sl: "Prostor za vaše sporočilo",
   en: "Your message",
 };
 
@@ -72,12 +72,20 @@ const ContactForm_srk = (props) => {
             <HeaderLine></HeaderLine>
           </HeaderLineWrapperRight>
         </HeaderContainer>
-        <FormContainer>
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            btn.value = t("contact:contact_sendSuccess");
+            btn.disabled = true;
+          }}
+        >
           {inputProps[locale].map((input, id) => {
             return (
-              <>
+              <div key={id}>
                 <Input
-                  key={id}
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
@@ -85,14 +93,13 @@ const ContactForm_srk = (props) => {
                     handleFormChange(input.label, e.target.value);
                   }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>
-            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
-              props={{ label: textField[locale] }}
+              props={{ label: textField[locale], required: "*" }}
               style={{ fontSize: "1.5rem" }}
               onChange={(e) => {
                 handleFormChange(textAreaLabel[locale], e.target.value);
@@ -101,9 +108,10 @@ const ContactForm_srk = (props) => {
           </TextareaContainer>
           <ButtonContainer>
             <SubmitButton
-              onClick={(id, value) => {
-                sendMail();
-              }}
+              id="submit_btn"
+              // onClick={(id, value) => {
+              //   sendMail();
+              // }}
               value={button}
               type={"submit"}
             ></SubmitButton>

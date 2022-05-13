@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import Button from "../../../basic_components/button/Button";
 import { BodyText4, Title2 } from "../../../basic_components/texts/Texts";
@@ -33,7 +34,6 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
     let temp = document.getElementsByClassName("pillarContainer");
 
     for (let index = 0; index < temp.length; index++) {
-      console.log(temp[index]);
       temp[index].classList.remove("pillarShrink");
       temp[index].classList.remove("pillarActive");
     }
@@ -45,10 +45,12 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
       onMouseLeave={mouseLeave}
       className="pillarContainer"
     >
-      <Styled.PillarOuter href={link}></Styled.PillarOuter>
+      <Link href={link}>
+        <Styled.PillarOuter style={{ cursor: "pointer" }}></Styled.PillarOuter>
+      </Link>
       <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
       <p>
-        <BodyText4>{text}</BodyText4>
+        <BodyText4 dangerouslySetInnerHTML={{ __html: text }}></BodyText4>
       </p>
 
       <Styled.LogoContainer>

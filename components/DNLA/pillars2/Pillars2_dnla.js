@@ -38,9 +38,10 @@ const Pillars2_dnla = (props) => {
   return isDesktop() ? (
     <Styled.PillarsContainer {...props}>
       <Styled.PillarsFlex>
-        {pillarsContentBot.map((pillar) => {
+        {pillarsContentBot.map((pillar, index) => {
           return (
             <Pillars_component
+              key={index}
               title={pillar.title}
               text={pillar.text}
               button={pillar.button}
@@ -52,9 +53,10 @@ const Pillars2_dnla = (props) => {
     </Styled.PillarsContainer>
   ) : (
     <Styled.PillarsContainer_mobile {...props}>
-      {pillarsContentBot.map((pillar) => {
+      {pillarsContentBot.map((pillar, index) => {
         return (
           <Pillars_mobile
+            key={index}
             title={pillar.title}
             text={pillar.text}
             button={pillar.button}

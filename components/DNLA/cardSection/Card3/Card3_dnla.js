@@ -26,11 +26,11 @@ const Card3_dnla = () => {
       <CardContainer>
         <CardImage
           className="mobile"
-          src="/clanki/tychy/image1.png"
+          src="/clanki/tychy/image1.webp"
         ></CardImage>
         <CardImage
           className="desktop"
-          src="/DNLA/cardSectionImage3_desktop.png"
+          src="/DNLA/cardSectionImage3_desktop.webp"
         ></CardImage>
         <TextContainer>
           <CardHeading>{heading}</CardHeading>

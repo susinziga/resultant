@@ -32,7 +32,7 @@ export const ReferencesItemContainer = styled.div`
   }
 `;
 
-export const Heading = styled(Title2)`
+export const Heading = styled.h3`
   font-family: "Neusa";
   font-size: 1.5rem;
   padding-bottom: 1rem;

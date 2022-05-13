@@ -30,7 +30,8 @@ export const HeadingUpperHeading = styledComponents(BodyText1)`
     font-weight: bold;
 `;
 
-export const HeadingHeading = styledComponents(Header2)`
+export const HeadingHeading = styledComponents(Header1)`
+font-size: 3.5rem;
     
 `;
 

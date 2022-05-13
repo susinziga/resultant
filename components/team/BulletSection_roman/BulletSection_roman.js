@@ -22,7 +22,7 @@ const BulletSection_team = (props) => {
       <ExperienceContainer {...props}>
         <BackgroundVector
           className="desktop"
-          src="/Service1/VectorA.png"
+          src="/Service1/VectorA.webp"
         ></BackgroundVector>
         <FlexDesktop>
           <FlexHeadingContainer>

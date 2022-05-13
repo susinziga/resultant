@@ -39,7 +39,7 @@ const BulletSection_siok = (props) => {
       <ExperienceContainer {...props}>
         <BackgroundVector
           className="desktop"
-          src="/Service1/VectorA.png"
+          src="/Service1/VectorA.webp"
         ></BackgroundVector>
         <FlexDesktop>
           <FlexHeadingContainer>
@@ -48,8 +48,8 @@ const BulletSection_siok = (props) => {
           <FlexDesktopText>
             <BulletHeading>{bulletHeading}</BulletHeading>
             <List>
-              {bulletProps.map((bullet) => {
-                return <Bullet>{bullet.bullet}</Bullet>;
+              {bulletProps.map((bullet, index) => {
+                return <Bullet key={index}>{bullet.bullet}</Bullet>;
               })}
             </List>
             <CardButton

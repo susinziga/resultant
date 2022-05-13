@@ -1,4 +1,5 @@
 import gql from "graphql-tag";
+import { BULLET_LIST_FIELDS } from "../../fragments";
 
 const ARTICLE_QUERY = gql`
   query clanek($id: ID!) {
@@ -8,10 +9,13 @@ const ARTICLE_QUERY = gql`
         attributes {
           naslov
           podnaslov
+          Meta_Title
+          Meta_Description
           glavnaSlika {
             data {
               attributes {
                 url
+                alternativeText
               }
             }
           }
@@ -26,6 +30,7 @@ const ARTICLE_QUERY = gql`
             data {
               attributes {
                 ime
+                resultant
                 slika {
                   data {
                     attributes {
@@ -39,6 +44,7 @@ const ARTICLE_QUERY = gql`
           dinamicnoPolje {
             __typename
             ... on ComponentClanekVsebinaNormalText {
+              Naslov
               Text
             }
             ... on ComponentClanekVsebinaBulletList {
@@ -51,13 +57,18 @@ const ARTICLE_QUERY = gql`
             }
             ... on ComponentClanekVsebinaImage {
               Naslov
+              Napis_pod_sliko
               Slika {
                 data {
                   attributes {
                     url
+                    alternativeText
                   }
                 }
               }
+            }
+            ... on ComponentClanekVsebinaPresledek {
+              NE_IZPOLNI
             }
           }
         }

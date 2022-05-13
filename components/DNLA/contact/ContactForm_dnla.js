@@ -22,15 +22,15 @@ const inputProps = {
   sl: [
     { label: "Ime", required: "*" },
     { label: "Priimek", required: "*" },
-    { label: "Tel. številka" },
-    { label: "Email", required: "*" },
+    { label: "Telefonska številka" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Ime organizacije" },
   ],
   en: [
     { label: "Name", required: "*" },
     { label: "Last name", required: "*" },
     { label: "Gsm" },
-    { label: "Email", required: "*" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Company name" },
   ],
 };
@@ -61,10 +61,19 @@ const ContactForm_dnla = (props) => {
             dangerouslySetInnerHTML={{ __html: title }}
           ></ContactHeader>
         </HeaderContainer>
-        <FormContainer>
-          {inputProps[locale].map((input) => {
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            btn.value = t("contact:contact_sendSuccess");
+            btn.disabled = true;
+          }}
+        >
+          {inputProps[locale].map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <Input
                   id="desktop"
                   props={input}
@@ -73,7 +82,7 @@ const ContactForm_dnla = (props) => {
                     handleFormChange(input.label, e.target.value);
                   }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>
@@ -88,9 +97,10 @@ const ContactForm_dnla = (props) => {
           </TextareaContainer>
           <ButtonContainer>
             <SubmitButton
-              onClick={(id, value) => {
-                sendMail();
-              }}
+              id="submit_btn"
+              // onClick={(id, value) => {
+              //   sendMail();
+              // }}
               value={button}
               type={"submit"}
             ></SubmitButton>

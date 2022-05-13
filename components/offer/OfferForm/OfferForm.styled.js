@@ -60,12 +60,14 @@ transform:scale(0.9);
 
   
 `;
-export const SubmitButton = styledComponents.a`
-    font-size:2rem;
-    padding: 3% 45%;
+export const SubmitButton = styledComponents.input`
+    font-size:1.5rem;
+    padding: 3% 0%;
+    
     cursor:pointer;
     border: none;
-    margin: auto;
+    margin:auto;
+    width:100%;
 
     background-color:var(--secondary-color);
     color:var(--white);
@@ -77,17 +79,18 @@ export const SubmitButton = styledComponents.a`
 
     @media only screen and (min-width: 768px) {
         font-size:1.5rem;
-        padding: 2.5% 44%;
+        padding: 2.5% 0%;
         margin-top: 2.5%;
     }
 
     @media only screen and (min-width: 992px) {
         margin-top: 0%;
+        padding: 2.5% 0%;
     }
 
     @media only screen and (min-width: 1600px) {
-        padding: 2% 45%;
-        margin-top: 2%;
+        padding: 1.5% 0%;
+        
         margin-left: 1%;
     }
 

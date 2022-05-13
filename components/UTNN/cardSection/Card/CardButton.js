@@ -1,19 +1,22 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 const CardButton = (props) => {
   return (
-    <Wrapper centered={props.centered}>
-      <CardButtonWrapper {...props} href={props.href}>
-        <CardText>{props.text}</CardText>
-        <CardButtonArrowWrapper>
-          <img width={5} src="/UTNN/button_arrow_right.png"></img>
-        </CardButtonArrowWrapper>
-      </CardButtonWrapper>
-    </Wrapper>
+    <Link href={props.href}>
+      <Wrapper centered={props.centered}>
+        <CardButtonWrapper {...props}>
+          <CardText>{props.text}</CardText>
+          <CardButtonArrowWrapper>
+            <img width={5} src="/UTNN/button_arrow_right.webp"></img>
+          </CardButtonArrowWrapper>
+        </CardButtonWrapper>
+      </Wrapper>
+    </Link>
   );
 };
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   display: flex;
 
   ${(props) =>
@@ -39,7 +42,7 @@ export const CardText = styled.span`
   }
 `;
 
-export const CardButtonWrapper = styled.a`
+export const CardButtonWrapper = styled.p`
   /* display: block; */
   margin-top: 5%;
   border: none;

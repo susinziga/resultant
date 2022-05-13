@@ -31,9 +31,20 @@ export const PillarComponentContainer = styled.div`
   :hover * {
     visibility: visible;
   }
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 5%;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding-bottom: 10%;
+  }
+  @media screen and (min-width: 1124px) {
+    padding-bottom: 7%;
+  }
 `;
 
-export const PillarComponentTitle = styled(Title2)`
+export const PillarComponentTitle = styled.h3`
   font-size: 1.4rem;
   @media (min-width: 768px) {
     font-size: 1.2rem;

@@ -1,14 +1,13 @@
 {
-    "logo_link":"/Logo/logo_en.png",
-    
-    "nav_item0":"Home",
-    "nav_item1":"About us",
-    "nav_item2":"Solutions",
-    "nav_item3":"News",
-    "nav_item4":"Contact",
-    
-    "hero_title":"We bring results",
-    "hero_paragraph":"Resultant was founded in 2008 and was known as HSC Group until 2022. OCR, a subsidiary of Resultant, is also a part of the company.",
-    "hero_paragraph2":"We develop modern HR solutions that help our clients build efficient HR processes and increase organizational performance. "
+  "logo_link": "/Logo/logo_en.webp",
 
+  "nav_item0": "Home",
+  "nav_item1": "About us",
+  "nav_item2": "Solutions",
+  "nav_item3": "News",
+  "nav_item4": "Contact",
+
+  "hero_title": "We bring results",
+  "hero_paragraph": "Resultant was founded in 2008 and was known as HSC Group until 2022. OCR, a subsidiary of Resultant, is also a part of the company.",
+  "hero_paragraph2": "We develop modern HR solutions that help our clients build efficient HR processes and increase organizational performance. "
 }

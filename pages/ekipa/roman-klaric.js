@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import styled from "styled-components";
 import Team_cards from "../../components/team/team_cards/Team_cards";
 import Team_about from "../../components/team/team_about/Team_about";
+import Head from "next/head";
 const Roman_klaric = () => {
   const { t } = useTranslation("");
 
@@ -29,7 +30,7 @@ const Roman_klaric = () => {
   const about_data = {
     title: t("team:about"),
     about: t("team:person1_about"),
-    img: "/Team/Roman.png",
+    img: "/Team/Roman.webp",
     bulletHeading: t("team:bulletHeading"),
     bullets: [
       t("team:person1_bullet_1"),
@@ -44,6 +45,13 @@ const Roman_klaric = () => {
 
   return (
     <>
+      <Head>
+        <title>Roman Klarič | Direktor in partner | Resultant</title>
+        <meta
+          name="description"
+          content="Roman Klarič - Razvoj modelov kompetenc, proces upravljanja organizacijske učinkovitosti, coaching za razvoj osebnega potenciala z orodjem DNLA."
+        />
+      </Head>
       <Outer>
         <Team_header _data={header_data} className="section_team"></Team_header>
         <Team_cards _data={cards_data} className="section_team"></Team_cards>

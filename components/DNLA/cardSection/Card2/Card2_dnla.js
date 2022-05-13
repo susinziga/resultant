@@ -15,11 +15,11 @@ const Card2_dnla = () => {
         </TextContainer>
         <CardImage
           className="mobile"
-          src="/DNLA/cardSectionImage2_mobile.png"
+          src="/DNLA/cardSectionImage2_mobile.webp"
         ></CardImage>
         <CardImage
           className="desktop"
-          src="/DNLA/cardSectionImage2_desktop.png"
+          src="/DNLA/cardSectionImage2_desktop.webp"
         ></CardImage>
       </CardContainer>
     </>

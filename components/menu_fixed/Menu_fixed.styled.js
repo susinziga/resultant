@@ -1,11 +1,12 @@
+import Image from "next/image";
 import styled from "styled-components";
 
-import { Title1 } from "../../basic_components/texts/Texts";
+import { Title1, Title2 } from "../../basic_components/texts/Texts";
 
 export const MenuFixedContainer = styled.div`
   min-height: 8rem;
   /* width: 70%; */
-  width: 90%;
+  width: 70%;
   margin: auto;
   align-items: baseline;
 
@@ -13,10 +14,13 @@ export const MenuFixedContainer = styled.div`
   flex-direction: column;
 
   justify-content: space-around;
+  align-items: center;
 
   /* align-items: center; */
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     flex-direction: row;
+    width: 90%;
+    align-items: baseline;
   }
 `;
 
@@ -26,13 +30,24 @@ export const MenuItemWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 20%;
+  width: 60%;
 
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
     margin-bottom: 0;
+    width: auto;
   }
 `;
 
-export const MenuItemImg = styled.img`
+export const ImageWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  @media (min-width: 768px) {
+    width: 150%;
+  }
+`;
+
+export const MenuItemImg = styled(Image)`
   width: 50%;
   margin-bottom: 15px;
 
@@ -41,7 +56,7 @@ export const MenuItemImg = styled.img`
   }
 `;
 
-export const MenuItem = styled(Title1)`
+export const MenuItem = styled(Title2)`
   font-size: 2rem;
   padding-bottom: 1rem;
   /* color: var(--light-grey); */

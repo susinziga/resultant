@@ -28,7 +28,7 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
         onMouseLeave={() => !isMobile && setIsShown(false)}
         onClick={() => isMobile && setIsShown(!isShown)}
       >
-        <FixedText>
+        <FixedText isDropdownValueSelected={text !== id}>
           {text.length > 40 ? text.substring(0, 40) + "..." : text}
         </FixedText>
         <FontAwesomeIcon icon={faChevronDown} />
@@ -40,10 +40,17 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
             onMouseLeave={() => setIsShown(false)}
           >
             <DropdownList>
-              {items.map(({ name, id }) => {
+              {items.map(({ name, resultant, id }) => {
                 return (
-                  <DropdownItem id={id} onClick={(e) => clickedItem(id)}>
+                  <DropdownItem
+                    key={id}
+                    id={id}
+                    onClick={(e) => clickedItem(id)}
+                  >
                     {name}
+                    {resultant !== undefined && resultant === false && (
+                      <GuestTag>(gost)</GuestTag>
+                    )}
                   </DropdownItem>
                 );
               })}
@@ -51,10 +58,17 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
           </DropdownContainerDesktop>
           <DropdownContainerMobile>
             <DropdownList>
-              {items.map(({ name, id }) => {
+              {items.map(({ name, resultant, id }) => {
                 return (
-                  <DropdownItem id={id} onClick={(e) => clickedItem(id)}>
+                  <DropdownItem
+                    key={id}
+                    id={id}
+                    onClick={(e) => clickedItem(id)}
+                  >
                     {name}
+                    {resultant !== undefined && resultant === false && (
+                      <GuestTag>(gost)</GuestTag>
+                    )}
                   </DropdownItem>
                 );
               })}
@@ -65,6 +79,12 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
     </Wrapper>
   );
 };
+
+const GuestTag = styled.span`
+  color: #27b4e9;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+`;
 
 const DropdownContainerMobile = styled.div`
   display: block !important;
@@ -106,6 +126,7 @@ const DropdownItem = styled.li`
   cursor: pointer;
   font-size: 1.2rem;
   margin-bottom: 2rem;
+  font-weight: 400;
 
   &:last-child {
     margin-bottom: 0;
@@ -139,7 +160,9 @@ const FixedTextWrapper = styled.span`
 `;
 
 const FixedText = styled(BodyText3)`
-  font-weight: bold;
+  font-weight: 400;
+  ${(props) => props.isDropdownValueSelected && `font-weight: 500`};
+
   font-family: "Neusa";
   padding-right: 1rem;
 

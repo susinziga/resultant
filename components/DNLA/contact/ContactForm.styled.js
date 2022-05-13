@@ -1,176 +1,153 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
 import { Title1, Title2 } from "../../../basic_components/texts/Texts";
 
-export const ContactContainer = styledComponents.div`
-    width: 90%;
-    margin:auto;
+export const ContactContainer = styled.div`
+  width: 90%;
+  margin: auto;
 
-    @media only screen and (min-width: 768px) {        
-        margin-bottom: -4rem !important;
-    }
+  @media only screen and (min-width: 768px) {
+    margin-bottom: -4rem !important;
+  }
 
-    @media only screen and (min-width: 992px) {
+  @media only screen and (min-width: 992px) {
+  }
 
-      
-        
-    }
-
-    @media only screen and (min-width: 1600px) {
-  
-    }
-   
+  @media only screen and (min-width: 1600px) {
+  }
 `;
 
-export const HeaderContainer = styledComponents.div`
-    
-
-    @media only screen and (min-width: 768px) {
-        display: flex;
-    
-    }
-
-    @media only screen and (min-width: 992px) {
-
-      
-        
-    }
-
-    @media only screen and (min-width: 1600px) {
-  
-    }
-   
-`;
-
-export const TextareaContainer = styledComponents.div`
-    width: 100%;
-    margin:auto;
-    height: 120px;
-    margin-bottom: 15%;
-
-    @media only screen and (min-width: 768px) {
-        height: 100px;
-    }
-
-    @media only screen and (min-width: 768px) {
-        height: 150px;
-    }
-
-    @media only screen and (min-width: 1600px) {
-        margin-bottom: 10%;
-        height: 250px;
-    }
-`;
-
-export const ContactHeader = styledComponents(Title2)`
-    font-family: "Neusa";
-    font-weight: bold;
-    // margin:10% 0;
-
-    @media only screen and (min-width: 768px) {
-    //   margin:5% 0 2% 0;
-      height: 100px;
-      font-size: 1.8rem;
-     
-    }
-
-    @media only screen and (min-width: 992px) {
-        font-size: 2rem;
-    }
-
-
-    @media only screen and (min-width: 1600px) {
-      
-        font-size: 2.5rem;
-        // margin:5% 0 0% 0;
-    }
-`;
-
-export const ButtonContainer = styledComponents.div`
-    width: 100%;
-    margin: auto;
-    margin: 15% 0;
+export const HeaderContainer = styled.div`
+  @media only screen and (min-width: 768px) {
     display: flex;
-    justify-content: center;
+  }
 
-   
+  @media only screen and (min-width: 992px) {
+  }
+
+  @media only screen and (min-width: 1600px) {
+  }
 `;
 
-export const FormContainer = styledComponents.form`
-   transform:scale(0.9);
+export const TextareaContainer = styled.div`
+  width: 100%;
+  margin: auto;
+  height: 120px;
+  margin-bottom: 15%;
 
-    @media only screen and (min-width: 768px) {
-        width: 70%;
-        margin: auto;
-        margin-top: 10%;
-    }
+  @media only screen and (min-width: 768px) {
+    height: 100px;
+  }
 
-    @media only screen and (min-width: 992px) {
-        width: 60%;
-        margin-top: 5%;
-    }
+  @media only screen and (min-width: 768px) {
+    height: 150px;
+  }
 
-
-    @media only screen and (min-width: 1600px) {
-        width: 50%;
-    }
+  @media only screen and (min-width: 1600px) {
+    margin-bottom: 10%;
+    height: 250px;
+  }
 `;
-export const SubmitButton = styledComponents.input`
-    font-size:1.5rem;
-    padding: 3% 40%;
+
+export const ContactHeader = styled(Title2)`
+  font-family: "Neusa";
+  font-weight: 500;
+  // margin:10% 0;
+
+  @media only screen and (min-width: 768px) {
+    //   margin:5% 0 2% 0;
+    height: 100px;
+    font-size: 1.8rem;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 2rem;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    font-size: 2.5rem;
+    // margin:5% 0 0% 0;
+  }
+`;
+
+export const ButtonContainer = styled.div`
+  width: 100%;
+  margin: auto;
+  margin: 15% 0;
+  display: flex;
+  justify-content: center;
+`;
+
+export const FormContainer = styled.form`
+  transform: scale(0.9);
+
+  @media only screen and (min-width: 768px) {
+    width: 70%;
+    margin: auto;
+    margin-top: 10%;
+  }
+
+  @media only screen and (min-width: 992px) {
+    width: 60%;
     margin-top: 5%;
-    margin:auto;
-    
-    cursor:pointer;
-    border: none;
-    margin:auto;
+  }
 
-    background-color:var(--secondary-color);
-    color:var(--white);
-    border-radius:var(--border-primary);
+  @media only screen and (min-width: 1600px) {
+    width: 50%;
+  }
+`;
+export const SubmitButton = styled.input`
+  font-size: 1.5rem;
+  padding: 3% 0%;
 
-    &:hover {
-        background-color: var(--primary-color)
-    }
+  cursor: pointer;
+  border: none;
+  margin: auto;
+  width: 100%;
 
-    @media only screen and (min-width: 768px) {
-        font-size:1.5rem;
-        padding: 2.5% 42%;
-        margin-top: 2.5%;
-    }
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: var(--border-primary);
 
-    @media only screen and (min-width: 992px) {
-        margin-top: 0%;
-        padding: 2.5% 44%;
-    }
+  &:hover {
+    background-color: var(--primary-color);
+  }
 
-    @media only screen and (min-width: 1600px) {
-        padding: 1.5% 45%;
-        
-        margin-left: 1%;
-    }
+  @media only screen and (min-width: 768px) {
+    font-size: 1.5rem;
+    padding: 2.5% 0%;
+    margin-top: 2.5%;
+  }
 
+  @media only screen and (min-width: 992px) {
+    margin-top: 0%;
+    padding: 2.5% 0%;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    padding: 1.5% 0%;
+
+    margin-left: 1%;
+  }
 `;
 
-export const HeadingLine = styledComponents.div`
-    height: 1px;
-    width: 100%;
-    border-top: 1px solid black;
-    margin: 10% 0;
+export const HeadingLine = styled.div`
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid black;
+  margin: 10% 0;
 
-    @media screen and (min-width: 768px){
-       margin:7% 0 0 0;
-       margin-left: 5%;
-       padding-bottom: 10px;
-       width: 30%;
-    }
+  @media screen and (min-width: 768px) {
+    margin: 7% 0 0 0;
+    margin-left: 5%;
+    padding-bottom: 10px;
+    width: 30%;
+  }
 
-    @media only screen and (min-width: 992px) {
-        width: 50%;
-    }
+  @media only screen and (min-width: 992px) {
+    width: 50%;
+  }
 
-    @media only screen and (min-width: 1600px) {
-        width: 55%;
-    }
-
-  
+  @media only screen and (min-width: 1600px) {
+    width: 55%;
+  }
 `;

@@ -4,6 +4,7 @@ import useTranslation from "next-translate/useTranslation";
 import styled from "styled-components";
 import Team_cards from "../../components/team/team_cards/Team_cards";
 import Team_about from "../../components/team/team_about/Team_about";
+import Head from "next/head";
 const Enej_klaric = () => {
   const { t } = useTranslation("");
 
@@ -23,11 +24,18 @@ const Enej_klaric = () => {
   const about_data = {
     title: t("team:about"),
     about: t("team:person3_about"),
-    img: "/Team/enej.png",
+    img: "/Team/enej.webp",
   };
 
   return (
     <>
+      <Head>
+        <title>Enej Klarič | Resultant</title>
+        <meta
+          name="description"
+          content="Enej Klarič - Merjenje kompetenc in potenciala z orodjem DNLA, priprava različnih analiz in poročil, razvoj kataloga kompetenc."
+        />
+      </Head>
       <Outer>
         <Team_header _data={header_data} className="section_team"></Team_header>
         <Team_cards _data={cards_data} className="section_team"></Team_cards>

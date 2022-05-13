@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
@@ -15,17 +15,31 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
+import { AktualnoContext } from "../../context/aktualnoContext";
+import { getArticleFromStrapiData } from "../api/strapi";
+
 const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
   const { t, lang } = useTranslation();
   const { locale } = useRouter();
+
+  const { filter, state, setFilter, setSortFilter } =
+    useContext(AktualnoContext);
+
+  useEffect(() => {
+    setFilter({
+      ...filter,
+      category: 4,
+    });
+    setSortFilter(-1);
+  }, []);
 
   const quote1 = t("utnn:utnn_quoteParagraph");
 
   const HeadingSection = {
     upperTitle: t("utnn:utnn_mainHeading"),
     paragraph: t("utnn:utnn_mainParagraph"),
-    headerImage1: "/UTNN/utnnMainImageDesktop.png",
-    headerImage2: "/UTNN/utnnMainImageMobile.png",
+    headerImage1: "/UTNN/utnnMainImageDesktop.webp",
+    headerImage2: "/UTNN/utnnMainImageMobile.webp",
   };
 
   const cardProps1 = [
@@ -75,57 +89,51 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
     { text: t("utnn:utnn_Plan2Card6"), number: "6" },
   ];
 
-  const articleCard1 = {
-    heading: t("utnn:utnn_article1CardHeading"),
-    text: t("utnn:utnn_article1CardContent"),
-    image: "/UTNN/article1_desktop.png",
-    link: "prepoznavanje-talentov",
-  };
-
-  const articleCard2 = {
-    heading: t("utnn:utnn_article2CardHeading"),
-    text: t("utnn:utnn_article1CardContent"),
-    image: "/UTNN/article2_desktop.png",
-    link: "mlajse-generacije-prevzemajo-kljucne-vloge-v-organizacijah",
-  };
-
-  const articleCard3 = {
-    heading: t("utnn:utnn_article3CardHeading"),
-    text: t("utnn:utnn_article3CardContent"),
-    image: "/UTNN/article3_desktop.png",
-    link: "zivljenjski-cikel-zaposlenih",
-  };
-
   const bigCards = [
     <BigCard
+      key="1"
       flipX
       heading={t("utnn:utnn_bigArticle1Heading")}
       content={t("utnn:utnn_bigArticle1Content")}
       img={"/UTNN/card1img"}
       mobileImgOnBottom
       href={
+        "/" +
+        locale +
         "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje/upravljanje-talentov-in-njihovih-karier"
       }
       buttonText={t("common:button_moreMore")}
     ></BigCard>,
     <BigCard
+      key="2"
       heading={t("utnn:utnn_bigArticle2Heading")}
       content={t("utnn:utnn_bigArticle2Content")}
       img={"/UTNN/card2img"}
       mobileImgOnBottom
       href={
+        "/" +
+        locale +
         "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje/nasledstveno-nacrtovanje"
       }
       buttonText={t("common:button_moreMore")}
     ></BigCard>,
   ];
 
+  let articles = [];
+  state.forEach((element) => {
+    articles.push(getArticleFromStrapiData(element));
+  });
+
   return (
     <>
       <Head>
         <title>
-          Resultant - Upravljanje Talentov in Nasledstveno Nacrtovanje
+          Upravljanje talentov in nasledstveno načrtovanje | Resultant
         </title>
+        <meta
+          name="description"
+          content="S pravilnim procesom načrtovanja nasledstev natančno prepoznate ključna delovna mesta v organizaciji ter pravočasno razvijate potencialne naslednike."
+        />
       </Head>
       <HeadingSection1
         className="section"
@@ -149,13 +157,7 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       ></Plan>
       <BigCardsSection className="section" cards={bigCards}></BigCardsSection>
       <Contact_utnn className="section"></Contact_utnn>
-      {locale === "sl" ? (
-        <CardSlider
-          news={[articleCard1, articleCard2, articleCard3]}
-        ></CardSlider>
-      ) : (
-        <> </>
-      )}
+      {locale === "sl" ? <CardSlider news={articles}></CardSlider> : <> </>}
     </>
   );
 };

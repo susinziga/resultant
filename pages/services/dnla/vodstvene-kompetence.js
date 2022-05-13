@@ -17,7 +17,10 @@ import {
   ListItem,
   Subtitle,
   VSpace,
+  CardHeading,
 } from "../../../components/DNLA/subpages/Submenus.styled";
+import styled from "styled-components";
+import Head from "next/head";
 
 const management_potential = () => {
   const { t } = useTranslation();
@@ -42,6 +45,8 @@ const management_potential = () => {
     t("subpages:management_card1_list2_item6"),
     t("subpages:management_card1_list2_item7"),
     t("subpages:management_card1_list2_item8"),
+    t("subpages:management_card1_list2_item9"),
+    t("subpages:management_card1_list2_item10"),
   ];
 
   const card1_list3items = [
@@ -73,11 +78,18 @@ const management_potential = () => {
 
   const submenus = [
     <>
-      <Title2>{t("subpages:management_card1_title")}</Title2>
+      <Head>
+        <title>Vodstvene kompetence | DNLA | Resultant </title>
+        <meta
+          name="description"
+          content="Analiza 25 ključnih faktorjev vodenja, razdeljenih na tri glavna področja. To so vodstvene lastnosti, sodelovanje in soglasje ter podjetniška mentaliteta."
+        />
+      </Head>
+      <CardHeading>{t("subpages:management_card1_title")}</CardHeading>
       <VSpace />
       <Subtitle>{t("subpages:management_card1_subtitle")}</Subtitle>
       <VSpace />
-      <BodyText2 bold>{t("subpages:management_card1_list1_heading")}</BodyText2>
+      <BodyText2>{t("subpages:management_card1_list1_heading")}</BodyText2>
       <VSpace />
       <List>
         {card1_list1items.map((item) => {
@@ -91,7 +103,7 @@ const management_potential = () => {
         })}
       </List>
       <VSpace />
-      <BodyText2 bold>{t("subpages:management_card1_list2_heading")}</BodyText2>
+      <BodyText2>{t("subpages:management_card1_list2_heading")}</BodyText2>
       <VSpace />
       <List>
         {card1_list2items.map((item) => {
@@ -105,7 +117,7 @@ const management_potential = () => {
         })}
       </List>
       <VSpace />
-      <BodyText2 bold>{t("subpages:management_card1_list3_heading")}</BodyText2>
+      <BodyText2>{t("subpages:management_card1_list3_heading")}</BodyText2>
       <VSpace />
       <List>
         {card1_list3items.map((item) => {
@@ -120,9 +132,9 @@ const management_potential = () => {
       </List>
     </>,
     <>
-      <Title2>{t("subpages:management_card2_title")}</Title2>
+      <CardHeading>{t("subpages:management_card2_title")}</CardHeading>
       <VSpace />
-      <BodyText2 bold>{t("subpages:management_card2_list1_heading")}</BodyText2>
+      <BodyText2>{t("subpages:management_card2_list1_heading")}</BodyText2>
       <VSpace />
       <List>
         {card2_list1items.map((item) => {
@@ -137,9 +149,9 @@ const management_potential = () => {
       </List>
     </>,
     <>
-      <Title2>{t("subpages:management_card3_title")}</Title2>
+      <CardHeading>{t("subpages:management_card3_title")}</CardHeading>
       <VSpace />
-      <BodyText2 bold>{t("subpages:management_card3_list1_heading")}</BodyText2>
+      <BodyText2>{t("subpages:management_card3_list1_heading")}</BodyText2>
       <VSpace />
       <List>
         {card3_list1items.map((item) => {

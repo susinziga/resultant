@@ -9,7 +9,9 @@ import {
   ListItem,
   Subtitle,
   VSpace,
+  CardHeading,
 } from "../../../components/DNLA/subpages/Submenus.styled";
+import Head from "next/head";
 
 const sales_potential = () => {
   const { t } = useTranslation();
@@ -39,7 +41,14 @@ const sales_potential = () => {
 
   const submenus = [
     <>
-      <Title2>{t("subpages:sales_card1_title")}</Title2>
+      <Head>
+        <title>Prodajne kompetence | DNLA | Resultant </title>
+        <meta
+          name="description"
+          content="Analiza 6 ključnih faktorjev, pomembnih v prodajnem procesu. To so vzpostavljanje kontakta, pozornost, analiza, ponudba, preverjanje in sklenitev dogovorov.  "
+        />
+      </Head>
+      <CardHeading>{t("subpages:sales_card1_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:sales_card1_list1_heading")}</BodyText2>
       <VSpace />
@@ -58,7 +67,7 @@ const sales_potential = () => {
       <BodyText2>{t("subpages:sales_card1_list2_heading")}</BodyText2>
     </>,
     <>
-      <Title2>{t("subpages:sales_card2_title")}</Title2>
+      <CardHeading>{t("subpages:sales_card2_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:sales_card2_list1_heading")}</BodyText2>
       <VSpace />
@@ -75,7 +84,7 @@ const sales_potential = () => {
       </List>
     </>,
     <>
-      <Title2>{t("subpages:sales_card3_title")}</Title2>
+      <CardHeading>{t("subpages:sales_card3_title")}</CardHeading>
       <VSpace />
       <BodyText2>{t("subpages:sales_card3_list1_heading")}</BodyText2>
       <VSpace />

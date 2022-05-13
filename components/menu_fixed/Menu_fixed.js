@@ -22,19 +22,40 @@ const Menu_fixed = (props) => {
         ref={animationContainer}
       >
         <Styled.MenuItemWrapper>
-          <Styled.MenuItemImg src="/Home/vrednote-strokovnost.png"></Styled.MenuItemImg>
+          <Styled.ImageWrapper>
+            <Styled.MenuItemImg
+              width={820}
+              height={638}
+              layout="responsive"
+              src="/Home/vrednote-strokovnost.webp"
+            ></Styled.MenuItemImg>
+          </Styled.ImageWrapper>
           <Styled.MenuItem
             dangerouslySetInnerHTML={{ __html: t("menu_item1") }}
           ></Styled.MenuItem>
         </Styled.MenuItemWrapper>
         <Styled.MenuItemWrapper>
-          <Styled.MenuItemImg src="/Home/vrednote-usmerjenost.png"></Styled.MenuItemImg>
+          <Styled.ImageWrapper>
+            <Styled.MenuItemImg
+              width={820}
+              height={638}
+              layout="responsive"
+              src="/Home/vrednote-usmerjenost.webp"
+            ></Styled.MenuItemImg>
+          </Styled.ImageWrapper>
           <Styled.MenuItem
             dangerouslySetInnerHTML={{ __html: t("menu_item2") }}
           ></Styled.MenuItem>
         </Styled.MenuItemWrapper>
         <Styled.MenuItemWrapper>
-          <Styled.MenuItemImg src="/Home/vrednote-zanesljivost.png"></Styled.MenuItemImg>
+          <Styled.ImageWrapper>
+            <Styled.MenuItemImg
+              width={820}
+              height={638}
+              layout="responsive"
+              src="/Home/vrednote-zanesljivost.webp"
+            ></Styled.MenuItemImg>
+          </Styled.ImageWrapper>
           <Styled.MenuItem
             dangerouslySetInnerHTML={{ __html: t("menu_item3") }}
           ></Styled.MenuItem>

@@ -34,7 +34,11 @@ export const HeadingUpperHeading = styled(BodyText3)`
 `;
 
 export const HeadingHeading = styled(Title1)`
-  // margin-top: 5%;
+  font-size: 2rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 3rem;
+  }
 `;
 
 export const HeadingLine = styled.div`

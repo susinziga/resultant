@@ -2,10 +2,15 @@ import React from "react";
 
 import styled from "styled-components";
 
-const Image = ({ src, label }) => {
+const Image = ({ src, label, className }) => {
   return (
-    <Container>
-      <img src={src}></img>
+    <Container className={className}>
+      <ImageImage
+        style={{
+          borderRadius: "12px",
+        }}
+        src={src}
+      ></ImageImage>
       <Label>{label}</Label>
     </Container>
   );
@@ -20,6 +25,7 @@ const Container = styled.div`
     width: 70%;
   }
 `;
+const ImageImage = styled.img``;
 const Label = styled.label`
   font-size: 0.9rem;
   font-style: italic;

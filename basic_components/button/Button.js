@@ -19,9 +19,15 @@ import {
 const Button = (props) => {
   return (
     <Styled.Outer {...props}>
-      <Styled.ButtonContainer {...props} onClick={() => {}}>
-        {props.children}
-      </Styled.ButtonContainer>
+      {props.isParagraph ? (
+        <Styled.ButtonContainerParagraph {...props} onClick={() => {}}>
+          {props.children}
+        </Styled.ButtonContainerParagraph>
+      ) : (
+        <Styled.ButtonContainer {...props} onClick={() => {}}>
+          {props.children}
+        </Styled.ButtonContainer>
+      )}
       {props.arrow ? <FontAwesomeIcon icon={faChevronRight} /> : ""}
       {props.arrowDown ? <FontAwesomeIcon icon={faChevronDown} /> : ""}
     </Styled.Outer>

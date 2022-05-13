@@ -25,15 +25,16 @@ const kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev = () => {
   return (
     <>
       <Head>
-        <title>
-          Resultant - Kako učinkovito razvijati kompetence in veščine
-          sodelavcev?
-        </title>
+        <title>Poslovno okolje se hitro spreminja | Resultant</title>
+        <meta
+          name="description"
+          content="V hitro spreminjajočem se poslovnem okolju ustrezen razvoj kompetenc ustvarja vrednost za organizacijo, njene kupce in ostale deležnike poslovnega okolja."
+        />
       </Head>
       <Header title={t("srk:kurkvs_heading")}></Header>
       <Hero_utnn
         className={"section"}
-        image={"/SRK/KURKVS/header_desktop.png"}
+        image={"/SRK/KURKVS/header_desktop.webp"}
         text={t("srk:kurkvs_content")}
         headText={t("srk:kurkvs_headText")}
       ></Hero_utnn>
@@ -50,12 +51,5 @@ const kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev = () => {
     </>
   );
 };
-
-const ButtonWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  padding: 3% 0%;
-`;
 
 export default kako_ucinkovito_razvijati_kompetence_in_vescine_sodelavcev;

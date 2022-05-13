@@ -5,16 +5,16 @@ import { BodyText4 } from "../../../../../basic_components/texts/Texts";
 import { useRouter } from "next/router";
 import * as Styled from "./TeamSliderItem.styled";
 
-const TeamSliderItem = ({ item }) => {
+const TeamSliderItem = ({ item, id }) => {
   const { t } = useTranslation("");
   const { locale } = useRouter();
   return (
-    <Styled.TeamSliderItemContainer>
+    <Styled.TeamSliderItemContainer id={id}>
       <Styled.TeamSliderFlex>
         <Styled.FirstRowFlex>
           <Styled.TeamSlider_name>{item.name}</Styled.TeamSlider_name>
           <a href={item.linkedin} target="_blank">
-            <img src="/Icons/Linkedin.png"></img>
+            <img src="/Icons/Linkedin.webp"></img>
           </a>
         </Styled.FirstRowFlex>
         <Styled.TeamSlider_role>{item.role}</Styled.TeamSlider_role>

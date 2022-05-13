@@ -24,7 +24,7 @@ const Contact_home = (props) => {
   return (
     <>
       <ContactContainer {...props}>
-        {isDesktop() ? <ContactImage src="/Home/Stik.png"></ContactImage> : ""}
+        {isDesktop() ? <ContactImage src="/Home/Stik.webp"></ContactImage> : ""}
         <ContactTextContainer>
           <ContactHeading>{title}</ContactHeading>
           <p style={{ marginBottom: "8%" }}>
@@ -38,7 +38,7 @@ const Contact_home = (props) => {
             {buttonText}
           </Button>
           {!isDesktop() ? (
-            <ContactImage src="/Home/Stik.png"></ContactImage>
+            <ContactImage src="/Home/Stik.webp"></ContactImage>
           ) : (
             ""
           )}

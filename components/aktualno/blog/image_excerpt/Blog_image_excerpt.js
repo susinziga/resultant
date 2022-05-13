@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { BodyText2, BodyText3 } from "../../../../basic_components/texts/Texts";
-const Blog_image_excerpt = ({ image, excerpt, excerpt2 }) => {
+const Blog_image_excerpt = ({ image, alt, excerpt, excerpt2 }) => {
   return (
     <Blog_ie_container>
-      <Blog_ie_image src={image}></Blog_ie_image>
+      <Blog_ie_image src={image} alt={alt}></Blog_ie_image>
       <Blog_ie_excerpt>
-        <BodyText2>{excerpt}</BodyText2>
+        <BodyText2 light>{excerpt}</BodyText2>
       </Blog_ie_excerpt>
     </Blog_ie_container>
   );
