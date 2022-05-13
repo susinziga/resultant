@@ -147,14 +147,20 @@ const Clanek = ({ clanek, blog_data }) => {
               <Head>
                 <title>{article.Meta_Title}</title>
                 <meta name="description" content={article.Meta_Description} />
-                <meta property="og:title" content={article.Meta_Title} />
-                <meta property="og:url" content={router.asPath} />
-                <meta property="og:type" content="article" />
                 <meta
+                  key="title"
+                  property="og:title"
+                  content={article.Meta_Title}
+                />
+                <meta key="url" property="og:url" content={router.asPath} />
+                <meta key="type" property="og:type" content="article" />
+                <meta
+                  key="description"
                   property="og:description"
                   content={article.Meta_Description}
                 />
                 <meta
+                  key="image"
                   property="og:image"
                   content={article.glavnaSlika.data.attributes.url}
                 />

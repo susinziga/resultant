@@ -105,14 +105,26 @@ function MyApp({ Component, pageProps, apollo }) {
       <div>
         <Head>
           <title>Resultant</title>
-          <meta property="og:title" content="Resultant" />
-          <meta property="og:url" content="https://www.resultant.si/" />
-          <meta property="og:type" content="website" />
+          <meta property="og:title" key="title" content="Resultant" />
           <meta
+            property="og:url"
+            key="url"
+            content="https://www.resultant.si/"
+          />
+          <meta
+            key="twitter-image"
+            name="twitter:image"
+            property="og:image"
+            content="/Logo/logo_sl.webp"
+          />
+          <meta property="og:image:alt" content="Resultant" />
+          <meta key="type" property="og:type" content="website" />
+          <meta
+            key="description"
             property="og:description"
             content="Razvijamo sodobne HR rešitve, gradimo učinkovite procese in povečujemo organizacijsko uspešnost. Zaupa nam več kot 150 podjetij. Želite razvoj?"
           />
-          <meta property="og:image" content="/Logo/logo_sl.webp" />
+          <meta key="image" property="og:image" content="/Logo/logo_sl.webp" />
           <meta property="og:locale" content="sl_SI" />
           <meta property="og:locale:alternate" content="en_US" />
           <link rel="shortcut icon" href="/favicons/favicon.ico" />
