@@ -11,7 +11,9 @@ export const useForm = () => {
   };
 
   const sendMail = () => {
-    axios.post("/api/sendMail", { data: formData }).then((d) => {});
+    axios.post("/api/sendMail", { data: formData }).then((d) => {
+      console.log(d);
+    });
   };
 
   return { formData, handleFormChange, sendMail };

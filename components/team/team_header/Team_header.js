@@ -26,7 +26,7 @@ const Team_header = (props) => {
           </styled.Contact>
           <a href={linkedin} target="_blank">
             <styled.Linkedin
-              src="/Icons/Linkedin.png"
+              src="/Icons/Linkedin.webp"
               width="100"
               height="100"
             ></styled.Linkedin>

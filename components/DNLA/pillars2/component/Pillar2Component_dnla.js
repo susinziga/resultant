@@ -34,7 +34,6 @@ const Pillars2_component = ({ title, text, button, link }) => {
     let temp = document.getElementsByClassName("pillarContainer");
 
     for (let index = 0; index < temp.length; index++) {
-      console.log(temp[index]);
       temp[index].classList.remove("pillarShrinkDNLA");
       temp[index].classList.remove("pillarActiveDNLA");
     }
@@ -46,11 +45,13 @@ const Pillars2_component = ({ title, text, button, link }) => {
       onMouseLeave={mouseLeave}
       className="pillarContainer"
     >
-      <Styled.PillarOuter></Styled.PillarOuter>
-      <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
-      <p>
-        <Styled.PillarText>{text}</Styled.PillarText>
-      </p>
+      <Styled.Flex>
+        <Styled.PillarOuter></Styled.PillarOuter>
+        <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
+        <p>
+          <Styled.PillarText>{text}</Styled.PillarText>
+        </p>
+      </Styled.Flex>
       <Styled.ButtonContainer>
         <Button secondary href={"/" + locale + link} target="_blank">
           {button}

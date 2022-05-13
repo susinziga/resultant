@@ -58,10 +58,10 @@ const TextContainer = styled.p`
   }
 
   @media (min-width: 992px) {
-    height: 15rem;
+    height: 5rem;
   }
   @media (min-width: 1600px) {
-    height: 10rem;
+    height: 3rem;
   }
 `;
 

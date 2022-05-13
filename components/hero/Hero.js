@@ -16,8 +16,8 @@ import {
 import Button from "../../basic_components/button/Button";
 
 import useSize from "../../custom_hooks/useSize";
-import { useRouter } from "next/router";
-import LanguagePicker from "./LanguagePicker";
+
+import styled from "styled-components";
 
 const Hero = (props) => {
   const heroImageAnimation = useRef(null);
@@ -37,7 +37,7 @@ const Hero = (props) => {
   /* CONTENT */
 
   const heroImage = "/AboveTheFold/hero2.webp";
-  const heroImage_mobile = "/AboveTheFold/hero_mobile.png";
+  const heroImage_mobile = "/AboveTheFold/hero_mobile.webp";
 
   const hero_title = t("aboveTheFold:hero_title");
 
@@ -95,31 +95,50 @@ const Hero = (props) => {
     >
       <div ref={(el) => (heroImageAnimation = el)}>
         <picture>
-          {" "}
-          <source media="(min-width: 768px)" srcSet={heroImage} />
-          <img src={heroImage_mobile}></img>
+          <DesktopImage>
+            <Image
+              width={1920}
+              height={1080}
+              layout="responsive"
+              sizes="100vw"
+              src={heroImage}
+            />
+          </DesktopImage>
+          <MobileImage>
+            <Image
+              src={heroImage_mobile}
+              width={650}
+              height={1080}
+              layout="responsive"
+              sizes="50vw"
+            ></Image>
+          </MobileImage>
         </picture>
 
         <Styled.HeroTexts>
-          <Header1 white className="white">
+          <Styled.HeaderText white className="white">
             {hero_title}
-          </Header1>
+          </Styled.HeaderText>
           {isDesktop() ? (
             <>
-              <p>
+              <Styled.SubTextWrapper>
                 <BodyText2 white>{hero_paragraph}</BodyText2>
-              </p>
-              <p>
+              </Styled.SubTextWrapper>
+              <Styled.SubTextWrapper>
                 <BodyText2 white>{hero_paragraph2}</BodyText2>
-              </p>{" "}
+              </Styled.SubTextWrapper>{" "}
             </>
           ) : (
             <>
               <p>
-                <Subtitle1 white>{hero_paragraph}</Subtitle1>
+                <Styled.SubTextWrapperMobile white>
+                  {hero_paragraph}
+                </Styled.SubTextWrapperMobile>
               </p>
               <p>
-                <Subtitle1 white>{hero_paragraph2}</Subtitle1>
+                <Styled.SubTextWrapperMobile white>
+                  {hero_paragraph2}
+                </Styled.SubTextWrapperMobile>
               </p>{" "}
             </>
           )}
@@ -140,10 +159,27 @@ const Hero = (props) => {
             ref={(el) => (lineAnimation = el)}
           ></Styled.WhiteLine>
         </Styled.HeroTexts>
-        <LanguagePicker></LanguagePicker>
       </div>
     </Styled.HeroContainer>
   );
 };
+
+export const DesktopImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: none;
+  @media screen and (min-width: 1050px) {
+    display: inline;
+  }
+`;
+
+export const MobileImage = styled.div`
+  width: 100%;
+  height: 100%;
+  display: inline;
+  @media screen and (min-width: 1050px) {
+    display: none;
+  }
+`;
 
 export default Hero;

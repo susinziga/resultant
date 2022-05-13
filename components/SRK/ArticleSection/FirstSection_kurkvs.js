@@ -23,11 +23,11 @@ const FirstSection_kukvs = () => {
 
       <Img
         className="desktop"
-        src={"/SRK/KURKVS/firstSectionImg_desktop.png"}
+        src={"/SRK/KURKVS/firstSectionImg_desktop.webp"}
       ></Img>
       <Img
         className="mobile"
-        src={"/SRK/KURKVS/firstSectionImg_mobile.png"}
+        src={"/SRK/KURKVS/firstSectionImg_mobile.webp"}
       ></Img>
 
       <PaddingX>
@@ -43,7 +43,7 @@ const FirstSection_kukvs = () => {
           <OrderedList>
             <li>{t("srk:kurkvs_s1_item4Bullet1Text")}</li>
             <li>{t("srk:kurkvs_s1_item4Bullet2Text")}</li>
-            <li>{t("srk:kurkvs_s1_item4Bullet2Text")} </li>
+            <li>{t("srk:kurkvs_s1_item4Bullet3Text")} </li>
           </OrderedList>
           {t("srk:kurkvs_s1_item4Text")}
         </RowText>

@@ -9,7 +9,7 @@ import About_sidebar from "./About_sidebar/About_sidebar";
 const About_main_content = (props) => {
   let { initAnim, isActive, setInit } = props;
   const { contentSwiperActive } = useContext(AboutContext);
-  const { isDesktop } = useSize();
+  const { isONasDesktop } = useSize();
 
   return (
     <Waypoint
@@ -24,7 +24,11 @@ const About_main_content = (props) => {
         id="about_box"
         active={contentSwiperActive}
       >
-        {isDesktop() ? <About_sidebar initAnim={initAnim}></About_sidebar> : ""}
+        {isONasDesktop() ? (
+          <About_sidebar initAnim={initAnim}></About_sidebar>
+        ) : (
+          ""
+        )}
 
         <About_content initAnim={initAnim} isActive={isActive}></About_content>
       </Styled.About_main_content_container>

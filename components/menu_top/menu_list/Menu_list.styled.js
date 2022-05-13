@@ -1,26 +1,20 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
 
-export const MenuList = styledComponents.div`
-    display:flex;
-    align-items:center;
+export const MenuList = styled.div`
+  display: flex;
+  align-items: center;
 
-    gap:0.1rem;
+  gap: 0.1rem;
 
-    position:relative;
+  position: relative;
 
-    @media (min-width: 992px) {
-   gap:1rem;
-    }
-    
-   
-    
-    
+  @media (min-width: 992px) {
+    gap: 1rem;
+  }
 `;
 
-export const MenuItem = styledComponents.div`
-font-size:1rem;
+export const MenuItem = styled.div`
+  font-size: 1rem;
 
-color:var(--dark);
-
-
+  color: var(--dark);
 `;

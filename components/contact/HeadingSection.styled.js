@@ -11,18 +11,18 @@ import {
 export const HeadingContainer = styledComponents.div`
     width: 90%;
     margin: auto;
-    // padding-top: 20%;
+   
 
     @media only screen and (min-width: 768px) {
-        // padding-top: 20%;
+       
     }
 
     @media only screen and (min-width: 992px) {
-        // padding-top: 15%;
+       
     }
 
     @media only screen and (min-width: 1600px) {
-        // padding-top: 10%;
+       
     }
 `;
 
@@ -30,7 +30,8 @@ export const HeadingUpperHeading = styledComponents(BodyText1)`
     font-weight: bold;
 `;
 
-export const HeadingHeading = styledComponents(Header2)`
+export const HeadingHeading = styledComponents(Header1)`
+font-size: 3.5rem;
     
 `;
 

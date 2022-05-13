@@ -20,25 +20,25 @@ const Pillars_home = (props) => {
       title: t("pillars:pillar1_title"),
       text: t("pillars:pillar1_excerpt"),
       link: "/services/siok",
-      logo: "/Pillars/siok.png",
+      logo: "/Pillars/siok.webp",
     },
     {
       title: t("pillars:pillar2_title"),
       text: t("pillars:pillar2_excerpt"),
       link: "/services/dnla",
-      logo: "/Pillars/dnla.png",
+      logo: "/Pillars/dnla.webp",
     },
   ];
   const pillarsContentBot = [
     {
       title: t("pillars:pillar3_title"),
       text: t("pillars:pillar3_excerpt"),
-      link: "/coming-soon",
+      link: "/services/sistematicen-razvoj-kompetenc",
     },
     {
       title: t("pillars:pillar4_title"),
       text: t("pillars:pillar4_excerpt"),
-      link: "/coming-soon",
+      link: "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje",
     },
   ];
 
@@ -66,6 +66,7 @@ const Pillars_home = (props) => {
         {pillarsContentBot.map((pillar) => {
           return (
             <Pillars_component
+              key={pillar.title}
               title={pillar.title}
               text={pillar.text}
               button={buttonText}
@@ -80,6 +81,7 @@ const Pillars_home = (props) => {
       {pillarsContentTop.map((pillar) => {
         return (
           <Pillars_sliderItem
+            key={pillar.title}
             title={pillar.title}
             text={pillar.text}
             button={buttonText}
@@ -90,6 +92,7 @@ const Pillars_home = (props) => {
       {pillarsContentBot.map((pillar) => {
         return (
           <Pillars_sliderItem
+            key={pillar.title}
             title={pillar.title}
             text={pillar.text}
             button={buttonText}

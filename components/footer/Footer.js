@@ -27,14 +27,14 @@ const Footer = () => {
           </Styled.ContactFooterContainer>
           <Styled.ContactsFooterContainer>
             <Styled.ContactIconContainer>
-              <Styled.ContactIcon src="/Footer/-call.png"></Styled.ContactIcon>
               <Styled.ContactLink href="tel:041231831">
+                <Styled.ContactIcon src="/Footer/-call.webp"></Styled.ContactIcon>
                 041 231 831
               </Styled.ContactLink>
             </Styled.ContactIconContainer>
             <Styled.ContactIconContainer>
-              <Styled.ContactIcon src="/Footer/-email.png"></Styled.ContactIcon>
               <Styled.ContactLink href="mailto:info@resultant.si">
+                <Styled.ContactIcon src="/Footer/-email.webp"></Styled.ContactIcon>
                 info@resultant.si
               </Styled.ContactLink>
             </Styled.ContactIconContainer>
@@ -49,15 +49,19 @@ const Footer = () => {
           {/* <Styled.Link className="desktop">{madeBy}</Styled.Link> */}
           <Styled.LinkFooterContainer>
             {/*<Styled.Link>{cookies}</Styled.Link>*/}
-            <Styled.Footer_item>{cookies}</Styled.Footer_item>
-            <Styled.Link href={"/" + locale + "/support"}>
-              {support}
-            </Styled.Link>
-            <Styled.Link href={"/" + locale + "/privacy"}>
-              {privicy}
-            </Styled.Link>
-            <Styled.Footer_item>&copy; {rights}</Styled.Footer_item>
-            {/* <Styled.Link className="mobile">{madeBy}</Styled.Link> */}
+            <Styled.Flex>
+              <Styled.Link href={"/" + locale + "/piskotki"}>
+                {cookies}
+              </Styled.Link>
+              <Styled.Link href={"/" + locale + "/podpora-strankam"}>
+                {support}
+              </Styled.Link>
+              <Styled.Link href={"/" + locale + "/pravilnik-o-zasebnosti"}>
+                {privicy}
+              </Styled.Link>
+              <Styled.Footer_item>&copy; {rights}</Styled.Footer_item>
+              {/* <Styled.Link className="mobile">{madeBy}</Styled.Link> */}
+            </Styled.Flex>
             <Styled.Link href="https://www.agencija-statera.si/">
               {madeBy}
             </Styled.Link>

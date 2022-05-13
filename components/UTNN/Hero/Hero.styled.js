@@ -4,7 +4,7 @@ import { BodyText1, Subtitle2 } from "../../../basic_components/texts/Texts";
 export const HeadText = styled(Subtitle2)`
   display: block;
   padding-bottom: 3%;
-  font-weight: bold;
+  font-weight: 500;
   font-size: 2rem;
 
   @media screen and (min-width: 768px) {
@@ -18,7 +18,7 @@ export const HeroWrapper = styled.div`
   flex-direction: column;
   margin-top: 3rem;
   margin-bottom: 20%;
-  gap: 2rem;
+  gap: 4rem;
 
   > img {
     width: 100%;
@@ -33,7 +33,7 @@ export const HeroWrapper = styled.div`
     margin-bottom: 2rem;
     margin-top: 3rem;
     flex-direction: row;
-    width: 95%;
+    width: 90%;
 
     > img {
       width: 50%;

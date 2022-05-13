@@ -20,7 +20,7 @@ const About_about = (props) => {
   const upperTitle = t("about:about_upperHeading");
   const title = t("about:about_mainHeading");
   const p = t("about:about_paragraph");
-  const image = "/About/about_hero.png";
+  const image = "/About/about_hero.webp";
 
   return (
     <>

@@ -1,19 +1,22 @@
+import Link from "next/link";
 import styled from "styled-components";
 
 const CardButton = (props) => {
   return (
-    <Wrapper centered={props.centered}>
-      <CardButtonWrapper {...props} href={props.href}>
-        {props.text}
-        <CardButtonArrowWrapper>
-          <img width={5} src="/UTNN/button_arrow_right.png"></img>
-        </CardButtonArrowWrapper>
-      </CardButtonWrapper>
-    </Wrapper>
+    <Link href={props.href}>
+      <Wrapper centered={props.centered}>
+        <CardButtonWrapper {...props}>
+          <CardText>{props.text}</CardText>
+          <CardButtonArrowWrapper>
+            <img width={5} src="/UTNN/button_arrow_right.webp"></img>
+          </CardButtonArrowWrapper>
+        </CardButtonWrapper>
+      </Wrapper>
+    </Link>
   );
 };
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.a`
   display: flex;
 
   ${(props) =>
@@ -23,7 +26,23 @@ export const Wrapper = styled.div`
     `}
 `;
 
-export const CardButtonWrapper = styled.a`
+export const CardText = styled.span`
+  font-size: 1rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 0.7rem;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 0.8rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 1rem;
+  }
+`;
+
+export const CardButtonWrapper = styled.p`
   /* display: block; */
   margin-top: 5%;
   border: none;

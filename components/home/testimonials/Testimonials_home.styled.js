@@ -1,7 +1,7 @@
 import styledComponents from "styled-components";
 
 export const TestimonialsContainer = styledComponents.div`
-padding:3rem;
+padding:3rem 1rem;
 border: 1px solid #282828;
     box-sizing: border-box;
     border-radius: 12px;
@@ -9,7 +9,7 @@ border: 1px solid #282828;
     margin:auto;
 @media(min-width:768px){
     
-
+    padding:3rem 3rem;
 
 
 }

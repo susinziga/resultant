@@ -1,4 +1,4 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
 import {
   Header1,
   BodyText2,
@@ -10,41 +10,44 @@ import {
   Title2,
 } from "../../basic_components/texts/Texts";
 
-export const HeadingContainer = styledComponents.div`
-    width: 90%;
-    margin: auto;
-    padding-top: 25%;
-    margin-bottom:0;
+export const HeadingContainer = styled.div`
+  width: 90%;
+  margin: auto;
 
-    @media only screen and (min-width: 768px) {
-        padding-top: 20%;
-    }
+  margin-bottom: 0;
 
-    @media only screen and (min-width: 992px) {
-        padding-top: 15%;
-    }
+  @media only screen and (min-width: 768px) {
+  }
 
-    @media only screen and (min-width: 1600px) {
-        padding-top: 10%;
-    }
+  @media only screen and (min-width: 992px) {
+  }
+
+  @media only screen and (min-width: 1600px) {
+  }
 `;
 
-export const HeadingUpperHeading = styledComponents(BodyText1)`
-    font-weight: bold;
+export const HeadingUpperHeading = styled(BodyText3)`
+  font-weight: 500;
+  display: block;
+  margin-top: 5%;
+  font-family: "Neusa";
 `;
 
-export const HeadingHeading = styledComponents(Title1)`
+export const HeadingHeading = styled(Title1)`
+  font-size: 2rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 3rem;
+  }
+`;
+
+export const HeadingLine = styled.div`
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid black;
+  margin-top: 10%;
+
+  @media screen and (min-width: 768px) {
     margin-top: 5%;
-`;
-
-export const HeadingLine = styledComponents.div`
-    height: 1px;
-    width: 100%;
-    border-top: 1px solid black;
-    margin-top: 10%;
-
-    @media screen and (min-width: 768px){
-        margin-top: 5%;
-    }
-  
+  }
 `;

@@ -21,11 +21,11 @@ const Person_contact = () => {
       <PersonContainer>
         <ImageContainer
           className="mobile"
-          src="/Team/Roman.png"
+          src="/Kontakt/Kontakt.webp"
         ></ImageContainer>
         <ImageContainer
           className="desktop"
-          src="/Kontakt/Kontakt.png"
+          src="/Kontakt/Kontakt.webp"
         ></ImageContainer>
         <InfoContainer>
           <ContactFirmContainer>
@@ -37,11 +37,11 @@ const Person_contact = () => {
           </ContactFirmContainer>
           <ContactContainer>
             <ContactIconContainer>
-              <ContactIcon src="/Footer/-call.png"></ContactIcon>
+              <ContactIcon src="/Footer/-call.webp"></ContactIcon>
               <ContactLink href="tel:041 231 831">041 231 831</ContactLink>
             </ContactIconContainer>
             <ContactIconContainer>
-              <ContactIcon src="/Footer/-email.png"></ContactIcon>
+              <ContactIcon src="/Footer/-email.webp"></ContactIcon>
               <ContactLink href="mailto:info@resultant.si">
                 info@resultant.si
               </ContactLink>

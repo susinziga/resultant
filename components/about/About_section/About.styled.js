@@ -4,6 +4,7 @@ import {
   Header1,
   BodyText2,
   BodyText3,
+  Title1,
 } from "../../../basic_components/texts/Texts";
 
 export const AboutContainer = styled.div`
@@ -41,7 +42,7 @@ export const AboutImage = styled.img`
 `;
 
 export const AboutTextContainer = styled.div`
-  width: 80%;
+  width: 90%;
   margin: auto;
   margin-bottom: 0;
 
@@ -59,9 +60,23 @@ export const AboutUpperHeading = styled(BodyText2)`
   }
 `;
 
-export const AboutHeading = styled(Header1)`
-  @media screen and (min-width: 768px) {
-    margin: 5% 0 6% 0;
+export const AboutHeading = styled(Title1)`
+  margin: 0 0 10% 0;
+  font-size: 2.5rem;
+
+  @media only screen and (min-width: 768px) {
+    margin: 0% 0 5% 0;
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 2.5rem;
+    margin: 0% 0 5% 0;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    font-size: 3.5rem;
+    margin: 0 0 5% 0;
   }
 `;
 
@@ -69,6 +84,9 @@ export const AboutHeadingContainer = styled.div`
   width: 100%;
 
   @media screen and (min-width: 768px) {
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 0.5rem;
   }
 `;
 

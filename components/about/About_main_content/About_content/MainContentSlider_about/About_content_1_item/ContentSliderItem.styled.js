@@ -32,7 +32,7 @@ export const ReferencesItemContainer = styled.div`
   }
 `;
 
-export const Heading = styled(Title2)`
+export const Heading = styled.h3`
   font-family: "Neusa";
   font-size: 1.5rem;
   padding-bottom: 1rem;
@@ -61,14 +61,24 @@ export const Text = styled(BodyText4)`
 export const ButtonsContainer = styled.div`
   display: flex;
   z-index: 99999;
-  width: 100%;
+  width: 90%;
+
+  margin-left: auto;
+  margin-right: auto;
 
   justify-content: end;
 
   @media (min-width: 768px) {
     position: relative;
-    gap: 0.5rem;
+    gap: 1rem;
 
     margin-top: 2rem;
+  }
+
+  > img {
+    width: 1.5rem;
+    :hover {
+      cursor: pointer;
+    }
   }
 `;

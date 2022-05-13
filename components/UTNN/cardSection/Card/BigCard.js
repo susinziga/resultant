@@ -7,33 +7,52 @@ import {
   CardContent,
 } from "./BigCard.styled";
 import CardButton from "./CardButton";
+import useTranslation from "next-translate/useTranslation";
 
 const BigCard = (props) => {
+  const { t, lang } = useTranslation();
+
   return (
     <>
       <CardContainer flipX={props.flipX} margin={props.margin}>
         <CardImage
           flipX={props.flipX}
           className="desktop"
-          src={props.img + "_desktop.png"}
+          style={props.imgStyle}
+          src={
+            props.img === undefined
+              ? props.fullImg
+              : props.img + "_desktop.webp"
+          }
         ></CardImage>
         <TextContainer>
-          <CardHeading>{props.heading}</CardHeading>
+          <CardHeading
+            dangerouslySetInnerHTML={{ __html: props.heading }}
+          ></CardHeading>
           {!props.mobileImgOnBottom && (
             <CardImage
               className="mobile"
               margin={props.margin}
-              src={props.img + "_mobile.png"}
+              style={props.mobileImgStyle}
+              src={
+                props.img === undefined
+                  ? props.fullImg
+                  : props.img + "_desktop.webp"
+              }
             ></CardImage>
           )}
-          <CardContent>{props.content}</CardContent>
-          <a href={props.href}>
-            <CardButton text={props.buttonText} />
-          </a>
+          <CardContent
+            dangerouslySetInnerHTML={{ __html: props.content }}
+          ></CardContent>
+          {props.buttonText && (
+            <div>
+              <CardButton href={props.href} text={props.buttonText} />
+            </div>
+          )}
           {props.mobileImgOnBottom && (
             <CardImage
               className="mobile"
-              src={props.img + "_mobile.png"}
+              src={props.img + "_mobile.webp"}
             ></CardImage>
           )}
         </TextContainer>

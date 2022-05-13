@@ -44,7 +44,9 @@ const BulletSection_srk = (props) => {
                 return (
                   <Bullet>
                     <BulletTitle>{title}</BulletTitle>
-                    <BodyText3> - {text}</BodyText3>
+                    <BodyText3 style={{ fontWeight: "400" }}>
+                      - {text}
+                    </BodyText3>
                   </Bullet>
                 );
               })}
@@ -58,7 +60,7 @@ const BulletSection_srk = (props) => {
 
 export const BulletTitle = styled(BodyText3)`
   display: inline-block;
-  font-weight: bold;
+  font-weight: 500;
   font-family: "Neusa";
 `;
 

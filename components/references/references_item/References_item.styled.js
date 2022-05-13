@@ -1,20 +1,16 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
 
-export const ReferencesItemContainer = styledComponents.div`
+export const ReferencesItemContainer = styled.div`
+  border: 1px solid ${(props) => props.hex};
+  margin: 0.5rem;
 
+  border-radius: 12px;
 
-border: 1px solid ${(props) => props.hex};
-margin:0.5rem;
+  display: flex;
+  justify-content: center;
 
-border-radius: 12px;
-
-display:flex;
-justify-content:center;
-
-
-
-filter:grayscale(0);
-:hover{
-    filter:grayscale(0);
-}
+  filter: grayscale(0);
+  :hover {
+    filter: grayscale(0);
+  }
 `;

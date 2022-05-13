@@ -6,12 +6,29 @@ const Middle = ({ text, img, button }) => {
   return (
     <>
       <Container>
+        <Button
+          className="mobile"
+          primary
+          href={"/" + locale + "/services/dnla/ponudba-dnla"}
+        >
+          {button}
+        </Button>
+
         <img src={img} alt="" />
+
         <Flex>
           <p>
-            <BodyText2 dangerouslySetInnerHTML={{ __html: text }}></BodyText2>
+            <BodyText2
+              light
+              dangerouslySetInnerHTML={{ __html: text }}
+            ></BodyText2>
           </p>
-          <Button primary href={"/" + locale + "/offer-dnla"}>
+
+          <Button
+            className="desktop"
+            primary
+            href={"/" + locale + "/services/dnla/ponudba-dnla"}
+          >
             {button}
           </Button>
         </Flex>
@@ -29,7 +46,7 @@ const Container = styled.div`
   margin: auto;
   flex-direction: column-reverse;
   margin-top: 3rem;
-  gap: 5rem;
+  gap: 2rem;
   > img {
     width: 100%;
     height: fit-content;
@@ -38,11 +55,12 @@ const Container = styled.div`
     width: 100%;
   }
 
-  margin-bottom: 9rem;
+  /* margin-bottom: 9rem; */
   @media (min-width: 768px) {
     margin-bottom: 2rem;
     margin-top: 9rem;
     flex-direction: row;
+    gap: 5rem;
     > img {
       width: 50%;
       height: fit-content;

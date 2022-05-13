@@ -8,7 +8,7 @@ export const CardTableContainer = styledComponents.div`
     flex-direction: column;
     gap: 4rem;
     padding: 20% 0;
-   
+   position: relative;
 
 
     @media only screen and (min-width: 768px) {
@@ -68,5 +68,3 @@ export const CardItemContainer2 = styledComponents.div`
         padding-top: 8%;
     }
 `;
-
-
