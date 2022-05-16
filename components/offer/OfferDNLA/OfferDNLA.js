@@ -76,9 +76,9 @@ const OfferDNLA = () => {
           }}
         >
           <InputsContainer>
-            {inputProps1.map((input) => {
+            {inputProps1.map((input, i) => {
               return (
-                <>
+                <div key={i}>
                   <Input
                     id="desktop"
                     props={input}
@@ -87,7 +87,7 @@ const OfferDNLA = () => {
                       handleFormChange(input.label, e.target.value);
                     }}
                   ></Input>
-                </>
+                </div>
               );
             })}
           </InputsContainer>
@@ -124,6 +124,7 @@ const OfferDNLA = () => {
             ></Checkbox>
             {formData[checkboxProps[0].label] === "Da" && (
               <Input
+                key={otherInputs[1].label}
                 id="desktop"
                 props={otherInputs[1]}
                 style={{ marginBottom: "2%" }}
@@ -153,6 +154,7 @@ const OfferDNLA = () => {
             ></Checkbox>
             {formData[checkboxProps[1].label] === "Da" && (
               <Input
+                key={otherInputs[2].label}
                 id="desktop"
                 props={otherInputs[2]}
                 style={{ marginBottom: "2%" }}

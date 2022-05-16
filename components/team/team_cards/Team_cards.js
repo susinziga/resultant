@@ -32,7 +32,7 @@ const Team_cards = (props) => {
       >
         {cards.map((card, id) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={id}>
               <Card text={card} bg={id}></Card>
             </SwiperSlide>
           );

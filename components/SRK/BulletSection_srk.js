@@ -42,7 +42,7 @@ const BulletSection_srk = (props) => {
             <List>
               {bulletProps.map(({ title, text }) => {
                 return (
-                  <Bullet>
+                  <Bullet key={title}>
                     <BulletTitle>{title}</BulletTitle>
                     <BodyText3 style={{ fontWeight: "400" }}>
                       - {text}
