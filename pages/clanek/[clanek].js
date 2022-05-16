@@ -199,7 +199,7 @@ const Clanek = ({ clanek }) => {
         />
         <meta
           name="twitter:image"
-          property="og_image"
+          property="og:image"
           content={article.glavnaSlika.data.attributes.url}
         />
       </Head>
