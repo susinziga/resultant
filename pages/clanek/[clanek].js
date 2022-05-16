@@ -197,6 +197,11 @@ const Clanek = ({ clanek }) => {
           property="og:image"
           content={article.glavnaSlika.data.attributes.url}
         />
+        <meta
+          name="twitter:image"
+          property="og_image"
+          content={article.glavnaSlika.data.attributes.url}
+        />
       </Head>
       <Blog_page _data={blog_data}>
         {article.dinamicnoPolje.map((c, i) => getArticleContentComponent(c, i))}
