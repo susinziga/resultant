@@ -204,7 +204,7 @@ const OfferDNLA = () => {
             {/*<Button
               primary
               onClick={(id, value) => {
-                console.log("asd");
+                ("asd");
                 sendMail();
               }}
             >

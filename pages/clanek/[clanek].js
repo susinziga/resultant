@@ -38,6 +38,7 @@ const client = new ApolloClient({
 });
 
 export async function getStaticProps({ params }) {
+  ("static props");
   const id = params.clanek;
   let res = await client.query({ query: ARTICLE_QUERY, variables: { id: id } });
 

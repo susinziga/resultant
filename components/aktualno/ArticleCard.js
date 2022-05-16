@@ -17,8 +17,6 @@ const ArticleCard = ({ news }) => {
   const { locale } = useRouter();
   let { heading, text, hasGuestAuthor, image, link, id, imageAlt } = news;
 
-  console.log(news);
-
   return (
     <>
       <NewsContainer href={"/" + locale + "/clanek/" + id} isActive>

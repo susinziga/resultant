@@ -20,8 +20,8 @@ const Blog_Header = ({ title, authors, image }) => {
         <Blog_title>{title}</Blog_title>
         <Blog_authors>
           {authors.map((author, i) => {
-            console.log(authors.length);
-            console.log(i);
+            authors.length;
+            i;
             if (i === authors.length - 1)
               return <Blog_author>{author.name}</Blog_author>;
             else
