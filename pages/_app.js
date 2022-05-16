@@ -114,7 +114,6 @@ function MyApp({ Component, pageProps, apollo }) {
           <meta
             key="twitter-image"
             name="twitter:image"
-            property="og:image"
             content="/Logo/logo_sl.webp"
           />
           <meta property="og:image:alt" content="Resultant" />
