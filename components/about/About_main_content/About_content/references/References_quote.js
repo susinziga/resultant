@@ -57,7 +57,6 @@ const References_quote = ({ isActive, title }) => {
         setContentSwiperActive(4);
       }}
       onLeave={(a) => {
-        console.log(a);
         if (a.currentPosition == "above") setContentSwiperActive(5);
         if (a.currentPosition == "below") setContentSwiperActive(3);
       }}

@@ -5,8 +5,8 @@ import { Wrapper, ItemWrapper } from "./Submenus.styled";
 const Submenus = (props) => {
   return (
     <Wrapper>
-      {props.items.map((item) => {
-        return <ItemWrapper>{item}</ItemWrapper>;
+      {props.items.map((item, i) => {
+        return <ItemWrapper key={i}>{item}</ItemWrapper>;
       })}
     </Wrapper>
   );

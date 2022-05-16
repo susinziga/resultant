@@ -168,7 +168,7 @@ const OfferForm_offer = () => {
             </p>
             <MultipleCheckbox
               onChange={(id, value) => {
-                console.log(id, value);
+                id, value;
                 handleFormChange(id, value);
                 setIsRadioSelected(true);
               }}
@@ -177,10 +177,6 @@ const OfferForm_offer = () => {
               <SubmitButton
                 id="submit_btn"
                 style={{ padding: "2% 0%", width: "100%", display: "block" }}
-                // onClick={(id, value) => {
-                //   console.log("asd");
-                //   sendMail();
-                // }}
                 value={submitButtonText}
                 type={"submit"}
               ></SubmitButton>

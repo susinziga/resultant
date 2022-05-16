@@ -52,7 +52,7 @@ const About_sidebar = ({ initAnim }) => {
     if (initAnim === true) {
       if (isDesktop()) {
         document.getElementsByTagName("body")[0].classList.add("is-loading");
-        console.log("ANIMATION");
+        ("ANIMATION");
 
         gsap.to(
           navAnimation.current,

@@ -53,13 +53,13 @@ const sales_potential = () => {
       <BodyText2>{t("subpages:sales_card1_list1_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card1_list1items.map((item) => {
+        {card1_list1items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
@@ -72,13 +72,13 @@ const sales_potential = () => {
       <BodyText2>{t("subpages:sales_card2_list1_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card2_list1items.map((item) => {
+        {card2_list1items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
@@ -89,13 +89,13 @@ const sales_potential = () => {
       <BodyText2>{t("subpages:sales_card3_list1_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card3_list1items.map((item) => {
+        {card3_list1items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>

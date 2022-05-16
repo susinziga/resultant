@@ -28,7 +28,7 @@ const Mobile_menu = ({ menu_opened }) => {
 
   useEffect(() => {
     if (animation == null) return;
-    console.log("asd");
+    ("asd");
     if (menu_opened) {
       setOpened(menu_opened);
 
@@ -37,7 +37,7 @@ const Mobile_menu = ({ menu_opened }) => {
       setSubMenuOpened(false);
       setOpened(menu_opened);
 
-      console.log(animation);
+      animation;
       animation.reverse();
     }
   }, [menu_opened]);

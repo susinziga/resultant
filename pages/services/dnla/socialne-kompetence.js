@@ -72,13 +72,13 @@ const social_competencies = () => {
       <BodyText2>{t("subpages:social_card1_list1_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card1_list1items.map((item) => {
+        {card1_list1items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
@@ -86,13 +86,13 @@ const social_competencies = () => {
       <BodyText2>{t("subpages:social_card1_list2_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card1_list2items.map((item) => {
+        {card1_list2items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
@@ -100,13 +100,13 @@ const social_competencies = () => {
       <BodyText2>{t("subpages:social_card1_list3_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card1_list3items.map((item) => {
+        {card1_list3items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
@@ -114,13 +114,13 @@ const social_competencies = () => {
       <BodyText2>{t("subpages:social_card1_list4_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card1_list4items.map((item) => {
+        {card1_list4items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
@@ -131,13 +131,13 @@ const social_competencies = () => {
       <BodyText2>{t("subpages:social_card2_list1_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card2_list1items.map((item) => {
+        {card2_list1items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
@@ -148,13 +148,13 @@ const social_competencies = () => {
       <BodyText2>{t("subpages:social_card3_list1_heading")}</BodyText2>
       <VSpace />
       <List>
-        {card3_list1items.map((item) => {
+        {card3_list1items.map((item, i) => {
           return (
-            <>
+            <div key={i}>
               <li>
                 <ListItem>{item}</ListItem>
               </li>
-            </>
+            </div>
           );
         })}
       </List>
