@@ -198,6 +198,7 @@ const Clanek = ({ clanek }) => {
           content={article.glavnaSlika.data.attributes.url}
         />
         <meta
+          key="twitter-image"
           name="twitter:image"
           property="og:image"
           content={article.glavnaSlika.data.attributes.url}
