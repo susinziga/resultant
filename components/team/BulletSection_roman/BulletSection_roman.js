@@ -30,8 +30,8 @@ const BulletSection_team = (props) => {
           </FlexHeadingContainer>
           <FlexDesktopText>
             <List>
-              {props.bullets.map((bullet) => {
-                return <Bullet>{bullet}</Bullet>;
+              {props.bullets.map((bullet, i) => {
+                return <Bullet key={i}>{bullet}</Bullet>;
               })}
             </List>
           </FlexDesktopText>

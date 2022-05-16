@@ -77,13 +77,9 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
   let isScrolling = Date.now();
 
   const preventDefault = (e) => {
-    console.log(Date.now());
-    console.log(isScrolling);
     if (isActive) {
       e.preventDefault();
       if (Date.now() - 500 > isScrolling) {
-        console.log(isActive);
-
         if (e.deltaY < 0) {
           if (swip.isBeginning) {
             window.scrollBy(0, e.deltaY);

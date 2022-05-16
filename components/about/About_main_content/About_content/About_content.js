@@ -30,8 +30,6 @@ const About_content = ({ initAnim, isActive }) => {
   ];
 
   useEffect(() => {
-    console.log(isDesktop());
-
     if (!isDesktop()) {
       gsap.to(document.getElementById("content_box"), {
         transform: "translateX(0)",

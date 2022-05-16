@@ -16,7 +16,7 @@ const CheckboxMultiple = (props) => {
 
   const onClickHandler = (e) => {
     let temp = document.getElementsByName(props.group);
-    console.log(e.target);
+    e.target;
     temp.forEach((element) => {
       if (element !== e.target) {
         element.checked = false;

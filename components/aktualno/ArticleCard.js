@@ -7,6 +7,7 @@ import {
   NewsTextContainer,
   NewsText,
   NewsButton,
+  GuestBadge,
 } from "./ArticleCard.styled";
 
 import { useRouter } from "next/router";
@@ -14,17 +15,15 @@ import Button from "../../basic_components/button/Button";
 
 const ArticleCard = ({ news }) => {
   const { locale } = useRouter();
-  let { heading, text, image, link, id, imageAlt } = news;
+  let { heading, text, hasGuestAuthor, image, link, id, imageAlt } = news;
 
   return (
     <>
-      <NewsContainer
-        href={"/" + locale + "/clanek/" + id + "/" + link}
-        isActive
-      >
+      <NewsContainer href={"/" + locale + "/clanek/" + id} isActive>
         <div>
           <NewsImage src={image} alt={imageAlt}></NewsImage>
           <NewsTextContainer>
+            {hasGuestAuthor && <GuestBadge>Z gostom</GuestBadge>}
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>
               {text.length > 100 ? text.substr(0, 100) + "..." : text}

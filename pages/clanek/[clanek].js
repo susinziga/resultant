@@ -1,27 +1,71 @@
 import { useRouter } from "next/router";
 import React from "react";
-import ARTICLE_QUERY from "../../../apollo/queries/articles/article";
 import {
   BodyText3,
   Subtitle2,
   Subtitle1,
   Title2,
-} from "../../../basic_components/texts/Texts";
+} from "../../basic_components/texts/Texts";
 import Container, {
   Container_border,
-} from "../../../components/aktualno/blog/content_components/Container.styled";
-import Image from "../../../components/aktualno/blog/content_components/Image";
+} from "../../components/aktualno/blog/content_components/Container.styled";
+import Image from "../../components/aktualno/blog/content_components/Image";
 import NewParagraph, {
   NewRow,
-} from "../../../components/blog/content_components/Margin.styled";
-import Query from "../../../components/query";
+} from "../../components/blog/content_components/Margin.styled";
+import Query from "../../components/query";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Blog_page from "../../../components/aktualno/blog/Blog_page";
+import Blog_page from "../../components/aktualno/blog/Blog_page";
 import mkstyle from "./markdown-styles.module.css";
 import Head from "next/head";
+import { InMemoryCache } from "@apollo/react-hooks";
+import ApolloClient from "apollo-client";
+import { createHttpLink } from "apollo-link-http";
+import { getStrapiURL } from "../api/strapi";
+import ARTICLES_QUERY from "../../apollo/queries/articles/articles";
+import ARTICLE_QUERY from "../../apollo/queries/articles/article";
 
-const Clanek = ({ clanek, blog_data }) => {
+const link = createHttpLink({
+  fetch,
+  uri: getStrapiURL() + "/graphql",
+});
+
+const client = new ApolloClient({
+  ssrMode: true,
+  link: link,
+  cache: new InMemoryCache(),
+});
+
+export async function getStaticProps({ params }) {
+  ("static props");
+  const id = params.clanek;
+  let res = await client.query({ query: ARTICLE_QUERY, variables: { id: id } });
+
+  const article = res.data.clanek.data;
+
+  return {
+    props: {
+      clanek: article,
+    },
+  };
+}
+
+export async function getStaticPaths() {
+  const clanki = await client.query({ query: ARTICLES_QUERY });
+  const paths = clanki.data.clanki.data.map((clanek) => {
+    return {
+      params: { clanek: String(clanek.id) },
+    };
+  });
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+const Clanek = ({ clanek }) => {
   const getArticleContentComponent = (item, index) => {
     const strapiComponent = item.__typename;
 
@@ -38,7 +82,7 @@ const Clanek = ({ clanek, blog_data }) => {
               <NewRow></NewRow>
               <ul>
                 {item.Text.split("\n").map((item) => (
-                  <li style={{ marginBottom: "1.5rem" }}>
+                  <li key={item} style={{ marginBottom: "1.5rem" }}>
                     <BodyText3>{item}</BodyText3>
                   </li>
                 ))}
@@ -68,7 +112,6 @@ const Clanek = ({ clanek, blog_data }) => {
           </div>
         );
       case "ComponentClanekVsebinaImage":
-        console.log(item.Slika.data.attributes);
         return (
           <div key={index}>
             <Container>
@@ -117,64 +160,54 @@ const Clanek = ({ clanek, blog_data }) => {
     }
   };
 
+  const article = clanek.attributes;
+
+  const authors = article.avtors.data.map((avtor) => {
+    return {
+      name: avtor.attributes.ime,
+      image: avtor.attributes.slika.data.attributes.url,
+      resultant: avtor.attributes.resultant,
+    };
+  });
+
+  const blog_data = {
+    title: article.naslov,
+    authors: authors,
+    image: article.glavnaSlika.data.attributes.url,
+    imageAlt: article.glavnaSlika.data.attributes.alternativeText,
+    excerpt: article.podnaslov,
+  };
+
   const router = useRouter();
-  const { id } = router.query;
 
   return (
-    <Query query={ARTICLE_QUERY} id={id}>
-      {({ data: clanek }) => {
-        {
-          const article = clanek.clanek.data.attributes;
-
-          const authors = article.avtors.data.map((avtor) => {
-            return {
-              name: avtor.attributes.ime,
-              image: avtor.attributes.slika.data.attributes.url,
-              resultant: avtor.attributes.resultant,
-            };
-          });
-
-          const blog_data = {
-            title: article.naslov,
-            authors: authors,
-            image: article.glavnaSlika.data.attributes.url,
-            imageAlt: article.glavnaSlika.data.attributes.alternativeText,
-            excerpt: article.podnaslov,
-          };
-
-          return (
-            <>
-              <Head>
-                <title>{article.Meta_Title}</title>
-                <meta name="description" content={article.Meta_Description} />
-                <meta
-                  key="title"
-                  property="og:title"
-                  content={article.Meta_Title}
-                />
-                <meta key="url" property="og:url" content={router.asPath} />
-                <meta key="type" property="og:type" content="article" />
-                <meta
-                  key="description"
-                  property="og:description"
-                  content={article.Meta_Description}
-                />
-                <meta
-                  key="image"
-                  property="og:image"
-                  content={article.glavnaSlika.data.attributes.url}
-                />
-              </Head>
-              <Blog_page key={id} _data={blog_data}>
-                {article.dinamicnoPolje.map((c, i) =>
-                  getArticleContentComponent(c, i)
-                )}
-              </Blog_page>
-            </>
-          );
-        }
-      }}
-    </Query>
+    <>
+      <Head>
+        <title>{article.Meta_Title}</title>
+        <meta name="description" content={article.Meta_Description} />
+        <meta key="title" property="og:title" content={article.Meta_Title} />
+        <meta key="url" property="og:url" content={router.asPath} />
+        <meta key="type" property="og:type" content="article" />
+        <meta
+          key="description"
+          property="og:description"
+          content={article.Meta_Description}
+        />
+        <meta
+          key="image"
+          property="og:image"
+          content={article.glavnaSlika.data.attributes.url}
+        />
+        <meta
+          key="twitter-image"
+          name="twitter:image"
+          content={article.glavnaSlika.data.attributes.url}
+        />
+      </Head>
+      <Blog_page _data={blog_data}>
+        {article.dinamicnoPolje.map((c, i) => getArticleContentComponent(c, i))}
+      </Blog_page>
+    </>
   );
 };
 

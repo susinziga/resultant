@@ -20,27 +20,29 @@ const Blog_Header = ({ title, authors, image }) => {
         <Blog_title>{title}</Blog_title>
         <Blog_authors>
           {authors.map((author, i) => {
-            console.log(authors.length);
-            console.log(i);
+            authors.length;
+            i;
             if (i === authors.length - 1)
-              return <Blog_author>{author.name}</Blog_author>;
+              return <Blog_author key={i}>{author.name}</Blog_author>;
             else
               return (
-                <>
+                <div key={i}>
                   <Blog_author>{author.name}</Blog_author>
                   <FontAwesomeIcon
                     icon={faCircle}
                     fontSize="0.25rem"
                     color="#00B4F0"
                   ></FontAwesomeIcon>
-                </>
+                </div>
               );
           })}
         </Blog_authors>
       </Blog_author_container>
       <Blog_author_images>
-        {authors.map((author) => {
-          return <Blog_author_image src={author.image}></Blog_author_image>;
+        {authors.map((author, i) => {
+          return (
+            <Blog_author_image key={i} src={author.image}></Blog_author_image>
+          );
         })}
       </Blog_author_images>
       <Line></Line>

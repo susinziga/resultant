@@ -6,7 +6,7 @@ import {
 } from "./ArticleItemList.styled";
 
 const ArticleItemList = ({ title, items, className }) => {
-  const listItems = items.map((text) => <ListItem>{text}</ListItem>);
+  const listItems = items.map((text, i) => <ListItem key={i}>{text}</ListItem>);
 
   return (
     <div className={className}>

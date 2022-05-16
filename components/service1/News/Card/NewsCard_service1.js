@@ -22,21 +22,12 @@ const NewsCard_service1 = ({ news, isActive }) => {
 
   return (
     <Link
-      href={
-        "/" + locale + "/clanek/" + (id != undefined ? id + "/" : "") + link
-      }
+      href={"/" + locale + "/clanek/" + (id != undefined ? id + "/" : link)}
     >
       <NewsContainer>
         <div>
           <NewsImage src={image}></NewsImage>
           <NewsTextContainer>
-            {/* <NewsAuthorsTextWrapper>
-              {authors.map((author, index) => (
-                <NewsAuthorText key={index}>
-                  {author} {index === authors.length - 1 ? "" : "- "}
-                </NewsAuthorText>
-              ))}
-            </NewsAuthorsTextWrapper> */}
             {hasGuestAuthor && <GuestBadge>Z gostom</GuestBadge>}
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>
