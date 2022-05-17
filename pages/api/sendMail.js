@@ -32,10 +32,18 @@ export default function handler(req, res) {
   };
 
   console.log("SENT MAIL TO " + mailOptions.to);
-
-  transporter.sendMail(mailOptions, function (err, info) {
-    if (err) console.log(err);
-    else console.log(info);
-  });
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, info) => {
+        if (err) {
+            console.error(err);
+            reject(err);
+        } else {
+            console.log(info);
+            resolve(info);
+        }
+    });
+});
+  
   res.status(200).json({ name: "Sent" });
 }
