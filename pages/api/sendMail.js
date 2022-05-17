@@ -11,7 +11,7 @@ export default function handler(req, res) {
       host: "smtp.gmail.com",
       auth: {
         user: "resultanthsc@gmail.com",
-        pass: "Resultant123!",
+        pass: "Enej123!",
       },
     })
   );
