@@ -9,9 +9,9 @@ const notFound = () => {
     <>
       <Container className="404">
         {isDesktop() ? (
-          <Image src="/404/404.png"></Image>
+          <Image src="/404/404.webp"></Image>
         ) : (
-          <Image_mobile src="/404/404_mobile.png"></Image_mobile>
+          <Image_mobile src="/404/404_mobile.webp"></Image_mobile>
         )}
 
         <Text>

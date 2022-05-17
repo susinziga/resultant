@@ -28,7 +28,10 @@ const useSize = () => {
   const isDesktop = () => {
     return windowSize.width >= 768;
   };
-  return { isDesktop };
+  const isONasDesktop = () => {
+    return windowSize.width >= 992;
+  };
+  return { isDesktop, isONasDesktop };
 };
 
 export default useSize;

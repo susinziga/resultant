@@ -20,29 +20,24 @@ import * as Styled from "../../../basic_components/input/Input.styled";
 
 const inputProps = {
   sl: [
-    { label: "Ime" },
-    { label: "Priimek" },
-    { label: "Tel. številka" },
-    { label: "Email", required: "*" },
+    { label: "Ime", required: "*" },
+    { label: "Priimek", required: "*" },
+    { label: "Telefonska številka" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Ime organizacije" },
   ],
   en: [
-    { label: "Name" },
-    { label: "Last name" },
+    { label: "Name", required: "*" },
+    { label: "Last name", required: "*" },
     { label: "Gsm" },
-    { label: "Email", required: "*" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Company name" },
   ],
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
-};
-
-const textField = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_dnla = (props) => {
@@ -66,28 +61,49 @@ const ContactForm_dnla = (props) => {
             dangerouslySetInnerHTML={{ __html: title }}
           ></ContactHeader>
         </HeaderContainer>
-        <FormContainer>
-          {inputProps[locale].map((input) => {
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            btn.value = t("contact:contact_sendSuccess");
+            btn.disabled = true;
+          }}
+        >
+          {inputProps[locale].map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <Input
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
+                  onChange={(e) => {
+                    handleFormChange(input.label, e.target.value);
+                  }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>
-            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
-              props={{ label: textField[locale] }}
+              props={{ label: textAreaLabel[locale], required: "*" }}
               style={{ fontSize: "1.5rem" }}
+              onChange={(e) => {
+                handleFormChange(textAreaLabel[locale], e.target.value);
+              }}
             ></Textarea>
           </TextareaContainer>
           <ButtonContainer>
-            <SubmitButton type="submit" value={button}></SubmitButton>
+            <SubmitButton
+              id="submit_btn"
+              // onClick={(id, value) => {
+              //   sendMail();
+              // }}
+              value={button}
+              type={"submit"}
+            ></SubmitButton>
           </ButtonContainer>
         </FormContainer>
       </ContactContainer>

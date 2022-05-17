@@ -1,31 +1,50 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
+import { Title2 } from "../../../../basic_components/texts/Texts";
 
-export const TestimonialContainer = styledComponents.div`
-@media(min-width:768px){
-    
-    text-align:center;
-    display:flex;
-    margin:auto;
-    flex-direction:column;
-    >:nth-child(1){
-        margin-bottom:2rem;
+export const Title = styled.h3`
+  font-size: 2rem;
+  @media only screen and (min-width: 768px) {
+    font-size: 2.8rem;
+  }
+`;
+
+export const TestimonialContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  > :nth-child(1) {
+    margin-bottom: 1rem;
+  }
+  > :nth-child(2) {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2rem;
+    > * {
+      color: #5c5c5c;
     }
-    >:nth-child(2){
-        
-        width:70%;
-        margin:auto;
-        margin-bottom:2rem;
-        > * {
-            color:#5C5C5C;
-        }
+  }
+
+  > :nth-child(4) {
+    color: #5c5c5c;
+  }
+
+  @media (min-width: 768px) {
+    margin: auto;
+
+    > :nth-child(1) {
+      margin-bottom: 2rem;
+    }
+    > :nth-child(2) {
+      width: 70%;
+      margin: auto;
+      margin-bottom: 2rem;
+      > * {
+        color: #5c5c5c;
+      }
     }
 
-    >:nth-child(4){
-        
-      
-            color:#5C5C5C;
-        
+    > :nth-child(4) {
+      color: #5c5c5c;
     }
-
-}
+  }
 `;

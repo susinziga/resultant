@@ -16,6 +16,7 @@ import {
 import CardSection_service1 from "./CardSection/CardSection_service1";
 
 import { useRouter } from "next/router";
+import CardButton from "../../UTNN/cardSection/Card/CardButton";
 
 const ExperienceSection_service1 = (props) => {
   const { t, lang } = useTranslation();
@@ -33,22 +34,23 @@ const ExperienceSection_service1 = (props) => {
     { bullet: t("service1:service1_experienceBullet5") },
     { bullet: t("service1:service1_experienceBullet6") },
     { bullet: t("service1:service1_experienceBullet7") },
+    { bullet: t("service1:service1_experienceBullet8") },
   ];
 
   const Cards = [
     {
       heading: t("service1:service1_cardHeading1"),
       text: t("service1:service1_cardText1"),
-      image: "/Service1/CardImage1.png",
-      desktopImage: "/Service1/CardImage1_desktop.png",
+      image: "/Service1/CardImage1.webp",
+      desktopImage: "/Service1/CardImage1_desktop.webp",
       color: "#F9F4F0",
       inversed: false,
     },
     {
       heading: t("service1:service1_cardHeading2"),
       text: t("service1:service1_cardText2"),
-      image: "/Service1/CardImage2.png",
-      desktopImage: "/Service1/CardImage2_desktop.png",
+      image: "/Service1/CardImage2.webp",
+      desktopImage: "/Service1/CardImage2_desktop.webp",
       color: "#DEE6ED",
       inversed: true,
     },
@@ -59,7 +61,7 @@ const ExperienceSection_service1 = (props) => {
       <ExperienceContainer {...props}>
         <BackgroundVector
           className="desktop"
-          src="/Service1/VectorA.png"
+          src="/Service1/VectorA.webp"
         ></BackgroundVector>
         <FlexDesktop>
           <ExperienceTitle>{header}</ExperienceTitle>
@@ -70,21 +72,38 @@ const ExperienceSection_service1 = (props) => {
                 return <Bullet>{bullet.bullet}</Bullet>;
               })}
             </List>
-            <ButtonContainer className="desktop">
+            {/* <ButtonContainer className="desktop">
               <Button href={"/" + locale + "/coming-soon"}>{button}</Button>
-              <ArrowContainer src="/Service1/Caret_Right.png"></ArrowContainer>
-            </ButtonContainer>
+              <ArrowContainer src="/Service1/Caret_Right.webp"></ArrowContainer>
+            </ButtonContainer> */}
+            <CardButton
+              className="desktop"
+              text={button}
+              href={
+                "/" +
+                locale +
+                "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+              }
+            ></CardButton>
           </FlexDesktopText>
         </FlexDesktop>
-        <ButtonContainer className="mobile">
+        {/* <ButtonContainer className="mobile">
           <Button href="" className="mobile">
             {button}
           </Button>
           <ArrowContainer
             className="mobile"
-            src="/Service1/Caret_Right.png"
+            src="/Service1/Caret_Right.webp"
           ></ArrowContainer>
-        </ButtonContainer>
+        </ButtonContainer> */}
+        <CardButton
+          className="mobile"
+          text={button}
+          href={
+            "/" + locale + "/clanek/kako-do-vecje-zavzetosti-vasih-zaposlenih"
+          }
+          centered
+        ></CardButton>
 
         {Cards.map((card) => {
           return <CardSection_service1 props={card}></CardSection_service1>;

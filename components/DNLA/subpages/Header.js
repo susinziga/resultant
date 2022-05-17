@@ -28,19 +28,19 @@ import {
 export const HeadingContainer = styled.div`
   width: 90%;
   margin: auto;
-  padding-top: 25%;
+  /* padding-top: 25%; */
   margin-bottom: 0;
 
   @media only screen and (min-width: 768px) {
-    padding-top: 20%;
+    /* padding-top: 20%; */
   }
 
   @media only screen and (min-width: 992px) {
-    padding-top: 15%;
+    /* padding-top: 15%; */
   }
 
   @media only screen and (min-width: 1600px) {
-    padding-top: 10%;
+    /* padding-top: 10%; */
   }
 `;
 
@@ -49,7 +49,12 @@ export const HeadingUpperHeading = styled(BodyText1)`
 `;
 
 export const HeadingHeading = styled(Title1)`
-  margin-top: 5%;
+  /* margin-top: 5%; */
+  font-size: 1.8rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 2.6rem;
+  }
 `;
 
 export const HeadingLine = styled.div`

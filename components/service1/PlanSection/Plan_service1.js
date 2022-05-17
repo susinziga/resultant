@@ -31,6 +31,7 @@ const Plan_section1 = (
     hideButton,
     Plan1CardStyle,
     Plan2CardStyle,
+    bgImg,
   },
   props
 ) => {
@@ -47,14 +48,18 @@ const Plan_section1 = (
   return (
     <>
       <PlanContainer {...props}>
-        <BackgroundVector
-          className="desktop"
-          src="/offer/backgroundVector.png"
-        ></BackgroundVector>
-        <BackgroundVector
-          className="mobile"
-          src="/Service1/VectorA_mobile.png"
-        ></BackgroundVector>
+        {(p2.length > 0 || bgImg) && (
+          <>
+            <BackgroundVector
+              className="desktop"
+              src="/offer/backgroundVector.webp"
+            ></BackgroundVector>
+            <BackgroundVector
+              className="mobile"
+              src="/Service1/VectorA_mobile.webp"
+            ></BackgroundVector>
+          </>
+        )}
 
         <PlanTableContainer>
           <PlanTableHeaderContainer>
@@ -66,9 +71,10 @@ const Plan_section1 = (
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {p1.map((item) => {
+            {p1.map((item, index) => {
               return (
                 <PlanItem_service1
+                  key={index}
                   props={{ ...item, CardStyle: Plan1CardStyle }}
                 ></PlanItem_service1>
               );
@@ -87,9 +93,10 @@ const Plan_section1 = (
             </PlanTableHeaderCon>
           </PlanTableHeaderContainer>
           <FlexContainer>
-            {p2.map((item) => {
+            {p2.map((item, index) => {
               return (
                 <PlanItem_service1
+                  key={index}
                   props={{ ...item, CardStyle: Plan2CardStyle }}
                 ></PlanItem_service1>
               );
@@ -97,18 +104,11 @@ const Plan_section1 = (
             <ButtonContainer
               props={button}
               button={!hideButton && p2.length > 0}
-              onClick={() => {
-                window.scrollBy({
-                  top: document.getElementById("forma").getBoundingClientRect()
-                    .top,
-                  behavior: "smooth",
-                });
-              }}
             >
               <SubmitButton
                 className="desktop"
                 type="button"
-                href={"/" + locale + "/offer"}
+                href={"/" + locale + "/services/siok/ponudba-siok"}
               >
                 {getOffer[locale]}
               </SubmitButton>
@@ -117,6 +117,7 @@ const Plan_section1 = (
 
           <ButtonContainer
             props={button}
+            button={!hideButton && p2.length > 0}
             onClick={() => {
               window.scrollBy({
                 top: document.getElementById("forma").getBoundingClientRect()
@@ -128,7 +129,7 @@ const Plan_section1 = (
             <SubmitButton
               className="mobile"
               type="button"
-              href={"/" + locale + "/offer"}
+              href={"/" + locale + "/services/siok/ponudba-siok"}
             >
               {getOffer[locale]}
             </SubmitButton>

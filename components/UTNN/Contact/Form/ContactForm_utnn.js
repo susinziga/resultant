@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import {
   ButtonContainer,
   ContactContainer,
@@ -24,29 +24,24 @@ import { useForm } from "../../../../custom_hooks/useForm";
 
 const inputProps = {
   sl: [
-    { label: "Ime" },
-    { label: "Priimek" },
-    { label: "Tel. številka" },
-    { label: "Email", required: "*" },
+    { label: "Ime", required: "*" },
+    { label: "Priimek", required: "*" },
+    { label: "Telefonska številka" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Ime organizacije" },
   ],
   en: [
-    { label: "Name" },
-    { label: "Last name" },
+    { label: "Name", required: "*" },
+    { label: "Last name", required: "*" },
     { label: "Gsm" },
-    { label: "Email", required: "*" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Company name" },
   ],
 };
 
 const textAreaLabel = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
-};
-
-const textField = {
-  sl: "Kako ste izvedeli za nas?",
-  en: "How did you find out about us?",
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
 };
 
 const ContactForm_dnla = (props) => {
@@ -76,12 +71,20 @@ const ContactForm_dnla = (props) => {
             <HeaderLine></HeaderLine>
           </HeaderLineWrapperRight>
         </HeaderContainer>
-        <FormContainer>
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            btn.value = t("contact:contact_sendSuccess");
+            btn.disabled = true;
+          }}
+        >
           {inputProps[locale].map((input, id) => {
             return (
-              <>
+              <div key={id}>
                 <Input
-                  key={id}
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "2%" }}
@@ -89,26 +92,26 @@ const ContactForm_dnla = (props) => {
                     handleFormChange(input.label, e.target.value);
                   }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>
-            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
-              props={{ label: textField[locale] }}
+              props={{ label: textAreaLabel[locale], required: "*" }}
               style={{ fontSize: "1.5rem" }}
               onChange={(e) => {
-                handleFormChange("Kako ste izvedeli za nas?", e.target.value);
+                handleFormChange(textAreaLabel[locale], e.target.value);
               }}
             ></Textarea>
           </TextareaContainer>
           <ButtonContainer>
             <SubmitButton
-              onClick={(id, value) => {
-                sendMail();
-              }}
-              value={"Pošlji"}
+              id="submit_btn"
+              // onClick={(id, value) => {
+              //   sendMail();
+              // }}
+              value={button}
               type={"submit"}
             ></SubmitButton>
           </ButtonContainer>

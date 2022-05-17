@@ -1,9 +1,7 @@
 import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import {
-
   Bullet,
- 
   ExperienceContainer,
   ExperienceTitle,
   FlexDesktop,
@@ -13,9 +11,8 @@ import {
   BulletHeading,
   FlexHeadingContainer,
   Subtext,
-  ControlContainer
+  ControlContainer,
 } from "./BulletSection.styled";
-
 
 const BulletSection_dnla = (props) => {
   const { t, lang } = useTranslation();
@@ -34,32 +31,29 @@ const BulletSection_dnla = (props) => {
     { bullet: t("dnla:dnla_bullet8") },
     { bullet: t("dnla:dnla_bullet9") },
     { bullet: t("dnla:dnla_bullet10") },
-  
   ];
-
 
   return (
     <>
       <ExperienceContainer {...props}>
         <BackgroundVector
           className="desktop"
-          src="/Service1/VectorA.png"
+          src="/Service1/VectorA.webp"
         ></BackgroundVector>
         <FlexDesktop>
-            <FlexHeadingContainer>
-                <ExperienceTitle>{header}</ExperienceTitle>
-                <ControlContainer>
-                  <Subtext>{subheading}</Subtext>
-                </ControlContainer>
-            </FlexHeadingContainer>
+          <FlexHeadingContainer>
+            <ExperienceTitle>{header}</ExperienceTitle>
+            <ControlContainer>
+              <Subtext>{subheading}</Subtext>
+            </ControlContainer>
+          </FlexHeadingContainer>
           <FlexDesktopText>
-          <BulletHeading>{bulletHeading}</BulletHeading>
+            <BulletHeading>{bulletHeading}</BulletHeading>
             <List>
-              {bulletProps.map((bullet) => {
-                return <Bullet>{bullet.bullet}</Bullet>;
+              {bulletProps.map((bullet, index) => {
+                return <Bullet key={index}>{bullet.bullet}</Bullet>;
               })}
             </List>
-            
           </FlexDesktopText>
         </FlexDesktop>
       </ExperienceContainer>

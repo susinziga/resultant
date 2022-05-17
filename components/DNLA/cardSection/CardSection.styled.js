@@ -9,6 +9,7 @@ export const CardSectionContainer = styledComponents.div`
     gap: 10%;
  
     margin-top: 15%;
+    
 
     @media only screen and (min-width: 768px) {
        
@@ -22,4 +23,4 @@ export const CardSectionContainer = styledComponents.div`
        
     }
 
-`
+`;

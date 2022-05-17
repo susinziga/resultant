@@ -5,7 +5,7 @@ export const ContactContainer = styledComponents.div`
     padding:10% 5%;
     background: #F6FBFE;
     
-    @media screen and (min-width: 768px){
+    @media screen and (min-width: 1024px){
         padding: 7% 2%;
         width: 100%;
         margin: auto;
@@ -64,9 +64,9 @@ export const ContactHeading = styledComponents(Title2)`
 
 export const ContactImage = styledComponents.img`
     
-  
+//   object-fit: cover;
 
-  @media screen and (min-width: 768px){
+  @media screen and (min-width: 1024px){
     width:35%;
   } 
 

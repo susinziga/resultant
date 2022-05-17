@@ -1,8 +1,12 @@
 {
-  "button_more": "Želim izvedeti več",
+  "button_more": "Več",
 
   "references": "Reference",
 
-  "button_moreMore": "Izvedi več",
-  "button_contact": "Spoznajte nas"
+  "button_moreMore": "Več",
+  "button_contact": "Spoznajte nas",
+
+  "button_readMore": "Več",
+
+  "text_required": "To polje je obvezno"
 }

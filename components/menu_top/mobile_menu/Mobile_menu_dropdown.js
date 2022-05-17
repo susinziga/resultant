@@ -19,11 +19,11 @@ const Mobile_menu_dropdown = ({ opened }) => {
     },
     {
       title: t("pillar3_title"),
-      link: "/coming-soon",
+      link: "/services/sistematicen-razvoj-kompetenc",
     },
     {
       title: t("pillar4_title"),
-      link: "/coming-soon",
+      link: "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje",
     },
   ];
 
@@ -54,7 +54,7 @@ const Container = styled.div`
 
   gap: 1rem;
 
-  ${(props) => (props.opened ? "height:12rem;" : "")}
+  ${(props) => (props.opened ? "height:14rem;" : "")}
 `;
 const Dropdown_item = styled(BodyText4)`
   color: #fff;

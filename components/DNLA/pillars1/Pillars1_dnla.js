@@ -8,6 +8,7 @@ import useSize from "../../../custom_hooks/useSize";
 import Button from "../../../basic_components/button/Button";
 
 import { useRouter } from "next/router";
+import styled from "styled-components";
 
 import "swiper/css";
 
@@ -48,9 +49,10 @@ const Pillars_dnla = (props) => {
       </Styled.HeadingContainer>
       <Styled.PillarsFlex>
         <Styled.PillarsFlex1>
-          {pillarsContentBot.map((pillar) => {
+          {pillarsContentBot.map((pillar, index) => {
             return (
               <Pillars_component
+                key={index}
                 title={pillar.title}
                 text={pillar.text}
               ></Pillars_component>
@@ -58,9 +60,10 @@ const Pillars_dnla = (props) => {
           })}
         </Styled.PillarsFlex1>
         <Styled.PillarsFlex2>
-          {pillarsContentBot2.map((pillar) => {
+          {pillarsContentBot2.map((pillar, index) => {
             return (
               <Pillars_component
+                key={index}
                 title={pillar.title}
                 text={pillar.text}
               ></Pillars_component>
@@ -72,7 +75,7 @@ const Pillars_dnla = (props) => {
         <Button
           primary
           style={{ padding: "20px 80px", fontSize: "1.4rem" }}
-          href={"/" + locale + "/offer-dnla"}
+          href={"/" + locale + "/services/dnla/ponudba-dnla"}
         >
           {button}
         </Button>
@@ -83,21 +86,41 @@ const Pillars_dnla = (props) => {
       <Styled.HeadingContainer>
         <Styled.Heading>{heading}</Styled.Heading>
       </Styled.HeadingContainer>
-      {pillarsContentBotMobile.map((pillar) => {
+      {pillarsContentBotMobile.map((pillar, index) => {
         return (
           <Pillars_mobile
+            key={index}
             title={pillar.title}
             text={pillar.text}
           ></Pillars_mobile>
         );
       })}
       <Styled.ButtonContainer>
-        <Button primary style={{ padding: "15px 50px" }}>
+        <PillarButton
+          primary
+          // style={{ padding: "15px 50px" }}
+          href={"/" + locale + "/services/dnla/ponudba-dnla"}
+        >
           {button}
-        </Button>
+        </PillarButton>
       </Styled.ButtonContainer>
     </Styled.PillarsContainer_mobile>
   );
 };
+
+export const PillarButton = styled.a`
+  background-color: var(--secondary-color);
+  padding: 5% 10%;
+  width: 100%;
+  display: block;
+  text-align: center;
+
+  color: var(--white);
+  border-radius: var(--border-primary);
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+`;
 
 export default Pillars_dnla;

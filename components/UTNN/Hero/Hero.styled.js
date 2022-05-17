@@ -1,4 +1,16 @@
 import styled from "styled-components";
+import { BodyText1, Subtitle2 } from "../../../basic_components/texts/Texts";
+
+export const HeadText = styled(Subtitle2)`
+  display: block;
+  padding-bottom: 3%;
+  font-weight: 500;
+  font-size: 2rem;
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+`;
 
 export const HeroWrapper = styled.div`
   display: flex;
@@ -6,7 +18,7 @@ export const HeroWrapper = styled.div`
   flex-direction: column;
   margin-top: 3rem;
   margin-bottom: 20%;
-  gap: 2rem;
+  gap: 4rem;
 
   > img {
     width: 100%;
@@ -21,7 +33,7 @@ export const HeroWrapper = styled.div`
     margin-bottom: 2rem;
     margin-top: 3rem;
     flex-direction: row;
-    width: 95%;
+    width: 90%;
 
     > img {
       width: 50%;
@@ -39,7 +51,7 @@ export const ContentWrapper = styled.div`
   margin: 0 auto;
 
   @media (min-width: 768px) {
-    margin-top: 5%;
+    margin-top: 3%;
   }
 `;
 

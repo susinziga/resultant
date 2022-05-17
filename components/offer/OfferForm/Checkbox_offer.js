@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 import {
@@ -11,9 +12,11 @@ import {
 } from "./Checkbox.styled";
 
 const CheckboxMultiple = (props) => {
+  const { locale } = useRouter();
+
   const onClickHandler = (e) => {
     let temp = document.getElementsByName(props.group);
-    console.log(e.target);
+    e.target;
     temp.forEach((element) => {
       if (element !== e.target) {
         element.checked = false;
@@ -26,9 +29,12 @@ const CheckboxMultiple = (props) => {
   return (
     <>
       <CheckboxContainer>
-        <CheckboxLabel>{props.props.label}</CheckboxLabel>
+        <CheckboxLabel>
+          {props.props.label}{" "}
+          <span style={{ color: "red" }}>{props.props.required}</span>
+        </CheckboxLabel>
         <CheckboxFlex>
-          <CheckboxContainer1>
+          <CheckboxContainer1 locale={locale}>
             <Checkbox
               type="checkbox"
               value="Da"
@@ -37,7 +43,7 @@ const CheckboxMultiple = (props) => {
             ></Checkbox>
           </CheckboxContainer1>
           <Seperator>/</Seperator>
-          <CheckboxContainer2>
+          <CheckboxContainer2 locale={locale}>
             <Checkbox
               type="checkbox"
               value="Ne"

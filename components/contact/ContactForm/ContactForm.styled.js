@@ -3,6 +3,7 @@ import styledComponents from "styled-components";
 export const ContactContainer = styledComponents.div`
     width: 90%;
     margin:auto;
+    margin-top: 2rem;
 
     @media only screen and (min-width: 768px) {
         width: 55%;
@@ -36,7 +37,7 @@ export const ContactContainer = styledComponents.div`
         padding-top: 2%;
     }
    
-`
+`;
 
 export const TextareaContainer = styledComponents.div`
     width: 100%;
@@ -52,48 +53,49 @@ export const TextareaContainer = styledComponents.div`
         margin-bottom: 10%;
         height: 200px;
     }
-`
+`;
 
 export const ButtonContainer = styledComponents.div`
     width: 100%;
     margin:auto;
     margin-bottom: 15%;
-`
+`;
 
 export const FormContainer = styledComponents.form`
    
-`
+`;
 export const SubmitButton = styledComponents.input`
-    font-size:2rem;
-    padding: 2.5% 40%;
-    cursor:pointer;
-    border: none;
-    margin: auto;
+font-size:1.5rem;
+padding: 3% 0%;
 
-    background-color:var(--secondary-color);
-    color:var(--white);
-    border-radius:var(--border-primary);
+cursor:pointer;
+border: none;
+margin:auto;
+width:100%;
 
-    &:hover {
-        background-color: var(--primary-color)
-    }
+background-color:var(--secondary-color);
+color:var(--white);
+border-radius:var(--border-primary);
 
-    @media only screen and (min-width: 768px) {
-        font-size:1.5rem;
-        padding: 2.5% 40%;
-        margin-top: 2.5%;
-    }
+&:hover {
+    background-color: var(--primary-color)
+}
 
-    @media only screen and (min-width: 992px) {
-        margin-top: 0%;
-        padding: 2.5% 44%;
-    }
+@media only screen and (min-width: 768px) {
+    font-size:1.5rem;
+    padding: 2.5% 0%;
+    margin-top: 2.5%;
+}
 
-    @media only screen and (min-width: 1600px) {
-        padding: 2% 45%;
-        margin-top: 2%;
-        margin-left: 1%;
-    }
+@media only screen and (min-width: 992px) {
+    margin-top: 0%;
+    padding: 2.5% 0%;
+}
 
-`
+@media only screen and (min-width: 1600px) {
+    padding: 1.5% 0%;
+    
+    margin-left: 1%;
+}
 
+`;

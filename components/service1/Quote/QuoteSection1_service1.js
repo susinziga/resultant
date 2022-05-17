@@ -13,7 +13,7 @@ const QuoteSection1_service1 = ({ props }) => {
     <>
       <QuoteContainer {...props}>
         <QuoteImageContainer>
-          <QuoteImage src="/Icons/QuoteWhite.png"></QuoteImage>
+          <QuoteImage src="/Icons/QuoteWhite.webp"></QuoteImage>
         </QuoteImageContainer>
         <QuoteTextContainer>
           <QuoteText>{props}</QuoteText>

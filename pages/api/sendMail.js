@@ -31,6 +31,8 @@ export default function handler(req, res) {
     html: message,
   };
 
+  console.log("SENT MAIL TO " + mailOptions.to);
+
   transporter.sendMail(mailOptions, function (err, info) {
     if (err) console.log(err);
     else console.log(info);

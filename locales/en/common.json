@@ -1,9 +1,11 @@
 {
-    "button_more":"I want to know more",
-  
-    "references":"References",
-  
-    "button_moreMore":"Read more",
-    "button_contact":"Get to know us"
-  }
-  
+  "button_more": "Read more",
+
+  "references": "References",
+
+  "button_moreMore": "Read more",
+  "button_contact": "Get to know us",
+  "button_readMore": "Read more",
+
+  "text_required": "This field is required"
+}

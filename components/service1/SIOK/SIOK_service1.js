@@ -8,6 +8,8 @@ import {
   SIOKParagraph,
   SIOKImageText,
   SIOKImageContainer,
+  SIOKGraf2Heading,
+  SIOKGraf2Sub,
 } from "./SIOK.styled";
 
 import { useRouter } from "next/router";
@@ -27,33 +29,40 @@ const SIOK_service1 = (props) => {
       <SIOKContainer {...props}>
         <SIOKImage
           className="desktop"
-          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".png"}
+          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".webp"}
         ></SIOKImage>
-        <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop>
+        {/* <SIOKTitle_desktop className="desktop">{header1}</SIOKTitle_desktop> */}
 
-        <SIOKTitle className="mobile">{header1}</SIOKTitle>
-        <SIOKImage className="mobile" src="/Service1/SIOKgraf.png"></SIOKImage>
-        <SIOKTitle className="mobile">{header2}</SIOKTitle>
-        <SIOKTextContainer className="mobile">
+        {/* <SIOKTitle className="mobile">{header1}</SIOKTitle> */}
+        <SIOKImage
+          className="mobile"
+          src={"/Service1/SIOKgraf1_desktop1_" + locale + ".webp"}
+        ></SIOKImage>
+        <SIOKTitle>{t("service1:service1_SIOKheading2")}</SIOKTitle>
+        {/* <SIOKTextContainer className="mobile">
           <SIOKParagraph>{paragraph}</SIOKParagraph>
         </SIOKTextContainer>
         <SIOKImageContainer className="mobile">
           <SIOKImage
             className="mobile"
-            src="/Service1/SIOKgraf2.png"
+            src="/Service1/SiOKgraf2.webp"
           ></SIOKImage>
           <SIOKImageText className="mobile">{imageText}</SIOKImageText>
-        </SIOKImageContainer>
+        </SIOKImageContainer> */}
+        {/* <SIOKGraf2Heading>
+          {t("service1:service1_SIOKheading2")}
+        </SIOKGraf2Heading> */}
         <SIOKImage
-          className="desktop"
-          src={"/Service1/SIOKgraf2_desktop_" + locale + ".png"}
+          src={"/Service1/SIOKgraf2_desktop_" + locale + ".webp"}
         ></SIOKImage>
+        <SIOKGraf2Sub>{t("service1:service1_SIOKImageSub")}</SIOKGraf2Sub>
       </SIOKContainer>
     </>
   );
 };
 
 import styled from "styled-components";
+import { BodyText4 } from "../../../basic_components/texts/Texts";
 const SIOKTitle_desktop = styled.h1`
   display: none !important;
 `;

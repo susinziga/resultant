@@ -8,11 +8,17 @@ import {
   CardTitle,
   TextContainer,
   List,
+  ImageWrapper,
   ButtonContainer,
 } from "./Card1.styled";
 import Button from "../../../../basic_components/button/Button";
 
 import { useRouter } from "next/router";
+import {
+  BodyText1,
+  BodyText2,
+  BodyText3,
+} from "../../../../basic_components/texts/Texts";
 
 const Card1_dnla = () => {
   const { t, lang } = useTranslation();
@@ -33,24 +39,33 @@ const Card1_dnla = () => {
   return (
     <>
       <CardContainer>
-        <CardImage
-          className="mobile"
-          src="/DNLA/cardSectionImage1_mobile.png"
-        ></CardImage>
-        <CardImage
-          className="desktop"
-          src="/DNLA/cardSectionImage1_desktop.png"
-        ></CardImage>
+        <ImageWrapper>
+          <CardImage
+            className="mobile"
+            src="/DNLA/cardSectionImage1_mobile.webp"
+          ></CardImage>
+          <CardImage
+            className="desktop"
+            src="/DNLA/cardSectionImage1_desktop.webp"
+          ></CardImage>
+        </ImageWrapper>
         <TextContainer>
           <CardHeading>{heading}</CardHeading>
           <CardTitle>{title}</CardTitle>
           <List>
-            {bullets.map((bullet) => {
-              return <Bullet>{bullet.text}</Bullet>;
+            {bullets.map((bullet, index) => {
+              return <Bullet key={index}>{bullet.text}</Bullet>;
             })}
           </List>
           <ButtonContainer>
-            <Button secondary href={"/" + locale + "/coming-soon"}>
+            <Button
+              secondary
+              href={
+                "/" +
+                locale +
+                "/clanek/DNLA-sistem-ponuja-celovito-strokovno-podporo-drugim-kadrovskim-procesom"
+              }
+            >
               {button}
             </Button>
           </ButtonContainer>

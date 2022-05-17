@@ -23,7 +23,9 @@ export const Name_flex = styled.div`
     gap: 0.5rem;
   }
 `;
-export const Name = styled(text.Header2)``;
+export const Name = styled(text.Header1)`
+  font-size: 4rem;
+`;
 export const Role = styled(text.BodyText2)``;
 export const Details_container = styled.div`
   display: flex;

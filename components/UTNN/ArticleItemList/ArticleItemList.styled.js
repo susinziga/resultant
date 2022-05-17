@@ -4,7 +4,7 @@ export const ListTitle = styled.p`
   margin-bottom: 10%;
   font-size: 1.5rem;
   line-height: 1.6rem;
-  font-weight: 600;
+  font-weight: 500;
 
   @media only screen and (min-width: 768px) {
     margin-bottom: 3%;
@@ -30,8 +30,9 @@ export const ListUnorderedList = styled.ul`
 export const ListItem = styled.li`
   /* line-height: 40px; */
   margin-bottom: 10%;
-  font-family: "NeusaThin";
   font-size: 1.1rem;
+  font-family: "Neusa";
+  font-weight: 300;
 
   @media only screen and (min-width: 768px) {
     margin-bottom: 3%;

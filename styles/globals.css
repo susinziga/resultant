@@ -1,27 +1,57 @@
 @font-face {
   font-family: "Fatface";
   src: url("./fonts/AbrilFatface-Regular.ttf");
+
+  font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Neusa";
   src: url("./fonts/NeusaNextStd-Regular.ttf");
+
+  font-weight: normal;
+  font-display: swap;
 }
 
 @font-face {
+  font-family: "Neusa";
+  src: url("./fonts/new/NeusaNextPro-Medium.ttf");
+
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neusa";
+  src: url("./fonts/new/NeusaNextPro-Bold.ttf");
+
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neusa";
+  src: url("./fonts/NeusaNextStd-Light.ttf");
+
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* @font-face {
   font-family: "NeusaThin";
   src: url("./fonts/NeusaNextStd-Light.ttf");
-}
+} */
 
 html {
   box-sizing: border-box;
   /*font-size: 16px;*/
   font-family: "Neusa";
   font-size: calc(16px + (18 - 16) * (100vw - 500px) / (1800 - 500));
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
+  /*-webkit-user-select: none;
+  -moz-user-select: none; 
+  -ms-user-select: none;
+  user-select: none; */
 }
 
 *,
@@ -62,11 +92,12 @@ h2,
 h3,
 h4 {
   font-family: "Fatface";
+  cursor: default;
 }
 
 h1 {
   font-size: 4.1rem;
-  line-height: 6.5rem;
+  /* line-height: 4.5rem; */
 }
 /*HEADER 2*/
 h2 {
@@ -84,11 +115,11 @@ hr{
   border-color: #000000;
     background: #000000;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   /*HEADER 1*/
   h1 {
     font-size: 6.6rem;
-    line-height: 6rem;
+    line-height: 3.9rem;
   }
   /*HEADER 2*/
   h2 {
@@ -104,8 +135,13 @@ hr{
   }
 }
 span {
-  font-family: "NeusaThin";
+  font-family: "Neusa";
+  font-weight: lighter;
   color: #5c5c5c;
+}
+
+.cookie-notice span, .cookie-modal span {
+  color: white !important;
 }
 
 .white {
@@ -172,3 +208,52 @@ a:active {
     line-height: 23px;
   }
 }*/
+
+/* COOKIE CONSENT STYLING */
+.cookie-notice, .cm-modal.cm-klaro {
+  background-color: var(--blue) !important;
+}
+
+.cm-link.cn-learn-more {
+  color: var(--secondary-color) !important;
+}
+
+.cm-btn.cm-btn-danger.cn-decline {
+  background: none !important;
+}
+
+.cm-btn.cm-btn-success {
+  background: var(--secondary-color) !important;
+  border-radius: 20px !important;
+}
+
+.cm-caret a {
+  color: var(--secondary-color) !important;
+}
+
+.klaro .cookie-modal .cm-list-label .slider.round::before, .klaro .context-notice .cm-list-label .slider.round::before, .klaro .cookie-notice .cm-list-label .slider.round::before {
+  background-color: var(--blue) !important;
+}
+
+/* true switch */
+.klaro .cookie-modal .cm-list-input:checked+.cm-list-label .slider, .klaro .context-notice .cm-list-input:checked+.cm-list-label .slider, .klaro .cookie-notice .cm-list-input:checked+.cm-list-label .slider {
+  background-color: var(--secondary-color) !important;
+}
+
+.cm-powered-by a {
+  color: #316888 !important;
+}
+
+#klaro > div > div > div > div > div > button.cm-btn.cm-btn-danger.cn-decline {
+  font-size: .65rem;
+}
+
+
+.medium {
+  font-weight: 500;
+}
+
+.regular {
+  font-weight: 400;
+  color: black;
+}

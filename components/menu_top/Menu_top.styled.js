@@ -35,12 +35,13 @@ export const LogoContainer = styled.div`
     right: 0;
 
     height: 100%;
+    width: 100%;
 
     z-index: 100;
     height: 65px;
     left: 0;
     //left:100%;
-    width: fit-content;
+    /* width: fit-content; */
     transform: scale(1);
 
     //transform:scale(22);
@@ -85,13 +86,13 @@ export const LogoContainer = styled.div`
       bottom: 0;
       right: 0;
 
-      height: 65px;
+      width: 100%;
 
       z-index: 100;
 
       left: 0;
       //left:100%;
-      width: fit-content;
+      /* width: fit-content;*/
       transform: scale(1);
 
       //transform:scale(22);
@@ -99,6 +100,12 @@ export const LogoContainer = styled.div`
       //transition:1s top;
     }
 
+    @media (min-width: 768px) {
+      #logo,
+      #letter {
+        height: 80px;
+      }
+    }
     @media (min-width: 992px) {
       #logo,
       #letter {
@@ -115,4 +122,15 @@ export const Fixed = styled.div`
   z-index: 1000;
   width: 100%;
   top: 0;
+`;
+
+export const Flex = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Flex_language = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
 `;
