@@ -99,7 +99,7 @@ const FooterInput = () => {
 
   return (
     <>
-      <InputLabel>Email *</InputLabel>
+      <InputLabel htmlFor="footerInputContainer">Email *</InputLabel>
       <InputContainerDiv>
         <InputContainer
           id="footerInputContainer"

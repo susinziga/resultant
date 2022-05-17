@@ -9,7 +9,7 @@ const Pillars_sliderItem = ({ title, text, link, button }) => {
     <Styled.PillarComponentContainer className="pillarSwiper">
       <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
       <p>
-        <BodyText4>{text}</BodyText4>
+        <BodyText4 dangerouslySetInnerHTML={{ __html: text }}></BodyText4>
       </p>
       <Button href={link} secondary>
         {button}

@@ -19,7 +19,7 @@ export const PillarComponentContainer = styled.div`
 
   transition: 0.5s all;
   margin: 0.5%;
-  padding: 3%;
+  padding: 1% 2%;
   padding-bottom: 7%;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@ export const PillarComponentContainer = styled.div`
     padding-bottom: 10%;
   }
   @media screen and (min-width: 1124px) {
-    padding-bottom: 7%;
+    padding-bottom: 8%;
   }
 `;
 
@@ -70,8 +70,8 @@ export const LogoContainer = styled.div`
 
 export const PillarText = styled(BodyText4)`
   visibility: hidden;
-
   font-size: 1rem;
+
   @media (min-width: 768px) {
     font-size: 0.8rem;
   }
