@@ -70,6 +70,7 @@ export const BlogAuthorImageWrapper = styled.div`
   /* width: 100%; */
   height: 100%;
   position: relative;
+  max-width: 165px;
 `;
 
 export const GuestBadge = styled.div`

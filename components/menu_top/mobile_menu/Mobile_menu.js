@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import styled from "styled-components";
+import useTranslation from "next-translate/useTranslation";
+import Mobile_menu_dropdown from "./Mobile_menu_dropdown";
 
 import Button from "../../../basic_components/button/Button";
 
@@ -102,11 +106,6 @@ const Mobile_menu = ({ menu_opened }) => {
   );
 };
 
-import styled from "styled-components";
-import useTranslation from "next-translate/useTranslation";
-import Mobile_menu_dropdown from "./Mobile_menu_dropdown";
-import { useRouter } from "next/router";
-
 const Container = styled.div`
   /*transition: 2s all;
 
@@ -120,7 +119,7 @@ const Container = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
-  padding-top: 8rem;
+  padding-top: 1.5rem;
 
   align-items: center;
   display: flex;

@@ -2,7 +2,7 @@ import gql from "graphql-tag";
 
 const ARTICLES_QUERY = gql`
   query clanek {
-    clanki(pagination: { start: 0 }) {
+    clanki(pagination: { start: 0, limit: 1000 }) {
       data {
         id
         attributes {
