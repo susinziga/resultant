@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { data } = req.body;
   var nodemailer = require("nodemailer");
   var smtpTransport = require("nodemailer-smtp-transport");
@@ -35,15 +35,15 @@ export default function handler(req, res) {
   await new Promise((resolve, reject) => {
     // send mail
     transporter.sendMail(mailData, (err, info) => {
-        if (err) {
-            console.error(err);
-            reject(err);
-        } else {
-            console.log(info);
-            resolve(info);
-        }
+      if (err) {
+        console.error(err);
+        reject(err);
+      } else {
+        console.log(info);
+        resolve(info);
+      }
     });
-});
-  
+  });
+
   res.status(200).json({ name: "Sent" });
 }
