@@ -34,14 +34,9 @@ export default async function handler(req, res) {
   console.log("SENT MAIL TO " + mailOptions.to);
   await new Promise((resolve, reject) => {
     // send mail
-    transporter.sendMail(mailData, (err, info) => {
-      if (err) {
-        console.error(err);
-        reject(err);
-      } else {
-        console.log(info);
-        resolve(info);
-      }
+    transporter.sendMail(mailOptions, function (err, info) {
+      if (err) console.log(err);
+      else console.log(info);
     });
   });
 
