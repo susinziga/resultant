@@ -49,7 +49,7 @@ export const PillarComponentTitle = styled(Title2)`
   }
 `;
 
-export const PillarOuter = styled.a`
+export const PillarOuter = styled.div`
   position: absolute;
   top: 0;
   bottom: 0;

@@ -22,12 +22,23 @@ const Menu_fixed = (props) => {
         ref={animationContainer}
       >
         <Styled.MenuItemWrapper>
-          <Styled.ImageWrapper>
+          <Styled.ImageWrapper className="desktop">
             <Styled.MenuItemImg
-              width={820}
-              height={638}
+              width={290}
+              height={225}
+              quality={100}
               layout="responsive"
-              src="/Home/vrednote-strokovnost.webp"
+              src="/Home/vrednote-strokovnost_desktop.webp"
+              alt="Strokovnost"
+            ></Styled.MenuItemImg>
+          </Styled.ImageWrapper>
+          <Styled.ImageWrapper className="mobile">
+            <Styled.MenuItemImg
+              width={290}
+              height={225}
+              quality={100}
+              layout="responsive"
+              src="/Home/vrednote-strokovnost_mobile.webp"
               alt="Strokovnost"
             ></Styled.MenuItemImg>
           </Styled.ImageWrapper>

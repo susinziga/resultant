@@ -149,7 +149,18 @@ const Hero = (props) => {
             </>
           )}
 
-          <Button
+          <MoreButton
+            onClick={() => {
+              window.scrollTo({
+                top: window.innerHeight - 100,
+                left: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            {t("common:button_moreMore")}
+          </MoreButton>
+          {/* <Button
             primary
             onClick={() => {
               window.scrollTo({
@@ -160,7 +171,7 @@ const Hero = (props) => {
             }}
           >
             {t("common:button_moreMore")}
-          </Button>
+          </Button> */}
           <Styled.WhiteLine
             ref={(el) => (lineAnimation = el)}
           ></Styled.WhiteLine>
@@ -185,6 +196,21 @@ export const MobileImage = styled.div`
   display: inline;
   @media screen and (min-width: 1050px) {
     display: none;
+  }
+`;
+
+export const MoreButton = styled.div`
+  background-color: var(--secondary-color);
+  color: var(--white);
+  border-radius: 24px;
+  padding: 10px 20px;
+  display: inline;
+  width: fit-content;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: white;
   }
 `;
 

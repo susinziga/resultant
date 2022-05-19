@@ -11,9 +11,7 @@ const LanguagePicker = () => {
   return (
     <>
       <Container>
-        <FontAwesomeIcon icon={faGlobe} fontSize={"0.8rem"}>
-          {" "}
-        </FontAwesomeIcon>
+        <FontAwesomeIcon icon={faGlobe} fontSize={"0.8rem"}></FontAwesomeIcon>
         <Button link arrowDown>
           <label style={{ fontSize: "0.8rem" }}>{locale}</label>
         </Button>
