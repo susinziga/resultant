@@ -28,6 +28,7 @@ const Menu_fixed = (props) => {
               height={638}
               layout="responsive"
               src="/Home/vrednote-strokovnost.webp"
+              alt="Strokovnost"
             ></Styled.MenuItemImg>
           </Styled.ImageWrapper>
           <Styled.MenuItem
@@ -41,6 +42,7 @@ const Menu_fixed = (props) => {
               height={638}
               layout="responsive"
               src="/Home/vrednote-usmerjenost.webp"
+              alt="Usmerjenost"
             ></Styled.MenuItemImg>
           </Styled.ImageWrapper>
           <Styled.MenuItem
@@ -54,6 +56,7 @@ const Menu_fixed = (props) => {
               height={638}
               layout="responsive"
               src="/Home/vrednote-zanesljivost.webp"
+              alt="Zanesljivost"
             ></Styled.MenuItemImg>
           </Styled.ImageWrapper>
           <Styled.MenuItem

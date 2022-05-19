@@ -100,8 +100,8 @@ export const ButtonContainer = styled.a`
 ${(props) => {
     return props.secondary
       ? `
-      color:var(--terciary-color)!important;
-      border: 2px solid var(--terciary-color);
+      color: #6e4c00 !important;
+      border: 2px solid #6e4c00;
       border-radius:var(--border-secondary);
       &:hover {
       background-color: var(--light)

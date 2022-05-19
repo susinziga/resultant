@@ -70,12 +70,14 @@ const Testimonials_home = (props) => {
       <Styled.TestimonialsButton>
         <img
           src="./Buttons/arrow_next.svg"
+          alt=""
           onClick={() => {
             swiperInstance.slideNext(1000);
           }}
         ></img>
         <img
           src="./Buttons/arrow_prev2.svg"
+          alt=""
           onClick={() => {
             swiperInstance.slidePrev(1000);
           }}

@@ -14,6 +14,7 @@ import Mobile_menu from "./mobile_menu/Mobile_menu";
 import LanguagePicker from "./LanguagePicker";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const Menu_top = ({}) => {
   const { t, lang } = useTranslation("aboveTheFold");
@@ -206,11 +207,12 @@ const Menu_top = ({}) => {
     >
       <Styled.MenuContainer display={(navState <= 0).toString()}>
         <Styled.LogoContainer>
-          <a href={"/" + locale}></a>
+          {/* <a href={"/" + locale}></a> */}
           <img
             id="logo"
             ref={(el) => (LogoAnimation = el)}
             src={t("logo_link")}
+            alt="Resultant"
           ></img>
           {/*<object
             type="application/x-shockwave-flash"
@@ -219,13 +221,16 @@ const Menu_top = ({}) => {
             width="300"
             height="300"
   ></object>*/}
-          <a href={"/" + locale}>
-            <img
-              id="letter"
-              ref={(el) => (letterAnimation = el)}
-              src="/Logo/letter_svg.svg"
-            ></img>
-          </a>
+          <Link href={"/" + locale}>
+            <a aria-label="Resultant">
+              <img
+                id="letter"
+                ref={(el) => (letterAnimation = el)}
+                src="/Logo/letter_svg.svg"
+                alt="Resultant"
+              ></img>
+            </a>
+          </Link>
         </Styled.LogoContainer>
 
         {size[0] >= 900 ? (
@@ -247,6 +252,7 @@ const Menu_top = ({}) => {
                 style={{ height: "100%" }}
                 src="/Buttons/Menu.svg"
                 id="hamburger_icon"
+                alt="Menu"
               ></img>
             </p>
             <Mobile_menu menu_opened={menu_opened}></Mobile_menu>

@@ -30,13 +30,19 @@ const Footer = () => {
           <Styled.ContactsFooterContainer>
             <Styled.ContactIconContainer>
               <Styled.ContactLink href="tel:041231831">
-                <Styled.ContactIcon src="/Footer/-call.webp"></Styled.ContactIcon>
+                <Styled.ContactIcon
+                  src="/Footer/-call.webp"
+                  alt="Telephone"
+                ></Styled.ContactIcon>
                 041 231 831
               </Styled.ContactLink>
             </Styled.ContactIconContainer>
             <Styled.ContactIconContainer>
               <Styled.ContactLink href="mailto:info@resultant.si">
-                <Styled.ContactIcon src="/Footer/-email.webp"></Styled.ContactIcon>
+                <Styled.ContactIcon
+                  src="/Footer/-email.webp"
+                  alt="Email"
+                ></Styled.ContactIcon>
                 info@resultant.si
               </Styled.ContactLink>
             </Styled.ContactIconContainer>

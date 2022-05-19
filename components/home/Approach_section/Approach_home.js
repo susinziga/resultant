@@ -43,6 +43,7 @@ const Approach_component = (props) => {
             height={1000}
             quality={100}
             src="/Home/homeApproachImage.webp"
+            alt=""
           ></Image>
         </ApproachImage>
       </ApproachContainer>

@@ -32,6 +32,7 @@ const Contact_home = (props) => {
               width={1000}
               height={1000}
               quality={50}
+              alt=""
             ></Image>
           </ContactImage>
         ) : (
@@ -57,6 +58,7 @@ const Contact_home = (props) => {
                 width={1000}
                 height={1000}
                 quality={50}
+                alt=""
               ></Image>
             </ContactImage>
           ) : (
