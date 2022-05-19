@@ -100,6 +100,7 @@ const Hero = (props) => {
               priority
               width={1920}
               height={1080}
+              quality={100}
               layout="responsive"
               sizes="100vw"
               src={heroImage}
@@ -109,10 +110,11 @@ const Hero = (props) => {
             <Image
               priority
               src={heroImage_mobile}
-              width={650}
-              height={1080}
+              width={729}
+              height={1196}
+              quality={100}
               layout="responsive"
-              sizes="50vw"
+              sizes="100vw"
             ></Image>
           </MobileImage>
         </picture>

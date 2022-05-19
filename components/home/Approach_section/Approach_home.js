@@ -10,6 +10,7 @@ import {
 import useTranslation from "next-translate/useTranslation";
 
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Approach_component = (props) => {
   const { t, lang } = useTranslation();
@@ -36,11 +37,14 @@ const Approach_component = (props) => {
             {buttonText}
           </Button>
         </ApproachTextContainer>
-        <ApproachImage
-          width={1000}
-          height={1000}
-          src="/Home/homeApproachImage.webp"
-        ></ApproachImage>
+        <ApproachImage>
+          <Image
+            width={1000}
+            height={1000}
+            quality={100}
+            src="/Home/homeApproachImage.webp"
+          ></Image>
+        </ApproachImage>
       </ApproachContainer>
     </>
   );

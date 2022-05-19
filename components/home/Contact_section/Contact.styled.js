@@ -1,34 +1,29 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
 import { Title2 } from "../../../basic_components/texts/Texts";
 
-export const ContactContainer = styledComponents.div`
-    padding:10% 5%;
-    background: #F6FBFE;
-    
-    @media screen and (min-width: 1024px){
-        padding: 7% 2%;
-        width: 100%;
-        margin: auto;
-        display: flex;
+export const ContactContainer = styled.div`
+  padding: 10% 5%;
+  background: #f6fbfe;
 
-        >p {
-            opacity: 0.6;
-        }
+  @media screen and (min-width: 1024px) {
+    padding: 7% 2%;
+    width: 100%;
+    margin: auto;
+    display: flex;
 
+    > p {
+      opacity: 0.6;
     }
+  }
 
-     
-    @media screen and (min-width: 992px){
-        
-    }
+  @media screen and (min-width: 992px) {
+  }
 
-    @media screen and (min-width: 1600px){
-              
-    }
-  
+  @media screen and (min-width: 1600px) {
+  }
 `;
 
-export const ContactTextContainer = styledComponents.div`
+export const ContactTextContainer = styled.div`
     display: flex; 
     flex-direction: column; 
     gap: 1.5rem;
@@ -45,7 +40,7 @@ export const ContactTextContainer = styledComponents.div`
   }
 `;
 
-export const ContactHeading = styledComponents(Title2)`
+export const ContactHeading = styled(Title2)`
     @media screen and (min-width: 768px){
         width:var(--width-80);
         margin-bottom: 8%;
@@ -62,19 +57,16 @@ export const ContactHeading = styledComponents(Title2)`
   
 `;
 
-export const ContactImage = styledComponents.img`
-    
-//   object-fit: cover;
+export const ContactImage = styled.div`
+  //   object-fit: cover;
 
-  @media screen and (min-width: 1024px){
-    width:35%;
-  } 
-
-  @media screen and (min-width: 992px){
-    
+  @media screen and (min-width: 1024px) {
+    width: 35%;
   }
 
-  @media screen and (min-width: 1600px){
-         
+  @media screen and (min-width: 992px) {
+  }
+
+  @media screen and (min-width: 1600px) {
   }
 `;

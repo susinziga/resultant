@@ -53,7 +53,7 @@ export const ApproachHeading = styled(Title2)`
   }
 `;
 
-export const ApproachImage = styled(Image)`
+export const ApproachImage = styled.div`
   width: 100%;
   margin-top: 10%;
   @media (min-width: 1024px) {

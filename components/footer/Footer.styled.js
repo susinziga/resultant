@@ -273,3 +273,16 @@ export const Flex = styled.div`
     gap: 3%;
   }
 `;
+
+export const MadeByDesktopWrapper = styled.div`
+  width: 100%;
+  text-align: right;
+  padding-bottom: 4rem;
+  padding-right: 5%;
+
+  display: none;
+
+  @media only screen and (min-width: 768px) {
+    display: block !important;
+  }
+`;

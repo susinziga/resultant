@@ -4,6 +4,8 @@ import FooterInput from "./FooterInput";
 import useTranslation from "next-translate/useTranslation";
 
 import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 const Footer = () => {
   const { t, lang } = useTranslation();
 
@@ -45,6 +47,41 @@ const Footer = () => {
         <Styled.InputFooterContainer>
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
+
+        {/* Socials Image Links */}
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "3rem",
+          }}
+          className={"mobile"}
+        >
+          <Link
+            href={"https://www.linkedin.com/company/resultanthrconsulting/"}
+          >
+            <a>
+              <Image
+                src={"/Icons/linkedin_white.webp"}
+                width={50}
+                height={50}
+                alt="linkedin"
+              ></Image>
+            </a>
+          </Link>
+          <Link href={"https://www.facebook.com/Resultantposlovnosvetovanje"}>
+            <a>
+              <Image
+                src={"/Icons/facebook_white.webp"}
+                width={50}
+                height={50}
+                alt="facebook"
+              ></Image>
+            </a>
+          </Link>
+        </div>
+
         <Styled.Combine>
           {/* <Styled.Link className="desktop">{madeBy}</Styled.Link> */}
           <Styled.LinkFooterContainer>
@@ -62,11 +99,44 @@ const Footer = () => {
               <Styled.Footer_item>&copy; {rights}</Styled.Footer_item>
               {/* <Styled.Link className="mobile">{madeBy}</Styled.Link> */}
             </Styled.Flex>
-            <Styled.Link href="https://www.agencija-statera.si/">
-              {madeBy}
-            </Styled.Link>
+            <div className="mobile">
+              <Styled.Link href="https://www.agencija-statera.si/">
+                {madeBy}
+              </Styled.Link>
+            </div>
+            <div className="desktop" style={{ display: "flex" }}>
+              <Link
+                href={"https://www.linkedin.com/company/resultanthrconsulting/"}
+              >
+                <a>
+                  <Image
+                    src={"/Icons/linkedin_white.webp"}
+                    width={50}
+                    height={50}
+                    alt="linkedin"
+                  ></Image>
+                </a>
+              </Link>
+              <Link
+                href={"https://www.facebook.com/Resultantposlovnosvetovanje"}
+              >
+                <a>
+                  <Image
+                    src={"/Icons/facebook_white.webp"}
+                    width={50}
+                    height={50}
+                    alt="facebook"
+                  ></Image>
+                </a>
+              </Link>
+            </div>
           </Styled.LinkFooterContainer>
         </Styled.Combine>
+        <Styled.MadeByDesktopWrapper className={"desktop"}>
+          <Styled.Link href="https://www.agencija-statera.si/">
+            {madeBy}
+          </Styled.Link>
+        </Styled.MadeByDesktopWrapper>
       </Styled.FooterContainer>
     </div>
   );
