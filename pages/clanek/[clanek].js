@@ -48,6 +48,7 @@ export async function getStaticProps({ params }) {
     props: {
       clanek: article,
     },
+      revalidate: 10,
   };
 }
 
@@ -55,7 +56,7 @@ export async function getStaticPaths() {
   const clanki = await client.query({ query: ARTICLES_QUERY });
   const paths = clanki.data.clanki.data.map((clanek) => {
     return {
-      params: { clanek: String(clanek.id), revalidate: 60 },
+      params: { clanek: String(clanek.id) },
     };
   });
 
