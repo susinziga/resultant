@@ -55,7 +55,7 @@ export async function getStaticPaths() {
   const clanki = await client.query({ query: ARTICLES_QUERY });
   const paths = clanki.data.clanki.data.map((clanek) => {
     return {
-      params: { clanek: String(clanek.id) },
+      params: { clanek: String(clanek.id), revalidate: 60 },
     };
   });
 
