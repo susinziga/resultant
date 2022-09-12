@@ -9,11 +9,7 @@ import BigCardsSection from "../../components/UTNN/cardSection/BigCardsSection";
 import BigCard from "../../components/UTNN/cardSection/Card/BigCard";
 import Contact_utnn from "../../components/UTNN/Contact/Contact_utnn";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
-import styled from "styled-components";
 import { useRouter } from "next/router";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 import { AktualnoContext } from "../../context/aktualnoContext";
 import { getArticleFromStrapiData } from "../api/strapi";

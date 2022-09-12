@@ -65,7 +65,9 @@ export const CardImage = styled.img`
   }
 `;
 
-export const TextContainer = styled.div``;
+export const TextContainer = styled.div`
+  width: fit-content;
+`;
 
 export const CardHeading = styled(Title2)`
   margin-bottom: 5%;
