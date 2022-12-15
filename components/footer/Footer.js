@@ -106,7 +106,7 @@ const Footer = () => {
               {/* <Styled.Link className="mobile">{madeBy}</Styled.Link> */}
             </Styled.Flex>
             <div className="mobile">
-              <Styled.Link href="https://www.agencija-statera.si/">
+              <Styled.Link href="https://adanta.si/">
                 {madeBy}
               </Styled.Link>
             </div>
@@ -139,7 +139,7 @@ const Footer = () => {
           </Styled.LinkFooterContainer>
         </Styled.Combine>
         <Styled.MadeByDesktopWrapper className={"desktop"}>
-          <Styled.Link href="https://www.agencija-statera.si/">
+          <Styled.Link href="https://adanta.si/">
             {madeBy}
           </Styled.Link>
         </Styled.MadeByDesktopWrapper>
