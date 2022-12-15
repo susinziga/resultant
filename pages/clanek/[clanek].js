@@ -185,14 +185,14 @@ const Clanek = ({ clanek }) => {
     <>
       <Head>
         <title>{article.Meta_Title}</title>
-        <meta name="description" content={article.Meta_Description} />
-        <meta key="title" property="og:title" content={article.Meta_Title} />
+        <meta name="description" content={article.Meta_Description ?? article.podnaslov} />
+        <meta key="title" property="og:title" content={article.Meta_Title ?? article.naslov} />
         <meta key="url" property="og:url" content={router.asPath} />
         <meta key="type" property="og:type" content="article" />
         <meta
           key="description"
           property="og:description"
-          content={article.Meta_Description}
+          content={article.Meta_Description ?? article.podnaslov}
         />
         <meta
           key="image"
