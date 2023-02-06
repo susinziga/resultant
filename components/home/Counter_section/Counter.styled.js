@@ -78,9 +78,10 @@ export const CounterContainer = styledComponents.div`
         }
     }
 
-    > h2 *{
+    > .numbers *{
         color:white;
         font-family:"Fatface";
+        font-size: 3rem;
     }
   
 `;

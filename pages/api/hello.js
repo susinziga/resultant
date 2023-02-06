@@ -19,7 +19,7 @@ export default async function handler(req, res) {
       email,
     }),
   };
-  fetch(url, options)
+  return await fetch(url, options)
     .then((response) => response.json())
     .then((data) => {
       return res.status(200).json({ data });
@@ -27,5 +27,4 @@ export default async function handler(req, res) {
     .catch((e) => {
       return res.status(400).json({ e });
     });
-  res.status(200).send();
 }

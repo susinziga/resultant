@@ -56,7 +56,8 @@ export const MenuItemImg = styled(Image)`
   }
 `;
 
-export const MenuItem = styled(Title2)`
+export const MenuItem = styled.p`
+  font-family: "Fatface", cursive;
   font-size: 2rem;
   padding-bottom: 1rem;
   /* color: var(--light-grey); */

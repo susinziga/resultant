@@ -1,9 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import useTranslation from "next-translate/useTranslation";
-import { BodyText2 } from "../../basic_components/texts/Texts";
+import {BodyText1, BodyText2, BodyText3, BodyText4} from "../../basic_components/texts/Texts";
+import {Checkbox, CheckboxContainer1} from "../offer/OfferForm/Checkbox.styled";
+import Checkbox_offer from "../offer/OfferForm/Checkbox_offer";
+import Link from "next/link";
 
 export const InputContainer = styled.input`
   outline: none;
@@ -37,6 +40,11 @@ export const InputLabel = styled.label`
   color: #f8f2ed;
 `;
 
+export const TermsContainer = styled.div`
+  display: flex;
+  margin-top: .5rem;
+`;
+
 export const InputContainerDiv = styled.div`
   font-size: 1rem;
   padding: var(--padding-primary);
@@ -54,7 +62,7 @@ export const ButtonContainer = styled.button`
   font-family: "Neusa";
   font-size: 1rem;
   padding: var(--padding-primary);
-  cursor: pointer;
+  cursor: ${(props) => (props.terms && props.email ? "pointer" : "not-allowed")};
   font-size: 0.8rem;
   width: 30%;
   margin-top: 0.5rem;
@@ -63,7 +71,7 @@ export const ButtonContainer = styled.button`
   background-color: var(--footer-color);
   border: 2px solid #f8f2ed;
   border-left: 0px;
-  color: white;
+  color: ${(props) => (props.terms && props.email ? "white" : "gray")};
 
   @media only screen and (max-width: 380px) {
     font-size: 0.8rem;
@@ -76,51 +84,62 @@ export const ButtonContainer = styled.button`
 `;
 
 const FooterInput = () => {
-  const { locale } = useRouter();
-  const { t } = useTranslation();
+    const {locale} = useRouter();
+    const {t} = useTranslation();
 
-  const [email, setEmail] = React.useState("");
+    const [email, setEmail] = React.useState("");
 
-  const [sent, setSent] = React.useState(false);
+    const [sent, setSent] = React.useState(false);
 
-  const button = { sl: "Naroči se", en: "Subscribe" };
-  const sendMail = () => {
-    setSent(true);
-    document.getElementById("footerInputContainer").value = "";
-    fetch("/api/hello", {
-      method: "POST",
-      body: JSON.stringify({ email: email }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
+    const [terms, setTerms] = React.useState(false);
+
+    const button = {sl: "Naroči se", en: "Subscribe"};
+    const sendMail = () => {
         setSent(true);
-      });
-  };
+        document.getElementById("footerInputContainer").value = "";
+        fetch("/api/hello", {
+            method: "POST",
+            body: JSON.stringify({email: email}),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                setSent(true);
+            });
+    };
 
-  return (
-    <>
-      <InputLabel htmlFor="footerInputContainer">Email *</InputLabel>
-      <InputContainerDiv>
-        <InputContainer
-          id="footerInputContainer"
-          sent={sent}
-          onChange={(e) => {
-            if (!sent) {
-              setEmail(e.target.value);
-            }
-          }}
-          placeholder={sent ? t("contact:contact_footerSuccess") : ""}
-        ></InputContainer>
-        {sent ? (
-          <></>
-        ) : (
-          <ButtonContainer onClick={!sent ? sendMail : () => {}}>
-            {button[locale]}
-          </ButtonContainer>
-        )}
-      </InputContainerDiv>
-    </>
-  );
+    return (
+        <>
+            <InputLabel htmlFor="footerInputContainer">Email *</InputLabel>
+            <br/>
+            <InputContainerDiv>
+
+                <InputContainer
+                    id="footerInputContainer"
+                    sent={sent}
+                    onChange={(e) => {
+                        if (!sent) {
+                            setEmail(e.target.value);
+                        }
+                    }}
+                    placeholder={sent ? t("contact:contact_footerSuccess") : ""}
+                ></InputContainer>
+                {sent ? (
+                    <></>
+                ) : (
+                    <ButtonContainer terms={terms} email={email} onClick={(!sent && terms && email.length > 0) ? sendMail : () => {}}>
+                        {button[locale]}
+                    </ButtonContainer>
+                )}
+            </InputContainerDiv>
+            <TermsContainer>
+                <input checked={terms} onChange={() => setTerms(prevState => {
+                    return !prevState
+                })} type={"checkbox"} id={"splosni-pogoji"}/>
+                <label htmlFor={"splosni-pogoji"} style={{color: "white", userSelect: "none", cursor: "pointer"}}>Strinjam
+                    se s <Link href={"pravilnik-o-zasebnosti"}><span style={{textDecoration: "underline", color: "white"}}>splošnimi pogoji</span></Link></label>
+            </TermsContainer>
+        </>
+    );
 };
 
 export default FooterInput;
