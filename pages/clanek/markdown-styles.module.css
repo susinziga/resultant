@@ -1,5 +1,5 @@
 .reactMarkDown p {
-    font-family: "Neusa";
+    font-family: "Neusa", serif;
     font-weight: 300 !important;
   }
 
@@ -10,4 +10,9 @@
   .reactMarkDown li {
       font-weight: 300;
       list-style: initial;
+  }
+
+  .reactMarkDown a {
+        color: #24a5d7;
+        text-decoration: underline;
   }
