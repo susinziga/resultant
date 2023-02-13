@@ -21,8 +21,16 @@
   text-decoration: underline;
 }
 
+.reactMarkDown h5 {
+  font-size: 1.4rem;
+}
+
 .reactMarkDown h4 {
   font-weight: 500;
+}
+
+.reactMarkDown h3 {
+  font-size: 2.6rem;
 }
 
 .reactMarkDown h2 {
