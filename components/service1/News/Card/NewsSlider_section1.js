@@ -41,7 +41,7 @@ const CardSlider = ({ news }) => {
         }}
         loop={false}
         spaceBetween={10}
-        initialSlide={1}
+        initialSlide={0}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>
         {news.map((n, id) => (
