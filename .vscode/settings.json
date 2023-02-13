@@ -1,5 +1,23 @@
 {
-    "cSpell.words": [
-        "Aktualno"
-    ]
+  "cSpell.words": ["Aktualno"],
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#3bb8fd",
+    "activityBar.background": "#3bb8fd",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#dd028f",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#3bb8fd",
+    "statusBar.background": "#08a6fd",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#0287d0",
+    "statusBarItem.remoteBackground": "#08a6fd",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#08a6fd",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#08a6fd99",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#08a6fd"
 }
