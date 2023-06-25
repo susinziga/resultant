@@ -11,7 +11,7 @@ export default async function handler(req, res) {
       host: "smtp.gmail.com",
       auth: {
         user: "resultanthsc@gmail.com",
-        pass: "daxsgzyqrdpuhtyz",
+        pass: "Epenepej#098",
       },
     })
   );
