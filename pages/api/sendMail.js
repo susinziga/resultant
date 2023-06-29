@@ -8,10 +8,10 @@ export default async function handler(req, res) {
   var transporter = nodemailer.createTransport(
     smtpTransport({
       service: "gmail",
-      host: "smtp.gmail.com",
+      // host: "smtp.gmail.com",
       auth: {
         user: "resultanthsc@gmail.com",
-        pass: "Epenepej#098",
+        pass: "pioyrizwplkrmsfu",
       },
     })
   );
@@ -27,6 +27,7 @@ export default async function handler(req, res) {
     from: "RESULTANT POVPRAŠEVANJE <resultanthsc@gmail.com>",
     name: "RESULTANT",
     to: "klaric.enej@gmail.com",
+    // to: "icevx1@gmail.com",
     subject: data.subject,
     html: message,
   };
