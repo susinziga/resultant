@@ -43,6 +43,12 @@ const Testimonials_home = (props) => {
       name: t("testimonial5_name"),
       role: t("testimonial5_role"),
     },
+    {
+      title: t("testimonial6_title"),
+      text: t("testimonial6_text"),
+      name: t("testimonial6_name"),
+      role: t("testimonial6_role"),
+    },
   ];
 
   const setInstance = (instance) => {
