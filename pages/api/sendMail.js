@@ -21,25 +21,28 @@ export default async function handler(req, res) {
     message += "<b>" + id + "</b>" + " : " + data[id] + "<br/>";
   }
 
-  console.log(message);
+  const receivers = [
+    "klaric.enej@gmail.com",
+    "roman.klaric@resultant.si",
+    "primoz.bitenc@resultant.si",
+  ];
 
-  var mailOptions = {
-    from: "RESULTANT POVPRAŠEVANJE <resultanthsc@gmail.com>",
-    name: "RESULTANT",
-    to: "klaric.enej@gmail.com",
-    // to: "icevx1@gmail.com",
-    subject: data.subject,
-    html: message,
-  };
+  for (let i = 0; i < receivers.length; i++) {
+    const mailOptions = {
+      from: "RESULTANT POVPRAŠEVANJE <resultanthsc@gmail.com>",
+      name: "RESULTANT",
+      to: receivers[i],
+      subject: data.subject,
+      html: message,
+    };
 
-  console.log("SENT MAIL TO " + mailOptions.to);
-  await new Promise((resolve, reject) => {
-    // send mail
-    transporter.sendMail(mailOptions, function (err, info) {
+    await transporter.sendMail(mailOptions, function (err, info) {
       if (err) console.log(err);
       else console.log(info);
     });
-  });
+
+    console.log("SENT MAIL TO " + receivers[i]);
+  }
 
   res.status(200).json({ name: "Sent" });
 }
