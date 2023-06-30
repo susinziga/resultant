@@ -22,9 +22,11 @@ export default async function handler(req, res) {
   }
 
   const receivers = [
-    "klaric.enej@gmail.com",
-    "roman.klaric@resultant.si",
-    "primoz.bitenc@resultant.si",
+    // "klaric.enej@gmail.com",
+    // "roman.klaric@resultant.si",
+    // "primoz.bitenc@resultant.si",
+    "icevx1@gmail.com",
+    "thecrazy.marko@gmail.com",
   ];
 
   for (let i = 0; i < receivers.length; i++) {
@@ -36,12 +38,16 @@ export default async function handler(req, res) {
       html: message,
     };
 
+    console.log("SENDING EMAIL TO " + receivers[i]);
     await transporter.sendMail(mailOptions, function (err, info) {
-      if (err) console.log(err);
-      else console.log(info);
+      if (err) {
+        console.log("ERROR SENDING MAIL TO " + receivers[i]);
+        console.log(err);
+      } else {
+        console.log("SENT EMAIL TO " + receivers[i]);
+        console.log(info);
+      }
     });
-
-    console.log("SENT MAIL TO " + receivers[i]);
   }
 
   res.status(200).json({ name: "Sent" });
