@@ -41,8 +41,8 @@ export default async function handler(req, res) {
     console.log("SENDING EMAIL TO " + receivers[i]);
     await transporter.sendMail(mailOptions, function (err, info) {
       if (err) {
-        console.log("ERROR SENDING MAIL TO " + receivers[i]);
-        console.log(err);
+        console.error("ERROR SENDING MAIL TO " + receivers[i]);
+        console.error(err);
       } else {
         console.log("SENT EMAIL TO " + receivers[i]);
         console.log(info);
