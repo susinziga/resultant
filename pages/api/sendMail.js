@@ -10,6 +10,7 @@ export default async function handler(req, res) {
       service: "gmail",
       host: "smtp.gmail.com",
       secureConnection: true,
+      secure: true,
       auth: {
         user: "resultanthsc@gmail.com",
         pass: "pioyrizwplkrmsfu",
