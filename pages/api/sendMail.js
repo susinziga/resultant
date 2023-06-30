@@ -4,7 +4,9 @@ export default async function handler(req, res) {
   const { data } = req.body;
 
   const sgMail = require("@sendgrid/mail");
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+  sgMail.setApiKey(
+    "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"
+  );
 
   let message = "";
   for (let id in data) {
