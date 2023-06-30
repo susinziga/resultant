@@ -8,7 +8,8 @@ export default async function handler(req, res) {
   var transporter = nodemailer.createTransport(
     smtpTransport({
       service: "gmail",
-      // host: "smtp.gmail.com",
+      host: "smtp.gmail.com",
+      secureConnection: true,
       auth: {
         user: "resultanthsc@gmail.com",
         pass: "pioyrizwplkrmsfu",
