@@ -20,11 +20,11 @@ export default async function handler(req, res) {
   };
 
   const receivers = [
-    // "klaric.enej@gmail.com",
-    // "roman.klaric@resultant.si",
-    // "primoz.bitenc@resultant.si",
-    "icevx1@gmail.com",
-    "thecrazy.marko@gmail.com",
+    "klaric.enej@gmail.com",
+    "roman.klaric@resultant.si",
+    "primoz.bitenc@resultant.si",
+    // "icevx1@gmail.com",
+    // "thecrazy.marko@gmail.com",
   ];
 
   sgMail
