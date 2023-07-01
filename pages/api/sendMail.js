@@ -33,12 +33,16 @@ export default async function handler(req, res) {
       to: receivers,
     })
     .then(
-      () => console.log("SENT EMAILS"),
+      () => {
+        console.log("SENT EMAILS");
+
+        res.status(200).json({ name: "Sent", message: "SENT EMAILS" });
+      },
       (error) => {
         console.error("ERROR SENDING EMAILS");
         console.error(error);
+
+        res.status(200).json({ name: "Sent", message: error });
       }
     );
-
-  res.status(200).json({ name: "Sent" });
 }
