@@ -2,18 +2,10 @@
 
 export default async function handler(req, res) {
   const { data } = req.body;
-  var nodemailer = require("nodemailer");
-  var smtpTransport = require("nodemailer-smtp-transport");
 
-  var transporter = nodemailer.createTransport(
-    smtpTransport({
-      service: "gmail",
-      // host: "smtp.gmail.com",
-      auth: {
-        user: "resultanthsc@gmail.com",
-        pass: "pioyrizwplkrmsfu",
-      },
-    })
+  const sgMail = require("@sendgrid/mail");
+  sgMail.setApiKey(
+    "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"
   );
 
   let message = "";
@@ -21,28 +13,36 @@ export default async function handler(req, res) {
     message += "<b>" + id + "</b>" + " : " + data[id] + "<br/>";
   }
 
+  const msg = {
+    from: "resultanthsc@gmail.com",
+    subject: "RESULTANT POVPRAŠEVANJE",
+    html: message,
+  };
+
   const receivers = [
-    "klaric.enej@gmail.com",
-    "roman.klaric@resultant.si",
-    "primoz.bitenc@resultant.si",
+    // "klaric.enej@gmail.com",
+    // "roman.klaric@resultant.si",
+    // "primoz.bitenc@resultant.si",
+    "icevx1@gmail.com",
+    "thecrazy.marko@gmail.com",
   ];
 
-  for (let i = 0; i < receivers.length; i++) {
-    const mailOptions = {
-      from: "RESULTANT POVPRAŠEVANJE <resultanthsc@gmail.com>",
-      name: "RESULTANT",
-      to: receivers[i],
-      subject: data.subject,
-      html: message,
-    };
+  sgMail
+    .send({
+      ...msg,
+      to: receivers,
+    })
+    .then(
+      () => {
+        console.log("SENT EMAILS");
 
-    await transporter.sendMail(mailOptions, function (err, info) {
-      if (err) console.log(err);
-      else console.log(info);
-    });
+        res.status(200).json({ name: "Sent", message: "SENT EMAILS" });
+      },
+      (error) => {
+        console.error("ERROR SENDING EMAILS");
+        console.error(error);
 
-    console.log("SENT MAIL TO " + receivers[i]);
-  }
-
-  res.status(200).json({ name: "Sent" });
+        res.status(200).json({ name: "Sent", message: error });
+      }
+    );
 }
