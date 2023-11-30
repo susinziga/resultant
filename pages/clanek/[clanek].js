@@ -83,7 +83,9 @@ const Clanek = ({ clanek }) => {
         return (
           <div key={index}>
             <Container>
-              <Subtitle1 medium>{item.Naslov}</Subtitle1>
+              <Title2 style={{ fontFamily: "Neusa", fontSize: "2.5rem" }}>
+                {item.Naslov}
+              </Title2>
               <NewRow></NewRow>
               <BodyText3 style={{ fontWeight: "400" }}>
                 {item.Podnaslov}

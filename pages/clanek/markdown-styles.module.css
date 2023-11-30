@@ -5,9 +5,11 @@
 .reactMarkDown p {
   font-family: "Neusa", serif;
   font-weight: 300 !important;
+  white-space: pre-wrap;
 }
 
-.reactMarkDown p strong {
+.reactMarkDown p strong,
+.reactMarkDown li strong {
   font-weight: 400;
 }
 
