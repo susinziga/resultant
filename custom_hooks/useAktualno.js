@@ -29,6 +29,10 @@ export const useAktualno = () => {
     let data = await fetchAPI("/clanki", {
       populate: "*",
       sort: "createdAt:" + (sortFilter == -1 ? "desc" : "asc"),
+      pagination: {
+        page: 1,
+        pageSize: 200,
+      },
     });
     setState(data.data);
   };

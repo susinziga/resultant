@@ -10,9 +10,11 @@ import {
   Title2,
 } from "../../../basic_components/texts/Texts";
 import ArticleContent_utnk from "../../../components/UTNN/ArticleContent/ArticleContent";
+import { useRouter } from "next/router";
 
 const kaj_je_povratna_informacija_po_metodi_360 = () => {
   const { t, lang } = useTranslation();
+  const { locale } = useRouter();
 
   const articleContent = (
     <>
@@ -55,7 +57,8 @@ const kaj_je_povratna_informacija_po_metodi_360 = () => {
 
       <Header title={t("srk:kpim_heading")}></Header>
       <Hero_utnn
-        image={"/SRK/KPIM/header_desktop.webp"}
+        // image={"/SRK/KPIM/header_desktop.webp"}
+        image={"/SRK/srk_metoda360_" + locale + ".webp"}
         text={t("srk:kpim_content")}
         // buttonText={t("srk:kpim_button")}
       ></Hero_utnn>
