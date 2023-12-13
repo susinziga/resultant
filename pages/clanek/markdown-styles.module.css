@@ -18,6 +18,10 @@
   list-style: initial;
 }
 
+.reactMarkDown ol li {
+  list-style: decimal;
+}
+
 .reactMarkDown a {
   color: #24a5d7;
   text-decoration: underline;
