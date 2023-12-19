@@ -165,6 +165,7 @@ function MyApp({ Component, pageProps, apollo }) {
                         `,
             }}
           />
+          <script async src="/mailerlite.js"></script>
         </Head>
         <Menu_top size={size}></Menu_top>
         <Body_content id="__body" path={pathname}>
