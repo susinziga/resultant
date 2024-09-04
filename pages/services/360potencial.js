@@ -6,8 +6,9 @@ import Quote from "../../components/service1/Quote/QuoteSection1_service1";
 import CardSection from "../../components/service1/CardSection/CardTable_service1";
 import Plan from "../../components/service1/PlanSection/Plan_service1";
 import { useRouter } from "next/router";
-import { BodyText3,Title2 } from "../../basic_components/texts/Texts";
+import { BodyText3, Title2 } from "../../basic_components/texts/Texts";
 
+// Define styled components
 
 const CardContainer = styled.div`
   display: flex;
@@ -77,7 +78,6 @@ const CardButton = styled.a`
   }
 `;
 
-
 const ArrowIcon = styled.img`
   margin-left: 0.5rem;
 `;
@@ -112,9 +112,6 @@ const Image = styled.img`
   }
 `;
 
-
-
-
 const ImageContainer = styled.div`
   width: 90%;
   text-align: center;
@@ -122,7 +119,6 @@ const ImageContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 
 const ExperienceContainer = styled.div`
   width: 90%;
@@ -260,6 +256,163 @@ const BackgroundVector = styled.img`
   }
 `;
 
+const InfoCardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fafafa;
+  border-radius: 16px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+  margin: 5% auto;
+  max-width: 80%;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+`;
+
+const InfoCardImage = styled.img`
+  width: 50%;
+  border-radius: 16px;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+`;
+
+const InfoCardContent = styled.div`
+  width: 50%;
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    padding-left: 0;
+  }
+`;
+
+const InfoCardHeading = styled.h3`
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+`;
+
+const InfoCardText = styled.p`
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+`;
+
+const InfoCardButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 2px solid #b89859;
+  color: #b89859;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+  &:hover {
+    background-color: #b89859;
+    color: #fff;
+  }
+`;
+
+const InfoCardButtonIcon = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background-color: #ffd700;
+  color: #6b5400;
+  font-weight: bold;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+`;
+
+const CardsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Default to one column */
+  gap: 2rem;
+  padding: 2rem;
+  margin: auto;
+  width: 100%;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+  }
+`;
+
+const PracticeCardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: #fff;
+  border: 2px solid #e8e8e8;
+  border-radius: 16px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
+  width: 100%; /* Full width for grid items */
+  text-align: left;
+  transition: transform 0.3s ease; /* Smooth hover effect */
+
+  &:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+`;
+
+const PracticeCardHeading = styled.h3`
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+`;
+
+const PracticeCardText = styled.p`
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  white-space: normal; /* Ensure text is not truncated */
+  overflow: visible; /* Prevent text from being cut off */
+  text-overflow: clip; /* Avoid adding ellipsis */
+  display: block; /* Ensure it behaves like a block element */
+`;
+
+const PracticeCardButton = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border: 2px solid #b89859;
+  color: #b89859;
+  font-weight: bold;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 30px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+  position: relative;
+
+  &:hover {
+    background-color: #b89859;
+    color: #fff;
+  }
+`;
+
 const PotencialPage = () => {
   const { t } = useTranslation();
   const { locale } = useRouter();
@@ -276,10 +429,7 @@ const PotencialPage = () => {
         }}
       />
 
-      <Quote
-        className="section"
-        props={t("360potencial:potencial_quoteParagraph")}
-      />
+      <Quote className="section" props={t("360potencial:potencial_quoteParagraph")} />
 
       <CardSection
         className="section"
@@ -355,33 +505,23 @@ const PotencialPage = () => {
       />
 
       {/* Additional Quote Section */}
-      <Quote
-        props={t("360potencial:potencial_additionalQuote")}
-      />
+      <Quote props={t("360potencial:potencial_additionalQuote")} />
 
       {/* Image Section Styled Similar to SIOK Service */}
       <Container>
-      <Title>{t("360potencial:analiza_title1")}</Title>
-        <Image
-          src={"/360potencial/image1_sl.png"}
-          alt={t("360potencial:image_alt_text")}
-        />
+        <Title>{t("360potencial:analiza_title1")}</Title>
+        <Image src={"/360potencial/image1_sl.png"} alt={t("360potencial:image_alt_text")} />
         <Title>{t("360potencial:analiza_title2")}</Title>
         <ImageContainer>
-          <Image
-            src={"/360potencial/image2_sl.png"}
-            alt={t("service1:service1_SIOKImageSub")}
-          />
+          <Image src={"/360potencial/image2_sl.png"} alt={t("service1:service1_SIOKImageSub")} />
         </ImageContainer>
       </Container>
 
+      
 
       {/* New Bullet Section */}
       <ExperienceContainer>
-        <BackgroundVector
-          className="desktop"
-          src="/Service1/VectorA.webp"
-        ></BackgroundVector>
+        <BackgroundVector className="desktop" src="/Service1/VectorA.webp"></BackgroundVector>
         <FlexDesktop>
           <FlexHeadingContainer>
             <ExperienceTitle>{t("360potencial:bulletSectionTitle")}</ExperienceTitle>
@@ -403,6 +543,7 @@ const PotencialPage = () => {
         </FlexDesktop>
       </ExperienceContainer>
 
+      {/* Main Card Section */}
       <CardContainer>
         <CardImage src="/360potencial/image1_sl.png" alt="Card Image" />
         <CardContent>
@@ -415,6 +556,33 @@ const PotencialPage = () => {
         </CardContent>
       </CardContainer>
 
+      {/* Grid of Practice Cards */}
+      <h1 style={{
+        fontFamily: "Neusa",
+        textAlign: "center",
+        fontSize: "2rem",
+        fontWeight: "regular",
+        marginTop: "50px",
+      }}>
+        Katere dobre prakse naslavljamo in preverjamo z 360Potencial?
+      </h1>
+      <CardsGrid>
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
+          <PracticeCardContainer key={index}>
+            <PracticeCardHeading>
+              {t(`360potencial:card_heading_${index}`)}
+            </PracticeCardHeading>
+            <PracticeCardText>
+              {t(`360potencial:card_text_${index}`)}
+            </PracticeCardText>
+            {index !== 8 && (
+              <PracticeCardButton href="#">
+                {t(`360potencial:card_button_text_${index}`)}
+              </PracticeCardButton>
+            )}
+          </PracticeCardContainer>
+        ))}
+      </CardsGrid>
     </>
   );
 };
