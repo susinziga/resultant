@@ -1,22 +1,28 @@
 import React from "react";
+import styled from "styled-components";
+import { BodyText2, Title2 } from "../../../basic_components/texts/Texts";
+import { useRouter } from "next/router";
 import Button from "../../../basic_components/button/Button";
 
-const Middle = ({ text, img, button }) => {
+const Middle = ({ title, text, img, button, withoutButton = false }) => {
   const { locale } = useRouter();
   return (
     <>
       <Container>
-        <Button
-          className="mobile"
-          primary
-          href={"/" + locale + "/services/dnla/ponudba-dnla"}
-        >
-          {button}
-        </Button>
+        {!withoutButton && (
+          <Button
+            className="mobile"
+            primary
+            href={"/" + locale + "/services/dnla/ponudba-dnla"}
+          >
+            {button}
+          </Button>
+        )}
 
         <img src={img} alt="" />
 
         <Flex>
+          {title && <Title>{title}</Title>} {/* Conditionally render title if provided */}
           <p>
             <BodyText2
               light
@@ -24,22 +30,21 @@ const Middle = ({ text, img, button }) => {
             ></BodyText2>
           </p>
 
-          <Button
-            className="desktop"
-            primary
-            href={"/" + locale + "/services/dnla/ponudba-dnla"}
-          >
-            {button}
-          </Button>
+          {!withoutButton && (
+            <Button
+              className="desktop"
+              primary
+              href={"/" + locale + "/services/dnla/ponudba-dnla"}
+            >
+              {button}
+            </Button>
+          )}
         </Flex>
       </Container>
     </>
   );
 };
 
-import styled from "styled-components";
-import { BodyText2 } from "../../../basic_components/texts/Texts";
-import { useRouter } from "next/router";
 const Container = styled.div`
   display: flex;
   width: 90%;
@@ -55,7 +60,6 @@ const Container = styled.div`
     width: 100%;
   }
 
-  /* margin-bottom: 9rem; */
   @media (min-width: 768px) {
     margin-bottom: 2rem;
     margin-top: 9rem;
@@ -75,6 +79,16 @@ const Flex = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
+
+`;
+
+const Title = styled(Title2)`
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+
+  text-align: center;
+  font-family: "Neusa";
 `;
 
 export default Middle;

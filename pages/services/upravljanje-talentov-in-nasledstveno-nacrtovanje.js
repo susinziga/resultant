@@ -18,6 +18,12 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
   const { t, lang } = useTranslation();
   const { locale } = useRouter();
 
+
+
+
+
+  const device = isMobile ? "mobile" : "desktop";
+
   const { filter, state, setFilter, setSortFilter } =
     useContext(AktualnoContext);
 

@@ -29,6 +29,7 @@ const Pillars_home = (props) => {
       logo: "/Pillars/dnla.webp",
     },
   ];
+
   const pillarsContentBot = [
     {
       title: t("pillars:pillar3_title"),
@@ -39,6 +40,11 @@ const Pillars_home = (props) => {
       title: t("pillars:pillar4_title"),
       text: t("pillars:pillar4_excerpt"),
       link: "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje",
+    },
+    {
+      title: t("pillars:pillar5_title"), 
+      text: t("pillars:pillar5_excerpt"),
+      link: "/services/360potencial",
     },
   ];
 
