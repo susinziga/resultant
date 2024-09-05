@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import useTranslation from "next-translate/useTranslation";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
@@ -7,80 +7,14 @@ import CardSection from "../../components/service1/CardSection/CardTable_service
 import Plan from "../../components/service1/PlanSection/Plan_service1";
 import { useRouter } from "next/router";
 import { BodyText3, Title2 } from "../../basic_components/texts/Texts";
+import ContactForm_dnla from "../../components/DNLA/contact/ContactForm_dnla";
+import ContactForm_potencial from "./360potencial/contact_form";
+import { getArticleFromStrapiData } from "../api/strapi";
+import { AktualnoContext } from "../../context/aktualnoContext";
+import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
+import BigCard from "../../components/service1/Card/BigCard";
+import { SubmitButton } from "../../components/service1/PlanSection/Plan.styled";
 
-// Define styled components
-
-const CardContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  background-color: #f9f4f0;
-  border-radius: 16px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
-  margin: 5% auto;
-  max-width: 80%;
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-const CardImage = styled.img`
-  width: 50%;
-  border-radius: 16px;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-`;
-
-const CardContent = styled.div`
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-  }
-`;
-
-const CardHeading = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-`;
-
-const CardText = styled.p`
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-`;
-
-const CardButton = styled.a`
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  border: 2px solid #b89859; /* Match the border color */
-  color: #b89859; /* Match the text color */
-  font-weight: bold;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 30px; /* Rounded corners */
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  
-  &:hover {
-    background-color: #b89859; /* Hover effect */
-    color: #fff;
-  }
-`;
-
-const ArrowIcon = styled.img`
-  margin-left: 0.5rem;
-`;
 
 const Container = styled.div`
   width: 100%;
@@ -192,7 +126,7 @@ const ExperienceTitle = styled(Title2)`
 
   @media only screen and (min-width: 768px) {
     margin: 0;
-    width: 100%;
+    width: 80%;
     font-size: 1.5rem;
     margin-bottom: 5%;
   }
@@ -256,90 +190,6 @@ const BackgroundVector = styled.img`
   }
 `;
 
-const InfoCardContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 2rem;
-  background-color: #fafafa;
-  border-radius: 16px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.05);
-  margin: 5% auto;
-  max-width: 80%;
-  @media only screen and (max-width: 768px) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-const InfoCardImage = styled.img`
-  width: 50%;
-  border-radius: 16px;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    margin-bottom: 1rem;
-  }
-`;
-
-const InfoCardContent = styled.div`
-  width: 50%;
-  padding-left: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  @media only screen and (max-width: 768px) {
-    width: 100%;
-    padding-left: 0;
-  }
-`;
-
-const InfoCardHeading = styled.h3`
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-`;
-
-const InfoCardText = styled.p`
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: #555;
-`;
-
-const InfoCardButton = styled.a`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.5rem 1rem;
-  border: 2px solid #b89859;
-  color: #b89859;
-  font-weight: bold;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 30px;
-  background-color: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-
-  &:hover {
-    background-color: #b89859;
-    color: #fff;
-  }
-`;
-
-const InfoCardButtonIcon = styled.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 24px;
-  background-color: #ffd700;
-  color: #6b5400;
-  font-weight: bold;
-  border-radius: 50%;
-  margin-left: 0.5rem;
-  font-size: 0.75rem;
-`;
 
 const CardsGrid = styled.div`
   display: grid;
@@ -417,6 +267,33 @@ const PotencialPage = () => {
   const { t } = useTranslation();
   const { locale } = useRouter();
 
+
+
+  const { filter, state, setFilter, setSortFilter } = useContext(AktualnoContext);
+
+  useEffect(() => {
+    setFilter({
+      ...filter,
+      category: 2, 
+    });
+    setSortFilter(-1);
+  }, []);
+
+
+
+  let articles = [];
+  state.forEach((element) => {
+    articles.push(getArticleFromStrapiData(element));
+  });
+
+  articles.push({
+    heading: t("360potencial:article3CardHeading"),
+    text: t("360potencial:article3CardContent"),
+    image: "/360potencial/article3_desktop.webp",
+    authors: [],
+    link: "your-article-link",
+  });
+
   return (
     <>
       <HeadingSection1
@@ -424,8 +301,8 @@ const PotencialPage = () => {
         props={{
           upperTitle: t("360potencial:potencial_mainHeading"),
           paragraph: t("360potencial:potencial_mainParagraph"),
-          headerImage1: "/DNLA/dnlaMainImageMobile.webp",
-          headerImage2: "/DNLA/dnlaMainImageDesktop.webp",
+          headerImage1: "/360potencial/heading_image.png",
+          headerImage2: "/360potencial/heading_image.png",
         }}
       />
 
@@ -491,7 +368,7 @@ const PotencialPage = () => {
       {/* Second Plan Section */}
       <Plan
         className="section"
-        hideButton={true}
+        button={true}
         plan1={[
           { text: t("360potencial:plan3_item1"), number: "1" },
           { text: t("360potencial:plan3_item2"), number: "2" },
@@ -499,10 +376,25 @@ const PotencialPage = () => {
           { text: t("360potencial:plan3_item4"), number: "4" },
           { text: t("360potencial:plan3_item5"), number: "5" },
           { text: t("360potencial:plan3_item6"), number: "6" },
+          { text: t("360potencial:plan3_item7"), number: "7" },
         ]}
         heading1={t("360potencial:plan3_heading")}
         bgImg
       />
+<div style={{
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+}}>
+      <SubmitButton
+        className="section"
+        style={{
+          
+        }}
+
+      >{t("360potencial:submitButton")}</SubmitButton>
+      </div>
 
       {/* Additional Quote Section */}
       <Quote props={t("360potencial:potencial_additionalQuote")} />
@@ -521,12 +413,10 @@ const PotencialPage = () => {
 
       {/* New Bullet Section */}
       <ExperienceContainer>
-        <BackgroundVector className="desktop" src="/Service1/VectorA.webp"></BackgroundVector>
         <FlexDesktop>
           <FlexHeadingContainer>
             <ExperienceTitle>{t("360potencial:bulletSectionTitle")}</ExperienceTitle>
             <ControlContainer>
-              <Subtext>{t("360potencial:bulletSubHeading")}</Subtext>
             </ControlContainer>
           </FlexHeadingContainer>
           <FlexDesktopText>
@@ -543,18 +433,16 @@ const PotencialPage = () => {
         </FlexDesktop>
       </ExperienceContainer>
 
-      {/* Main Card Section */}
-      <CardContainer>
-        <CardImage src="/360potencial/image1_sl.png" alt="Card Image" />
-        <CardContent>
-          <CardHeading>{t("360potencial:card_heading")}</CardHeading>
-          <CardText>{t("360potencial:card_text")}</CardText>
-          <CardButton href="#">
-            {t("360potencial:card_button_text")}
-            <ArrowIcon src="/Service1/Caret_Right.webp" alt="Arrow Icon" />
-          </CardButton>
-        </CardContent>
-      </CardContainer>
+
+      <BigCard
+        heading={t("360potencial:card_heading")}
+        content={t("360potencial:card_text")}
+        img="/360potencial/notranji_potencial"
+        color="#f9f4f0"
+        buttonText={t("360potencial:card_button_text")}
+        href="#"
+        mobileImgOnBottom={false}
+      />
 
       {/* Grid of Practice Cards */}
       <h1 style={{
@@ -583,6 +471,22 @@ const PotencialPage = () => {
           </PracticeCardContainer>
         ))}
       </CardsGrid>
+      {/* Main Card Section with Image on the Right */}
+   
+ <BigCard
+        heading={t("360potencial:5dimenzij_heading")}
+        content={t("360potencial:5dimenzij_text")}
+        img="/360potencial/5dimenzij"
+        color="#DEE6ED"
+        buttonText={t("360potencial:5dimenzij_button_text")}
+        href="#"
+        flipX={true}
+        mobileImgOnBottom={false}
+      />
+ <ContactForm_potencial className="section"/>
+ {/* Articles Section */}
+ {locale === "sl" ? <CardSlider news={articles} /> : null}
+
     </>
   );
 };

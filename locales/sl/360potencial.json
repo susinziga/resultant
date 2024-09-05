@@ -37,7 +37,7 @@
     "plan3_item4": "Razviti napreden sistem nasledstev.",
     "plan3_item5": "Vzpostaviti bolj vitke in agilne procese (sisteme).",
     "plan3_item6": "Razviti odlično blagovno znamko delodajalca.",
-  
+  "plan3_item7":"Okrepiti zavzetost, flow in dobro izkušnjo vaših sodelavcev (Ex).",
     "potencial_additionalQuote": "Odkrijte in razvijte neizkoriščen potencial vaše organizacije z našo edinstveno metodologijo 360Potencial.",
     
     "analiza_title1": "V analizi so prikazani rezultati učinkovitosti uporabe notranjega potenciala organizacije in primerjava s slovenskim povprečjem.",
@@ -88,7 +88,63 @@
       
         "card_heading_8": "... in še mnogo več.",
         "card_text_8": "",
-        "card_button_text_8": ""
-      
-  }
+        "card_button_text_8": "",
+
+        "contactHeading": "Pošljite podrobnejše informacije",
+  "contact_sendSuccess": "Poslano uspešno",
+  "buttonText": "Pošlji",
+
+  "5dimenzij_heading": "5 dimenzij notranjega potenciala.",
+  "5dimenzij_text": "S 360Potencial merimo 5 dimenzij notranjega potenciala:<br>1. Osredotočenost na stranke<br>2. Digitalna tehnološka zrelost<br>3. Vodenje<br>4. Skladnost delovanja organizacije z organizacijsko kulturo<br>5. Analiza kulturološkega potenciala",
+  "5dimenzij_button_text": "Več",
+
+
+  
+
+   "measuring_header_title" : "360Potencial meri 5 področij notranjega potenciala organizacije. ",
+    "measuring_pillarTitle1": "1. Osredotočenost na stranke",
+    "measuring_pillarText1": "V tem delu raziskave merimo, kako dobro organizacija razume in izpolnjuje potrebe svojih strank ter izboljšuje njihovo zadovoljstvo, zavzetost in izkušnjo. Za organizacijsko kulturo z močno osredotočenostjo na stranke je značilno, da so stranke v središču razmišljanja in delovanja. Rešitve se razvijajo skupaj z njimi in se neprestano prilagajajo strankinim potrebam.",
+    "measuring_pillarTitle2": "2. Digitalna tehnološka zrelost",
+    "measuring_pillarText2": "Ta del raziskave se osredotoča na oceno sposobnosti organizacije za učinkovito uporabo digitalne tehnologije za izboljšanje poslovnih procesov in njihovo odzivanje na vedno bolj spreminljive in individualizirane tržne zahteve.",
+    "measuring_pillarTitle3": "3. Vodenje",
+    "measuring_pillarText3": "Ta del raziskave obravnava učinkovitost vodstva v organizaciji pri določanju smeri, motiviranju sodelavcev in spodbujanju ter uvajanju sprememb. Ključno je, kako vodje na različnih nivojih navdihujejo time za doseganje organizacijskih ciljev.",
+    "measuring_pillarTitle4": "4. Skladnost delovanja organizacije z organizacijsko kulturo",
+    "measuring_pillarText4": "V tem delu preverjamo, kako sodelavci zaznavajo usklajenost med organizacijskimi praksami, politikami in željenimi vrednotami.",
+    "measuring_pillarTitle5": "5. Analiza kulturološkega potenciala",
+    "measuring_pillarText5": "Pomembno je poudariti, da ni univerzalne, torej 'pravilne' kulture. Vsaka organizacija ima svojo edinstveno kulturo, ki je oblikovana na podlagi njene zgodovine, vrednot in ciljev za prihodnost.",
+ 
+    "measuring_sectionTitle": "Analiza kulturološkega potenciala zajema 10 ključnih dimenzij",
+    "measuring_item1_title": "1. Komunikacija in dostopnost informacij",
+    "measuring_item1_text": "Organizacije z jasno in agilno komunikacijo zagotavljajo, da so informacije pravočasno in enostavno dostopne vsem sodelavcem. Poudarek je na transparentnosti in odprtih komunikacijskih kanalih, ki spodbujajo redno izmenjavo idej in odzivno reševanje problemov na vseh ravneh.",
+    "measuring_item2_title": "2. Ustvarjalnost in inovativnost",
+    "measuring_item2_text": "Organizacije z močnim poudarkom na inovacijah vidijo njihovo nadaljnji razvoj in razvoj njihovih sodelavcev kot ključna dejavnika za trajnostni uspeh. Ustvarjajo okolje, ki spodbuja kreativnost, eksperimentiranje in odprtost za nove ideje. Neuspehi so sprejeti kot del razvijajočega procesa in pomemben učni proces.",
+    "measuring_item3_title": "3. Sodelovanje in timsko delo",
+    "measuring_item3_text": "Organizacije, ki razvijajo kulturo sodelovanja in povezanosti timov, spodbujajo medsebojno sodelovanje izven organizacijskih silosov ter tudi čez meje svoje organizacije. Sodelavci se medsebojno podpirajo ter pri tem razvijajo nove sinergije in presegajo omejena lastna razmišljanja. Timski duh in odprta obravnava sta temeljni vrednoti sodobnih in trajnostno uspešnih organizacij.",
+    "measuring_item4_title": "4. Privlačno delovno okolje",
+    "measuring_item4_text": "Ustvarjanje varnega fizičnega in psihološkega okolja ter krepitve varnosti na delu so osrednji elementi, ki prispevajo k boljšemu delovnemu vzdušju, pa tudi boljši izkušnji vsakogar v organizaciji. Takšno okolje izboljšuje produktivnost, zmanjšuje bolniške odsotnosti in povečuje zadovoljstvo ter zavzetost sodelavcev, kar posledično prispeva k njihovi večji zvestobi in spodbuja inovacije.",
+    "measuring_item5_title": "5. Spoštovanje raznolikosti in zagotavljanje enakih možnosti",
+    "measuring_item5_text": "Vključujoče organizacije aktivno spodbujajo raznolikost na delovnem mestu in zagotavljajo enake možnosti za vse sodelavce. To obsega politike in prakse, ki preprečujejo diskriminacijo in spodbujajo pravičnost v zaposlovanju, napredovanju in razvoju ne glede na raso, spol, starost, vero ali druge razlike.",
+    "measuring_item6_title": "6. Učenje in razvoj talentov",
+    "measuring_item6_text": "Organizacija, ki daje prednost razvoju talentov, vlaga v sistematično usposabljanje in izobraževanje svojih sodelavcev. Poudarek je na razvoju veščin, ki so ključne za trenutne in prihodnje potrebe organizacije, z namenom, da se sodelavci razvijajo skupaj z organizacijo in ohranjajo svojo konkurenčnost na trgu dela.",
+    "measuring_item7_title": "7. Ugled delodajalca",
+    "measuring_item7_text": "Ugled delodajalca se gradi na osnovi percepcije, kako organizacijo obravnavajo svoje sodelavce in kako deluje v širši skupnosti. Organizacije, ki so prepoznane kot odlični delodajalci, so bolj kot druge sposobne pritegniti top talente iz znotraj vsakodnevnostne sodelavce, kar neposredno vpliva na njihovo (dolgoročno) uspešnost.",
+    "measuring_item8_title": "8. Opolnomočenost in avtonomija sodelavcev",
+    "measuring_item8_text": "Sodobne organizacije sodelavcem omogočajo visoko stopnjo avtonomije, spodbujajo samoiniciativnost in odgovornost za lastne delovne naloge. To krepi zvestost in inovativnost, saj sodelavci čutijo večjo odgovornost in zmožnost vplivanja na svoje delo in delovno okolje.",
+    "measuring_item9_title": "9. Agilno ravnanje s spremembami",
+    "measuring_item9_text": "Agilne organizacije se zanašajo na dinamično razmišljanje in proaktivno delovanje. Zanje je značilna pripravljenost za hitro prilagajanje spreminjajočim se dejavnikom ter obvladovanje trendov in sprememb na podlagi odzivne narave. Novi pristopi so hitro sprejeti, analizirani in uvedeni.",
+    "measuring_item10_title": "10. Organizacijska učinkovitost",
+    "measuring_item10_text": "Organizacijska učinkovitost je ključna za doseganje optimalnih rezultatov, kar vključuje nenehno izboljševanje delovnih procesov, jasno določanje nalog, dobro pripravljeni viri in stalno ocenjevaje uspešnosti. Učinkovitost je pogosto povezana z racionalizacijo procesov, izboljšanjem procedur in zmanjševanjem nepotrebnih stroškov, kar vodi do bolj vitke in odzivne organizacije.",
+    "information_box_text": "Z orodjem 360Potencial izvedemo kvantitativno zbiranje podatkov, kar vključuje anketiranje vaših sodelavcev, analizo tveganj in pripravo celovitega poročila s predlogi ukrepov za razvoj vašega notranjega potenciala.",
+    "measuring_title":"Kaj meri 360Potencial?",
+    "measuring_header_text":" 1. Osredotočenost na stranke </br>2. Digitalna tehnološka zrelost </br>3. Vodenje</br>4. Skladnost delovanja organizacije z organizacijsko kulturo</br>5. Analiza kulturološkega potenciala",
+      "methodology_title": "Metodologija merjenja",
+  "methodology_text": "360Potencial temelji na zbiranju podatkov preko anonimnih anket, ki jih sodelavci izpolnijo preko spleta (t.i. online vprašalnik). To omogoča sodelavcem, da izrazijo svoje mnenje o različnih vidikih delovnega okolja, brez strahu pred morebitnimi posledicami. Rezultati so nato obdelani s pomočjo naprednih algoritmov za obdelavo podatkov, ki identificirajo stanje vašega notranjega potenciala, trende in področja, ki zahtevajo razvojne ukrepe za sistematično krepitev notranjega potenciala vaše organizacije.",
+
+  "results_title": "Kaj lahko pričakujemo od rezultatov?",
+  "results_text1": "Rezultati, pridobljeni s pomočjo orodja 360Potencial, omogočajo vodstvu poglobljen vpogled v močne točke notranjega potenciala in področja, kjer so potrebne izboljšave.",
+  "results_text2": "Organizacije lahko na podlagi teh rezultatov oblikujejo strategije in razvojne ukrepe za izboljšanje notranjega okolja, povečanje organizacijskega potenciala ter razvoj in krepitev ustrezne organizacijske kulture.",
+  "submitButton" : "Želim pridobiti ponudbo",
+  "results_button": "Želim pridobiti ponudbo"
+
+}
   

@@ -12,6 +12,8 @@ import useTranslation from "next-translate/useTranslation";
 const BigCard = (props) => {
   const { t, lang } = useTranslation();
 
+  
+
   return (
     <>
       <CardContainer
