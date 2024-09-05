@@ -10,6 +10,7 @@ import {
 import useTranslation from "next-translate/useTranslation";
 import useSize from "../../../custom_hooks/useSize";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Contact_home = (props) => {
   const { locale } = useRouter();
@@ -24,24 +25,49 @@ const Contact_home = (props) => {
   return (
     <>
       <ContactContainer {...props}>
-        {isDesktop() ? <ContactImage src="/Home/Stik.png"></ContactImage> : ""}
+        {isDesktop() ? (
+          <ContactImage>
+            <Image
+              src="/Home/Stik.webp"
+              width={1000}
+              height={1000}
+              quality={50}
+              alt=""
+            ></Image>
+          </ContactImage>
+        ) : (
+          ""
+        )}
         <ContactTextContainer>
           <ContactHeading>{title}</ContactHeading>
           <p style={{ marginBottom: "8%" }}>
             <BodyText2>{text}</BodyText2>
           </p>
-          <Button className="mobile" secondary>
+          <Button
+            className="mobile"
+            secondary
+            href={"/" + locale + "/o-nas#ekipa"}
+          >
             {buttonText}
           </Button>
           {!isDesktop() ? (
-            <ContactImage src="/Home/Stik.png"></ContactImage>
+            // <ContactImage src="/Home/Stik.webp"></ContactImage>
+            <ContactImage>
+              <Image
+                src="/Home/Stik.webp"
+                width={1000}
+                height={1000}
+                quality={50}
+                alt=""
+              ></Image>
+            </ContactImage>
           ) : (
             ""
           )}
           <Button
             className="desktop"
             secondary
-            href={"/" + locale + "/about#team"}
+            href={"/" + locale + "/o-nas#ekipa"}
           >
             {buttonText}
           </Button>

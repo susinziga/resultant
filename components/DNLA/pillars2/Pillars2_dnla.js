@@ -17,19 +17,19 @@ const Pillars2_dnla = (props) => {
       title: t("dnla:dnla_pillar2Title1"),
       text: t("dnla:dnla_pillar2Text1"),
       button: t("dnla:dnla_pillar2Button"),
-      link: "/services/dnla/management-potential",
+      link: "/services/dnla/vodstvene-kompetence",
     },
     {
       title: t("dnla:dnla_pillar2Title2"),
       text: t("dnla:dnla_pillar2Text2"),
       button: t("dnla:dnla_pillar2Button"),
-      link: "/services/dnla/social-competencies",
+      link: "/services/dnla/socialne-kompetence",
     },
     {
       title: t("dnla:dnla_pillar2Title3"),
       text: t("dnla:dnla_pillar2Text3"),
       button: t("dnla:dnla_pillar2Button"),
-      link: "/services/dnla/sales-potential",
+      link: "/services/dnla/prodajne-kompetence",
     },
   ];
 
@@ -38,9 +38,10 @@ const Pillars2_dnla = (props) => {
   return isDesktop() ? (
     <Styled.PillarsContainer {...props}>
       <Styled.PillarsFlex>
-        {pillarsContentBot.map((pillar) => {
+        {pillarsContentBot.map((pillar, index) => {
           return (
             <Pillars_component
+              key={index}
               title={pillar.title}
               text={pillar.text}
               button={pillar.button}
@@ -52,9 +53,10 @@ const Pillars2_dnla = (props) => {
     </Styled.PillarsContainer>
   ) : (
     <Styled.PillarsContainer_mobile {...props}>
-      {pillarsContentBot.map((pillar) => {
+      {pillarsContentBot.map((pillar, index) => {
         return (
           <Pillars_mobile
+            key={index}
             title={pillar.title}
             text={pillar.text}
             button={pillar.button}

@@ -1,21 +1,24 @@
 .section {
   margin-bottom: 5rem !important;
 }
+.section_team {
+  margin-bottom: 3rem !important;
+}
 
 .section2 {
-  margin-bottom: 15rem !important;
+  margin-bottom: 5rem !important;
 }
 
 .pillarActive {
-  width: 55% !important;
+   width: 55% !important; 
   background-color: var(--pillar-color)!important;
-  padding-right: 8% !important;
+   padding-right: 8% !important; 
 }
 
 .pillarActiveDNLA {
-  width: 40% !important;
+  /* width: 40% !important; */
   background-color: var(--pillar-color);
-  padding-right: 8% !important; 
+  /* padding-right: 8% !important;  */
   color: white !important;
 }
 
@@ -42,11 +45,11 @@
 }
 
 .pillarShrink {
-  padding-right: 2% !important;
+   padding-right: 2% !important; 
 }
 
 .pillarShrinkDNLA {
-  padding-right: 1% !important;
+  /* padding-right: 1% !important; */
 }
 
 #content_box {
@@ -56,7 +59,9 @@
 .cursor {
   cursor: pointer;
 }
+
 .swiper-slide {
+  height: auto;
 }
 
 
@@ -85,4 +90,26 @@
 .drop-button.par >div{
 display: table-cell;
 vertical-align: middle;
+}
+
+#content_box{
+  margin-top:3rem;
+}
+
+@media(min-width:768px){
+  #content_box {
+    margin-top:8rem;
+  }
+}
+
+@media(min-width:768px){
+  .section2 {
+    margin-bottom: 15rem !important;
+  }
+}
+
+@media (max-width:767px){
+  .sectionMobile{
+    margin-bottom:2rem;
+  }
 }

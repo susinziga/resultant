@@ -17,10 +17,13 @@ const Menu_list = ({ state }) => {
       <Button href={"/" + locale} className="nav_item" terciary>
         {t("nav_item0")}
       </Button>
-      <Button href={"/" + locale + "/about"} className="nav_item" terciary>
+      <Button href={"/" + locale + "/o-nas"} className="nav_item" terciary>
         {t("nav_item1")}
       </Button>
-      <div className="drop-button par" style={{ marginRight: "1.8rem" }}>
+      <div
+        className="drop-button par"
+        style={{ marginRight: locale == "en" ? "1.8rem" : "0" }}
+      >
         <Button
           className="nav_item drop-button"
           terciary
@@ -36,7 +39,14 @@ const Menu_list = ({ state }) => {
       {/*<Button className="nav_item" terciary>
         {t("nav_item3")}
         </Button>*/}
-      <Button href={"/" + locale + "/contact"} primary>
+      {locale == "sl" ? (
+        <Button href={"/" + locale + "/aktualno"} className="nav_item" terciary>
+          Aktualno
+        </Button>
+      ) : (
+        <></>
+      )}
+      <Button href={"/" + locale + "/kontakt"} primary>
         {t("nav_item4")}
       </Button>
     </Styled.MenuList>

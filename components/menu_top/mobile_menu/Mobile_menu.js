@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import styled from "styled-components";
+import useTranslation from "next-translate/useTranslation";
+import Mobile_menu_dropdown from "./Mobile_menu_dropdown";
 
 import Button from "../../../basic_components/button/Button";
 
@@ -6,6 +10,7 @@ import gsap from "gsap";
 
 const Mobile_menu = ({ menu_opened }) => {
   const { t, lang } = useTranslation("aboveTheFold");
+  const { locale, locales, pathname } = useRouter();
 
   const [opened, setOpened] = useState(false);
 
@@ -27,7 +32,7 @@ const Mobile_menu = ({ menu_opened }) => {
 
   useEffect(() => {
     if (animation == null) return;
-    console.log("asd");
+    ("asd");
     if (menu_opened) {
       setOpened(menu_opened);
 
@@ -36,7 +41,7 @@ const Mobile_menu = ({ menu_opened }) => {
       setSubMenuOpened(false);
       setOpened(menu_opened);
 
-      console.log(animation);
+      animation;
       animation.reverse();
     }
   }, [menu_opened]);
@@ -52,15 +57,15 @@ const Mobile_menu = ({ menu_opened }) => {
         >
           {t("nav_item0")}
         </Button>
-        <Button href="/about" className="nav_item mobile_nav2" terciary>
+        <Button href="/o-nas" className="nav_item mobile_nav2" terciary>
           {t("nav_item1")}
         </Button>
         <Button
+          isParagraph
           className="nav_item drop-button mobile_nav3"
           terciary
           arrowDown
           onClick={() => {
-            console.log("OPEN");
             setSubMenuOpened((prev) => !prev);
           }}
         >
@@ -70,17 +75,36 @@ const Mobile_menu = ({ menu_opened }) => {
         {/*<Button className="nav_item mobile_nav4" terciary>
           {t("nav_item3")}
         </Button>*/}
-        <Button href="/contact" primary className="contact mobile_nav5">
+        {locale == "sl" ? (
+          <Button href="/aktualno" className="nav_item mobile_nav4" terciary>
+            Aktualno
+          </Button>
+        ) : (
+          <></>
+        )}
+        <Button href="/kontakt" primary className="contact mobile_nav5">
           {t("nav_item4")}
         </Button>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            width: "20%",
+            marginTop: "4rem",
+          }}
+        >
+          {locales.map((loc) => {
+            return (
+              <a key={loc} href={"/" + loc + pathname}>
+                <label style={{ fontSize: "1.5rem" }}>{loc}</label>
+              </a>
+            );
+          })}
+        </div>
       </Container>
     </>
   );
 };
-
-import styled from "styled-components";
-import useTranslation from "next-translate/useTranslation";
-import Mobile_menu_dropdown from "./Mobile_menu_dropdown";
 
 const Container = styled.div`
   /*transition: 2s all;
@@ -95,7 +119,7 @@ const Container = styled.div`
   height: 100vh;
   top: 0;
   left: 0;
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 
   align-items: center;
   display: flex;
@@ -106,7 +130,7 @@ const Container = styled.div`
 
   color: #fff;
 
-  gap: 1rem;
+  gap: 0.5rem;
 
   a.contact {
     font-size: 1.7rem;
@@ -125,7 +149,14 @@ const Container = styled.div`
   .mobile_nav4,
   .mobile_nav5 {
     transform: translateX(-100%);
-    font-size: 2.5rem;
+    font-size: 2rem;
+  }
+
+  .mobile_nav1,
+  .mobile_nav2,
+  .mobile_nav3,
+  .mobile_nav4 {
+    padding: 0 0.5rem;
   }
 
   .mobile_nav3 img {

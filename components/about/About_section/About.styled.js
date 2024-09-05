@@ -1,103 +1,108 @@
 import Image from "next/image";
-import styledComponents from "styled-components";
+import styled from "styled-components";
 import {
   Header1,
   BodyText2,
   BodyText3,
+  Title1,
 } from "../../../basic_components/texts/Texts";
 
-export const AboutContainer = styledComponents.div`
-    
-height:fit-content;
-    display:flex;
-    flex-direction:column-reverse;
+export const AboutContainer = styled.div`
+  height: fit-content;
+  display: flex;
+  flex-direction: column-reverse;
 
-    padding-top: 20%;
-    gap:2rem;
-   
+  gap: 2rem;
 
-    @media screen and (min-width: 768px){
-        height: 100vh;
-        width:90%;
-        margin:auto;
-        padding-top: 10%;
-        flex-direction:row;
-        gap:10rem;
-    }
-  
+  @media screen and (min-width: 768px) {
+    height: fit-content;
+    width: 90%;
+    margin: auto;
+
+    flex-direction: row;
+    gap: 10rem;
+  }
 `;
 
-export const ImageContainer = styledComponents.div`
-width:50vh;
-max-width:80%;
-margin:auto;
-margin-top:0;
-@media(min-width:768px){
-    width:35%;
-}
+export const ImageContainer = styled.div`
+  width: 50vh;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 0;
+  @media (min-width: 768px) {
+    width: 35%;
+  }
 `;
 
-export const AboutImage = styledComponents.img`
-border-radius:12px;
-height:auto;
-filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));
-border-radius:
+export const AboutImage = styled.img`
+  border-radius: 12px;
+  height: auto;
+  box-shadow: 0px 16px 20px rgba(0, 71, 103, 0.12);
+  border-radius: 12px;
 `;
 
-export const AboutTextContainer = styledComponents.div`
-   width:80%;
-   margin:auto;
-   margin-bottom:0;
+export const AboutTextContainer = styled.div`
+  width: 90%;
+  margin: auto;
+  margin-bottom: 0;
 
-    @media(min-width:768px){
-        margin:0;
-         width: 50%;
-    }
-  
+  @media (min-width: 768px) {
+    margin: 0;
+    width: 50%;
+  }
 `;
 
-export const AboutUpperHeading = styledComponents(BodyText2)`
-    font-weight: bold;
-    font-family: "Neusa";
+export const AboutUpperHeading = styled(BodyText2)`
+  font-weight: bold;
+  font-family: "Neusa";
 
-    @media screen and (min-width: 768px){
-     
-    }
-  
+  @media screen and (min-width: 768px) {
+  }
 `;
 
-export const AboutHeading = styledComponents(Header1)`
-    
-    @media screen and (min-width: 768px){
-        margin: 5% 0 6% 0;
-    }
-  
+export const AboutHeading = styled(Title1)`
+  margin: 0 0 10% 0;
+  font-size: 2.5rem;
+
+  @media only screen and (min-width: 768px) {
+    margin: 0% 0 5% 0;
+    font-size: 1.5rem;
+  }
+
+  @media only screen and (min-width: 992px) {
+    font-size: 2.5rem;
+    margin: 0% 0 5% 0;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    font-size: 3.5rem;
+    margin: 0 0 5% 0;
+  }
 `;
 
-export const AboutHeadingContainer = styledComponents.div`
-    width: 100%;
-    
-    @media screen and (min-width: 768px){
-       
-    }
-  
+export const AboutHeadingContainer = styled.div`
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+  }
+  @media (max-width: 767px) {
+    margin-bottom: 0.5rem;
+  }
 `;
 
-export const AboutText = styledComponents(BodyText3)`
-    width:100%;
-    @media screen and (min-width: 768px){
-        font-size:1.5rem;
-    }
-  
+export const AboutText = styled(BodyText3)`
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
-export const AboutLine = styledComponents.div`
-    height: 1px;
-    width: 100%;
-    border-top: 1px solid black;
+export const AboutLine = styled.div`
+  height: 1px;
+  width: 100%;
+  border-top: 1px solid black;
 
-    @media screen and (min-width: 768px){
-        margin-top: 5%;
-    }
-  
+  @media screen and (min-width: 768px) {
+    margin-top: 5%;
+  }
 `;

@@ -25,15 +25,15 @@ const inputProps = {
   sl: [
     { label: "Ime", required: "*" },
     { label: "Priimek", required: "*" },
-    { label: "Tel. številka" },
-    { label: "Email", required: "*" },
+    { label: "Telefonska številka" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Ime organizacije" },
   ],
   en: [
     { label: "Name", required: "*" },
     { label: "Last name", required: "*" },
     { label: "Gsm" },
-    { label: "Email", required: "*" },
+    { label: "Email", required: "*", type: "email" },
     { label: "Company name" },
   ],
 };
@@ -44,7 +44,7 @@ const textAreaLabel = {
 };
 
 const textField = {
-  si: "Prostor za vaše sporočilo",
+  sl: "Prostor za vaše sporočilo",
   en: "Your message",
 };
 
@@ -71,10 +71,19 @@ const ContactForm_service1 = () => {
             <HeaderLine></HeaderLine>
           </HeaderLineWrapperRight>
         </HeaderContainer>
-        <FormContainer>
-          {inputProps[locale].map((input) => {
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            btn.value = t("contact:contact_sendSuccess");
+            btn.disabled = true;
+          }}
+        >
+          {inputProps[locale].map((input, index) => {
             return (
-              <>
+              <div key={index}>
                 <Input
                   id="desktop"
                   props={input}
@@ -83,11 +92,10 @@ const ContactForm_service1 = () => {
                     handleFormChange(input.label, e.target.value);
                   }}
                 ></Input>
-              </>
+              </div>
             );
           })}
           <TextareaContainer>
-            <Styled.InputLabel>{textAreaLabel[locale]}</Styled.InputLabel>
             <Textarea
               id="TextDesktop"
               props={{ label: textField[locale], required: "*" }}
@@ -99,9 +107,10 @@ const ContactForm_service1 = () => {
           </TextareaContainer>
           <ButtonContainer>
             <SubmitButton
-              onClick={(id, value) => {
+              id="submit_btn"
+              /*onClick={(id, value) => {
                 sendMail();
-              }}
+              }}*/
               value={button}
               type={"submit"}
             ></SubmitButton>

@@ -39,7 +39,7 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
       },
       {
         name: "3. Implementacija nove rešitve",
-        desc: "Skupaj z osebjem naročnika izvedemo implementacija rešitev in želenih izboljšav v poslovni proces naročnika. Naš pristop zagotavlja individualno obravnavo posebnosti in izzivov vsakega naročnika, na osnovi katerih pripravimo inovativne pristope in po meri naročnika ustvarjene rešitve",
+        desc: "Skupaj z osebjem naročnika izvedemo implementacijo rešitev in želenih izboljšav v poslovni proces naročnika. Naš pristop zagotavlja individualno obravnavo posebnosti in izzivov vsakega naročnika, na osnovi katerih pripravimo inovativne pristope in po meri naročnika ustvarjene rešitve",
       },
       {
         name: "4. Usposabljanje vodij ",
@@ -77,13 +77,9 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
   let isScrolling = Date.now();
 
   const preventDefault = (e) => {
-    console.log(Date.now());
-    console.log(isScrolling);
     if (isActive) {
       e.preventDefault();
       if (Date.now() - 500 > isScrolling) {
-        console.log(isActive);
-
         if (e.deltaY < 0) {
           if (swip.isBeginning) {
             window.scrollBy(0, e.deltaY);
@@ -115,9 +111,17 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
     <Waypoint
       scrollableAncestor={"window"}
       topOffset={"0%"}
-      bottomOffset="50%"
+      bottomOffset={"0%"}
       onEnter={() => {
         setContentSwiperActive(0);
+      }}
+      onLeave={(a) => {
+        if (a.currentPosition == "above") {
+          setContentSwiperActive(1);
+        }
+        if (a.currentPosition == "below") {
+          setContentSwiperActive(0);
+        }
       }}
     >
       <Container>
@@ -135,14 +139,26 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
           </Title2>
         )}
         <Swiper
-          onScroll={true}
-          spaceBetween={50}
-          slidesPerView={1.5}
+          // onScroll={true}
+          spaceBetween={30}
+          slidesPerView={1.3}
           initialSlide={initSlide}
           centeredSlides={false}
           direction={"horizontal"}
           className="mySwiper"
-          autoHeight={true}
+          autoHeight={false}
+          slideToClickedSlide={true}
+          centeredSlidesBounds={true}
+          breakpoints={{
+            0: {
+              centeredSlidesBounds: false,
+              centeredSlides: true,
+            },
+            768: {
+              centeredSlides: false,
+              centeredSlidesBounds: true,
+            },
+          }}
         >
           <SwiperInstance setInstance={setInstance}></SwiperInstance>
           {items[locale].map((ref, id) => (
@@ -160,15 +176,15 @@ const About_content_1 = ({ isActive, initSlide = 0, title }) => {
         {isDesktop() ? (
           <ButtonsContainer>
             <img
-              width="50"
-              src="/Buttons/arrow_prev.svg"
+              width="40"
+              src="/Buttons/arrow_prev2.svg"
               onClick={() => {
                 swip.slidePrev(1000);
               }}
               className="cursor"
             ></img>
             <img
-              width="50"
+              width="40"
               src="/Buttons/arrow_next.svg"
               onClick={() => {
                 swip.slideNext(1000);

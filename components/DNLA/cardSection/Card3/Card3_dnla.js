@@ -26,18 +26,25 @@ const Card3_dnla = () => {
       <CardContainer>
         <CardImage
           className="mobile"
-          src="/DNLA/cardSectionImage3_mobile.png"
+          src="/clanki/tychy/image1.webp"
         ></CardImage>
         <CardImage
           className="desktop"
-          src="/DNLA/cardSectionImage3_desktop.png"
+          src="/DNLA/cardSectionImage3_desktop.webp"
         ></CardImage>
         <TextContainer>
           <CardHeading>{heading}</CardHeading>
           <Text>{text}</Text>
 
           <ButtonContainer>
-            <Button secondary href={"/" + locale + "/coming-soon"}>
+            <Button
+              secondary
+              href={
+                "/" +
+                locale +
+                "/clanek/pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem"
+              }
+            >
               {button}
             </Button>
           </ButtonContainer>

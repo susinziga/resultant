@@ -31,7 +31,7 @@ const Pillars_component = ({ title, text, link }) => {
     let temp = document.getElementsByClassName("pillarContainer");
 
     for (let index = 0; index < temp.length; index++) {
-      console.log(temp[index]);
+      temp[index];
       temp[index].classList.remove("pillarShrinkDNLA");
       temp[index].classList.remove("pillarActiveDNLA");
     }
@@ -58,10 +58,10 @@ const TextContainer = styled.p`
   }
 
   @media (min-width: 992px) {
-    height: 15rem;
+    height: 5rem;
   }
   @media (min-width: 1600px) {
-    height: 10rem;
+    height: 3rem;
   }
 `;
 

@@ -23,6 +23,7 @@ export const ImageHeader = styled(Subtitle2)`
   display: block !important;
   margin-bottom: 2%;
   font-size: 2rem;
+  font-weight: 500;
 `;
 
 export const ImageDescription = styled(BodyText3)``;
@@ -39,6 +40,7 @@ export const RowHeader = styled(Subtitle2).attrs({ bold: true })`
   display: block !important;
   font-size: 1.2rem;
   margin: 7% 0%;
+  font-weight: 500;
 
   @media only screen and (min-width: 768px) {
     margin: 4% 0%;

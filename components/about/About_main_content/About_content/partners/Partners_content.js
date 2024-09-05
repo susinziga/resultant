@@ -9,15 +9,22 @@ import { AboutContext } from "../../../../../context/aboutContext";
 
 import * as Styled from "./Partners_content.styled";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 const Partners_content = ({ isActive }) => {
   const { t } = useTranslation("partners");
 
   const partners = [
-    { text: t("text1"), link: t("link1") },
-    { text: t("text2"), link: t("link2") },
-    { text: t("text3"), link: t("link3") },
-    { text: t("text4"), link: t("link4") },
-    { text: t("text5"), link: t("link5") },
+    { text: t("text1"), link: t("link1"), page: "" },
+    { text: t("text2"), link: t("link2"), page: "" },
+    { text: t("text3"), link: t("link3"), page: "" },
+    { text: t("text4"), link: t("link4"), page: "" },
+    {
+      text: t("text5"),
+      link: t("link5"),
+      page: "www.inspire4future.com",
+    },
   ];
 
   const { contentSwiperActive, setContentSwiperActive } =
@@ -75,7 +82,24 @@ const Partner_item = ({ partner }) => {
         <div>
           <img src={partner.link}></img>
         </div>
-        <BodyText3>{partner.text}</BodyText3>
+        <div>
+          <BodyText3>{partner.text}</BodyText3>
+          {partner.page !== "" ? (
+            <Styled.Partner_link
+              href={
+                "https://" +
+                partner.page +
+                (partner.page === "www.inspire4future.com" ? "/en/domov" : "")
+              }
+              target="_blank"
+            >
+              <BodyText4>{partner.page}</BodyText4>
+              <FontAwesomeIcon icon={faChevronRight} />
+            </Styled.Partner_link>
+          ) : (
+            ""
+          )}
+        </div>
       </Styled.Partners_item_container>
     </>
   );

@@ -2,7 +2,7 @@ import styledComponents from "styled-components";
 import { Header2 } from "../../../../basic_components/texts/Texts";
 
 export const About_sidebar_container = styledComponents.div`
-    width:30%;
+    width:fit-content;
     padding:4rem;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,13 @@ export const About_sidebar_container = styledComponents.div`
     
 
     }
+
+  @media(min-width:768px){
+    width:40%;
+  }
+  @media(min-width:1200px){
+    width:30%;
+  }
 `;
 
 export const Sidebar_title = styledComponents(Header2)`

@@ -19,7 +19,6 @@ const HeadingSection_service1 = ({ props }) => {
           <HeadingSeparator>
             <HeadingHeading>{props.upperTitle}</HeadingHeading>
             <HeadingUpperHeading>{props.paragraph}</HeadingUpperHeading>
-            {/* TODO: HEADING LINE DESKTOP DOES NOT SHOW UP */}
             <HeadingLine className="desktop"></HeadingLine>
           </HeadingSeparator>
           <HeadingLine className="mobile"></HeadingLine>

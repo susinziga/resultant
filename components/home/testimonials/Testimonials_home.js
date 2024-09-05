@@ -43,6 +43,12 @@ const Testimonials_home = (props) => {
       name: t("testimonial5_name"),
       role: t("testimonial5_role"),
     },
+    {
+      title: t("testimonial6_title"),
+      text: t("testimonial6_text"),
+      name: t("testimonial6_name"),
+      role: t("testimonial6_role"),
+    },
   ];
 
   const setInstance = (instance) => {
@@ -55,7 +61,6 @@ const Testimonials_home = (props) => {
         spaceBetween={50}
         slidesPerView={1}
         centeredSlides={true}
-        onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => (swiperInstance = swiper)}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>
@@ -71,12 +76,14 @@ const Testimonials_home = (props) => {
       <Styled.TestimonialsButton>
         <img
           src="./Buttons/arrow_next.svg"
+          alt=""
           onClick={() => {
             swiperInstance.slideNext(1000);
           }}
         ></img>
         <img
           src="./Buttons/arrow_prev2.svg"
+          alt=""
           onClick={() => {
             swiperInstance.slidePrev(1000);
           }}

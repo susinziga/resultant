@@ -9,7 +9,6 @@ const AboutContextProvider = ({ children }) => {
   const [cd, setCd] = useState(false);
 
   const setContentSwiperActive = (newstate, delay) => {
-    console.log(cd);
     if (!cd) setContentSwiperActives(newstate);
     if (typeof delay !== "undefined") {
       setCd(true);

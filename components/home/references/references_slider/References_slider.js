@@ -30,13 +30,19 @@ const References_slider = ({ references }) => {
       <Swiper
         breakpoints={{
           0: { slidesPerView: 1.5, slidesPerGroup: 1, centeredSlides: true },
+
           768: {
             slidesPerView: 7,
             slidesPerGroup: 7,
+            spaceBetween: 10,
+          },
+          1000: {
+            slidesPerView: 7,
+            slidesPerGroup: 7,
+            spaceBetween: 30,
           },
         }}
         loop={true}
-        spaceBetween={50}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>
         {references.map((ref, id) => (
@@ -48,12 +54,14 @@ const References_slider = ({ references }) => {
       <Styled.SliderButtons>
         <img
           src="/Buttons/arrow_next.svg"
+          alt=""
           onClick={() => {
             slide();
           }}
         ></img>
         <img
           src="/Buttons/arrow_prev.svg"
+          alt=""
           onClick={() => {
             slideBack();
           }}

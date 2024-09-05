@@ -1,76 +1,228 @@
 import useTranslation from "next-translate/useTranslation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Input from "../../../basic_components/input/Input";
 import Checkbox from "../OfferForm/Checkbox_offer";
 
-import { Button } from "../../../basic_components/button/Button";
+import Button from "../../../basic_components/button/Button";
+import { useForm } from "../../../custom_hooks/useForm";
+
+import { ButtonContainer, SubmitButton } from "../OfferForm/OfferForm.styled";
+import { HeadingLine } from "../OfferForm/OfferForm.styled";
 
 const OfferDNLA = () => {
   const { t } = useTranslation();
+
+  const { formData, handleFormChange, sendMail } = useForm();
+  const [clickedSend, setClickedSend] = useState(false);
+  const [submitButtonText, setsubmitButtonText] = useState(
+    t("service1:service1_buttonText1")
+  );
+
+  useEffect(() => {
+    handleFormChange("subject", "DNLA Povpraševanje");
+  }, []);
+
   const inputProps1 = [
-    { label: t("offer:offer_inputProp1") },
+    { label: t("offer:offer_inputProp1"), required: "*" },
     { label: t("offer:offer_inputProp2") },
-    { label: t("offer:offer_inputProp3") },
-    { label: t("offer:offer_inputProp4") },
+    { label: t("offer:offer_inputProp3"), required: "*" },
+    { label: t("offer:offer_inputProp4"), required: "*", type: "email" },
     { label: t("offer:offer_inputProp5") },
   ];
 
   const otherInputs = [
     { label: t("dnla:first") },
-    { label: t("dnla:second") },
-    { label: t("dnla:third") },
+    { label: t("dnla:second"), required: "*" },
+    { label: t("dnla:third"), required: "*" },
   ];
 
   const checkboxProps = [
-    { label: t("dnla:offer_checkboxProp1") },
-    { label: t("dnla:offer_checkboxProp2") },
-    { label: t("dnla:offer_checkboxProp3") },
-    { label: t("dnla:offer_checkboxProp4") },
+    { label: t("dnla:offer_checkboxProp1"), required: "*" },
+    { label: t("dnla:offer_checkboxProp2"), required: "*" },
+    { label: t("dnla:offer_checkboxProp3"), required: "*" },
+    { label: t("dnla:offer_checkboxProp4"), required: "*" },
   ];
 
   return (
     <>
-      {/* <OfferContainer>
-      <FormContainer>
-        <InputsContainer>
-          {inputProps1.map((input) => {
-            return (
-              <>
-                <Input
-                  id="desktop"
-                  props={input}
-                  style={{ marginBottom: "2%" }}
-                ></Input>
-              </>
-            );
-          })}
-        </InputsContainer>
-        <hr></hr>
-        <InputsContainer>
-          <Input
-            id="desktop"
-            props={otherInputs[0]}
-            style={{ marginBottom: "2%" }}
-          ></Input>
-          <Checkbox props={checkboxProps[0]} group={"leaders"}></Checkbox>
-          <Input
-            id="desktop"
-            props={otherInputs[1]}
-            style={{ marginBottom: "2%" }}
-          ></Input>
-          <Checkbox props={checkboxProps[1]} group={"sales"}></Checkbox>
-          <Input
-            id="desktop"
-            props={otherInputs[2]}
-            style={{ marginBottom: "2%" }}
-          ></Input>
-          <Checkbox props={checkboxProps[3]} group={"feedback"}></Checkbox>
-          <Checkbox props={checkboxProps[4]} group={"analise"}></Checkbox>
-          <Button primary></Button>
-        </InputsContainer>
-      </FormContainer>
-        </OfferContainer>*/}
+      <OfferContainer>
+        <FormContainer
+          onSubmit={(e) => {
+            e.preventDefault();
+            setClickedSend(true);
+
+            // Check checkboxes validity
+            let isValid = true;
+            checkboxProps.forEach((prop) => {
+              let isInvalid = formData[prop.label] === undefined;
+              if (isInvalid) {
+                isValid = false;
+              }
+            });
+
+            if (!isValid) {
+              document
+                .querySelector("#checkboxLine")
+                .scrollIntoView({ behavior: "smooth" });
+              return;
+            }
+
+            sendMail();
+            let btn = document.getElementById("submit_btn");
+            btn.style.backgroundColor = "#072543";
+            setsubmitButtonText(t("contact:contact_sendSuccess"));
+            btn.disabled = true;
+          }}
+        >
+          <InputsContainer>
+            {inputProps1.map((input, i) => {
+              return (
+                <div key={i}>
+                  <Input
+                    id="desktop"
+                    props={input}
+                    style={{ marginBottom: "2%" }}
+                    onChange={(e) => {
+                      handleFormChange(input.label, e.target.value);
+                    }}
+                  ></Input>
+                </div>
+              );
+            })}
+          </InputsContainer>
+          {/* <hr></hr> */}
+          <HeadingLine id="checkboxLine"></HeadingLine>
+
+          <InputsContainer>
+            <Input
+              id="desktop"
+              props={otherInputs[0]}
+              style={{ marginBottom: "2%" }}
+              onChange={(e) => {
+                handleFormChange(otherInputs[0].label, e.target.value);
+              }}
+            ></Input>
+            <p
+              style={{
+                color: "red",
+                margin: "0",
+                visibility:
+                  clickedSend && formData[checkboxProps[0].label] === undefined
+                    ? "visible"
+                    : "hidden",
+              }}
+            >
+              {t("common:text_required")}
+            </p>
+            <Checkbox
+              props={checkboxProps[0]}
+              group={"leaders"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[0].label, value);
+              }}
+            ></Checkbox>
+            {formData[checkboxProps[0].label] === "Da" && (
+              <Input
+                key={otherInputs[1].label}
+                id="desktop"
+                props={otherInputs[1]}
+                style={{ marginBottom: "2%" }}
+                onChange={(e) => {
+                  handleFormChange(otherInputs[1].label, e.target.value);
+                }}
+              ></Input>
+            )}
+            <p
+              style={{
+                color: "red",
+                margin: "0",
+                visibility:
+                  clickedSend && formData[checkboxProps[1].label] === undefined
+                    ? "visible"
+                    : "hidden",
+              }}
+            >
+              {t("common:text_required")}
+            </p>
+            <Checkbox
+              props={checkboxProps[1]}
+              group={"sales"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[1].label, value);
+              }}
+            ></Checkbox>
+            {formData[checkboxProps[1].label] === "Da" && (
+              <Input
+                key={otherInputs[2].label}
+                id="desktop"
+                props={otherInputs[2]}
+                style={{ marginBottom: "2%" }}
+                onChange={(e) => {
+                  handleFormChange(otherInputs[2].label, e.target.value);
+                }}
+              ></Input>
+            )}
+            <p
+              style={{
+                color: "red",
+                margin: "0",
+                visibility:
+                  clickedSend && formData[checkboxProps[2].label] === undefined
+                    ? "visible"
+                    : "hidden",
+              }}
+            >
+              {t("common:text_required")}
+            </p>
+            <Checkbox
+              props={checkboxProps[2]}
+              group={"feedback"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[2].label, value);
+              }}
+            ></Checkbox>
+            <p
+              style={{
+                color: "red",
+                margin: "0",
+                visibility:
+                  clickedSend && formData[checkboxProps[3].label] === undefined
+                    ? "visible"
+                    : "hidden",
+              }}
+            >
+              {t("common:text_required")}
+            </p>
+            <Checkbox
+              props={checkboxProps[3]}
+              group={"analise"}
+              onChange={(value) => {
+                handleFormChange(checkboxProps[3].label, value);
+              }}
+            ></Checkbox>
+            <br></br>
+            <br></br>
+            {/*<Button
+              primary
+              onClick={(id, value) => {
+                ("asd");
+                sendMail();
+              }}
+            >
+              Pošlji
+            </Button>*/}
+            <ButtonContainer>
+              <SubmitButton
+                id="submit_btn"
+                style={{ padding: "2% 0%", width: "100%", display: "block" }}
+                value={submitButtonText}
+                type={"submit"}
+              ></SubmitButton>
+            </ButtonContainer>
+          </InputsContainer>
+        </FormContainer>
+      </OfferContainer>
     </>
   );
 };

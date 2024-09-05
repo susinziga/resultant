@@ -1,0 +1,46 @@
+.reactMarkDown * {
+  font-family: "Neusa" !important;
+}
+
+.reactMarkDown p {
+  font-family: "Neusa", serif;
+  font-weight: 300 !important;
+  white-space: pre-wrap;
+}
+
+.reactMarkDown p strong,
+.reactMarkDown li strong {
+  font-weight: 400;
+}
+
+.reactMarkDown li {
+  font-weight: 300;
+  list-style: initial;
+}
+
+.reactMarkDown ol li {
+  list-style: decimal;
+}
+
+.reactMarkDown a {
+  color: #24a5d7;
+  text-decoration: underline;
+}
+
+.reactMarkDown h5 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.reactMarkDown h4 {
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.reactMarkDown h3 {
+  font-size: 2.6rem;
+}
+
+.reactMarkDown h2 {
+  font-weight: 600 !important;
+}

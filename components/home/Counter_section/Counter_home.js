@@ -22,37 +22,37 @@ const Counter_home = (props) => {
   return (<>
         <CountersContainer {...props}>
             <CounterContainer>
-                <h2 style={{color: "white"}}>
+                <p className={"numbers"} style={{color: "white"}}>
                     <Waypoint onEnter={onVWEnter}>
                         <div>
                             {viewPortEntered && <CountUp end={190} duration={3} suffix="+" /> }
                         </div>
                     </Waypoint>
-                </h2>
+                </p>
                 <p >
                     <BodyText4 style={{color: "white"}}>{title1}</BodyText4>
                 </p>
             </CounterContainer>
             <CounterContainer>
-                <h2 style={{color: "white"}}>
+                <p className={"numbers"} style={{color: "white"}}>
                     <Waypoint onEnter={onVWEnter} >
                         <div>
                             {viewPortEntered && <CountUp end={925} duration={3} suffix="+" /> }
                         </div>
                     </Waypoint>
-                </h2>
+                </p>
                 <p >
                     <BodyText4 style={{color: "white"}}>{title2}</BodyText4>
                 </p>
             </CounterContainer>
             <CounterContainer >
-                <h2 style={{color: "white"}}>
+                <p className={"numbers"} style={{color: "white"}}>
                     <Waypoint onEnter={onVWEnter}>
                         <div>
                             {viewPortEntered && <CountUp end={18} duration={3} suffix="+" /> }
                         </div>
                     </Waypoint>
-                </h2>
+                </p>
                 <p >
                     <BodyText4 style={{color: "white"}}>{title3}</BodyText4>
                 </p>

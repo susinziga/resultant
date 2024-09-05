@@ -4,18 +4,29 @@
   "defaultLocale": "sl",
   "localeDetection": false,
   "pages": {
-    "*": ["common", "aboveTheFold", "pillars", "testimonials", "footer","subpages","dnla","offer", "utnn", "srk"],
-    "/": ["home", "footer"],
-    "/about": ["about", "team", "partners", "references", "footer"],
-
-    "/contact": ["contact", "footer"],
-    "/offer": ["offer", "footer"],
-    "/services/siok": ["service1", "footer"],
-    "/support": ["support", "footer"],
-    "/privacy": ["privacy", "footer"],
-    "/services/dnla": ["dnla", "footer"],
-    "/dnlaArticle1": ["article1"]
-
-    
+    "*": [
+      "home",
+      "common",
+      "aboveTheFold",
+      "pillars",
+      "cookies",
+      "testimonials",
+      "footer",
+      "subpages",
+      "dnla",
+      "offer",
+      "utnn",
+      "team",
+      "srk",
+      "service1",
+      "privacy",
+      "article1",
+      "support",
+      "contact",
+      "about",
+      "team",
+      "partners",
+      "references"
+    ]
   }
 }

@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import styled from "styled-components";
 import Button from "../../../basic_components/button/Button";
 import { BodyText4, Title2 } from "../../../basic_components/texts/Texts";
 import * as Styled from "./Pillars_component.styled";
@@ -33,7 +35,6 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
     let temp = document.getElementsByClassName("pillarContainer");
 
     for (let index = 0; index < temp.length; index++) {
-      console.log(temp[index]);
       temp[index].classList.remove("pillarShrink");
       temp[index].classList.remove("pillarActive");
     }
@@ -45,19 +46,38 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
       onMouseLeave={mouseLeave}
       className="pillarContainer"
     >
-      <Styled.PillarOuter href={link}></Styled.PillarOuter>
+      <Link href={link}>
+        <a>
+          <Styled.PillarOuter
+            style={{ cursor: "pointer" }}
+          ></Styled.PillarOuter>
+        </a>
+      </Link>
       <Styled.PillarComponentTitle>{title}</Styled.PillarComponentTitle>
       <p>
-        <BodyText4>{text}</BodyText4>
+        <BodyText4 dangerouslySetInnerHTML={{ __html: text }}></BodyText4>
       </p>
-      <Button className="button_pillar" secondary>
-        {button}
-      </Button>
+
       <Styled.LogoContainer>
-        <img src={logo} width="100" className="pillar_logo"></img>
+        <MoreButton className="button_pillar">{button}</MoreButton>
+        {logo && (
+          <img alt="" src={logo} width="100" className="pillar_logo"></img>
+        )}
       </Styled.LogoContainer>
     </Styled.PillarComponentContainer>
   );
 };
+
+export const MoreButton = styled.div`
+  color: rgb(110, 76, 0) !important;
+  border: 2px solid rgb(110, 76, 0);
+  border-radius: 24px;
+  padding: 10px 20px;
+  line-height: 25px;
+
+  &:hover {
+    background-color: var(--light);
+  }
+`;
 
 export default Pillars_component;

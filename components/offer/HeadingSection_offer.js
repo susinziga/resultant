@@ -1,6 +1,11 @@
-import React from 'react';
+import React from "react";
 
-import { HeadingContainer, HeadingUpperHeading, HeadingHeading, HeadingLine } from './HeadingSectionOffer.styled';
+import {
+  HeadingContainer,
+  HeadingUpperHeading,
+  HeadingHeading,
+  HeadingLine,
+} from "./HeadingSectionOffer.styled";
 import useTranslation from "next-translate/useTranslation";
 
 const HeadingSection_offer = (props) => {
@@ -9,17 +14,15 @@ const HeadingSection_offer = (props) => {
   const upperTitle = t("offer:offer_upperHeading");
   const title = t("offer:offer_mainHeading");
 
-
-  return (<>
-    <HeadingContainer {...props}>
-     
+  return (
+    <>
+      <HeadingContainer {...props}>
         <HeadingUpperHeading>{upperTitle}</HeadingUpperHeading>
         <HeadingHeading>{title}</HeadingHeading>
         <HeadingLine></HeadingLine>
-      
-    </HeadingContainer>
-  </>
-  )
-}
+      </HeadingContainer>
+    </>
+  );
+};
 
 export default HeadingSection_offer;

@@ -4,6 +4,8 @@ import FooterInput from "./FooterInput";
 import useTranslation from "next-translate/useTranslation";
 
 import { useRouter } from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 const Footer = () => {
   const { t, lang } = useTranslation();
 
@@ -27,12 +29,22 @@ const Footer = () => {
           </Styled.ContactFooterContainer>
           <Styled.ContactsFooterContainer>
             <Styled.ContactIconContainer>
-              <Styled.ContactIcon src="/Footer/-call.png"></Styled.ContactIcon>
-              <Styled.ContactLink>041 231 831</Styled.ContactLink>
+              <Styled.ContactLink href="tel:041231831">
+                <Styled.ContactIcon
+                  src="/Footer/-call.webp"
+                  alt="Telephone"
+                ></Styled.ContactIcon>
+                041 231 831
+              </Styled.ContactLink>
             </Styled.ContactIconContainer>
             <Styled.ContactIconContainer>
-              <Styled.ContactIcon src="/Footer/-email.png"></Styled.ContactIcon>
-              <Styled.ContactLink>info@resultant.si</Styled.ContactLink>
+              <Styled.ContactLink href="mailto:info@resultant.si">
+                <Styled.ContactIcon
+                  src="/Footer/-email.webp"
+                  alt="Email"
+                ></Styled.ContactIcon>
+                info@resultant.si
+              </Styled.ContactLink>
             </Styled.ContactIconContainer>
           </Styled.ContactsFooterContainer>
         </Styled.UpperFooterContainer>
@@ -41,21 +53,96 @@ const Footer = () => {
         <Styled.InputFooterContainer>
           <FooterInput></FooterInput>
         </Styled.InputFooterContainer>
+
+        {/* Socials Image Links */}
+        <div
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "3rem",
+          }}
+          className={"mobile"}
+        >
+          <Link
+            href={"https://www.linkedin.com/company/resultanthrconsulting/"}
+          >
+            <a>
+              <Image
+                src={"/Icons/linkedin_white.webp"}
+                width={50}
+                height={50}
+                alt="linkedin"
+              ></Image>
+            </a>
+          </Link>
+          <Link href={"https://www.facebook.com/Resultantposlovnosvetovanje"}>
+            <a>
+              <Image
+                src={"/Icons/facebook_white.webp"}
+                width={50}
+                height={50}
+                alt="facebook"
+              ></Image>
+            </a>
+          </Link>
+        </div>
+
         <Styled.Combine>
           {/* <Styled.Link className="desktop">{madeBy}</Styled.Link> */}
           <Styled.LinkFooterContainer>
-            <Styled.Link>{cookies}</Styled.Link>
-            <Styled.Link href={"/" + locale + "/support"}>
-              {support}
-            </Styled.Link>
-            <Styled.Link href={"/" + locale + "/privacy"}>
-              {privicy}
-            </Styled.Link>
-            <Styled.Link>&copy; {rights}</Styled.Link>
-            {/* <Styled.Link className="mobile">{madeBy}</Styled.Link> */}
-            <Styled.Link>{madeBy}</Styled.Link>
+            {/*<Styled.Link>{cookies}</Styled.Link>*/}
+            <Styled.Flex>
+              <Styled.Link href={"/" + locale + "/piskotki"}>
+                {cookies}
+              </Styled.Link>
+              <Styled.Link href={"/" + locale + "/podpora-strankam"}>
+                {support}
+              </Styled.Link>
+              <Styled.Link href={"/" + locale + "/pravilnik-o-zasebnosti"}>
+                {privicy}
+              </Styled.Link>
+              <Styled.Footer_item>&copy; {rights}</Styled.Footer_item>
+              {/* <Styled.Link className="mobile">{madeBy}</Styled.Link> */}
+            </Styled.Flex>
+            <div className="mobile">
+              <Styled.Link href="https://adanta.si/">
+                {madeBy}
+              </Styled.Link>
+            </div>
+            <div className="desktop" style={{ display: "flex" }}>
+              <Link
+                href={"https://www.linkedin.com/company/resultanthrconsulting/"}
+              >
+                <a>
+                  <Image
+                    src={"/Icons/linkedin_white.webp"}
+                    width={50}
+                    height={50}
+                    alt="linkedin"
+                  ></Image>
+                </a>
+              </Link>
+              <Link
+                href={"https://www.facebook.com/Resultantposlovnosvetovanje"}
+              >
+                <a>
+                  <Image
+                    src={"/Icons/facebook_white.webp"}
+                    width={50}
+                    height={50}
+                    alt="facebook"
+                  ></Image>
+                </a>
+              </Link>
+            </div>
           </Styled.LinkFooterContainer>
         </Styled.Combine>
+        <Styled.MadeByDesktopWrapper className={"desktop"}>
+          <Styled.Link href="https://adanta.si/">
+            {madeBy}
+          </Styled.Link>
+        </Styled.MadeByDesktopWrapper>
       </Styled.FooterContainer>
     </div>
   );

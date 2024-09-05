@@ -65,7 +65,9 @@ export const CardImage = styled.img`
   }
 `;
 
-export const TextContainer = styled.div``;
+export const TextContainer = styled.div`
+  width: fit-content;
+`;
 
 export const CardHeading = styled(Title2)`
   margin-bottom: 5%;
@@ -92,4 +94,22 @@ export const CardContent = styled(BodyText1)`
   @media only screen and (min-width: 1200px) {
     font-size: 1.4rem;
   }
+`;
+
+export const CardButton = styled.a`
+  width: fit-content;
+  display: block;
+  margin-top: 5%;
+  border: none;
+  border-bottom: 2px solid #9f7312;
+  background: none;
+  color: #282828;
+  padding-bottom: 10px;
+  font-family: "NeusaThin";
+  cursor: pointer;
+`;
+
+export const CardButtonArrowWrapper = styled.span`
+  padding-left: 15px;
+  padding-right: 5px;
 `;

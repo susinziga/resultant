@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect, useLayoutEffect } from "react";
 import * as Styled from "./Menu_top.styled";
 
 import gsap from "gsap";
+
 import useTranslation from "next-translate/useTranslation";
 
 import Menu_list from "./menu_list/Menu_list";
@@ -10,6 +11,10 @@ import Menu_list from "./menu_list/Menu_list";
 import { useRouter } from "next/router";
 import useSize from "../../custom_hooks/useSize";
 import Mobile_menu from "./mobile_menu/Mobile_menu";
+import LanguagePicker from "./LanguagePicker";
+
+import Image from "next/image";
+import Link from "next/link";
 
 const Menu_top = ({}) => {
   const { t, lang } = useTranslation("aboveTheFold");
@@ -97,7 +102,6 @@ const Menu_top = ({}) => {
 
         delay: 2.5,
         onComplete: () => {
-          console.log("add event");
           window.addEventListener("wheel", handleScroll);
         },
       });
@@ -197,16 +201,18 @@ const Menu_top = ({}) => {
 
   return (
     <Styled.Fixed
+      id="menu_top"
       className="menu_top_desktop"
       ref={(el) => (MenuAnimation = el)}
     >
-      <Styled.MenuContainer display={navState <= 0}>
+      <Styled.MenuContainer display={(navState <= 0).toString()}>
         <Styled.LogoContainer>
-          <a href={"/" + locale}></a>
+          {/* <a href={"/" + locale}></a> */}
           <img
             id="logo"
             ref={(el) => (LogoAnimation = el)}
             src={t("logo_link")}
+            alt="Resultant"
           ></img>
           {/*<object
             type="application/x-shockwave-flash"
@@ -215,20 +221,28 @@ const Menu_top = ({}) => {
             width="300"
             height="300"
   ></object>*/}
-          <a href={"/" + locale}>
-            <img
-              id="letter"
-              ref={(el) => (letterAnimation = el)}
-              src="/Logo/letter_.png"
-            ></img>
-          </a>
+          <Link href={"/" + locale}>
+            <a aria-label="Resultant">
+              <img
+                id="letter"
+                ref={(el) => (letterAnimation = el)}
+                src="/Logo/letter_svg.svg"
+                alt="Resultant"
+              ></img>
+            </a>
+          </Link>
         </Styled.LogoContainer>
 
-        {size[0] >= 768 ? (
-          <Menu_list state={navState}></Menu_list>
+        {size[0] >= 900 ? (
+          <Styled.Flex>
+            <Styled.Flex_language className="nav_item">
+              <LanguagePicker></LanguagePicker>
+            </Styled.Flex_language>
+            <Menu_list state={navState}></Menu_list>
+          </Styled.Flex>
         ) : (
           <>
-            <a
+            <p
               style={{ zIndex: "999999" }}
               onClick={() => {
                 setMenu_opened((prev) => !prev);
@@ -238,8 +252,9 @@ const Menu_top = ({}) => {
                 style={{ height: "100%" }}
                 src="/Buttons/Menu.svg"
                 id="hamburger_icon"
+                alt="Menu"
               ></img>
-            </a>
+            </p>
             <Mobile_menu menu_opened={menu_opened}></Mobile_menu>
           </>
         )}

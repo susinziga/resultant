@@ -24,7 +24,9 @@ const Input = (props) => {
       </Styled.InputLabel>
       <Styled.InputContainer
         {...props}
+        required={props.props.required === "*"}
         placeholder={props.props.placeholder}
+        type={props.props.type}
       ></Styled.InputContainer>
       <Styled.ActionLabel {...props}>{props.props.message}</Styled.ActionLabel>
     </>

@@ -8,9 +8,6 @@ const Blog_image_excerpt = ({ image, excerpt, excerpt2 }) => {
       <Blog_ie_excerpt>
         <BodyText2>{excerpt}</BodyText2>
       </Blog_ie_excerpt>
-      <Blog_ie_excerpt2>
-        <BodyText2>{excerpt2}</BodyText2>
-      </Blog_ie_excerpt2>
     </Blog_ie_container>
   );
 };
@@ -29,12 +26,6 @@ const Blog_ie_excerpt = styled.div`
   text-align: center;
   @media (min-width: 768px) {
     padding: 5rem 7rem;
-  }
-`;
-const Blog_ie_excerpt2 = styled.div`
-  @media (min-width: 768px) {
-    width: 60%;
-    margin: auto;
   }
 `;
 

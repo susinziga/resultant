@@ -33,13 +33,9 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
   let isScrolling = Date.now();
 
   const preventDefault = (e) => {
-    console.log(Date.now());
-    console.log(isScrolling);
     if (isActive) {
       e.preventDefault();
       if (Date.now() - 500 > isScrolling) {
-        console.log(isActive);
-
         if (e.deltaY < 0) {
           if (swip.isBeginning) {
             /*document.getElementById("content_box").scrollBy(0, e.deltaY);*/
@@ -74,6 +70,7 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
       text: t("person1_text"),
       linkedin: t("person1_linkedin"),
       photo: t("person1_photo"),
+      link: "/ekipa/roman-klaric",
     },
     {
       name: t("person2_name"),
@@ -83,6 +80,7 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
       text: t("person2_text"),
       linkedin: t("person2_linkedin"),
       photo: t("person2_photo"),
+      link: "/ekipa/primoz-bitenc",
     },
     {
       name: t("person3_name"),
@@ -92,57 +90,49 @@ const TeamSlider = ({ nextSection, prevSection, isActive, title }) => {
       text: t("person3_text"),
       linkedin: t("person3_linkedin"),
       photo: t("person3_photo"),
+      link: "/ekipa/enej-klaric",
     },
   ];
-
-  const handleWheel = (e) => {
-    console.log(isActive);
-    if (isActive) {
-      if (e.deltaY > 0) {
-        if (swip.isEnd) {
-          nextSection(e);
-        } else swip.slideNext(500);
-      } else {
-        if (swip.isBeginning) {
-          prevSection(e);
-        } else swip.slidePrev(500);
-      }
-    }
-  };
 
   const setInstance = (instance) => {
     swip = instance;
   };
   return (
-    <Waypoint
-      scrollableAncestor="window"
-      topOffset="30%"
-      bottomOffset="40%"
-      onEnter={() => setContentSwiperActive(1)}
-      onLeave={(a) => {
-        if ((a.currentPosition = "above")) setContentSwiperActive(2);
-        if ((a.currentPosition = "below")) setContentSwiperActive(0);
-      }}
-    >
-      <Styled.TeamComponentContainer>
-        {isDesktop() ? (
-          ""
-        ) : (
-          <Title2
-            style={{
-              width: "var(--width-90)",
-              margin: "auto",
-              marginBottom: "2rem",
-            }}
-          >
-            {title}
-          </Title2>
-        )}
-        {items.map((item, id) => (
-          <TeamSliderItem item={item}></TeamSliderItem>
-        ))}
-      </Styled.TeamComponentContainer>
-    </Waypoint>
+    <>
+      {isDesktop() ? (
+        ""
+      ) : (
+        <Title2
+          style={{
+            width: "var(--width-90)",
+            margin: "auto",
+            marginBottom: "2rem",
+          }}
+        >
+          {title}
+        </Title2>
+      )}
+      <Waypoint
+        scrollableAncestor="window"
+        topOffset="30%"
+        bottomOffset="40%"
+        onEnter={() => setContentSwiperActive(1)}
+        onLeave={(a) => {
+          if (a.currentPosition == "above") {
+            setContentSwiperActive(2);
+          }
+          if (a.currentPosition == "below") {
+            setContentSwiperActive(0);
+          }
+        }}
+      >
+        <Styled.TeamComponentContainer>
+          {items.map((item, id) => (
+            <TeamSliderItem id={id} key={id} item={item}></TeamSliderItem>
+          ))}
+        </Styled.TeamComponentContainer>
+      </Waypoint>
+    </>
   );
 };
 

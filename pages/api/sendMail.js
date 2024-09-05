@@ -1,19 +1,11 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   const { data } = req.body;
-  var nodemailer = require("nodemailer");
-  var smtpTransport = require("nodemailer-smtp-transport");
 
-  var transporter = nodemailer.createTransport(
-    smtpTransport({
-      service: "gmail",
-      host: "smtp.gmail.com",
-      auth: {
-        user: "resultanthsc@gmail.com",
-        pass: "Resultant123!",
-      },
-    })
+  const sgMail = require("@sendgrid/mail");
+  sgMail.setApiKey(
+    "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"
   );
 
   let message = "";
@@ -21,21 +13,36 @@ export default function handler(req, res) {
     message += "<b>" + id + "</b>" + " : " + data[id] + "<br/>";
   }
 
-  console.log(message);
-
-  var mailOptions = {
-    from: "RESULTANT POVPRAŠEVANJE <resultanthsc@gmail.com>",
-    name: "RESULTANT",
-    to: "klaric.enej@gmail.com",
-    subject: data.subject,
+  const msg = {
+    from: "resultanthsc@gmail.com",
+    subject: "RESULTANT POVPRAŠEVANJE",
     html: message,
   };
 
-  console.log("SENT MAIL TO " + mailOptions.to);
+  const receivers = [
+    "klaric.enej@gmail.com",
+    "roman.klaric@resultant.si",
+    "primoz.bitenc@resultant.si",
+    // "icevx1@gmail.com",
+    // "thecrazy.marko@gmail.com",
+  ];
 
-  transporter.sendMail(mailOptions, function (err, info) {
-    if (err) console.log(err);
-    else console.log(info);
-  });
-  res.status(200).json({ name: "Sent" });
+  sgMail
+    .send({
+      ...msg,
+      to: receivers,
+    })
+    .then(
+      () => {
+        console.log("SENT EMAILS");
+
+        res.status(200).json({ name: "Sent", message: "SENT EMAILS" });
+      },
+      (error) => {
+        console.error("ERROR SENDING EMAILS");
+        console.error(error);
+
+        res.status(200).json({ name: "Sent", message: error });
+      }
+    );
 }
