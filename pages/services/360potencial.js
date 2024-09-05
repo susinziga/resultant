@@ -266,6 +266,23 @@ const PracticeCardButton = styled.a`
 const PotencialPage = () => {
   const { t } = useTranslation();
   const { locale } = useRouter();
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+
+  const device = isMobile ? "mobile" : "desktop";
 
 
 
@@ -402,10 +419,10 @@ const PotencialPage = () => {
       {/* Image Section Styled Similar to SIOK Service */}
       <Container>
         <Title>{t("360potencial:analiza_title1")}</Title>
-        <Image src={"/360potencial/image1_sl.png"} alt={t("360potencial:image_alt_text")} />
+        <Image src={"/360potencial/image1_"+ locale+".png"} alt={t("360potencial:image_alt_text")} />
         <Title>{t("360potencial:analiza_title2")}</Title>
         <ImageContainer>
-          <Image src={"/360potencial/image2_sl.png"} alt={t("service1:service1_SIOKImageSub")} />
+          <Image src={"/360potencial/image2_"+ locale + "_" +device +".png"} alt={t("service1:service1_SIOKImageSub")} />
         </ImageContainer>
       </Container>
 
@@ -452,7 +469,7 @@ const PotencialPage = () => {
         fontWeight: "regular",
         marginTop: "50px",
       }}>
-        Katere dobre prakse naslavljamo in preverjamo z 360Potencial?
+        {t("360potencial:practices_heading")}
       </h1>
       <CardsGrid>
         {[1, 2, 3, 4, 5, 6, 7, 8].map((index) => (
