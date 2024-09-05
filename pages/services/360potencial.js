@@ -263,6 +263,16 @@ const PracticeCardButton = styled.a`
   }
 `;
 
+const practiceCardLinks = [
+  "/clanek/107",
+  "/clanek/102",
+  "/clanek/99",
+  "/clanek/109",
+  "/clanek/16",
+  "/clanek/112",
+  "/clanek/106",
+];
+
 const PotencialPage = () => {
   const { t } = useTranslation();
   const { locale } = useRouter();
@@ -405,10 +415,8 @@ const PotencialPage = () => {
   flexDirection: "column",
 }}>
       <SubmitButton
+      href="/services/siok/ponudba-siok"
         className="section"
-        style={{
-          
-        }}
 
       >{t("360potencial:submitButton")}</SubmitButton>
       </div>
@@ -481,7 +489,7 @@ const PotencialPage = () => {
               {t(`360potencial:card_text_${index}`)}
             </PracticeCardText>
             {index !== 8 && (
-              <PracticeCardButton href="#">
+              <PracticeCardButton href={practiceCardLinks[index - 1]}>
                 {t(`360potencial:card_button_text_${index}`)}
               </PracticeCardButton>
             )}
@@ -496,7 +504,7 @@ const PotencialPage = () => {
         img="/360potencial/5dimenzij"
         color="#DEE6ED"
         buttonText={t("360potencial:5dimenzij_button_text")}
-        href="#"
+        href="/services/360potencial/measuring_360potencial"
         flipX={true}
         mobileImgOnBottom={false}
       />
