@@ -59,7 +59,6 @@ export const ContactHeader = styled.h2`
   font-weight: 500;
   font-size: 1.8rem;
   margin-right: 1rem; /* Add some space between the text and the line */
-  white-space: nowrap; /* Prevents wrapping to a new line */
 
 
   @media only screen and (min-width: 768px) {

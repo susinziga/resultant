@@ -465,7 +465,7 @@ const PotencialPage = () => {
         img="/360potencial/notranji_potencial"
         color="#f9f4f0"
         buttonText={t("360potencial:card_button_text")}
-        href="#"
+        href="/clanek/108"
         mobileImgOnBottom={false}
       />
 
@@ -504,7 +504,7 @@ const PotencialPage = () => {
         img="/360potencial/5dimenzij"
         color="#DEE6ED"
         buttonText={t("360potencial:5dimenzij_button_text")}
-        href="/services/360potencial/measuring_360potencial"
+        href={locale + "/services/360potencial/measuring_360potencial"}
         flipX={true}
         mobileImgOnBottom={false}
       />
