@@ -25,6 +25,10 @@ const Mobile_menu_dropdown = ({ opened }) => {
       title: t("pillar4_title"),
       link: "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje",
     },
+    {
+      title: t("pillar5_title"),
+      link: "/services/360potencial",
+    },
   ];
 
   return (
