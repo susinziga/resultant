@@ -12,7 +12,6 @@ import ArticleCard from "../components/aktualno/ArticleCard";
 import LatestCard from "../components/aktualno/LatestCard";
 import { BodyText2 } from "../basic_components/texts/Texts";
 import FilterDropdown from "../components/aktualno/FilterDropdown";
-import { useAktualno } from "../custom_hooks/useAktualno";
 import { AktualnoContext } from "../context/aktualnoContext";
 import Head from "next/head";
 
@@ -43,7 +42,7 @@ export const getServerSideProps = async () => {
 };
 
 const aktualno = ({ categories, authors }) => {
-  const { filter, state, setFilter, setSortFilter } =
+  const { filter, state, setFilter, setSortFilter, isFetching } =
     useContext(AktualnoContext);
 
   let items = state;
@@ -97,11 +96,19 @@ const aktualno = ({ categories, authors }) => {
         </FiltersWrapper>
       </HeadingContainer>
 
-      {items.length <= 0 ? (
+      {isFetching && (
+        <BodyText2 style={{ textAlign: "center", display: "block" }}>
+          Nalaganje...
+        </BodyText2>
+      )}
+
+      {items.length <= 0 && !isFetching && (
         <BodyText2 style={{ textAlign: "center", display: "block" }}>
           Ni člankov!
         </BodyText2>
-      ) : (
+      )}
+
+      {items.length > 0 && (
         <CardWrapperParent numArticles={items.length}>
           <LatestCard
             key={items[0].id}
