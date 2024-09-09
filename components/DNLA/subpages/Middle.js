@@ -4,7 +4,14 @@ import { BodyText2, Title2 } from "../../../basic_components/texts/Texts";
 import { useRouter } from "next/router";
 import Button from "../../../basic_components/button/Button";
 
-const Middle = ({ title, text, img, button, withoutButton = false }) => {
+const Middle = ({
+  title,
+  text,
+  img,
+  button,
+  withoutButton = false,
+  leftAlignedTitle = false,
+}) => {
   const { locale } = useRouter();
   return (
     <>
@@ -22,14 +29,17 @@ const Middle = ({ title, text, img, button, withoutButton = false }) => {
         <img src={img} alt="" />
 
         <Flex>
-          {title && <Title>{title}</Title>} {/* Conditionally render title if provided */}
+          {title && !leftAlignedTitle && <Title>{title}</Title>}{" "}
+          {title && leftAlignedTitle && (
+            <LeftAlignedTitle>{title}</LeftAlignedTitle>
+          )}{" "}
+          {/* Conditionally render title if provided */}
           <p>
             <BodyText2
               light
               dangerouslySetInnerHTML={{ __html: text }}
             ></BodyText2>
           </p>
-
           {!withoutButton && (
             <Button
               className="desktop"
@@ -79,7 +89,6 @@ const Flex = styled.div`
   display: flex;
   flex-direction: column;
   gap: 3rem;
-
 `;
 
 const Title = styled(Title2)`
@@ -89,6 +98,10 @@ const Title = styled(Title2)`
 
   text-align: center;
   font-family: "Neusa";
+`;
+
+const LeftAlignedTitle = styled(Title)`
+  text-align: left;
 `;
 
 export default Middle;
