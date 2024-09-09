@@ -12,44 +12,8 @@ import useTranslation from "next-translate/useTranslation";
 const Testimonials_home = (props) => {
   let swiperInstance = useSwiper();
   const { t } = useTranslation("testimonials");
-  const testimonials = [
-    {
-      title: t("testimonial1_title"),
-      text: t("testimonial1_text"),
-      name: t("testimonial1_name"),
-      role: t("testimonial1_role"),
-    },
-    {
-      title: t("testimonial2_title"),
-      text: t("testimonial2_text"),
-      name: t("testimonial2_name"),
-      role: t("testimonial2_role"),
-    },
-    {
-      title: t("testimonial3_title"),
-      text: t("testimonial3_text"),
-      name: t("testimonial3_name"),
-      role: t("testimonial3_role"),
-    },
-    {
-      title: t("testimonial4_title"),
-      text: t("testimonial4_text"),
-      name: t("testimonial4_name"),
-      role: t("testimonial4_role"),
-    },
-    {
-      title: t("testimonial5_title"),
-      text: t("testimonial5_text"),
-      name: t("testimonial5_name"),
-      role: t("testimonial5_role"),
-    },
-    {
-      title: t("testimonial6_title"),
-      text: t("testimonial6_text"),
-      name: t("testimonial6_name"),
-      role: t("testimonial6_role"),
-    },
-  ];
+
+  const numTestimonials = 7;
 
   const setInstance = (instance) => {
     swiperInstance = instance;
@@ -64,7 +28,14 @@ const Testimonials_home = (props) => {
         onSwiper={(swiper) => (swiperInstance = swiper)}
       >
         <SwiperInstance setInstance={setInstance}></SwiperInstance>
-        {testimonials.map((testimonial, id) => {
+        {Array.from({ length: numTestimonials }).map((_, id) => {
+          const testimonial = {
+            title: t(`testimonial${id + 1}_title`),
+            text: t(`testimonial${id + 1}_text`),
+            name: t(`testimonial${id + 1}_name`),
+            role: t(`testimonial${id + 1}_role`),
+          };
+
           return (
             <SwiperSlide key={id}>
               <Testimonial testimonial={testimonial}></Testimonial>
