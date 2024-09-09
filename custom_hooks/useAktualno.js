@@ -1,10 +1,12 @@
-import { useQuery } from "@apollo/client";
-import ApolloClient from "apollo-client";
-import React, { useState, useEffect } from "react";
-import ARTICLES_QUERY from "../apollo/queries/articles/articles";
+import { useState, useEffect } from "react";
 import { fetchAPI } from "../pages/api/strapi";
+import { useRouter } from "next/router";
 
 export const useAktualno = () => {
+  const router = useRouter();
+
+  const [isFetching, setIsFetching] = useState(false);
+
   const [filteredState, setFilteredState] = useState([]);
   const [state, setState] = useState([]);
   const [filter, setFilter] = useState({
@@ -26,15 +28,17 @@ export const useAktualno = () => {
   }, [filter, state]);
 
   const updateStateFromApi = async () => {
+    setIsFetching(true);
     let data = await fetchAPI("/clanki", {
       populate: "*",
       sort: "createdAt:" + (sortFilter == -1 ? "desc" : "asc"),
       pagination: {
-        page: 1,
-        pageSize: 200,
+        page: router.query.page || 1,
+        pageSize: 9,
       },
     });
     setState(data.data);
+    setIsFetching(false);
   };
 
   const filterState = () => {
@@ -92,5 +96,5 @@ export const useAktualno = () => {
     return filtered;
   };
 
-  return { filter, setFilter, setSortFilter, state: filteredState };
+  return { filter, setFilter, setSortFilter, state: filteredState, isFetching };
 };

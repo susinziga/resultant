@@ -1,17 +1,14 @@
 import React from "react";
-import { BodyText2 } from "../../basic_components/texts/Texts";
 import {
   NewsContainer,
   NewsHeading,
   NewsImage,
   NewsTextContainer,
   NewsText,
-  NewsButton,
   ContainerInnerWrapper,
 } from "./LatestCard.styled";
 
 import { useRouter } from "next/router";
-import Button from "../../basic_components/button/Button";
 
 const LatestCard = ({ news }) => {
   const { locale } = useRouter();
@@ -25,11 +22,11 @@ const LatestCard = ({ news }) => {
           <NewsTextContainer>
             <NewsHeading>{heading}</NewsHeading>
             <NewsText>{text}</NewsText>
-            <NewsButton>
+            <p>
               Preberi več{" "}
               <span style={{ width: ".25rem", display: "inline-block" }}></span>{" "}
               {">"}
-            </NewsButton>
+            </p>
           </NewsTextContainer>
         </ContainerInnerWrapper>
       </NewsContainer>

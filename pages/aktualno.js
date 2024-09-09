@@ -47,6 +47,12 @@ const aktualno = ({ categories, authors }) => {
 
   let items = state;
 
+  const articles = new Set(
+    state.map((article) => {
+      return getArticleFromStrapiData(article);
+    })
+  );
+
   return (
     <>
       <Head>
@@ -112,20 +118,16 @@ const aktualno = ({ categories, authors }) => {
         <CardWrapperParent numArticles={items.length}>
           <LatestCard
             key={items[0].id}
-            news={getArticleFromStrapiData(items[0])}
+            news={Array.from(articles)[0]}
           ></LatestCard>
           <CardWrapper>
-            {items.map((article, index) => {
-              // Skip first since its the latest article
-              if (index == 0) return;
-
-              return (
-                <ArticleCard
-                  key={article.id}
-                  news={getArticleFromStrapiData(article)}
-                ></ArticleCard>
-              );
-            })}
+            {Array.from(articles)
+              .filter((article) => article.id != items[0].id) // Skip first since its the latest article
+              .map((article) => {
+                return (
+                  <ArticleCard key={article.id} news={article}></ArticleCard>
+                );
+              })}
           </CardWrapper>
         </CardWrapperParent>
       )}

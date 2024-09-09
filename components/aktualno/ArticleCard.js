@@ -1,5 +1,4 @@
 import React from "react";
-import { BodyText2 } from "../../basic_components/texts/Texts";
 import {
   NewsContainer,
   NewsHeading,
@@ -11,7 +10,6 @@ import {
 } from "./ArticleCard.styled";
 
 import { useRouter } from "next/router";
-import Button from "../../basic_components/button/Button";
 
 const ArticleCard = ({ news }) => {
   const { locale } = useRouter();
