@@ -15,7 +15,6 @@ import CardSlider from "../../components/service1/News/Card/NewsSlider_section1"
 import BigCard from "../../components/service1/Card/BigCard";
 import { SubmitButton } from "../../components/service1/PlanSection/Plan.styled";
 
-
 const Container = styled.div`
   width: 100%;
   margin: auto;
@@ -190,7 +189,6 @@ const BackgroundVector = styled.img`
   }
 `;
 
-
 const CardsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr); /* Default to one column */
@@ -291,22 +289,18 @@ const PotencialPage = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-
   const device = isMobile ? "mobile" : "desktop";
 
-
-
-  const { filter, state, setFilter, setSortFilter } = useContext(AktualnoContext);
+  const { filter, state, setFilter, setSortFilter } =
+    useContext(AktualnoContext);
 
   useEffect(() => {
     setFilter({
       ...filter,
-      category: 2, 
+      category: 2,
     });
     setSortFilter(-1);
   }, []);
-
-
 
   let articles = [];
   state.forEach((element) => {
@@ -333,7 +327,10 @@ const PotencialPage = () => {
         }}
       />
 
-      <Quote className="section" props={t("360potencial:potencial_quoteParagraph")} />
+      <Quote
+        className="section"
+        props={t("360potencial:potencial_quoteParagraph")}
+      />
 
       <CardSection
         className="section"
@@ -408,17 +405,17 @@ const PotencialPage = () => {
         heading1={t("360potencial:plan3_heading")}
         bgImg
       />
-<div style={{
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  flexDirection: "column",
-}}>
-      <SubmitButton
-      href="/services/siok/ponudba-siok"
-        className="section"
-
-      >{t("360potencial:submitButton")}</SubmitButton>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+        }}
+      >
+        <SubmitButton href="/services/siok/ponudba-siok" className="section">
+          {t("360potencial:submitButton")}
+        </SubmitButton>
       </div>
 
       {/* Additional Quote Section */}
@@ -427,22 +424,27 @@ const PotencialPage = () => {
       {/* Image Section Styled Similar to SIOK Service */}
       <Container>
         <Title>{t("360potencial:analiza_title1")}</Title>
-        <Image src={"/360potencial/image1_"+ locale+".png"} alt={t("360potencial:image_alt_text")} />
+        <Image
+          src={"/360potencial/image1_" + locale + ".png"}
+          alt={t("360potencial:image_alt_text")}
+        />
         <Title>{t("360potencial:analiza_title2")}</Title>
         <ImageContainer>
-          <Image src={"/360potencial/image2_"+ locale + "_" +device +".png"} alt={t("service1:service1_SIOKImageSub")} />
+          <Image
+            src={"/360potencial/image2_" + locale + "_" + device + ".png"}
+            alt={t("service1:service1_SIOKImageSub")}
+          />
         </ImageContainer>
       </Container>
-
-      
 
       {/* New Bullet Section */}
       <ExperienceContainer>
         <FlexDesktop>
           <FlexHeadingContainer>
-            <ExperienceTitle>{t("360potencial:bulletSectionTitle")}</ExperienceTitle>
-            <ControlContainer>
-            </ControlContainer>
+            <ExperienceTitle>
+              {t("360potencial:bulletSectionTitle")}
+            </ExperienceTitle>
+            <ControlContainer></ControlContainer>
           </FlexHeadingContainer>
           <FlexDesktopText>
             <BulletHeading>{t("360potencial:bulletMainHeading")}</BulletHeading>
@@ -458,7 +460,6 @@ const PotencialPage = () => {
         </FlexDesktop>
       </ExperienceContainer>
 
-
       <BigCard
         heading={t("360potencial:card_heading")}
         content={t("360potencial:card_text")}
@@ -470,13 +471,15 @@ const PotencialPage = () => {
       />
 
       {/* Grid of Practice Cards */}
-      <h1 style={{
-        fontFamily: "Neusa",
-        textAlign: "center",
-        fontSize: "2rem",
-        fontWeight: "regular",
-        marginTop: "50px",
-      }}>
+      <h1
+        style={{
+          fontFamily: "Neusa",
+          textAlign: "center",
+          fontSize: "2rem",
+          fontWeight: "regular",
+          marginTop: "50px",
+        }}
+      >
         {t("360potencial:practices_heading")}
       </h1>
       <CardsGrid>
@@ -497,8 +500,8 @@ const PotencialPage = () => {
         ))}
       </CardsGrid>
       {/* Main Card Section with Image on the Right */}
-   
- <BigCard
+
+      <BigCard
         heading={t("360potencial:5dimenzij_heading")}
         content={t("360potencial:5dimenzij_text")}
         img="/360potencial/5dimenzij"
@@ -508,10 +511,9 @@ const PotencialPage = () => {
         flipX={true}
         mobileImgOnBottom={false}
       />
- <ContactForm_potencial className="section"/>
- {/* Articles Section */}
- {locale === "sl" ? <CardSlider news={articles} /> : null}
-
+      <ContactForm_potencial className="section" />
+      {/* Articles Section */}
+      {locale === "sl" ? <CardSlider news={articles} /> : null}
     </>
   );
 };
