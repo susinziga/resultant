@@ -4,11 +4,25 @@ import { useAktualno } from "../custom_hooks/useAktualno";
 const AktualnoContext = React.createContext();
 
 const AktualnoProvider = (props) => {
-  const { filter, state, setFilter, setSortFilter, isFetching } = useAktualno();
+  const {
+    filter,
+    state,
+    setFilter,
+    setSortFilter,
+    isFetching,
+    paginationData,
+  } = useAktualno();
 
   return (
     <AktualnoContext.Provider
-      value={{ filter, state, setFilter, setSortFilter, isFetching }}
+      value={{
+        filter,
+        state,
+        setFilter,
+        setSortFilter,
+        isFetching,
+        paginationData,
+      }}
     >
       {props.children}
     </AktualnoContext.Provider>

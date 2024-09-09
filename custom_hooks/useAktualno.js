@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchAPI } from "../pages/api/strapi";
 import { useRouter } from "next/router";
 
+const perPage = 9;
 export const useAktualno = () => {
   const router = useRouter();
 
@@ -9,6 +10,12 @@ export const useAktualno = () => {
 
   const [filteredState, setFilteredState] = useState([]);
   const [state, setState] = useState([]);
+  const [paginationData, setPaginationData] = useState({
+    page: router.query.page || 1,
+    pageSize: perPage,
+    pageCount: 1,
+    total: 0,
+  });
   const [filter, setFilter] = useState({
     category: -1,
     author: -1,
@@ -29,15 +36,17 @@ export const useAktualno = () => {
 
   const updateStateFromApi = async () => {
     setIsFetching(true);
+    console.log(router.query.page);
     let data = await fetchAPI("/clanki", {
       populate: "*",
       sort: "createdAt:" + (sortFilter == -1 ? "desc" : "asc"),
       pagination: {
         page: router.query.page || 1,
-        pageSize: 9,
+        pageSize: perPage,
       },
     });
     setState(data.data);
+    setPaginationData(data.meta.pagination);
     setIsFetching(false);
   };
 
@@ -96,5 +105,12 @@ export const useAktualno = () => {
     return filtered;
   };
 
-  return { filter, setFilter, setSortFilter, state: filteredState, isFetching };
+  return {
+    filter,
+    setFilter,
+    setSortFilter,
+    state: filteredState,
+    isFetching,
+    paginationData,
+  };
 };
