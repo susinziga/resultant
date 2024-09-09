@@ -6,7 +6,7 @@ import {
   TextareaContainer,
   HeadingLine,
   InputContainer,
-} from "/components/DNLA/contact/ContactForm.styled.js"
+} from "/components/DNLA/contact/ContactForm.styled.js";
 import Input from "../../../basic_components/input/Input";
 import Textarea from "../../../basic_components/textarea/Textarea";
 import Button from "../../../basic_components/button/Button";
@@ -36,7 +36,6 @@ const textAreaLabel = {
   en: "Your message",
 };
 
-
 export const ContactContainer = styled.div`
   width: 100%;
   margin: auto;
@@ -59,7 +58,6 @@ export const ContactHeader = styled.h2`
   font-weight: 500;
   font-size: 1.8rem;
   margin-right: 1rem; /* Add some space between the text and the line */
-
 
   @media only screen and (min-width: 768px) {
     font-size: 2rem;
@@ -84,8 +82,6 @@ export const ContactHeaderLine = styled.div`
   margin-top: 8px; /* Align line with text */
 `;
 
-
-
 const ContactForm_potencial = (props) => {
   const { t, lang } = useTranslation();
   const { locale } = useRouter();
@@ -106,7 +102,7 @@ const ContactForm_potencial = (props) => {
           <ContactHeader
             dangerouslySetInnerHTML={{ __html: title }}
           ></ContactHeader>
-              <ContactHeaderLineWrapper>
+          <ContactHeaderLineWrapper>
             <ContactHeaderLine />
           </ContactHeaderLineWrapper>
         </HeaderContainer>
