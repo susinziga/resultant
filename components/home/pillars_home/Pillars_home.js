@@ -41,8 +41,11 @@ const Pillars_home = (props) => {
       text: t("pillars:pillar4_excerpt"),
       link: "/services/upravljanje-talentov-in-nasledstveno-nacrtovanje",
     },
+  ];
+
+  const pillarsContentBotter = [
     {
-      title: t("pillars:pillar5_title"), 
+      title: t("pillars:pillar5_title"),
       text: t("pillars:pillar5_excerpt"),
       link: "/services/360potencial",
     },
@@ -81,6 +84,19 @@ const Pillars_home = (props) => {
           );
         })}
       </Styled.PillarsFlex>
+      <Styled.PillarsFlex>
+        {pillarsContentBotter.map((pillar) => {
+          return (
+            <Pillars_component
+              key={pillar.title}
+              title={pillar.title}
+              text={pillar.text}
+              button={buttonText}
+              link={"/" + locale + pillar.link}
+            ></Pillars_component>
+          );
+        })}
+      </Styled.PillarsFlex>
     </Styled.PillarsContainer>
   ) : (
     <Styled.PillarsContainer_mobile {...props}>
@@ -96,6 +112,17 @@ const Pillars_home = (props) => {
         );
       })}
       {pillarsContentBot.map((pillar) => {
+        return (
+          <Pillars_sliderItem
+            key={pillar.title}
+            title={pillar.title}
+            text={pillar.text}
+            button={buttonText}
+            link={"/" + locale + pillar.link}
+          ></Pillars_sliderItem>
+        );
+      })}
+      {pillarsContentBotter.map((pillar) => {
         return (
           <Pillars_sliderItem
             key={pillar.title}
