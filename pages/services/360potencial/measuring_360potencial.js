@@ -26,23 +26,37 @@ const BoxContent = styled.p`
   width: 60%;
   line-height: 1.6;
   margin: 0;
-  
+
   @media (max-width: 768px) {
     width: 80%;
   }
 `;
-  
-    
+
 const measuring = () => {
   const { t } = useTranslation();
   const { locale } = useRouter();
 
   const pillarsContent = [
-    { title: t("360potencial:measuring_pillarTitle1"), text: t("360potencial:measuring_pillarText1") },
-    { title: t("360potencial:measuring_pillarTitle2"), text: t("360potencial:measuring_pillarText2") },
-    { title: t("360potencial:measuring_pillarTitle3"), text: t("360potencial:measuring_pillarText3") },
-    { title: t("360potencial:measuring_pillarTitle4"), text: t("360potencial:measuring_pillarText4") },
-    { title: t("360potencial:measuring_pillarTitle5"), text: t("360potencial:measuring_pillarText5") },
+    {
+      title: t("360potencial:measuring_pillarTitle1"),
+      text: t("360potencial:measuring_pillarText1"),
+    },
+    {
+      title: t("360potencial:measuring_pillarTitle2"),
+      text: t("360potencial:measuring_pillarText2"),
+    },
+    {
+      title: t("360potencial:measuring_pillarTitle3"),
+      text: t("360potencial:measuring_pillarText3"),
+    },
+    {
+      title: t("360potencial:measuring_pillarTitle4"),
+      text: t("360potencial:measuring_pillarText4"),
+    },
+    {
+      title: t("360potencial:measuring_pillarTitle5"),
+      text: t("360potencial:measuring_pillarText5"),
+    },
   ];
 
   return (
@@ -53,18 +67,17 @@ const measuring = () => {
         text={t("360potencial:measuring_header_text")}
         title={t("360potencial:measuring_header_title")}
         withoutButton={true}
+        leftAlignedTitle={true}
       ></Middle>
 
       <PillarsMeasuring style={{ marginTop: "3rem" }} />
       <ExpandableSection />
       <BoxContainer>
-      <BoxContent>{t('360potencial:information_box_text')}</BoxContent>
-    </BoxContainer>
+        <BoxContent>{t("360potencial:information_box_text")}</BoxContent>
+      </BoxContainer>
 
-    <MethodologySection />
-    <TwoCardsSection />
-              
-
+      <MethodologySection />
+      <TwoCardsSection />
     </>
   );
 };
