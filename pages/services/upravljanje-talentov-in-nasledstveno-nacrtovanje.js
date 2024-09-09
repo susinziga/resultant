@@ -15,14 +15,8 @@ import { AktualnoContext } from "../../context/aktualnoContext";
 import { getArticleFromStrapiData } from "../api/strapi";
 
 const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
-  const { t, lang } = useTranslation();
+  const { t } = useTranslation();
   const { locale } = useRouter();
-
-
-
-
-
-  const device = isMobile ? "mobile" : "desktop";
 
   const { filter, state, setFilter, setSortFilter } =
     useContext(AktualnoContext);
