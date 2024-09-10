@@ -423,7 +423,7 @@ const PotencialPage = () => {
 
       {/* Image Section Styled Similar to SIOK Service */}
       <Container>
-        <Title>{t("360potencial:analiza_title1")}</Title>
+        {locale === "sl" && <Title>{t("360potencial:analiza_title1")}</Title>}
         <Image
           src={"/360potencial/image1_" + locale + ".png"}
           alt={t("360potencial:image_alt_text")}
@@ -447,7 +447,7 @@ const PotencialPage = () => {
             <ControlContainer></ControlContainer>
           </FlexHeadingContainer>
           <FlexDesktopText>
-            <BulletHeading>{t("360potencial:bulletMainHeading")}</BulletHeading>
+            {/* <BulletHeading>{t("360potencial:bulletMainHeading")}</BulletHeading> */}
             <List>
               <Bullet>{t("360potencial:bullet_item1")}</Bullet>
               <Bullet>{t("360potencial:bullet_item2")}</Bullet>
