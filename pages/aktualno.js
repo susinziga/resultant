@@ -12,41 +12,57 @@ import ArticleCard from "../components/aktualno/ArticleCard";
 import LatestCard from "../components/aktualno/LatestCard";
 import { BodyText2 } from "../basic_components/texts/Texts";
 import FilterDropdown from "../components/aktualno/FilterDropdown";
-import { useAktualno } from "../custom_hooks/useAktualno";
 import { AktualnoContext } from "../context/aktualnoContext";
 import Head from "next/head";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
-export const getServerSideProps = async () => {
-  const categories = await fetchAPI("/kategorije", { populate: "*" });
-  const authors = await fetchAPI("/avtors", { populate: "*" });
+export const getServerSideProps = async (context) => {
+  const page = Number(context.query.page) || 1;
+  const pageSize = 9;
 
-  let cats = [];
-  categories.data.forEach((element) =>
-    cats.push({ id: element.id, name: element.attributes.fullName })
-  );
+  const [categoriesResponse, authorsResponse, articlesResponse] =
+    await Promise.all([
+      fetchAPI("/kategorije", { populate: "*" }),
+      fetchAPI("/avtors", { populate: "*" }),
+      fetchAPI("/clanki", {
+        populate: "*",
+        pagination: {
+          page,
+          pageSize,
+        },
+        sort: ["createdAt:desc"], // Adjust sorting as needed
+      }),
+    ]);
 
-  let auths = [];
-  authors.data.forEach((element) =>
-    auths.push({
-      id: element.id,
-      name: element.attributes.ime,
-      resultant: element.attributes.resultant,
-    })
-  );
+  const cats = categoriesResponse.data.map((element) => ({
+    id: element.id,
+    name: element.attributes.fullName,
+  }));
+
+  const auths = authorsResponse.data.map((element) => ({
+    id: element.id,
+    name: element.attributes.ime,
+    resultant: element.attributes.resultant,
+  }));
+
+  const articles = articlesResponse.data.map(getArticleFromStrapiData);
 
   return {
     props: {
       categories: cats,
       authors: auths,
+      articles,
+      pagination: articlesResponse.meta.pagination,
     },
   };
 };
 
-const aktualno = ({ categories, authors }) => {
-  const { filter, state, setFilter, setSortFilter } =
+const aktualno = ({ categories, authors, articles, pagination }) => {
+  const { filter, setFilter, setSortFilter, isFetching } =
     useContext(AktualnoContext);
 
-  let items = state;
+  const router = useRouter();
 
   return (
     <>
@@ -97,31 +113,84 @@ const aktualno = ({ categories, authors }) => {
         </FiltersWrapper>
       </HeadingContainer>
 
-      {items.length <= 0 ? (
+      {isFetching && (
+        <BodyText2
+          style={{
+            textAlign: "center",
+            display: "block",
+            marginBottom: "50px",
+          }}
+        >
+          Nalaganje...
+        </BodyText2>
+      )}
+
+      {articles.length <= 0 && !isFetching && (
         <BodyText2 style={{ textAlign: "center", display: "block" }}>
           Ni člankov!
         </BodyText2>
-      ) : (
-        <CardWrapperParent numArticles={items.length}>
+      )}
+
+      {articles.length > 0 && !isFetching && (
+        <CardWrapperParent numArticles={articles.length}>
           <LatestCard
-            key={items[0].id}
-            news={getArticleFromStrapiData(items[0])}
+            key={articles[0].id}
+            news={Array.from(articles)[0]}
           ></LatestCard>
           <CardWrapper>
-            {items.map((article, index) => {
-              // Skip first since its the latest article
-              if (index == 0) return;
-
-              return (
-                <ArticleCard
-                  key={article.id}
-                  news={getArticleFromStrapiData(article)}
-                ></ArticleCard>
-              );
-            })}
+            {Array.from(articles)
+              .filter((article) => article.id != articles[0].id) // Skip first since its the latest article
+              .map((article) => {
+                return (
+                  <ArticleCard key={article.id} news={article}></ArticleCard>
+                );
+              })}
           </CardWrapper>
         </CardWrapperParent>
       )}
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "10px",
+        }}
+      >
+        <Link
+          href={{
+            pathname: router.pathname,
+            query: {
+              ...router.query,
+              page: Math.max(1, pagination.page - 1),
+            },
+          }}
+          replace
+        >
+          <a>
+            <img src="/Buttons/arrow_prev2.svg" alt="Previous page" />
+          </a>
+        </Link>
+
+        <p style={{ textAlign: "center", fontSize: "1.3rem" }}>
+          {pagination.page} / {pagination.pageCount}
+        </p>
+
+        <Link
+          href={{
+            pathname: router.pathname,
+            query: {
+              ...router.query,
+              page: Math.min(pagination.pageCount, pagination.page + 1),
+            },
+          }}
+          replace
+        >
+          <a>
+            <img src="/Buttons/arrow_next.svg" alt="Next page" />
+          </a>
+        </Link>
+      </div>
     </>
   );
 };
@@ -157,7 +226,6 @@ export const CardWrapperParent = styled.div`
   margin-bottom: ${(props) => (props.numArticles * 1.5).toString() + "rem"};
 
   @media (min-width: 768px) {
-    /* margin-bottom: 10%; */
     margin-bottom: ${(props) => (props.numArticles * 1).toString() + "%"};
   }
 `;
@@ -170,10 +238,6 @@ export const CardWrapper = styled.div`
   @media only screen and (min-width: 768px) {
     grid-template-columns: 29.11vw 29.11vw 29.11vw;
   }
-
-  /* @media only screen and (min-width: 992px) {
-    grid-template-columns: 29.11vw 29.11vw 29.11vw;
-  } */
 
   @media only screen and (min-width: 1200px) {
     grid-template-columns: 21.66vw 21.66vw 21.66vw 21.66vw;

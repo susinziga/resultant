@@ -10,9 +10,15 @@
 }
 
 .pillarActive {
-   width: 55% !important; 
-  background-color: var(--pillar-color)!important;
-   padding-right: 8% !important; 
+  width: 55% !important;
+  background-color: var(--pillar-color) !important;
+  padding-right: 8% !important;
+}
+
+.pillarActiveFullWidth {
+  width: 97% !important;
+  background-color: var(--pillar-color) !important;
+  /* padding-right: 8% !important; */
 }
 
 .pillarActiveDNLA {
@@ -28,7 +34,6 @@
   border-color: #fff !important;
 }
 
-
 .pillarActive * {
   color: var(--white) !important;
 }
@@ -38,6 +43,8 @@
 }
 .pillar_logo {
   opacity: 0;
+  height: auto;
+  max-height: 50px;
 }
 
 .pillarActive .pillar_logo {
@@ -45,7 +52,7 @@
 }
 
 .pillarShrink {
-   padding-right: 2% !important; 
+  padding-right: 2% !important;
 }
 
 .pillarShrinkDNLA {
@@ -64,52 +71,85 @@
   height: auto;
 }
 
-
-.is-loading{
+.is-loading {
   overflow-y: hidden;
 }
 
-
-.drop-button:hover +  #ddown{
-  display:flex;
+.drop-button:hover + #ddown {
+  display: flex;
 }
 
-.drop-button.dropdown-content:hover{
-  display:flex;
+.drop-button.dropdown-content:hover {
+  display: flex;
 }
 
-.drop-button.par{
-  display:table;
+.drop-button.par {
+  display: table;
   height: 100%;
-
-  
-  
 }
-.drop-button.par > *
-{cursor: pointer;}
-.drop-button.par >div{
-display: table-cell;
-vertical-align: middle;
+.drop-button.par > * {
+  cursor: pointer;
+}
+.drop-button.par > div {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-#content_box{
-  margin-top:3rem;
+#content_box {
+  margin-top: 3rem;
 }
 
-@media(min-width:768px){
+@media (min-width: 768px) {
   #content_box {
-    margin-top:8rem;
+    margin-top: 8rem;
   }
 }
 
-@media(min-width:768px){
+@media (min-width: 768px) {
   .section2 {
     margin-bottom: 15rem !important;
   }
 }
 
-@media (max-width:767px){
-  .sectionMobile{
-    margin-bottom:2rem;
+@media (max-width: 767px) {
+  .sectionMobile {
+    margin-bottom: 2rem;
+  }
+}
+
+.pillarExposed {
+  width: 99%;
+  padding: 5% 7%;
+  background: var(--pillar-color);
+  border-radius: 12px;
+  margin: 0.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  transition: 0.5s all;
+
+  .pillar_text_fullWidth {
+    color: var(--white);
+  }
+
+  .button_pillar_fullWidth {
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  &:hover {
+    background: #f9f4f0;
+    color: var(--dark);
+
+    .button_pillar_fullWidth {
+      color: rgb(110, 76, 0);
+      border: 2px solid rgb(110, 76, 0);
+    }
+
+    .pillar_text_fullWidth {
+      color: var(--dark);
+    }
   }
 }

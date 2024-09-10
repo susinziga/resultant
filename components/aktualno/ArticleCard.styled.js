@@ -1,14 +1,5 @@
-import Image from "next/image";
 import styled from "styled-components";
-import {
-  BodyText1,
-  BodyText2,
-  BodyText3,
-  Subtitle1,
-  Subtitle2,
-  Title1,
-  Title2,
-} from "../../basic_components/texts/Texts";
+import { BodyText2 } from "../../basic_components/texts/Texts";
 
 export const GuestBadge = styled.div`
   position: absolute;
@@ -29,7 +20,7 @@ export const GuestBadge = styled.div`
   font-family: "Neusa";
   font-weight: 300;
 
-  transition: all 0.25s ease;
+  /* transition: all 0.25s ease; */
 
   @media (min-width: 1600px) {
     font-size: 1rem;
@@ -41,7 +32,6 @@ export const GuestBadge = styled.div`
 export const NewsText = styled(BodyText2)`
   width: 95%;
   font-size: 1rem;
-  transition: all 0.25s ease;
   display: block;
   height: calc(1.2rem * 6);
 
@@ -49,7 +39,6 @@ export const NewsText = styled(BodyText2)`
 
   @media only screen and (min-width: 768px) {
     font-size: 1rem;
-    /* min-height: 12rem; */
   }
 
   @media only screen and (min-width: 992px) {
@@ -58,7 +47,6 @@ export const NewsText = styled(BodyText2)`
 
   @media only screen and (min-width: 1600px) {
     font-size: 1.1rem;
-    /* min-height: 8rem; */
   }
 `;
 
@@ -66,7 +54,6 @@ export const NewsHeading = styled.h3`
   font-size: 1.2rem;
   width: 100%;
   cursor: pointer;
-  transition: all 0.25s ease;
 
   margin: 0 0 10% 0;
   filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));
@@ -86,31 +73,17 @@ export const NewsHeading = styled.h3`
 `;
 
 export const NewsContainer = styled.a`
-  // background: white;
-  background: none;
   position: relative;
   width: 100%;
   cursor: pointer;
-  /* margin: 20% auto; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /*filter: drop-shadow(0px 16px 20px rgba(0, 71, 103, 0.09));*/
-  /* box-shadow: 0px 16px 20px rgba(0, 71, 103, 0.09); */
   border: 1px solid #000000;
-  /* box-sizing: border-box; */
   border-radius: 16px;
-  /* padding-bottom: 5%; */
 
-  ${(props) => {
-    return props.isActive
-      ? `background: white; 
-          `
-      : "";
-  }}
-  /* border-radius: 12px; */
-  /* min-height: 570px; */
-  transition: all 0.25s ease;
+  background: ${(props) => (props.isActive ? "white" : "none")};
+  transition: background 0.25s ease;
 
   &:hover {
     background: #316888;
@@ -138,15 +111,11 @@ export const NewsContainer = styled.a`
 `;
 
 export const NewsImage = styled.img`
-  /* width: 100%; */
-
-  /*filter: drop-shadow(0px 16px 40px rgba(0, 71, 103, 0.12));*/
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   object-fit: cover;
   height: 120px;
   width: 100%;
-  transition: all 0.25s ease;
 
   @media only screen and (min-width: 768px) {
     height: 150px;

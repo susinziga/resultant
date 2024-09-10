@@ -1,6 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
 import React, { useContext, useEffect } from "react";
-import { Waypoint } from "react-waypoint";
 import {
   BodyText3,
   BodyText4,
@@ -20,15 +19,9 @@ const Partners_content = ({ isActive }) => {
     { text: t("text2"), link: t("link2"), page: "" },
     { text: t("text3"), link: t("link3"), page: "" },
     { text: t("text4"), link: t("link4"), page: "" },
-    {
-      text: t("text5"),
-      link: t("link5"),
-      page: "www.inspire4future.com",
-    },
   ];
 
-  const { contentSwiperActive, setContentSwiperActive } =
-    useContext(AboutContext);
+  const { setContentSwiperActive } = useContext(AboutContext);
 
   useEffect(() => {
     window.addEventListener("wheel", preventDefault, { passive: false });
