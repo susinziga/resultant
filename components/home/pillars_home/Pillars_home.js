@@ -1,5 +1,5 @@
 import React from "react";
-import Pillars_component from "./Pillars_component";
+import Pillars_component, { MoreButton } from "./Pillars_component";
 import * as Styled from "./Pillars_home.styled";
 import useTranslation from "next-translate/useTranslation";
 import useSize from "../../../custom_hooks/useSize";
@@ -9,11 +9,20 @@ import Pillars_sliderItem from "./slider/Pillars_sliderItem";
 import { useRouter } from "next/router";
 
 import "swiper/css";
+import { BodyText4, Title2 } from "../../../basic_components/texts/Texts";
+import Link from "next/link";
 
 const Pillars_home = (props) => {
   const { t, lang } = useTranslation();
 
   const { locale } = useRouter();
+
+  const fullWidthCardTop = {
+    title: t("pillars:pillar5_title"),
+    text: t("pillars:pillar5_excerpt"),
+    link: "/services/360potencial",
+    logo: "/Pillars/360potential.png",
+  };
 
   const pillarsContentTop = [
     {
@@ -43,21 +52,50 @@ const Pillars_home = (props) => {
     },
   ];
 
-  const pillarsContentBotter = [
-    {
-      title: t("pillars:pillar5_title"),
-      text: t("pillars:pillar5_excerpt"),
-      link: "/services/360potencial",
-      logo: "/Pillars/360potential.png",
-    },
-  ];
-
   const buttonText = t("common:button_more");
 
   const { isDesktop } = useSize();
 
   return isDesktop() ? (
     <Styled.PillarsContainer {...props}>
+      <Link href={fullWidthCardTop.link}>
+        <div className="pillarExposed">
+          <Title2
+            style={{
+              fontSize: "1.5rem",
+              marginBottom: "1rem",
+            }}
+            className="pillar_text_fullWidth"
+          >
+            {fullWidthCardTop.title}
+          </Title2>
+          <p>
+            <BodyText4
+              className="pillar_text_fullWidth"
+              dangerouslySetInnerHTML={{ __html: fullWidthCardTop.text }}
+            />
+          </p>
+          <div
+            style={{
+              width: "100%",
+              textAlign: "right",
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "1.5rem",
+            }}
+          >
+            <MoreButton className="button_pillar_fullWidth">
+              {buttonText}
+            </MoreButton>
+            <img
+              alt=""
+              src={fullWidthCardTop.logo}
+              className="pillar_logo"
+            ></img>
+          </div>
+        </div>
+      </Link>
+
       <Styled.PillarsFlex>
         {pillarsContentTop.map((pillar, id) => {
           return (
@@ -86,20 +124,6 @@ const Pillars_home = (props) => {
           );
         })}
       </Styled.PillarsFlex>
-      <Styled.PillarsFlex>
-        {pillarsContentBotter.map((pillar) => {
-          return (
-            <Pillars_component
-              key={pillar.title}
-              title={pillar.title}
-              text={pillar.text}
-              button={buttonText}
-              link={"/" + locale + pillar.link}
-              logo={pillar.logo}
-            ></Pillars_component>
-          );
-        })}
-      </Styled.PillarsFlex>
     </Styled.PillarsContainer>
   ) : (
     <Styled.PillarsContainer_mobile {...props}>
@@ -116,18 +140,6 @@ const Pillars_home = (props) => {
         );
       })}
       {pillarsContentBot.map((pillar) => {
-        return (
-          <Pillars_sliderItem
-            key={pillar.title}
-            title={pillar.title}
-            text={pillar.text}
-            button={buttonText}
-            link={"/" + locale + pillar.link}
-            logo={pillar.logo}
-          ></Pillars_sliderItem>
-        );
-      })}
-      {pillarsContentBotter.map((pillar) => {
         return (
           <Pillars_sliderItem
             key={pillar.title}

@@ -7,7 +7,6 @@ import CardSection from "../../components/service1/CardSection/CardTable_service
 import Plan from "../../components/service1/PlanSection/Plan_service1";
 import { useRouter } from "next/router";
 import { BodyText3, Title2 } from "../../basic_components/texts/Texts";
-import ContactForm_dnla from "../../components/DNLA/contact/ContactForm_dnla";
 import ContactForm_potencial from "./360potencial/contact_form";
 import { getArticleFromStrapiData } from "../api/strapi";
 import { AktualnoContext } from "../../context/aktualnoContext";
@@ -93,25 +92,6 @@ const ControlContainer = styled.div`
   }
 `;
 
-const Subtext = styled.p`
-  font-size: 1.2rem;
-  font-family: "Neusa";
-  font-weight: 400;
-
-  @media only screen and (min-width: 768px) {
-    font-size: 0.8rem;
-  }
-
-  @media only screen and (min-width: 992px) {
-    padding-right: 15%;
-    font-size: 1.2rem;
-  }
-
-  @media only screen and (min-width: 1600px) {
-    padding-right: 10%;
-  }
-`;
-
 const FlexDesktop = styled.div`
   @media only screen and (min-width: 768px) {
     display: flex;
@@ -166,26 +146,6 @@ const Bullet = styled.li`
 
   @media only screen and (min-width: 992px) {
     font-size: 1.2rem;
-  }
-`;
-
-const BackgroundVector = styled.img`
-  position: absolute;
-  top: 0;
-  left: 8%;
-  z-index: -100;
-  width: 70%;
-  top: -18%;
-
-  @media only screen and (min-width: 992px) {
-    width: 60%;
-    top: -18%;
-  }
-
-  @media only screen and (min-width: 1600px) {
-    left: 15%;
-    width: 50%;
-    top: -18%;
   }
 `;
 
@@ -297,22 +257,15 @@ const PotencialPage = () => {
   useEffect(() => {
     setFilter({
       ...filter,
-      category: 2,
+      category: 3,
     });
     setSortFilter(-1);
   }, []);
 
   let articles = [];
+  console.log("state", state);
   state.forEach((element) => {
     articles.push(getArticleFromStrapiData(element));
-  });
-
-  articles.push({
-    heading: t("360potencial:article3CardHeading"),
-    text: t("360potencial:article3CardContent"),
-    image: "/360potencial/article3_desktop.webp",
-    authors: [],
-    link: "your-article-link",
   });
 
   return (
@@ -465,7 +418,9 @@ const PotencialPage = () => {
         content={t("360potencial:card_text")}
         img="/360potencial/notranji_potencial"
         color="#f9f4f0"
-        buttonText={t("360potencial:card_button_text")}
+        buttonText={
+          locale === "en" ? undefined : t("360potencial:card_button_text")
+        }
         href="/clanek/108"
         mobileImgOnBottom={false}
       />
@@ -491,7 +446,7 @@ const PotencialPage = () => {
             <PracticeCardText>
               {t(`360potencial:card_text_${index}`)}
             </PracticeCardText>
-            {index !== 8 && (
+            {index !== 8 && locale === "sl" && (
               <PracticeCardButton href={practiceCardLinks[index - 1]}>
                 {t(`360potencial:card_button_text_${index}`)}
               </PracticeCardButton>

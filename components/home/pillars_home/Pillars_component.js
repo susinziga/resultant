@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
-import Button from "../../../basic_components/button/Button";
 import { BodyText4, Title2 } from "../../../basic_components/texts/Texts";
 import * as Styled from "./Pillars_component.styled";
 
@@ -31,7 +30,7 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
     }
   };
 
-  const mouseLeave = (e) => {
+  const mouseLeave = () => {
     let temp = document.getElementsByClassName("pillarContainer");
 
     for (let index = 0; index < temp.length; index++) {
@@ -67,7 +66,7 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
 };
 
 export const MoreButton = styled.div`
-  color: rgb(110, 76, 0) !important;
+  color: rgb(110, 76, 0);
   border: 2px solid rgb(110, 76, 0);
   border-radius: 24px;
   padding: 10px 20px;

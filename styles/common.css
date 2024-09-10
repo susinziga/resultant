@@ -15,6 +15,12 @@
   padding-right: 8% !important;
 }
 
+.pillarActiveFullWidth {
+  width: 97% !important;
+  background-color: var(--pillar-color) !important;
+  /* padding-right: 8% !important; */
+}
+
 .pillarActiveDNLA {
   /* width: 40% !important; */
   background-color: var(--pillar-color);
@@ -108,5 +114,42 @@
 @media (max-width: 767px) {
   .sectionMobile {
     margin-bottom: 2rem;
+  }
+}
+
+.pillarExposed {
+  width: 99%;
+  padding: 5% 7%;
+  background: var(--pillar-color);
+  border-radius: 12px;
+  margin: 0.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+
+  transition: 0.5s all;
+
+  .pillar_text_fullWidth {
+    color: var(--white);
+  }
+
+  .button_pillar_fullWidth {
+    color: var(--white);
+    border: 2px solid var(--white);
+  }
+
+  &:hover {
+    background: #f9f4f0;
+    color: var(--dark);
+
+    .button_pillar_fullWidth {
+      color: rgb(110, 76, 0);
+      border: 2px solid rgb(110, 76, 0);
+    }
+
+    .pillar_text_fullWidth {
+      color: var(--dark);
+    }
   }
 }
