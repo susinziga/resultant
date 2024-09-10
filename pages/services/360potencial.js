@@ -413,7 +413,7 @@ const PotencialPage = () => {
           flexDirection: "column",
         }}
       >
-        <SubmitButton href="/services/siok/ponudba-siok" className="section">
+        <SubmitButton href="../services/siok/ponudba-siok" className="section">
           {t("360potencial:submitButton")}
         </SubmitButton>
       </div>

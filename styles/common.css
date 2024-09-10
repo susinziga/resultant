@@ -10,9 +10,9 @@
 }
 
 .pillarActive {
-   width: 55% !important; 
-  background-color: var(--pillar-color)!important;
-   padding-right: 8% !important; 
+  width: 55% !important;
+  background-color: var(--pillar-color) !important;
+  padding-right: 8% !important;
 }
 
 .pillarActiveDNLA {
@@ -28,7 +28,6 @@
   border-color: #fff !important;
 }
 
-
 .pillarActive * {
   color: var(--white) !important;
 }
@@ -38,6 +37,8 @@
 }
 .pillar_logo {
   opacity: 0;
+  height: auto;
+  max-height: 50px;
 }
 
 .pillarActive .pillar_logo {
@@ -45,7 +46,7 @@
 }
 
 .pillarShrink {
-   padding-right: 2% !important; 
+  padding-right: 2% !important;
 }
 
 .pillarShrinkDNLA {
@@ -64,52 +65,48 @@
   height: auto;
 }
 
-
-.is-loading{
+.is-loading {
   overflow-y: hidden;
 }
 
-
-.drop-button:hover +  #ddown{
-  display:flex;
+.drop-button:hover + #ddown {
+  display: flex;
 }
 
-.drop-button.dropdown-content:hover{
-  display:flex;
+.drop-button.dropdown-content:hover {
+  display: flex;
 }
 
-.drop-button.par{
-  display:table;
+.drop-button.par {
+  display: table;
   height: 100%;
-
-  
-  
 }
-.drop-button.par > *
-{cursor: pointer;}
-.drop-button.par >div{
-display: table-cell;
-vertical-align: middle;
+.drop-button.par > * {
+  cursor: pointer;
+}
+.drop-button.par > div {
+  display: table-cell;
+  vertical-align: middle;
 }
 
-#content_box{
-  margin-top:3rem;
+#content_box {
+  margin-top: 3rem;
 }
 
-@media(min-width:768px){
+@media (min-width: 768px) {
   #content_box {
-    margin-top:8rem;
+    margin-top: 8rem;
   }
 }
 
-@media(min-width:768px){
+@media (min-width: 768px) {
   .section2 {
     margin-bottom: 15rem !important;
   }
 }
 
-@media (max-width:767px){
-  .sectionMobile{
-    margin-bottom:2rem;
+@media (max-width: 767px) {
+  .sectionMobile {
+    margin-bottom: 2rem;
   }
 }

@@ -48,6 +48,7 @@ const Pillars_home = (props) => {
       title: t("pillars:pillar5_title"),
       text: t("pillars:pillar5_excerpt"),
       link: "/services/360potencial",
+      logo: "/Pillars/360potential.png",
     },
   ];
 
@@ -80,6 +81,7 @@ const Pillars_home = (props) => {
               text={pillar.text}
               button={buttonText}
               link={"/" + locale + pillar.link}
+              logo={pillar.logo}
             ></Pillars_component>
           );
         })}
@@ -93,6 +95,7 @@ const Pillars_home = (props) => {
               text={pillar.text}
               button={buttonText}
               link={"/" + locale + pillar.link}
+              logo={pillar.logo}
             ></Pillars_component>
           );
         })}
@@ -108,6 +111,7 @@ const Pillars_home = (props) => {
             text={pillar.text}
             button={buttonText}
             link={"/" + locale + pillar.link}
+            logo={pillar.logo}
           ></Pillars_sliderItem>
         );
       })}
@@ -119,6 +123,7 @@ const Pillars_home = (props) => {
             text={pillar.text}
             button={buttonText}
             link={"/" + locale + pillar.link}
+            logo={pillar.logo}
           ></Pillars_sliderItem>
         );
       })}
@@ -130,6 +135,7 @@ const Pillars_home = (props) => {
             text={pillar.text}
             button={buttonText}
             link={"/" + locale + pillar.link}
+            logo={pillar.logo}
           ></Pillars_sliderItem>
         );
       })}

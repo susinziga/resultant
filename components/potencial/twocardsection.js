@@ -1,30 +1,37 @@
-import React from 'react';
-import styled from 'styled-components';
-import useTranslation from 'next-translate/useTranslation';
+import React from "react";
+import styled from "styled-components";
+import useTranslation from "next-translate/useTranslation";
+import { SubmitButton } from "../service1/PlanSection/Plan.styled";
 
 const TwoCardsSection = () => {
   const { t } = useTranslation();
 
   return (
     <SectionContainer>
-      <SectionTitle>{t('360potencial:results_title')}</SectionTitle>
+      <SectionTitle>{t("360potencial:results_title")}</SectionTitle>
       <CardsContainer>
-        <Card style={{
-            backgroundColor: '#CFEDFC',
-        }}>
+        <Card
+          style={{
+            backgroundColor: "#CFEDFC",
+          }}
+        >
           <CardNumber>1.</CardNumber>
-          <CardText>{t('360potencial:results_text1')}</CardText>
+          <CardText>{t("360potencial:results_text1")}</CardText>
         </Card>
-        <Card ž
-            style={{
-                backgroundColor: '#DCEDFA',
-            }}
+        <Card
+          ž
+          style={{
+            backgroundColor: "#DCEDFA",
+          }}
         >
           <CardNumber>2.</CardNumber>
-          <CardText>{t('360potencial:results_text2')}</CardText>
+          <CardText>{t("360potencial:results_text2")}</CardText>
         </Card>
       </CardsContainer>
-      <Button>{t('360potencial:results_button')}</Button>
+      {/* <Button>{t("360potencial:results_button")}</Button> */}
+      <SubmitButton href="../../services/siok/ponudba-siok" className="section">
+        {t("360potencial:results_button")}
+      </SubmitButton>
     </SectionContainer>
   );
 };

@@ -60,9 +60,7 @@ const Pillars_component = ({ title, text, link, button, logo }) => {
 
       <Styled.LogoContainer>
         <MoreButton className="button_pillar">{button}</MoreButton>
-        {logo && (
-          <img alt="" src={logo} width="100" className="pillar_logo"></img>
-        )}
+        {logo && <img alt="" src={logo} className="pillar_logo"></img>}
       </Styled.LogoContainer>
     </Styled.PillarComponentContainer>
   );
