@@ -116,7 +116,7 @@ const Container = styled.div`
   transform: translateX(-100%);
   position: absolute;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   left: 0;
   padding-top: 1.5rem;
