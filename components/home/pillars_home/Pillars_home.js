@@ -126,32 +126,71 @@ const Pillars_home = (props) => {
       </Styled.PillarsFlex>
     </Styled.PillarsContainer>
   ) : (
-    <Styled.PillarsContainer_mobile {...props}>
-      {pillarsContentTop.map((pillar) => {
-        return (
-          <Pillars_sliderItem
-            key={pillar.title}
-            title={pillar.title}
-            text={pillar.text}
-            button={buttonText}
-            link={"/" + locale + pillar.link}
-            logo={pillar.logo}
-          ></Pillars_sliderItem>
-        );
-      })}
-      {pillarsContentBot.map((pillar) => {
-        return (
-          <Pillars_sliderItem
-            key={pillar.title}
-            title={pillar.title}
-            text={pillar.text}
-            button={buttonText}
-            link={"/" + locale + pillar.link}
-            logo={pillar.logo}
-          ></Pillars_sliderItem>
-        );
-      })}
-    </Styled.PillarsContainer_mobile>
+    <>
+      <Link href={fullWidthCardTop.link}>
+        <div className="pillarExposed">
+          <Title2
+            style={{
+              fontSize: "1.5rem",
+              marginBottom: "1rem",
+            }}
+            className="pillar_text_fullWidth"
+          >
+            {fullWidthCardTop.title}
+          </Title2>
+          <p>
+            <BodyText4
+              className="pillar_text_fullWidth"
+              dangerouslySetInnerHTML={{ __html: fullWidthCardTop.text }}
+            />
+          </p>
+          <div
+            style={{
+              width: "100%",
+              textAlign: "right",
+              display: "flex",
+              justifyContent: "space-between",
+              marginTop: "1.5rem",
+            }}
+          >
+            <MoreButton className="button_pillar_fullWidth">
+              {buttonText}
+            </MoreButton>
+            <img
+              alt=""
+              src={fullWidthCardTop.logo}
+              className="pillar_logo"
+            ></img>
+          </div>
+        </div>
+      </Link>
+      <Styled.PillarsContainer_mobile {...props}>
+        {pillarsContentTop.map((pillar) => {
+          return (
+            <Pillars_sliderItem
+              key={pillar.title}
+              title={pillar.title}
+              text={pillar.text}
+              button={buttonText}
+              link={"/" + locale + pillar.link}
+              logo={pillar.logo}
+            ></Pillars_sliderItem>
+          );
+        })}
+        {pillarsContentBot.map((pillar) => {
+          return (
+            <Pillars_sliderItem
+              key={pillar.title}
+              title={pillar.title}
+              text={pillar.text}
+              button={buttonText}
+              link={"/" + locale + pillar.link}
+              logo={pillar.logo}
+            ></Pillars_sliderItem>
+          );
+        })}
+      </Styled.PillarsContainer_mobile>
+    </>
   );
 };
 

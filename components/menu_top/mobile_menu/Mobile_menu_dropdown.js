@@ -58,7 +58,13 @@ const Container = styled.div`
 
   gap: 1rem;
 
-  ${(props) => (props.opened ? "height:14rem;" : "")}
+  @media (max-width: 768px) {
+    ${(props) => (props.opened ? "height:300px;" : "")}
+  }
+
+  @media (min-width: 768px) {
+    ${(props) => (props.opened ? "height:200px;" : "")}
+  }
 `;
 const Dropdown_item = styled(BodyText4)`
   color: #fff;
