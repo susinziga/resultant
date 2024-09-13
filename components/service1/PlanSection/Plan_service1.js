@@ -42,7 +42,7 @@ const Plan_section1 = (
 
   const getOffer = {
     sl: "Želim pridobiti ponudbo",
-    en: "I'd like to recieve an offer",
+    en: "Get the offer",
   };
 
   return (

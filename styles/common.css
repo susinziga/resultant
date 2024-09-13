@@ -130,6 +130,37 @@
 
   transition: 0.5s all;
 
+  @media (max-width: 768px) {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    &:hover {
+      background: #f9f4f0;
+      color: var(--dark);
+
+      .button_pillar_fullWidth {
+        color: rgb(110, 76, 0);
+        border: 2px solid rgb(110, 76, 0);
+      }
+
+      .pillar_text_fullWidth {
+        color: var(--dark);
+      }
+
+      .pillar_logo {
+        opacity: 1;
+      }
+    }
+  }
+
+  .pillar_logo {
+    opacity: 0;
+    transition: 0.5s all;
+  }
+
   .pillar_text_fullWidth {
     color: var(--white);
   }
@@ -137,19 +168,5 @@
   .button_pillar_fullWidth {
     color: var(--white);
     border: 2px solid var(--white);
-  }
-
-  &:hover {
-    background: #f9f4f0;
-    color: var(--dark);
-
-    .button_pillar_fullWidth {
-      color: rgb(110, 76, 0);
-      border: 2px solid rgb(110, 76, 0);
-    }
-
-    .pillar_text_fullWidth {
-      color: var(--dark);
-    }
   }
 }
