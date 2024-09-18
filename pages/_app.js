@@ -17,10 +17,6 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import React from "react";
 import { ApolloProvider } from "@apollo/client";
 import withData from "../utils/apollo";
-import AktualnoProvider from "../context/aktualnoContext";
-
-// import * as klaro from "klaro";
-// import CookieConsent from "react-cookie-consent";
 
 const tagManagerArgs = {
   gtmId: "GTM-TJL8898",
@@ -101,7 +97,7 @@ function MyApp({ Component, pageProps, apollo }) {
     setSize([window.innerWidth, window.innerHeight]);
   };
   return (
-    <AktualnoProvider>
+    <div>
       <div>
         <Head>
           <title>Resultant</title>
@@ -193,7 +189,7 @@ function MyApp({ Component, pageProps, apollo }) {
         </Body_content>
         <Footer></Footer>
       </div>
-    </AktualnoProvider>
+    </div>
   );
 }
 

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
@@ -11,23 +11,37 @@ import Contact_utnn from "../../components/UTNN/Contact/Contact_utnn";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 import { useRouter } from "next/router";
 
-import { AktualnoContext } from "../../context/aktualnoContext";
-import { getArticleFromStrapiData } from "../api/strapi";
+import { fetchAPI, getArticleFromStrapiData } from "../api/strapi";
 
-const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
+export const getServerSideProps = async () => {
+  const articlesResponse = await fetchAPI("/clanki", {
+    populate: "*",
+    pagination: {
+      page: 1,
+      pageSize: 3,
+    },
+    sort: ["createdAt:desc"], // Adjust sorting as needed
+    filters: {
+      kategorijas: {
+        id: {
+          $eq: 4,
+        },
+      },
+    },
+  });
+
+  const articles = articlesResponse.data.map(getArticleFromStrapiData);
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+const upravljanje_talentov_in_nasledstveno_nacrtovanje = ({ articles }) => {
   const { t } = useTranslation();
   const { locale } = useRouter();
-
-  const { filter, state, setFilter, setSortFilter } =
-    useContext(AktualnoContext);
-
-  useEffect(() => {
-    setFilter({
-      ...filter,
-      category: 4,
-    });
-    setSortFilter(-1);
-  }, []);
 
   const quote1 = t("utnn:utnn_quoteParagraph");
 
@@ -114,11 +128,6 @@ const upravljanje_talentov_in_nasledstveno_nacrtovanje = () => {
       buttonText={t("common:button_moreMore")}
     ></BigCard>,
   ];
-
-  let articles = [];
-  state.forEach((element) => {
-    articles.push(getArticleFromStrapiData(element));
-  });
 
   return (
     <>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import {
   HeadingContainer,
   HeadingUpperHeading,
@@ -10,9 +10,8 @@ import { fetchAPI, getArticleFromStrapiData } from "./api/strapi";
 import styled from "styled-components";
 import ArticleCard from "../components/aktualno/ArticleCard";
 import LatestCard from "../components/aktualno/LatestCard";
-import { BodyText2 } from "../basic_components/texts/Texts";
+import { BodyText3 } from "../basic_components/texts/Texts";
 import FilterDropdown from "../components/aktualno/FilterDropdown";
-import { AktualnoContext } from "../context/aktualnoContext";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -20,6 +19,10 @@ import Link from "next/link";
 export const getServerSideProps = async (context) => {
   const page = Number(context.query.page) || 1;
   const pageSize = 9;
+
+  const categoryId = context.query.categoryId || null;
+  const authorId = context.query.authorId || null;
+  const sort = context.query.sort || "createdAt:desc";
 
   const [categoriesResponse, authorsResponse, articlesResponse] =
     await Promise.all([
@@ -31,7 +34,19 @@ export const getServerSideProps = async (context) => {
           page,
           pageSize,
         },
-        sort: ["createdAt:desc"], // Adjust sorting as needed
+        sort: [sort], // Adjust sorting as needed
+        filters: {
+          kategorijas: {
+            id: {
+              $eq: categoryId || undefined,
+            },
+          },
+          avtors: {
+            id: {
+              $eq: authorId || undefined,
+            },
+          },
+        },
       }),
     ]);
 
@@ -54,14 +69,22 @@ export const getServerSideProps = async (context) => {
       authors: auths,
       articles,
       pagination: articlesResponse.meta.pagination,
+      categoryId,
+      authorId,
+      sort,
     },
   };
 };
 
-const aktualno = ({ categories, authors, articles, pagination }) => {
-  const { filter, setFilter, setSortFilter, isFetching } =
-    useContext(AktualnoContext);
-
+const aktualno = ({
+  categories,
+  authors,
+  articles,
+  pagination,
+  categoryId,
+  authorId,
+  sort,
+}) => {
   const router = useRouter();
 
   return (
@@ -81,57 +104,71 @@ const aktualno = ({ categories, authors, articles, pagination }) => {
         <HeadingLine></HeadingLine>
         <FiltersWrapper>
           <FilterDropdown
-            id="Storitve"
-            items={[{ id: -1, name: "Vse" }, ...categories]}
-            onValuePicked={(val) => {
-              setFilter({
-                ...filter,
-                category: val,
+            label="Storitve"
+            items={[{ id: null, name: "Vse" }, ...categories]}
+            onChange={(val) => {
+              router.push({
+                pathname: router.pathname,
+                query: {
+                  ...router.query,
+                  categoryId: val,
+                  page: 1,
+                },
               });
             }}
+            selectedId={categoryId}
           ></FilterDropdown>
           <FilterDropdown
-            id="Avtorji"
-            items={[{ id: -1, name: "Vsi" }, ...authors]}
-            onValuePicked={(val) => {
-              setFilter({
-                ...filter,
-                author: val,
+            label="Avtorji"
+            items={[{ id: null, name: "Vsi" }, ...authors]}
+            onChange={(val) => {
+              router.push({
+                pathname: router.pathname,
+                query: {
+                  ...router.query,
+                  authorId: val,
+                  page: 1,
+                },
               });
             }}
+            selectedId={authorId}
           ></FilterDropdown>
           <FilterDropdown
-            id="Datum objave"
+            label="Datum objave"
             items={[
-              { id: -1, name: "Od najnovejšega do najstarejšega" },
-              { id: 1, name: "Od najstarejšega do najnovejšega" },
+              {
+                id: "createdAt:desc",
+                name: "Od najnovejšega do najstarejšega",
+              },
+              { id: "createdAt:asc", name: "Od najstarejšega do najnovejšega" },
             ]}
-            onValuePicked={(val) => {
-              setSortFilter(val);
+            onChange={(val) => {
+              router.push({
+                pathname: router.pathname,
+                query: {
+                  ...router.query,
+                  sort: val,
+                },
+              });
             }}
+            selectedId={sort}
           ></FilterDropdown>
         </FiltersWrapper>
       </HeadingContainer>
 
-      {isFetching && (
-        <BodyText2
+      {articles.length <= 0 && (
+        <BodyText3
           style={{
             textAlign: "center",
             display: "block",
-            marginBottom: "50px",
+            marginBottom: "60px",
           }}
         >
-          Nalaganje...
-        </BodyText2>
-      )}
-
-      {articles.length <= 0 && !isFetching && (
-        <BodyText2 style={{ textAlign: "center", display: "block" }}>
           Ni člankov!
-        </BodyText2>
+        </BodyText3>
       )}
 
-      {articles.length > 0 && !isFetching && (
+      {articles.length > 0 && (
         <CardWrapperParent numArticles={articles.length}>
           <LatestCard
             key={articles[0].id}
