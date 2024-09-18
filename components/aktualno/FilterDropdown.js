@@ -5,48 +5,37 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { isMobile } from "react-device-detect";
 
-const FilterDropdown = ({ id, items, onValuePicked }) => {
-  const [isShown, setIsShown] = useState(false);
-  const [text, setText] = useState(id);
+const FilterDropdown = ({ label, items, onChange, selectedId }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  function clickedItem(e) {
-    setIsShown(false);
-    onValuePicked(e);
-
-    let item = items.find((item) => item.id === e);
-    if (item.id == -1) {
-      setText(id);
-    } else {
-      setText(item.name);
-    }
-  }
+  const selectedItem = items.find((item) => item.id == selectedId);
 
   return (
     <Wrapper>
       <FixedTextWrapper
-        onMouseEnter={() => !isMobile && setIsShown(true)}
-        onMouseLeave={() => !isMobile && setIsShown(false)}
-        onClick={() => isMobile && setIsShown(!isShown)}
+        onMouseEnter={() => !isMobile && setMenuOpen(true)}
+        onMouseLeave={() => !isMobile && setMenuOpen(false)}
+        onClick={() => isMobile && setMenuOpen(!menuOpen)}
       >
-        <FixedText isDropdownValueSelected={text !== id}>
-          {text.length > 40 ? text.substring(0, 40) + "..." : text}
+        <FixedText isDropdownValueSelected={selectedId != null}>
+          {selectedItem
+            ? selectedItem.name.length > 40
+              ? selectedItem.name.substring(0, 40) + "..."
+              : selectedItem.name
+            : label}
         </FixedText>
         <FontAwesomeIcon icon={faChevronDown} />
       </FixedTextWrapper>
-      {isShown ? (
+      {menuOpen ? (
         <>
           <DropdownContainerDesktop
-            onMouseEnter={() => setIsShown(true)}
-            onMouseLeave={() => setIsShown(false)}
+            onMouseEnter={() => setMenuOpen(true)}
+            onMouseLeave={() => setMenuOpen(false)}
           >
             <DropdownList>
               {items.map(({ name, resultant, id }) => {
                 return (
-                  <DropdownItem
-                    key={id}
-                    id={id}
-                    onClick={(e) => clickedItem(id)}
-                  >
+                  <DropdownItem key={id} id={id} onClick={(e) => onChange(id)}>
                     {name}
                     {resultant !== undefined && resultant === false && (
                       <GuestTag>(gost)</GuestTag>
@@ -60,11 +49,7 @@ const FilterDropdown = ({ id, items, onValuePicked }) => {
             <DropdownList>
               {items.map(({ name, resultant, id }) => {
                 return (
-                  <DropdownItem
-                    key={id}
-                    id={id}
-                    onClick={(e) => clickedItem(id)}
-                  >
+                  <DropdownItem key={id} id={id} onClick={(e) => onChange(id)}>
                     {name}
                     {resultant !== undefined && resultant === false && (
                       <GuestTag>(gost)</GuestTag>

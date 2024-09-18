@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import useTranslation from "next-translate/useTranslation";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
@@ -6,10 +6,9 @@ import Quote from "../../components/service1/Quote/QuoteSection1_service1";
 import CardSection from "../../components/service1/CardSection/CardTable_service1";
 import Plan from "../../components/service1/PlanSection/Plan_service1";
 import { useRouter } from "next/router";
-import { BodyText3, Title2 } from "../../basic_components/texts/Texts";
+import { Title2 } from "../../basic_components/texts/Texts";
 import ContactForm_potencial from "./360potencial/contact_form";
-import { getArticleFromStrapiData } from "../api/strapi";
-import { AktualnoContext } from "../../context/aktualnoContext";
+import { fetchAPI, getArticleFromStrapiData } from "../api/strapi";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 import BigCard from "../../components/service1/Card/BigCard";
 import { SubmitButton } from "../../components/service1/PlanSection/Plan.styled";
@@ -59,20 +58,6 @@ const ExperienceContainer = styled.div`
 
   @media only screen and (min-width: 768px) {
     padding-top: 5%;
-  }
-`;
-
-const BulletHeading = styled(BodyText3)`
-  font-weight: 500;
-  font-family: "Neusa";
-  font-size: 1.5rem;
-
-  @media only screen and (min-width: 768px) {
-    font-size: 1rem;
-  }
-
-  @media only screen and (min-width: 992px) {
-    font-size: 1.2rem;
   }
 `;
 
@@ -231,11 +216,37 @@ const practiceCardLinks = [
   "/clanek/106",
 ];
 
-const PotencialPage = () => {
+export const getServerSideProps = async () => {
+  const articlesResponse = await fetchAPI("/clanki", {
+    populate: "*",
+    pagination: {
+      page: 1,
+      pageSize: 3,
+    },
+    sort: ["createdAt:desc"], // Adjust sorting as needed
+    filters: {
+      kategorijas: {
+        id: {
+          $eq: 5,
+        },
+      },
+    },
+  });
+
+  const articles = articlesResponse.data.map(getArticleFromStrapiData);
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+const PotencialPage = ({ articles }) => {
   const { t } = useTranslation();
   const { locale } = useRouter();
-  const [isMobile, setIsMobile] = React.useState(false);
 
+  const [isMobile, setIsMobile] = React.useState(false);
   React.useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -248,25 +259,7 @@ const PotencialPage = () => {
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   const device = isMobile ? "mobile" : "desktop";
-
-  const { filter, state, setFilter, setSortFilter } =
-    useContext(AktualnoContext);
-
-  useEffect(() => {
-    setFilter({
-      ...filter,
-      category: 3,
-    });
-    setSortFilter(-1);
-  }, []);
-
-  let articles = [];
-  console.log("state", state);
-  state.forEach((element) => {
-    articles.push(getArticleFromStrapiData(element));
-  });
 
   return (
     <>

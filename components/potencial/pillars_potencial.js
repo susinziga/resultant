@@ -60,7 +60,7 @@ const PillarsMeasuring = (props) => {
                   >
                     <Link
                       passHref
-                      href={"https://www.resultant.si/sl/clanek/81"}
+                      href={"https://www.resultant.si/sl/clanek/113"}
                     >
                       <MoreButton>{pillar.buttonText}</MoreButton>
                     </Link>
@@ -103,7 +103,10 @@ const PillarsMeasuring = (props) => {
                     marginTop: "40px",
                   }}
                 >
-                  <Link passHref href={"https://www.resultant.si/sl/clanek/81"}>
+                  <Link
+                    passHref
+                    href={"https://www.resultant.si/sl/clanek/113"}
+                  >
                     <MoreButton>{pillar.buttonText}</MoreButton>
                   </Link>
                 </div>

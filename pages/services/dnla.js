@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
 import Quote from "../../components/service1/Quote/QuoteSection1_service1";
 import CardSection from "../../components/service1/CardSection/CardTable_service1";
@@ -13,24 +13,37 @@ import ContactForm_dnla from "../../components/DNLA/contact/ContactForm_dnla";
 import Head from "next/head";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 import { useRouter } from "next/router";
+import { getArticleFromStrapiData, fetchAPI } from "../api/strapi";
 
-import { AktualnoContext } from "../../context/aktualnoContext";
-import { getArticleFromStrapiData } from "../api/strapi";
+export const getServerSideProps = async () => {
+  const articlesResponse = await fetchAPI("/clanki", {
+    populate: "*",
+    pagination: {
+      page: 1,
+      pageSize: 3,
+    },
+    sort: ["createdAt:desc"], // Adjust sorting as needed
+    filters: {
+      kategorijas: {
+        id: {
+          $eq: 2,
+        },
+      },
+    },
+  });
 
-const dnla = () => {
-  const { t, lang } = useTranslation();
+  const articles = articlesResponse.data.map(getArticleFromStrapiData);
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+const dnla = ({ articles }) => {
+  const { t } = useTranslation();
   const { locale } = useRouter();
-
-  const { filter, state, setFilter, setSortFilter } =
-    useContext(AktualnoContext);
-
-  useEffect(() => {
-    setFilter({
-      ...filter,
-      category: 2,
-    });
-    setSortFilter(-1);
-  }, []);
 
   const HeadingSection = {
     upperTitle: t("dnla:dnla_mainHeading"),
@@ -78,17 +91,21 @@ const dnla = () => {
     { text: t("dnla:dnla_PlanCard6"), number: "6" },
   ];
 
-  let articles = [];
-  state.forEach((element) => {
-    articles.push(getArticleFromStrapiData(element));
-  });
-  articles.push({
-    heading: t("dnla:dnla_article3CardHeading"),
-    text: t("dnla:dnla_article3CardContent"),
-    image: "/DNLA/article3_desktop.webp",
-    authors: [],
-    link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
-  });
+  if (
+    !articles.find(
+      (article) =>
+        article.link ===
+        "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem"
+    )
+  ) {
+    articles.push({
+      heading: t("dnla:dnla_article3CardHeading"),
+      text: t("dnla:dnla_article3CardContent"),
+      image: "/DNLA/article3_desktop.webp",
+      authors: [],
+      link: "pet-vprasanj-aleksandru-tychyju-o-razvoju-potenciala-z-dnla-orodjem",
+    });
+  }
 
   return (
     <>

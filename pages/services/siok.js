@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import CardTable_service1 from "../../components/service1/CardSection/CardTable_service1";
 import Contact_service1 from "../../components/service1/Contact/Contact_service1";
 import HeadingSection_service1 from "../../components/service1/HeadingSection/HeadingSection_service1";
@@ -12,25 +12,38 @@ import { useRouter } from "next/router";
 import BulletSection_siok from "../../components/service1/BulletSection/BulletSection_siok";
 import BigCardsSection from "../../components/UTNN/cardSection/BigCardsSection";
 import BigCard from "../../components/service1/Card/BigCard";
-
-import { AktualnoContext } from "../../context/aktualnoContext";
-import { getArticleFromStrapiData } from "../api/strapi";
+import { getArticleFromStrapiData, fetchAPI } from "../api/strapi";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
 
-const service1 = () => {
-  const { t, lang } = useTranslation();
+export const getServerSideProps = async () => {
+  const articlesResponse = await fetchAPI("/clanki", {
+    populate: "*",
+    pagination: {
+      page: 1,
+      pageSize: 1,
+    },
+    sort: ["createdAt:desc"], // Adjust sorting as needed
+    filters: {
+      kategorijas: {
+        id: {
+          $eq: 2,
+        },
+      },
+    },
+  });
+
+  const articles = articlesResponse.data.map(getArticleFromStrapiData);
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+const service1 = ({ articles }) => {
+  const { t } = useTranslation();
   const { locale } = useRouter();
-
-  const { filter, state, setFilter, setSortFilter } =
-    useContext(AktualnoContext);
-
-  useEffect(() => {
-    setFilter({
-      ...filter,
-      category: 1,
-    });
-    setSortFilter(-1);
-  }, []);
 
   const HeadingSection = {
     upperTitle: t("service1:service1_Heading"),
@@ -104,11 +117,6 @@ const service1 = () => {
       mobileImgOnBottom
     ></BigCard>,
   ];
-
-  let articles = [];
-  state.forEach((element) => {
-    articles.push(getArticleFromStrapiData(element));
-  });
 
   return (
     <>

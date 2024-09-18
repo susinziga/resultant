@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import useTranslation from "next-translate/useTranslation";
 import Head from "next/head";
 import HeadingSection1 from "../../components/service1/HeadingSection/HeadingSection_service1";
@@ -9,25 +9,38 @@ import BigCardsSection from "../../components/UTNN/cardSection/BigCardsSection";
 import BigCard from "../../components/UTNN/cardSection/Card/BigCard";
 import Contact_srk from "../../components/SRK/Contact/Contact_srk";
 import CardSlider from "../../components/service1/News/Card/NewsSlider_section1";
-import styled from "styled-components";
 import { useRouter } from "next/router";
-import { AktualnoContext } from "../../context/aktualnoContext";
-import { getArticleFromStrapiData } from "../api/strapi";
+import { getArticleFromStrapiData, fetchAPI } from "../api/strapi";
 
-const sistematicen_razvoj_kompetenc = () => {
+export const getServerSideProps = async () => {
+  const articlesResponse = await fetchAPI("/clanki", {
+    populate: "*",
+    pagination: {
+      page: 1,
+      pageSize: 3,
+    },
+    sort: ["createdAt:desc"], // Adjust sorting as needed
+    filters: {
+      kategorijas: {
+        id: {
+          $eq: 3,
+        },
+      },
+    },
+  });
+
+  const articles = articlesResponse.data.map(getArticleFromStrapiData);
+
+  return {
+    props: {
+      articles,
+    },
+  };
+};
+
+const sistematicen_razvoj_kompetenc = ({ articles }) => {
   const { t, lang } = useTranslation();
   const { locale } = useRouter();
-
-  const { filter, state, setFilter, setSortFilter } =
-    useContext(AktualnoContext);
-
-  useEffect(() => {
-    setFilter({
-      ...filter,
-      category: 3,
-    });
-    setSortFilter(-1);
-  }, []);
 
   const quote1 = t("srk:srk_quoteParagraph");
 
@@ -134,11 +147,6 @@ const sistematicen_razvoj_kompetenc = () => {
       buttonText={t("common:button_more")}
     ></BigCard>,
   ];
-
-  let articles = [];
-  state.forEach((element) => {
-    articles.push(getArticleFromStrapiData(element));
-  });
 
   return (
     <>
