@@ -123,6 +123,7 @@ const Clanek = ({ clanek }) => {
                   remarkPlugins={[remarkGfm]}
                   skipHtml={true}
                   className={mkstyle.reactMarkDown}
+                  linkTarget={"_blank"}
                 ></ReactMarkdown>
               </BodyText3>
             </Container>
