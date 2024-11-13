@@ -270,6 +270,7 @@ const PotencialPage = ({ articles }) => {
           paragraph: t("360potencial:potencial_mainParagraph"),
           headerImage1: "/360potencial/heading_image.png",
           headerImage2: "/360potencial/heading_image.png",
+          offerHref: "/" + locale + "/services/siok/ponudba-siok",
         }}
       />
 

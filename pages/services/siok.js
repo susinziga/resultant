@@ -129,7 +129,10 @@ const service1 = ({ articles }) => {
       </Head>
       <HeadingSection_service1
         className="section"
-        props={HeadingSection}
+        props={{
+          ...HeadingSection,
+          offerHref: "/" + locale + "/services/siok/ponudba-siok",
+        }}
       ></HeadingSection_service1>
       <QuoteSection1_service1 props={quote1}></QuoteSection1_service1>
       <CardTable_service1
