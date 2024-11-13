@@ -120,7 +120,10 @@ const dnla = ({ articles }) => {
       </Head>
       <HeadingSection1
         className="section"
-        props={HeadingSection}
+        props={{
+          ...HeadingSection,
+          offerHref: "/" + locale + "/services/dnla/ponudba-dnla",
+        }}
       ></HeadingSection1>
       <Quote className="section" props={quote1}></Quote>
       <CardSection
