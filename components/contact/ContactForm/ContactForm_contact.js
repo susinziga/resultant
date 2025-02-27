@@ -31,6 +31,11 @@ const inputProps = {
   ],
 };
 
+const textAreaLabel = {
+  sl: "Prostor za vaše sporočilo",
+  en: "Your message",
+};
+
 const message = { sl: "Prostor za vaše sporočilo", en: "Your message" };
 
 const send = { sl: "Pošlji", en: "Send" };
@@ -42,7 +47,7 @@ const ContactForm_contact = () => {
   const { formData, handleFormChange, sendMail } = useForm();
 
   useEffect(() => {
-    handleFormChange("subject", "SiOK");
+    handleFormChange("subject", "Kontaktni obrazec");
   }, []);
 
   return (
@@ -65,6 +70,9 @@ const ContactForm_contact = () => {
                   id="desktop"
                   props={input}
                   style={{ marginBottom: "3%", fontSize: "1.2rem" }}
+                  onChange={(e) => {
+                    handleFormChange(input.label, e.target.value);
+                  }}
                 ></Input>
               </div>
             );
@@ -72,8 +80,11 @@ const ContactForm_contact = () => {
           <TextareaContainer>
             <Textarea
               id="TextDesktop"
-              props={{ label: message[locale], required: "*" }}
+              props={{ label: textAreaLabel[locale], required: "*" }}
               style={{ fontSize: "1.5rem" }}
+              onChange={(e) => {
+                handleFormChange(textAreaLabel[locale], e.target.value);
+              }}
             ></Textarea>
           </TextareaContainer>
           <ButtonContainer>

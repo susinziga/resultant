@@ -50,7 +50,7 @@ const ContactForm_dnla = (props) => {
   const { formData, handleFormChange, sendMail } = useForm();
 
   useEffect(() => {
-    handleFormChange("subject", "Forma");
+    handleFormChange("subject", "DNLA");
   }, []);
 
   return (
