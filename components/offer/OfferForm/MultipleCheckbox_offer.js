@@ -47,14 +47,18 @@ const MultipleCheckbox = (props) => {
                     group={"Da"}
                     onChange={(e) => {
                       let temp = document.getElementsByName("Da");
-                      e.target;
                       temp.forEach((element) => {
                         if (element !== e.target) {
                           element.checked = false;
                         }
                       });
 
-                      props.onChange(prop.label, e.target.checked);
+                      props.onChange(prop.label, e.target.checked, [
+                        label1,
+                        label2,
+                        label3,
+                        label4,
+                      ]);
                     }}
                   ></Checkbox>
                   <CheckboxLabel>{prop.label}</CheckboxLabel>
