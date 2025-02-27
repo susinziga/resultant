@@ -16,7 +16,7 @@ import useTranslation from "next-translate/useTranslation";
 
 import { useForm } from "../../../custom_hooks/useForm";
 
-const OfferForm_offer = () => {
+const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
   const { t, lang } = useTranslation();
 
   const { formData, handleFormChange, sendMail } = useForm();
@@ -27,7 +27,7 @@ const OfferForm_offer = () => {
   );
 
   useEffect(() => {
-    handleFormChange("subject", "SiOK Povpraševanje");
+    handleFormChange("subject", formSubject);
   }, []);
 
   const inputProps1 = [
@@ -167,8 +167,11 @@ const OfferForm_offer = () => {
               {t("common:text_required")}
             </p>
             <MultipleCheckbox
-              onChange={(id, value) => {
-                id, value;
+              onChange={(id, value, allLabels) => {
+                allLabels.forEach((label) => {
+                  handleFormChange(label, false);
+                });
+
                 handleFormChange(id, value);
                 setIsRadioSelected(true);
               }}

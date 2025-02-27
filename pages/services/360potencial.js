@@ -270,7 +270,8 @@ const PotencialPage = ({ articles }) => {
           paragraph: t("360potencial:potencial_mainParagraph"),
           headerImage1: "/360potencial/heading_image.png",
           headerImage2: "/360potencial/heading_image.png",
-          offerHref: "/" + locale + "/services/siok/ponudba-siok",
+          offerHref:
+            "/" + locale + "/services/360potencial/ponudba-360potencial",
         }}
       />
 
@@ -360,7 +361,10 @@ const PotencialPage = ({ articles }) => {
           flexDirection: "column",
         }}
       >
-        <SubmitButton href="../services/siok/ponudba-siok" className="section">
+        <SubmitButton
+          href="../services/360potencial/ponudba-360potencial"
+          className="section"
+        >
           {t("360potencial:submitButton")}
         </SubmitButton>
       </div>

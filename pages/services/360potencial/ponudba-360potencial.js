@@ -10,16 +10,14 @@ export default function Offer() {
   return (
     <>
       <Head>
-        <title>Želite pridobiti informativno ponudbo? | SiOK | Resultant</title>
-        <meta
-          name="description"
-          content="Slovenska organizacijska klima - analiza notranjega okolja v organizaciji in primerjava z aktualnim slovenskim povprečjem. Zavzeti zaposleni so ključ do uspeha."
-        />
+        <title>
+          Želite pridobiti informativno ponudbo? | 360Potencial | Resultant
+        </title>
       </Head>
       <HeadingSection_offer></HeadingSection_offer>
       <OfferForm_offer
         className="section"
-        formSubject="SiOK Povpraševanje"
+        formSubject="360Potencial Povpraševanje"
       ></OfferForm_offer>
     </>
   );
