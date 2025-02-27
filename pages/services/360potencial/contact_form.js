@@ -92,7 +92,7 @@ const ContactForm_potencial = (props) => {
   const { formData, handleFormChange, sendMail } = useForm();
 
   useEffect(() => {
-    handleFormChange("subject", "Forma");
+    handleFormChange("subject", "360Potencial");
   }, []);
 
   return (
