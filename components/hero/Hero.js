@@ -41,7 +41,6 @@ const Hero = (props) => {
 
   const hero_title = t("aboveTheFold:hero_title");
 
-  const hero_paragraph = t("aboveTheFold:hero_paragraph");
   const hero_paragraph2 = t("aboveTheFold:hero_paragraph2");
 
   useEffect(() => {
@@ -126,27 +125,15 @@ const Hero = (props) => {
             {hero_title}
           </Styled.HeaderText>
           {isDesktop() ? (
-            <>
-              <Styled.SubTextWrapper>
-                <BodyText2 white>{hero_paragraph}</BodyText2>
-              </Styled.SubTextWrapper>
-              <Styled.SubTextWrapper>
-                <BodyText2 white>{hero_paragraph2}</BodyText2>
-              </Styled.SubTextWrapper>{" "}
-            </>
+            <Styled.SubTextWrapper>
+              <BodyText2 white>{hero_paragraph2}</BodyText2>
+            </Styled.SubTextWrapper>
           ) : (
-            <>
-              <p>
-                <Styled.SubTextWrapperMobile white>
-                  {hero_paragraph}
-                </Styled.SubTextWrapperMobile>
-              </p>
-              <p>
-                <Styled.SubTextWrapperMobile white>
-                  {hero_paragraph2}
-                </Styled.SubTextWrapperMobile>
-              </p>{" "}
-            </>
+            <p>
+              <Styled.SubTextWrapperMobile white>
+                {hero_paragraph2}
+              </Styled.SubTextWrapperMobile>
+            </p>
           )}
 
           <MoreButton
