@@ -56,11 +56,6 @@ const ContactForm_dnla = (props) => {
   return (
     <>
       <ContactContainer {...props}>
-        <HeaderContainer>
-          <ContactHeader
-            dangerouslySetInnerHTML={{ __html: title }}
-          ></ContactHeader>
-        </HeaderContainer>
         <FormContainer
           onSubmit={(e) => {
             e.preventDefault();
