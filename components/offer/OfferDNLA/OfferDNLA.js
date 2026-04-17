@@ -24,24 +24,24 @@ const OfferDNLA = () => {
   }, []);
 
   const inputProps1 = [
-    { label: t("offer:offer_inputProp1"), required: "*" },
-    { label: t("offer:offer_inputProp2") },
-    { label: t("offer:offer_inputProp3"), required: "*" },
-    { label: t("offer:offer_inputProp4"), required: "*", type: "email" },
-    { label: t("offer:offer_inputProp5") },
+    { label: t("offer:offer_inputProp1"), handle: "companyName", required: "*" },
+    { label: t("offer:offer_inputProp2"), handle: "address" },
+    { label: t("offer:offer_inputProp3"), handle: "contactPerson", required: "*" },
+    { label: t("offer:offer_inputProp4"), handle: "email", required: "*", type: "email" },
+    { label: t("offer:offer_inputProp5"), handle: "phone" },
   ];
 
   const otherInputs = [
-    { label: t("dnla:first") },
-    { label: t("dnla:second"), required: "*" },
-    { label: t("dnla:third"), required: "*" },
+    { label: t("dnla:first"), handle: "totalPeople" },
+    { label: t("dnla:second"), handle: "leadersCount", required: "*" },
+    { label: t("dnla:third"), handle: "salesCount", required: "*" },
   ];
 
   const checkboxProps = [
-    { label: t("dnla:offer_checkboxProp1"), required: "*" },
-    { label: t("dnla:offer_checkboxProp2"), required: "*" },
-    { label: t("dnla:offer_checkboxProp3"), required: "*" },
-    { label: t("dnla:offer_checkboxProp4"), required: "*" },
+    { label: t("dnla:offer_checkboxProp1"), handle: "includeLeaders", required: "*" },
+    { label: t("dnla:offer_checkboxProp2"), handle: "includeSales", required: "*" },
+    { label: t("dnla:offer_checkboxProp3"), handle: "provideFeedback", required: "*" },
+    { label: t("dnla:offer_checkboxProp4"), handle: "customAnalysis", required: "*" },
   ];
 
   return (
@@ -55,7 +55,7 @@ const OfferDNLA = () => {
             // Check checkboxes validity
             let isValid = true;
             checkboxProps.forEach((prop) => {
-              let isInvalid = formData[prop.label] === undefined;
+              let isInvalid = formData[prop.handle] === undefined;
               if (isInvalid) {
                 isValid = false;
               }
@@ -84,7 +84,7 @@ const OfferDNLA = () => {
                     props={input}
                     style={{ marginBottom: "2%" }}
                     onChange={(e) => {
-                      handleFormChange(input.label, e.target.value);
+                      handleFormChange(input.handle, e.target.value);
                     }}
                   ></Input>
                 </div>
@@ -100,7 +100,7 @@ const OfferDNLA = () => {
               props={otherInputs[0]}
               style={{ marginBottom: "2%" }}
               onChange={(e) => {
-                handleFormChange(otherInputs[0].label, e.target.value);
+                handleFormChange(otherInputs[0].handle, e.target.value);
               }}
             ></Input>
             <p
@@ -108,7 +108,7 @@ const OfferDNLA = () => {
                 color: "red",
                 margin: "0",
                 visibility:
-                  clickedSend && formData[checkboxProps[0].label] === undefined
+                  clickedSend && formData[checkboxProps[0].handle] === undefined
                     ? "visible"
                     : "hidden",
               }}
@@ -119,17 +119,17 @@ const OfferDNLA = () => {
               props={checkboxProps[0]}
               group={"leaders"}
               onChange={(value) => {
-                handleFormChange(checkboxProps[0].label, value);
+                handleFormChange(checkboxProps[0].handle, value);
               }}
             ></Checkbox>
-            {formData[checkboxProps[0].label] === "Da" && (
+            {formData[checkboxProps[0].handle] === "Da" && (
               <Input
-                key={otherInputs[1].label}
+                key={otherInputs[1].handle}
                 id="desktop"
                 props={otherInputs[1]}
                 style={{ marginBottom: "2%" }}
                 onChange={(e) => {
-                  handleFormChange(otherInputs[1].label, e.target.value);
+                  handleFormChange(otherInputs[1].handle, e.target.value);
                 }}
               ></Input>
             )}
@@ -138,7 +138,7 @@ const OfferDNLA = () => {
                 color: "red",
                 margin: "0",
                 visibility:
-                  clickedSend && formData[checkboxProps[1].label] === undefined
+                  clickedSend && formData[checkboxProps[1].handle] === undefined
                     ? "visible"
                     : "hidden",
               }}
@@ -149,17 +149,17 @@ const OfferDNLA = () => {
               props={checkboxProps[1]}
               group={"sales"}
               onChange={(value) => {
-                handleFormChange(checkboxProps[1].label, value);
+                handleFormChange(checkboxProps[1].handle, value);
               }}
             ></Checkbox>
-            {formData[checkboxProps[1].label] === "Da" && (
+            {formData[checkboxProps[1].handle] === "Da" && (
               <Input
-                key={otherInputs[2].label}
+                key={otherInputs[2].handle}
                 id="desktop"
                 props={otherInputs[2]}
                 style={{ marginBottom: "2%" }}
                 onChange={(e) => {
-                  handleFormChange(otherInputs[2].label, e.target.value);
+                  handleFormChange(otherInputs[2].handle, e.target.value);
                 }}
               ></Input>
             )}
@@ -168,7 +168,7 @@ const OfferDNLA = () => {
                 color: "red",
                 margin: "0",
                 visibility:
-                  clickedSend && formData[checkboxProps[2].label] === undefined
+                  clickedSend && formData[checkboxProps[2].handle] === undefined
                     ? "visible"
                     : "hidden",
               }}
@@ -179,7 +179,7 @@ const OfferDNLA = () => {
               props={checkboxProps[2]}
               group={"feedback"}
               onChange={(value) => {
-                handleFormChange(checkboxProps[2].label, value);
+                handleFormChange(checkboxProps[2].handle, value);
               }}
             ></Checkbox>
             <p
@@ -187,7 +187,7 @@ const OfferDNLA = () => {
                 color: "red",
                 margin: "0",
                 visibility:
-                  clickedSend && formData[checkboxProps[3].label] === undefined
+                  clickedSend && formData[checkboxProps[3].handle] === undefined
                     ? "visible"
                     : "hidden",
               }}
@@ -198,7 +198,7 @@ const OfferDNLA = () => {
               props={checkboxProps[3]}
               group={"analise"}
               onChange={(value) => {
-                handleFormChange(checkboxProps[3].label, value);
+                handleFormChange(checkboxProps[3].handle, value);
               }}
             ></Checkbox>
             <br></br>

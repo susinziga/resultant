@@ -31,23 +31,23 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
   }, []);
 
   const inputProps1 = [
-    { label: t("offer:offer_inputProp1"), required: "*" },
-    { label: t("offer:offer_inputProp2") },
-    { label: t("offer:offer_inputProp3"), required: "*" },
-    { label: t("offer:offer_inputProp4"), required: "*", type: "email" },
-    { label: t("offer:offer_inputProp5") },
+    { label: t("offer:offer_inputProp1"), handle: "companyName", required: "*" },
+    { label: t("offer:offer_inputProp2"), handle: "address" },
+    { label: t("offer:offer_inputProp3"), handle: "contactPerson", required: "*" },
+    { label: t("offer:offer_inputProp4"), handle: "email", required: "*", type: "email" },
+    { label: t("offer:offer_inputProp5"), handle: "phone" },
   ];
 
   const inputProps2 = [
-    { label: t("offer:offer_secondInputProp1") },
-    { label: t("offer:offer_secondInputProp2") },
-    { label: t("offer:offer_secondInputProp3") },
-    { label: t("offer:offer_secondInputProp4") },
+    { label: t("offer:offer_secondInputProp1"), handle: "employeeCount" },
+    { label: t("offer:offer_secondInputProp2"), handle: "remoteQuestionnaires" },
+    { label: t("offer:offer_secondInputProp3"), handle: "printedQuestionnaires" },
+    { label: t("offer:offer_secondInputProp4"), handle: "organizationalUnits" },
   ];
 
   const checkboxProps = [
-    { label: t("offer:offer_checkboxProp1"), required: "*" },
-    { label: t("offer:offer_checkboxProp2"), required: "*" },
+    { label: t("offer:offer_checkboxProp1"), handle: "presentationToBoard", required: "*" },
+    { label: t("offer:offer_checkboxProp2"), handle: "leaderEmployeeComparison", required: "*" },
   ];
 
   return (
@@ -61,7 +61,7 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
             // Check checkboxes validity
             let isValid = true;
             checkboxProps.forEach((prop) => {
-              let isInvalid = formData[prop.label] === undefined;
+              let isInvalid = formData[prop.handle] === undefined;
               if (isInvalid) {
                 isValid = false;
               }
@@ -97,7 +97,7 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
                     props={input}
                     style={{ marginBottom: "2%" }}
                     onChange={(e) => {
-                      handleFormChange(input.label, e.target.value);
+                      handleFormChange(input.handle, e.target.value);
                     }}
                   ></Input>
                 </div>
@@ -114,7 +114,7 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
                     props={input}
                     style={{ marginBottom: "2%" }}
                     onChange={(e) => {
-                      handleFormChange(input.label, e.target.value);
+                      handleFormChange(input.handle, e.target.value);
                     }}
                   ></Input>
                 </div>
@@ -131,7 +131,7 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
                       color: "red",
                       margin: "0",
                       visibility:
-                        clickedSend && formData[checkbox.label] === undefined
+                        clickedSend && formData[checkbox.handle] === undefined
                           ? "visible"
                           : "hidden",
                     }}
@@ -142,7 +142,7 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
                     props={checkbox}
                     group={id}
                     onChange={(value) => {
-                      handleFormChange(checkbox.label, value);
+                      handleFormChange(checkbox.handle, value);
                     }}
                   ></Checkbox>
                   <p style={{ visibility: "hidden" }}>_</p>
@@ -167,12 +167,12 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
               {t("common:text_required")}
             </p>
             <MultipleCheckbox
-              onChange={(id, value, allLabels) => {
-                allLabels.forEach((label) => {
-                  handleFormChange(label, false);
+              onChange={(handle, value, allHandles) => {
+                allHandles.forEach((h) => {
+                  handleFormChange(h, false);
                 });
 
-                handleFormChange(id, value);
+                handleFormChange(handle, value);
                 setIsRadioSelected(true);
               }}
             ></MultipleCheckbox>

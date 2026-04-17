@@ -20,18 +20,18 @@ import * as Styled from "../../../basic_components/input/Input.styled";
 
 const inputProps = {
   sl: [
-    { label: "Ime", required: "*" },
-    { label: "Priimek", required: "*" },
-    { label: "Telefonska številka" },
-    { label: "Email", required: "*", type: "email" },
-    { label: "Ime organizacije" },
+    { label: "Ime", handle: "firstName", required: "*" },
+    { label: "Priimek", handle: "lastName", required: "*" },
+    { label: "Telefonska številka", handle: "phone" },
+    { label: "Email", handle: "email", required: "*", type: "email" },
+    { label: "Ime organizacije", handle: "organization" },
   ],
   en: [
-    { label: "Name", required: "*" },
-    { label: "Last name", required: "*" },
-    { label: "Gsm" },
-    { label: "Email", required: "*", type: "email" },
-    { label: "Company name" },
+    { label: "Name", handle: "firstName", required: "*" },
+    { label: "Last name", handle: "lastName", required: "*" },
+    { label: "Gsm", handle: "phone" },
+    { label: "Email", handle: "email", required: "*", type: "email" },
+    { label: "Company name", handle: "organization" },
   ],
 };
 
@@ -74,7 +74,7 @@ const ContactForm_dnla = (props) => {
                   props={input}
                   style={{ marginBottom: "2%" }}
                   onChange={(e) => {
-                    handleFormChange(input.label, e.target.value);
+                    handleFormChange(input.handle, e.target.value);
                   }}
                 ></Input>
               </div>
@@ -83,10 +83,10 @@ const ContactForm_dnla = (props) => {
           <TextareaContainer>
             <Textarea
               id="TextDesktop"
-              props={{ label: textAreaLabel[locale], required: "*" }}
+              props={{ label: textAreaLabel[locale], handle: "message", required: "*" }}
               style={{ fontSize: "1.5rem" }}
               onChange={(e) => {
-                handleFormChange(textAreaLabel[locale], e.target.value);
+                handleFormChange("message", e.target.value);
               }}
             ></Textarea>
           </TextareaContainer>

@@ -23,10 +23,10 @@ const MultipleCheckbox = (props) => {
   const checkboxHeading = t("offer:offer_multipleCheckboxHeading");
 
   const inputProps = [
-    { content: "A", label: label1 },
-    { content: "B", label: label2 },
-    { content: "C", label: label3 },
-    { content: "D", label: label4 },
+    { content: "A", label: label1, handle: "measurementOption1" },
+    { content: "B", label: label2, handle: "measurementOption2" },
+    { content: "C", label: label3, handle: "measurementOption3" },
+    { content: "D", label: label4, handle: "measurementOption4" },
   ];
 
   return (
@@ -53,11 +53,11 @@ const MultipleCheckbox = (props) => {
                         }
                       });
 
-                      props.onChange(prop.label, e.target.checked, [
-                        label1,
-                        label2,
-                        label3,
-                        label4,
+                      props.onChange(prop.handle, e.target.checked, [
+                        "measurementOption1",
+                        "measurementOption2",
+                        "measurementOption3",
+                        "measurementOption4",
                       ]);
                     }}
                   ></Checkbox>
