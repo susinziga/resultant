@@ -1,5 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
+import { sendFarvoiceEmail } from "../../lib/farvoice";
+
 export default async function handler(req, res) {
   const { data } = req.body;
 
@@ -60,6 +62,11 @@ export default async function handler(req, res) {
   };
 
   console.log(msg);
+
+  sendFarvoiceEmail({
+    to: "ziga.susin@gmail.com",
+    templatePayload: msg,
+  });
 
   const receivers = [
     "ziga.susin@gmail.com",
