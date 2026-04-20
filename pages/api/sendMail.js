@@ -50,7 +50,7 @@ export default async function handler(req, res) {
   for (let id in data) {
     if (excluded.has(id)) continue;
     const label = handleLabels[id] || id;
-    message += "<b>" + label + "</b>: " + data[id] + "<br/>";
+    message += "\n<b>" + label + "</b>: " + data[id] + "<br/>";
   }
 
   const msg = {
@@ -68,30 +68,7 @@ export default async function handler(req, res) {
     templatePayload: msg,
   });
 
-  const receivers = [
-    "ziga.susin@gmail.com",
-    // "roman.klaric@resultant.si",
-    // "primoz.bitenc@resultant.si",
-    // "icevx1@gmail.com",
-    // "thecrazy.marko@gmail.com",
-  ];
+  res.status(400).json({ name: "Error", message: "ERROR SENDING EMAILS" });
 
-  // sgMail
-  //   .send({
-  //     ...msg,
-  //     to: receivers,
-  //   })
-  //   .then(
-  //     () => {
-  //       console.log("SENT EMAILS");
-
-  //       res.status(200).json({ name: "Sent", message: "SENT EMAILS" });
-  //     },
-  //     (error) => {
-  //       console.error("ERROR SENDING EMAILS");
-  //       console.error(error);
-
-  //       res.status(200).json({ name: "Sent", message: error });
-  //     }
-  //   );
+  res.status(200).json({ name: "Sent", message: "SENT EMAILS" });
 }
