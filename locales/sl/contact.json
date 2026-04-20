@@ -3,5 +3,6 @@
   "contact_mainHeading": "Kontaktirajte nas",
 
   "contact_sendSuccess": "Hvala za zaupanje!",
+  "contact_sendError": "Napaka pri pošiljanju. Poskusite znova.",
   "contact_footerSuccess": "Hvala za zaupanje!"
 }

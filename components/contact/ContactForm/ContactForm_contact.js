@@ -54,13 +54,18 @@ const ContactForm_contact = () => {
     <>
       <ContactContainer>
         <FormContainer
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
-            sendMail();
             let btn = document.getElementById("submit_btn");
-            btn.style.backgroundColor = "#072543";
-            btn.value = t("contact:contact_sendSuccess");
-            btn.disabled = true;
+            try {
+              await sendMail();
+              btn.style.backgroundColor = "#072543";
+              btn.value = t("contact:contact_sendSuccess");
+              btn.disabled = true;
+            } catch (err) {
+              btn.style.backgroundColor = "#a33";
+              btn.value = t("contact:contact_sendError");
+            }
           }}
         >
           {inputProps[locale].map((input, index) => {

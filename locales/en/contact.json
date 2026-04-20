@@ -3,5 +3,6 @@
   "contact_mainHeading": "Contact us",
 
   "contact_sendSuccess": "Your message was sent!",
+  "contact_sendError": "Sending failed. Please try again.",
   "contact_footerSuccess": "Thanks!"
 }

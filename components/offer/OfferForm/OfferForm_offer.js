@@ -54,7 +54,7 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
     <>
       <OfferContainer style={{ overflow: "hidden" }}>
         <FormContainer
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
             setClickedSend(true);
 
@@ -81,11 +81,16 @@ const OfferForm_offer = ({ formSubject = "SiOK Povpraševanje" }) => {
               return;
             }
 
-            sendMail();
             let btn = document.getElementById("submit_btn");
-            setsubmitButtonText(t("contact:contact_sendSuccess"));
-            btn.style.backgroundColor = "#072543";
-            btn.disabled = true;
+            try {
+              await sendMail();
+              setsubmitButtonText(t("contact:contact_sendSuccess"));
+              btn.style.backgroundColor = "#072543";
+              btn.disabled = true;
+            } catch (err) {
+              setsubmitButtonText(t("contact:contact_sendError"));
+              btn.style.backgroundColor = "#a33";
+            }
           }}
         >
           <InputsContainer>

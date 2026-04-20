@@ -63,12 +63,17 @@ export default async function handler(req, res) {
 
   console.log(msg);
 
-  sendFarvoiceEmail({
-    to: "ziga.susin@gmail.com",
-    templatePayload: msg,
-  });
+  try {
+    await sendFarvoiceEmail({
+      to: "ziga.susin@gmail.com",
+      templatePayload: msg,
+    });
 
-  res.status(400).json({ name: "Error", message: "ERROR SENDING EMAILS" });
-
-  res.status(200).json({ name: "Sent", message: "SENT EMAILS" });
+    return res.status(200).json({ name: "Sent", message: "SENT EMAILS" });
+  } catch (e) {
+    console.error("ERROR SENDING EMAILS", e);
+    return res
+      .status(e.status || 500)
+      .json({ name: "Error", message: e.message, response: e.response });
+  }
 }

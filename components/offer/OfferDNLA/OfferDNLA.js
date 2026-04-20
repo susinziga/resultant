@@ -48,7 +48,7 @@ const OfferDNLA = () => {
     <>
       <OfferContainer>
         <FormContainer
-          onSubmit={(e) => {
+          onSubmit={async (e) => {
             e.preventDefault();
             setClickedSend(true);
 
@@ -68,11 +68,16 @@ const OfferDNLA = () => {
               return;
             }
 
-            sendMail();
             let btn = document.getElementById("submit_btn");
-            btn.style.backgroundColor = "#072543";
-            setsubmitButtonText(t("contact:contact_sendSuccess"));
-            btn.disabled = true;
+            try {
+              await sendMail();
+              btn.style.backgroundColor = "#072543";
+              setsubmitButtonText(t("contact:contact_sendSuccess"));
+              btn.disabled = true;
+            } catch (err) {
+              btn.style.backgroundColor = "#a33";
+              setsubmitButtonText(t("contact:contact_sendError"));
+            }
           }}
         >
           <InputsContainer>
