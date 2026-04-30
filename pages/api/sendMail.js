@@ -67,7 +67,8 @@ export default async function handler(req, res) {
     await sendFarvoiceEmail({
       // to: "ziga.susin@gmail.com",
       // to: "enej.klaric@resultant.si",
-      to: "enej19@gmail.com",
+      // to: "enej19@gmail.com",
+      to: "klaric.enej@gmail.com",
       templatePayload: msg,
     });
 
