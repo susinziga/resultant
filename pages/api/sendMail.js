@@ -5,8 +5,6 @@ import { sendFarvoiceEmail } from "../../lib/farvoice";
 export default async function handler(req, res) {
   const { data } = req.body;
 
-  console.log(data);
-
   const sgMail = require("@sendgrid/mail");
   sgMail.setApiKey(
     "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"
