@@ -14,7 +14,7 @@ import FilterDropdown from "../components/aktualno/FilterDropdown";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import {RESULTANT } from "../pages/people";
+import { AUTHOR_IMAGES, RESULTANT } from "../public/people";
 // TODO: set this in your .env file
 const WP_API_URL = process.env.WP_API_URL || "https://yourwordpresssite.com/wp-json/wp/v2";
 
