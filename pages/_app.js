@@ -15,14 +15,12 @@ import { useRouter } from "next/router";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import React from "react";
-import { ApolloProvider } from "@apollo/client";
-import withData from "../utils/apollo";
 
 const tagManagerArgs = {
   gtmId: "GTM-TJL8898",
 };
 
-function MyApp({ Component, pageProps, apollo }) {
+function MyApp({ Component, pageProps}) {
   const [size, setSize] = useState([]);
 
   const { pathname, locale } = useRouter();
@@ -165,9 +163,7 @@ function MyApp({ Component, pageProps, apollo }) {
         </Head>
         <Menu_top size={size}></Menu_top>
         <Body_content id="__body" path={pathname}>
-          <ApolloProvider client={apollo}>
             <Component {...pageProps} />
-          </ApolloProvider>
           {/* <CookieConsent
             location="bottom"
             buttonText="ide gas"
@@ -203,4 +199,4 @@ const Body_content = styled.div`
   ${(props) => (props.path === "/" ? "padding-top:0 !important;" : "")}
 `;
 
-export default withData(MyApp);
+export default MyApp;

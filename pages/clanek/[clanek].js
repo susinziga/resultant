@@ -1,72 +1,44 @@
 import { useRouter } from "next/router";
 import React from "react";
-import {
-  BodyText3,
-  Subtitle2,
-  Subtitle1,
-  Title2,
-} from "../../basic_components/texts/Texts";
-import Container, {
-  Container_border,
-} from "../../components/aktualno/blog/content_components/Container.styled";
-import Image from "../../components/aktualno/blog/content_components/Image";
-import NewParagraph, {
-  NewRow,
-} from "../../components/blog/content_components/Margin.styled";
-import Query from "../../components/query";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import Container from "../../components/aktualno/blog/content_components/Container.styled";
 import Blog_page from "../../components/aktualno/blog/Blog_page";
 import mkstyle from "./markdown-styles.module.css";
 import Head from "next/head";
-import { InMemoryCache } from "@apollo/react-hooks";
-import ApolloClient from "apollo-client";
-import { createHttpLink } from "apollo-link-http";
-import { getStrapiURL } from "../api/strapi";
-import ARTICLES_QUERY from "../../apollo/queries/articles/articles";
-import ARTICLE_QUERY from "../../apollo/queries/articles/article";
+import { AUTHOR_IMAGES, RESULTANT } from "../people";
 
-const link = createHttpLink({
-  fetch,
-  uri: getStrapiURL() + "/graphql",
-});
-
-const client = new ApolloClient({
-  ssrMode: true,
-  link: link,
-  cache: new InMemoryCache(),
-  defaultOptions: {
-    watchQuery: {
-      fetchPolicy: "no-cache",
-    },
-    query: {
-      fetchPolicy: "no-cache",
-    },
-  },
-});
+// TODO: set this in your .env file
+const WP_API_URL = process.env.WP_API_URL || "https://yourwordpresssite.com/wp-json/wp/v2";
 
 export async function getStaticProps({ params }) {
-  ("static props");
   const id = params.clanek;
 
-  let res = await client.query({ query: ARTICLE_QUERY, variables: { id: id } });
-  const article = res.data.clanek.data;
+  // _embed pulls in featured image + author in one request
+  const res = await fetch(`${WP_API_URL}/posts/${id}?_embed`);
+
+  if (!res.ok) {
+    return { notFound: true };
+  }
+
+  const post = await res.json();
+
+  //console.log("ACF data:", JSON.stringify(post.acf, null, 2));
 
   return {
     props: {
-      clanek: article,
+      clanek: post,
     },
     revalidate: 10,
   };
 }
 
 export async function getStaticPaths() {
-  const clanki = await client.query({ query: ARTICLES_QUERY });
-  const paths = clanki.data.clanki.data.map((clanek) => {
-    return {
-      params: { clanek: String(clanek.id) },
-    };
-  });
+  // Just need IDs here, so ask WP for minimal fields to keep this fast
+  const res = await fetch(`${WP_API_URL}/posts?per_page=100&_fields=id`);
+  const posts = await res.json();
+
+  const paths = posts.map((post) => ({
+    params: { clanek: String(post.id) },
+  }));
 
   return {
     paths,
@@ -74,129 +46,58 @@ export async function getStaticPaths() {
   };
 }
 
+// TODO: fill in every real author name (must match ACF's "author"/"gost" values exactly)
+// and the correct path to their photo in /public
+const getAuthorImage = (name) => AUTHOR_IMAGES[name] || null;
+
+const getAuthorStatus = (name) => RESULTANT[name] || false;
+
 const Clanek = ({ clanek }) => {
-  const getArticleContentComponent = (item, index) => {
-    const strapiComponent = item.__typename;
+  const featuredImage =
+    clanek._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null;
+  const featuredImageAlt =
+    clanek._embedded?.["wp:featuredmedia"]?.[0]?.alt_text || "";
 
-    switch (strapiComponent) {
-      case "ComponentClanekVsebinaBulletList":
-        return (
-          <div key={index}>
-            <Container>
-              <Title2 style={{ fontFamily: "Neusa", fontSize: "2.5rem" }}>
-                {item.Naslov}
-              </Title2>
-              <NewRow></NewRow>
-              <BodyText3 style={{ fontWeight: "400" }}>
-                {item.Podnaslov}
-              </BodyText3>
-              <NewRow></NewRow>
-              <ul>
-                {item.Text.split("\n").map((item) => (
-                  <li key={item} style={{ marginBottom: "1.5rem" }}>
-                    <BodyText3>
-                      <ReactMarkdown
-                        children={item}
-                        remarkPlugins={[remarkGfm]}
-                        skipHtml={true}
-                        className={mkstyle.reactMarkDown}
-                        linkTarget={"_blank"}
-                      ></ReactMarkdown>
-                    </BodyText3>
-                  </li>
-                ))}
-              </ul>
-            </Container>
-            <NewParagraph></NewParagraph>
-          </div>
-        );
-      case "ComponentClanekVsebinaNormalText":
-        return (
-          <div key={index}>
-            <Container>
-              <Title2 style={{ fontFamily: "Neusa", fontSize: "2.5rem" }}>
-                {item.Naslov}
-              </Title2>
-              <NewRow />
-              <BodyText3>
-                <ReactMarkdown
-                  children={item.Text}
-                  remarkPlugins={[remarkGfm]}
-                  skipHtml={true}
-                  className={mkstyle.reactMarkDown}
-                  linkTarget={"_blank"}
-                ></ReactMarkdown>
-              </BodyText3>
-            </Container>
-            <NewParagraph></NewParagraph>
-          </div>
-        );
-      case "ComponentClanekVsebinaImage":
-        return (
-          <div key={index}>
-            <Container>
-              <Subtitle2>{item.Naslov}</Subtitle2>
-              <NewRow></NewRow>
-            </Container>
-            <Image
-              src={item.Slika.data.attributes.url}
-              alt={item.Slika.data.attributes.alternativeText}
-            ></Image>
-            <p
-              style={{
-                fontWeight: 300,
-                fontStyle: "italic",
-                width: "70%",
-                textAlign: "center",
-                margin: "0 auto",
-                fontSize: ".8rem",
-              }}
-            >
-              {item.Napis_pod_sliko}
-            </p>
-            <NewParagraph></NewParagraph>
-          </div>
-        );
-      case "ComponentClanekVsebinaBorderText":
-        return (
-          <div key={index}>
-            <Container_border style={{ textAlign: "center" }}>
-              <BodyText3>
-                <ReactMarkdown
-                  children={item.Text}
-                  remarkPlugins={[remarkGfm]}
-                  skipHtml={true}
-                  className={mkstyle.reactMarkDown}
-                  linkTarget={"_blank"}
-                ></ReactMarkdown>
-              </BodyText3>
-            </Container_border>
-            <NewParagraph></NewParagraph>
-          </div>
-        );
-      case "ComponentClanekVsebinaPresledek":
-        return <div key={index} style={{ height: "4rem" }}></div>;
-      default:
-        return <p key={index}>Invalid component ${strapiComponent}</p>;
-    }
-  };
+  // Pulls a display name out of an ACF field, whatever shape it comes back as:
+  // - Text field -> plain string
+  // - User field (return format: Array) -> { display_name, ... }
+  // - Group field with a "name"/"ime" sub-field -> { name } or { ime }
+  const getAcfName = (field) => {
+  if (!field) return [];
 
-  const article = clanek.attributes;
+  if (Array.isArray(field)) {
+    return field
+      .map((author) => {
+        if (typeof author === "string") return author;
+        return author?.display_name || author?.name || author?.ime || null;
+      })
+      .filter(Boolean);
+  }
 
-  const authors = article.avtors.data.map((avtor) => {
-    return {
-      name: avtor.attributes.ime,
-      image: avtor.attributes.slika.data.attributes.url,
-      resultant: avtor.attributes.resultant,
-    };
-  });
+  if (typeof field === "string") return [field];
+
+  return [field.display_name || field.name || field.ime].filter(Boolean);
+};
+
+  const authorNames = getAcfName(clanek.acf?.author);
+  //console.log(authorNames)
+
+  // Blog_Header expects each author as { name, image, resultant }
+  // resultant: true = Resultant employee, false = guest (shows the "Gost" badge)
+  const authors = [...new Set(authorNames)].map((authorName) => ({
+  name: authorName,
+  image: getAuthorImage(authorName),
+  resultant: getAuthorStatus(authorName),
+}));
+
+  const excerptText = clanek.excerpt.rendered.replace(/<[^>]+>/g, "").replace("&#8211;", "-"); // strip HTML tags
 
   const blog_data = {
-    title: article.naslov,
+    title: clanek.title.rendered,
     authors: authors,
-    image: article.glavnaSlika.data.attributes.url,
-    imageAlt: article.glavnaSlika.data.attributes.alternativeText,
-    excerpt: article.podnaslov,
+    image: featuredImage,
+    imageAlt: featuredImageAlt,
+    excerpt: excerptText,
   };
 
   const router = useRouter();
@@ -204,36 +105,29 @@ const Clanek = ({ clanek }) => {
   return (
     <>
       <Head>
-        <title>{article.Meta_Title}</title>
-        <meta
-          name="description"
-          content={article.Meta_Description ?? article.podnaslov}
-        />
-        <meta
-          key="title"
-          property="og:title"
-          content={article.Meta_Title ?? article.naslov}
-        />
+        <title>{clanek.title.rendered}</title>
+        <meta name="description" content={excerptText} />
+        <meta key="title" property="og:title" content={clanek.title.rendered} />
         <meta key="url" property="og:url" content={router.asPath} />
         <meta key="type" property="og:type" content="article" />
-        <meta
-          key="description"
-          property="og:description"
-          content={article.Meta_Description ?? article.podnaslov}
-        />
-        <meta
-          key="image"
-          property="og:image"
-          content={article.glavnaSlika.data.attributes.url}
-        />
-        <meta
-          key="twitter-image"
-          name="twitter:image"
-          content={article.glavnaSlika.data.attributes.url}
-        />
+        <meta key="description" property="og:description" content={excerptText} />
+        {featuredImage && (
+          <>
+            <meta key="image" property="og:image" content={featuredImage} />
+            <meta key="twitter-image" name="twitter:image" content={featuredImage} />
+          </>
+        )}
       </Head>
       <Blog_page _data={blog_data}>
-        {article.dinamicnoPolje.map((c, i) => getArticleContentComponent(c, i))}
+        <Container>
+          {/* WordPress already gives us fully-formatted HTML here (headings, paragraphs,
+              images, lists, etc, exactly as written in the WP editor). mkstyle applies
+              your existing markdown/article styling classes to it. */}
+          <div
+            className={mkstyle.reactMarkDown}
+            dangerouslySetInnerHTML={{ __html: clanek.content.rendered }}
+          />
+        </Container>
       </Blog_page>
     </>
   );

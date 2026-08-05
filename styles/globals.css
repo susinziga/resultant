@@ -163,6 +163,20 @@ a:active {
   display: none !important;
 }
 
+h2.wp-block-heading {
+  font-family: Neusa;
+  font-size: 2.5rem;
+  padding-top: 40px;
+  font-weight:400!Important;
+}
+
+.wp-block-paragraph{
+  font-family: Neusa;
+  font-size: 1.1rem;
+  padding-top: 40px;
+  color: #282828;
+  font-weight: 300;
+}
 
 @media (min-width: 768px) {
   .desktop {
