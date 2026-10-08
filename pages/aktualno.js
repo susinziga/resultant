@@ -34,6 +34,7 @@ const getArticleFromWpData = (post) => {
 
   return {
     id: post.id,
+    slug: post.slug,  
     heading: post.title.rendered,
     text: post.excerpt.rendered.replace(/<[^>]+>/g, "").replace("&#8211;", "-"), // strip HTML tags from excerpt
     image: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || null,

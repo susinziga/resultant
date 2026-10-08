@@ -12,11 +12,11 @@ import { useRouter } from "next/router";
 
 const LatestCard = ({ news }) => {
   const { locale } = useRouter();
-  let { heading, text, image, link, id, imageAlt } = news;
+  let { heading, text, image, link, id, slug, imageAlt } = news;
 
   return (
     <>
-      <NewsContainer href={"/" + locale + "/clanek/" + id} isActive>
+      <NewsContainer href={"/" + locale + "/clanek/" + slug} isActive>
         <ContainerInnerWrapper>
           <NewsImage alt={imageAlt} src={image}></NewsImage>
           <NewsTextContainer>

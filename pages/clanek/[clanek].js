@@ -1,43 +1,49 @@
 import { useRouter } from "next/router";
-import React from "react";
 import Container from "../../components/aktualno/blog/content_components/Container.styled";
 import Blog_page from "../../components/aktualno/blog/Blog_page";
 import mkstyle from "./markdown-styles.module.css";
 import Head from "next/head";
 import { AUTHOR_IMAGES, RESULTANT } from "../../public/people";
+import React from "react";
 
 // TODO: set this in your .env file
 const WP_API_URL = process.env.WP_API_URL || "https://yourwordpresssite.com/wp-json/wp/v2";
 
-export async function getStaticProps({ params }) {
-  const id = params.clanek;
+export async function getStaticProps({ params, locale }) {
+  const slug = params.clanek;
 
-  // _embed pulls in featured image + author in one request
-  const res = await fetch(`${WP_API_URL}/posts/${id}?_embed`);
-
-  if (!res.ok) {
-    return { notFound: true };
+  if (/^\d+$/.test(slug)) {
+    const res = await fetch(`${WP_API_URL}/posts/${slug}`);
+    if (!res.ok) return { notFound: true };
+    const old = await res.json();
+    return {
+      redirect: {
+        destination: `/${locale}/clanek/${old.slug}`,
+        permanent: true,
+      },
+    };
   }
 
-  const post = await res.json();
+  const res = await fetch(
+    `${WP_API_URL}/posts?slug=${encodeURIComponent(slug)}&_embed`
+  );
+  if (!res.ok) return { notFound: true };
 
-  //console.log("ACF data:", JSON.stringify(post.acf, null, 2));
+  const posts = await res.json();
+  if (!posts.length) return { notFound: true };
 
   return {
-    props: {
-      clanek: post,
-    },
+    props: { clanek: posts[0] },
     revalidate: 10,
   };
 }
 
 export async function getStaticPaths() {
-  // Just need IDs here, so ask WP for minimal fields to keep this fast
-  const res = await fetch(`${WP_API_URL}/posts?per_page=100&_fields=id`);
+  const res = await fetch(`${WP_API_URL}/posts?per_page=100&_fields=slug`);
   const posts = await res.json();
 
   const paths = posts.map((post) => ({
-    params: { clanek: String(post.id) },
+    params: { clanek: post.slug },
   }));
 
   return {
